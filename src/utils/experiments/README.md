@@ -11,9 +11,8 @@ From the repo root:
 ```bash
 python src/utils/experiments/experiments.py \
   --notebook src/lee2019_finetune_sjepa.ipynb \
-  --configs src/utils/experiments/configs/seed_sweep.json \
-  --kernel-name dl \
-  --mute-notebook
+  --configs src/utils/experiments/configs/test.json \
+  --kernel-name dl
 ```
 
 Run in daemon mode (detached/background):
@@ -21,9 +20,8 @@ Run in daemon mode (detached/background):
 ```bash
 python src/utils/experiments/experiments.py \
   --notebook src/lee2019_finetune_sjepa.ipynb \
-  --configs src/utils/experiments/configs/seed_sweep.json \
+  --configs src/utils/experiments/configs/test.json \
   --kernel-name dl \
-  --mute-notebook \
   --daemon
 ```
 

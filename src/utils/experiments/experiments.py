@@ -53,11 +53,6 @@ def parse_args() -> argparse.Namespace:
         help="Per-cell timeout in seconds. Use -1 for no timeout.",
     )
     parser.add_argument(
-        "--mute-notebook",
-        action="store_true",
-        help="Suppress notebook cell outputs during execution (redirects kernel stdout/stderr).",
-    )
-    parser.add_argument(
         "--daemon",
         action="store_true",
         help="Run the sweep in a detached background process and exit immediately.",
@@ -179,8 +174,6 @@ def build_daemon_command(args: argparse.Namespace, run_id: str) -> list[str]:
     ]
     if args.kernel_name:
         command.extend(["--kernel-name", args.kernel_name])
-    if args.mute_notebook:
-        command.append("--mute-notebook")
     return command
 
 
@@ -243,7 +236,6 @@ def execute_one(
     overrides: dict[str, Any],
     kernel_name: str | None,
     timeout: int,
-    mute_notebook: bool = False,
 ) -> dict[str, Any]:
     nb = deepcopy(base_nb)
     config_idx = find_config_cell_index(nb)
@@ -265,18 +257,8 @@ def execute_one(
     status = "completed"
     error_message = None
 
-    redirect_ctx: contextlib.AbstractContextManager[Any]
-    if mute_notebook:
-        redirect_ctx = contextlib.redirect_stdout(StringIO())
-        # Suppress stderr as well to avoid noisy progress logs during sweeps.
-        redirect_err_ctx = contextlib.redirect_stderr(StringIO())
-    else:
-        redirect_ctx = contextlib.nullcontext()
-        redirect_err_ctx = contextlib.nullcontext()
-
     try:
-        with redirect_ctx, redirect_err_ctx:
-            client.execute()
+        client.execute()
     except CellExecutionError as exc:
         status = "failed"
         error_message = str(exc)
@@ -363,7 +345,6 @@ def main() -> int:
             overrides=overrides,
             kernel_name=args.kernel_name,
             timeout=args.timeout,
-            mute_notebook=args.mute_notebook,
         )
         results.append(result)
 
