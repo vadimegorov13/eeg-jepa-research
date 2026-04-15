@@ -12,7 +12,7 @@ From the repo root:
 python src/utils/experiments/experiments.py \
   --notebook src/lee2019_finetune_sjepa.ipynb \
   --configs src/utils/experiments/configs/test.json \
-  --kernel-name egg-jepa
+  --kernel-name eeg-jepa
 ```
 
 Run in daemon mode (detached/background):
@@ -20,8 +20,8 @@ Run in daemon mode (detached/background):
 ```bash
 python src/utils/experiments/experiments.py \
   --notebook src/lee2019_finetune_sjepa.ipynb \
-  --configs src/utils/experiments/configs/hard_subjects_current_keys_sweep.json \
-  --kernel-name egg-jepa \
+  --configs src/utils/experiments/configs/model_strategy_sweep.json \
+  --kernel-name eeg-jepa \
   --daemon
 ```
 
