@@ -1,0 +1,551 @@
+[2026-04-16 14:24:39] Using device: cpu
+[2026-04-16 14:24:39] Seed control disabled (CONFIG['set_seed'] = False)
+[2026-04-16 14:24:39] ======================================================================
+[2026-04-16 14:24:39] CONFIGURATION
+[2026-04-16 14:24:39] ======================================================================
+[2026-04-16 14:24:39]   artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning
+[2026-04-16 14:24:39]   bandpass_high: 40.0
+[2026-04-16 14:24:39]   bandpass_low: 0.5
+[2026-04-16 14:24:39]   batch_size: 32
+[2026-04-16 14:24:39]   convert_to_uV: True
+[2026-04-16 14:24:39]   cv_folds: 5
+[2026-04-16 14:24:39]   early_stopping_patience: 50
+[2026-04-16 14:24:39]   learning_rate: None
+[2026-04-16 14:24:39]   model_name: SignalJEPA_PreLocal
+[2026-04-16 14:24:39]   n_epochs: 5000
+[2026-04-16 14:24:39]   paradigm: ERP
+[2026-04-16 14:24:39]   pretrained_url: https://huggingface.co/braindecode/SignalJEPA/resolve/main/signal-jepa_16s-60_adeuwv4s.pth
+[2026-04-16 14:24:39]   seed: None
+[2026-04-16 14:24:39]   set_eeg_reference: True
+[2026-04-16 14:24:39]   set_seed: False
+[2026-04-16 14:24:39]   set_standard_montage: True
+[2026-04-16 14:24:39]   sfreq: 128
+[2026-04-16 14:24:39]   strategy: new
+[2026-04-16 14:24:39]   subjects_to_use: None
+[2026-04-16 14:24:39]   val_split: 0.2
+[2026-04-16 14:24:39]   warmup_epochs: 10
+[2026-04-16 14:24:39]   primary_metric_name: roc_auc
+[2026-04-16 14:24:39]   primary_metric_label: ROC-AUC
+[2026-04-16 14:24:39] ======================================================================
+[2026-04-16 14:24:39] Config saved to: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/ERP/20260416_1424_06e2f4d8/config.json
+[2026-04-16 14:24:39] Epoch window configuration:
+[2026-04-16 14:24:39]   Target sfreq:                128 Hz
+[2026-04-16 14:24:39]   Target duration:             1.190000 s
+[2026-04-16 14:24:39]   Window samples (rounded):    152
+[2026-04-16 14:24:39]   Base trial samples (1.0 s):  128
+[2026-04-16 14:24:39]   Trial stop offset samples:   24
+[2026-04-16 14:24:39]   Effective window duration:   1.187500 s
+[2026-04-16 14:24:39] Dataset code: Lee2019-ERP
+[2026-04-16 14:24:39] Subjects Total: 54
+[2026-04-16 14:24:39] Events: {'Target': 1, 'NonTarget': 2}
+[2026-04-16 14:24:39] Interval: [0.0, 1.0]
+[2026-04-16 14:24:39] Paradigm: p300
+[2026-04-16 14:24:39] Selected subjects: [48, 49, 50, 51, 52, 53, 54]
+[2026-04-16 14:24:39] Expected evaluation folds: 35
+
+[2026-04-16 14:24:39] Building MOABBDataset for Lee2019_ERP...
+[2026-04-16 14:26:21] MOABBDataset recordings loaded: 14
+[2026-04-16 14:26:21] Discovered annotation descriptions (first recording): [np.str_('NonTarget'), np.str_('Target')]
+[2026-04-16 14:26:21] Dataset event_id mapping: {'Target': 1, 'NonTarget': 2}
+[2026-04-16 14:26:21] Label map (event_code -> class_index): {1: 0, 2: 1}
+[2026-04-16 14:26:21] Applying Braindecode preprocessors to MOABBDataset...
+[2026-04-16 14:26:44] Preprocessing complete.
+
+[2026-04-16 14:26:44] Post-preprocessing validation
+[2026-04-16 14:26:44]   Recordings in DATASET: 14
+[2026-04-16 14:26:44]   Unique subject IDs:    ['48', '49', '50', '51', '52', '53', '54']
+[2026-04-16 14:26:44]   sfreq (first rec):     128.0 Hz
+[2026-04-16 14:26:44]   EEG channel count:     62
+[2026-04-16 14:26:44]   First 10 channels:     ['Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2']
+[2026-04-16 14:26:44] EEG channel #: 62
+[2026-04-16 14:26:44] First 10 EEG channels: ['Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2']
+[2026-04-16 14:26:44] Channel-location ranges (x, y, z):
+[2026-04-16 14:26:44]   x: min=-0.087556, max=0.084222, span=0.171778
+[2026-04-16 14:26:44]   y: min=-0.082783, max=0.115346, span=0.198129
+[2026-04-16 14:26:44]   z: min=-0.013156, max=0.141549, span=0.154705
+[2026-04-16 14:26:44] Requested window samples: 152
+[2026-04-16 14:26:44] Base trial samples:       128
+[2026-04-16 14:26:44] Stop offset samples:      24
+[2026-04-16 14:26:44] Global class counts: [23100, 4620]
+[2026-04-16 14:26:44] Chance level (2-class): 0.50
+[2026-04-16 14:26:44] One window shape: (62, 152)
+[2026-04-16 14:26:44] One window label: 0
+[2026-04-16 14:26:44] Window sample length expected=152, got=152
+[2026-04-16 14:26:44] Subjects in window split: [48, 49, 50, 51, 52, 53, 54]
+[2026-04-16 14:26:44] Summarizing per-subject windows...
+[2026-04-16 14:26:44]   Subject 48: n_windows=3960, window_shape=(62, 152), class_counts=[3300, 660]
+[2026-04-16 14:26:44]   Subject 49: n_windows=3960, window_shape=(62, 152), class_counts=[3300, 660]
+[2026-04-16 14:26:44]   Subject 50: n_windows=3960, window_shape=(62, 152), class_counts=[3300, 660]
+[2026-04-16 14:26:44]   Subject 51: n_windows=3960, window_shape=(62, 152), class_counts=[3300, 660]
+[2026-04-16 14:26:44]   Subject 52: n_windows=3960, window_shape=(62, 152), class_counts=[3300, 660]
+[2026-04-16 14:26:44]   Subject 53: n_windows=3960, window_shape=(62, 152), class_counts=[3300, 660]
+[2026-04-16 14:26:44]   Subject 54: n_windows=3960, window_shape=(62, 152), class_counts=[3300, 660]
+[2026-04-16 14:26:45]    subject_id  n_windows  n_channels  n_times class_counts
+0          48       3960          62      152  [3300, 660]
+1          49       3960          62      152  [3300, 660]
+2          50       3960          62      152  [3300, 660]
+3          51       3960          62      152  [3300, 660]
+4          52       3960          62      152  [3300, 660]
+5          53       3960          62      152  [3300, 660]
+6          54       3960          62      152  [3300, 660]
+[2026-04-16 14:26:45] Window validation summary:
+[2026-04-16 14:26:45]   Subject 48: n_windows=3960 class_counts=[3300, 660]
+[2026-04-16 14:26:45]   Subject 49: n_windows=3960 class_counts=[3300, 660]
+[2026-04-16 14:26:45]   Subject 50: n_windows=3960 class_counts=[3300, 660]
+[2026-04-16 14:26:45]   Subject 51: n_windows=3960 class_counts=[3300, 660]
+[2026-04-16 14:26:45]   Subject 52: n_windows=3960 class_counts=[3300, 660]
+[2026-04-16 14:26:45]   Subject 53: n_windows=3960 class_counts=[3300, 660]
+[2026-04-16 14:26:45]   Subject 54: n_windows=3960 class_counts=[3300, 660]
+
+[2026-04-16 14:26:45] Validated sampling rate target: 128 Hz
+[2026-04-16 14:26:45] Validated window sample count:   152
+[2026-04-16 14:26:45] Validated window duration:       1.1875 s
+[2026-04-16 14:26:45] Validated channel count:         62
+[2026-04-16 14:26:45] Total windows retained:          27720
+[2026-04-16 14:26:45] Preprocessing sanity checks:
+[2026-04-16 14:26:45]   One sample label: 0
+[2026-04-16 14:26:45]   One sample shape: (62, 152)
+[2026-04-16 14:26:45]   Mean(abs(signal)): 3.551250e+00
+[2026-04-16 14:26:45]   Mean(signal):      -9.714848e-09
+[2026-04-16 14:26:45]   Std(signal):       4.623938e+00
+[2026-04-16 14:26:45] SignalJEPA_PreLocal instantiated successfully.
+[2026-04-16 14:26:45]   Total parameters:     14,606
+[2026-04-16 14:26:45]   Trainable parameters: 14,606
+[2026-04-16 14:26:45] Initializing from 16s-60 pretrained checkpoint (Hugging Face):
+[2026-04-16 14:26:45]   https://huggingface.co/braindecode/SignalJEPA/resolve/main/signal-jepa_16s-60_adeuwv4s.pth
+[2026-04-16 14:26:45]   Downloaded 179 keys
+[2026-04-16 14:26:45] ======================================================================
+[2026-04-16 14:26:45] STARTING CROSS-VALIDATION
+[2026-04-16 14:26:45] ======================================================================
+[2026-04-16 14:26:45] Subjects:      [48, 49, 50, 51, 52, 53, 54]
+[2026-04-16 14:26:45] Paradigm:      ERP
+[2026-04-16 14:26:45] Model:         SignalJEPA_PreLocal
+[2026-04-16 14:26:45] Strategy:      new
+[2026-04-16 14:26:45] Warm-up epochs:10
+[2026-04-16 14:26:45] CV folds:      5
+[2026-04-16 14:26:45] Batch size:    32
+[2026-04-16 14:26:45] Max epochs:    5000
+[2026-04-16 14:26:45] Device:        cpu
+[2026-04-16 14:26:45] Seed control:  False
+[2026-04-16 14:26:45] Base seed:     None
+[2026-04-16 14:26:45] ERP primary metric: roc_auc
+[2026-04-16 14:26:45] ======================================================================
+
+[2026-04-16 14:26:45] Subject 48: 3960 windows | class_counts=[3300, 660]
+[2026-04-16 14:26:45]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:26:45]     Fine-tune strategy: new
+[2026-04-16 14:26:45]     Warm-up active:     False
+[2026-04-16 14:26:45]     Warm-up epochs:     10
+[2026-04-16 14:26:45]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:26:45]     Phase 1 (new):
+[2026-04-16 14:26:45]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:26:45]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:26:45]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:27:11]   Fold 1/5 | best_epoch=73 | stop=123 | val_loss=0.1794 | acc=0.9104 | bal_acc=0.8098 | roc_auc=0.9317
+[2026-04-16 14:27:11]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:27:11]     Fine-tune strategy: new
+[2026-04-16 14:27:11]     Warm-up active:     False
+[2026-04-16 14:27:11]     Warm-up epochs:     10
+[2026-04-16 14:27:11]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:27:11]     Phase 1 (new):
+[2026-04-16 14:27:11]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:27:11]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:27:11]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:27:25]   Fold 2/5 | best_epoch=20 | stop=70 | val_loss=0.2293 | acc=0.9104 | bal_acc=0.7917 | roc_auc=0.9298
+[2026-04-16 14:27:25]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:27:25]     Fine-tune strategy: new
+[2026-04-16 14:27:25]     Warm-up active:     False
+[2026-04-16 14:27:25]     Warm-up epochs:     10
+[2026-04-16 14:27:25]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:27:25]     Phase 1 (new):
+[2026-04-16 14:27:25]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:27:25]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:27:25]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:27:40]   Fold 3/5 | best_epoch=24 | stop=74 | val_loss=0.2459 | acc=0.8889 | bal_acc=0.7424 | roc_auc=0.9186
+[2026-04-16 14:27:40]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:27:40]     Fine-tune strategy: new
+[2026-04-16 14:27:40]     Warm-up active:     False
+[2026-04-16 14:27:40]     Warm-up epochs:     10
+[2026-04-16 14:27:40]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:27:40]     Phase 1 (new):
+[2026-04-16 14:27:40]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:27:40]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:27:40]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:28:00]   Fold 4/5 | best_epoch=51 | stop=101 | val_loss=0.1934 | acc=0.9268 | bal_acc=0.8318 | roc_auc=0.9628
+[2026-04-16 14:28:00]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:28:00]     Fine-tune strategy: new
+[2026-04-16 14:28:00]     Warm-up active:     False
+[2026-04-16 14:28:00]     Warm-up epochs:     10
+[2026-04-16 14:28:00]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:28:00]     Phase 1 (new):
+[2026-04-16 14:28:00]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:28:00]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:28:00]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:28:17]   Fold 5/5 | best_epoch=41 | stop=91 | val_loss=0.1993 | acc=0.9104 | bal_acc=0.8159 | roc_auc=0.9402
+[2026-04-16 14:28:17]   Subject 48 summary: acc=0.9093±0.0120  bal_acc=0.7983±0.0308  roc_auc=0.9366±0.0148  primary(roc_auc)=0.9366±0.0148
+
+[2026-04-16 14:28:17] Subject 49: 3960 windows | class_counts=[3300, 660]
+[2026-04-16 14:28:17]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:28:17]     Fine-tune strategy: new
+[2026-04-16 14:28:17]     Warm-up active:     False
+[2026-04-16 14:28:17]     Warm-up epochs:     10
+[2026-04-16 14:28:17]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:28:17]     Phase 1 (new):
+[2026-04-16 14:28:17]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:28:17]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:28:17]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:28:59]   Fold 1/5 | best_epoch=164 | stop=214 | val_loss=0.2056 | acc=0.8990 | bal_acc=0.8000 | roc_auc=0.9192
+[2026-04-16 14:28:59]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:28:59]     Fine-tune strategy: new
+[2026-04-16 14:28:59]     Warm-up active:     False
+[2026-04-16 14:28:59]     Warm-up epochs:     10
+[2026-04-16 14:28:59]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:28:59]     Phase 1 (new):
+[2026-04-16 14:28:59]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:28:59]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:28:59]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:29:19]   Fold 2/5 | best_epoch=49 | stop=99 | val_loss=0.1972 | acc=0.9066 | bal_acc=0.7742 | roc_auc=0.9403
+[2026-04-16 14:29:19]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:29:19]     Fine-tune strategy: new
+[2026-04-16 14:29:19]     Warm-up active:     False
+[2026-04-16 14:29:19]     Warm-up epochs:     10
+[2026-04-16 14:29:19]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:29:19]     Phase 1 (new):
+[2026-04-16 14:29:19]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:29:19]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:29:19]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:29:43]   Fold 3/5 | best_epoch=76 | stop=126 | val_loss=0.1859 | acc=0.9179 | bal_acc=0.8235 | roc_auc=0.9254
+[2026-04-16 14:29:43]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:29:43]     Fine-tune strategy: new
+[2026-04-16 14:29:43]     Warm-up active:     False
+[2026-04-16 14:29:43]     Warm-up epochs:     10
+[2026-04-16 14:29:43]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:29:43]     Phase 1 (new):
+[2026-04-16 14:29:43]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:29:43]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:29:43]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:30:11]   Fold 4/5 | best_epoch=95 | stop=145 | val_loss=0.2014 | acc=0.9028 | bal_acc=0.7780 | roc_auc=0.9368
+[2026-04-16 14:30:12]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:30:12]     Fine-tune strategy: new
+[2026-04-16 14:30:12]     Warm-up active:     False
+[2026-04-16 14:30:12]     Warm-up epochs:     10
+[2026-04-16 14:30:12]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:30:12]     Phase 1 (new):
+[2026-04-16 14:30:12]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:30:12]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:30:12]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:30:26]   Fold 5/5 | best_epoch=23 | stop=73 | val_loss=0.2839 | acc=0.9167 | bal_acc=0.8288 | roc_auc=0.9171
+[2026-04-16 14:30:26]   Subject 49 summary: acc=0.9086±0.0075  bal_acc=0.8009±0.0225  roc_auc=0.9277±0.0093  primary(roc_auc)=0.9277±0.0093
+
+[2026-04-16 14:30:26] Subject 50: 3960 windows | class_counts=[3300, 660]
+[2026-04-16 14:30:26]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:30:26]     Fine-tune strategy: new
+[2026-04-16 14:30:26]     Warm-up active:     False
+[2026-04-16 14:30:26]     Warm-up epochs:     10
+[2026-04-16 14:30:26]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:30:26]     Phase 1 (new):
+[2026-04-16 14:30:26]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:30:26]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:30:26]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:30:41]   Fold 1/5 | best_epoch=28 | stop=78 | val_loss=0.2526 | acc=0.8965 | bal_acc=0.7409 | roc_auc=0.9135
+[2026-04-16 14:30:41]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:30:41]     Fine-tune strategy: new
+[2026-04-16 14:30:41]     Warm-up active:     False
+[2026-04-16 14:30:41]     Warm-up epochs:     10
+[2026-04-16 14:30:41]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:30:41]     Phase 1 (new):
+[2026-04-16 14:30:41]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:30:41]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:30:41]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:30:56]   Fold 2/5 | best_epoch=25 | stop=75 | val_loss=0.2878 | acc=0.9053 | bal_acc=0.7705 | roc_auc=0.9017
+[2026-04-16 14:30:56]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:30:56]     Fine-tune strategy: new
+[2026-04-16 14:30:56]     Warm-up active:     False
+[2026-04-16 14:30:56]     Warm-up epochs:     10
+[2026-04-16 14:30:56]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:30:56]     Phase 1 (new):
+[2026-04-16 14:30:56]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:30:56]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:30:56]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:31:10]   Fold 3/5 | best_epoch=25 | stop=75 | val_loss=0.2791 | acc=0.8838 | bal_acc=0.6970 | roc_auc=0.8585
+[2026-04-16 14:31:10]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:31:10]     Fine-tune strategy: new
+[2026-04-16 14:31:10]     Warm-up active:     False
+[2026-04-16 14:31:10]     Warm-up epochs:     10
+[2026-04-16 14:31:10]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:31:10]     Phase 1 (new):
+[2026-04-16 14:31:10]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:31:10]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:31:10]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:31:26]   Fold 4/5 | best_epoch=30 | stop=80 | val_loss=0.2586 | acc=0.8876 | bal_acc=0.7326 | roc_auc=0.8951
+[2026-04-16 14:31:26]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:31:26]     Fine-tune strategy: new
+[2026-04-16 14:31:26]     Warm-up active:     False
+[2026-04-16 14:31:26]     Warm-up epochs:     10
+[2026-04-16 14:31:26]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:31:26]     Phase 1 (new):
+[2026-04-16 14:31:26]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:31:26]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:31:26]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:31:40]   Fold 5/5 | best_epoch=24 | stop=74 | val_loss=0.2705 | acc=0.8788 | bal_acc=0.7182 | roc_auc=0.8842
+[2026-04-16 14:31:40]   Subject 50 summary: acc=0.8904±0.0094  bal_acc=0.7318±0.0244  roc_auc=0.8906±0.0186  primary(roc_auc)=0.8906±0.0186
+
+[2026-04-16 14:31:40] Subject 51: 3960 windows | class_counts=[3300, 660]
+[2026-04-16 14:31:40]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:31:40]     Fine-tune strategy: new
+[2026-04-16 14:31:40]     Warm-up active:     False
+[2026-04-16 14:31:40]     Warm-up epochs:     10
+[2026-04-16 14:31:40]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:31:40]     Phase 1 (new):
+[2026-04-16 14:31:40]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:31:40]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:31:40]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:31:53]   Fold 1/5 | best_epoch=14 | stop=64 | val_loss=0.3809 | acc=0.8485 | bal_acc=0.5909 | roc_auc=0.7402
+[2026-04-16 14:31:53]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:31:53]     Fine-tune strategy: new
+[2026-04-16 14:31:53]     Warm-up active:     False
+[2026-04-16 14:31:53]     Warm-up epochs:     10
+[2026-04-16 14:31:53]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:31:53]     Phase 1 (new):
+[2026-04-16 14:31:53]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:31:53]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:31:53]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:32:12]   Fold 2/5 | best_epoch=50 | stop=100 | val_loss=0.3466 | acc=0.8396 | bal_acc=0.6462 | roc_auc=0.7944
+[2026-04-16 14:32:13]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:32:13]     Fine-tune strategy: new
+[2026-04-16 14:32:13]     Warm-up active:     False
+[2026-04-16 14:32:13]     Warm-up epochs:     10
+[2026-04-16 14:32:13]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:32:13]     Phase 1 (new):
+[2026-04-16 14:32:13]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:32:13]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:32:13]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:32:37]   Fold 3/5 | best_epoch=77 | stop=127 | val_loss=0.3591 | acc=0.8548 | bal_acc=0.6644 | roc_auc=0.8154
+[2026-04-16 14:32:37]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:32:37]     Fine-tune strategy: new
+[2026-04-16 14:32:37]     Warm-up active:     False
+[2026-04-16 14:32:37]     Warm-up epochs:     10
+[2026-04-16 14:32:37]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:32:37]     Phase 1 (new):
+[2026-04-16 14:32:37]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:32:37]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:32:37]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:33:03]   Fold 4/5 | best_epoch=79 | stop=129 | val_loss=0.3587 | acc=0.8535 | bal_acc=0.6667 | roc_auc=0.8027
+[2026-04-16 14:33:03]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:33:03]     Fine-tune strategy: new
+[2026-04-16 14:33:03]     Warm-up active:     False
+[2026-04-16 14:33:03]     Warm-up epochs:     10
+[2026-04-16 14:33:03]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:33:03]     Phase 1 (new):
+[2026-04-16 14:33:03]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:33:03]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:33:03]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:33:17]   Fold 5/5 | best_epoch=22 | stop=72 | val_loss=0.3988 | acc=0.8535 | bal_acc=0.6303 | roc_auc=0.7992
+[2026-04-16 14:33:17]   Subject 51 summary: acc=0.8500±0.0056  bal_acc=0.6397±0.0277  roc_auc=0.7904±0.0260  primary(roc_auc)=0.7904±0.0260
+
+[2026-04-16 14:33:17] Subject 52: 3960 windows | class_counts=[3300, 660]
+[2026-04-16 14:33:17]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:33:17]     Fine-tune strategy: new
+[2026-04-16 14:33:17]     Warm-up active:     False
+[2026-04-16 14:33:17]     Warm-up epochs:     10
+[2026-04-16 14:33:17]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:33:17]     Phase 1 (new):
+[2026-04-16 14:33:17]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:33:17]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:33:17]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:33:40]   Fold 1/5 | best_epoch=65 | stop=115 | val_loss=0.2082 | acc=0.9104 | bal_acc=0.8068 | roc_auc=0.9197
+[2026-04-16 14:33:40]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:33:40]     Fine-tune strategy: new
+[2026-04-16 14:33:40]     Warm-up active:     False
+[2026-04-16 14:33:40]     Warm-up epochs:     10
+[2026-04-16 14:33:40]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:33:40]     Phase 1 (new):
+[2026-04-16 14:33:40]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:33:40]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:33:40]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:34:02]   Fold 2/5 | best_epoch=62 | stop=112 | val_loss=0.2329 | acc=0.9053 | bal_acc=0.8038 | roc_auc=0.9242
+[2026-04-16 14:34:02]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:34:02]     Fine-tune strategy: new
+[2026-04-16 14:34:02]     Warm-up active:     False
+[2026-04-16 14:34:02]     Warm-up epochs:     10
+[2026-04-16 14:34:02]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:34:02]     Phase 1 (new):
+[2026-04-16 14:34:02]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:34:02]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:34:02]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:34:29]   Fold 3/5 | best_epoch=89 | stop=139 | val_loss=0.2402 | acc=0.9331 | bal_acc=0.8447 | roc_auc=0.9446
+[2026-04-16 14:34:29]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:34:29]     Fine-tune strategy: new
+[2026-04-16 14:34:29]     Warm-up active:     False
+[2026-04-16 14:34:29]     Warm-up epochs:     10
+[2026-04-16 14:34:29]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:34:29]     Phase 1 (new):
+[2026-04-16 14:34:29]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:34:29]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:34:29]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:34:48]   Fold 4/5 | best_epoch=45 | stop=95 | val_loss=0.2389 | acc=0.9066 | bal_acc=0.7864 | roc_auc=0.9309
+[2026-04-16 14:34:48]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:34:48]     Fine-tune strategy: new
+[2026-04-16 14:34:48]     Warm-up active:     False
+[2026-04-16 14:34:48]     Warm-up epochs:     10
+[2026-04-16 14:34:48]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:34:48]     Phase 1 (new):
+[2026-04-16 14:34:48]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:34:48]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:34:48]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:35:14]   Fold 5/5 | best_epoch=86 | stop=136 | val_loss=0.1894 | acc=0.9306 | bal_acc=0.8492 | roc_auc=0.9303
+[2026-04-16 14:35:14]   Subject 52 summary: acc=0.9172±0.0121  bal_acc=0.8182±0.0246  roc_auc=0.9299±0.0084  primary(roc_auc)=0.9299±0.0084
+
+[2026-04-16 14:35:15] Subject 53: 3960 windows | class_counts=[3300, 660]
+[2026-04-16 14:35:15]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:35:15]     Fine-tune strategy: new
+[2026-04-16 14:35:15]     Warm-up active:     False
+[2026-04-16 14:35:15]     Warm-up epochs:     10
+[2026-04-16 14:35:15]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:35:15]     Phase 1 (new):
+[2026-04-16 14:35:15]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:35:15]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:35:15]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:35:30]   Fold 1/5 | best_epoch=31 | stop=81 | val_loss=0.2429 | acc=0.8876 | bal_acc=0.7295 | roc_auc=0.9126
+[2026-04-16 14:35:30]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:35:30]     Fine-tune strategy: new
+[2026-04-16 14:35:30]     Warm-up active:     False
+[2026-04-16 14:35:30]     Warm-up epochs:     10
+[2026-04-16 14:35:30]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:35:30]     Phase 1 (new):
+[2026-04-16 14:35:30]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:35:30]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:35:30]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:35:55]   Fold 2/5 | best_epoch=76 | stop=126 | val_loss=0.2303 | acc=0.8952 | bal_acc=0.7614 | roc_auc=0.9139
+[2026-04-16 14:35:55]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:35:55]     Fine-tune strategy: new
+[2026-04-16 14:35:55]     Warm-up active:     False
+[2026-04-16 14:35:55]     Warm-up epochs:     10
+[2026-04-16 14:35:55]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:35:55]     Phase 1 (new):
+[2026-04-16 14:35:55]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:35:55]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:35:55]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:36:13]   Fold 3/5 | best_epoch=42 | stop=92 | val_loss=0.2644 | acc=0.8902 | bal_acc=0.7402 | roc_auc=0.9155
+[2026-04-16 14:36:13]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:36:13]     Fine-tune strategy: new
+[2026-04-16 14:36:13]     Warm-up active:     False
+[2026-04-16 14:36:13]     Warm-up epochs:     10
+[2026-04-16 14:36:13]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:36:13]     Phase 1 (new):
+[2026-04-16 14:36:13]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:36:13]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:36:13]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:36:32]   Fold 4/5 | best_epoch=45 | stop=95 | val_loss=0.2302 | acc=0.9078 | bal_acc=0.7902 | roc_auc=0.9250
+[2026-04-16 14:36:32]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:36:32]     Fine-tune strategy: new
+[2026-04-16 14:36:32]     Warm-up active:     False
+[2026-04-16 14:36:32]     Warm-up epochs:     10
+[2026-04-16 14:36:32]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:36:32]     Phase 1 (new):
+[2026-04-16 14:36:32]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:36:32]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:36:32]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:36:49]   Fold 5/5 | best_epoch=38 | stop=88 | val_loss=0.2318 | acc=0.8977 | bal_acc=0.7811 | roc_auc=0.9169
+[2026-04-16 14:36:49]   Subject 53 summary: acc=0.8957±0.0070  bal_acc=0.7605±0.0231  roc_auc=0.9168±0.0043  primary(roc_auc)=0.9168±0.0043
+
+[2026-04-16 14:36:49] Subject 54: 3960 windows | class_counts=[3300, 660]
+[2026-04-16 14:36:50]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:36:50]     Fine-tune strategy: new
+[2026-04-16 14:36:50]     Warm-up active:     False
+[2026-04-16 14:36:50]     Warm-up epochs:     10
+[2026-04-16 14:36:50]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:36:50]     Phase 1 (new):
+[2026-04-16 14:36:50]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:36:50]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:36:50]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:37:03]   Fold 1/5 | best_epoch=18 | stop=68 | val_loss=0.2672 | acc=0.8788 | bal_acc=0.7182 | roc_auc=0.8778
+[2026-04-16 14:37:03]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:37:03]     Fine-tune strategy: new
+[2026-04-16 14:37:03]     Warm-up active:     False
+[2026-04-16 14:37:03]     Warm-up epochs:     10
+[2026-04-16 14:37:03]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:37:03]     Phase 1 (new):
+[2026-04-16 14:37:03]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:37:03]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:37:03]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:37:25]   Fold 2/5 | best_epoch=62 | stop=112 | val_loss=0.2550 | acc=0.8801 | bal_acc=0.7462 | roc_auc=0.9046
+[2026-04-16 14:37:25]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:37:25]     Fine-tune strategy: new
+[2026-04-16 14:37:25]     Warm-up active:     False
+[2026-04-16 14:37:25]     Warm-up epochs:     10
+[2026-04-16 14:37:25]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:37:25]     Phase 1 (new):
+[2026-04-16 14:37:25]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:37:25]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:37:25]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:37:45]   Fold 3/5 | best_epoch=51 | stop=101 | val_loss=0.2501 | acc=0.9129 | bal_acc=0.7932 | roc_auc=0.9289
+[2026-04-16 14:37:45]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:37:45]     Fine-tune strategy: new
+[2026-04-16 14:37:45]     Warm-up active:     False
+[2026-04-16 14:37:45]     Warm-up epochs:     10
+[2026-04-16 14:37:45]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:37:45]     Phase 1 (new):
+[2026-04-16 14:37:45]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:37:45]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:37:45]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:38:08]   Fold 4/5 | best_epoch=67 | stop=117 | val_loss=0.2159 | acc=0.8826 | bal_acc=0.7386 | roc_auc=0.9067
+[2026-04-16 14:38:08]     Downstream model:   SignalJEPA_PreLocal
+[2026-04-16 14:38:08]     Fine-tune strategy: new
+[2026-04-16 14:38:08]     Warm-up active:     False
+[2026-04-16 14:38:08]     Warm-up epochs:     10
+[2026-04-16 14:38:08]     Missing keys:       ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-16 14:38:08]     Phase 1 (new):
+[2026-04-16 14:38:08]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-16 14:38:08]       Trainable params: 766 / 14,606 (5.2%)
+[2026-04-16 14:38:08]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-16 14:38:28]   Fold 5/5 | best_epoch=53 | stop=103 | val_loss=0.2501 | acc=0.8927 | bal_acc=0.7598 | roc_auc=0.9004
+[2026-04-16 14:38:28]   Subject 54 summary: acc=0.8894±0.0127  bal_acc=0.7512±0.0249  roc_auc=0.9037±0.0163  primary(roc_auc)=0.9037±0.0163
+
+[2026-04-16 14:38:28] Total folds completed: 35
+[2026-04-16 14:38:28] ======================================================================
+[2026-04-16 14:38:28] AGGREGATED RESULTS
+[2026-04-16 14:38:28] ======================================================================
+[2026-04-16 14:38:28]   Subject 48:  acc=0.9093±0.0120  bal_acc=0.7983±0.0308  roc_auc=0.9366±0.0148  primary(roc_auc)=0.9366±0.0148
+[2026-04-16 14:38:28]   Subject 49:  acc=0.9086±0.0075  bal_acc=0.8009±0.0225  roc_auc=0.9277±0.0093  primary(roc_auc)=0.9277±0.0093
+[2026-04-16 14:38:28]   Subject 50:  acc=0.8904±0.0094  bal_acc=0.7318±0.0244  roc_auc=0.8906±0.0186  primary(roc_auc)=0.8906±0.0186
+[2026-04-16 14:38:28]   Subject 51:  acc=0.8500±0.0056  bal_acc=0.6397±0.0277  roc_auc=0.7904±0.0260  primary(roc_auc)=0.7904±0.0260
+[2026-04-16 14:38:28]   Subject 52:  acc=0.9172±0.0121  bal_acc=0.8182±0.0246  roc_auc=0.9299±0.0084  primary(roc_auc)=0.9299±0.0084
+[2026-04-16 14:38:28]   Subject 53:  acc=0.8957±0.0070  bal_acc=0.7605±0.0231  roc_auc=0.9168±0.0043  primary(roc_auc)=0.9168±0.0043
+[2026-04-16 14:38:28]   Subject 54:  acc=0.8894±0.0127  bal_acc=0.7512±0.0249  roc_auc=0.9037±0.0163  primary(roc_auc)=0.9037±0.0163
+[2026-04-16 14:38:28] ----------------------------------------------------------------------
+[2026-04-16 14:38:28]   OVERALL:      acc=0.8944±0.0228  bal_acc=0.7572±0.0614  roc_auc=0.8994±0.0494
+[2026-04-16 14:38:28]   PRIMARY (roc_auc): 0.8994±0.0494
+[2026-04-16 14:38:28] ======================================================================
+[2026-04-16 14:38:28] CV results saved to:      /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/ERP/20260416_1424_06e2f4d8/cv_results.json
+[2026-04-16 14:38:28] Subject metrics saved to: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/ERP/20260416_1424_06e2f4d8/subject_metrics.json
+[2026-04-16 14:38:28] Global metrics saved to:  /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/ERP/20260416_1424_06e2f4d8/global_metrics.json
+[2026-04-16 14:38:28] Run metadata saved to:    /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/ERP/20260416_1424_06e2f4d8/run_metadata.json
+
+[2026-04-16 14:38:28] All artifacts in: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/ERP/20260416_1424_06e2f4d8
+
+[2026-04-16 14:38:28] ======================================================================
+[2026-04-16 14:38:28] EXPERIMENT SUMMARY
+[2026-04-16 14:38:28] ======================================================================
+[2026-04-16 14:38:28] Run ID:    20260416_1424_06e2f4d8
+[2026-04-16 14:38:28] Artifacts: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/ERP/20260416_1424_06e2f4d8
+
+[2026-04-16 14:38:28] Configuration:
+[2026-04-16 14:38:28]   Subjects:          [48, 49, 50, 51, 52, 53, 54]
+[2026-04-16 14:38:28]   Paradigm:          ERP
+[2026-04-16 14:38:28]   Model:             SignalJEPA_PreLocal
+[2026-04-16 14:38:28]   Strategy:          new
+[2026-04-16 14:38:28]   Warm-up epochs:    10
+[2026-04-16 14:38:28]   Bandpass:          0.5-40.0 Hz
+[2026-04-16 14:38:28]   Resample:          128 Hz
+[2026-04-16 14:38:28]   CV folds:          5
+[2026-04-16 14:38:28]   Learning rate:     None
+[2026-04-16 14:38:28]   Batch size:        32
+[2026-04-16 14:38:28]   Max epochs:        5000
+[2026-04-16 14:38:28]   Primary metric:    roc_auc
+
+[2026-04-16 14:38:28] Results:
+[2026-04-16 14:38:28]   Mean Accuracy:          0.8944 ± 0.0228
+[2026-04-16 14:38:28]   Mean Balanced Accuracy: 0.7572 ± 0.0614
+[2026-04-16 14:38:28]   Mean ROC-AUC:           0.8994 ± 0.0494
+[2026-04-16 14:38:28]   Primary (roc_auc): 0.8994 ± 0.0494

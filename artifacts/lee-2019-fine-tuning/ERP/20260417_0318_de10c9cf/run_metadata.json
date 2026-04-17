@@ -1,0 +1,47 @@
+{
+  "run_id": "20260417_0318_de10c9cf",
+  "artifact_dir": "/home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/ERP/20260417_0318_de10c9cf",
+  "paradigm": "ERP",
+  "subjects": [
+    "48",
+    "49",
+    "50",
+    "51",
+    "52",
+    "53",
+    "54"
+  ],
+  "model_name": "SignalJEPA_PreLocal",
+  "strategy": "full",
+  "warmup_epochs": 10,
+  "pretrained_url": "https://huggingface.co/braindecode/SignalJEPA/resolve/main/signal-jepa_16s-60_adeuwv4s.pth",
+  "primary_metric_name": "roc_auc",
+  "primary_metric_label": "ROC-AUC",
+  "paradigm_metric_keys": {
+    "ERP": [
+      "mean_roc_auc",
+      "std_roc_auc"
+    ],
+    "SSVEP": [
+      "mean_accuracy",
+      "std_accuracy"
+    ],
+    "MI": [
+      "mean_accuracy",
+      "std_accuracy"
+    ]
+  },
+  "global_metrics": {
+    "mean_accuracy": 0.9272005772005774,
+    "std_accuracy": 0.041699932998082674,
+    "mean_balanced_accuracy": 0.8302597402597404,
+    "std_balanced_accuracy": 0.13937510964214112,
+    "mean_roc_auc": 0.8935532270759544,
+    "std_roc_auc": 0.16195595534398935,
+    "primary_metric_name": "roc_auc",
+    "primary_metric_mean": 0.8935532270759544,
+    "primary_metric_std": 0.16195595534398935,
+    "n_subjects": 7,
+    "n_folds_total": 35
+  }
+}
