@@ -1,0 +1,767 @@
+[2026-04-23 14:17:08] Using device: cpu
+[2026-04-23 14:17:08] Seed control disabled (CONFIG['set_seed'] = False)
+[2026-04-23 14:17:08] ======================================================================
+[2026-04-23 14:17:08] CONFIGURATION
+[2026-04-23 14:17:08] ======================================================================
+[2026-04-23 14:17:08]   artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning
+[2026-04-23 14:17:08]   bandpass_high: 40.0
+[2026-04-23 14:17:08]   bandpass_low: 0.5
+[2026-04-23 14:17:08]   batch_size: 32
+[2026-04-23 14:17:08]   cv_folds: 5
+[2026-04-23 14:17:08]   early_stopping_patience: 50
+[2026-04-23 14:17:08]   learning_rate: 0.001
+[2026-04-23 14:17:08]   model_name: SignalJEPA_PreLocal
+[2026-04-23 14:17:08]   n_epochs: 5000
+[2026-04-23 14:17:08]   paradigm: MI
+[2026-04-23 14:17:08]   seed: 12
+[2026-04-23 14:17:08]   set_seed: False
+[2026-04-23 14:17:08]   sfreq: 128
+[2026-04-23 14:17:08]   strategy: full
+[2026-04-23 14:17:08]   subjects_to_use: None
+[2026-04-23 14:17:08]   val_split: 0.2
+[2026-04-23 14:17:08]   warmup_epochs: 10
+[2026-04-23 14:17:08] ======================================================================
+[2026-04-23 14:17:08] Config saved to: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/MI/20260423_1417_63d878f7/config.json
+[2026-04-23 14:17:08] Epoch window configuration:
+[2026-04-23 14:17:08]   Target sfreq:                128 Hz
+[2026-04-23 14:17:08]   Requested duration:          4.20 s
+[2026-04-23 14:17:08]   Expected window samples:     537
+
+[2026-04-23 14:17:08] Preprocessed concat dataset exists: True (checked at: /home/vegorov/Repos/eeg_jepa_research/preprocessed_concat_datasets/MI_subjects_48_49_50_51_52_53_54)
+[2026-04-23 14:17:09] Loaded raw concat dataset from: /home/vegorov/Repos/eeg_jepa_research/preprocessed_concat_datasets/MI_subjects_48_49_50_51_52_53_54
+
+[2026-04-23 14:17:09] Post-load raw validation
+[2026-04-23 14:17:09]   Recordings in LOADED_DATASET:   14
+[2026-04-23 14:17:09]   Unique subject IDs:             ['48', '49', '50', '51', '52', '53', '54']
+[2026-04-23 14:17:09]   sfreq (first rec):              128.0 Hz
+[2026-04-23 14:17:09]   EEG channel count:              62
+[2026-04-23 14:17:09] Window shape: (62, 537)
+[2026-04-23 14:17:09] Window sample length expected=537, got=537
+[2026-04-23 14:17:09] Global class counts: [700, 700]
+[2026-04-23 14:17:09] Chance level (2-class): 0.50
+[2026-04-23 14:17:09] Summarizing per-subject windows...
+[2026-04-23 14:17:09]   Subject 48: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-23 14:17:09]   Subject 49: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-23 14:17:09]   Subject 50: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-23 14:17:09]   Subject 51: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-23 14:17:09]   Subject 52: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-23 14:17:09]   Subject 53: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-23 14:17:09]   Subject 54: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-23 14:17:10] SignalJEPA_PreLocal instantiated successfully from braindecode/signal-jepa_without-chans.
+[2026-04-23 14:17:10]   Total parameters:     16,142
+[2026-04-23 14:17:10]   Trainable parameters: 16,142
+[2026-04-23 14:17:10] ======================================================================
+[2026-04-23 14:17:10] STARTING CROSS-VALIDATION
+[2026-04-23 14:17:10] ======================================================================
+[2026-04-23 14:17:10] Subjects:      [48, 49, 50, 51, 52, 53, 54]
+[2026-04-23 14:17:10] Paradigm:      MI
+[2026-04-23 14:17:10] Model:         SignalJEPA_PreLocal
+[2026-04-23 14:17:10] Strategy:      full
+[2026-04-23 14:17:10] Warm-up epochs:10
+[2026-04-23 14:17:10] CV folds:      5
+[2026-04-23 14:17:10] Batch size:    32
+[2026-04-23 14:17:10] Learning rate: 0.001
+[2026-04-23 14:17:10] Max epochs:    5000
+[2026-04-23 14:17:10] Device:        cpu
+[2026-04-23 14:17:10] Seed control:  False
+[2026-04-23 14:17:10] CV seed:       12
+[2026-04-23 14:17:10] ======================================================================
+
+[2026-04-23 14:17:10] Subject 48: 200 windows | class_counts=[100, 100]
+[2026-04-23 14:17:11]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:17:11]     Fine-tune strategy:      full
+[2026-04-23 14:17:11]     Warm-up epochs:          10
+[2026-04-23 14:17:11]     Pretrained loading path: from_pretrained
+[2026-04-23 14:17:11]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:17:11]     Phase 1 (warmup):
+[2026-04-23 14:17:11]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:17:11]       Total params:     16,142
+[2026-04-23 14:17:11]       Trainable params: 2,302
+[2026-04-23 14:17:11]       Trainable pct:    14.26%
+[2026-04-23 14:17:11]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:17:11]     Phase 2 (full):
+[2026-04-23 14:17:11]       Trainable groups: ['all_parameters']
+[2026-04-23 14:17:11]       Total params:     16,142
+[2026-04-23 14:17:11]       Trainable params: 16,142
+[2026-04-23 14:17:11]       Trainable pct:    100.00%
+[2026-04-23 14:17:11]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:18:45]   Fold 1/5 | best_epoch=23 | stop=5000 | val_loss=0.4403 | acc=0.6750 | bal_acc=0.6750 | roc_auc=N/A
+[2026-04-23 14:18:46]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:18:46]     Fine-tune strategy:      full
+[2026-04-23 14:18:46]     Warm-up epochs:          10
+[2026-04-23 14:18:46]     Pretrained loading path: from_pretrained
+[2026-04-23 14:18:46]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:18:46]     Phase 1 (warmup):
+[2026-04-23 14:18:46]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:18:46]       Total params:     16,142
+[2026-04-23 14:18:46]       Trainable params: 2,302
+[2026-04-23 14:18:46]       Trainable pct:    14.26%
+[2026-04-23 14:18:46]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:18:46]     Phase 2 (full):
+[2026-04-23 14:18:46]       Trainable groups: ['all_parameters']
+[2026-04-23 14:18:46]       Total params:     16,142
+[2026-04-23 14:18:46]       Trainable params: 16,142
+[2026-04-23 14:18:46]       Trainable pct:    100.00%
+[2026-04-23 14:18:46]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:20:21]   Fold 2/5 | best_epoch=13 | stop=5000 | val_loss=0.6658 | acc=0.6750 | bal_acc=0.6750 | roc_auc=N/A
+[2026-04-23 14:20:22]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:20:22]     Fine-tune strategy:      full
+[2026-04-23 14:20:22]     Warm-up epochs:          10
+[2026-04-23 14:20:22]     Pretrained loading path: from_pretrained
+[2026-04-23 14:20:22]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:20:22]     Phase 1 (warmup):
+[2026-04-23 14:20:22]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:20:22]       Total params:     16,142
+[2026-04-23 14:20:22]       Trainable params: 2,302
+[2026-04-23 14:20:22]       Trainable pct:    14.26%
+[2026-04-23 14:20:22]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:20:22]     Phase 2 (full):
+[2026-04-23 14:20:22]       Trainable groups: ['all_parameters']
+[2026-04-23 14:20:22]       Total params:     16,142
+[2026-04-23 14:20:22]       Trainable params: 16,142
+[2026-04-23 14:20:22]       Trainable pct:    100.00%
+[2026-04-23 14:20:22]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:21:57]   Fold 3/5 | best_epoch=15 | stop=5000 | val_loss=0.6654 | acc=0.6250 | bal_acc=0.6250 | roc_auc=N/A
+[2026-04-23 14:21:58]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:21:58]     Fine-tune strategy:      full
+[2026-04-23 14:21:58]     Warm-up epochs:          10
+[2026-04-23 14:21:58]     Pretrained loading path: from_pretrained
+[2026-04-23 14:21:58]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:21:58]     Phase 1 (warmup):
+[2026-04-23 14:21:58]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:21:58]       Total params:     16,142
+[2026-04-23 14:21:58]       Trainable params: 2,302
+[2026-04-23 14:21:58]       Trainable pct:    14.26%
+[2026-04-23 14:21:58]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:21:58]     Phase 2 (full):
+[2026-04-23 14:21:58]       Trainable groups: ['all_parameters']
+[2026-04-23 14:21:58]       Total params:     16,142
+[2026-04-23 14:21:58]       Trainable params: 16,142
+[2026-04-23 14:21:58]       Trainable pct:    100.00%
+[2026-04-23 14:21:58]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:23:34]   Fold 4/5 | best_epoch=13 | stop=5000 | val_loss=0.6876 | acc=0.6000 | bal_acc=0.6000 | roc_auc=N/A
+[2026-04-23 14:23:35]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:23:35]     Fine-tune strategy:      full
+[2026-04-23 14:23:35]     Warm-up epochs:          10
+[2026-04-23 14:23:35]     Pretrained loading path: from_pretrained
+[2026-04-23 14:23:35]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:23:35]     Phase 1 (warmup):
+[2026-04-23 14:23:35]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:23:35]       Total params:     16,142
+[2026-04-23 14:23:35]       Trainable params: 2,302
+[2026-04-23 14:23:35]       Trainable pct:    14.26%
+[2026-04-23 14:23:35]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:23:35]     Phase 2 (full):
+[2026-04-23 14:23:35]       Trainable groups: ['all_parameters']
+[2026-04-23 14:23:35]       Total params:     16,142
+[2026-04-23 14:23:35]       Trainable params: 16,142
+[2026-04-23 14:23:35]       Trainable pct:    100.00%
+[2026-04-23 14:23:35]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:25:10]   Fold 5/5 | best_epoch=16 | stop=5000 | val_loss=0.6523 | acc=0.7250 | bal_acc=0.7250 | roc_auc=N/A
+[2026-04-23 14:25:10]   Subject 48 summary: acc=0.6600±0.0436  bal_acc=0.6600±0.0436  roc_auc=N/A
+
+[2026-04-23 14:25:10] Subject 49: 200 windows | class_counts=[100, 100]
+[2026-04-23 14:25:11]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:25:11]     Fine-tune strategy:      full
+[2026-04-23 14:25:11]     Warm-up epochs:          10
+[2026-04-23 14:25:11]     Pretrained loading path: from_pretrained
+[2026-04-23 14:25:11]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:25:11]     Phase 1 (warmup):
+[2026-04-23 14:25:11]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:25:11]       Total params:     16,142
+[2026-04-23 14:25:11]       Trainable params: 2,302
+[2026-04-23 14:25:11]       Trainable pct:    14.26%
+[2026-04-23 14:25:11]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:25:11]     Phase 2 (full):
+[2026-04-23 14:25:11]       Trainable groups: ['all_parameters']
+[2026-04-23 14:25:11]       Total params:     16,142
+[2026-04-23 14:25:11]       Trainable params: 16,142
+[2026-04-23 14:25:11]       Trainable pct:    100.00%
+[2026-04-23 14:25:11]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:26:47]   Fold 1/5 | best_epoch=14 | stop=5000 | val_loss=0.6185 | acc=0.5500 | bal_acc=0.5500 | roc_auc=N/A
+[2026-04-23 14:26:48]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:26:48]     Fine-tune strategy:      full
+[2026-04-23 14:26:48]     Warm-up epochs:          10
+[2026-04-23 14:26:48]     Pretrained loading path: from_pretrained
+[2026-04-23 14:26:48]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:26:48]     Phase 1 (warmup):
+[2026-04-23 14:26:48]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:26:48]       Total params:     16,142
+[2026-04-23 14:26:48]       Trainable params: 2,302
+[2026-04-23 14:26:48]       Trainable pct:    14.26%
+[2026-04-23 14:26:48]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:26:48]     Phase 2 (full):
+[2026-04-23 14:26:48]       Trainable groups: ['all_parameters']
+[2026-04-23 14:26:48]       Total params:     16,142
+[2026-04-23 14:26:48]       Trainable params: 16,142
+[2026-04-23 14:26:48]       Trainable pct:    100.00%
+[2026-04-23 14:26:48]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:28:25]   Fold 2/5 | best_epoch=14 | stop=5000 | val_loss=0.6619 | acc=0.7000 | bal_acc=0.7000 | roc_auc=N/A
+[2026-04-23 14:28:26]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:28:26]     Fine-tune strategy:      full
+[2026-04-23 14:28:26]     Warm-up epochs:          10
+[2026-04-23 14:28:26]     Pretrained loading path: from_pretrained
+[2026-04-23 14:28:26]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:28:26]     Phase 1 (warmup):
+[2026-04-23 14:28:26]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:28:26]       Total params:     16,142
+[2026-04-23 14:28:26]       Trainable params: 2,302
+[2026-04-23 14:28:26]       Trainable pct:    14.26%
+[2026-04-23 14:28:26]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:28:26]     Phase 2 (full):
+[2026-04-23 14:28:26]       Trainable groups: ['all_parameters']
+[2026-04-23 14:28:26]       Total params:     16,142
+[2026-04-23 14:28:26]       Trainable params: 16,142
+[2026-04-23 14:28:26]       Trainable pct:    100.00%
+[2026-04-23 14:28:26]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:30:03]   Fold 3/5 | best_epoch=15 | stop=5000 | val_loss=0.5819 | acc=0.7250 | bal_acc=0.7250 | roc_auc=N/A
+[2026-04-23 14:30:03]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:30:03]     Fine-tune strategy:      full
+[2026-04-23 14:30:03]     Warm-up epochs:          10
+[2026-04-23 14:30:03]     Pretrained loading path: from_pretrained
+[2026-04-23 14:30:03]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:30:03]     Phase 1 (warmup):
+[2026-04-23 14:30:03]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:30:03]       Total params:     16,142
+[2026-04-23 14:30:03]       Trainable params: 2,302
+[2026-04-23 14:30:03]       Trainable pct:    14.26%
+[2026-04-23 14:30:03]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:30:04]     Phase 2 (full):
+[2026-04-23 14:30:04]       Trainable groups: ['all_parameters']
+[2026-04-23 14:30:04]       Total params:     16,142
+[2026-04-23 14:30:04]       Trainable params: 16,142
+[2026-04-23 14:30:04]       Trainable pct:    100.00%
+[2026-04-23 14:30:04]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:31:38]   Fold 4/5 | best_epoch=15 | stop=5000 | val_loss=0.6072 | acc=0.6250 | bal_acc=0.6250 | roc_auc=N/A
+[2026-04-23 14:31:39]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:31:39]     Fine-tune strategy:      full
+[2026-04-23 14:31:39]     Warm-up epochs:          10
+[2026-04-23 14:31:39]     Pretrained loading path: from_pretrained
+[2026-04-23 14:31:39]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:31:39]     Phase 1 (warmup):
+[2026-04-23 14:31:39]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:31:39]       Total params:     16,142
+[2026-04-23 14:31:39]       Trainable params: 2,302
+[2026-04-23 14:31:39]       Trainable pct:    14.26%
+[2026-04-23 14:31:39]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:31:39]     Phase 2 (full):
+[2026-04-23 14:31:39]       Trainable groups: ['all_parameters']
+[2026-04-23 14:31:39]       Total params:     16,142
+[2026-04-23 14:31:39]       Trainable params: 16,142
+[2026-04-23 14:31:39]       Trainable pct:    100.00%
+[2026-04-23 14:31:39]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:33:15]   Fold 5/5 | best_epoch=15 | stop=5000 | val_loss=0.5147 | acc=0.7000 | bal_acc=0.7000 | roc_auc=N/A
+[2026-04-23 14:33:15]   Subject 49 summary: acc=0.6600±0.0644  bal_acc=0.6600±0.0644  roc_auc=N/A
+
+[2026-04-23 14:33:15] Subject 50: 200 windows | class_counts=[100, 100]
+[2026-04-23 14:33:16]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:33:16]     Fine-tune strategy:      full
+[2026-04-23 14:33:16]     Warm-up epochs:          10
+[2026-04-23 14:33:16]     Pretrained loading path: from_pretrained
+[2026-04-23 14:33:16]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:33:16]     Phase 1 (warmup):
+[2026-04-23 14:33:16]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:33:16]       Total params:     16,142
+[2026-04-23 14:33:16]       Trainable params: 2,302
+[2026-04-23 14:33:16]       Trainable pct:    14.26%
+[2026-04-23 14:33:16]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:33:16]     Phase 2 (full):
+[2026-04-23 14:33:16]       Trainable groups: ['all_parameters']
+[2026-04-23 14:33:16]       Total params:     16,142
+[2026-04-23 14:33:16]       Trainable params: 16,142
+[2026-04-23 14:33:16]       Trainable pct:    100.00%
+[2026-04-23 14:33:16]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:34:52]   Fold 1/5 | best_epoch=16 | stop=5000 | val_loss=0.6722 | acc=0.5250 | bal_acc=0.5250 | roc_auc=N/A
+[2026-04-23 14:34:52]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:34:52]     Fine-tune strategy:      full
+[2026-04-23 14:34:52]     Warm-up epochs:          10
+[2026-04-23 14:34:52]     Pretrained loading path: from_pretrained
+[2026-04-23 14:34:52]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:34:52]     Phase 1 (warmup):
+[2026-04-23 14:34:52]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:34:52]       Total params:     16,142
+[2026-04-23 14:34:52]       Trainable params: 2,302
+[2026-04-23 14:34:52]       Trainable pct:    14.26%
+[2026-04-23 14:34:52]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:34:53]     Phase 2 (full):
+[2026-04-23 14:34:53]       Trainable groups: ['all_parameters']
+[2026-04-23 14:34:53]       Total params:     16,142
+[2026-04-23 14:34:53]       Trainable params: 16,142
+[2026-04-23 14:34:53]       Trainable pct:    100.00%
+[2026-04-23 14:34:53]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:36:27]   Fold 2/5 | best_epoch=14 | stop=5000 | val_loss=0.6885 | acc=0.6250 | bal_acc=0.6250 | roc_auc=N/A
+[2026-04-23 14:36:28]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:36:28]     Fine-tune strategy:      full
+[2026-04-23 14:36:28]     Warm-up epochs:          10
+[2026-04-23 14:36:28]     Pretrained loading path: from_pretrained
+[2026-04-23 14:36:28]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:36:28]     Phase 1 (warmup):
+[2026-04-23 14:36:28]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:36:28]       Total params:     16,142
+[2026-04-23 14:36:28]       Trainable params: 2,302
+[2026-04-23 14:36:28]       Trainable pct:    14.26%
+[2026-04-23 14:36:28]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:36:28]     Phase 2 (full):
+[2026-04-23 14:36:28]       Trainable groups: ['all_parameters']
+[2026-04-23 14:36:28]       Total params:     16,142
+[2026-04-23 14:36:28]       Trainable params: 16,142
+[2026-04-23 14:36:28]       Trainable pct:    100.00%
+[2026-04-23 14:36:28]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:38:03]   Fold 3/5 | best_epoch=11 | stop=5000 | val_loss=0.6922 | acc=0.5500 | bal_acc=0.5500 | roc_auc=N/A
+[2026-04-23 14:38:03]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:38:03]     Fine-tune strategy:      full
+[2026-04-23 14:38:03]     Warm-up epochs:          10
+[2026-04-23 14:38:03]     Pretrained loading path: from_pretrained
+[2026-04-23 14:38:03]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:38:03]     Phase 1 (warmup):
+[2026-04-23 14:38:03]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:38:03]       Total params:     16,142
+[2026-04-23 14:38:03]       Trainable params: 2,302
+[2026-04-23 14:38:03]       Trainable pct:    14.26%
+[2026-04-23 14:38:03]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:38:04]     Phase 2 (full):
+[2026-04-23 14:38:04]       Trainable groups: ['all_parameters']
+[2026-04-23 14:38:04]       Total params:     16,142
+[2026-04-23 14:38:04]       Trainable params: 16,142
+[2026-04-23 14:38:04]       Trainable pct:    100.00%
+[2026-04-23 14:38:04]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:39:38]   Fold 4/5 | best_epoch=1 | stop=5000 | val_loss=0.6937 | acc=0.4250 | bal_acc=0.4250 | roc_auc=N/A
+[2026-04-23 14:39:38]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:39:38]     Fine-tune strategy:      full
+[2026-04-23 14:39:38]     Warm-up epochs:          10
+[2026-04-23 14:39:38]     Pretrained loading path: from_pretrained
+[2026-04-23 14:39:38]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:39:38]     Phase 1 (warmup):
+[2026-04-23 14:39:38]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:39:38]       Total params:     16,142
+[2026-04-23 14:39:38]       Trainable params: 2,302
+[2026-04-23 14:39:38]       Trainable pct:    14.26%
+[2026-04-23 14:39:38]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:39:38]     Phase 2 (full):
+[2026-04-23 14:39:38]       Trainable groups: ['all_parameters']
+[2026-04-23 14:39:38]       Total params:     16,142
+[2026-04-23 14:39:38]       Trainable params: 16,142
+[2026-04-23 14:39:38]       Trainable pct:    100.00%
+[2026-04-23 14:39:38]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:41:13]   Fold 5/5 | best_epoch=11 | stop=5000 | val_loss=0.6935 | acc=0.6500 | bal_acc=0.6500 | roc_auc=N/A
+[2026-04-23 14:41:13]   Subject 50 summary: acc=0.5550±0.0797  bal_acc=0.5550±0.0797  roc_auc=N/A
+
+[2026-04-23 14:41:13] Subject 51: 200 windows | class_counts=[100, 100]
+[2026-04-23 14:41:14]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:41:14]     Fine-tune strategy:      full
+[2026-04-23 14:41:14]     Warm-up epochs:          10
+[2026-04-23 14:41:14]     Pretrained loading path: from_pretrained
+[2026-04-23 14:41:14]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:41:14]     Phase 1 (warmup):
+[2026-04-23 14:41:14]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:41:14]       Total params:     16,142
+[2026-04-23 14:41:14]       Trainable params: 2,302
+[2026-04-23 14:41:14]       Trainable pct:    14.26%
+[2026-04-23 14:41:14]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:41:14]     Phase 2 (full):
+[2026-04-23 14:41:14]       Trainable groups: ['all_parameters']
+[2026-04-23 14:41:14]       Total params:     16,142
+[2026-04-23 14:41:14]       Trainable params: 16,142
+[2026-04-23 14:41:14]       Trainable pct:    100.00%
+[2026-04-23 14:41:14]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:42:50]   Fold 1/5 | best_epoch=14 | stop=5000 | val_loss=0.6739 | acc=0.4000 | bal_acc=0.4000 | roc_auc=N/A
+[2026-04-23 14:42:51]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:42:51]     Fine-tune strategy:      full
+[2026-04-23 14:42:51]     Warm-up epochs:          10
+[2026-04-23 14:42:51]     Pretrained loading path: from_pretrained
+[2026-04-23 14:42:51]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:42:51]     Phase 1 (warmup):
+[2026-04-23 14:42:51]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:42:51]       Total params:     16,142
+[2026-04-23 14:42:51]       Trainable params: 2,302
+[2026-04-23 14:42:51]       Trainable pct:    14.26%
+[2026-04-23 14:42:51]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:42:51]     Phase 2 (full):
+[2026-04-23 14:42:51]       Trainable groups: ['all_parameters']
+[2026-04-23 14:42:51]       Total params:     16,142
+[2026-04-23 14:42:51]       Trainable params: 16,142
+[2026-04-23 14:42:51]       Trainable pct:    100.00%
+[2026-04-23 14:42:51]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:44:28]   Fold 2/5 | best_epoch=1 | stop=5000 | val_loss=0.6938 | acc=0.5500 | bal_acc=0.5500 | roc_auc=N/A
+[2026-04-23 14:44:29]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:44:29]     Fine-tune strategy:      full
+[2026-04-23 14:44:29]     Warm-up epochs:          10
+[2026-04-23 14:44:29]     Pretrained loading path: from_pretrained
+[2026-04-23 14:44:29]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:44:29]     Phase 1 (warmup):
+[2026-04-23 14:44:29]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:44:29]       Total params:     16,142
+[2026-04-23 14:44:29]       Trainable params: 2,302
+[2026-04-23 14:44:29]       Trainable pct:    14.26%
+[2026-04-23 14:44:29]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:44:29]     Phase 2 (full):
+[2026-04-23 14:44:29]       Trainable groups: ['all_parameters']
+[2026-04-23 14:44:29]       Total params:     16,142
+[2026-04-23 14:44:29]       Trainable params: 16,142
+[2026-04-23 14:44:29]       Trainable pct:    100.00%
+[2026-04-23 14:44:29]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:46:07]   Fold 3/5 | best_epoch=13 | stop=5000 | val_loss=0.6805 | acc=0.4500 | bal_acc=0.4500 | roc_auc=N/A
+[2026-04-23 14:46:07]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:46:07]     Fine-tune strategy:      full
+[2026-04-23 14:46:07]     Warm-up epochs:          10
+[2026-04-23 14:46:07]     Pretrained loading path: from_pretrained
+[2026-04-23 14:46:07]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:46:07]     Phase 1 (warmup):
+[2026-04-23 14:46:07]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:46:07]       Total params:     16,142
+[2026-04-23 14:46:07]       Trainable params: 2,302
+[2026-04-23 14:46:07]       Trainable pct:    14.26%
+[2026-04-23 14:46:07]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:46:08]     Phase 2 (full):
+[2026-04-23 14:46:08]       Trainable groups: ['all_parameters']
+[2026-04-23 14:46:08]       Total params:     16,142
+[2026-04-23 14:46:08]       Trainable params: 16,142
+[2026-04-23 14:46:08]       Trainable pct:    100.00%
+[2026-04-23 14:46:08]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:47:44]   Fold 4/5 | best_epoch=1 | stop=5000 | val_loss=0.6947 | acc=0.6000 | bal_acc=0.6000 | roc_auc=N/A
+[2026-04-23 14:47:45]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:47:45]     Fine-tune strategy:      full
+[2026-04-23 14:47:45]     Warm-up epochs:          10
+[2026-04-23 14:47:45]     Pretrained loading path: from_pretrained
+[2026-04-23 14:47:45]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:47:45]     Phase 1 (warmup):
+[2026-04-23 14:47:45]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:47:45]       Total params:     16,142
+[2026-04-23 14:47:45]       Trainable params: 2,302
+[2026-04-23 14:47:45]       Trainable pct:    14.26%
+[2026-04-23 14:47:45]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:47:45]     Phase 2 (full):
+[2026-04-23 14:47:45]       Trainable groups: ['all_parameters']
+[2026-04-23 14:47:45]       Total params:     16,142
+[2026-04-23 14:47:45]       Trainable params: 16,142
+[2026-04-23 14:47:45]       Trainable pct:    100.00%
+[2026-04-23 14:47:45]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:49:22]   Fold 5/5 | best_epoch=11 | stop=5000 | val_loss=0.6914 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-23 14:49:22]   Subject 51 summary: acc=0.5000±0.0707  bal_acc=0.5000±0.0707  roc_auc=N/A
+
+[2026-04-23 14:49:22] Subject 52: 200 windows | class_counts=[100, 100]
+[2026-04-23 14:49:23]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:49:23]     Fine-tune strategy:      full
+[2026-04-23 14:49:23]     Warm-up epochs:          10
+[2026-04-23 14:49:23]     Pretrained loading path: from_pretrained
+[2026-04-23 14:49:23]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:49:23]     Phase 1 (warmup):
+[2026-04-23 14:49:23]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:49:23]       Total params:     16,142
+[2026-04-23 14:49:23]       Trainable params: 2,302
+[2026-04-23 14:49:23]       Trainable pct:    14.26%
+[2026-04-23 14:49:23]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:49:23]     Phase 2 (full):
+[2026-04-23 14:49:23]       Trainable groups: ['all_parameters']
+[2026-04-23 14:49:23]       Total params:     16,142
+[2026-04-23 14:49:23]       Trainable params: 16,142
+[2026-04-23 14:49:23]       Trainable pct:    100.00%
+[2026-04-23 14:49:23]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:50:58]   Fold 1/5 | best_epoch=13 | stop=5000 | val_loss=0.6772 | acc=0.5750 | bal_acc=0.5750 | roc_auc=N/A
+[2026-04-23 14:50:59]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:50:59]     Fine-tune strategy:      full
+[2026-04-23 14:50:59]     Warm-up epochs:          10
+[2026-04-23 14:50:59]     Pretrained loading path: from_pretrained
+[2026-04-23 14:50:59]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:50:59]     Phase 1 (warmup):
+[2026-04-23 14:50:59]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:50:59]       Total params:     16,142
+[2026-04-23 14:50:59]       Trainable params: 2,302
+[2026-04-23 14:50:59]       Trainable pct:    14.26%
+[2026-04-23 14:50:59]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:50:59]     Phase 2 (full):
+[2026-04-23 14:50:59]       Trainable groups: ['all_parameters']
+[2026-04-23 14:50:59]       Total params:     16,142
+[2026-04-23 14:50:59]       Trainable params: 16,142
+[2026-04-23 14:50:59]       Trainable pct:    100.00%
+[2026-04-23 14:50:59]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:52:34]   Fold 2/5 | best_epoch=14 | stop=5000 | val_loss=0.6836 | acc=0.6500 | bal_acc=0.6500 | roc_auc=N/A
+[2026-04-23 14:52:34]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:52:34]     Fine-tune strategy:      full
+[2026-04-23 14:52:34]     Warm-up epochs:          10
+[2026-04-23 14:52:34]     Pretrained loading path: from_pretrained
+[2026-04-23 14:52:34]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:52:34]     Phase 1 (warmup):
+[2026-04-23 14:52:34]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:52:34]       Total params:     16,142
+[2026-04-23 14:52:34]       Trainable params: 2,302
+[2026-04-23 14:52:34]       Trainable pct:    14.26%
+[2026-04-23 14:52:34]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:52:35]     Phase 2 (full):
+[2026-04-23 14:52:35]       Trainable groups: ['all_parameters']
+[2026-04-23 14:52:35]       Total params:     16,142
+[2026-04-23 14:52:35]       Trainable params: 16,142
+[2026-04-23 14:52:35]       Trainable pct:    100.00%
+[2026-04-23 14:52:35]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:54:09]   Fold 3/5 | best_epoch=17 | stop=5000 | val_loss=0.5714 | acc=0.6250 | bal_acc=0.6250 | roc_auc=N/A
+[2026-04-23 14:54:10]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:54:10]     Fine-tune strategy:      full
+[2026-04-23 14:54:10]     Warm-up epochs:          10
+[2026-04-23 14:54:10]     Pretrained loading path: from_pretrained
+[2026-04-23 14:54:10]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:54:10]     Phase 1 (warmup):
+[2026-04-23 14:54:10]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:54:10]       Total params:     16,142
+[2026-04-23 14:54:10]       Trainable params: 2,302
+[2026-04-23 14:54:10]       Trainable pct:    14.26%
+[2026-04-23 14:54:10]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:54:10]     Phase 2 (full):
+[2026-04-23 14:54:10]       Trainable groups: ['all_parameters']
+[2026-04-23 14:54:10]       Total params:     16,142
+[2026-04-23 14:54:10]       Trainable params: 16,142
+[2026-04-23 14:54:10]       Trainable pct:    100.00%
+[2026-04-23 14:54:10]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:55:45]   Fold 4/5 | best_epoch=14 | stop=5000 | val_loss=0.6817 | acc=0.6500 | bal_acc=0.6500 | roc_auc=N/A
+[2026-04-23 14:55:46]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:55:46]     Fine-tune strategy:      full
+[2026-04-23 14:55:46]     Warm-up epochs:          10
+[2026-04-23 14:55:46]     Pretrained loading path: from_pretrained
+[2026-04-23 14:55:46]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:55:46]     Phase 1 (warmup):
+[2026-04-23 14:55:46]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:55:46]       Total params:     16,142
+[2026-04-23 14:55:46]       Trainable params: 2,302
+[2026-04-23 14:55:46]       Trainable pct:    14.26%
+[2026-04-23 14:55:46]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:55:46]     Phase 2 (full):
+[2026-04-23 14:55:46]       Trainable groups: ['all_parameters']
+[2026-04-23 14:55:46]       Total params:     16,142
+[2026-04-23 14:55:46]       Trainable params: 16,142
+[2026-04-23 14:55:46]       Trainable pct:    100.00%
+[2026-04-23 14:55:46]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:57:22]   Fold 5/5 | best_epoch=12 | stop=5000 | val_loss=0.6918 | acc=0.5750 | bal_acc=0.5750 | roc_auc=N/A
+[2026-04-23 14:57:22]   Subject 52 summary: acc=0.6150±0.0339  bal_acc=0.6150±0.0339  roc_auc=N/A
+
+[2026-04-23 14:57:22] Subject 53: 200 windows | class_counts=[100, 100]
+[2026-04-23 14:57:23]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:57:23]     Fine-tune strategy:      full
+[2026-04-23 14:57:23]     Warm-up epochs:          10
+[2026-04-23 14:57:23]     Pretrained loading path: from_pretrained
+[2026-04-23 14:57:23]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:57:23]     Phase 1 (warmup):
+[2026-04-23 14:57:23]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:57:23]       Total params:     16,142
+[2026-04-23 14:57:23]       Trainable params: 2,302
+[2026-04-23 14:57:23]       Trainable pct:    14.26%
+[2026-04-23 14:57:23]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:57:23]     Phase 2 (full):
+[2026-04-23 14:57:23]       Trainable groups: ['all_parameters']
+[2026-04-23 14:57:23]       Total params:     16,142
+[2026-04-23 14:57:23]       Trainable params: 16,142
+[2026-04-23 14:57:23]       Trainable pct:    100.00%
+[2026-04-23 14:57:23]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:58:57]   Fold 1/5 | best_epoch=14 | stop=5000 | val_loss=0.6568 | acc=0.7000 | bal_acc=0.7000 | roc_auc=N/A
+[2026-04-23 14:58:58]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 14:58:58]     Fine-tune strategy:      full
+[2026-04-23 14:58:58]     Warm-up epochs:          10
+[2026-04-23 14:58:58]     Pretrained loading path: from_pretrained
+[2026-04-23 14:58:58]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 14:58:58]     Phase 1 (warmup):
+[2026-04-23 14:58:58]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 14:58:58]       Total params:     16,142
+[2026-04-23 14:58:58]       Trainable params: 2,302
+[2026-04-23 14:58:58]       Trainable pct:    14.26%
+[2026-04-23 14:58:58]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 14:58:58]     Phase 2 (full):
+[2026-04-23 14:58:58]       Trainable groups: ['all_parameters']
+[2026-04-23 14:58:58]       Total params:     16,142
+[2026-04-23 14:58:58]       Trainable params: 16,142
+[2026-04-23 14:58:58]       Trainable pct:    100.00%
+[2026-04-23 14:58:58]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 15:00:32]   Fold 2/5 | best_epoch=15 | stop=5000 | val_loss=0.6190 | acc=0.6000 | bal_acc=0.6000 | roc_auc=N/A
+[2026-04-23 15:00:33]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 15:00:33]     Fine-tune strategy:      full
+[2026-04-23 15:00:33]     Warm-up epochs:          10
+[2026-04-23 15:00:33]     Pretrained loading path: from_pretrained
+[2026-04-23 15:00:33]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 15:00:33]     Phase 1 (warmup):
+[2026-04-23 15:00:33]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 15:00:33]       Total params:     16,142
+[2026-04-23 15:00:33]       Trainable params: 2,302
+[2026-04-23 15:00:33]       Trainable pct:    14.26%
+[2026-04-23 15:00:33]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 15:00:33]     Phase 2 (full):
+[2026-04-23 15:00:33]       Trainable groups: ['all_parameters']
+[2026-04-23 15:00:33]       Total params:     16,142
+[2026-04-23 15:00:33]       Trainable params: 16,142
+[2026-04-23 15:00:33]       Trainable pct:    100.00%
+[2026-04-23 15:00:33]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 15:02:08]   Fold 3/5 | best_epoch=15 | stop=5000 | val_loss=0.6704 | acc=0.8500 | bal_acc=0.8500 | roc_auc=N/A
+[2026-04-23 15:02:09]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 15:02:09]     Fine-tune strategy:      full
+[2026-04-23 15:02:09]     Warm-up epochs:          10
+[2026-04-23 15:02:09]     Pretrained loading path: from_pretrained
+[2026-04-23 15:02:09]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 15:02:09]     Phase 1 (warmup):
+[2026-04-23 15:02:09]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 15:02:09]       Total params:     16,142
+[2026-04-23 15:02:09]       Trainable params: 2,302
+[2026-04-23 15:02:09]       Trainable pct:    14.26%
+[2026-04-23 15:02:09]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 15:02:09]     Phase 2 (full):
+[2026-04-23 15:02:09]       Trainable groups: ['all_parameters']
+[2026-04-23 15:02:09]       Total params:     16,142
+[2026-04-23 15:02:09]       Trainable params: 16,142
+[2026-04-23 15:02:09]       Trainable pct:    100.00%
+[2026-04-23 15:02:09]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 15:03:45]   Fold 4/5 | best_epoch=13 | stop=5000 | val_loss=0.6804 | acc=0.8750 | bal_acc=0.8750 | roc_auc=N/A
+[2026-04-23 15:03:46]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 15:03:46]     Fine-tune strategy:      full
+[2026-04-23 15:03:46]     Warm-up epochs:          10
+[2026-04-23 15:03:46]     Pretrained loading path: from_pretrained
+[2026-04-23 15:03:46]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 15:03:46]     Phase 1 (warmup):
+[2026-04-23 15:03:46]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 15:03:46]       Total params:     16,142
+[2026-04-23 15:03:46]       Trainable params: 2,302
+[2026-04-23 15:03:46]       Trainable pct:    14.26%
+[2026-04-23 15:03:46]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 15:03:46]     Phase 2 (full):
+[2026-04-23 15:03:46]       Trainable groups: ['all_parameters']
+[2026-04-23 15:03:46]       Total params:     16,142
+[2026-04-23 15:03:46]       Trainable params: 16,142
+[2026-04-23 15:03:46]       Trainable pct:    100.00%
+[2026-04-23 15:03:46]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 15:05:23]   Fold 5/5 | best_epoch=12 | stop=5000 | val_loss=0.6925 | acc=0.6500 | bal_acc=0.6500 | roc_auc=N/A
+[2026-04-23 15:05:23]   Subject 53 summary: acc=0.7350±0.1091  bal_acc=0.7350±0.1091  roc_auc=N/A
+
+[2026-04-23 15:05:23] Subject 54: 200 windows | class_counts=[100, 100]
+[2026-04-23 15:05:23]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 15:05:23]     Fine-tune strategy:      full
+[2026-04-23 15:05:23]     Warm-up epochs:          10
+[2026-04-23 15:05:23]     Pretrained loading path: from_pretrained
+[2026-04-23 15:05:23]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 15:05:23]     Phase 1 (warmup):
+[2026-04-23 15:05:23]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 15:05:23]       Total params:     16,142
+[2026-04-23 15:05:23]       Trainable params: 2,302
+[2026-04-23 15:05:23]       Trainable pct:    14.26%
+[2026-04-23 15:05:23]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 15:05:24]     Phase 2 (full):
+[2026-04-23 15:05:24]       Trainable groups: ['all_parameters']
+[2026-04-23 15:05:24]       Total params:     16,142
+[2026-04-23 15:05:24]       Trainable params: 16,142
+[2026-04-23 15:05:24]       Trainable pct:    100.00%
+[2026-04-23 15:05:24]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 15:07:00]   Fold 1/5 | best_epoch=13 | stop=5000 | val_loss=0.6633 | acc=0.5500 | bal_acc=0.5500 | roc_auc=N/A
+[2026-04-23 15:07:01]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 15:07:01]     Fine-tune strategy:      full
+[2026-04-23 15:07:01]     Warm-up epochs:          10
+[2026-04-23 15:07:01]     Pretrained loading path: from_pretrained
+[2026-04-23 15:07:01]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 15:07:01]     Phase 1 (warmup):
+[2026-04-23 15:07:01]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 15:07:01]       Total params:     16,142
+[2026-04-23 15:07:01]       Trainable params: 2,302
+[2026-04-23 15:07:01]       Trainable pct:    14.26%
+[2026-04-23 15:07:01]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 15:07:01]     Phase 2 (full):
+[2026-04-23 15:07:01]       Trainable groups: ['all_parameters']
+[2026-04-23 15:07:01]       Total params:     16,142
+[2026-04-23 15:07:01]       Trainable params: 16,142
+[2026-04-23 15:07:01]       Trainable pct:    100.00%
+[2026-04-23 15:07:01]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 15:08:37]   Fold 2/5 | best_epoch=18 | stop=5000 | val_loss=0.6527 | acc=0.5750 | bal_acc=0.5750 | roc_auc=N/A
+[2026-04-23 15:08:37]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 15:08:37]     Fine-tune strategy:      full
+[2026-04-23 15:08:37]     Warm-up epochs:          10
+[2026-04-23 15:08:37]     Pretrained loading path: from_pretrained
+[2026-04-23 15:08:37]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 15:08:37]     Phase 1 (warmup):
+[2026-04-23 15:08:37]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 15:08:37]       Total params:     16,142
+[2026-04-23 15:08:37]       Trainable params: 2,302
+[2026-04-23 15:08:37]       Trainable pct:    14.26%
+[2026-04-23 15:08:37]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 15:08:38]     Phase 2 (full):
+[2026-04-23 15:08:38]       Trainable groups: ['all_parameters']
+[2026-04-23 15:08:38]       Total params:     16,142
+[2026-04-23 15:08:38]       Trainable params: 16,142
+[2026-04-23 15:08:38]       Trainable pct:    100.00%
+[2026-04-23 15:08:38]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 15:10:14]   Fold 3/5 | best_epoch=10 | stop=5000 | val_loss=0.6922 | acc=0.4750 | bal_acc=0.4750 | roc_auc=N/A
+[2026-04-23 15:10:15]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 15:10:15]     Fine-tune strategy:      full
+[2026-04-23 15:10:15]     Warm-up epochs:          10
+[2026-04-23 15:10:15]     Pretrained loading path: from_pretrained
+[2026-04-23 15:10:15]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 15:10:15]     Phase 1 (warmup):
+[2026-04-23 15:10:15]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 15:10:15]       Total params:     16,142
+[2026-04-23 15:10:15]       Trainable params: 2,302
+[2026-04-23 15:10:15]       Trainable pct:    14.26%
+[2026-04-23 15:10:15]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 15:10:15]     Phase 2 (full):
+[2026-04-23 15:10:15]       Trainable groups: ['all_parameters']
+[2026-04-23 15:10:15]       Total params:     16,142
+[2026-04-23 15:10:15]       Trainable params: 16,142
+[2026-04-23 15:10:15]       Trainable pct:    100.00%
+[2026-04-23 15:10:15]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 15:11:51]   Fold 4/5 | best_epoch=16 | stop=5000 | val_loss=0.6263 | acc=0.6250 | bal_acc=0.6250 | roc_auc=N/A
+[2026-04-23 15:11:52]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-23 15:11:52]     Fine-tune strategy:      full
+[2026-04-23 15:11:52]     Warm-up epochs:          10
+[2026-04-23 15:11:52]     Pretrained loading path: from_pretrained
+[2026-04-23 15:11:52]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-23 15:11:52]     Phase 1 (warmup):
+[2026-04-23 15:11:52]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-23 15:11:52]       Total params:     16,142
+[2026-04-23 15:11:52]       Trainable params: 2,302
+[2026-04-23 15:11:52]       Trainable pct:    14.26%
+[2026-04-23 15:11:52]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 15:11:52]     Phase 2 (full):
+[2026-04-23 15:11:52]       Trainable groups: ['all_parameters']
+[2026-04-23 15:11:52]       Total params:     16,142
+[2026-04-23 15:11:52]       Trainable params: 16,142
+[2026-04-23 15:11:52]       Trainable pct:    100.00%
+[2026-04-23 15:11:52]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-23 15:13:27]   Fold 5/5 | best_epoch=16 | stop=5000 | val_loss=0.6017 | acc=0.6250 | bal_acc=0.6250 | roc_auc=N/A
+[2026-04-23 15:13:27]   Subject 54 summary: acc=0.5700±0.0557  bal_acc=0.5700±0.0557  roc_auc=N/A
+
+[2026-04-23 15:13:27] Total folds completed: 35
+[2026-04-23 15:13:27] ======================================================================
+[2026-04-23 15:13:27] AGGREGATED RESULTS
+[2026-04-23 15:13:27] ======================================================================
+[2026-04-23 15:13:27]   Subject 48:  acc=0.6600±0.0436  bal_acc=0.6600±0.0436  roc_auc=N/A 
+[2026-04-23 15:13:27]   Subject 49:  acc=0.6600±0.0644  bal_acc=0.6600±0.0644  roc_auc=N/A 
+[2026-04-23 15:13:27]   Subject 50:  acc=0.5550±0.0797  bal_acc=0.5550±0.0797  roc_auc=N/A 
+[2026-04-23 15:13:27]   Subject 51:  acc=0.5000±0.0707  bal_acc=0.5000±0.0707  roc_auc=N/A 
+[2026-04-23 15:13:27]   Subject 52:  acc=0.6150±0.0339  bal_acc=0.6150±0.0339  roc_auc=N/A 
+[2026-04-23 15:13:27]   Subject 53:  acc=0.7350±0.1091  bal_acc=0.7350±0.1091  roc_auc=N/A 
+[2026-04-23 15:13:27]   Subject 54:  acc=0.5700±0.0557  bal_acc=0.5700±0.0557  roc_auc=N/A 
+[2026-04-23 15:13:27] ----------------------------------------------------------------------
+[2026-04-23 15:13:27]   OVERALL:      acc=0.6136±0.1006  bal_acc=0.6136±0.1006  roc_auc=N/A
+[2026-04-23 15:13:27] ======================================================================
+[2026-04-23 15:13:27] CV results saved to:      /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/MI/20260423_1417_63d878f7/cv_results.json
+[2026-04-23 15:13:27] Subject metrics saved to: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/MI/20260423_1417_63d878f7/subject_metrics.json
+[2026-04-23 15:13:27] Global metrics saved to:  /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/MI/20260423_1417_63d878f7/global_metrics.json
+[2026-04-23 15:13:27] Run metadata saved to:    /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/MI/20260423_1417_63d878f7/run_metadata.json
+
+[2026-04-23 15:13:27] All artifacts in: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/MI/20260423_1417_63d878f7
+
+[2026-04-23 15:13:27] ======================================================================
+[2026-04-23 15:13:27] EXPERIMENT SUMMARY
+[2026-04-23 15:13:27] ======================================================================
+[2026-04-23 15:13:27] Run ID:    20260423_1417_63d878f7
+[2026-04-23 15:13:27] Artifacts: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/MI/20260423_1417_63d878f7
+
+[2026-04-23 15:13:27] Configuration:
+[2026-04-23 15:13:27]   Subjects:              [48, 49, 50, 51, 52, 53, 54]
+[2026-04-23 15:13:27]   Paradigm:              MI
+[2026-04-23 15:13:27]   Model:                 SignalJEPA_PreLocal
+[2026-04-23 15:13:27]   Strategy:              full
+[2026-04-23 15:13:27]   Warm-up epochs:        10
+[2026-04-23 15:13:27]   Bandpass:              0.5-40.0 Hz
+[2026-04-23 15:13:27]   Resample:              128 Hz
+[2026-04-23 15:13:27]   CV folds:              5
+[2026-04-23 15:13:27]   Validation split:      0.2
+[2026-04-23 15:13:27]   Learning rate:         0.001
+[2026-04-23 15:13:27]   Batch size:            32
+[2026-04-23 15:13:27]   Max epochs:            5000
+[2026-04-23 15:13:27]   CV seed:               12
+[2026-04-23 15:13:27]   Pretrained loading:    from_pretrained
+
+[2026-04-23 15:13:27] Results:
+[2026-04-23 15:13:27]   Mean Accuracy:          0.6136 ± 0.1006
+[2026-04-23 15:13:27]   Mean Balanced Accuracy: 0.6136 ± 0.1006
+[2026-04-23 15:13:27]   Mean ROC-AUC:           N/A

@@ -1,0 +1,940 @@
+[2026-04-22 16:11:18] Using device: cpu
+[2026-04-22 16:11:18] Seed control disabled (CONFIG['set_seed'] = False)
+[2026-04-22 16:11:18] ======================================================================
+[2026-04-22 16:11:18] CONFIGURATION
+[2026-04-22 16:11:18] ======================================================================
+[2026-04-22 16:11:18]   artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning
+[2026-04-22 16:11:18]   bandpass_high: 40.0
+[2026-04-22 16:11:18]   bandpass_low: 0.5
+[2026-04-22 16:11:18]   batch_size: 32
+[2026-04-22 16:11:18]   cv_folds: 5
+[2026-04-22 16:11:18]   early_stopping_patience: 50
+[2026-04-22 16:11:18]   learning_rate: 0.001
+[2026-04-22 16:11:18]   model_name: SignalJEPA_Contextual
+[2026-04-22 16:11:18]   n_epochs: 5000
+[2026-04-22 16:11:18]   paradigm: MI
+[2026-04-22 16:11:18]   seed: 12
+[2026-04-22 16:11:18]   set_seed: False
+[2026-04-22 16:11:18]   sfreq: 128
+[2026-04-22 16:11:18]   strategy: new
+[2026-04-22 16:11:18]   subjects_to_use: None
+[2026-04-22 16:11:18]   val_split: 0.2
+[2026-04-22 16:11:18]   warmup_epochs: 10
+[2026-04-22 16:11:18] ======================================================================
+[2026-04-22 16:11:18] Config saved to: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/MI/20260422_1611_bf7b511a/config.json
+[2026-04-22 16:11:18] Epoch window configuration:
+[2026-04-22 16:11:18]   Target sfreq:                128 Hz
+[2026-04-22 16:11:18]   Requested duration:          4.20 s
+[2026-04-22 16:11:18]   Expected window samples:     537
+
+[2026-04-22 16:11:18] Preprocessed concat dataset exists: True (checked at: /home/vegorov/Repos/eeg_jepa_research/preprocessed_concat_datasets/MI_subjects_48_49_50_51_52_53_54)
+[2026-04-22 16:11:18] Loaded raw concat dataset from: /home/vegorov/Repos/eeg_jepa_research/preprocessed_concat_datasets/MI_subjects_48_49_50_51_52_53_54
+
+[2026-04-22 16:11:18] Post-load raw validation
+[2026-04-22 16:11:18]   Recordings in LOADED_DATASET:   14
+[2026-04-22 16:11:18]   Unique subject IDs:             ['48', '49', '50', '51', '52', '53', '54']
+[2026-04-22 16:11:18]   sfreq (first rec):              128.0 Hz
+[2026-04-22 16:11:18]   EEG channel count:              62
+[2026-04-22 16:11:19] Window shape: (62, 537)
+[2026-04-22 16:11:19] Window sample length expected=537, got=537
+[2026-04-22 16:11:19] Global class counts: [700, 700]
+[2026-04-22 16:11:19] Chance level (2-class): 0.50
+[2026-04-22 16:11:19] Summarizing per-subject windows...
+[2026-04-22 16:11:19]   Subject 48: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 16:11:19]   Subject 49: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 16:11:19]   Subject 50: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 16:11:19]   Subject 51: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 16:11:19]   Subject 52: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 16:11:19]   Subject 53: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 16:11:19]   Subject 54: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 16:11:19] SignalJEPA_Contextual instantiated successfully from braindecode/signal-jepa.
+[2026-04-22 16:11:19]   Total parameters:     3,459,154
+[2026-04-22 16:11:19]   Trainable parameters: 3,459,154
+[2026-04-22 16:11:19] ======================================================================
+[2026-04-22 16:11:19] STARTING CROSS-VALIDATION
+[2026-04-22 16:11:19] ======================================================================
+[2026-04-22 16:11:19] Subjects:      [48, 49, 50, 51, 52, 53, 54]
+[2026-04-22 16:11:19] Paradigm:      MI
+[2026-04-22 16:11:19] Model:         SignalJEPA_Contextual
+[2026-04-22 16:11:19] Strategy:      new
+[2026-04-22 16:11:19] Warm-up epochs:10
+[2026-04-22 16:11:19] CV folds:      5
+[2026-04-22 16:11:19] Batch size:    32
+[2026-04-22 16:11:19] Learning rate: 0.001
+[2026-04-22 16:11:19] Max epochs:    5000
+[2026-04-22 16:11:19] Device:        cpu
+[2026-04-22 16:11:19] Seed control:  False
+[2026-04-22 16:11:19] CV seed:       12
+[2026-04-22 16:11:19] ======================================================================
+
+[2026-04-22 16:11:19] Subject 48: 200 windows | class_counts=[100, 100]
+[2026-04-22 16:11:20]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 16:11:20]     Fine-tune strategy:      new
+[2026-04-22 16:11:20]     Pretrained loading path: from_pretrained
+[2026-04-22 16:11:20]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 16:11:20]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 16:11:20]       Total params:     3,459,154
+[2026-04-22 16:11:20]       Trainable params: 4,162
+[2026-04-22 16:11:20]       Trainable pct:    0.12%
+[2026-04-22 16:11:20]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 16:18:07]   Fold 1/5 | best_epoch=52 | stop=52 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 16:18:08]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 16:18:08]     Fine-tune strategy:      new
+[2026-04-22 16:18:08]     Pretrained loading path: from_pretrained
+[2026-04-22 16:18:08]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 16:18:08]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 16:18:08]       Total params:     3,459,154
+[2026-04-22 16:18:08]       Trainable params: 4,162
+[2026-04-22 16:18:08]       Trainable pct:    0.12%
+[2026-04-22 16:18:08]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 16:25:21]   Fold 2/5 | best_epoch=55 | stop=55 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 16:25:22]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 16:25:22]     Fine-tune strategy:      new
+[2026-04-22 16:25:22]     Pretrained loading path: from_pretrained
+[2026-04-22 16:25:22]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 16:25:22]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 16:25:22]       Total params:     3,459,154
+[2026-04-22 16:25:22]       Trainable params: 4,162
+[2026-04-22 16:25:22]       Trainable pct:    0.12%
+[2026-04-22 16:25:22]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 16:32:44]   Fold 3/5 | best_epoch=13 | stop=56 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 16:32:44]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 16:32:44]     Fine-tune strategy:      new
+[2026-04-22 16:32:44]     Pretrained loading path: from_pretrained
+[2026-04-22 16:32:44]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 16:32:44]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 16:32:44]       Total params:     3,459,154
+[2026-04-22 16:32:44]       Trainable params: 4,162
+[2026-04-22 16:32:44]       Trainable pct:    0.12%
+[2026-04-22 16:32:44]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 16:39:42]   Fold 4/5 | best_epoch=21 | stop=53 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 16:39:43]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 16:39:43]     Fine-tune strategy:      new
+[2026-04-22 16:39:43]     Pretrained loading path: from_pretrained
+[2026-04-22 16:39:43]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 16:39:43]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 16:39:43]       Total params:     3,459,154
+[2026-04-22 16:39:43]       Trainable params: 4,162
+[2026-04-22 16:39:43]       Trainable pct:    0.12%
+[2026-04-22 16:39:43]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 16:49:08]   Fold 5/5 | best_epoch=41 | stop=72 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 16:49:08]   Subject 48 summary: acc=0.5000±0.0000  bal_acc=0.5000±0.0000  roc_auc=N/A
+
+[2026-04-22 16:49:08] Subject 49: 200 windows | class_counts=[100, 100]
+[2026-04-22 16:49:09]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 16:49:09]     Fine-tune strategy:      new
+[2026-04-22 16:49:09]     Pretrained loading path: from_pretrained
+[2026-04-22 16:49:09]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 16:49:09]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 16:49:09]       Total params:     3,459,154
+[2026-04-22 16:49:09]       Trainable params: 4,162
+[2026-04-22 16:49:09]       Trainable pct:    0.12%
+[2026-04-22 16:49:09]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 16:56:11]   Fold 1/5 | best_epoch=8 | stop=54 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 16:56:12]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 16:56:12]     Fine-tune strategy:      new
+[2026-04-22 16:56:12]     Pretrained loading path: from_pretrained
+[2026-04-22 16:56:12]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 16:56:12]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 16:56:12]       Total params:     3,459,154
+[2026-04-22 16:56:12]       Trainable params: 4,162
+[2026-04-22 16:56:12]       Trainable pct:    0.12%
+[2026-04-22 16:56:12]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 17:09:16]   Fold 2/5 | best_epoch=90 | stop=100 | val_loss=0.6932 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 17:09:17]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 17:09:17]     Fine-tune strategy:      new
+[2026-04-22 17:09:17]     Pretrained loading path: from_pretrained
+[2026-04-22 17:09:17]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 17:09:17]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 17:09:17]       Total params:     3,459,154
+[2026-04-22 17:09:17]       Trainable params: 4,162
+[2026-04-22 17:09:17]       Trainable pct:    0.12%
+[2026-04-22 17:09:17]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 17:15:57]   Fold 3/5 | best_epoch=33 | stop=51 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 17:15:57]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 17:15:57]     Fine-tune strategy:      new
+[2026-04-22 17:15:57]     Pretrained loading path: from_pretrained
+[2026-04-22 17:15:57]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 17:15:57]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 17:15:57]       Total params:     3,459,154
+[2026-04-22 17:15:57]       Trainable params: 4,162
+[2026-04-22 17:15:57]       Trainable pct:    0.12%
+[2026-04-22 17:15:57]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 17:33:03]   Fold 4/5 | best_epoch=81 | stop=131 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 17:33:04]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 17:33:04]     Fine-tune strategy:      new
+[2026-04-22 17:33:04]     Pretrained loading path: from_pretrained
+[2026-04-22 17:33:04]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 17:33:04]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 17:33:04]       Total params:     3,459,154
+[2026-04-22 17:33:04]       Trainable params: 4,162
+[2026-04-22 17:33:04]       Trainable pct:    0.12%
+[2026-04-22 17:33:04]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 17:40:06]   Fold 5/5 | best_epoch=22 | stop=54 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 17:40:06]   Subject 49 summary: acc=0.5000±0.0000  bal_acc=0.5000±0.0000  roc_auc=N/A
+
+[2026-04-22 17:40:06] Subject 50: 200 windows | class_counts=[100, 100]
+[2026-04-22 17:40:07]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 17:40:07]     Fine-tune strategy:      new
+[2026-04-22 17:40:07]     Pretrained loading path: from_pretrained
+[2026-04-22 17:40:07]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 17:40:07]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 17:40:07]       Total params:     3,459,154
+[2026-04-22 17:40:07]       Trainable params: 4,162
+[2026-04-22 17:40:07]       Trainable pct:    0.12%
+[2026-04-22 17:40:07]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 17:50:00]   Fold 1/5 | best_epoch=50 | stop=76 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 17:50:01]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 17:50:01]     Fine-tune strategy:      new
+[2026-04-22 17:50:01]     Pretrained loading path: from_pretrained
+[2026-04-22 17:50:01]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 17:50:01]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 17:50:01]       Total params:     3,459,154
+[2026-04-22 17:50:01]       Trainable params: 4,162
+[2026-04-22 17:50:01]       Trainable pct:    0.12%
+[2026-04-22 17:50:01]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 17:57:12]   Fold 2/5 | best_epoch=35 | stop=55 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 17:57:13]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 17:57:13]     Fine-tune strategy:      new
+[2026-04-22 17:57:13]     Pretrained loading path: from_pretrained
+[2026-04-22 17:57:13]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 17:57:13]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 17:57:13]       Total params:     3,459,154
+[2026-04-22 17:57:13]       Trainable params: 4,162
+[2026-04-22 17:57:13]       Trainable pct:    0.12%
+[2026-04-22 17:57:13]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 18:04:40]   Fold 3/5 | best_epoch=47 | stop=57 | val_loss=0.6932 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 18:04:40]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 18:04:40]     Fine-tune strategy:      new
+[2026-04-22 18:04:40]     Pretrained loading path: from_pretrained
+[2026-04-22 18:04:40]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 18:04:40]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 18:04:40]       Total params:     3,459,154
+[2026-04-22 18:04:40]       Trainable params: 4,162
+[2026-04-22 18:04:40]       Trainable pct:    0.12%
+[2026-04-22 18:04:40]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 18:16:04]   Fold 4/5 | best_epoch=44 | stop=87 | val_loss=0.6932 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 18:16:05]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 18:16:05]     Fine-tune strategy:      new
+[2026-04-22 18:16:05]     Pretrained loading path: from_pretrained
+[2026-04-22 18:16:05]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 18:16:05]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 18:16:05]       Total params:     3,459,154
+[2026-04-22 18:16:05]       Trainable params: 4,162
+[2026-04-22 18:16:05]       Trainable pct:    0.12%
+[2026-04-22 18:16:05]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 18:22:59]   Fold 5/5 | best_epoch=49 | stop=53 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 18:22:59]   Subject 50 summary: acc=0.5000±0.0000  bal_acc=0.5000±0.0000  roc_auc=N/A
+
+[2026-04-22 18:22:59] Subject 51: 200 windows | class_counts=[100, 100]
+[2026-04-22 18:23:00]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 18:23:00]     Fine-tune strategy:      new
+[2026-04-22 18:23:00]     Pretrained loading path: from_pretrained
+[2026-04-22 18:23:00]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 18:23:00]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 18:23:00]       Total params:     3,459,154
+[2026-04-22 18:23:00]       Trainable params: 4,162
+[2026-04-22 18:23:00]       Trainable pct:    0.12%
+[2026-04-22 18:23:00]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 18:29:46]   Fold 1/5 | best_epoch=3 | stop=52 | val_loss=0.6932 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 18:29:47]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 18:29:47]     Fine-tune strategy:      new
+[2026-04-22 18:29:47]     Pretrained loading path: from_pretrained
+[2026-04-22 18:29:47]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 18:29:47]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 18:29:47]       Total params:     3,459,154
+[2026-04-22 18:29:47]       Trainable params: 4,162
+[2026-04-22 18:29:47]       Trainable pct:    0.12%
+[2026-04-22 18:29:47]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 18:37:28]   Fold 2/5 | best_epoch=9 | stop=59 | val_loss=0.6932 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 18:37:28]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 18:37:28]     Fine-tune strategy:      new
+[2026-04-22 18:37:28]     Pretrained loading path: from_pretrained
+[2026-04-22 18:37:28]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 18:37:28]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 18:37:28]       Total params:     3,459,154
+[2026-04-22 18:37:28]       Trainable params: 4,162
+[2026-04-22 18:37:28]       Trainable pct:    0.12%
+[2026-04-22 18:37:28]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 18:46:12]   Fold 3/5 | best_epoch=66 | stop=67 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 18:46:13]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 18:46:13]     Fine-tune strategy:      new
+[2026-04-22 18:46:13]     Pretrained loading path: from_pretrained
+[2026-04-22 18:46:13]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 18:46:13]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 18:46:13]       Total params:     3,459,154
+[2026-04-22 18:46:13]       Trainable params: 4,162
+[2026-04-22 18:46:13]       Trainable pct:    0.12%
+[2026-04-22 18:46:13]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 18:52:53]   Fold 4/5 | best_epoch=38 | stop=51 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 18:52:54]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 18:52:54]     Fine-tune strategy:      new
+[2026-04-22 18:52:54]     Pretrained loading path: from_pretrained
+[2026-04-22 18:52:54]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 18:52:54]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 18:52:54]       Total params:     3,459,154
+[2026-04-22 18:52:54]       Trainable params: 4,162
+[2026-04-22 18:52:54]       Trainable pct:    0.12%
+[2026-04-22 18:52:54]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 18:59:58]   Fold 5/5 | best_epoch=21 | stop=54 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 18:59:58]   Subject 51 summary: acc=0.5000±0.0000  bal_acc=0.5000±0.0000  roc_auc=N/A
+
+[2026-04-22 18:59:58] Subject 52: 200 windows | class_counts=[100, 100]
+[2026-04-22 18:59:58]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 18:59:58]     Fine-tune strategy:      new
+[2026-04-22 18:59:58]     Pretrained loading path: from_pretrained
+[2026-04-22 18:59:58]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 18:59:58]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 18:59:58]       Total params:     3,459,154
+[2026-04-22 18:59:58]       Trainable params: 4,162
+[2026-04-22 18:59:58]       Trainable pct:    0.12%
+[2026-04-22 18:59:58]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 19:07:02]   Fold 1/5 | best_epoch=14 | stop=54 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 19:07:03]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 19:07:03]     Fine-tune strategy:      new
+[2026-04-22 19:07:03]     Pretrained loading path: from_pretrained
+[2026-04-22 19:07:03]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 19:07:03]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 19:07:03]       Total params:     3,459,154
+[2026-04-22 19:07:03]       Trainable params: 4,162
+[2026-04-22 19:07:03]       Trainable pct:    0.12%
+[2026-04-22 19:07:03]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 19:13:50]   Fold 2/5 | best_epoch=3 | stop=52 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 19:13:51]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 19:13:51]     Fine-tune strategy:      new
+[2026-04-22 19:13:51]     Pretrained loading path: from_pretrained
+[2026-04-22 19:13:51]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 19:13:51]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 19:13:51]       Total params:     3,459,154
+[2026-04-22 19:13:51]       Trainable params: 4,162
+[2026-04-22 19:13:51]       Trainable pct:    0.12%
+[2026-04-22 19:13:51]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 19:20:40]   Fold 3/5 | best_epoch=52 | stop=52 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 19:20:40]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 19:20:40]     Fine-tune strategy:      new
+[2026-04-22 19:20:40]     Pretrained loading path: from_pretrained
+[2026-04-22 19:20:40]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 19:20:40]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 19:20:40]       Total params:     3,459,154
+[2026-04-22 19:20:40]       Trainable params: 4,162
+[2026-04-22 19:20:40]       Trainable pct:    0.12%
+[2026-04-22 19:20:40]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 19:32:20]   Fold 4/5 | best_epoch=41 | stop=89 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 19:32:21]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 19:32:21]     Fine-tune strategy:      new
+[2026-04-22 19:32:21]     Pretrained loading path: from_pretrained
+[2026-04-22 19:32:21]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 19:32:21]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 19:32:21]       Total params:     3,459,154
+[2026-04-22 19:32:21]       Trainable params: 4,162
+[2026-04-22 19:32:21]       Trainable pct:    0.12%
+[2026-04-22 19:32:21]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 19:40:14]   Fold 5/5 | best_epoch=10 | stop=60 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 19:40:14]   Subject 52 summary: acc=0.5000±0.0000  bal_acc=0.5000±0.0000  roc_auc=N/A
+
+[2026-04-22 19:40:14] Subject 53: 200 windows | class_counts=[100, 100]
+[2026-04-22 19:40:15]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 19:40:15]     Fine-tune strategy:      new
+[2026-04-22 19:40:15]     Pretrained loading path: from_pretrained
+[2026-04-22 19:40:15]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 19:40:15]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 19:40:15]       Total params:     3,459,154
+[2026-04-22 19:40:15]       Trainable params: 4,162
+[2026-04-22 19:40:15]       Trainable pct:    0.12%
+[2026-04-22 19:40:15]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 19:47:19]   Fold 1/5 | best_epoch=22 | stop=54 | val_loss=0.6932 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 19:47:19]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 19:47:19]     Fine-tune strategy:      new
+[2026-04-22 19:47:19]     Pretrained loading path: from_pretrained
+[2026-04-22 19:47:19]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 19:47:19]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 19:47:19]       Total params:     3,459,154
+[2026-04-22 19:47:19]       Trainable params: 4,162
+[2026-04-22 19:47:19]       Trainable pct:    0.12%
+[2026-04-22 19:47:19]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 19:58:02]   Fold 2/5 | best_epoch=32 | stop=82 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 19:58:02]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 19:58:02]     Fine-tune strategy:      new
+[2026-04-22 19:58:02]     Pretrained loading path: from_pretrained
+[2026-04-22 19:58:02]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 19:58:02]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 19:58:02]       Total params:     3,459,154
+[2026-04-22 19:58:02]       Trainable params: 4,162
+[2026-04-22 19:58:02]       Trainable pct:    0.12%
+[2026-04-22 19:58:02]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 20:08:45]   Fold 3/5 | best_epoch=33 | stop=82 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 20:08:46]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 20:08:46]     Fine-tune strategy:      new
+[2026-04-22 20:08:46]     Pretrained loading path: from_pretrained
+[2026-04-22 20:08:46]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 20:08:46]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 20:08:46]       Total params:     3,459,154
+[2026-04-22 20:08:46]       Trainable params: 4,162
+[2026-04-22 20:08:46]       Trainable pct:    0.12%
+[2026-04-22 20:08:46]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 20:15:26]   Fold 4/5 | best_epoch=1 | stop=51 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 20:15:26]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 20:15:26]     Fine-tune strategy:      new
+[2026-04-22 20:15:26]     Pretrained loading path: from_pretrained
+[2026-04-22 20:15:26]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 20:15:26]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 20:15:26]       Total params:     3,459,154
+[2026-04-22 20:15:26]       Trainable params: 4,162
+[2026-04-22 20:15:26]       Trainable pct:    0.12%
+[2026-04-22 20:15:26]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 20:23:49]   Fold 5/5 | best_epoch=21 | stop=64 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 20:23:49]   Subject 53 summary: acc=0.5000±0.0000  bal_acc=0.5000±0.0000  roc_auc=N/A
+
+[2026-04-22 20:23:49] Subject 54: 200 windows | class_counts=[100, 100]
+[2026-04-22 20:23:50]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 20:23:50]     Fine-tune strategy:      new
+[2026-04-22 20:23:50]     Pretrained loading path: from_pretrained
+[2026-04-22 20:23:50]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 20:23:50]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 20:23:50]       Total params:     3,459,154
+[2026-04-22 20:23:50]       Trainable params: 4,162
+[2026-04-22 20:23:50]       Trainable pct:    0.12%
+[2026-04-22 20:23:50]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 20:30:32]   Fold 1/5 | best_epoch=8 | stop=51 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 20:30:33]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 20:30:33]     Fine-tune strategy:      new
+[2026-04-22 20:30:33]     Pretrained loading path: from_pretrained
+[2026-04-22 20:30:33]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 20:30:33]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 20:30:33]       Total params:     3,459,154
+[2026-04-22 20:30:33]       Trainable params: 4,162
+[2026-04-22 20:30:33]       Trainable pct:    0.12%
+[2026-04-22 20:30:33]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 20:37:39]   Fold 2/5 | best_epoch=26 | stop=54 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 20:37:39]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 20:37:39]     Fine-tune strategy:      new
+[2026-04-22 20:37:39]     Pretrained loading path: from_pretrained
+[2026-04-22 20:37:39]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 20:37:39]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 20:37:39]       Total params:     3,459,154
+[2026-04-22 20:37:39]       Trainable params: 4,162
+[2026-04-22 20:37:39]       Trainable pct:    0.12%
+[2026-04-22 20:37:39]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+Notebook:       /home/vegorov/Repos/eeg_jepa_research/src/lee2019_finetune_sjepa.ipynb
+Configurations: /home/vegorov/Repos/eeg_jepa_research/src/utils/experiments/configs/full_mi_sweep.json
+Total configs:  4
+
+[1/4] Running config override:
+{
+  "paradigm": "MI",
+  "model_name": "SignalJEPA_Contextual",
+  "strategy": "new"
+}
+  status:       completed
+  elapsed_sec:  17677.027
+  run_id:       20260422_1611_bf7b511a
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/MI/20260422_1611_bf7b511a
+
+[2/4] Running config override:
+{
+  "paradigm": "MI",
+  "model_name": "SignalJEPA_PreLocal",
+  "strategy": "full"
+}
+  status:       failed
+  elapsed_sec:  7.316
+  run_id:       20260422_1611_bf7b511a
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/MI/20260422_1611_bf7b511a
+  error:        An error occurred while executing the following cell:
+------------------
+print("=" * 70)
+print("STARTING CROSS-VALIDATION")
+print("=" * 70)
+print(f"Subjects:      {list(SUBJECT_WINDOWS.keys())}")
+print(f"Paradigm:      {CONFIG['paradigm']}")
+print(f"Model:         {CONFIG['model_name']}")
+print(f"Strategy:      {CONFIG['strategy']}")
+print(f"Warm-up epochs:{CONFIG['warmup_epochs']}")
+print(f"CV folds:      {CONFIG['cv_folds']}")
+print(f"Batch size:    {CONFIG['batch_size']}")
+print(f"Learning rate: {CONFIG['learning_rate']}")
+print(f"Max epochs:    {CONFIG['n_epochs']}")
+print(f"Device:        {DEVICE}")
+print(f"Seed control:  {CONFIG['set_seed']}")
+print(f"CV seed:       {BASE_SEED}")
+print("=" * 70)
+
+FOLD_RESULTS = []
+
+for sid, subject_ds in SUBJECT_WINDOWS.items():
+    fold_results = run_subject_cv(
+        sid,
+        subject_ds,
+        TARGET_N_CLASSES,
+        CONFIG["cv_folds"],
+    )
+    FOLD_RESULTS.extend(fold_results)
+
+print(f"\nTotal folds completed: {len(FOLD_RESULTS)}")
+------------------
+
+----- stdout -----
+  epoch    train_loss    valid_acc    valid_loss     dur
+-------  ------------  -----------  ------------  ------
+      1        [36m0.6927[0m       [32m0.5000[0m        [35m0.6920[0m  0.0266
+      2        [36m0.6896[0m       [32m0.5312[0m        [35m0.6909[0m  0.0163
+      3        [36m0.6870[0m       [32m0.5938[0m        [35m0.6894[0m  0.0158
+      4        [36m0.6844[0m       [32m0.6562[0m        [35m0.6882[0m  0.0159
+      5        [36m0.6814[0m       [32m0.6875[0m        [35m0.6872[0m  0.0156
+      6        [36m0.6786[0m       0.6875        [35m0.6860[0m  0.0151
+      7        [36m0.6756[0m       0.6875        [35m0.6846[0m  0.0161
+      8        [36m0.6728[0m       [32m0.7188[0m        [35m0.6829[0m  0.0159
+      9        [36m0.6697[0m       0.7188        [35m0.6815[0m  0.0162
+     10        [36m0.6666[0m       0.7188        [35m0.6802[0m  0.0163
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mValueError[39m                                Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[37][39m[32m, line 21[39m
+[32m     18[39m FOLD_RESULTS = []
+[32m     20[39m [38;5;28;01mfor[39;00m sid, subject_ds [38;5;129;01min[39;00m SUBJECT_WINDOWS.items():
+[32m---> [39m[32m21[39m     fold_results = [43mrun_subject_cv[49m[43m([49m
+[32m     22[39m [43m        [49m[43msid[49m[43m,[49m
+[32m     23[39m [43m        [49m[43msubject_ds[49m[43m,[49m
+[32m     24[39m [43m        [49m[43mTARGET_N_CLASSES[49m[43m,[49m
+[32m     25[39m [43m        [49m[43mCONFIG[49m[43m[[49m[33;43m"[39;49m[33;43mcv_folds[39;49m[33;43m"[39;49m[43m][49m[43m,[49m
+[32m     26[39m [43m    [49m[43m)[49m
+[32m     27[39m     FOLD_RESULTS.extend(fold_results)
+[32m     29[39m [38;5;28mprint[39m([33mf[39m[33m"[39m[38;5;130;01m\n[39;00m[33mTotal folds completed: [39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(FOLD_RESULTS)[38;5;132;01m}[39;00m[33m"[39m)
+
+[36mCell[39m[36m [39m[32mIn[36][39m[32m, line 15[39m, in [36mrun_subject_cv[39m[34m(subject_id, subject_dataset, n_classes, cv_folds)[39m
+[32m     12[39m results = []
+[32m     14[39m [38;5;28;01mfor[39;00m fold [38;5;129;01min[39;00m folds:
+[32m---> [39m[32m15[39m     result = [43mrun_single_fold[49m[43m([49m
+[32m     16[39m [43m        [49m[43mfold[49m[43m[[49m[33;43m"[39;49m[33;43mfold_id[39;49m[33;43m"[39;49m[43m][49m[43m,[49m
+[32m     17[39m [43m        [49m[43msubject_id[49m[43m,[49m
+[32m     18[39m [43m        [49m[43msubject_dataset[49m[43m,[49m
+[32m     19[39m [43m        [49m[43mfold[49m[43m[[49m[33;43m"[39;49m[33;43midx_train[39;49m[33;43m"[39;49m[43m][49m[43m,[49m
+[32m     20[39m [43m        [49m[43mfold[49m[43m[[49m[33;43m"[39;49m[33;43midx_test[39;49m[33;43m"[39;49m[43m][49m[43m,[49m
+[32m     21[39m [43m    [49m[43m)[49m
+[32m     22[39m     results.append(result)
+[32m     24[39m acc_values = [r[[33m"[39m[33maccuracy[39m[33m"[39m] [38;5;28;01mfor[39;00m r [38;5;129;01min[39;00m results [38;5;28;01mif[39;00m r[[33m"[39m[33maccuracy[39m[33m"[39m] [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m]
+
+[36mCell[39m[36m [39m[32mIn[34][39m[32m, line 202[39m, in [36mrun_single_fold[39m[34m(fold_id, subject_id, subject_dataset, idx_train, idx_test)[39m
+[32m    189[39m     callbacks = [
+[32m    190[39m         (
+[32m    191[39m             [33m"[39m[33mearly_stopping[39m[33m"[39m,
+[32m   (...)[39m[32m    198[39m         ),
+[32m    199[39m     ]
+[32m    201[39m     clf.set_params(callbacks=callbacks, max_epochs=remaining_epochs)
+[32m--> [39m[32m202[39m     [43mclf[49m[43m.[49m[43mfit[49m[43m([49m[43mtrain_set[49m[43m,[49m[43m [49m[43my[49m[43m=[49m[38;5;28;43;01mNone[39;49;00m[43m)[49m
+[32m    204[39m     phase_summaries = {
+[32m    205[39m         [33m"[39m[33mphase_1[39m[33m"[39m: phase_1_summary,
+[32m    206[39m         [33m"[39m[33mphase_2[39m[33m"[39m: phase_2_summary,
+[32m    207[39m     }
+[32m    208[39m [38;5;28;01melse[39;00m:
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/braindecode/eegneuralnet.py:372[39m, in [36m_EEGNeuralNet.fit[39m[34m(self, X, y, **fit_params)[39m
+[32m    370[39m     [38;5;28mself[39m._set_signal_args(X, y, classes=[38;5;28;01mNone[39;00m)
+[32m    371[39m     [38;5;28mself[39m.signal_args_set_ = [38;5;28;01mTrue[39;00m
+[32m--> [39m[32m372[39m [38;5;28;01mreturn[39;00m [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[43m.[49m[43mfit[49m[43m([49m[43mX[49m[43m=[49m[43mX[49m[43m,[49m[43m [49m[43my[49m[43m=[49m[43my[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/skorch/classifier.py:170[39m, in [36mNeuralNetClassifier.fit[39m[34m(self, X, y, **fit_params)[39m
+[32m    159[39m [38;5;250m[39m[33;03m"""See ``NeuralNet.fit``.[39;00m
+[32m    160[39m 
+[32m    161[39m [33;03mIn contrast to ``NeuralNet.fit``, ``y`` is non-optional to[39;00m
+[32m   (...)[39m[32m    165[39m 
+[32m    166[39m [33;03m"""[39;00m
+[32m    167[39m [38;5;66;03m# pylint: disable=useless-super-delegation[39;00m
+[32m    168[39m [38;5;66;03m# this is actually a pylint bug:[39;00m
+[32m    169[39m [38;5;66;03m# https://github.com/PyCQA/pylint/issues/1085[39;00m
+[32m--> [39m[32m170[39m [38;5;28;01mreturn[39;00m [38;5;28;43msuper[39;49m[43m([49m[43mNeuralNetClassifier[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m)[49m[43m.[49m[43mfit[49m[43m([49m[43mX[49m[43m,[49m[43m [49m[43my[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/skorch/net.py:1336[39m, in [36mNeuralNet.fit[39m[34m(self, X, y, **fit_params)[39m
+[32m   1333[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m.warm_start [38;5;129;01mor[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m.initialized_:
+[32m   1334[39m     [38;5;28mself[39m.initialize()
+[32m-> [39m[32m1336[39m [38;5;28;43mself[39;49m[43m.[49m[43mpartial_fit[49m[43m([49m[43mX[49m[43m,[49m[43m [49m[43my[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+[32m   1337[39m [38;5;28;01mreturn[39;00m [38;5;28mself[39m
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/braindecode/eegneuralnet.py:322[39m, in [36m_EEGNeuralNet.partial_fit[39m[34m(self, X, y, classes, **fit_params)[39m
+[32m    320[39m     [38;5;28mself[39m._set_signal_args(X, y, classes)
+[32m    321[39m     [38;5;28mself[39m.signal_args_set_ = [38;5;28;01mTrue[39;00m
+[32m--> [39m[32m322[39m [38;5;28;01mreturn[39;00m [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[43m.[49m[43mpartial_fit[49m[43m([49m[43mX[49m[43m=[49m[43mX[49m[43m,[49m[43m [49m[43my[49m[43m=[49m[43my[49m[43m,[49m[43m [49m[43mclasses[49m[43m=[49m[43mclasses[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/skorch/net.py:1295[39m, in [36mNeuralNet.partial_fit[39m[34m(self, X, y, classes, **fit_params)[39m
+[32m   1293[39m [38;5;28mself[39m.notify([33m'[39m[33mon_train_begin[39m[33m'[39m, X=X, y=y)
+[32m   1294[39m [38;5;28;01mtry[39;00m:
+[32m-> [39m[32m1295[39m     [38;5;28;43mself[39;49m[43m.[49m[43mfit_loop[49m[43m([49m[43mX[49m[43m,[49m[43m [49m[43my[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+[32m   1296[39m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyboardInterrupt[39;00m:
+[32m   1297[39m     [38;5;28;01mpass[39;00m
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/skorch/net.py:1193[39m, in [36mNeuralNet.fit_loop[39m[34m(self, X, y, epochs, **fit_params)[39m
+[32m   1190[39m [38;5;28mself[39m.check_training_readiness()
+[32m   1191[39m epochs = epochs [38;5;28;01mif[39;00m epochs [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m [38;5;28mself[39m.max_epochs
+[32m-> [39m[32m1193[39m dataset_train, dataset_valid = [38;5;28;43mself[39;49m[43m.[49m[43mget_split_datasets[49m[43m([49m
+[32m   1194[39m [43m    [49m[43mX[49m[43m,[49m[43m [49m[43my[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+[32m   1195[39m on_epoch_kwargs = {
+[32m   1196[39m     [33m'[39m[33mdataset_train[39m[33m'[39m: dataset_train,
+[32m   1197[39m     [33m'[39m[33mdataset_valid[39m[33m'[39m: dataset_valid,
+[32m   1198[39m }
+[32m   1199[39m iterator_train = [38;5;28mself[39m.get_iterator(dataset_train, training=[38;5;28;01mTrue[39;00m)
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/skorch/net.py:1800[39m, in [36mNeuralNet.get_split_datasets[39m[34m(self, X, y, **fit_params)[39m
+[32m   1796[39m [38;5;66;03m# After a change in (#646),[39;00m
+[32m   1797[39m [38;5;66;03m# `y` is no longer passed to `self.train_split` if it is `None`.[39;00m
+[32m   1798[39m [38;5;66;03m# To revert to the previous behavior, remove the following two lines:[39;00m
+[32m   1799[39m [38;5;28;01mif[39;00m y [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m-> [39m[32m1800[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43mtrain_split[49m[43m([49m[43mdataset[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+[32m   1802[39m [38;5;28;01mreturn[39;00m [38;5;28mself[39m.train_split(dataset, y, **fit_params)
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/skorch/dataset.py:308[39m, in [36mValidSplit.__call__[39m[34m(self, dataset, y, groups)[39m
+[32m    305[39m bad_y_error = [38;5;167;01mValueError[39;00m(
+[32m    306[39m     [33m"[39m[33mStratified CV requires explicitly passing a suitable y.[39m[33m"[39m)
+[32m    307[39m [38;5;28;01mif[39;00m (y [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m) [38;5;129;01mand[39;00m [38;5;28mself[39m.stratified:
+[32m--> [39m[32m308[39m     [38;5;28;01mraise[39;00m bad_y_error
+[32m    310[39m cv = [38;5;28mself[39m.check_cv(y)
+[32m    311[39m [38;5;28;01mif[39;00m [38;5;28mself[39m.stratified [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m._is_stratified(cv):
+
+[31mValueError[39m: Stratified CV requires explicitly passing a suitable y.
+
+
+[3/4] Running config override:
+{
+  "paradigm": "MI",
+  "model_name": "SignalJEPA_PostLocal",
+  "strategy": "full"
+}
+  status:       failed
+  elapsed_sec:  8.019
+  run_id:       20260422_1611_bf7b511a
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/MI/20260422_1611_bf7b511a
+  error:        An error occurred while executing the following cell:
+------------------
+print("=" * 70)
+print("STARTING CROSS-VALIDATION")
+print("=" * 70)
+print(f"Subjects:      {list(SUBJECT_WINDOWS.keys())}")
+print(f"Paradigm:      {CONFIG['paradigm']}")
+print(f"Model:         {CONFIG['model_name']}")
+print(f"Strategy:      {CONFIG['strategy']}")
+print(f"Warm-up epochs:{CONFIG['warmup_epochs']}")
+print(f"CV folds:      {CONFIG['cv_folds']}")
+print(f"Batch size:    {CONFIG['batch_size']}")
+print(f"Learning rate: {CONFIG['learning_rate']}")
+print(f"Max epochs:    {CONFIG['n_epochs']}")
+print(f"Device:        {DEVICE}")
+print(f"Seed control:  {CONFIG['set_seed']}")
+print(f"CV seed:       {BASE_SEED}")
+print("=" * 70)
+
+FOLD_RESULTS = []
+
+for sid, subject_ds in SUBJECT_WINDOWS.items():
+    fold_results = run_subject_cv(
+        sid,
+        subject_ds,
+        TARGET_N_CLASSES,
+        CONFIG["cv_folds"],
+    )
+    FOLD_RESULTS.extend(fold_results)
+
+print(f"\nTotal folds completed: {len(FOLD_RESULTS)}")
+------------------
+
+----- stderr -----
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+----- stdout -----
+  epoch    train_loss    valid_acc    valid_loss     dur
+-------  ------------  -----------  ------------  ------
+      1        [36m0.6965[0m       [32m0.5000[0m        [35m0.6943[0m  0.0313
+      2        0.6987       0.5000        0.6952  0.0267
+      3        [36m0.6947[0m       0.5000        [35m0.6938[0m  0.0282
+      4        0.6956       0.5000        [35m0.6933[0m  0.0251
+      5        [36m0.6926[0m       0.5000        [35m0.6932[0m  0.0279
+      6        0.6938       0.5000        [35m0.6932[0m  0.0278
+      7        [36m0.6920[0m       0.5000        0.6932  0.0285
+      8        0.6931       0.5000        [35m0.6931[0m  0.0287
+----- stdout -----
+      9        0.6924       0.5000        0.6933  0.0291
+     10        [36m0.6910[0m       0.5000        0.6932  0.0263
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mValueError[39m                                Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[37][39m[32m, line 21[39m
+[32m     18[39m FOLD_RESULTS = []
+[32m     20[39m [38;5;28;01mfor[39;00m sid, subject_ds [38;5;129;01min[39;00m SUBJECT_WINDOWS.items():
+[32m---> [39m[32m21[39m     fold_results = [43mrun_subject_cv[49m[43m([49m
+[32m     22[39m [43m        [49m[43msid[49m[43m,[49m
+[32m     23[39m [43m        [49m[43msubject_ds[49m[43m,[49m
+[32m     24[39m [43m        [49m[43mTARGET_N_CLASSES[49m[43m,[49m
+[32m     25[39m [43m        [49m[43mCONFIG[49m[43m[[49m[33;43m"[39;49m[33;43mcv_folds[39;49m[33;43m"[39;49m[43m][49m[43m,[49m
+[32m     26[39m [43m    [49m[43m)[49m
+[32m     27[39m     FOLD_RESULTS.extend(fold_results)
+[32m     29[39m [38;5;28mprint[39m([33mf[39m[33m"[39m[38;5;130;01m\n[39;00m[33mTotal folds completed: [39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(FOLD_RESULTS)[38;5;132;01m}[39;00m[33m"[39m)
+
+[36mCell[39m[36m [39m[32mIn[36][39m[32m, line 15[39m, in [36mrun_subject_cv[39m[34m(subject_id, subject_dataset, n_classes, cv_folds)[39m
+[32m     12[39m results = []
+[32m     14[39m [38;5;28;01mfor[39;00m fold [38;5;129;01min[39;00m folds:
+[32m---> [39m[32m15[39m     result = [43mrun_single_fold[49m[43m([49m
+[32m     16[39m [43m        [49m[43mfold[49m[43m[[49m[33;43m"[39;49m[33;43mfold_id[39;49m[33;43m"[39;49m[43m][49m[43m,[49m
+[32m     17[39m [43m        [49m[43msubject_id[49m[43m,[49m
+[32m     18[39m [43m        [49m[43msubject_dataset[49m[43m,[49m
+[32m     19[39m [43m        [49m[43mfold[49m[43m[[49m[33;43m"[39;49m[33;43midx_train[39;49m[33;43m"[39;49m[43m][49m[43m,[49m
+[32m     20[39m [43m        [49m[43mfold[49m[43m[[49m[33;43m"[39;49m[33;43midx_test[39;49m[33;43m"[39;49m[43m][49m[43m,[49m
+[32m     21[39m [43m    [49m[43m)[49m
+[32m     22[39m     results.append(result)
+[32m     24[39m acc_values = [r[[33m"[39m[33maccuracy[39m[33m"[39m] [38;5;28;01mfor[39;00m r [38;5;129;01min[39;00m results [38;5;28;01mif[39;00m r[[33m"[39m[33maccuracy[39m[33m"[39m] [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m]
+
+[36mCell[39m[36m [39m[32mIn[34][39m[32m, line 202[39m, in [36mrun_single_fold[39m[34m(fold_id, subject_id, subject_dataset, idx_train, idx_test)[39m
+[32m    189[39m     callbacks = [
+[32m    190[39m         (
+[32m    191[39m             [33m"[39m[33mearly_stopping[39m[33m"[39m,
+[32m   (...)[39m[32m    198[39m         ),
+[32m    199[39m     ]
+[32m    201[39m     clf.set_params(callbacks=callbacks, max_epochs=remaining_epochs)
+[32m--> [39m[32m202[39m     [43mclf[49m[43m.[49m[43mfit[49m[43m([49m[43mtrain_set[49m[43m,[49m[43m [49m[43my[49m[43m=[49m[38;5;28;43;01mNone[39;49;00m[43m)[49m
+[32m    204[39m     phase_summaries = {
+[32m    205[39m         [33m"[39m[33mphase_1[39m[33m"[39m: phase_1_summary,
+[32m    206[39m         [33m"[39m[33mphase_2[39m[33m"[39m: phase_2_summary,
+[32m    207[39m     }
+[32m    208[39m [38;5;28;01melse[39;00m:
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/braindecode/eegneuralnet.py:372[39m, in [36m_EEGNeuralNet.fit[39m[34m(self, X, y, **fit_params)[39m
+[32m    370[39m     [38;5;28mself[39m._set_signal_args(X, y, classes=[38;5;28;01mNone[39;00m)
+[32m    371[39m     [38;5;28mself[39m.signal_args_set_ = [38;5;28;01mTrue[39;00m
+[32m--> [39m[32m372[39m [38;5;28;01mreturn[39;00m [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[43m.[49m[43mfit[49m[43m([49m[43mX[49m[43m=[49m[43mX[49m[43m,[49m[43m [49m[43my[49m[43m=[49m[43my[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/skorch/classifier.py:170[39m, in [36mNeuralNetClassifier.fit[39m[34m(self, X, y, **fit_params)[39m
+[32m    159[39m [38;5;250m[39m[33;03m"""See ``NeuralNet.fit``.[39;00m
+[32m    160[39m 
+[32m    161[39m [33;03mIn contrast to ``NeuralNet.fit``, ``y`` is non-optional to[39;00m
+[32m   (...)[39m[32m    165[39m 
+[32m    166[39m [33;03m"""[39;00m
+[32m    167[39m [38;5;66;03m# pylint: disable=useless-super-delegation[39;00m
+[32m    168[39m [38;5;66;03m# this is actually a pylint bug:[39;00m
+[32m    169[39m [38;5;66;03m# https://github.com/PyCQA/pylint/issues/1085[39;00m
+[32m--> [39m[32m170[39m [38;5;28;01mreturn[39;00m [38;5;28;43msuper[39;49m[43m([49m[43mNeuralNetClassifier[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m)[49m[43m.[49m[43mfit[49m[43m([49m[43mX[49m[43m,[49m[43m [49m[43my[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/skorch/net.py:1336[39m, in [36mNeuralNet.fit[39m[34m(self, X, y, **fit_params)[39m
+[32m   1333[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m.warm_start [38;5;129;01mor[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m.initialized_:
+[32m   1334[39m     [38;5;28mself[39m.initialize()
+[32m-> [39m[32m1336[39m [38;5;28;43mself[39;49m[43m.[49m[43mpartial_fit[49m[43m([49m[43mX[49m[43m,[49m[43m [49m[43my[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+[32m   1337[39m [38;5;28;01mreturn[39;00m [38;5;28mself[39m
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/braindecode/eegneuralnet.py:322[39m, in [36m_EEGNeuralNet.partial_fit[39m[34m(self, X, y, classes, **fit_params)[39m
+[32m    320[39m     [38;5;28mself[39m._set_signal_args(X, y, classes)
+[32m    321[39m     [38;5;28mself[39m.signal_args_set_ = [38;5;28;01mTrue[39;00m
+[32m--> [39m[32m322[39m [38;5;28;01mreturn[39;00m [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[43m.[49m[43mpartial_fit[49m[43m([49m[43mX[49m[43m=[49m[43mX[49m[43m,[49m[43m [49m[43my[49m[43m=[49m[43my[49m[43m,[49m[43m [49m[43mclasses[49m[43m=[49m[43mclasses[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/skorch/net.py:1295[39m, in [36mNeuralNet.partial_fit[39m[34m(self, X, y, classes, **fit_params)[39m
+[32m   1293[39m [38;5;28mself[39m.notify([33m'[39m[33mon_train_begin[39m[33m'[39m, X=X, y=y)
+[32m   1294[39m [38;5;28;01mtry[39;00m:
+[32m-> [39m[32m1295[39m     [38;5;28;43mself[39;49m[43m.[49m[43mfit_loop[49m[43m([49m[43mX[49m[43m,[49m[43m [49m[43my[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+[32m   1296[39m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyboardInterrupt[39;00m:
+[32m   1297[39m     [38;5;28;01mpass[39;00m
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/skorch/net.py:1193[39m, in [36mNeuralNet.fit_loop[39m[34m(self, X, y, epochs, **fit_params)[39m
+[32m   1190[39m [38;5;28mself[39m.check_training_readiness()
+[32m   1191[39m epochs = epochs [38;5;28;01mif[39;00m epochs [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m [38;5;28mself[39m.max_epochs
+[32m-> [39m[32m1193[39m dataset_train, dataset_valid = [38;5;28;43mself[39;49m[43m.[49m[43mget_split_datasets[49m[43m([49m
+[32m   1194[39m [43m    [49m[43mX[49m[43m,[49m[43m [49m[43my[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+[32m   1195[39m on_epoch_kwargs = {
+[32m   1196[39m     [33m'[39m[33mdataset_train[39m[33m'[39m: dataset_train,
+[32m   1197[39m     [33m'[39m[33mdataset_valid[39m[33m'[39m: dataset_valid,
+[32m   1198[39m }
+[32m   1199[39m iterator_train = [38;5;28mself[39m.get_iterator(dataset_train, training=[38;5;28;01mTrue[39;00m)
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/skorch/net.py:1800[39m, in [36mNeuralNet.get_split_datasets[39m[34m(self, X, y, **fit_params)[39m
+[32m   1796[39m [38;5;66;03m# After a change in (#646),[39;00m
+[32m   1797[39m [38;5;66;03m# `y` is no longer passed to `self.train_split` if it is `None`.[39;00m
+[32m   1798[39m [38;5;66;03m# To revert to the previous behavior, remove the following two lines:[39;00m
+[32m   1799[39m [38;5;28;01mif[39;00m y [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m-> [39m[32m1800[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43mtrain_split[49m[43m([49m[43mdataset[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+[32m   1802[39m [38;5;28;01mreturn[39;00m [38;5;28mself[39m.train_split(dataset, y, **fit_params)
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/skorch/dataset.py:308[39m, in [36mValidSplit.__call__[39m[34m(self, dataset, y, groups)[39m
+[32m    305[39m bad_y_error = [38;5;167;01mValueError[39;00m(
+[32m    306[39m     [33m"[39m[33mStratified CV requires explicitly passing a suitable y.[39m[33m"[39m)
+[32m    307[39m [38;5;28;01mif[39;00m (y [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m) [38;5;129;01mand[39;00m [38;5;28mself[39m.stratified:
+[32m--> [39m[32m308[39m     [38;5;28;01mraise[39;00m bad_y_error
+[32m    310[39m cv = [38;5;28mself[39m.check_cv(y)
+[32m    311[39m [38;5;28;01mif[39;00m [38;5;28mself[39m.stratified [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m._is_stratified(cv):
+
+[31mValueError[39m: Stratified CV requires explicitly passing a suitable y.
+
+
+[4/4] Running config override:
+{
+  "paradigm": "MI",
+  "model_name": "SignalJEPA_Contextual",
+  "strategy": "full"
+}
+  status:       failed
+  elapsed_sec:  85.738
+  run_id:       20260422_1611_bf7b511a
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/MI/20260422_1611_bf7b511a
+  error:        An error occurred while executing the following cell:
+------------------
+print("=" * 70)
+print("STARTING CROSS-VALIDATION")
+print("=" * 70)
+print(f"Subjects:      {list(SUBJECT_WINDOWS.keys())}")
+print(f"Paradigm:      {CONFIG['paradigm']}")
+print(f"Model:         {CONFIG['model_name']}")
+print(f"Strategy:      {CONFIG['strategy']}")
+print(f"Warm-up epochs:{CONFIG['warmup_epochs']}")
+print(f"CV folds:      {CONFIG['cv_folds']}")
+print(f"Batch size:    {CONFIG['batch_size']}")
+print(f"Learning rate: {CONFIG['learning_rate']}")
+print(f"Max epochs:    {CONFIG['n_epochs']}")
+print(f"Device:        {DEVICE}")
+print(f"Seed control:  {CONFIG['set_seed']}")
+print(f"CV seed:       {BASE_SEED}")
+print("=" * 70)
+
+FOLD_RESULTS = []
+
+for sid, subject_ds in SUBJECT_WINDOWS.items():
+    fold_results = run_subject_cv(
+        sid,
+        subject_ds,
+        TARGET_N_CLASSES,
+        CONFIG["cv_folds"],
+    )
+    FOLD_RESULTS.extend(fold_results)
+
+print(f"\nTotal folds completed: {len(FOLD_RESULTS)}")
+------------------
+
+----- stderr -----
+/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/braindecode/models/base.py:257: UserWarning: Modifying chs_info argument using the _deserialize_chs_info() method
+  warnings.warn(
+----- stdout -----
+  epoch    train_loss    valid_acc    valid_loss     dur
+-------  ------------  -----------  ------------  ------
+      1        [36m0.6879[0m       [32m0.5000[0m        [35m0.6964[0m  7.9878
+----- stdout -----
+      2        0.7049       0.5000        [35m0.6932[0m  7.7916
+----- stdout -----
+      3        0.6951       0.5000        0.6932  7.8017
+----- stdout -----
+      4        0.7058       0.5000        0.6932  7.7937
+----- stdout -----
+      5        0.7122       0.5000        0.6932  7.8317
+----- stdout -----
+      6        0.7188       0.5000        0.6933  7.7438
+----- stdout -----
+      7        0.6903       0.5000        0.6934  7.7550
+----- stdout -----
+      8        0.7019       0.5000        0.6932  8.0275
+----- stdout -----
+      9        [36m0.6747[0m       0.5000        0.6935  7.9160
+----- stdout -----
+     10        0.6879       0.5000        0.6934  7.9154
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mValueError[39m                                Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[37][39m[32m, line 21[39m
+[32m     18[39m FOLD_RESULTS = []
+[32m     20[39m [38;5;28;01mfor[39;00m sid, subject_ds [38;5;129;01min[39;00m SUBJECT_WINDOWS.items():
+[32m---> [39m[32m21[39m     fold_results = [43mrun_subject_cv[49m[43m([49m
+[32m     22[39m [43m        [49m[43msid[49m[43m,[49m
+[32m     23[39m [43m        [49m[43msubject_ds[49m[43m,[49m
+[32m     24[39m [43m        [49m[43mTARGET_N_CLASSES[49m[43m,[49m
+[32m     25[39m [43m        [49m[43mCONFIG[49m[43m[[49m[33;43m"[39;49m[33;43mcv_folds[39;49m[33;43m"[39;49m[43m][49m[43m,[49m
+[32m     26[39m [43m    [49m[43m)[49m
+[32m     27[39m     FOLD_RESULTS.extend(fold_results)
+[32m     29[39m [38;5;28mprint[39m([33mf[39m[33m"[39m[38;5;130;01m\n[39;00m[33mTotal folds completed: [39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(FOLD_RESULTS)[38;5;132;01m}[39;00m[33m"[39m)
+
+[36mCell[39m[36m [39m[32mIn[36][39m[32m, line 15[39m, in [36mrun_subject_cv[39m[34m(subject_id, subject_dataset, n_classes, cv_folds)[39m
+[32m     12[39m results = []
+[32m     14[39m [38;5;28;01mfor[39;00m fold [38;5;129;01min[39;00m folds:
+[32m---> [39m[32m15[39m     result = [43mrun_single_fold[49m[43m([49m
+[32m     16[39m [43m        [49m[43mfold[49m[43m[[49m[33;43m"[39;49m[33;43mfold_id[39;49m[33;43m"[39;49m[43m][49m[43m,[49m
+[32m     17[39m [43m        [49m[43msubject_id[49m[43m,[49m
+[32m     18[39m [43m        [49m[43msubject_dataset[49m[43m,[49m
+[32m     19[39m [43m        [49m[43mfold[49m[43m[[49m[33;43m"[39;49m[33;43midx_train[39;49m[33;43m"[39;49m[43m][49m[43m,[49m
+[32m     20[39m [43m        [49m[43mfold[49m[43m[[49m[33;43m"[39;49m[33;43midx_test[39;49m[33;43m"[39;49m[43m][49m[43m,[49m
+[32m     21[39m [43m    [49m[43m)[49m
+[32m     22[39m     results.append(result)
+[32m     24[39m acc_values = [r[[33m"[39m[33maccuracy[39m[33m"[39m] [38;5;28;01mfor[39;00m r [38;5;129;01min[39;00m results [38;5;28;01mif[39;00m r[[33m"[39m[33maccuracy[39m[33m"[39m] [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m]
+
+[36mCell[39m[36m [39m[32mIn[34][39m[32m, line 202[39m, in [36mrun_single_fold[39m[34m(fold_id, subject_id, subject_dataset, idx_train, idx_test)[39m
+[32m    189[39m     callbacks = [
+[32m    190[39m         (
+[32m    191[39m             [33m"[39m[33mearly_stopping[39m[33m"[39m,
+[32m   (...)[39m[32m    198[39m         ),
+[32m    199[39m     ]
+[32m    201[39m     clf.set_params(callbacks=callbacks, max_epochs=remaining_epochs)
+[32m--> [39m[32m202[39m     [43mclf[49m[43m.[49m[43mfit[49m[43m([49m[43mtrain_set[49m[43m,[49m[43m [49m[43my[49m[43m=[49m[38;5;28;43;01mNone[39;49;00m[43m)[49m
+[32m    204[39m     phase_summaries = {
+[32m    205[39m         [33m"[39m[33mphase_1[39m[33m"[39m: phase_1_summary,
+[32m    206[39m         [33m"[39m[33mphase_2[39m[33m"[39m: phase_2_summary,
+[32m    207[39m     }
+[32m    208[39m [38;5;28;01melse[39;00m:
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/braindecode/eegneuralnet.py:372[39m, in [36m_EEGNeuralNet.fit[39m[34m(self, X, y, **fit_params)[39m
+[32m    370[39m     [38;5;28mself[39m._set_signal_args(X, y, classes=[38;5;28;01mNone[39;00m)
+[32m    371[39m     [38;5;28mself[39m.signal_args_set_ = [38;5;28;01mTrue[39;00m
+[32m--> [39m[32m372[39m [38;5;28;01mreturn[39;00m [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[43m.[49m[43mfit[49m[43m([49m[43mX[49m[43m=[49m[43mX[49m[43m,[49m[43m [49m[43my[49m[43m=[49m[43my[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/skorch/classifier.py:170[39m, in [36mNeuralNetClassifier.fit[39m[34m(self, X, y, **fit_params)[39m
+[32m    159[39m [38;5;250m[39m[33;03m"""See ``NeuralNet.fit``.[39;00m
+[32m    160[39m 
+[32m    161[39m [33;03mIn contrast to ``NeuralNet.fit``, ``y`` is non-optional to[39;00m
+[32m   (...)[39m[32m    165[39m 
+[32m    166[39m [33;03m"""[39;00m
+[32m    167[39m [38;5;66;03m# pylint: disable=useless-super-delegation[39;00m
+[32m    168[39m [38;5;66;03m# this is actually a pylint bug:[39;00m
+[32m    169[39m [38;5;66;03m# https://github.com/PyCQA/pylint/issues/1085[39;00m
+[32m--> [39m[32m170[39m [38;5;28;01mreturn[39;00m [38;5;28;43msuper[39;49m[43m([49m[43mNeuralNetClassifier[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m)[49m[43m.[49m[43mfit[49m[43m([49m[43mX[49m[43m,[49m[43m [49m[43my[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/skorch/net.py:1336[39m, in [36mNeuralNet.fit[39m[34m(self, X, y, **fit_params)[39m
+[32m   1333[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m.warm_start [38;5;129;01mor[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m.initialized_:
+[32m   1334[39m     [38;5;28mself[39m.initialize()
+[32m-> [39m[32m1336[39m [38;5;28;43mself[39;49m[43m.[49m[43mpartial_fit[49m[43m([49m[43mX[49m[43m,[49m[43m [49m[43my[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+[32m   1337[39m [38;5;28;01mreturn[39;00m [38;5;28mself[39m
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/braindecode/eegneuralnet.py:322[39m, in [36m_EEGNeuralNet.partial_fit[39m[34m(self, X, y, classes, **fit_params)[39m
+[32m    320[39m     [38;5;28mself[39m._set_signal_args(X, y, classes)
+[32m    321[39m     [38;5;28mself[39m.signal_args_set_ = [38;5;28;01mTrue[39;00m
+[32m--> [39m[32m322[39m [38;5;28;01mreturn[39;00m [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[43m.[49m[43mpartial_fit[49m[43m([49m[43mX[49m[43m=[49m[43mX[49m[43m,[49m[43m [49m[43my[49m[43m=[49m[43my[49m[43m,[49m[43m [49m[43mclasses[49m[43m=[49m[43mclasses[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/skorch/net.py:1295[39m, in [36mNeuralNet.partial_fit[39m[34m(self, X, y, classes, **fit_params)[39m
+[32m   1293[39m [38;5;28mself[39m.notify([33m'[39m[33mon_train_begin[39m[33m'[39m, X=X, y=y)
+[32m   1294[39m [38;5;28;01mtry[39;00m:
+[32m-> [39m[32m1295[39m     [38;5;28;43mself[39;49m[43m.[49m[43mfit_loop[49m[43m([49m[43mX[49m[43m,[49m[43m [49m[43my[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+[32m   1296[39m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyboardInterrupt[39;00m:
+[32m   1297[39m     [38;5;28;01mpass[39;00m
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/skorch/net.py:1193[39m, in [36mNeuralNet.fit_loop[39m[34m(self, X, y, epochs, **fit_params)[39m
+[32m   1190[39m [38;5;28mself[39m.check_training_readiness()
+[32m   1191[39m epochs = epochs [38;5;28;01mif[39;00m epochs [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m [38;5;28mself[39m.max_epochs
+[32m-> [39m[32m1193[39m dataset_train, dataset_valid = [38;5;28;43mself[39;49m[43m.[49m[43mget_split_datasets[49m[43m([49m
+[32m   1194[39m [43m    [49m[43mX[49m[43m,[49m[43m [49m[43my[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+[32m   1195[39m on_epoch_kwargs = {
+[32m   1196[39m     [33m'[39m[33mdataset_train[39m[33m'[39m: dataset_train,
+[32m   1197[39m     [33m'[39m[33mdataset_valid[39m[33m'[39m: dataset_valid,
+[32m   1198[39m }
+[32m   1199[39m iterator_train = [38;5;28mself[39m.get_iterator(dataset_train, training=[38;5;28;01mTrue[39;00m)
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/skorch/net.py:1800[39m, in [36mNeuralNet.get_split_datasets[39m[34m(self, X, y, **fit_params)[39m
+[32m   1796[39m [38;5;66;03m# After a change in (#646),[39;00m
+[32m   1797[39m [38;5;66;03m# `y` is no longer passed to `self.train_split` if it is `None`.[39;00m
+[32m   1798[39m [38;5;66;03m# To revert to the previous behavior, remove the following two lines:[39;00m
+[32m   1799[39m [38;5;28;01mif[39;00m y [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m-> [39m[32m1800[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43mtrain_split[49m[43m([49m[43mdataset[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mfit_params[49m[43m)[49m
+[32m   1802[39m [38;5;28;01mreturn[39;00m [38;5;28mself[39m.train_split(dataset, y, **fit_params)
+
+[36mFile [39m[32m~/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/skorch/dataset.py:308[39m, in [36mValidSplit.__call__[39m[34m(self, dataset, y, groups)[39m
+[32m    305[39m bad_y_error = [38;5;167;01mValueError[39;00m(
+[32m    306[39m     [33m"[39m[33mStratified CV requires explicitly passing a suitable y.[39m[33m"[39m)
+[32m    307[39m [38;5;28;01mif[39;00m (y [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m) [38;5;129;01mand[39;00m [38;5;28mself[39m.stratified:
+[32m--> [39m[32m308[39m     [38;5;28;01mraise[39;00m bad_y_error
+[32m    310[39m cv = [38;5;28mself[39m.check_cv(y)
+[32m    311[39m [38;5;28;01mif[39;00m [38;5;28mself[39m.stratified [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m._is_stratified(cv):
+
+[31mValueError[39m: Stratified CV requires explicitly passing a suitable y.
+
+
+Finished.
+Results dir:    experiment_results/20260422_1611_full_mi_sweep_b23f3433
+Summary JSON:   experiment_results/20260422_1611_full_mi_sweep_b23f3433/results.json
+Artifact list:  experiment_results/20260422_1611_full_mi_sweep_b23f3433/artifact_ids.json

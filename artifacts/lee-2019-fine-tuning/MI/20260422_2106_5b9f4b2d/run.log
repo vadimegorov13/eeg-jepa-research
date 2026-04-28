@@ -1,0 +1,88 @@
+[2026-04-22 21:06:10] Using device: cpu
+[2026-04-22 21:06:10] Seed control disabled (CONFIG['set_seed'] = False)
+[2026-04-22 21:06:10] ======================================================================
+[2026-04-22 21:06:10] CONFIGURATION
+[2026-04-22 21:06:10] ======================================================================
+[2026-04-22 21:06:10]   artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning
+[2026-04-22 21:06:10]   bandpass_high: 40.0
+[2026-04-22 21:06:10]   bandpass_low: 0.5
+[2026-04-22 21:06:10]   batch_size: 32
+[2026-04-22 21:06:10]   cv_folds: 5
+[2026-04-22 21:06:10]   early_stopping_patience: 50
+[2026-04-22 21:06:10]   learning_rate: 0.001
+[2026-04-22 21:06:10]   model_name: SignalJEPA_Contextual
+[2026-04-22 21:06:10]   n_epochs: 5000
+[2026-04-22 21:06:10]   paradigm: MI
+[2026-04-22 21:06:10]   seed: 12
+[2026-04-22 21:06:10]   set_seed: False
+[2026-04-22 21:06:10]   sfreq: 128
+[2026-04-22 21:06:10]   strategy: full
+[2026-04-22 21:06:10]   subjects_to_use: None
+[2026-04-22 21:06:10]   val_split: 0.2
+[2026-04-22 21:06:10]   warmup_epochs: 10
+[2026-04-22 21:06:10] ======================================================================
+[2026-04-22 21:06:10] Config saved to: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/MI/20260422_2106_5b9f4b2d/config.json
+[2026-04-22 21:06:10] Epoch window configuration:
+[2026-04-22 21:06:10]   Target sfreq:                128 Hz
+[2026-04-22 21:06:10]   Requested duration:          4.20 s
+[2026-04-22 21:06:10]   Expected window samples:     537
+
+[2026-04-22 21:06:10] Preprocessed concat dataset exists: True (checked at: /home/vegorov/Repos/eeg_jepa_research/preprocessed_concat_datasets/MI_subjects_48_49_50_51_52_53_54)
+[2026-04-22 21:06:11] Loaded raw concat dataset from: /home/vegorov/Repos/eeg_jepa_research/preprocessed_concat_datasets/MI_subjects_48_49_50_51_52_53_54
+
+[2026-04-22 21:06:11] Post-load raw validation
+[2026-04-22 21:06:11]   Recordings in LOADED_DATASET:   14
+[2026-04-22 21:06:11]   Unique subject IDs:             ['48', '49', '50', '51', '52', '53', '54']
+[2026-04-22 21:06:11]   sfreq (first rec):              128.0 Hz
+[2026-04-22 21:06:11]   EEG channel count:              62
+[2026-04-22 21:06:11] Window shape: (62, 537)
+[2026-04-22 21:06:11] Window sample length expected=537, got=537
+[2026-04-22 21:06:11] Global class counts: [700, 700]
+[2026-04-22 21:06:11] Chance level (2-class): 0.50
+[2026-04-22 21:06:11] Summarizing per-subject windows...
+[2026-04-22 21:06:11]   Subject 48: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 21:06:11]   Subject 49: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 21:06:11]   Subject 50: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 21:06:11]   Subject 51: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 21:06:11]   Subject 52: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 21:06:11]   Subject 53: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 21:06:11]   Subject 54: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 21:06:12] SignalJEPA_Contextual instantiated successfully from braindecode/signal-jepa.
+[2026-04-22 21:06:12]   Total parameters:     3,459,154
+[2026-04-22 21:06:12]   Trainable parameters: 3,459,154
+[2026-04-22 21:06:12] ======================================================================
+[2026-04-22 21:06:12] STARTING CROSS-VALIDATION
+[2026-04-22 21:06:12] ======================================================================
+[2026-04-22 21:06:12] Subjects:      [48, 49, 50, 51, 52, 53, 54]
+[2026-04-22 21:06:12] Paradigm:      MI
+[2026-04-22 21:06:12] Model:         SignalJEPA_Contextual
+[2026-04-22 21:06:12] Strategy:      full
+[2026-04-22 21:06:12] Warm-up epochs:10
+[2026-04-22 21:06:12] CV folds:      5
+[2026-04-22 21:06:12] Batch size:    32
+[2026-04-22 21:06:12] Learning rate: 0.001
+[2026-04-22 21:06:12] Max epochs:    5000
+[2026-04-22 21:06:12] Device:        cpu
+[2026-04-22 21:06:12] Seed control:  False
+[2026-04-22 21:06:12] CV seed:       12
+[2026-04-22 21:06:12] ======================================================================
+
+[2026-04-22 21:06:12] Subject 48: 200 windows | class_counts=[100, 100]
+[2026-04-22 21:06:12]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 21:06:12]     Fine-tune strategy:      full
+[2026-04-22 21:06:12]     Warm-up epochs:          10
+[2026-04-22 21:06:12]     Pretrained loading path: from_pretrained
+[2026-04-22 21:06:12]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 21:06:12]     Phase 1 (warmup):
+[2026-04-22 21:06:12]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 21:06:12]       Total params:     3,459,154
+[2026-04-22 21:06:12]       Trainable params: 4,162
+[2026-04-22 21:06:12]       Trainable pct:    0.12%
+[2026-04-22 21:06:12]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 21:07:31]     Phase 2 (full):
+[2026-04-22 21:07:31]       Trainable groups: ['all_parameters']
+[2026-04-22 21:07:31]       Total params:     3,459,154
+[2026-04-22 21:07:31]       Trainable params: 3,459,154
+[2026-04-22 21:07:31]       Trainable pct:    100.00%
+[2026-04-22 21:07:31]       Trainable parameter names: ['feature_encoder.1.0.weight', 'feature_encoder.1.2.weight', 'feature_encoder.1.2.bias', 'feature_encoder.2.0.weight', 'feature_encoder.3.0.weight', 'feature_encoder.4.0.weight', 'feature_encoder.5.0.weight', 'pos_encoder.pos_encoder_spat.weight', 'transformer.encoder.layers.0.self_attn.in_proj_weight', 'transformer.encoder.layers.0.self_attn.in_proj_bias', 'transformer.encoder.layers.0.self_attn.out_proj.weight', 'transformer.encoder.layers.0.self_attn.out_proj.bias']
+[2026-04-22 21:07:31]       ... 172 additional trainable parameters hidden

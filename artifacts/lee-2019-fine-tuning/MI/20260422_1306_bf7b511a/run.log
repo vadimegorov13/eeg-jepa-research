@@ -1,0 +1,331 @@
+[2026-04-22 13:06:03] Using device: cpu
+[2026-04-22 13:06:03] Seed control disabled (CONFIG['set_seed'] = False)
+[2026-04-22 13:06:03] ======================================================================
+[2026-04-22 13:06:03] CONFIGURATION
+[2026-04-22 13:06:03] ======================================================================
+[2026-04-22 13:06:03]   artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning
+[2026-04-22 13:06:03]   bandpass_high: 40.0
+[2026-04-22 13:06:03]   bandpass_low: 0.5
+[2026-04-22 13:06:03]   batch_size: 32
+[2026-04-22 13:06:03]   cv_folds: 5
+[2026-04-22 13:06:03]   early_stopping_patience: 50
+[2026-04-22 13:06:03]   learning_rate: 0.001
+[2026-04-22 13:06:03]   model_name: SignalJEPA_Contextual
+[2026-04-22 13:06:03]   n_epochs: 5000
+[2026-04-22 13:06:03]   paradigm: MI
+[2026-04-22 13:06:03]   seed: 12
+[2026-04-22 13:06:03]   set_seed: False
+[2026-04-22 13:06:03]   sfreq: 128
+[2026-04-22 13:06:03]   strategy: new
+[2026-04-22 13:06:03]   subjects_to_use: None
+[2026-04-22 13:06:03]   val_split: 0.2
+[2026-04-22 13:06:03]   warmup_epochs: 10
+[2026-04-22 13:06:03] ======================================================================
+[2026-04-22 13:06:03] Config saved to: /home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/MI/20260422_1306_bf7b511a/config.json
+[2026-04-22 13:06:03] Epoch window configuration:
+[2026-04-22 13:06:03]   Target sfreq:                128 Hz
+[2026-04-22 13:06:03]   Requested duration:          4.20 s
+[2026-04-22 13:06:03]   Expected window samples:     537
+
+[2026-04-22 13:06:03] Preprocessed concat dataset exists: True (checked at: /home/vegorov/Repos/eeg_jepa_research/preprocessed_concat_datasets/MI_subjects_48_49_50_51_52_53_54)
+[2026-04-22 13:06:03] Loaded raw concat dataset from: /home/vegorov/Repos/eeg_jepa_research/preprocessed_concat_datasets/MI_subjects_48_49_50_51_52_53_54
+
+[2026-04-22 13:06:03] Post-load raw validation
+[2026-04-22 13:06:03]   Recordings in LOADED_DATASET:   14
+[2026-04-22 13:06:03]   Unique subject IDs:             ['48', '49', '50', '51', '52', '53', '54']
+[2026-04-22 13:06:03]   sfreq (first rec):              128.0 Hz
+[2026-04-22 13:06:03]   EEG channel count:              62
+[2026-04-22 13:06:04] Window shape: (62, 537)
+[2026-04-22 13:06:04] Window sample length expected=537, got=537
+[2026-04-22 13:06:04] Global class counts: [700, 700]
+[2026-04-22 13:06:04] Chance level (2-class): 0.50
+[2026-04-22 13:06:04] Summarizing per-subject windows...
+[2026-04-22 13:06:04]   Subject 48: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 13:06:04]   Subject 49: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 13:06:04]   Subject 50: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 13:06:04]   Subject 51: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 13:06:04]   Subject 52: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 13:06:04]   Subject 53: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 13:06:04]   Subject 54: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-04-22 13:06:05] SignalJEPA_Contextual instantiated successfully from braindecode/signal-jepa.
+[2026-04-22 13:06:05]   Total parameters:     3,459,154
+[2026-04-22 13:06:05]   Trainable parameters: 3,459,154
+[2026-04-22 13:06:05] ======================================================================
+[2026-04-22 13:06:05] STARTING CROSS-VALIDATION
+[2026-04-22 13:06:05] ======================================================================
+[2026-04-22 13:06:05] Subjects:      [48, 49, 50, 51, 52, 53, 54]
+[2026-04-22 13:06:05] Paradigm:      MI
+[2026-04-22 13:06:05] Model:         SignalJEPA_Contextual
+[2026-04-22 13:06:05] Strategy:      new
+[2026-04-22 13:06:05] Warm-up epochs:10
+[2026-04-22 13:06:05] CV folds:      5
+[2026-04-22 13:06:05] Batch size:    32
+[2026-04-22 13:06:05] Learning rate: 0.001
+[2026-04-22 13:06:05] Max epochs:    5000
+[2026-04-22 13:06:05] Device:        cpu
+[2026-04-22 13:06:05] Seed control:  False
+[2026-04-22 13:06:05] CV seed:       12
+[2026-04-22 13:06:05] ======================================================================
+
+[2026-04-22 13:06:05] Subject 48: 200 windows | class_counts=[100, 100]
+[2026-04-22 13:06:05]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 13:06:05]     Fine-tune strategy:      new
+[2026-04-22 13:06:05]     Pretrained loading path: from_pretrained
+[2026-04-22 13:06:05]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 13:06:05]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 13:06:05]       Total params:     3,459,154
+[2026-04-22 13:06:05]       Trainable params: 4,162
+[2026-04-22 13:06:05]       Trainable pct:    0.12%
+[2026-04-22 13:06:05]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 13:13:14]   Fold 1/5 | best_epoch=4 | stop=54 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 13:13:15]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 13:13:15]     Fine-tune strategy:      new
+[2026-04-22 13:13:15]     Pretrained loading path: from_pretrained
+[2026-04-22 13:13:15]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 13:13:15]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 13:13:15]       Total params:     3,459,154
+[2026-04-22 13:13:15]       Trainable params: 4,162
+[2026-04-22 13:13:15]       Trainable pct:    0.12%
+[2026-04-22 13:13:15]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 13:20:01]   Fold 2/5 | best_epoch=50 | stop=51 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 13:20:01]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 13:20:01]     Fine-tune strategy:      new
+[2026-04-22 13:20:01]     Pretrained loading path: from_pretrained
+[2026-04-22 13:20:01]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 13:20:01]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 13:20:01]       Total params:     3,459,154
+[2026-04-22 13:20:01]       Trainable params: 4,162
+[2026-04-22 13:20:01]       Trainable pct:    0.12%
+[2026-04-22 13:20:01]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 13:28:22]   Fold 3/5 | best_epoch=28 | stop=63 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 13:28:23]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 13:28:23]     Fine-tune strategy:      new
+[2026-04-22 13:28:23]     Pretrained loading path: from_pretrained
+[2026-04-22 13:28:23]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 13:28:23]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 13:28:23]       Total params:     3,459,154
+[2026-04-22 13:28:23]       Trainable params: 4,162
+[2026-04-22 13:28:23]       Trainable pct:    0.12%
+[2026-04-22 13:28:23]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 13:36:14]   Fold 4/5 | best_epoch=26 | stop=59 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 13:36:15]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 13:36:15]     Fine-tune strategy:      new
+[2026-04-22 13:36:15]     Pretrained loading path: from_pretrained
+[2026-04-22 13:36:15]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 13:36:15]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 13:36:15]       Total params:     3,459,154
+[2026-04-22 13:36:15]       Trainable params: 4,162
+[2026-04-22 13:36:15]       Trainable pct:    0.12%
+[2026-04-22 13:36:15]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 13:46:47]   Fold 5/5 | best_epoch=51 | stop=80 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 13:46:47]   Subject 48 summary: acc=0.5000±0.0000  bal_acc=0.5000±0.0000  roc_auc=N/A
+
+[2026-04-22 13:46:47] Subject 49: 200 windows | class_counts=[100, 100]
+[2026-04-22 13:46:48]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 13:46:48]     Fine-tune strategy:      new
+[2026-04-22 13:46:48]     Pretrained loading path: from_pretrained
+[2026-04-22 13:46:48]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 13:46:48]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 13:46:48]       Total params:     3,459,154
+[2026-04-22 13:46:48]       Trainable params: 4,162
+[2026-04-22 13:46:48]       Trainable pct:    0.12%
+[2026-04-22 13:46:48]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 13:53:30]   Fold 1/5 | best_epoch=5 | stop=51 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 13:53:31]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 13:53:31]     Fine-tune strategy:      new
+[2026-04-22 13:53:31]     Pretrained loading path: from_pretrained
+[2026-04-22 13:53:31]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 13:53:31]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 13:53:31]       Total params:     3,459,154
+[2026-04-22 13:53:31]       Trainable params: 4,162
+[2026-04-22 13:53:31]       Trainable pct:    0.12%
+[2026-04-22 13:53:31]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 14:01:47]   Fold 2/5 | best_epoch=24 | stop=63 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 14:01:47]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 14:01:47]     Fine-tune strategy:      new
+[2026-04-22 14:01:47]     Pretrained loading path: from_pretrained
+[2026-04-22 14:01:47]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 14:01:47]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 14:01:47]       Total params:     3,459,154
+[2026-04-22 14:01:47]       Trainable params: 4,162
+[2026-04-22 14:01:47]       Trainable pct:    0.12%
+[2026-04-22 14:01:47]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 14:08:53]   Fold 3/5 | best_epoch=11 | stop=54 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 14:08:54]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 14:08:54]     Fine-tune strategy:      new
+[2026-04-22 14:08:54]     Pretrained loading path: from_pretrained
+[2026-04-22 14:08:54]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 14:08:54]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 14:08:54]       Total params:     3,459,154
+[2026-04-22 14:08:54]       Trainable params: 4,162
+[2026-04-22 14:08:54]       Trainable pct:    0.12%
+[2026-04-22 14:08:54]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 14:19:40]   Fold 4/5 | best_epoch=37 | stop=82 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 14:19:41]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 14:19:41]     Fine-tune strategy:      new
+[2026-04-22 14:19:41]     Pretrained loading path: from_pretrained
+[2026-04-22 14:19:41]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 14:19:41]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 14:19:41]       Total params:     3,459,154
+[2026-04-22 14:19:41]       Trainable params: 4,162
+[2026-04-22 14:19:41]       Trainable pct:    0.12%
+[2026-04-22 14:19:41]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 14:26:23]   Fold 5/5 | best_epoch=4 | stop=51 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 14:26:23]   Subject 49 summary: acc=0.5000±0.0000  bal_acc=0.5000±0.0000  roc_auc=N/A
+
+[2026-04-22 14:26:23] Subject 50: 200 windows | class_counts=[100, 100]
+[2026-04-22 14:26:24]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 14:26:24]     Fine-tune strategy:      new
+[2026-04-22 14:26:24]     Pretrained loading path: from_pretrained
+[2026-04-22 14:26:24]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 14:26:24]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 14:26:24]       Total params:     3,459,154
+[2026-04-22 14:26:24]       Trainable params: 4,162
+[2026-04-22 14:26:24]       Trainable pct:    0.12%
+[2026-04-22 14:26:24]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 14:33:22]   Fold 1/5 | best_epoch=3 | stop=53 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 14:33:23]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 14:33:23]     Fine-tune strategy:      new
+[2026-04-22 14:33:23]     Pretrained loading path: from_pretrained
+[2026-04-22 14:33:23]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 14:33:23]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 14:33:23]       Total params:     3,459,154
+[2026-04-22 14:33:23]       Trainable params: 4,162
+[2026-04-22 14:33:23]       Trainable pct:    0.12%
+[2026-04-22 14:33:23]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 14:40:36]   Fold 2/5 | best_epoch=8 | stop=55 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 14:40:37]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 14:40:37]     Fine-tune strategy:      new
+[2026-04-22 14:40:37]     Pretrained loading path: from_pretrained
+[2026-04-22 14:40:37]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 14:40:37]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 14:40:37]       Total params:     3,459,154
+[2026-04-22 14:40:37]       Trainable params: 4,162
+[2026-04-22 14:40:37]       Trainable pct:    0.12%
+[2026-04-22 14:40:37]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 14:47:19]   Fold 3/5 | best_epoch=1 | stop=51 | val_loss=0.6932 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 14:47:19]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 14:47:19]     Fine-tune strategy:      new
+[2026-04-22 14:47:19]     Pretrained loading path: from_pretrained
+[2026-04-22 14:47:19]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 14:47:19]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 14:47:19]       Total params:     3,459,154
+[2026-04-22 14:47:19]       Trainable params: 4,162
+[2026-04-22 14:47:19]       Trainable pct:    0.12%
+[2026-04-22 14:47:19]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 14:54:31]   Fold 4/5 | best_epoch=35 | stop=55 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 14:54:32]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 14:54:32]     Fine-tune strategy:      new
+[2026-04-22 14:54:32]     Pretrained loading path: from_pretrained
+[2026-04-22 14:54:32]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 14:54:32]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 14:54:32]       Total params:     3,459,154
+[2026-04-22 14:54:32]       Trainable params: 4,162
+[2026-04-22 14:54:32]       Trainable pct:    0.12%
+[2026-04-22 14:54:32]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 15:02:14]   Fold 5/5 | best_epoch=27 | stop=59 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 15:02:14]   Subject 50 summary: acc=0.5000±0.0000  bal_acc=0.5000±0.0000  roc_auc=N/A
+
+[2026-04-22 15:02:14] Subject 51: 200 windows | class_counts=[100, 100]
+[2026-04-22 15:02:15]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 15:02:15]     Fine-tune strategy:      new
+[2026-04-22 15:02:15]     Pretrained loading path: from_pretrained
+[2026-04-22 15:02:15]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 15:02:15]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 15:02:15]       Total params:     3,459,154
+[2026-04-22 15:02:15]       Trainable params: 4,162
+[2026-04-22 15:02:15]       Trainable pct:    0.12%
+[2026-04-22 15:02:15]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 15:10:41]   Fold 1/5 | best_epoch=15 | stop=64 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 15:10:42]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 15:10:42]     Fine-tune strategy:      new
+[2026-04-22 15:10:42]     Pretrained loading path: from_pretrained
+[2026-04-22 15:10:42]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 15:10:42]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 15:10:42]       Total params:     3,459,154
+[2026-04-22 15:10:42]       Trainable params: 4,162
+[2026-04-22 15:10:42]       Trainable pct:    0.12%
+[2026-04-22 15:10:42]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 15:21:35]   Fold 2/5 | best_epoch=52 | stop=82 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 15:21:35]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 15:21:35]     Fine-tune strategy:      new
+[2026-04-22 15:21:35]     Pretrained loading path: from_pretrained
+[2026-04-22 15:21:35]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 15:21:35]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 15:21:35]       Total params:     3,459,154
+[2026-04-22 15:21:35]       Trainable params: 4,162
+[2026-04-22 15:21:35]       Trainable pct:    0.12%
+[2026-04-22 15:21:35]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 15:28:45]   Fold 3/5 | best_epoch=40 | stop=54 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 15:28:45]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 15:28:45]     Fine-tune strategy:      new
+[2026-04-22 15:28:45]     Pretrained loading path: from_pretrained
+[2026-04-22 15:28:45]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 15:28:45]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 15:28:45]       Total params:     3,459,154
+[2026-04-22 15:28:45]       Trainable params: 4,162
+[2026-04-22 15:28:45]       Trainable pct:    0.12%
+[2026-04-22 15:28:45]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 15:35:44]   Fold 4/5 | best_epoch=41 | stop=53 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 15:35:44]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 15:35:44]     Fine-tune strategy:      new
+[2026-04-22 15:35:44]     Pretrained loading path: from_pretrained
+[2026-04-22 15:35:44]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 15:35:44]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 15:35:44]       Total params:     3,459,154
+[2026-04-22 15:35:44]       Trainable params: 4,162
+[2026-04-22 15:35:44]       Trainable pct:    0.12%
+[2026-04-22 15:35:44]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 15:43:58]   Fold 5/5 | best_epoch=12 | stop=62 | val_loss=0.6932 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 15:43:58]   Subject 51 summary: acc=0.5000±0.0000  bal_acc=0.5000±0.0000  roc_auc=N/A
+
+[2026-04-22 15:43:58] Subject 52: 200 windows | class_counts=[100, 100]
+[2026-04-22 15:43:58]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 15:43:58]     Fine-tune strategy:      new
+[2026-04-22 15:43:58]     Pretrained loading path: from_pretrained
+[2026-04-22 15:43:58]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 15:43:58]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 15:43:58]       Total params:     3,459,154
+[2026-04-22 15:43:58]       Trainable params: 4,162
+[2026-04-22 15:43:58]       Trainable pct:    0.12%
+[2026-04-22 15:43:58]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 15:51:45]   Fold 1/5 | best_epoch=16 | stop=59 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 15:51:46]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 15:51:46]     Fine-tune strategy:      new
+[2026-04-22 15:51:46]     Pretrained loading path: from_pretrained
+[2026-04-22 15:51:46]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 15:51:46]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 15:51:46]       Total params:     3,459,154
+[2026-04-22 15:51:46]       Trainable params: 4,162
+[2026-04-22 15:51:46]       Trainable pct:    0.12%
+[2026-04-22 15:51:46]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 15:58:35]   Fold 2/5 | best_epoch=43 | stop=52 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 15:58:36]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 15:58:36]     Fine-tune strategy:      new
+[2026-04-22 15:58:36]     Pretrained loading path: from_pretrained
+[2026-04-22 15:58:36]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 15:58:36]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 15:58:36]       Total params:     3,459,154
+[2026-04-22 15:58:36]       Trainable params: 4,162
+[2026-04-22 15:58:36]       Trainable pct:    0.12%
+[2026-04-22 15:58:36]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 16:06:14]   Fold 3/5 | best_epoch=15 | stop=58 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 16:06:14]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 16:06:14]     Fine-tune strategy:      new
+[2026-04-22 16:06:14]     Pretrained loading path: from_pretrained
+[2026-04-22 16:06:14]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 16:06:14]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 16:06:14]       Total params:     3,459,154
+[2026-04-22 16:06:14]       Trainable params: 4,162
+[2026-04-22 16:06:14]       Trainable pct:    0.12%
+[2026-04-22 16:06:14]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']
+[2026-04-22 16:10:51]   Fold 4/5 | best_epoch=33 | stop=35 | val_loss=0.6931 | acc=0.5000 | bal_acc=0.5000 | roc_auc=N/A
+[2026-04-22 16:10:52]     Downstream model:        SignalJEPA_Contextual
+[2026-04-22 16:10:52]     Fine-tune strategy:      new
+[2026-04-22 16:10:52]     Pretrained loading path: from_pretrained
+[2026-04-22 16:10:52]     Pretrained repo:         braindecode/signal-jepa
+[2026-04-22 16:10:52]       Trainable groups: ['pos_encoder.', 'final_layer.']
+[2026-04-22 16:10:52]       Total params:     3,459,154
+[2026-04-22 16:10:52]       Trainable params: 4,162
+[2026-04-22 16:10:52]       Trainable pct:    0.12%
+[2026-04-22 16:10:52]       Trainable parameter names: ['pos_encoder.pos_encoder_spat.weight', 'final_layer.spat_conv.weight', 'final_layer.spat_conv.bias', 'final_layer.linear.weight', 'final_layer.linear.bias']

@@ -1,0 +1,33 @@
+{
+  "run_id": "20260423_1417_63d878f7",
+  "artifact_dir": "/home/vegorov/Repos/eeg_jepa_research/artifacts/lee-2019-fine-tuning/MI/20260423_1417_63d878f7",
+  "paradigm": "MI",
+  "subjects": [
+    "48",
+    "49",
+    "50",
+    "51",
+    "52",
+    "53",
+    "54"
+  ],
+  "model_name": "SignalJEPA_PreLocal",
+  "strategy": "full",
+  "warmup_epochs": 10,
+  "pretrained_checkpoint_info": {
+    "loading_path": "from_pretrained",
+    "model_name": "SignalJEPA_PreLocal",
+    "repo_id": "braindecode/signal-jepa_without-chans"
+  },
+  "cv_seed": 12,
+  "global_metrics": {
+    "mean_accuracy": 0.6135714285714287,
+    "std_accuracy": 0.1005951676528353,
+    "mean_balanced_accuracy": 0.6135714285714287,
+    "std_balanced_accuracy": 0.1005951676528353,
+    "mean_roc_auc": null,
+    "std_roc_auc": null,
+    "n_subjects": 7,
+    "n_folds_total": 35
+  }
+}
