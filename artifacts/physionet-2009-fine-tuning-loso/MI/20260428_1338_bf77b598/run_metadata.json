@@ -1,0 +1,40 @@
+{
+  "run_id": "20260428_1338_bf77b598",
+  "artifact_dir": "/home/vegorov/Repos/eeg_jepa_research/artifacts/physionet-2009-fine-tuning-loso/MI/20260428_1338_bf77b598",
+  "dataset_name": "PhysionetMI",
+  "dataset_source": "moabb",
+  "preprocessed_concat_dir": "/home/vegorov/Repos/eeg_jepa_research/preprocessed_concat_datasets/PhysionetMI_MI_048eba1d_subjects_74089415_preproc_98bcf191",
+  "labels_to_keep": [
+    "left_hand",
+    "right_hand"
+  ],
+  "excluded_subjects": [],
+  "subjects": [
+    "103",
+    "104",
+    "105",
+    "106",
+    "107",
+    "108",
+    "109"
+  ],
+  "model_name": "SignalJEPA_PreLocal",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "pretrained_checkpoint_info": {
+    "loading_path": "from_pretrained",
+    "model_name": "SignalJEPA_PreLocal",
+    "repo_id": "braindecode/signal-jepa_without-chans"
+  },
+  "cv_seed": 12,
+  "global_metrics": {
+    "mean_accuracy": 0.7596899224806203,
+    "std_accuracy": 0.10142750143174749,
+    "mean_balanced_accuracy": 0.758893280632411,
+    "std_balanced_accuracy": 0.1025338809882353,
+    "mean_roc_auc": null,
+    "std_roc_auc": null,
+    "n_subjects": 7,
+    "n_folds_total": 7
+  }
+}

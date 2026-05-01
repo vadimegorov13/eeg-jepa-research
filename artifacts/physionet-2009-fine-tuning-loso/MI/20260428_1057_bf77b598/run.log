@@ -1,0 +1,79 @@
+[2026-04-28 10:57:31] Using device: cpu
+[2026-04-28 10:57:31] Seed control enabled: True
+[2026-04-28 10:57:31] Base seed: 12
+[2026-04-28 10:57:31] Seed initialized: 12
+[2026-04-28 10:57:31] ======================================================================
+[2026-04-28 10:57:31] CONFIGURATION
+[2026-04-28 10:57:31] ======================================================================
+[2026-04-28 10:57:31]   artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/physionet-2009-fine-tuning-loso
+[2026-04-28 10:57:31]   bandpass_high: 40.0
+[2026-04-28 10:57:31]   bandpass_low: 0.5
+[2026-04-28 10:57:31]   batch_size: 16
+[2026-04-28 10:57:31]   dataset_name: PhysionetMI
+[2026-04-28 10:57:31]   dataset_source: moabb
+[2026-04-28 10:57:31]   early_stopping_patience: 10
+[2026-04-28 10:57:31]   exclude_subjects: []
+[2026-04-28 10:57:31]   grad_clip_norm: 1.0
+[2026-04-28 10:57:31]   label_smoothing: 0.05
+[2026-04-28 10:57:31]   labels_to_keep: ['left_hand', 'right_hand']
+[2026-04-28 10:57:31]   learning_rate: 0.0003
+[2026-04-28 10:57:31]   moabb_dataset_kwargs: {'imagined': True, 'executed': False}
+[2026-04-28 10:57:31]   model_name: SignalJEPA_PreLocal
+[2026-04-28 10:57:31]   n_epochs: 60
+[2026-04-28 10:57:31]   optimizer: adamw
+[2026-04-28 10:57:31]   paradigm: MI
+[2026-04-28 10:57:31]   preprocessed_concat_dir: None
+[2026-04-28 10:57:31]   seed: 12
+[2026-04-28 10:57:31]   set_seed: True
+[2026-04-28 10:57:31]   sfreq: 128
+[2026-04-28 10:57:31]   strategy: new
+[2026-04-28 10:57:31]   subjects_to_use: None
+[2026-04-28 10:57:31]   use_class_weights: True
+[2026-04-28 10:57:31]   val_split: 0.2
+[2026-04-28 10:57:31]   warmup_epochs: 10
+[2026-04-28 10:57:31]   weight_decay: 0.01
+[2026-04-28 10:57:31] ======================================================================
+[2026-04-28 10:57:31] Config saved to: /home/vegorov/Repos/eeg_jepa_research/artifacts/physionet-2009-fine-tuning-loso/MI/20260428_1057_bf77b598/config.json
+[2026-04-28 10:57:31] Epoch window configuration:
+[2026-04-28 10:57:31]   Target sfreq:                128 Hz
+[2026-04-28 10:57:31]   Requested duration:          3.00 s
+[2026-04-28 10:57:31]   Expected window samples:     384
+
+[2026-04-28 10:57:31] Preprocessed concat dataset exists: False (checked at: /home/vegorov/Repos/eeg_jepa_research/preprocessed_concat_datasets/PhysionetMI_MI_048eba1d_subjects_74089415_preproc_98bcf191)
+
+[2026-04-28 10:57:31] Building MOABBDataset for PhysionetMI...
+[2026-04-28 10:57:31]   Subject IDs:           [103, 104, 105, 106, 107, 108, 109]
+[2026-04-28 10:57:31]   Dataset kwargs:        {'imagined': True, 'executed': False}
+[2026-04-28 10:57:31]   Labels to keep:        ['left_hand', 'right_hand']
+[2026-04-28 10:57:31]   Excluded subject IDs:  []
+[2026-04-28 11:44:01]   Recordings loaded:     42
+[2026-04-28 11:44:01]   Raw labels detected:   ['feet', 'hands', 'left_hand', 'rest', 'right_hand']
+[2026-04-28 11:44:02] Applying Braindecode preprocessors to MOABBDataset...
+[2026-04-28 11:44:04] Saved preprocessed raw concat dataset to: /home/vegorov/Repos/eeg_jepa_research/preprocessed_concat_datasets/PhysionetMI_MI_048eba1d_subjects_74089415_preproc_98bcf191
+[2026-04-28 11:44:05] Loaded raw concat dataset from: /home/vegorov/Repos/eeg_jepa_research/preprocessed_concat_datasets/PhysionetMI_MI_048eba1d_subjects_74089415_preproc_98bcf191
+
+[2026-04-28 11:44:05] Post-load raw validation
+[2026-04-28 11:44:05]   Recordings in LOADED_DATASET:   42
+[2026-04-28 11:44:05]   Unique subject IDs:             ['103', '104', '105', '106', '107', '108', '109']
+[2026-04-28 11:44:05]   sfreq (first rec):              128.0 Hz
+[2026-04-28 11:44:05]   EEG channel count:              64
+[2026-04-28 11:44:05]   Annotation labels present:      ['feet', 'hands', 'left_hand', 'rest', 'right_hand']
+[2026-04-28 11:44:05]   Labels selected for training:   ['left_hand', 'right_hand']
+[2026-04-28 11:44:05] Annotation counts before filtering: {np.str_('feet'): 157, np.str_('hands'): 158, np.str_('left_hand'): 160, np.str_('rest'): 586, np.str_('right_hand'): 153}
+[2026-04-28 11:44:05] Filtered annotations: kept 313 / 1214
+[2026-04-28 11:44:05] Annotation counts after filtering:  {np.str_('left_hand'): 160, np.str_('right_hand'): 153}
+[2026-04-28 11:44:05] Updated annotation durations:       313
+[2026-04-28 11:44:05] Dropped recordings with zero kept events before windowing: 21
+[2026-04-28 11:44:05] Window shape: (64, 384)
+[2026-04-28 11:44:05] Window sample length expected=384, got=384
+[2026-04-28 11:44:05] Class mapping: {'left_hand': 0, 'right_hand': 1}
+[2026-04-28 11:44:05] Global class counts: [160, 153]
+[2026-04-28 11:44:05] Chance level (2-class): 0.50
+[2026-04-28 11:44:05] Summarizing per-subject windows...
+[2026-04-28 11:44:05]   Subject 103: n_windows=45, window_shape=(64, 384), class_counts=[22, 23]
+[2026-04-28 11:44:05]   Subject 104: n_windows=43, window_shape=(64, 384), class_counts=[22, 21]
+[2026-04-28 11:44:05]   Subject 105: n_windows=45, window_shape=(64, 384), class_counts=[23, 22]
+[2026-04-28 11:44:05]   Subject 106: n_windows=45, window_shape=(64, 384), class_counts=[24, 21]
+[2026-04-28 11:44:05]   Subject 107: n_windows=45, window_shape=(64, 384), class_counts=[24, 21]
+[2026-04-28 11:44:05]   Subject 108: n_windows=45, window_shape=(64, 384), class_counts=[22, 23]
+[2026-04-28 11:44:05]   Subject 109: n_windows=45, window_shape=(64, 384), class_counts=[23, 22]

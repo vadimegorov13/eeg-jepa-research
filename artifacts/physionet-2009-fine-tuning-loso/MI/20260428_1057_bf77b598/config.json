@@ -1,0 +1,35 @@
+{
+  "artifact_dir": "/home/vegorov/Repos/eeg_jepa_research/artifacts/physionet-2009-fine-tuning-loso",
+  "dataset_source": "moabb",
+  "dataset_name": "PhysionetMI",
+  "preprocessed_concat_dir": null,
+  "labels_to_keep": [
+    "left_hand",
+    "right_hand"
+  ],
+  "exclude_subjects": [],
+  "subjects_to_use": null,
+  "moabb_dataset_kwargs": {
+    "imagined": true,
+    "executed": false
+  },
+  "seed": 12,
+  "set_seed": true,
+  "sfreq": 128,
+  "bandpass_low": 0.5,
+  "bandpass_high": 40.0,
+  "paradigm": "MI",
+  "model_name": "SignalJEPA_PreLocal",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "val_split": 0.2,
+  "batch_size": 16,
+  "n_epochs": 60,
+  "early_stopping_patience": 10,
+  "learning_rate": 0.0003,
+  "optimizer": "adamw",
+  "weight_decay": 0.01,
+  "grad_clip_norm": 1.0,
+  "use_class_weights": true,
+  "label_smoothing": 0.05
+}

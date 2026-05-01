@@ -1,0 +1,275 @@
+[2026-04-28 13:38:57] Using device: cpu
+[2026-04-28 13:38:58] Seed control enabled: True
+[2026-04-28 13:38:58] Base seed: 12
+[2026-04-28 13:38:58] Seed initialized: 12
+[2026-04-28 13:38:58] ======================================================================
+[2026-04-28 13:38:58] CONFIGURATION
+[2026-04-28 13:38:58] ======================================================================
+[2026-04-28 13:38:58]   artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/physionet-2009-fine-tuning-loso
+[2026-04-28 13:38:58]   bandpass_high: 40.0
+[2026-04-28 13:38:58]   bandpass_low: 0.5
+[2026-04-28 13:38:58]   batch_size: 16
+[2026-04-28 13:38:58]   dataset_name: PhysionetMI
+[2026-04-28 13:38:58]   dataset_source: moabb
+[2026-04-28 13:38:58]   early_stopping_patience: 10
+[2026-04-28 13:38:58]   exclude_subjects: []
+[2026-04-28 13:38:58]   grad_clip_norm: 1.0
+[2026-04-28 13:38:58]   label_smoothing: 0.05
+[2026-04-28 13:38:58]   labels_to_keep: ['left_hand', 'right_hand']
+[2026-04-28 13:38:58]   learning_rate: 0.0003
+[2026-04-28 13:38:58]   moabb_dataset_kwargs: {'imagined': True, 'executed': False}
+[2026-04-28 13:38:58]   model_name: SignalJEPA_PreLocal
+[2026-04-28 13:38:58]   n_epochs: 60
+[2026-04-28 13:38:58]   optimizer: adamw
+[2026-04-28 13:38:58]   paradigm: MI
+[2026-04-28 13:38:58]   preprocessed_concat_dir: None
+[2026-04-28 13:38:58]   seed: 12
+[2026-04-28 13:38:58]   set_seed: True
+[2026-04-28 13:38:58]   sfreq: 128
+[2026-04-28 13:38:58]   strategy: new
+[2026-04-28 13:38:58]   subjects_to_use: None
+[2026-04-28 13:38:58]   use_class_weights: True
+[2026-04-28 13:38:58]   val_split: 0.2
+[2026-04-28 13:38:58]   warmup_epochs: 10
+[2026-04-28 13:38:58]   weight_decay: 0.01
+[2026-04-28 13:38:58] ======================================================================
+[2026-04-28 13:38:58] Config saved to: /home/vegorov/Repos/eeg_jepa_research/artifacts/physionet-2009-fine-tuning-loso/MI/20260428_1338_bf77b598/config.json
+[2026-04-28 13:38:58] Epoch window configuration:
+[2026-04-28 13:38:58]   Target sfreq:                128 Hz
+[2026-04-28 13:38:58]   Requested duration:          3.00 s
+[2026-04-28 13:38:58]   Expected window samples:     384
+
+[2026-04-28 13:38:58] Preprocessed concat dataset exists: True (checked at: /home/vegorov/Repos/eeg_jepa_research/preprocessed_concat_datasets/PhysionetMI_MI_048eba1d_subjects_74089415_preproc_98bcf191)
+[2026-04-28 13:38:58] Loaded raw concat dataset from: /home/vegorov/Repos/eeg_jepa_research/preprocessed_concat_datasets/PhysionetMI_MI_048eba1d_subjects_74089415_preproc_98bcf191
+
+[2026-04-28 13:38:58] Post-load raw validation
+[2026-04-28 13:38:58]   Recordings in LOADED_DATASET:   42
+[2026-04-28 13:38:58]   Unique subject IDs:             ['103', '104', '105', '106', '107', '108', '109']
+[2026-04-28 13:38:58]   sfreq (first rec):              128.0 Hz
+[2026-04-28 13:38:58]   EEG channel count:              64
+[2026-04-28 13:38:58]   Annotation labels present:      ['feet', 'hands', 'left_hand', 'rest', 'right_hand']
+[2026-04-28 13:38:58]   Labels selected for training:   ['left_hand', 'right_hand']
+[2026-04-28 13:38:58] Annotation counts before filtering: {np.str_('feet'): 157, np.str_('hands'): 158, np.str_('left_hand'): 160, np.str_('rest'): 586, np.str_('right_hand'): 153}
+[2026-04-28 13:38:58] Filtered annotations: kept 313 / 1214
+[2026-04-28 13:38:58] Annotation counts after filtering:  {np.str_('left_hand'): 160, np.str_('right_hand'): 153}
+[2026-04-28 13:38:58] Updated annotation durations:       313
+[2026-04-28 13:38:58] Dropped recordings with zero kept events before windowing: 21
+[2026-04-28 13:38:58] Window shape: (64, 384)
+[2026-04-28 13:38:58] Window sample length expected=384, got=384
+[2026-04-28 13:38:58] Class mapping: {'left_hand': 0, 'right_hand': 1}
+[2026-04-28 13:38:58] Global class counts: [160, 153]
+[2026-04-28 13:38:58] Chance level (2-class): 0.50
+[2026-04-28 13:38:58] Summarizing per-subject windows...
+[2026-04-28 13:38:58]   Subject 103: n_windows=45, window_shape=(64, 384), class_counts=[22, 23]
+[2026-04-28 13:38:58]   Subject 104: n_windows=43, window_shape=(64, 384), class_counts=[22, 21]
+[2026-04-28 13:38:58]   Subject 105: n_windows=45, window_shape=(64, 384), class_counts=[23, 22]
+[2026-04-28 13:38:58]   Subject 106: n_windows=45, window_shape=(64, 384), class_counts=[24, 21]
+[2026-04-28 13:38:58]   Subject 107: n_windows=45, window_shape=(64, 384), class_counts=[24, 21]
+[2026-04-28 13:38:58]   Subject 108: n_windows=45, window_shape=(64, 384), class_counts=[22, 23]
+[2026-04-28 13:38:58]   Subject 109: n_windows=45, window_shape=(64, 384), class_counts=[23, 22]
+[2026-04-28 13:38:59] SignalJEPA_PreLocal instantiated successfully from braindecode/signal-jepa_without-chans.
+[2026-04-28 13:38:59]   Total parameters:     15,126
+[2026-04-28 13:38:59]   Trainable parameters: 15,126
+[2026-04-28 13:38:59] ======================================================================
+[2026-04-28 13:38:59] STARTING LOSO EVALUATION
+[2026-04-28 13:38:59] ======================================================================
+[2026-04-28 13:38:59] Subjects:            ['103', '104', '105', '106', '107', '108', '109']
+[2026-04-28 13:38:59] Model:               SignalJEPA_PreLocal
+[2026-04-28 13:38:59] Strategy:            new
+[2026-04-28 13:38:59] Warm-up epochs:      10
+[2026-04-28 13:38:59] Validation split:    0.2
+[2026-04-28 13:38:59] Batch size:          16
+[2026-04-28 13:38:59] Learning rate:       0.0003
+[2026-04-28 13:38:59] Max epochs:          60
+[2026-04-28 13:38:59] Device:              cpu
+[2026-04-28 13:38:59] Seed control:        True
+[2026-04-28 13:38:59] CV seed:             12
+[2026-04-28 13:38:59] ======================================================================
+
+[2026-04-28 13:38:59] Selected subjects for LOSO: ['103', '104', '105', '106', '107', '108', '109']
+[2026-04-28 13:38:59]     Class weights:           [0.9701492190361023, 1.029850721359253]
+
+[2026-04-28 13:39:00] LOSO fold 1/7 | held-out subject: 103
+[2026-04-28 13:39:00]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-28 13:39:00]     Fine-tune strategy:      new
+[2026-04-28 13:39:00]     Warm-up active:          False
+[2026-04-28 13:39:00]     Warm-up epochs:          10
+[2026-04-28 13:39:00]     Pretrained loading path: from_pretrained
+[2026-04-28 13:39:00]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-28 13:39:00]     Train windows:           268
+[2026-04-28 13:39:00]     Test windows:            45
+[2026-04-28 13:39:00]     Phase 1 (new):
+[2026-04-28 13:39:00]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-28 13:39:00]       Total params:     15,126
+[2026-04-28 13:39:00]       Trainable params: 1,286
+[2026-04-28 13:39:00]       Trainable pct:    8.50%
+[2026-04-28 13:39:00]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-28 13:39:00]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-28 13:39:02]   LOSO result | held_out=103 | best_epoch=60 | stop=60 | val_loss=0.6061 | acc=0.8000 | bal_acc=0.7984 | roc_auc=N/A
+[2026-04-28 13:39:02]     Class weights:           [0.9777778387069702, 1.0222222805023193]
+
+[2026-04-28 13:39:03] LOSO fold 2/7 | held-out subject: 104
+[2026-04-28 13:39:03]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-28 13:39:03]     Fine-tune strategy:      new
+[2026-04-28 13:39:03]     Warm-up active:          False
+[2026-04-28 13:39:03]     Warm-up epochs:          10
+[2026-04-28 13:39:03]     Pretrained loading path: from_pretrained
+[2026-04-28 13:39:03]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-28 13:39:03]     Train windows:           270
+[2026-04-28 13:39:03]     Test windows:            43
+[2026-04-28 13:39:03]     Phase 1 (new):
+[2026-04-28 13:39:03]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-28 13:39:03]       Total params:     15,126
+[2026-04-28 13:39:03]       Trainable params: 1,286
+[2026-04-28 13:39:03]       Trainable pct:    8.50%
+[2026-04-28 13:39:03]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-28 13:39:03]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-28 13:39:05]   LOSO result | held_out=104 | best_epoch=60 | stop=60 | val_loss=0.5635 | acc=0.6512 | bal_acc=0.6494 | roc_auc=N/A
+[2026-04-28 13:39:05]     Class weights:           [0.9776118993759155, 1.0223881006240845]
+
+[2026-04-28 13:39:06] LOSO fold 3/7 | held-out subject: 105
+[2026-04-28 13:39:06]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-28 13:39:06]     Fine-tune strategy:      new
+[2026-04-28 13:39:06]     Warm-up active:          False
+[2026-04-28 13:39:06]     Warm-up epochs:          10
+[2026-04-28 13:39:06]     Pretrained loading path: from_pretrained
+[2026-04-28 13:39:06]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-28 13:39:06]     Train windows:           268
+[2026-04-28 13:39:06]     Test windows:            45
+[2026-04-28 13:39:06]     Phase 1 (new):
+[2026-04-28 13:39:06]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-28 13:39:06]       Total params:     15,126
+[2026-04-28 13:39:06]       Trainable params: 1,286
+[2026-04-28 13:39:06]       Trainable pct:    8.50%
+[2026-04-28 13:39:06]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-28 13:39:06]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-28 13:39:08]   LOSO result | held_out=105 | best_epoch=60 | stop=60 | val_loss=0.5898 | acc=0.9333 | bal_acc=0.9348 | roc_auc=N/A
+[2026-04-28 13:39:08]     Class weights:           [0.9850746393203735, 1.0149253606796265]
+
+[2026-04-28 13:39:09] LOSO fold 4/7 | held-out subject: 106
+[2026-04-28 13:39:09]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-28 13:39:09]     Fine-tune strategy:      new
+[2026-04-28 13:39:09]     Warm-up active:          False
+[2026-04-28 13:39:09]     Warm-up epochs:          10
+[2026-04-28 13:39:09]     Pretrained loading path: from_pretrained
+[2026-04-28 13:39:09]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-28 13:39:09]     Train windows:           268
+[2026-04-28 13:39:09]     Test windows:            45
+[2026-04-28 13:39:09]     Phase 1 (new):
+[2026-04-28 13:39:09]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-28 13:39:09]       Total params:     15,126
+[2026-04-28 13:39:09]       Trainable params: 1,286
+[2026-04-28 13:39:09]       Trainable pct:    8.50%
+[2026-04-28 13:39:09]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-28 13:39:09]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-28 13:39:11]   LOSO result | held_out=106 | best_epoch=60 | stop=60 | val_loss=0.5326 | acc=0.7111 | bal_acc=0.7083 | roc_auc=N/A
+[2026-04-28 13:39:11]     Class weights:           [0.9850746393203735, 1.0149253606796265]
+
+[2026-04-28 13:39:12] LOSO fold 5/7 | held-out subject: 107
+[2026-04-28 13:39:12]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-28 13:39:12]     Fine-tune strategy:      new
+[2026-04-28 13:39:12]     Warm-up active:          False
+[2026-04-28 13:39:12]     Warm-up epochs:          10
+[2026-04-28 13:39:12]     Pretrained loading path: from_pretrained
+[2026-04-28 13:39:12]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-28 13:39:12]     Train windows:           268
+[2026-04-28 13:39:12]     Test windows:            45
+[2026-04-28 13:39:12]     Phase 1 (new):
+[2026-04-28 13:39:12]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-28 13:39:12]       Total params:     15,126
+[2026-04-28 13:39:12]       Trainable params: 1,286
+[2026-04-28 13:39:12]       Trainable pct:    8.50%
+[2026-04-28 13:39:12]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-28 13:39:12]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-28 13:39:14]   LOSO result | held_out=107 | best_epoch=60 | stop=60 | val_loss=0.5496 | acc=0.7556 | bal_acc=0.7560 | roc_auc=N/A
+[2026-04-28 13:39:14]     Class weights:           [0.9701492190361023, 1.029850721359253]
+
+[2026-04-28 13:39:14] LOSO fold 6/7 | held-out subject: 108
+[2026-04-28 13:39:14]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-28 13:39:14]     Fine-tune strategy:      new
+[2026-04-28 13:39:14]     Warm-up active:          False
+[2026-04-28 13:39:14]     Warm-up epochs:          10
+[2026-04-28 13:39:14]     Pretrained loading path: from_pretrained
+[2026-04-28 13:39:14]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-28 13:39:14]     Train windows:           268
+[2026-04-28 13:39:14]     Test windows:            45
+[2026-04-28 13:39:14]     Phase 1 (new):
+[2026-04-28 13:39:14]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-28 13:39:14]       Total params:     15,126
+[2026-04-28 13:39:14]       Trainable params: 1,286
+[2026-04-28 13:39:14]       Trainable pct:    8.50%
+[2026-04-28 13:39:14]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-28 13:39:14]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-28 13:39:17]   LOSO result | held_out=108 | best_epoch=60 | stop=60 | val_loss=0.5577 | acc=0.8444 | bal_acc=0.8449 | roc_auc=N/A
+[2026-04-28 13:39:17]     Class weights:           [0.9776118993759155, 1.0223881006240845]
+
+[2026-04-28 13:39:17] LOSO fold 7/7 | held-out subject: 109
+[2026-04-28 13:39:17]     Downstream model:        SignalJEPA_PreLocal
+[2026-04-28 13:39:17]     Fine-tune strategy:      new
+[2026-04-28 13:39:17]     Warm-up active:          False
+[2026-04-28 13:39:17]     Warm-up epochs:          10
+[2026-04-28 13:39:17]     Pretrained loading path: from_pretrained
+[2026-04-28 13:39:17]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-04-28 13:39:17]     Train windows:           268
+[2026-04-28 13:39:17]     Test windows:            45
+[2026-04-28 13:39:17]     Phase 1 (new):
+[2026-04-28 13:39:17]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-04-28 13:39:17]       Total params:     15,126
+[2026-04-28 13:39:17]       Trainable params: 1,286
+[2026-04-28 13:39:17]       Trainable pct:    8.50%
+[2026-04-28 13:39:17]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-04-28 13:39:17]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-04-28 13:39:20]   LOSO result | held_out=109 | best_epoch=60 | stop=60 | val_loss=0.5405 | acc=0.6222 | bal_acc=0.6206 | roc_auc=N/A
+
+[2026-04-28 13:39:20] LOSO summary: acc=0.7597±0.1014  bal_acc=0.7589±0.1025  roc_auc=N/A
+
+[2026-04-28 13:39:20] Total LOSO folds completed: 7
+[2026-04-28 13:39:20] ======================================================================
+[2026-04-28 13:39:20] AGGREGATED LOSO RESULTS
+[2026-04-28 13:39:20] ======================================================================
+[2026-04-28 13:39:20]   Held-out subject 103:  acc=0.8000±0.0000  bal_acc=0.7984±0.0000  roc_auc=N/A 
+[2026-04-28 13:39:20]   Held-out subject 104:  acc=0.6512±0.0000  bal_acc=0.6494±0.0000  roc_auc=N/A 
+[2026-04-28 13:39:20]   Held-out subject 105:  acc=0.9333±0.0000  bal_acc=0.9348±0.0000  roc_auc=N/A 
+[2026-04-28 13:39:20]   Held-out subject 106:  acc=0.7111±0.0000  bal_acc=0.7083±0.0000  roc_auc=N/A 
+[2026-04-28 13:39:20]   Held-out subject 107:  acc=0.7556±0.0000  bal_acc=0.7560±0.0000  roc_auc=N/A 
+[2026-04-28 13:39:20]   Held-out subject 108:  acc=0.8444±0.0000  bal_acc=0.8449±0.0000  roc_auc=N/A 
+[2026-04-28 13:39:20]   Held-out subject 109:  acc=0.6222±0.0000  bal_acc=0.6206±0.0000  roc_auc=N/A 
+[2026-04-28 13:39:20] ----------------------------------------------------------------------
+[2026-04-28 13:39:20]   OVERALL:      acc=0.7597±0.1014  bal_acc=0.7589±0.1025  roc_auc=N/A
+[2026-04-28 13:39:20] ======================================================================
+[2026-04-28 13:39:20] CV results saved to:      /home/vegorov/Repos/eeg_jepa_research/artifacts/physionet-2009-fine-tuning-loso/MI/20260428_1338_bf77b598/cv_results.json
+[2026-04-28 13:39:20] Subject metrics saved to: /home/vegorov/Repos/eeg_jepa_research/artifacts/physionet-2009-fine-tuning-loso/MI/20260428_1338_bf77b598/subject_metrics.json
+[2026-04-28 13:39:20] Global metrics saved to:  /home/vegorov/Repos/eeg_jepa_research/artifacts/physionet-2009-fine-tuning-loso/MI/20260428_1338_bf77b598/global_metrics.json
+[2026-04-28 13:39:20] Run metadata saved to:    /home/vegorov/Repos/eeg_jepa_research/artifacts/physionet-2009-fine-tuning-loso/MI/20260428_1338_bf77b598/run_metadata.json
+
+[2026-04-28 13:39:20] All artifacts in: /home/vegorov/Repos/eeg_jepa_research/artifacts/physionet-2009-fine-tuning-loso/MI/20260428_1338_bf77b598
+
+[2026-04-28 13:39:20] ======================================================================
+[2026-04-28 13:39:20] EXPERIMENT SUMMARY
+[2026-04-28 13:39:20] ======================================================================
+[2026-04-28 13:39:20] Run ID:    20260428_1338_bf77b598
+[2026-04-28 13:39:20] Artifacts: /home/vegorov/Repos/eeg_jepa_research/artifacts/physionet-2009-fine-tuning-loso/MI/20260428_1338_bf77b598
+
+[2026-04-28 13:39:20] Configuration:
+[2026-04-28 13:39:20]   Dataset name:           PhysionetMI
+[2026-04-28 13:39:20]   Dataset source:         moabb
+[2026-04-28 13:39:20]   Subjects:               [103, 104, 105, 106, 107, 108, 109]
+[2026-04-28 13:39:20]   Excluded subjects:      []
+[2026-04-28 13:39:20]   Labels kept:            ['left_hand', 'right_hand']
+[2026-04-28 13:39:20]   Paradigm:               MI
+[2026-04-28 13:39:20]   Model:                  SignalJEPA_PreLocal
+[2026-04-28 13:39:20]   Strategy:               new
+[2026-04-28 13:39:20]   Warm-up epochs:         10
+[2026-04-28 13:39:20]   Bandpass:               0.5-40.0 Hz
+[2026-04-28 13:39:20]   Resample:               128 Hz
+[2026-04-28 13:39:20]   Validation split:       0.2
+[2026-04-28 13:39:20]   Learning rate:          0.0003
+[2026-04-28 13:39:20]   Batch size:             16
+[2026-04-28 13:39:20]   Max epochs:             60
+[2026-04-28 13:39:20]   CV seed:                12
+[2026-04-28 13:39:20]   Pretrained loading:     from_pretrained
+
+[2026-04-28 13:39:20] Results:
+[2026-04-28 13:39:20]   Mean Accuracy:          0.7597 ± 0.1014
+[2026-04-28 13:39:20]   Mean Balanced Accuracy: 0.7589 ± 0.1025
+[2026-04-28 13:39:20]   Mean ROC-AUC:           N/A
