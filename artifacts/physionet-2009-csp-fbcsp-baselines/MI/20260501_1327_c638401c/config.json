@@ -1,0 +1,91 @@
+{
+  "artifact_dir": "/home/vegorov/Repos/eeg_jepa_research/artifacts/physionet-2009-csp-fbcsp-baselines",
+  "dataset_source": "auto",
+  "dataset_name": "PhysionetMI",
+  "preprocessed_concat_dir": "/home/vegorov/Repos/eeg_jepa_research/preprocessed_concat_datasets/PhysionetMI_MI_048eba1d_subjects_224f4495",
+  "labels_to_keep": [
+    "left_hand",
+    "right_hand"
+  ],
+  "exclude_subjects": [
+    88
+  ],
+  "subjects_to_use": null,
+  "moabb_dataset_kwargs": {
+    "imagined": true,
+    "executed": false
+  },
+  "seed": 12,
+  "set_seed": true,
+  "sfreq": 128,
+  "bandpass_low": 0.5,
+  "bandpass_high": 40.0,
+  "paradigm": "MI",
+  "base_trial_duration_s": 3.0,
+  "target_window_duration_s": 3.2,
+  "cv_folds": 5,
+  "run_models": [
+    "CSP_LDA",
+    "FBCSP_LDA"
+  ],
+  "csp": {
+    "apply_feature_filter": true,
+    "l_freq": 8.0,
+    "h_freq": 30.0,
+    "n_components": 4,
+    "reg": "ledoit_wolf",
+    "log": true,
+    "norm_trace": false
+  },
+  "fbcsp": {
+    "bands": [
+      [
+        4.0,
+        8.0
+      ],
+      [
+        8.0,
+        12.0
+      ],
+      [
+        12.0,
+        16.0
+      ],
+      [
+        16.0,
+        20.0
+      ],
+      [
+        20.0,
+        24.0
+      ],
+      [
+        24.0,
+        28.0
+      ],
+      [
+        28.0,
+        32.0
+      ],
+      [
+        32.0,
+        36.0
+      ],
+      [
+        36.0,
+        40.0
+      ]
+    ],
+    "n_components": 4,
+    "reg": "ledoit_wolf",
+    "log": true,
+    "norm_trace": false
+  },
+  "classifier": "lda",
+  "linear_svm_C": 1.0,
+  "feature_filter_method": "iir",
+  "feature_iir_params": {
+    "order": 5,
+    "ftype": "butter"
+  }
+}
