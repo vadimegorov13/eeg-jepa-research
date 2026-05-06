@@ -1,0 +1,38 @@
+[2026-05-05 21:48:30] Logging to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/graph-sjepa-mi-pretraining/20260505_2148_2d1f6de5/run.log
+[2026-05-05 21:48:30] Using device: mps
+[2026-05-05 21:48:30] Seed set to: 42
+[2026-05-05 21:48:30] Config saved to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/graph-sjepa-mi-pretraining/20260505_2148_2d1f6de5/config.json
+[2026-05-05 21:48:30] Graph-SJEPA dataset pool:
+[2026-05-05 21:48:30]   Lee2019_MI: role=source_high_density train=[1, 2, 3, 4, 5] val=[41, 42] kwargs={}
+[2026-05-05 21:48:30]   PhysionetMI: role=target_hard_transfer train=[1, 2, 3, 4, 5] val=[91, 92, 93] kwargs={'imagined': True, 'executed': False}
+
+[2026-05-05 21:48:30] Train chunks per epoch: 6
+[2026-05-05 21:48:30] Val chunks per epoch:   3
+[2026-05-05 21:48:30] Pretraining window parameters:
+[2026-05-05 21:48:30]   sfreq:                      128 Hz
+[2026-05-05 21:48:30]   pretrain_duration_s:        4.0 s
+[2026-05-05 21:48:30]   sampling_interval_s:        4.0 s
+[2026-05-05 21:48:30]   window_size_samples:        512
+[2026-05-05 21:48:30]   sampling_interval_samples:  512
+[2026-05-05 21:48:30] Number of preprocessors: 5
+[2026-05-05 21:48:30] Loading MOABB chunk: dataset=Lee2019_MI subjects=[1, 2] kwargs={}
+[2026-05-05 21:50:29]   Preprocessed Lee2019_MI subjects=[1, 2]: recordings=4 sfreq=128.0 channels=62
+[2026-05-05 21:50:29]   Windows ready: split=reference dataset=Lee2019_MI subjects=[1, 2] windows=1434 shape=(62, 512) valid_coord_ratio=1.000
+
+[2026-05-05 21:50:29] Reference chunk summary:
+[2026-05-05 21:50:29]   Dataset:              Lee2019_MI
+[2026-05-05 21:50:29]   Subjects:             [1, 2]
+[2026-05-05 21:50:29]   Window count:         1434
+[2026-05-05 21:50:29]   Sample shape:         (62, 512)
+[2026-05-05 21:50:29]   Channels:             62
+[2026-05-05 21:50:29]   Valid coord ratio:    1.000
+[2026-05-05 21:50:29]   First channels:       ['Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2']
+[2026-05-05 21:50:29] Mask sanity check:
+[2026-05-05 21:50:29]   mean masked channels:  9.12
+[2026-05-05 21:50:29]   mean visible channels: 52.88
+[2026-05-05 21:50:29]   mask radius:           0.5173
+[2026-05-05 21:50:30] Graph-SJEPA model instantiated:
+[2026-05-05 21:50:30]   n_tokens_per_channel estimate: 64
+[2026-05-05 21:50:30]   max_tokens_per_channel:        256
+[2026-05-05 21:50:30]   student params:                285,472 total / 285,472 trainable
+[2026-05-05 21:50:30]   predictor params:              104,192 total / 104,192 trainable

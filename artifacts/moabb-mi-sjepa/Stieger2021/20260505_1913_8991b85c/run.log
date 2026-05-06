@@ -1,0 +1,242 @@
+[2026-05-05 19:13:29] Using device: mps
+[2026-05-05 19:13:29] Seed control disabled
+[2026-05-05 19:13:29] ======================================================================
+[2026-05-05 19:13:29] CONFIGURATION
+[2026-05-05 19:13:29] ======================================================================
+[2026-05-05 19:13:29]   artifact_dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/moabb-mi-sjepa
+[2026-05-05 19:13:29]   bandpass_high: 40.0
+[2026-05-05 19:13:29]   bandpass_low: 0.5
+[2026-05-05 19:13:29]   batch_size: 32
+[2026-05-05 19:13:29]   cv_folds: 5
+[2026-05-05 19:13:29]   dataset_name: Stieger2021
+[2026-05-05 19:13:29]   dataset_source: moabb
+[2026-05-05 19:13:29]   early_stopping_patience: None
+[2026-05-05 19:13:29]   exclude_subjects: []
+[2026-05-05 19:13:29]   labels_to_keep: ['left_hand', 'right_hand']
+[2026-05-05 19:13:29]   learning_rate: 0.001
+[2026-05-05 19:13:29]   moabb_dataset_kwargs: {}
+[2026-05-05 19:13:29]   model_name: SignalJEPA_PreLocal
+[2026-05-05 19:13:29]   n_epochs: 50
+[2026-05-05 19:13:29]   preprocessed_concat_dir: None
+[2026-05-05 19:13:29]   pretrained_mode: from_pretrained
+[2026-05-05 19:13:29]   seed: None
+[2026-05-05 19:13:29]   set_seed: False
+[2026-05-05 19:13:29]   sfreq: 128
+[2026-05-05 19:13:29]   strategy: new
+[2026-05-05 19:13:29]   subjects_to_use: None
+[2026-05-05 19:13:29]   target_window_duration_s: 3.2
+[2026-05-05 19:13:29]   val_split: 0.2
+[2026-05-05 19:13:29]   warmup_epochs: 10
+[2026-05-05 19:13:29] ======================================================================
+[2026-05-05 19:13:29] Config saved to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/moabb-mi-sjepa/Stieger2021/20260505_1913_8991b85c/config.json
+[2026-05-05 19:13:29] Epoch window configuration:
+[2026-05-05 19:13:29]   Target sfreq:            128 Hz
+[2026-05-05 19:13:29]   Requested duration:      3.200 s
+[2026-05-05 19:13:29]   Expected window samples: 409
+
+[2026-05-05 19:13:29] Preprocessed concat dataset exists: False at /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/preprocessed_concat_datasets/Stieger2021_048eba1d_wacff46_subjects_c4ca4238
+
+[2026-05-05 19:13:29] Building MOABBDataset for Stieger2021...
+[2026-05-05 19:13:29]   Subject IDs:     [1]
+[2026-05-05 19:13:29]   Dataset kwargs:  {}
+[2026-05-05 19:23:30]   Recordings loaded: 11
+[2026-05-05 19:23:30]   Raw labels:        ['both_hand', 'left_hand', 'rest', 'right_hand']
+[2026-05-05 19:23:30] Applying average reference...
+[2026-05-05 19:25:42] Applying Braindecode preprocessors...
+[2026-05-05 19:28:54] Saved preprocessed raw concat dataset to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/preprocessed_concat_datasets/Stieger2021_048eba1d_wacff46_subjects_c4ca4238
+
+[2026-05-05 19:29:05] Post-load raw validation
+[2026-05-05 19:29:05]   Recordings:          11
+[2026-05-05 19:29:05]   Subjects loaded:     ['1']
+[2026-05-05 19:29:05]   sfreq first rec:     128.0 Hz
+[2026-05-05 19:29:05]   EEG channel count:   60
+[2026-05-05 19:29:05]   Labels present:      ['both_hand', 'left_hand', 'rest', 'right_hand']
+[2026-05-05 19:29:05]   Labels selected:     ['left_hand', 'right_hand']
+[2026-05-05 19:29:05] Annotation counts before filtering: {np.str_('both_hand'): 1159, np.str_('left_hand'): 1100, np.str_('rest'): 979, np.str_('right_hand'): 1144}
+[2026-05-05 19:29:06] Filtered annotations: kept 2244 / 4382
+[2026-05-05 19:29:06] Annotation counts after filtering:  {np.str_('left_hand'): 1100, np.str_('right_hand'): 1144}
+[2026-05-05 19:29:06] Updated annotation durations:       2244
+[2026-05-05 19:29:08] Window shape: (60, 409)
+[2026-05-05 19:29:08] Window sample length expected=409, got=409
+[2026-05-05 19:29:08] Class mapping: {'left_hand': 0, 'right_hand': 1}
+[2026-05-05 19:29:08] Global class counts: [1100, 1144]
+[2026-05-05 19:29:08] Chance level: 0.50
+[2026-05-05 19:29:08] Summarizing per-subject windows...
+[2026-05-05 19:29:08]   Subject 1: n_windows=2244, window_shape=(60, 409), class_counts=[1100, 1144]
+[2026-05-05 19:29:08] SignalJEPA_PreLocal instantiated successfully.
+[2026-05-05 19:29:08]   Loading mode:          from_pretrained
+[2026-05-05 19:29:08]   Repo:                  braindecode/signal-jepa_without-chans
+[2026-05-05 19:29:08]   Total parameters:      15,622
+[2026-05-05 19:29:08]   Trainable parameters:  15,622
+[2026-05-05 19:29:09] ======================================================================================================================================================
+Layer (type (var_name):depth-idx)                  Input Shape               Output Shape              Param #                   Kernel Shape
+======================================================================================================================================================
+SignalJEPA_PreLocal (SignalJEPA_PreLocal)          [1, 60, 409]              [1, 2]                    --                        --
+├─Sequential (spatial_conv): 1-1                   [1, 60, 409]              [1, 4, 409]               --                        --
+│    └─Rearrange (0): 2-1                          [1, 60, 409]              [1, 1, 60, 409]           --                        --
+│    └─Conv2d (1): 2-2                             [1, 1, 60, 409]           [1, 4, 1, 409]            244                       [60, 1]
+│    └─Rearrange (2): 2-3                          [1, 4, 1, 409]            [1, 4, 409]               --                        --
+├─_ConvFeatureEncoder (feature_encoder): 1-2       [1, 4, 409]               [1, 12, 64]               --                        --
+│    └─Rearrange (0): 2-4                          [1, 4, 409]               [4, 1, 409]               --                        --
+│    └─Sequential (1): 2-5                         [4, 1, 409]               [4, 8, 48]                --                        --
+│    │    └─Conv1d (0): 3-1                        [4, 1, 409]               [4, 8, 48]                256                       [32]
+│    │    └─Dropout (1): 3-2                       [4, 8, 48]                [4, 8, 48]                --                        --
+│    │    └─GroupNorm (2): 3-3                     [4, 8, 48]                [4, 8, 48]                16                        --
+│    │    └─GELU (3): 3-4                          [4, 8, 48]                [4, 8, 48]                --                        --
+│    └─Sequential (2): 2-6                         [4, 8, 48]                [4, 16, 24]               --                        --
+│    │    └─Conv1d (0): 3-5                        [4, 8, 48]                [4, 16, 24]               256                       [2]
+│    │    └─Dropout (1): 3-6                       [4, 16, 24]               [4, 16, 24]               --                        --
+│    │    └─GELU (2): 3-7                          [4, 16, 24]               [4, 16, 24]               --                        --
+│    └─Sequential (3): 2-7                         [4, 16, 24]               [4, 32, 12]               --                        --
+│    │    └─Conv1d (0): 3-8                        [4, 16, 24]               [4, 32, 12]               1,024                     [2]
+│    │    └─Dropout (1): 3-9                       [4, 32, 12]               [4, 32, 12]               --                        --
+│    │    └─GELU (2): 3-10                         [4, 32, 12]               [4, 32, 12]               --                        --
+│    └─Sequential (4): 2-8                         [4, 32, 12]               [4, 64, 6]                --                        --
+│    │    └─Conv1d (0): 3-11                       [4, 32, 12]               [4, 64, 6]                4,096                     [2]
+│    │    └─Dropout (1): 3-12                      [4, 64, 6]                [4, 64, 6]                --                        --
+│    │    └─GELU (2): 3-13                         [4, 64, 6]                [4, 64, 6]                --                        --
+│    └─Sequential (5): 2-9                         [4, 64, 6]                [4, 64, 3]                --                        --
+│    │    └─Conv1d (0): 3-14                       [4, 64, 6]                [4, 64, 3]                8,192                     [2]
+│    │    └─Dropout (1): 3-15                      [4, 64, 3]                [4, 64, 3]                --                        --
+│    │    └─GELU (2): 3-16                         [4, 64, 3]                [4, 64, 3]                --                        --
+│    └─Rearrange (6): 2-10                         [4, 64, 3]                [1, 12, 64]               --                        --
+├─Sequential (final_layer): 1-3                    [1, 12, 64]               [1, 2]                    --                        --
+│    └─Flatten (0): 2-11                           [1, 12, 64]               [1, 768]                  --                        --
+│    └─Linear (1): 2-12                            [1, 768]                  [1, 2]                    1,538                     --
+======================================================================================================================================================
+Total params: 15,622
+Trainable params: 15,622
+Non-trainable params: 0
+Total mult-adds (Units.MEGABYTES): 0.42
+======================================================================================================================================================
+Input size (MB): 0.10
+Forward/backward pass size (MB): 0.08
+Params size (MB): 0.06
+Estimated Total Size (MB): 0.24
+======================================================================================================================================================
+[2026-05-05 19:29:09] ======================================================================
+[2026-05-05 19:29:09] STARTING WITHIN-SUBJECT CROSS-VALIDATION
+[2026-05-05 19:29:09] ======================================================================
+[2026-05-05 19:29:09] Dataset:       Stieger2021
+[2026-05-05 19:29:09] Subjects:      ['1']
+[2026-05-05 19:29:09] Model:         SignalJEPA_PreLocal
+[2026-05-05 19:29:09] Pretrained:    from_pretrained
+[2026-05-05 19:29:09] Strategy:      new
+[2026-05-05 19:29:09] CV folds:      5
+[2026-05-05 19:29:09] Val split:     0.2
+[2026-05-05 19:29:09] Max epochs:    50
+[2026-05-05 19:29:09] Device:        mps
+[2026-05-05 19:29:09] ======================================================================
+
+[2026-05-05 19:29:09] Subject 1: 2244 windows | class_counts=[1100, 1144]
+
+[2026-05-05 19:29:09] Fold 1/5 | subject=1
+[2026-05-05 19:29:09]     Train windows:           1795 | counts=[880, 915]
+[2026-05-05 19:29:09]     Test windows:            449 | counts=[220, 229]
+[2026-05-05 19:29:09]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-05 19:29:09]     Fine-tune strategy:      new
+[2026-05-05 19:29:09]     Pretrained loading path: from_pretrained
+[2026-05-05 19:29:09]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-05 19:29:09]     Phase 1 (new):
+[2026-05-05 19:29:09]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-05 19:29:09]       Total params:     15,622
+[2026-05-05 19:29:09]       Trainable params: 1,782
+[2026-05-05 19:29:09]       Trainable pct:    11.41%
+[2026-05-05 19:29:09]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-05 19:29:10]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-05 19:29:33]     Result | best_epoch=49 | stop=50 | acc=0.8263 | bal_acc=0.8266 | pred_hist=[228, 221]
+
+[2026-05-05 19:29:34] Fold 2/5 | subject=1
+[2026-05-05 19:29:34]     Train windows:           1795 | counts=[880, 915]
+[2026-05-05 19:29:34]     Test windows:            449 | counts=[220, 229]
+[2026-05-05 19:29:34]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-05 19:29:34]     Fine-tune strategy:      new
+[2026-05-05 19:29:34]     Pretrained loading path: from_pretrained
+[2026-05-05 19:29:34]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-05 19:29:34]     Phase 1 (new):
+[2026-05-05 19:29:34]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-05 19:29:34]       Total params:     15,622
+[2026-05-05 19:29:34]       Trainable params: 1,782
+[2026-05-05 19:29:34]       Trainable pct:    11.41%
+[2026-05-05 19:29:34]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-05 19:29:34]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-05 19:29:55]     Result | best_epoch=42 | stop=50 | acc=0.8174 | bal_acc=0.8170 | pred_hist=[214, 235]
+
+[2026-05-05 19:29:56] Fold 3/5 | subject=1
+[2026-05-05 19:29:56]     Train windows:           1795 | counts=[880, 915]
+[2026-05-05 19:29:56]     Test windows:            449 | counts=[220, 229]
+[2026-05-05 19:29:56]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-05 19:29:56]     Fine-tune strategy:      new
+[2026-05-05 19:29:56]     Pretrained loading path: from_pretrained
+[2026-05-05 19:29:56]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-05 19:29:56]     Phase 1 (new):
+[2026-05-05 19:29:56]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-05 19:29:56]       Total params:     15,622
+[2026-05-05 19:29:56]       Trainable params: 1,782
+[2026-05-05 19:29:56]       Trainable pct:    11.41%
+[2026-05-05 19:29:56]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-05 19:29:56]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-05 19:30:17]     Result | best_epoch=50 | stop=50 | acc=0.8174 | bal_acc=0.8172 | pred_hist=[218, 231]
+
+[2026-05-05 19:30:18] Fold 4/5 | subject=1
+[2026-05-05 19:30:18]     Train windows:           1795 | counts=[880, 915]
+[2026-05-05 19:30:18]     Test windows:            449 | counts=[220, 229]
+[2026-05-05 19:30:18]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-05 19:30:18]     Fine-tune strategy:      new
+[2026-05-05 19:30:18]     Pretrained loading path: from_pretrained
+[2026-05-05 19:30:18]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-05 19:30:18]     Phase 1 (new):
+[2026-05-05 19:30:18]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-05 19:30:18]       Total params:     15,622
+[2026-05-05 19:30:18]       Trainable params: 1,782
+[2026-05-05 19:30:18]       Trainable pct:    11.41%
+[2026-05-05 19:30:18]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-05 19:30:18]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-05 19:30:40]     Result | best_epoch=45 | stop=50 | acc=0.7728 | bal_acc=0.7730 | pred_hist=[226, 223]
+
+[2026-05-05 19:30:41] Fold 5/5 | subject=1
+[2026-05-05 19:30:41]     Train windows:           1796 | counts=[880, 916]
+[2026-05-05 19:30:41]     Test windows:            448 | counts=[220, 228]
+[2026-05-05 19:30:41]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-05 19:30:41]     Fine-tune strategy:      new
+[2026-05-05 19:30:41]     Pretrained loading path: from_pretrained
+[2026-05-05 19:30:41]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-05 19:30:41]     Phase 1 (new):
+[2026-05-05 19:30:41]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-05 19:30:41]       Total params:     15,622
+[2026-05-05 19:30:41]       Trainable params: 1,782
+[2026-05-05 19:30:41]       Trainable pct:    11.41%
+[2026-05-05 19:30:41]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-05 19:30:41]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-05 19:31:03]     Result | best_epoch=44 | stop=50 | acc=0.8438 | bal_acc=0.8435 | pred_hist=[216, 232]
+[2026-05-05 19:31:03]   Subject 1 summary: acc=0.8155±0.0234  bal_acc=0.8155±0.0233
+
+[2026-05-05 19:31:03] Total folds completed: 5
+[2026-05-05 19:31:03] ======================================================================
+[2026-05-05 19:31:03] AGGREGATED RESULTS
+[2026-05-05 19:31:03] ======================================================================
+[2026-05-05 19:31:03]   1: acc=0.8155±0.0234  bal_acc=0.8155±0.0233
+[2026-05-05 19:31:03] ----------------------------------------------------------------------
+[2026-05-05 19:31:03]   OVERALL: acc=0.8155±0.0234  bal_acc=0.8155±0.0233
+[2026-05-05 19:31:03] ======================================================================
+
+[2026-05-05 19:31:03] ======================================================================
+[2026-05-05 19:31:03] EXPERIMENT SUMMARY
+[2026-05-05 19:31:03] ======================================================================
+[2026-05-05 19:31:03] Run ID:                 20260505_1913_8991b85c
+[2026-05-05 19:31:03] Dataset:                Stieger2021
+[2026-05-05 19:31:03] Labels kept:            ['left_hand', 'right_hand']
+[2026-05-05 19:31:03] Model:                  SignalJEPA_PreLocal
+[2026-05-05 19:31:03] Pretrained mode:        from_pretrained
+[2026-05-05 19:31:03] Strategy:               new
+[2026-05-05 19:31:03] Window:                 3.200s / 409 samples
+[2026-05-05 19:31:03] Artifacts:              /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/moabb-mi-sjepa/Stieger2021/20260505_1913_8991b85c
+[2026-05-05 19:31:03] Mean Accuracy:          0.8155 ± 0.0234
+[2026-05-05 19:31:03] Mean Balanced Accuracy: 0.8155 ± 0.0233
+[2026-05-05 19:31:03] ======================================================================
+[2026-05-05 19:31:03] CV results saved to:      /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/moabb-mi-sjepa/Stieger2021/20260505_1913_8991b85c/cv_results.json
+[2026-05-05 19:31:03] Subject metrics saved to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/moabb-mi-sjepa/Stieger2021/20260505_1913_8991b85c/subject_metrics.json
+[2026-05-05 19:31:03] Global metrics saved to:  /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/moabb-mi-sjepa/Stieger2021/20260505_1913_8991b85c/global_metrics.json
+[2026-05-05 19:31:03] Run metadata saved to:    /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/moabb-mi-sjepa/Stieger2021/20260505_1913_8991b85c/run_metadata.json
+
+[2026-05-05 19:31:03] All artifacts in: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/moabb-mi-sjepa/Stieger2021/20260505_1913_8991b85c

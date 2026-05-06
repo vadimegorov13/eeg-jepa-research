@@ -1,0 +1,121 @@
+[2026-05-05 20:21:56] Using device: mps
+[2026-05-05 20:21:56] Seed control disabled
+[2026-05-05 20:21:56] ======================================================================
+[2026-05-05 20:21:56] CONFIGURATION
+[2026-05-05 20:21:56] ======================================================================
+[2026-05-05 20:21:56]   artifact_dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/moabb-mi-sjepa-loso
+[2026-05-05 20:21:56]   bandpass_high: 40.0
+[2026-05-05 20:21:56]   bandpass_low: 0.5
+[2026-05-05 20:21:56]   batch_size: 32
+[2026-05-05 20:21:56]   dataset_name: Lee2019_MI
+[2026-05-05 20:21:56]   dataset_source: moabb
+[2026-05-05 20:21:56]   early_stopping_patience: None
+[2026-05-05 20:21:56]   exclude_subjects: []
+[2026-05-05 20:21:56]   labels_to_keep: ['left_hand', 'right_hand']
+[2026-05-05 20:21:56]   learning_rate: 0.0001
+[2026-05-05 20:21:56]   moabb_dataset_kwargs: {}
+[2026-05-05 20:21:56]   model_name: SignalJEPA_PreLocal
+[2026-05-05 20:21:56]   n_epochs: 50
+[2026-05-05 20:21:56]   preprocessed_concat_dir: None
+[2026-05-05 20:21:56]   pretrained_mode: from_pretrained
+[2026-05-05 20:21:56]   pretrained_repo_id: None
+[2026-05-05 20:21:56]   seed: None
+[2026-05-05 20:21:56]   set_seed: False
+[2026-05-05 20:21:56]   sfreq: 128
+[2026-05-05 20:21:56]   strategy: new
+[2026-05-05 20:21:56]   subjects_to_use: None
+[2026-05-05 20:21:56]   target_window_duration_s: 4.2
+[2026-05-05 20:21:56]   val_split: 0.2
+[2026-05-05 20:21:56]   warmup_epochs: 10
+[2026-05-05 20:21:56] ======================================================================
+[2026-05-05 20:21:56] Config saved to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/moabb-mi-sjepa-loso/Lee2019_MI/20260505_2021_55f04eee/config.json
+[2026-05-05 20:21:56] Epoch window configuration:
+[2026-05-05 20:21:56]   Target sfreq:            128 Hz
+[2026-05-05 20:21:56]   Requested duration:      4.200 s
+[2026-05-05 20:21:56]   Expected window samples: 537
+
+[2026-05-05 20:21:56] Preprocessed concat dataset exists: True at /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/preprocessed_concat_datasets/Lee2019_MI_048eba1d_w8653d5_subjects_642e92ef
+
+[2026-05-05 20:21:56] Using existing preprocessed concat dataset.
+
+[2026-05-05 20:21:56] Post-load raw validation
+[2026-05-05 20:21:56]   Recordings:          2
+[2026-05-05 20:21:56]   Subjects loaded:     ['48']
+[2026-05-05 20:21:56]   sfreq first rec:     128.0 Hz
+[2026-05-05 20:21:56]   EEG channel count:   62
+[2026-05-05 20:21:56]   Labels present:      ['left_hand', 'right_hand']
+[2026-05-05 20:21:56]   Labels selected:     ['left_hand', 'right_hand']
+[2026-05-05 20:21:56] Annotation counts before filtering: {np.str_('left_hand'): 100, np.str_('right_hand'): 100}
+[2026-05-05 20:21:56] Filtered annotations: kept 200 / 200
+[2026-05-05 20:21:56] Annotation counts after filtering:  {np.str_('left_hand'): 100, np.str_('right_hand'): 100}
+[2026-05-05 20:21:56] Updated annotation durations:       200
+[2026-05-05 20:21:56] Window shape: (62, 537)
+[2026-05-05 20:21:56] Window sample length expected=537, got=537
+[2026-05-05 20:21:56] Class mapping: {'left_hand': 0, 'right_hand': 1}
+[2026-05-05 20:21:56] Global class counts: [100, 100]
+[2026-05-05 20:21:56] Chance level: 0.50
+[2026-05-05 20:21:56] Summarizing per-subject windows...
+[2026-05-05 20:21:56]   Subject 48: n_windows=200, window_shape=(62, 537), class_counts=[100, 100]
+[2026-05-05 20:21:57] SignalJEPA_PreLocal instantiated successfully.
+[2026-05-05 20:21:57]   Loading mode:          from_pretrained
+[2026-05-05 20:21:57]   Repo:                  braindecode/signal-jepa_without-chans
+[2026-05-05 20:21:57]   Total parameters:      16,142
+[2026-05-05 20:21:57]   Trainable parameters:  16,142
+[2026-05-05 20:21:57] ======================================================================================================================================================
+Layer (type (var_name):depth-idx)                  Input Shape               Output Shape              Param #                   Kernel Shape
+======================================================================================================================================================
+SignalJEPA_PreLocal (SignalJEPA_PreLocal)          [1, 62, 537]              [1, 2]                    --                        --
+├─Sequential (spatial_conv): 1-1                   [1, 62, 537]              [1, 4, 537]               --                        --
+│    └─Rearrange (0): 2-1                          [1, 62, 537]              [1, 1, 62, 537]           --                        --
+│    └─Conv2d (1): 2-2                             [1, 1, 62, 537]           [1, 4, 1, 537]            252                       [62, 1]
+│    └─Rearrange (2): 2-3                          [1, 4, 1, 537]            [1, 4, 537]               --                        --
+├─_ConvFeatureEncoder (feature_encoder): 1-2       [1, 4, 537]               [1, 16, 64]               --                        --
+│    └─Rearrange (0): 2-4                          [1, 4, 537]               [4, 1, 537]               --                        --
+│    └─Sequential (1): 2-5                         [4, 1, 537]               [4, 8, 64]                --                        --
+│    │    └─Conv1d (0): 3-1                        [4, 1, 537]               [4, 8, 64]                256                       [32]
+│    │    └─Dropout (1): 3-2                       [4, 8, 64]                [4, 8, 64]                --                        --
+│    │    └─GroupNorm (2): 3-3                     [4, 8, 64]                [4, 8, 64]                16                        --
+│    │    └─GELU (3): 3-4                          [4, 8, 64]                [4, 8, 64]                --                        --
+│    └─Sequential (2): 2-6                         [4, 8, 64]                [4, 16, 32]               --                        --
+│    │    └─Conv1d (0): 3-5                        [4, 8, 64]                [4, 16, 32]               256                       [2]
+│    │    └─Dropout (1): 3-6                       [4, 16, 32]               [4, 16, 32]               --                        --
+│    │    └─GELU (2): 3-7                          [4, 16, 32]               [4, 16, 32]               --                        --
+│    └─Sequential (3): 2-7                         [4, 16, 32]               [4, 32, 16]               --                        --
+│    │    └─Conv1d (0): 3-8                        [4, 16, 32]               [4, 32, 16]               1,024                     [2]
+│    │    └─Dropout (1): 3-9                       [4, 32, 16]               [4, 32, 16]               --                        --
+│    │    └─GELU (2): 3-10                         [4, 32, 16]               [4, 32, 16]               --                        --
+│    └─Sequential (4): 2-8                         [4, 32, 16]               [4, 64, 8]                --                        --
+│    │    └─Conv1d (0): 3-11                       [4, 32, 16]               [4, 64, 8]                4,096                     [2]
+│    │    └─Dropout (1): 3-12                      [4, 64, 8]                [4, 64, 8]                --                        --
+│    │    └─GELU (2): 3-13                         [4, 64, 8]                [4, 64, 8]                --                        --
+│    └─Sequential (5): 2-9                         [4, 64, 8]                [4, 64, 4]                --                        --
+│    │    └─Conv1d (0): 3-14                       [4, 64, 8]                [4, 64, 4]                8,192                     [2]
+│    │    └─Dropout (1): 3-15                      [4, 64, 4]                [4, 64, 4]                --                        --
+│    │    └─GELU (2): 3-16                         [4, 64, 4]                [4, 64, 4]                --                        --
+│    └─Rearrange (6): 2-10                         [4, 64, 4]                [1, 16, 64]               --                        --
+├─Sequential (final_layer): 1-3                    [1, 16, 64]               [1, 2]                    --                        --
+│    └─Flatten (0): 2-11                           [1, 16, 64]               [1, 1024]                 --                        --
+│    └─Linear (1): 2-12                            [1, 1024]                 [1, 2]                    2,050                     --
+======================================================================================================================================================
+Total params: 16,142
+Trainable params: 16,142
+Non-trainable params: 0
+Total mult-adds (Units.MEGABYTES): 0.56
+======================================================================================================================================================
+Input size (MB): 0.13
+Forward/backward pass size (MB): 0.11
+Params size (MB): 0.06
+Estimated Total Size (MB): 0.31
+======================================================================================================================================================
+[2026-05-05 20:21:57] ======================================================================
+[2026-05-05 20:21:57] STARTING LOSO EVALUATION
+[2026-05-05 20:21:57] ======================================================================
+[2026-05-05 20:21:57] Dataset:       Lee2019_MI
+[2026-05-05 20:21:57] Subjects:      ['48']
+[2026-05-05 20:21:57] Model:         SignalJEPA_PreLocal
+[2026-05-05 20:21:57] Pretrained:    from_pretrained
+[2026-05-05 20:21:57] Strategy:      new
+[2026-05-05 20:21:57] Val split:     0.2
+[2026-05-05 20:21:57] Max epochs:    50
+[2026-05-05 20:21:57] Device:        mps
+[2026-05-05 20:21:57] ======================================================================

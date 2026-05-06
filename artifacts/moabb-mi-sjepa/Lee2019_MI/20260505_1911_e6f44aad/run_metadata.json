@@ -1,0 +1,36 @@
+{
+  "run_id": "20260505_1911_e6f44aad",
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/moabb-mi-sjepa/Lee2019_MI/20260505_1911_e6f44aad",
+  "dataset_name": "Lee2019_MI",
+  "dataset_source": "moabb",
+  "preprocessed_concat_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/preprocessed_concat_datasets/Lee2019_MI_048eba1d_w8653d5_subjects_642e92ef",
+  "labels_to_keep": [
+    "left_hand",
+    "right_hand"
+  ],
+  "excluded_subjects": [],
+  "target_window_duration_s": 4.2,
+  "window_samples": 537,
+  "subjects": [
+    "48"
+  ],
+  "model_name": "SignalJEPA_PreLocal",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "pretrained_checkpoint_info": {
+    "loading_path": "from_pretrained",
+    "repo_id": "braindecode/signal-jepa_without-chans",
+    "mode": "from_pretrained",
+    "model_name": "SignalJEPA_PreLocal"
+  },
+  "cv_seed": null,
+  "global_metrics": {
+    "mean_accuracy": 0.565,
+    "std_accuracy": 0.058309518948453015,
+    "mean_balanced_accuracy": 0.565,
+    "std_balanced_accuracy": 0.05830951894845299,
+    "n_groups": 1,
+    "n_folds_total": 5
+  }
+}
