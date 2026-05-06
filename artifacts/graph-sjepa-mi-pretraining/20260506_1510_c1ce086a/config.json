@@ -1,0 +1,93 @@
+{
+  "artifact_dir": "c:\\Repos\\eeg-jepa-research\\artifacts\\graph-sjepa-mi-pretraining",
+  "seed": 42,
+  "datasets": [
+    {
+      "name": "Lee2019_MI",
+      "role": "source_high_density",
+      "train_subject_ids": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "val_subject_ids": [
+        41,
+        42
+      ],
+      "exclude_subject_ids": [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "dataset_kwargs": {}
+    },
+    {
+      "name": "PhysionetMI",
+      "role": "target_hard_transfer",
+      "train_subject_ids": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "val_subject_ids": [
+        91,
+        92,
+        93
+      ],
+      "exclude_subject_ids": [
+        88
+      ],
+      "dataset_kwargs": {
+        "imagined": true,
+        "executed": false
+      }
+    }
+  ],
+  "subject_chunk_size": 2,
+  "chunk_shuffle": true,
+  "window_preload": false,
+  "sfreq": 128,
+  "bandpass_low": 0.5,
+  "bandpass_high": 40.0,
+  "pretrain_duration_s": 4.0,
+  "sampling_interval_s": 4.0,
+  "graph_k_neighbors": 6,
+  "graph_self_loops": true,
+  "graph_distance_weighted": true,
+  "graph_eps": 1e-06,
+  "masking_strategy": "coordinate_spatial_block",
+  "mask_diameter_percent": 60,
+  "min_visible_channels": 2,
+  "emb_dim": 64,
+  "local_conv_channels": [
+    32,
+    64,
+    64
+  ],
+  "local_kernel_size": 7,
+  "local_stride": 2,
+  "graph_layers": 2,
+  "context_layers": 4,
+  "context_nhead": 8,
+  "context_dim_feedforward": 256,
+  "predictor_layers": 2,
+  "predictor_nhead": 8,
+  "predictor_dim_feedforward": 256,
+  "dropout": 0.1,
+  "batch_size": 16,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0,
+  "n_epochs": 100,
+  "ema_decay": 0.996,
+  "early_stopping_patience": 10,
+  "grad_clip_norm": 1.0,
+  "device": "auto"
+}

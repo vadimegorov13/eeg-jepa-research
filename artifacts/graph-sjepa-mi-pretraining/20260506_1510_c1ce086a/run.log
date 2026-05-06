@@ -1,0 +1,97 @@
+[2026-05-06 15:10:45] Logging to: c:\Repos\eeg-jepa-research\artifacts\graph-sjepa-mi-pretraining\20260506_1510_c1ce086a\run.log
+[2026-05-06 15:10:45] Using device: cuda
+[2026-05-06 15:10:45] Seed set to: 42
+[2026-05-06 15:10:45] Config saved to: c:\Repos\eeg-jepa-research\artifacts\graph-sjepa-mi-pretraining\20260506_1510_c1ce086a\config.json
+[2026-05-06 15:10:45] Graph-SJEPA dataset pool:
+[2026-05-06 15:10:45]   Lee2019_MI: role=source_high_density train=[1, 2, 3, 4, 5] val=[41, 42] kwargs={}
+[2026-05-06 15:10:45]   PhysionetMI: role=target_hard_transfer train=[1, 2, 3, 4, 5] val=[91, 92, 93] kwargs={'imagined': True, 'executed': False}
+
+[2026-05-06 15:10:45] Train chunks per epoch: 6
+[2026-05-06 15:10:45] Val chunks per epoch:   3
+[2026-05-06 15:10:45] Pretraining window parameters:
+[2026-05-06 15:10:45]   sfreq:                      128 Hz
+[2026-05-06 15:10:45]   pretrain_duration_s:        4.0 s
+[2026-05-06 15:10:45]   sampling_interval_s:        4.0 s
+[2026-05-06 15:10:45]   window_size_samples:        512
+[2026-05-06 15:10:45]   sampling_interval_samples:  512
+[2026-05-06 15:10:45] Loading MOABB chunk: dataset=Lee2019_MI subjects=[1, 2] kwargs={}
+[2026-05-06 15:13:08]   Preprocessed Lee2019_MI subjects=[1, 2]: recordings=4 sfreq=128.0 channels=62
+[2026-05-06 15:13:08]   Windows ready: split=reference dataset=Lee2019_MI subjects=[1, 2] windows=1434 shape=(62, 512) valid_coord_ratio=1.000
+
+[2026-05-06 15:13:08] Reference chunk summary:
+[2026-05-06 15:13:08]   Dataset:              Lee2019_MI
+[2026-05-06 15:13:08]   Subjects:             [1, 2]
+[2026-05-06 15:13:08]   Window count:         1434
+[2026-05-06 15:13:08]   Sample shape:         (62, 512)
+[2026-05-06 15:13:08]   Channels:             62
+[2026-05-06 15:13:08]   Valid coord ratio:    1.000
+[2026-05-06 15:13:08]   First 10 channels:    ['Fp1', 'Fp2', 'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2']
+[2026-05-06 15:13:08] Mask sanity check:
+[2026-05-06 15:13:08]   mean masked channels:  9.12
+[2026-05-06 15:13:08]   mean visible channels: 52.88
+[2026-05-06 15:13:08]   mask radius:           0.5173
+[2026-05-06 15:13:08] Graph-SJEPA model instantiated:
+[2026-05-06 15:13:08]   n_tokens_per_channel estimate: 64
+[2026-05-06 15:13:08]   max_tokens_per_channel:        256
+[2026-05-06 15:13:08]   student params:                285,472 total / 285,472 trainable
+[2026-05-06 15:13:08]   predictor params:              104,192 total / 104,192 trainable
+[2026-05-06 15:13:09] One-batch Graph-SJEPA sanity check:
+[2026-05-06 15:13:09]   loss:                    0.948248
+[2026-05-06 15:13:09]   token info:              {'n_channels': 62, 'n_tokens_per_channel': 64, 'total_tokens': 3968}
+[2026-05-06 15:13:09]   mean masked channels:    8.75
+[2026-05-06 15:13:09]   mean masked tokens:      560.00
+[2026-05-06 15:13:09]   mean visible tokens:     3408.00
+[2026-05-06 15:13:09] ======================================================================
+[2026-05-06 15:13:09] STARTING GRAPH-SJEPA PRETRAINING
+[2026-05-06 15:13:09] ======================================================================
+[2026-05-06 15:13:09] Datasets:             ['Lee2019_MI', 'PhysionetMI']
+[2026-05-06 15:13:09] Train chunks/epoch:   6
+[2026-05-06 15:13:09] Val chunks/epoch:     3
+[2026-05-06 15:13:09] Window seconds:       4.0
+[2026-05-06 15:13:09] Mask diameter %:      60
+[2026-05-06 15:13:09] Device:               cuda
+[2026-05-06 15:13:09] ======================================================================
+[2026-05-06 15:13:09] Loading MOABB chunk: dataset=PhysionetMI subjects=[5] kwargs={'imagined': True, 'executed': False}
+[2026-05-06 15:13:10]   Preprocessed PhysionetMI subjects=[5]: recordings=6 sfreq=128.0 channels=64
+[2026-05-06 15:13:10]   Windows ready: split=train dataset=PhysionetMI subjects=[5] windows=180 shape=(64, 512) valid_coord_ratio=1.000
+[2026-05-06 15:13:29] [train] epoch=1 chunk=1/6 dataset=PhysionetMI subjects=[5] windows=180 batches=11 channels=64 loss=0.625688 running=0.625688 time=19.81s
+[2026-05-06 15:13:30] Loading MOABB chunk: dataset=PhysionetMI subjects=[3, 4] kwargs={'imagined': True, 'executed': False}
+[2026-05-06 15:13:32]   Preprocessed PhysionetMI subjects=[3, 4]: recordings=12 sfreq=128.0 channels=64
+[2026-05-06 15:13:32]   Windows ready: split=train dataset=PhysionetMI subjects=[3, 4] windows=366 shape=(64, 512) valid_coord_ratio=1.000
+[2026-05-06 15:14:10] [train] epoch=1 chunk=2/6 dataset=PhysionetMI subjects=[3, 4] windows=366 batches=22 channels=64 loss=0.514037 running=0.551254 time=40.37s
+[2026-05-06 15:14:12] Loading MOABB chunk: dataset=PhysionetMI subjects=[1, 2] kwargs={'imagined': True, 'executed': False}
+[2026-05-06 15:14:13]   Preprocessed PhysionetMI subjects=[1, 2]: recordings=12 sfreq=128.0 channels=64
+[2026-05-06 15:14:13]   Windows ready: split=train dataset=PhysionetMI subjects=[1, 2] windows=366 shape=(64, 512) valid_coord_ratio=1.000
+[2026-05-06 15:14:52] [train] epoch=1 chunk=3/6 dataset=PhysionetMI subjects=[1, 2] windows=366 batches=22 channels=64 loss=0.432752 running=0.503854 time=40.14s
+[2026-05-06 15:14:53] Loading MOABB chunk: dataset=Lee2019_MI subjects=[3, 4] kwargs={}
+[2026-05-06 15:17:10]   Preprocessed Lee2019_MI subjects=[3, 4]: recordings=4 sfreq=128.0 channels=62
+[2026-05-06 15:17:10]   Windows ready: split=train dataset=Lee2019_MI subjects=[3, 4] windows=1367 shape=(62, 512) valid_coord_ratio=1.000
+[2026-05-06 15:19:33] [train] epoch=1 chunk=4/6 dataset=Lee2019_MI subjects=[3, 4] windows=1367 batches=85 channels=62 loss=0.323640 running=0.394438 time=280.11s
+[2026-05-06 15:19:34] Loading MOABB chunk: dataset=Lee2019_MI subjects=[5] kwargs={}
+[2026-05-06 15:20:41]   Preprocessed Lee2019_MI subjects=[5]: recordings=2 sfreq=128.0 channels=62
+[2026-05-06 15:20:41]   Windows ready: split=train dataset=Lee2019_MI subjects=[5] windows=713 shape=(62, 512) valid_coord_ratio=1.000
+[2026-05-06 15:21:55] [train] epoch=1 chunk=5/6 dataset=Lee2019_MI subjects=[5] windows=713 batches=44 channels=62 loss=0.319097 running=0.376422 time=140.73s
+[2026-05-06 15:21:56] Loading MOABB chunk: dataset=Lee2019_MI subjects=[1, 2] kwargs={}
+[2026-05-06 15:22:44]   Preprocessed Lee2019_MI subjects=[1, 2]: recordings=4 sfreq=128.0 channels=62
+[2026-05-06 15:22:44]   Windows ready: split=train dataset=Lee2019_MI subjects=[1, 2] windows=1434 shape=(62, 512) valid_coord_ratio=1.000
+[2026-05-06 15:25:14] [train] epoch=1 chunk=6/6 dataset=Lee2019_MI subjects=[1, 2] windows=1434 batches=89 channels=62 loss=0.279456 running=0.344811 time=198.53s
+[2026-05-06 15:25:16] Loading MOABB chunk: dataset=Lee2019_MI subjects=[41, 42] kwargs={}
+[2026-05-06 15:27:30]   Preprocessed Lee2019_MI subjects=[41, 42]: recordings=4 sfreq=128.0 channels=62
+[2026-05-06 15:27:30]   Windows ready: split=val dataset=Lee2019_MI subjects=[41, 42] windows=1393 shape=(62, 512) valid_coord_ratio=1.000
+[2026-05-06 15:28:17] [val] epoch=1 chunk=1/3 dataset=Lee2019_MI subjects=[41, 42] windows=1393 batches=88 channels=62 loss=0.265891 running=0.265891 time=181.57s
+[2026-05-06 15:28:17] Loading MOABB chunk: dataset=PhysionetMI subjects=[91, 92] kwargs={'imagined': True, 'executed': False}
+[2026-05-06 15:31:03]   Preprocessed PhysionetMI subjects=[91, 92]: recordings=12 sfreq=128.0 channels=64
+[2026-05-06 15:31:03]   Windows ready: split=val dataset=PhysionetMI subjects=[91, 92] windows=366 shape=(64, 512) valid_coord_ratio=1.000
+[2026-05-06 15:31:16] [val] epoch=1 chunk=2/3 dataset=PhysionetMI subjects=[91, 92] windows=366 batches=23 channels=64 loss=0.400118 running=0.293704 time=178.71s
+[2026-05-06 15:31:16] Loading MOABB chunk: dataset=PhysionetMI subjects=[93] kwargs={'imagined': True, 'executed': False}
+[2026-05-06 15:32:37]   Preprocessed PhysionetMI subjects=[93]: recordings=6 sfreq=128.0 channels=64
+[2026-05-06 15:32:37]   Windows ready: split=val dataset=PhysionetMI subjects=[93] windows=180 shape=(64, 512) valid_coord_ratio=1.000
+[2026-05-06 15:32:43] [val] epoch=1 chunk=3/3 dataset=PhysionetMI subjects=[93] windows=180 batches=12 channels=64 loss=0.366474 running=0.300803 time=87.06s
+[2026-05-06 15:32:44] [epoch 1] train=0.344811 val=0.300803 best=0.300803 patience=0/10 *
+[2026-05-06 15:32:44] Loading MOABB chunk: dataset=Lee2019_MI subjects=[5] kwargs={}
+[2026-05-06 15:33:07]   Preprocessed Lee2019_MI subjects=[5]: recordings=2 sfreq=128.0 channels=62
+[2026-05-06 15:33:07]   Windows ready: split=train dataset=Lee2019_MI subjects=[5] windows=713 shape=(62, 512) valid_coord_ratio=1.000
+[2026-05-06 15:34:21] [train] epoch=2 chunk=1/6 dataset=Lee2019_MI subjects=[5] windows=713 batches=44 channels=62 loss=0.332384 running=0.332384 time=97.21s
+[2026-05-06 15:34:22] Loading MOABB chunk: dataset=Lee2019_MI subjects=[3, 4] kwargs={}
+[2026-05-06 15:35:09]   Preprocessed Lee2019_MI subjects=[3, 4]: recordings=4 sfreq=128.0 channels=62
+[2026-05-06 15:35:09]   Windows ready: split=train dataset=Lee2019_MI subjects=[3, 4] windows=1367 shape=(62, 512) valid_coord_ratio=1.000
