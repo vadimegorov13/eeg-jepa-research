@@ -1,0 +1,241 @@
+C:\Repos\eeg-jepa-research\.venv\Lib\site-packages\nbformat\__init__.py:96: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  validate(nb)
+Notebook:       C:\Repos\eeg-jepa-research\src\moabb_mi_sjepa.ipynb
+Configurations: C:\Repos\eeg-jepa-research\src\utils\experiments\configs\moabb_dataset_sweep.json
+Total configs:  5
+
+[1/5] Running config override:
+{
+  "dataset_name": "Cho2017"
+}
+  status:       completed
+  elapsed_sec:  263.08
+  run_id:       20260506_1148_9e0b585a
+  artifact_dir: C:\Repos\eeg-jepa-research\artifacts\moabb-mi-sjepa\Cho2017\20260506_1148_9e0b585a
+
+[2/5] Running config override:
+{
+  "dataset_name": "Stieger2021"
+}
+  status:       failed
+  elapsed_sec:  5683.704
+  run_id:       20260506_1148_9e0b585a
+  artifact_dir: C:\Repos\eeg-jepa-research\artifacts\moabb-mi-sjepa\Cho2017\20260506_1148_9e0b585a
+  error:        An error occurred while executing the following cell:
+------------------
+
+if CONFIG["dataset_source"] == "moabb" and not PREPROCESSED_CONCAT_DATASETS_EXISTS:
+    print("Applying average reference...")
+    for ds in DATASET.datasets:
+        mne.set_eeg_reference(ds.raw, ref_channels="average", copy=False, verbose=False)
+
+    print("Applying Braindecode preprocessors...")
+    preprocess(
+        DATASET,
+        [
+            Preprocessor("pick_types", eeg=True, meg=False, stim=False),
+            Preprocessor("resample", sfreq=CONFIG["sfreq"]),
+            Preprocessor("filter", l_freq=CONFIG["bandpass_low"], h_freq=CONFIG["bandpass_high"]),
+        ],
+        n_jobs=1,
+    )
+    DATASET.save(PREPROCESSED_CONCAT_DIR, overwrite=True)
+    print(f"Saved preprocessed raw concat dataset to: {PREPROCESSED_CONCAT_DIR}")
+------------------
+
+----- stdout -----
+[2026-05-06 13:05:16] Applying average reference...
+----- stdout -----
+[2026-05-06 13:18:53] Applying Braindecode preprocessors...
+----- stderr -----
+C:\Repos\eeg-jepa-research\.venv\Lib\site-packages\braindecode\preprocessing\preprocess.py:77: UserWarning: apply_on_array can only be True if fn is a callable function. Automatically correcting to apply_on_array=False.
+  warn(
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mMemoryError[39m                               Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[11][39m[32m, line 7[39m
+[32m      4[39m     mne.set_eeg_reference(ds.raw, ref_channels=[33m"[39m[33maverage[39m[33m"[39m, copy=[38;5;28;01mFalse[39;00m, verbose=[38;5;28;01mFalse[39;00m)
+[32m      6[39m [38;5;28mprint[39m([33m"[39m[33mApplying Braindecode preprocessors...[39m[33m"[39m)
+[32m----> [39m[32m7[39m [43mpreprocess[49m[43m([49m
+[32m      8[39m [43m    [49m[43mDATASET[49m[43m,[49m
+[32m      9[39m [43m    [49m[43m[[49m
+[32m     10[39m [43m        [49m[43mPreprocessor[49m[43m([49m[33;43m"[39;49m[33;43mpick_types[39;49m[33;43m"[39;49m[43m,[49m[43m [49m[43meeg[49m[43m=[49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m[43m [49m[43mmeg[49m[43m=[49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m[43m [49m[43mstim[49m[43m=[49m[38;5;28;43;01mFalse[39;49;00m[43m)[49m[43m,[49m
+[32m     11[39m [43m        [49m[43mPreprocessor[49m[43m([49m[33;43m"[39;49m[33;43mresample[39;49m[33;43m"[39;49m[43m,[49m[43m [49m[43msfreq[49m[43m=[49m[43mCONFIG[49m[43m[[49m[33;43m"[39;49m[33;43msfreq[39;49m[33;43m"[39;49m[43m][49m[43m)[49m[43m,[49m
+[32m     12[39m [43m        [49m[43mPreprocessor[49m[43m([49m[33;43m"[39;49m[33;43mfilter[39;49m[33;43m"[39;49m[43m,[49m[43m [49m[43ml_freq[49m[43m=[49m[43mCONFIG[49m[43m[[49m[33;43m"[39;49m[33;43mbandpass_low[39;49m[33;43m"[39;49m[43m][49m[43m,[49m[43m [49m[43mh_freq[49m[43m=[49m[43mCONFIG[49m[43m[[49m[33;43m"[39;49m[33;43mbandpass_high[39;49m[33;43m"[39;49m[43m][49m[43m)[49m[43m,[49m
+[32m     13[39m [43m    [49m[43m][49m[43m,[49m
+[32m     14[39m [43m    [49m[43mn_jobs[49m[43m=[49m[32;43m1[39;49m[43m,[49m
+[32m     15[39m [43m[49m[43m)[49m
+[32m     16[39m DATASET.save(PREPROCESSED_CONCAT_DIR, overwrite=[38;5;28;01mTrue[39;00m)
+[32m     17[39m [38;5;28mprint[39m([33mf[39m[33m"[39m[33mSaved preprocessed raw concat dataset to: [39m[38;5;132;01m{[39;00mPREPROCESSED_CONCAT_DIR[38;5;132;01m}[39;00m[33m"[39m)
+
+[36mFile [39m[32mC:\Repos\eeg-jepa-research\.venv\Lib\site-packages\braindecode\preprocessing\preprocess.py:270[39m, in [36mpreprocess[39m[34m(concat_ds, preprocessors, save_dir, overwrite, n_jobs, offset, copy_data, parallel_kwargs)[39m
+[32m    265[39m parallel_params = {} [38;5;28;01mif[39;00m parallel_kwargs [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m [38;5;28mdict[39m(parallel_kwargs)
+[32m    266[39m parallel_params.setdefault(
+[32m    267[39m     [33m"[39m[33mprefer[39m[33m"[39m, [33m"[39m[33mthreads[39m[33m"[39m [38;5;28;01mif[39;00m platform.system() == [33m"[39m[33mWindows[39m[33m"[39m [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m
+[32m    268[39m )
+[32m--> [39m[32m270[39m list_of_ds = [43mParallel[49m[43m([49m[43mn_jobs[49m[43m=[49m[43mn_jobs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mparallel_params[49m[43m)[49m[43m([49m
+[32m    271[39m [43m    [49m[43mdelayed[49m[43m([49m[43m_preprocess[49m[43m)[49m[43m([49m
+[32m    272[39m [43m        [49m[43mds[49m[43m,[49m
+[32m    273[39m [43m        [49m[43mi[49m[43m [49m[43m+[49m[43m [49m[43moffset[49m[43m,[49m
+[32m    274[39m [43m        [49m[43mpreprocessors[49m[43m,[49m
+[32m    275[39m [43m        [49m[43msave_dir[49m[43m,[49m
+[32m    276[39m [43m        [49m[43moverwrite[49m[43m,[49m
+[32m    277[39m [43m        [49m[43mcopy_data[49m[43m=[49m[43m([49m
+[32m    278[39m [43m            [49m[43m([49m[43mparallel_processing[49m[43m [49m[38;5;129;43;01mand[39;49;00m[43m [49m[43m([49m[43msave_dir[49m[43m [49m[38;5;129;43;01mis[39;49;00m[43m [49m[38;5;28;43;01mNone[39;49;00m[43m)[49m[43m)[49m
+[32m    279[39m [43m            [49m[38;5;28;43;01mif[39;49;00m[43m [49m[43mcopy_data[49m[43m [49m[38;5;129;43;01mis[39;49;00m[43m [49m[38;5;28;43;01mNone[39;49;00m
+[32m    280[39m [43m            [49m[38;5;28;43;01melse[39;49;00m[43m [49m[43mcopy_data[49m
+[32m    281[39m [43m        [49m[43m)[49m[43m,[49m
+[32m    282[39m [43m    [49m[43m)[49m
+[32m    283[39m [43m    [49m[38;5;28;43;01mfor[39;49;00m[43m [49m[43mi[49m[43m,[49m[43m [49m[43mds[49m[43m [49m[38;5;129;43;01min[39;49;00m[43m [49m[38;5;28;43menumerate[39;49m[43m([49m[43mconcat_ds[49m[43m.[49m[43mdatasets[49m[43m)[49m
+[32m    284[39m [43m[49m[43m)[49m
+[32m    286[39m [38;5;28;01mif[39;00m save_dir [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:  [38;5;66;03m# Reload datasets and replace in concat_ds[39;00m
+[32m    287[39m     ids_to_load = [i + offset [38;5;28;01mfor[39;00m i [38;5;129;01min[39;00m [38;5;28mrange[39m([38;5;28mlen[39m(concat_ds.datasets))]
+
+[36mFile [39m[32mC:\Repos\eeg-jepa-research\.venv\Lib\site-packages\joblib\parallel.py:1986[39m, in [36mParallel.__call__[39m[34m(self, iterable)[39m
+[32m   1984[39m     output = [38;5;28mself[39m._get_sequential_output(iterable)
+[32m   1985[39m     [38;5;28mnext[39m(output)
+[32m-> [39m[32m1986[39m     [38;5;28;01mreturn[39;00m output [38;5;28;01mif[39;00m [38;5;28mself[39m.return_generator [38;5;28;01melse[39;00m [38;5;28;43mlist[39;49m[43m([49m[43moutput[49m[43m)[49m
+[32m   1988[39m [38;5;66;03m# Let's create an ID that uniquely identifies the current call. If the[39;00m
+[32m   1989[39m [38;5;66;03m# call is interrupted early and that the same instance is immediately[39;00m
+[32m   1990[39m [38;5;66;03m# reused, this id will be used to prevent workers that were[39;00m
+[32m   1991[39m [38;5;66;03m# concurrently finalizing a task from the previous call to run the[39;00m
+[32m   1992[39m [38;5;66;03m# callback.[39;00m
+[32m   1993[39m [38;5;28;01mwith[39;00m [38;5;28mself[39m._lock:
+
+[36mFile [39m[32mC:\Repos\eeg-jepa-research\.venv\Lib\site-packages\joblib\parallel.py:1914[39m, in [36mParallel._get_sequential_output[39m[34m(self, iterable)[39m
+[32m   1912[39m [38;5;28mself[39m.n_dispatched_batches += [32m1[39m
+[32m   1913[39m [38;5;28mself[39m.n_dispatched_tasks += [32m1[39m
+[32m-> [39m[32m1914[39m res = [43mfunc[49m[43m([49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m   1915[39m [38;5;28mself[39m.n_completed_tasks += [32m1[39m
+[32m   1916[39m [38;5;28mself[39m.print_progress()
+
+[36mFile [39m[32mC:\Repos\eeg-jepa-research\.venv\Lib\site-packages\braindecode\preprocessing\preprocess.py:374[39m, in [36m_preprocess[39m[34m(ds, ds_index, preprocessors, save_dir, overwrite, copy_data)[39m
+[32m    370[39m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(ds, EEGWindowsDataset):
+[32m    371[39m     warn(
+[32m    372[39m         [33mf[39m[33m"[39m[33mApplying preprocessors [39m[38;5;132;01m{[39;00mpreprocessors[38;5;132;01m}[39;00m[33m to the mne.io.Raw of an EEGWindowsDataset.[39m[33m"[39m
+[32m    373[39m     )
+[32m--> [39m[32m374[39m processed = [43m_preprocess_raw_or_epochs[49m[43m([49m[43mds[49m[43m.[49m[43mraw[49m[43m,[49m[43m [49m[43mpreprocessors[49m[43m)[49m
+[32m    375[39m [38;5;28;01mif[39;00m processed [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m ds.raw:
+[32m    376[39m     ds.raw = processed
+
+[36mFile [39m[32mC:\Repos\eeg-jepa-research\.venv\Lib\site-packages\braindecode\preprocessing\preprocess.py:366[39m, in [36m_preprocess.<locals>._preprocess_raw_or_epochs[39m[34m(raw_or_epochs, preprocessors)[39m
+[32m    364[39m     raw_or_epochs._data = raw_or_epochs._data.copy()
+[32m    365[39m [38;5;28;01mfor[39;00m preproc [38;5;129;01min[39;00m preprocessors:
+[32m--> [39m[32m366[39m     raw_or_epochs = [43mpreproc[49m[43m.[49m[43mapply[49m[43m([49m[43mraw_or_epochs[49m[43m)[49m
+[32m    367[39m [38;5;28;01mreturn[39;00m raw_or_epochs
+
+[36mFile [39m[32mC:\Repos\eeg-jepa-research\.venv\Lib\site-packages\braindecode\preprocessing\preprocess.py:124[39m, in [36mPreprocessor.apply[39m[34m(self, raw_or_epochs)[39m
+[32m    122[39m function = [38;5;28mself[39m._function
+[32m    123[39m [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m124[39m     result = [43mfunction[49m[43m([49m[43mraw_or_epochs[49m[43m)[49m
+[32m    125[39m [38;5;28;01mexcept[39;00m [38;5;167;01mRuntimeError[39;00m:
+[32m    126[39m     [38;5;66;03m# Maybe the function needs the data to be loaded and the data was[39;00m
+[32m    127[39m     [38;5;66;03m# not loaded yet. Not all MNE functions need data to be loaded,[39;00m
+[32m    128[39m     [38;5;66;03m# most importantly the 'crop' function can be lazily applied[39;00m
+[32m    129[39m     [38;5;66;03m# without preloading data which can make the overall preprocessing[39;00m
+[32m    130[39m     [38;5;66;03m# pipeline substantially faster.[39;00m
+[32m    131[39m     raw_or_epochs.load_data()
+
+[36mFile [39m[32mC:\Repos\eeg-jepa-research\.venv\Lib\site-packages\braindecode\preprocessing\preprocess.py:119[39m, in [36mPreprocessor._apply_str[39m[34m(raw_or_epochs, fn, **kwargs)[39m
+[32m    117[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mhasattr[39m(raw_or_epochs, fn):
+[32m    118[39m     [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m([33mf[39m[33m"[39m[33mMNE object does not have a [39m[38;5;132;01m{[39;00mfn[38;5;132;01m}[39;00m[33m method.[39m[33m"[39m)
+[32m--> [39m[32m119[39m [38;5;28;01mreturn[39;00m [38;5;28;43mgetattr[39;49m[43m([49m[43mraw_or_epochs[49m[43m,[49m[43m [49m[43mfn[49m[43m)[49m[43m([49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+
+[36mFile [39m[32m<decorator-gen-248>:12[39m, in [36mresample[39m[34m(self, sfreq, npad, window, stim_picks, n_jobs, events, pad, method, verbose)[39m
+
+[36mFile [39m[32mC:\Repos\eeg-jepa-research\.venv\Lib\site-packages\mne\io\base.py:1440[39m, in [36mBaseRaw.resample[39m[34m(self, sfreq, npad, window, stim_picks, n_jobs, events, pad, method, verbose)[39m
+[32m   1438[39m [38;5;28;01mif[39;00m [38;5;28mself[39m.preload:
+[32m   1439[39m     data_chunk = [38;5;28mself[39m._data[:, offsets[ri] : offsets[ri + [32m1[39m]]
+[32m-> [39m[32m1440[39m     new_data[:, this_sl] = [43mresample[49m[43m([49m[43mdata_chunk[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m   1441[39m     [38;5;66;03m# In empirical testing, it was faster to resample all channels[39;00m
+[32m   1442[39m     [38;5;66;03m# (above) and then replace the stim channels than it was to[39;00m
+[32m   1443[39m     [38;5;66;03m# only resample the proper subset of channels and then use[39;00m
+[32m   1444[39m     [38;5;66;03m# np.insert() to restore the stims.[39;00m
+[32m   1445[39m     [38;5;28;01mif[39;00m [38;5;28mlen[39m(stim_picks) > [32m0[39m:
+
+[36mFile [39m[32m<decorator-gen-86>:12[39m, in [36mresample[39m[34m(x, up, down, axis, window, n_jobs, pad, npad, method, verbose)[39m
+
+[36mFile [39m[32mC:\Repos\eeg-jepa-research\.venv\Lib\site-packages\mne\filter.py:1876[39m, in [36mresample[39m[34m(***failed resolving arguments***)[39m
+[32m   1874[39m kwargs = [38;5;28mdict[39m(pad=pad, window=window, n_jobs=n_jobs)
+[32m   1875[39m [38;5;28;01mif[39;00m method == [33m"[39m[33mfft[39m[33m"[39m:
+[32m-> [39m[32m1876[39m     y = [43m_resample_fft[49m[43m([49m[43mx[49m[43m,[49m[43m [49m[43mnpad[49m[43m=[49m[43mnpad[49m[43m,[49m[43m [49m[43mratio[49m[43m=[49m[43mratio[49m[43m,[49m[43m [49m[43mfinal_len[49m[43m=[49m[43mfinal_len[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m   1877[39m [38;5;28;01melse[39;00m:
+[32m   1878[39m     up, down, kwargs[[33m"[39m[33mwindow[39m[33m"[39m] = _prep_polyphase(
+[32m   1879[39m         ratio, x.shape[-[32m1[39m], final_len, window
+[32m   1880[39m     )
+
+[36mFile [39m[32mC:\Repos\eeg-jepa-research\.venv\Lib\site-packages\mne\filter.py:1972[39m, in [36m_resample_fft[39m[34m(***failed resolving arguments***)[39m
+[32m   1970[39m     y = np.zeros(([38;5;28mlen[39m(x_flat), new_len - to_removes.sum()), dtype=x_flat.dtype)
+[32m   1971[39m     [38;5;28;01mfor[39;00m xi, x_ [38;5;129;01min[39;00m [38;5;28menumerate[39m(x_flat):
+[32m-> [39m[32m1972[39m         y[xi] = [43m_fft_resample[49m[43m([49m[43mx_[49m[43m,[49m[43m [49m[43mnew_len[49m[43m,[49m[43m [49m[43mnpads[49m[43m,[49m[43m [49m[43mto_removes[49m[43m,[49m[43m [49m[43mcuda_dict[49m[43m,[49m[43m [49m[43mpad[49m[43m)[49m
+[32m   1973[39m [38;5;28;01melse[39;00m:
+[32m   1974[39m     y = parallel(
+[32m   1975[39m         p_fun(x_, new_len, npads, to_removes, cuda_dict, pad) [38;5;28;01mfor[39;00m x_ [38;5;129;01min[39;00m x_flat
+[32m   1976[39m     )
+
+[36mFile [39m[32mC:\Repos\eeg-jepa-research\.venv\Lib\site-packages\mne\cuda.py:349[39m, in [36m_fft_resample[39m[34m(x, new_len, npads, to_removes, cuda_dict, pad)[39m
+[32m    347[39m shorter = new_len < old_len
+[32m    348[39m use_len = new_len [38;5;28;01mif[39;00m shorter [38;5;28;01melse[39;00m old_len
+[32m--> [39m[32m349[39m x_fft = [43mcuda_dict[49m[43m[[49m[33;43m"[39;49m[33;43mrfft[39;49m[33;43m"[39;49m[43m][49m[43m([49m[43mx[49m[43m,[49m[43m [49m[38;5;28;43;01mNone[39;49;00m[43m)[49m
+[32m    350[39m [38;5;28;01mif[39;00m use_len % [32m2[39m == [32m0[39m:
+[32m    351[39m     nyq = use_len // [32m2[39m
+
+[36mFile [39m[32mC:\Repos\eeg-jepa-research\.venv\Lib\site-packages\scipy\fft\_backend.py:29[39m, in [36m_ScipyBackend.__ua_function__[39m[34m(method, args, kwargs)[39m
+[32m     27[39m [38;5;28;01mif[39;00m fn [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m     28[39m     [38;5;28;01mreturn[39;00m [38;5;28mNotImplemented[39m
+[32m---> [39m[32m29[39m [38;5;28;01mreturn[39;00m [43mfn[49m[43m([49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+
+[36mFile [39m[32mC:\Repos\eeg-jepa-research\.venv\Lib\site-packages\scipy\fft\_basic_backend.py:91[39m, in [36mrfft[39m[34m(x, n, axis, norm, overwrite_x, workers, plan)[39m
+[32m     89[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mrfft[39m(x, n=[38;5;28;01mNone[39;00m, axis=-[32m1[39m, norm=[38;5;28;01mNone[39;00m,
+[32m     90[39m          overwrite_x=[38;5;28;01mFalse[39;00m, workers=[38;5;28;01mNone[39;00m, *, plan=[38;5;28;01mNone[39;00m):
+[32m---> [39m[32m91[39m     [38;5;28;01mreturn[39;00m [43m_execute_1D[49m[43m([49m[33;43m'[39;49m[33;43mrfft[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[43m_pocketfft[49m[43m.[49m[43mrfft[49m[43m,[49m[43m [49m[43mx[49m[43m,[49m[43m [49m[43mn[49m[43m=[49m[43mn[49m[43m,[49m[43m [49m[43maxis[49m[43m=[49m[43maxis[49m[43m,[49m[43m [49m[43mnorm[49m[43m=[49m[43mnorm[49m[43m,[49m
+[32m     92[39m [43m                       [49m[43moverwrite_x[49m[43m=[49m[43moverwrite_x[49m[43m,[49m[43m [49m[43mworkers[49m[43m=[49m[43mworkers[49m[43m,[49m[43m [49m[43mplan[49m[43m=[49m[43mplan[49m[43m)[49m
+
+[36mFile [39m[32mC:\Repos\eeg-jepa-research\.venv\Lib\site-packages\scipy\fft\_basic_backend.py:32[39m, in [36m_execute_1D[39m[34m(func_str, pocketfft_func, x, n, axis, norm, overwrite_x, workers, plan)[39m
+[32m     30[39m [38;5;28;01mif[39;00m is_numpy(xp):
+[32m     31[39m     x = np.asarray(x)
+[32m---> [39m[32m32[39m     [38;5;28;01mreturn[39;00m [43mpocketfft_func[49m[43m([49m[43mx[49m[43m,[49m[43m [49m[43mn[49m[43m=[49m[43mn[49m[43m,[49m[43m [49m[43maxis[49m[43m=[49m[43maxis[49m[43m,[49m[43m [49m[43mnorm[49m[43m=[49m[43mnorm[49m[43m,[49m
+[32m     33[39m [43m                          [49m[43moverwrite_x[49m[43m=[49m[43moverwrite_x[49m[43m,[49m[43m [49m[43mworkers[49m[43m=[49m[43mworkers[49m[43m,[49m[43m [49m[43mplan[49m[43m=[49m[43mplan[49m[43m)[49m
+[32m     35[39m norm = _validate_fft_args(workers, plan, norm)
+[32m     36[39m [38;5;28;01mif[39;00m [38;5;28mhasattr[39m(xp, [33m'[39m[33mfft[39m[33m'[39m):
+
+[36mFile [39m[32mC:\Repos\eeg-jepa-research\.venv\Lib\site-packages\scipy\fft\_pocketfft\basic.py:61[39m, in [36mr2c[39m[34m(forward, x, n, axis, norm, overwrite_x, workers, plan)[39m
+[32m     58[39m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([33mf[39m[33m"[39m[33minvalid number of data points ([39m[38;5;132;01m{[39;00mtmp.shape[axis][38;5;132;01m}[39;00m[33m) specified[39m[33m"[39m)
+[32m     60[39m [38;5;66;03m# Note: overwrite_x is not utilised[39;00m
+[32m---> [39m[32m61[39m [38;5;28;01mreturn[39;00m pfft.r2c(tmp, (axis,), forward, norm, [38;5;28;01mNone[39;00m, workers)
+
+[31mMemoryError[39m: std::bad_alloc
+
+
+[3/5] Running config override:
+{
+  "dataset_name": "PhysionetMI"
+}
+  status:       completed
+  elapsed_sec:  757.771
+  run_id:       20260506_1327_8f472cc8
+  artifact_dir: C:\Repos\eeg-jepa-research\artifacts\moabb-mi-sjepa\PhysionetMI\20260506_1327_8f472cc8
+
+[4/5] Running config override:
+{
+  "dataset_name": "BNCI2014_001"
+}
+  status:       completed
+  elapsed_sec:  281.348
+  run_id:       20260506_1340_26a457a0
+  artifact_dir: C:\Repos\eeg-jepa-research\artifacts\moabb-mi-sjepa\BNCI2014_001\20260506_1340_26a457a0
+
+[5/5] Running config override:
+{
+  "dataset_name": "Weibo2014"
+}
+  status:       completed
+  elapsed_sec:  382.006
+  run_id:       20260506_1344_2a5c8c9e
+  artifact_dir: C:\Repos\eeg-jepa-research\artifacts\moabb-mi-sjepa\Weibo2014\20260506_1344_2a5c8c9e
+
+Finished.
+Results dir:    experiment_results\20260506_1148_moabb_dataset_sweep_c24ca92a
+Summary JSON:   experiment_results\20260506_1148_moabb_dataset_sweep_c24ca92a\results.json
+Artifact list:  experiment_results\20260506_1148_moabb_dataset_sweep_c24ca92a\artifact_ids.json
