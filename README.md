@@ -18,6 +18,22 @@ From the repository root:
 
 ```bash
 python3.11 -m venv .venv
+```
+
+Activate the environment using the command for your shell:
+
+```powershell
+# PowerShell (Windows)
+.\.venv\Scripts\Activate.ps1
+```
+
+```bat
+:: Command Prompt (Windows)
+.venv\Scripts\activate.bat
+```
+
+```bash
+# Bash/Zsh (Linux/macOS)
 source .venv/bin/activate
 ```
 
