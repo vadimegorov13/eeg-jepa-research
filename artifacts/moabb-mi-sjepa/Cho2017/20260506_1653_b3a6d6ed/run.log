@@ -1,0 +1,1044 @@
+[2026-05-06 16:53:49] Using device: cpu
+[2026-05-06 16:53:50] Seed initialized: 12
+[2026-05-06 16:53:50] ======================================================================
+[2026-05-06 16:53:50] CONFIGURATION
+[2026-05-06 16:53:50] ======================================================================
+[2026-05-06 16:53:50]   artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa
+[2026-05-06 16:53:50]   bandpass_high: 40.0
+[2026-05-06 16:53:50]   bandpass_low: 0.5
+[2026-05-06 16:53:50]   batch_size: 32
+[2026-05-06 16:53:50]   collapse_threshold: 0.9
+[2026-05-06 16:53:50]   cv_folds: 5
+[2026-05-06 16:53:50]   dataset_name: Cho2017
+[2026-05-06 16:53:50]   dataset_source: moabb
+[2026-05-06 16:53:50]   early_stopping_patience: 30
+[2026-05-06 16:53:50]   exclude_subjects: []
+[2026-05-06 16:53:50]   extract_spatial_conv_weights: True
+[2026-05-06 16:53:50]   labels_to_keep: ['left_hand', 'right_hand']
+[2026-05-06 16:53:50]   learning_rate: 0.001
+[2026-05-06 16:53:50]   log_probability_diagnostics: True
+[2026-05-06 16:53:50]   log_spatial_update_stats: True
+[2026-05-06 16:53:50]   max_spatial_filters_to_plot: 8
+[2026-05-06 16:53:50]   moabb_dataset_kwargs: {}
+[2026-05-06 16:53:50]   model_name: SignalJEPA_PreLocal
+[2026-05-06 16:53:50]   n_epochs: 500
+[2026-05-06 16:53:50]   plot_individual_spatial_filters: True
+[2026-05-06 16:53:50]   preprocessed_concat_dir: None
+[2026-05-06 16:53:50]   pretrained_mode: from_pretrained
+[2026-05-06 16:53:50]   save_spatial_weight_plots: True
+[2026-05-06 16:53:50]   seed: 12
+[2026-05-06 16:53:50]   set_seed: True
+[2026-05-06 16:53:50]   sfreq: 128
+[2026-05-06 16:53:50]   strategy: new
+[2026-05-06 16:53:50]   subjects_to_use: None
+[2026-05-06 16:53:50]   target_window_duration_s: 3.2
+[2026-05-06 16:53:50]   topomap_dpi: 160
+[2026-05-06 16:53:50]   val_split: 0.2
+[2026-05-06 16:53:50]   warmup_epochs: 10
+[2026-05-06 16:53:50] ======================================================================
+[2026-05-06 16:53:50] Config saved to: /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1653_b3a6d6ed/config.json
+[2026-05-06 16:53:50] Epoch window configuration:
+[2026-05-06 16:53:50]   Target sfreq:            128 Hz
+[2026-05-06 16:53:50]   Requested duration:      3.200 s
+[2026-05-06 16:53:50]   Expected window samples: 409
+
+[2026-05-06 16:53:50] Preprocessed concat dataset exists: False at /home/vegorov/Repos/eeg_jepa_research/preprocessed_concat_datasets/Cho2017_048eba1d_wacff46_subjects_98eacc98
+
+[2026-05-06 16:53:50] Building MOABBDataset for Cho2017...
+[2026-05-06 16:53:50]   Subject IDs:     [1, 2, 3, 4, 5, 6, 7, 8, 9]
+[2026-05-06 16:53:50]   Dataset kwargs:  {}
+[2026-05-06 16:56:56]   Recordings loaded: 9
+[2026-05-06 16:56:56]   Raw labels:        ['left_hand', 'right_hand']
+[2026-05-06 16:56:56] Applying preprocessing...
+[2026-05-06 16:57:03] Saved preprocessed raw concat dataset to: /home/vegorov/Repos/eeg_jepa_research/preprocessed_concat_datasets/Cho2017_048eba1d_wacff46_subjects_98eacc98
+
+[2026-05-06 16:57:04] Post-load raw validation
+[2026-05-06 16:57:04]   Recordings:          9
+[2026-05-06 16:57:04]   Subjects loaded:     ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+[2026-05-06 16:57:04]   sfreq first rec:     128.0 Hz
+[2026-05-06 16:57:04]   EEG channel count:   64
+[2026-05-06 16:57:04]   Labels present:      ['left_hand', 'right_hand']
+[2026-05-06 16:57:04]   Labels selected:     ['left_hand', 'right_hand']
+[2026-05-06 16:57:04] Annotation counts before filtering: {np.str_('left_hand'): 940, np.str_('right_hand'): 940}
+[2026-05-06 16:57:04] Filtered annotations: kept 1880 / 1880
+[2026-05-06 16:57:04] Annotation counts after filtering:  {np.str_('left_hand'): 940, np.str_('right_hand'): 940}
+[2026-05-06 16:57:04] Updated annotation durations:       1880
+[2026-05-06 16:57:04] Window shape: (64, 409)
+[2026-05-06 16:57:04] Window sample length expected=409, got=409
+[2026-05-06 16:57:04] Class mapping: {'left_hand': 0, 'right_hand': 1}
+[2026-05-06 16:57:04] Global class counts: [940, 940]
+[2026-05-06 16:57:04] Chance level: 0.50
+[2026-05-06 16:57:04] Summarizing per-subject windows...
+[2026-05-06 16:57:04]   Subject 1: n_windows=200, window_shape=(64, 409), class_counts=[100, 100]
+[2026-05-06 16:57:04]   Subject 2: n_windows=200, window_shape=(64, 409), class_counts=[100, 100]
+[2026-05-06 16:57:04]   Subject 3: n_windows=200, window_shape=(64, 409), class_counts=[100, 100]
+[2026-05-06 16:57:04]   Subject 4: n_windows=200, window_shape=(64, 409), class_counts=[100, 100]
+[2026-05-06 16:57:04]   Subject 5: n_windows=200, window_shape=(64, 409), class_counts=[100, 100]
+[2026-05-06 16:57:04]   Subject 6: n_windows=200, window_shape=(64, 409), class_counts=[100, 100]
+[2026-05-06 16:57:04]   Subject 7: n_windows=240, window_shape=(64, 409), class_counts=[120, 120]
+[2026-05-06 16:57:04]   Subject 8: n_windows=200, window_shape=(64, 409), class_counts=[100, 100]
+[2026-05-06 16:57:04]   Subject 9: n_windows=240, window_shape=(64, 409), class_counts=[120, 120]
+[2026-05-06 16:57:05] SignalJEPA_PreLocal instantiated successfully.
+[2026-05-06 16:57:05]   Loading mode:          from_pretrained
+[2026-05-06 16:57:05]   Repo:                  braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:05]   Total parameters:      15,638
+[2026-05-06 16:57:05]   Trainable parameters:  15,638
+[2026-05-06 16:57:05] ======================================================================================================================================================
+Layer (type (var_name):depth-idx)                  Input Shape               Output Shape              Param #                   Kernel Shape
+======================================================================================================================================================
+SignalJEPA_PreLocal (SignalJEPA_PreLocal)          [1, 64, 409]              [1, 2]                    --                        --
+├─Sequential (spatial_conv): 1-1                   [1, 64, 409]              [1, 4, 409]               --                        --
+│    └─Rearrange (0): 2-1                          [1, 64, 409]              [1, 1, 64, 409]           --                        --
+│    └─Conv2d (1): 2-2                             [1, 1, 64, 409]           [1, 4, 1, 409]            260                       [64, 1]
+│    └─Rearrange (2): 2-3                          [1, 4, 1, 409]            [1, 4, 409]               --                        --
+├─_ConvFeatureEncoder (feature_encoder): 1-2       [1, 4, 409]               [1, 12, 64]               --                        --
+│    └─Rearrange (0): 2-4                          [1, 4, 409]               [4, 1, 409]               --                        --
+│    └─Sequential (1): 2-5                         [4, 1, 409]               [4, 8, 48]                --                        --
+│    │    └─Conv1d (0): 3-1                        [4, 1, 409]               [4, 8, 48]                256                       [32]
+│    │    └─Dropout (1): 3-2                       [4, 8, 48]                [4, 8, 48]                --                        --
+│    │    └─GroupNorm (2): 3-3                     [4, 8, 48]                [4, 8, 48]                16                        --
+│    │    └─GELU (3): 3-4                          [4, 8, 48]                [4, 8, 48]                --                        --
+│    └─Sequential (2): 2-6                         [4, 8, 48]                [4, 16, 24]               --                        --
+│    │    └─Conv1d (0): 3-5                        [4, 8, 48]                [4, 16, 24]               256                       [2]
+│    │    └─Dropout (1): 3-6                       [4, 16, 24]               [4, 16, 24]               --                        --
+│    │    └─GELU (2): 3-7                          [4, 16, 24]               [4, 16, 24]               --                        --
+│    └─Sequential (3): 2-7                         [4, 16, 24]               [4, 32, 12]               --                        --
+│    │    └─Conv1d (0): 3-8                        [4, 16, 24]               [4, 32, 12]               1,024                     [2]
+│    │    └─Dropout (1): 3-9                       [4, 32, 12]               [4, 32, 12]               --                        --
+│    │    └─GELU (2): 3-10                         [4, 32, 12]               [4, 32, 12]               --                        --
+│    └─Sequential (4): 2-8                         [4, 32, 12]               [4, 64, 6]                --                        --
+│    │    └─Conv1d (0): 3-11                       [4, 32, 12]               [4, 64, 6]                4,096                     [2]
+│    │    └─Dropout (1): 3-12                      [4, 64, 6]                [4, 64, 6]                --                        --
+│    │    └─GELU (2): 3-13                         [4, 64, 6]                [4, 64, 6]                --                        --
+│    └─Sequential (5): 2-9                         [4, 64, 6]                [4, 64, 3]                --                        --
+│    │    └─Conv1d (0): 3-14                       [4, 64, 6]                [4, 64, 3]                8,192                     [2]
+│    │    └─Dropout (1): 3-15                      [4, 64, 3]                [4, 64, 3]                --                        --
+│    │    └─GELU (2): 3-16                         [4, 64, 3]                [4, 64, 3]                --                        --
+│    └─Rearrange (6): 2-10                         [4, 64, 3]                [1, 12, 64]               --                        --
+├─Sequential (final_layer): 1-3                    [1, 12, 64]               [1, 2]                    --                        --
+│    └─Flatten (0): 2-11                           [1, 12, 64]               [1, 768]                  --                        --
+│    └─Linear (1): 2-12                            [1, 768]                  [1, 2]                    1,538                     --
+======================================================================================================================================================
+Total params: 15,638
+Trainable params: 15,638
+Non-trainable params: 0
+Total mult-adds (Units.MEGABYTES): 0.43
+======================================================================================================================================================
+Input size (MB): 0.10
+Forward/backward pass size (MB): 0.08
+Params size (MB): 0.06
+Estimated Total Size (MB): 0.25
+======================================================================================================================================================
+[2026-05-06 16:57:05] ======================================================================
+[2026-05-06 16:57:05] STARTING WITHIN-SUBJECT CROSS-VALIDATION
+[2026-05-06 16:57:05] ======================================================================
+[2026-05-06 16:57:05] Dataset:       Cho2017
+[2026-05-06 16:57:05] Subjects:      ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+[2026-05-06 16:57:05] Model:         SignalJEPA_PreLocal
+[2026-05-06 16:57:05] Pretrained:    from_pretrained
+[2026-05-06 16:57:05] Strategy:      new
+[2026-05-06 16:57:05] CV folds:      5
+[2026-05-06 16:57:05] Val split:     0.2
+[2026-05-06 16:57:05] Max epochs:    500
+[2026-05-06 16:57:05] Device:        cpu
+[2026-05-06 16:57:05] ======================================================================
+
+[2026-05-06 16:57:05] Subject 1: 200 windows | class_counts=[100, 100]
+
+[2026-05-06 16:57:05] Fold 1/5 | subject=1
+[2026-05-06 16:57:05]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:05]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:05]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:05]     Fine-tune strategy:      new
+[2026-05-06 16:57:05]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:05]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:05]     Phase 1 (new):
+[2026-05-06 16:57:05]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:05]       Total params:     15,638
+[2026-05-06 16:57:05]       Trainable params: 1,798
+[2026-05-06 16:57:05]       Trainable pct:    11.50%
+[2026-05-06 16:57:05]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:05]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:10]     Result | best_epoch=253 | stop=283 | acc=0.6000 | bal_acc=0.6000 | pred_hist=[18, 22] | collapse_ratio=0.5500 | collapse=False
+[2026-05-06 16:57:10]     spatial_conv=[4, 64] top_abs_channels=[('FC3', 0.25085112), ('CPz', 0.20038673), ('C2', 0.16820915), ('P3', 0.11568185), ('FC2', 0.11308055), ('CP2', 0.10923945), ('F3', 0.10904267), ('FC4', 0.10466902)]
+[2026-05-06 16:57:10]     spatial_update=delta_l2=1.48150845 max_abs=0.31968763 relative=1.30886778 changed=True
+
+[2026-05-06 16:57:10] Fold 2/5 | subject=1
+[2026-05-06 16:57:10]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:10]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:10]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:10]     Fine-tune strategy:      new
+[2026-05-06 16:57:10]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:10]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:10]     Phase 1 (new):
+[2026-05-06 16:57:10]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:10]       Total params:     15,638
+[2026-05-06 16:57:10]       Trainable params: 1,798
+[2026-05-06 16:57:10]       Trainable pct:    11.50%
+[2026-05-06 16:57:10]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:10]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:12]     Result | best_epoch=117 | stop=136 | acc=0.7750 | bal_acc=0.7750 | pred_hist=[19, 21] | collapse_ratio=0.5250 | collapse=False
+[2026-05-06 16:57:12]     spatial_conv=[4, 64] top_abs_channels=[('CP3', 0.15847445), ('FC3', 0.15571564), ('C1', 0.14778982), ('CP2', 0.11098761), ('Fz', 0.11081278), ('F8', 0.11021265), ('C2', 0.10178094), ('F6', 0.09272213)]
+[2026-05-06 16:57:12]     spatial_update=delta_l2=1.25654701 max_abs=0.28502382 relative=1.11012116 changed=True
+
+[2026-05-06 16:57:13] Fold 3/5 | subject=1
+[2026-05-06 16:57:13]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:13]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:13]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:13]     Fine-tune strategy:      new
+[2026-05-06 16:57:13]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:13]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:13]     Phase 1 (new):
+[2026-05-06 16:57:13]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:13]       Total params:     15,638
+[2026-05-06 16:57:13]       Trainable params: 1,798
+[2026-05-06 16:57:13]       Trainable pct:    11.50%
+[2026-05-06 16:57:13]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:13]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:15]     Result | best_epoch=139 | stop=169 | acc=0.5500 | bal_acc=0.5500 | pred_hist=[24, 16] | collapse_ratio=0.6000 | collapse=False
+[2026-05-06 16:57:15]     spatial_conv=[4, 64] top_abs_channels=[('C2', 0.25964016), ('FC1', 0.13927257), ('FC3', 0.13351063), ('P8', 0.13314047), ('CP2', 0.12084182), ('Cz', 0.12030912), ('CP3', 0.11128408), ('FC5', 0.10779735)]
+[2026-05-06 16:57:15]     spatial_update=delta_l2=1.35734149 max_abs=0.33440615 relative=1.19917003 changed=True
+
+[2026-05-06 16:57:16] Fold 4/5 | subject=1
+[2026-05-06 16:57:16]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:16]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:16]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:16]     Fine-tune strategy:      new
+[2026-05-06 16:57:16]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:16]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:16]     Phase 1 (new):
+[2026-05-06 16:57:16]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:16]       Total params:     15,638
+[2026-05-06 16:57:16]       Trainable params: 1,798
+[2026-05-06 16:57:16]       Trainable pct:    11.50%
+[2026-05-06 16:57:16]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:16]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:19]     Result | best_epoch=191 | stop=221 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[19, 21] | collapse_ratio=0.5250 | collapse=False
+[2026-05-06 16:57:19]     spatial_conv=[4, 64] top_abs_channels=[('Cz', 0.13336919), ('C2', 0.13190374), ('CPz', 0.13128707), ('FC3', 0.12787077), ('Pz', 0.12587449), ('CP2', 0.12580119), ('C1', 0.11721817), ('Fz', 0.11296684)]
+[2026-05-06 16:57:19]     spatial_update=delta_l2=1.39389277 max_abs=0.26048259 relative=1.23146197 changed=True
+
+[2026-05-06 16:57:20] Fold 5/5 | subject=1
+[2026-05-06 16:57:20]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:20]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:20]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:20]     Fine-tune strategy:      new
+[2026-05-06 16:57:20]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:20]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:20]     Phase 1 (new):
+[2026-05-06 16:57:20]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:20]       Total params:     15,638
+[2026-05-06 16:57:20]       Trainable params: 1,798
+[2026-05-06 16:57:20]       Trainable pct:    11.50%
+[2026-05-06 16:57:20]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:20]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:22]     Result | best_epoch=144 | stop=174 | acc=0.6500 | bal_acc=0.6500 | pred_hist=[20, 20] | collapse_ratio=0.5000 | collapse=False
+[2026-05-06 16:57:22]     spatial_conv=[4, 64] top_abs_channels=[('FC3', 0.20607093), ('C1', 0.16711709), ('FC1', 0.1667017), ('Pz', 0.13070753), ('CP3', 0.11558934), ('C5', 0.10364985), ('Fz', 0.08948705), ('C6', 0.08735252)]
+[2026-05-06 16:57:22]     spatial_update=delta_l2=1.34168035 max_abs=0.23958875 relative=1.18533389 changed=True
+[2026-05-06 16:57:22]   Subject 1 summary: acc=0.6400±0.0752  bal_acc=0.6400±0.0752
+
+[2026-05-06 16:57:22] Subject 2: 200 windows | class_counts=[100, 100]
+
+[2026-05-06 16:57:23] Fold 1/5 | subject=2
+[2026-05-06 16:57:23]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:23]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:23]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:23]     Fine-tune strategy:      new
+[2026-05-06 16:57:23]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:23]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:23]     Phase 1 (new):
+[2026-05-06 16:57:23]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:23]       Total params:     15,638
+[2026-05-06 16:57:23]       Trainable params: 1,798
+[2026-05-06 16:57:23]       Trainable pct:    11.50%
+[2026-05-06 16:57:23]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:23]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:24]     Result | best_epoch=56 | stop=75 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[21, 19] | collapse_ratio=0.5250 | collapse=False
+[2026-05-06 16:57:24]     spatial_conv=[4, 64] top_abs_channels=[('FCz', 0.1324116), ('CP4', 0.12685551), ('Cz', 0.12000397), ('FC3', 0.11403862), ('FC6', 0.1041548), ('FC4', 0.10283332), ('Oz', 0.09375937), ('Iz', 0.09211075)]
+[2026-05-06 16:57:24]     spatial_update=delta_l2=0.67546838 max_abs=0.12717707 relative=0.59675583 changed=True
+
+[2026-05-06 16:57:24] Fold 2/5 | subject=2
+[2026-05-06 16:57:24]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:24]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:24]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:24]     Fine-tune strategy:      new
+[2026-05-06 16:57:24]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:24]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:24]     Phase 1 (new):
+[2026-05-06 16:57:24]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:24]       Total params:     15,638
+[2026-05-06 16:57:24]       Trainable params: 1,798
+[2026-05-06 16:57:24]       Trainable pct:    11.50%
+[2026-05-06 16:57:24]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:24]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:25]     Result | best_epoch=6 | stop=36 | acc=0.4500 | bal_acc=0.4500 | pred_hist=[38, 2] | collapse_ratio=0.9500 | collapse=True
+[2026-05-06 16:57:25]     spatial_conv=[4, 64] top_abs_channels=[('CP4', 0.10348406), ('FC3', 0.09495485), ('TP7', 0.09453655), ('T8', 0.09388562), ('FCz', 0.09062713), ('F8', 0.0896564), ('F4', 0.08813224), ('P6', 0.08610878)]
+[2026-05-06 16:57:25]     spatial_update=delta_l2=0.13790639 max_abs=0.02206468 relative=0.12183611 changed=True
+
+[2026-05-06 16:57:26] Fold 3/5 | subject=2
+[2026-05-06 16:57:26]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:26]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:26]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:26]     Fine-tune strategy:      new
+[2026-05-06 16:57:26]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:26]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:26]     Phase 1 (new):
+[2026-05-06 16:57:26]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:26]       Total params:     15,638
+[2026-05-06 16:57:26]       Trainable params: 1,798
+[2026-05-06 16:57:26]       Trainable pct:    11.50%
+[2026-05-06 16:57:26]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:26]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:26]     Result | best_epoch=6 | stop=36 | acc=0.6000 | bal_acc=0.6000 | pred_hist=[34, 6] | collapse_ratio=0.8500 | collapse=False
+[2026-05-06 16:57:26]     spatial_conv=[4, 64] top_abs_channels=[('CP4', 0.10664642), ('FC3', 0.10202058), ('T8', 0.09440548), ('F8', 0.09269384), ('TP7', 0.09220758), ('FCz', 0.08852185), ('P6', 0.0879983), ('Fz', 0.08387765)]
+[2026-05-06 16:57:26]     spatial_update=delta_l2=0.12150715 max_abs=0.02071261 relative=0.10734788 changed=True
+
+[2026-05-06 16:57:27] Fold 4/5 | subject=2
+[2026-05-06 16:57:27]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:27]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:27]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:27]     Fine-tune strategy:      new
+[2026-05-06 16:57:27]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:27]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:27]     Phase 1 (new):
+[2026-05-06 16:57:27]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:27]       Total params:     15,638
+[2026-05-06 16:57:27]       Trainable params: 1,798
+[2026-05-06 16:57:27]       Trainable pct:    11.50%
+[2026-05-06 16:57:27]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:27]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:27]     Result | best_epoch=7 | stop=37 | acc=0.4750 | bal_acc=0.4750 | pred_hist=[33, 7] | collapse_ratio=0.8250 | collapse=False
+[2026-05-06 16:57:27]     spatial_conv=[4, 64] top_abs_channels=[('CP4', 0.11145448), ('FC3', 0.10365605), ('TP7', 0.09576438), ('T8', 0.09186526), ('F8', 0.09020147), ('FCz', 0.08853767), ('CPz', 0.08689222), ('P6', 0.08569696)]
+[2026-05-06 16:57:27]     spatial_update=delta_l2=0.13527475 max_abs=0.02312852 relative=0.11951114 changed=True
+
+[2026-05-06 16:57:28] Fold 5/5 | subject=2
+[2026-05-06 16:57:28]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:28]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:28]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:28]     Fine-tune strategy:      new
+[2026-05-06 16:57:28]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:28]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:28]     Phase 1 (new):
+[2026-05-06 16:57:28]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:28]       Total params:     15,638
+[2026-05-06 16:57:28]       Trainable params: 1,798
+[2026-05-06 16:57:28]       Trainable pct:    11.50%
+[2026-05-06 16:57:28]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:28]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:28]     Result | best_epoch=1 | stop=31 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[40, 0] | collapse_ratio=1.0000 | collapse=True
+[2026-05-06 16:57:28]     spatial_conv=[4, 64] top_abs_channels=[('CP4', 0.11239146), ('FC3', 0.0953611), ('F8', 0.09473757), ('TP7', 0.09399395), ('FCz', 0.09206348), ('T8', 0.089021), ('P6', 0.08767192), ('Fz', 0.08680065)]
+[2026-05-06 16:57:28]     spatial_update=delta_l2=0.03808359 max_abs=0.00390460 relative=0.03364570 changed=True
+[2026-05-06 16:57:28]   Subject 2 summary: acc=0.4800±0.0731  bal_acc=0.4800±0.0731
+
+[2026-05-06 16:57:28] Subject 3: 200 windows | class_counts=[100, 100]
+
+[2026-05-06 16:57:29] Fold 1/5 | subject=3
+[2026-05-06 16:57:29]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:29]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:29]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:29]     Fine-tune strategy:      new
+[2026-05-06 16:57:29]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:29]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:29]     Phase 1 (new):
+[2026-05-06 16:57:29]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:29]       Total params:     15,638
+[2026-05-06 16:57:29]       Trainable params: 1,798
+[2026-05-06 16:57:29]       Trainable pct:    11.50%
+[2026-05-06 16:57:29]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:29]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:30]     Result | best_epoch=83 | stop=113 | acc=0.6500 | bal_acc=0.6500 | pred_hist=[20, 20] | collapse_ratio=0.5000 | collapse=False
+[2026-05-06 16:57:30]     spatial_conv=[4, 64] top_abs_channels=[('CP4', 0.16894589), ('F2', 0.13955376), ('CP3', 0.13635853), ('AF7', 0.1073221), ('C4', 0.10629395), ('Pz', 0.09875291), ('F8', 0.08975801), ('CP1', 0.08743346)]
+[2026-05-06 16:57:30]     spatial_update=delta_l2=1.20892284 max_abs=0.21709689 relative=1.06804666 changed=True
+
+[2026-05-06 16:57:31] Fold 2/5 | subject=3
+[2026-05-06 16:57:31]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:31]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:31]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:31]     Fine-tune strategy:      new
+[2026-05-06 16:57:31]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:31]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:31]     Phase 1 (new):
+[2026-05-06 16:57:31]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:31]       Total params:     15,638
+[2026-05-06 16:57:31]       Trainable params: 1,798
+[2026-05-06 16:57:31]       Trainable pct:    11.50%
+[2026-05-06 16:57:31]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:31]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:33]     Result | best_epoch=80 | stop=110 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[22, 18] | collapse_ratio=0.5500 | collapse=False
+[2026-05-06 16:57:33]     spatial_conv=[4, 64] top_abs_channels=[('CP4', 0.12857941), ('P3', 0.1270545), ('F2', 0.12367798), ('FC3', 0.11684347), ('CP3', 0.11553974), ('C6', 0.10890819), ('FC4', 0.09851258), ('CP2', 0.09710245)]
+[2026-05-06 16:57:33]     spatial_update=delta_l2=1.22525897 max_abs=0.28525798 relative=1.08247913 changed=True
+
+[2026-05-06 16:57:33] Fold 3/5 | subject=3
+[2026-05-06 16:57:33]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:33]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:33]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:33]     Fine-tune strategy:      new
+[2026-05-06 16:57:33]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:33]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:33]     Phase 1 (new):
+[2026-05-06 16:57:33]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:33]       Total params:     15,638
+[2026-05-06 16:57:33]       Trainable params: 1,798
+[2026-05-06 16:57:33]       Trainable pct:    11.50%
+[2026-05-06 16:57:33]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:33]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:34]     Result | best_epoch=20 | stop=50 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[23, 17] | collapse_ratio=0.5750 | collapse=False
+[2026-05-06 16:57:34]     spatial_conv=[4, 64] top_abs_channels=[('CP4', 0.11925346), ('P6', 0.10908128), ('FC3', 0.10902394), ('AF8', 0.10174701), ('F2', 0.09937105), ('Fz', 0.09648551), ('Cz', 0.09595101), ('FC6', 0.08982192)]
+[2026-05-06 16:57:34]     spatial_update=delta_l2=0.41616937 max_abs=0.06237130 relative=0.36767301 changed=True
+
+[2026-05-06 16:57:34] Fold 4/5 | subject=3
+[2026-05-06 16:57:34]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:34]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:34]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:34]     Fine-tune strategy:      new
+[2026-05-06 16:57:34]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:34]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:34]     Phase 1 (new):
+[2026-05-06 16:57:34]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:34]       Total params:     15,638
+[2026-05-06 16:57:34]       Trainable params: 1,798
+[2026-05-06 16:57:34]       Trainable pct:    11.50%
+[2026-05-06 16:57:34]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:34]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:35]     Result | best_epoch=17 | stop=47 | acc=0.7250 | bal_acc=0.7250 | pred_hist=[25, 15] | collapse_ratio=0.6250 | collapse=False
+[2026-05-06 16:57:35]     spatial_conv=[4, 64] top_abs_channels=[('CP4', 0.12475351), ('P6', 0.10686775), ('TP7', 0.10012216), ('FC3', 0.09509102), ('AF7', 0.09366745), ('AF8', 0.09288318), ('T7', 0.08637869), ('F8', 0.08381359)]
+[2026-05-06 16:57:35]     spatial_update=delta_l2=0.33786572 max_abs=0.04966101 relative=0.29849412 changed=True
+
+[2026-05-06 16:57:36] Fold 5/5 | subject=3
+[2026-05-06 16:57:36]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:36]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:36]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:36]     Fine-tune strategy:      new
+[2026-05-06 16:57:36]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:36]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:36]     Phase 1 (new):
+[2026-05-06 16:57:36]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:36]       Total params:     15,638
+[2026-05-06 16:57:36]       Trainable params: 1,798
+[2026-05-06 16:57:36]       Trainable pct:    11.50%
+[2026-05-06 16:57:36]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:36]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:37]     Result | best_epoch=36 | stop=66 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[27, 13] | collapse_ratio=0.6750 | collapse=False
+[2026-05-06 16:57:37]     spatial_conv=[4, 64] top_abs_channels=[('CP4', 0.13404042), ('P6', 0.1044528), ('AF8', 0.10379924), ('FC3', 0.09737372), ('C5', 0.09620363), ('AF7', 0.09445821), ('Cz', 0.09399036), ('C4', 0.09094393)]
+[2026-05-06 16:57:37]     spatial_update=delta_l2=0.72287150 max_abs=0.13445933 relative=0.63863504 changed=True
+[2026-05-06 16:57:37]   Subject 3 summary: acc=0.6250±0.0725  bal_acc=0.6250±0.0725
+
+[2026-05-06 16:57:37] Subject 4: 200 windows | class_counts=[100, 100]
+
+[2026-05-06 16:57:37] Fold 1/5 | subject=4
+[2026-05-06 16:57:37]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:37]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:37]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:37]     Fine-tune strategy:      new
+[2026-05-06 16:57:37]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:37]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:37]     Phase 1 (new):
+[2026-05-06 16:57:37]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:37]       Total params:     15,638
+[2026-05-06 16:57:37]       Trainable params: 1,798
+[2026-05-06 16:57:37]       Trainable pct:    11.50%
+[2026-05-06 16:57:37]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:37]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:40]     Result | best_epoch=141 | stop=171 | acc=0.7000 | bal_acc=0.7000 | pred_hist=[18, 22] | collapse_ratio=0.5500 | collapse=False
+[2026-05-06 16:57:40]     spatial_conv=[4, 64] top_abs_channels=[('CP1', 0.19757919), ('C1', 0.19132218), ('FC1', 0.16731112), ('CPz', 0.15912884), ('C4', 0.11728284), ('C3', 0.11543001), ('CP2', 0.10994259), ('C2', 0.10273703)]
+[2026-05-06 16:57:40]     spatial_update=delta_l2=1.34360190 max_abs=0.29735149 relative=1.18703152 changed=True
+
+[2026-05-06 16:57:40] Fold 2/5 | subject=4
+[2026-05-06 16:57:40]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:40]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:40]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:40]     Fine-tune strategy:      new
+[2026-05-06 16:57:40]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:40]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:40]     Phase 1 (new):
+[2026-05-06 16:57:40]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:40]       Total params:     15,638
+[2026-05-06 16:57:40]       Trainable params: 1,798
+[2026-05-06 16:57:40]       Trainable pct:    11.50%
+[2026-05-06 16:57:40]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:40]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:43]     Result | best_epoch=160 | stop=190 | acc=0.6750 | bal_acc=0.6750 | pred_hist=[21, 19] | collapse_ratio=0.5250 | collapse=False
+[2026-05-06 16:57:43]     spatial_conv=[4, 64] top_abs_channels=[('C2', 0.19474305), ('CPz', 0.16355337), ('CP1', 0.1539022), ('CP2', 0.12704667), ('C1', 0.12473845), ('C6', 0.11905948), ('CP4', 0.10850333), ('FC5', 0.10726766)]
+[2026-05-06 16:57:43]     spatial_update=delta_l2=1.36395847 max_abs=0.31161729 relative=1.20501593 changed=True
+
+[2026-05-06 16:57:44] Fold 3/5 | subject=4
+[2026-05-06 16:57:44]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:44]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:44]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:44]     Fine-tune strategy:      new
+[2026-05-06 16:57:44]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:44]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:44]     Phase 1 (new):
+[2026-05-06 16:57:44]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:44]       Total params:     15,638
+[2026-05-06 16:57:44]       Trainable params: 1,798
+[2026-05-06 16:57:44]       Trainable pct:    11.50%
+[2026-05-06 16:57:44]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:44]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:45]     Result | best_epoch=39 | stop=69 | acc=0.7750 | bal_acc=0.7750 | pred_hist=[19, 21] | collapse_ratio=0.5250 | collapse=False
+[2026-05-06 16:57:45]     spatial_conv=[4, 64] top_abs_channels=[('FCz', 0.10756603), ('Oz', 0.10132609), ('P10', 0.10117631), ('F7', 0.09924566), ('AF8', 0.09893721), ('FT7', 0.09634745), ('P3', 0.09405947), ('T7', 0.09057042)]
+[2026-05-06 16:57:45]     spatial_update=delta_l2=0.83383144 max_abs=0.13631836 relative=0.73666478 changed=True
+
+[2026-05-06 16:57:45] Fold 4/5 | subject=4
+[2026-05-06 16:57:45]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:45]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:45]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:45]     Fine-tune strategy:      new
+[2026-05-06 16:57:45]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:45]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:45]     Phase 1 (new):
+[2026-05-06 16:57:45]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:45]       Total params:     15,638
+[2026-05-06 16:57:45]       Trainable params: 1,798
+[2026-05-06 16:57:45]       Trainable pct:    11.50%
+[2026-05-06 16:57:45]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:45]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:47]     Result | best_epoch=78 | stop=108 | acc=0.7000 | bal_acc=0.7000 | pred_hist=[10, 30] | collapse_ratio=0.7500 | collapse=False
+[2026-05-06 16:57:47]     spatial_conv=[4, 64] top_abs_channels=[('C6', 0.14421776), ('C2', 0.1266101), ('FC4', 0.12429092), ('P7', 0.12079017), ('C1', 0.12020509), ('CP1', 0.11322671), ('CP4', 0.11225931), ('Fpz', 0.11223371)]
+[2026-05-06 16:57:47]     spatial_update=delta_l2=1.12276731 max_abs=0.23418471 relative=0.99193086 changed=True
+
+[2026-05-06 16:57:47] Fold 5/5 | subject=4
+[2026-05-06 16:57:47]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:47]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:47]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:47]     Fine-tune strategy:      new
+[2026-05-06 16:57:47]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:47]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:47]     Phase 1 (new):
+[2026-05-06 16:57:47]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:47]       Total params:     15,638
+[2026-05-06 16:57:47]       Trainable params: 1,798
+[2026-05-06 16:57:47]       Trainable pct:    11.50%
+[2026-05-06 16:57:47]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:47]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:51]     Result | best_epoch=209 | stop=239 | acc=0.8000 | bal_acc=0.8000 | pred_hist=[22, 18] | collapse_ratio=0.5500 | collapse=False
+[2026-05-06 16:57:51]     spatial_conv=[4, 64] top_abs_channels=[('FC3', 0.22164941), ('C1', 0.15779006), ('CP1', 0.14612792), ('FC4', 0.13652018), ('FC1', 0.13549632), ('CP2', 0.10898556), ('C2', 0.10485057), ('F3', 0.09983219)]
+[2026-05-06 16:57:51]     spatial_update=delta_l2=1.64260308 max_abs=0.35868675 relative=1.45118999 changed=True
+[2026-05-06 16:57:51]   Subject 4 summary: acc=0.7300±0.0485  bal_acc=0.7300±0.0485
+
+[2026-05-06 16:57:51] Subject 5: 200 windows | class_counts=[100, 100]
+
+[2026-05-06 16:57:51] Fold 1/5 | subject=5
+[2026-05-06 16:57:51]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:57:51]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:57:51]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:57:51]     Fine-tune strategy:      new
+[2026-05-06 16:57:51]     Pretrained loading path: from_pretrained
+[2026-05-06 16:57:51]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:57:51]     Phase 1 (new):
+[2026-05-06 16:57:51]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:57:51]       Total params:     15,638
+[2026-05-06 16:57:51]       Trainable params: 1,798
+[2026-05-06 16:57:51]       Trainable pct:    11.50%
+[2026-05-06 16:57:51]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:57:51]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:57:59]     Result | best_epoch=498 | stop=500 | acc=0.9750 | bal_acc=0.9750 | pred_hist=[19, 21] | collapse_ratio=0.5250 | collapse=False
+[2026-05-06 16:57:59]     spatial_conv=[4, 64] top_abs_channels=[('CP1', 0.25455797), ('AF7', 0.15877527), ('C2', 0.15155981), ('Fp2', 0.14587402), ('F3', 0.14200702), ('Pz', 0.12715206), ('F1', 0.1216475), ('F8', 0.11003779)]
+[2026-05-06 16:57:59]     spatial_update=delta_l2=1.59674348 max_abs=0.29808548 relative=1.41067443 changed=True
+
+[2026-05-06 16:58:00] Fold 2/5 | subject=5
+[2026-05-06 16:58:00]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:58:00]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:58:00]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:58:00]     Fine-tune strategy:      new
+[2026-05-06 16:58:00]     Pretrained loading path: from_pretrained
+[2026-05-06 16:58:00]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:58:00]     Phase 1 (new):
+[2026-05-06 16:58:00]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:58:00]       Total params:     15,638
+[2026-05-06 16:58:00]       Trainable params: 1,798
+[2026-05-06 16:58:00]       Trainable pct:    11.50%
+[2026-05-06 16:58:00]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:58:00]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:58:07]     Result | best_epoch=499 | stop=500 | acc=0.9750 | bal_acc=0.9750 | pred_hist=[19, 21] | collapse_ratio=0.5250 | collapse=False
+[2026-05-06 16:58:07]     spatial_conv=[4, 64] top_abs_channels=[('Fp2', 0.17006928), ('F1', 0.15250739), ('CP2', 0.15015852), ('AF7', 0.13656531), ('Pz', 0.13134986), ('C2', 0.11099537), ('Fpz', 0.10407086), ('CP1', 0.09545222)]
+[2026-05-06 16:58:07]     spatial_update=delta_l2=1.48355013 max_abs=0.30302493 relative=1.31067153 changed=True
+
+[2026-05-06 16:58:08] Fold 3/5 | subject=5
+[2026-05-06 16:58:08]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:58:08]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:58:08]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:58:08]     Fine-tune strategy:      new
+[2026-05-06 16:58:08]     Pretrained loading path: from_pretrained
+[2026-05-06 16:58:08]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:58:08]     Phase 1 (new):
+[2026-05-06 16:58:08]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:58:08]       Total params:     15,638
+[2026-05-06 16:58:08]       Trainable params: 1,798
+[2026-05-06 16:58:08]       Trainable pct:    11.50%
+[2026-05-06 16:58:08]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:58:08]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:58:15]     Result | best_epoch=500 | stop=500 | acc=1.0000 | bal_acc=1.0000 | pred_hist=[20, 20] | collapse_ratio=0.5000 | collapse=False
+[2026-05-06 16:58:15]     spatial_conv=[4, 64] top_abs_channels=[('CP2', 0.18981661), ('C2', 0.16512614), ('C1', 0.1516673), ('AF7', 0.14680466), ('CP3', 0.13219252), ('P4', 0.12992452), ('CP1', 0.12245443), ('F1', 0.11873731)]
+[2026-05-06 16:58:15]     spatial_update=delta_l2=1.58080397 max_abs=0.30936250 relative=1.39659235 changed=True
+
+[2026-05-06 16:58:16] Fold 4/5 | subject=5
+[2026-05-06 16:58:16]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:58:16]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:58:16]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:58:16]     Fine-tune strategy:      new
+[2026-05-06 16:58:16]     Pretrained loading path: from_pretrained
+[2026-05-06 16:58:16]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:58:16]     Phase 1 (new):
+[2026-05-06 16:58:16]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:58:16]       Total params:     15,638
+[2026-05-06 16:58:16]       Trainable params: 1,798
+[2026-05-06 16:58:16]       Trainable pct:    11.50%
+[2026-05-06 16:58:16]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:58:16]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:58:23]     Result | best_epoch=499 | stop=500 | acc=1.0000 | bal_acc=1.0000 | pred_hist=[20, 20] | collapse_ratio=0.5000 | collapse=False
+[2026-05-06 16:58:23]     spatial_conv=[4, 64] top_abs_channels=[('CP1', 0.24328393), ('C2', 0.20358412), ('CP2', 0.14396107), ('TP8', 0.13311285), ('Fp2', 0.13281004), ('PO3', 0.12574309), ('POz', 0.12509002), ('F3', 0.1141689)]
+[2026-05-06 16:58:23]     spatial_update=delta_l2=1.58803558 max_abs=0.31631534 relative=1.40298126 changed=True
+
+[2026-05-06 16:58:24] Fold 5/5 | subject=5
+[2026-05-06 16:58:24]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:58:24]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:58:24]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:58:24]     Fine-tune strategy:      new
+[2026-05-06 16:58:24]     Pretrained loading path: from_pretrained
+[2026-05-06 16:58:24]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:58:24]     Phase 1 (new):
+[2026-05-06 16:58:24]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:58:24]       Total params:     15,638
+[2026-05-06 16:58:24]       Trainable params: 1,798
+[2026-05-06 16:58:24]       Trainable pct:    11.50%
+[2026-05-06 16:58:24]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:58:24]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:58:31]     Result | best_epoch=499 | stop=500 | acc=1.0000 | bal_acc=1.0000 | pred_hist=[20, 20] | collapse_ratio=0.5000 | collapse=False
+[2026-05-06 16:58:31]     spatial_conv=[4, 64] top_abs_channels=[('C2', 0.23512766), ('CP1', 0.20586409), ('CP2', 0.15870039), ('F4', 0.13171604), ('FC1', 0.1266675), ('F8', 0.1265323), ('TP8', 0.12283726), ('F3', 0.11935262)]
+[2026-05-06 16:58:31]     spatial_update=delta_l2=1.61421318 max_abs=0.33549362 relative=1.42610837 changed=True
+[2026-05-06 16:58:31]   Subject 5 summary: acc=0.9900±0.0122  bal_acc=0.9900±0.0122
+
+[2026-05-06 16:58:31] Subject 6: 200 windows | class_counts=[100, 100]
+
+[2026-05-06 16:58:32] Fold 1/5 | subject=6
+[2026-05-06 16:58:32]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:58:32]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:58:32]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:58:32]     Fine-tune strategy:      new
+[2026-05-06 16:58:32]     Pretrained loading path: from_pretrained
+[2026-05-06 16:58:32]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:58:32]     Phase 1 (new):
+[2026-05-06 16:58:32]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:58:32]       Total params:     15,638
+[2026-05-06 16:58:32]       Trainable params: 1,798
+[2026-05-06 16:58:32]       Trainable pct:    11.50%
+[2026-05-06 16:58:32]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:58:32]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:58:36]     Result | best_epoch=221 | stop=251 | acc=0.7500 | bal_acc=0.7500 | pred_hist=[12, 28] | collapse_ratio=0.7000 | collapse=False
+[2026-05-06 16:58:36]     spatial_conv=[4, 64] top_abs_channels=[('Fz', 0.16764301), ('F5', 0.15760052), ('FC2', 0.12797162), ('C1', 0.11937533), ('P2', 0.11714441), ('O1', 0.1109403), ('FC1', 0.10932928), ('CP2', 0.10597821)]
+[2026-05-06 16:58:36]     spatial_update=delta_l2=1.56395538 max_abs=0.27855088 relative=1.38170714 changed=True
+
+[2026-05-06 16:58:36] Fold 2/5 | subject=6
+[2026-05-06 16:58:36]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:58:36]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:58:36]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:58:36]     Fine-tune strategy:      new
+[2026-05-06 16:58:36]     Pretrained loading path: from_pretrained
+[2026-05-06 16:58:36]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:58:36]     Phase 1 (new):
+[2026-05-06 16:58:36]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:58:36]       Total params:     15,638
+[2026-05-06 16:58:36]       Trainable params: 1,798
+[2026-05-06 16:58:36]       Trainable pct:    11.50%
+[2026-05-06 16:58:36]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:58:36]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:58:39]     Result | best_epoch=145 | stop=175 | acc=0.8500 | bal_acc=0.8500 | pred_hist=[16, 24] | collapse_ratio=0.6000 | collapse=False
+[2026-05-06 16:58:39]     spatial_conv=[4, 64] top_abs_channels=[('C1', 0.15615882), ('C2', 0.14341331), ('FC2', 0.13331148), ('POz', 0.13312317), ('CPz', 0.12286537), ('FC1', 0.11882579), ('PO7', 0.11868526), ('P8', 0.11123644)]
+[2026-05-06 16:58:39]     spatial_update=delta_l2=1.42183363 max_abs=0.27010036 relative=1.25614688 changed=True
+
+[2026-05-06 16:58:39] Fold 3/5 | subject=6
+[2026-05-06 16:58:39]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:58:39]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:58:39]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:58:39]     Fine-tune strategy:      new
+[2026-05-06 16:58:39]     Pretrained loading path: from_pretrained
+[2026-05-06 16:58:39]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:58:39]     Phase 1 (new):
+[2026-05-06 16:58:39]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:58:39]       Total params:     15,638
+[2026-05-06 16:58:39]       Trainable params: 1,798
+[2026-05-06 16:58:39]       Trainable pct:    11.50%
+[2026-05-06 16:58:39]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:58:39]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:58:44]     Result | best_epoch=249 | stop=279 | acc=0.7750 | bal_acc=0.7750 | pred_hist=[27, 13] | collapse_ratio=0.6750 | collapse=False
+[2026-05-06 16:58:44]     spatial_conv=[4, 64] top_abs_channels=[('CPz', 0.16147172), ('C1', 0.15695639), ('CP1', 0.13589026), ('P1', 0.13348024), ('F5', 0.12949885), ('F2', 0.12829977), ('PO3', 0.11765514), ('CP2', 0.11574014)]
+[2026-05-06 16:58:44]     spatial_update=delta_l2=1.55034687 max_abs=0.28193502 relative=1.36968442 changed=True
+
+[2026-05-06 16:58:44] Fold 4/5 | subject=6
+[2026-05-06 16:58:44]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:58:44]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:58:44]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:58:44]     Fine-tune strategy:      new
+[2026-05-06 16:58:44]     Pretrained loading path: from_pretrained
+[2026-05-06 16:58:44]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:58:44]     Phase 1 (new):
+[2026-05-06 16:58:44]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:58:44]       Total params:     15,638
+[2026-05-06 16:58:44]       Trainable params: 1,798
+[2026-05-06 16:58:44]       Trainable pct:    11.50%
+[2026-05-06 16:58:44]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:58:44]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:58:48]     Result | best_epoch=216 | stop=246 | acc=0.8250 | bal_acc=0.8250 | pred_hist=[23, 17] | collapse_ratio=0.5750 | collapse=False
+[2026-05-06 16:58:48]     spatial_conv=[4, 64] top_abs_channels=[('P1', 0.17743385), ('C1', 0.15692639), ('C2', 0.14760673), ('CP2', 0.14609197), ('FC1', 0.14085336), ('Fz', 0.12615916), ('CP1', 0.12329324), ('POz', 0.12144619)]
+[2026-05-06 16:58:48]     spatial_update=delta_l2=1.50593096 max_abs=0.30911832 relative=1.33044431 changed=True
+
+[2026-05-06 16:58:48] Fold 5/5 | subject=6
+[2026-05-06 16:58:48]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:58:48]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:58:48]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:58:48]     Fine-tune strategy:      new
+[2026-05-06 16:58:48]     Pretrained loading path: from_pretrained
+[2026-05-06 16:58:48]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:58:48]     Phase 1 (new):
+[2026-05-06 16:58:48]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:58:48]       Total params:     15,638
+[2026-05-06 16:58:48]       Trainable params: 1,798
+[2026-05-06 16:58:48]       Trainable pct:    11.50%
+[2026-05-06 16:58:48]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:58:48]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:58:51]     Result | best_epoch=155 | stop=185 | acc=0.9000 | bal_acc=0.9000 | pred_hist=[18, 22] | collapse_ratio=0.5500 | collapse=False
+[2026-05-06 16:58:51]     spatial_conv=[4, 64] top_abs_channels=[('CP2', 0.15740894), ('CPz', 0.1558608), ('C1', 0.13817179), ('P3', 0.1316947), ('FC1', 0.1210838), ('FC2', 0.11908302), ('POz', 0.11836873), ('C5', 0.11372487)]
+[2026-05-06 16:58:51]     spatial_update=delta_l2=1.39773810 max_abs=0.29232930 relative=1.23485921 changed=True
+[2026-05-06 16:58:51]   Subject 6 summary: acc=0.8200±0.0534  bal_acc=0.8200±0.0534
+
+[2026-05-06 16:58:51] Subject 7: 240 windows | class_counts=[120, 120]
+
+[2026-05-06 16:58:51] Fold 1/5 | subject=7
+[2026-05-06 16:58:51]     Train windows:           192 | counts=[96, 96]
+[2026-05-06 16:58:51]     Test windows:            48 | counts=[24, 24]
+[2026-05-06 16:58:51]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:58:51]     Fine-tune strategy:      new
+[2026-05-06 16:58:51]     Pretrained loading path: from_pretrained
+[2026-05-06 16:58:51]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:58:51]     Phase 1 (new):
+[2026-05-06 16:58:51]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:58:51]       Total params:     15,638
+[2026-05-06 16:58:51]       Trainable params: 1,798
+[2026-05-06 16:58:51]       Trainable pct:    11.50%
+[2026-05-06 16:58:51]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:58:51]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:58:52]     Result | best_epoch=1 | stop=31 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[48, 0] | collapse_ratio=1.0000 | collapse=True
+[2026-05-06 16:58:52]     spatial_conv=[4, 64] top_abs_channels=[('CP4', 0.11309906), ('FCz', 0.0944436), ('TP7', 0.09408167), ('FC3', 0.09316289), ('F8', 0.09239715), ('Fz', 0.08789129), ('P6', 0.08628353), ('T8', 0.08548981)]
+[2026-05-06 16:58:52]     spatial_update=delta_l2=0.03756011 max_abs=0.00389725 relative=0.03318321 changed=True
+
+[2026-05-06 16:58:52] Fold 2/5 | subject=7
+[2026-05-06 16:58:52]     Train windows:           192 | counts=[96, 96]
+[2026-05-06 16:58:52]     Test windows:            48 | counts=[24, 24]
+[2026-05-06 16:58:52]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:58:52]     Fine-tune strategy:      new
+[2026-05-06 16:58:52]     Pretrained loading path: from_pretrained
+[2026-05-06 16:58:52]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:58:52]     Phase 1 (new):
+[2026-05-06 16:58:52]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:58:52]       Total params:     15,638
+[2026-05-06 16:58:52]       Trainable params: 1,798
+[2026-05-06 16:58:52]       Trainable pct:    11.50%
+[2026-05-06 16:58:52]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:58:52]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:58:53]     Result | best_epoch=1 | stop=31 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[48, 0] | collapse_ratio=1.0000 | collapse=True
+[2026-05-06 16:58:53]     spatial_conv=[4, 64] top_abs_channels=[('CP4', 0.11380924), ('FC3', 0.09429815), ('FCz', 0.09422635), ('F8', 0.09338539), ('TP7', 0.09268069), ('Fz', 0.08794717), ('P6', 0.08735448), ('T8', 0.08690028)]
+[2026-05-06 16:58:53]     spatial_update=delta_l2=0.03039435 max_abs=0.00389331 relative=0.02685249 changed=True
+
+[2026-05-06 16:58:53] Fold 3/5 | subject=7
+[2026-05-06 16:58:53]     Train windows:           192 | counts=[96, 96]
+[2026-05-06 16:58:53]     Test windows:            48 | counts=[24, 24]
+[2026-05-06 16:58:53]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:58:53]     Fine-tune strategy:      new
+[2026-05-06 16:58:53]     Pretrained loading path: from_pretrained
+[2026-05-06 16:58:53]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:58:53]     Phase 1 (new):
+[2026-05-06 16:58:53]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:58:53]       Total params:     15,638
+[2026-05-06 16:58:53]       Trainable params: 1,798
+[2026-05-06 16:58:53]       Trainable pct:    11.50%
+[2026-05-06 16:58:53]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:58:53]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:58:55]     Result | best_epoch=38 | stop=68 | acc=0.4792 | bal_acc=0.4792 | pred_hist=[29, 19] | collapse_ratio=0.6042 | collapse=False
+[2026-05-06 16:58:55]     spatial_conv=[4, 64] top_abs_channels=[('FC4', 0.12133791), ('FC3', 0.11327556), ('P7', 0.11004084), ('CP2', 0.09982377), ('C4', 0.09914538), ('F2', 0.09868932), ('P6', 0.09428638), ('CP3', 0.09397081)]
+[2026-05-06 16:58:55]     spatial_update=delta_l2=0.71426583 max_abs=0.12509076 relative=0.63103220 changed=True
+
+[2026-05-06 16:58:55] Fold 4/5 | subject=7
+[2026-05-06 16:58:55]     Train windows:           192 | counts=[96, 96]
+[2026-05-06 16:58:55]     Test windows:            48 | counts=[24, 24]
+[2026-05-06 16:58:55]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:58:55]     Fine-tune strategy:      new
+[2026-05-06 16:58:55]     Pretrained loading path: from_pretrained
+[2026-05-06 16:58:55]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:58:55]     Phase 1 (new):
+[2026-05-06 16:58:55]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:58:55]       Total params:     15,638
+[2026-05-06 16:58:55]       Trainable params: 1,798
+[2026-05-06 16:58:55]       Trainable pct:    11.50%
+[2026-05-06 16:58:55]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:58:55]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:58:56]     Result | best_epoch=45 | stop=75 | acc=0.5833 | bal_acc=0.5833 | pred_hist=[26, 22] | collapse_ratio=0.5417 | collapse=False
+[2026-05-06 16:58:56]     spatial_conv=[4, 64] top_abs_channels=[('CP6', 0.1153833), ('TP7', 0.10901263), ('FC4', 0.10281187), ('FCz', 0.09696488), ('CP3', 0.09266774), ('C1', 0.09196513), ('P10', 0.09052468), ('P7', 0.088562)]
+[2026-05-06 16:58:56]     spatial_update=delta_l2=0.72571749 max_abs=0.13775651 relative=0.64114938 changed=True
+
+[2026-05-06 16:58:57] Fold 5/5 | subject=7
+[2026-05-06 16:58:57]     Train windows:           192 | counts=[96, 96]
+[2026-05-06 16:58:57]     Test windows:            48 | counts=[24, 24]
+[2026-05-06 16:58:57]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:58:57]     Fine-tune strategy:      new
+[2026-05-06 16:58:57]     Pretrained loading path: from_pretrained
+[2026-05-06 16:58:57]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:58:57]     Phase 1 (new):
+[2026-05-06 16:58:57]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:58:57]       Total params:     15,638
+[2026-05-06 16:58:57]       Trainable params: 1,798
+[2026-05-06 16:58:57]       Trainable pct:    11.50%
+[2026-05-06 16:58:57]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:58:57]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:58:58]     Result | best_epoch=20 | stop=50 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[32, 16] | collapse_ratio=0.6667 | collapse=False
+[2026-05-06 16:58:58]     spatial_conv=[4, 64] top_abs_channels=[('FC3', 0.12345951), ('FCz', 0.111301), ('TP7', 0.10273009), ('C4', 0.10112519), ('CP4', 0.09365245), ('F8', 0.08786365), ('PO7', 0.08346315), ('AF7', 0.08186869)]
+[2026-05-06 16:58:58]     spatial_update=delta_l2=0.40443770 max_abs=0.06221184 relative=0.35730844 changed=True
+[2026-05-06 16:58:58]   Subject 7 summary: acc=0.4875±0.0667  bal_acc=0.4875±0.0667
+
+[2026-05-06 16:58:58] Subject 8: 200 windows | class_counts=[100, 100]
+
+[2026-05-06 16:58:58] Fold 1/5 | subject=8
+[2026-05-06 16:58:58]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:58:58]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:58:58]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:58:58]     Fine-tune strategy:      new
+[2026-05-06 16:58:58]     Pretrained loading path: from_pretrained
+[2026-05-06 16:58:58]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:58:58]     Phase 1 (new):
+[2026-05-06 16:58:58]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:58:58]       Total params:     15,638
+[2026-05-06 16:58:58]       Trainable params: 1,798
+[2026-05-06 16:58:58]       Trainable pct:    11.50%
+[2026-05-06 16:58:58]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:58:58]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:59:01]     Result | best_epoch=159 | stop=189 | acc=0.5250 | bal_acc=0.5250 | pred_hist=[21, 19] | collapse_ratio=0.5250 | collapse=False
+[2026-05-06 16:59:01]     spatial_conv=[4, 64] top_abs_channels=[('CPz', 0.13393405), ('Cz', 0.13083956), ('FC2', 0.12260953), ('FC4', 0.10925853), ('F2', 0.10599853), ('Fz', 0.10319081), ('CP5', 0.10049054), ('C4', 0.09940843)]
+[2026-05-06 16:59:01]     spatial_update=delta_l2=1.45326130 max_abs=0.40524389 relative=1.28391227 changed=True
+
+[2026-05-06 16:59:01] Fold 2/5 | subject=8
+[2026-05-06 16:59:01]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:59:01]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:59:01]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:59:01]     Fine-tune strategy:      new
+[2026-05-06 16:59:01]     Pretrained loading path: from_pretrained
+[2026-05-06 16:59:01]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:59:01]     Phase 1 (new):
+[2026-05-06 16:59:01]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:59:01]       Total params:     15,638
+[2026-05-06 16:59:01]       Trainable params: 1,798
+[2026-05-06 16:59:01]       Trainable pct:    11.50%
+[2026-05-06 16:59:01]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:59:01]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:59:02]     Result | best_epoch=19 | stop=49 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[20, 20] | collapse_ratio=0.5000 | collapse=False
+[2026-05-06 16:59:02]     spatial_conv=[4, 64] top_abs_channels=[('CP4', 0.12472231), ('FC3', 0.10791306), ('FCz', 0.09557357), ('TP7', 0.09544154), ('FC4', 0.09216406), ('C4', 0.09040895), ('Cz', 0.08934685), ('CPz', 0.08563647)]
+[2026-05-06 16:59:02]     spatial_update=delta_l2=0.35720683 max_abs=0.05766732 relative=0.31558140 changed=True
+
+[2026-05-06 16:59:03] Fold 3/5 | subject=8
+[2026-05-06 16:59:03]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:59:03]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:59:03]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:59:03]     Fine-tune strategy:      new
+[2026-05-06 16:59:03]     Pretrained loading path: from_pretrained
+[2026-05-06 16:59:03]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:59:03]     Phase 1 (new):
+[2026-05-06 16:59:03]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:59:03]       Total params:     15,638
+[2026-05-06 16:59:03]       Trainable params: 1,798
+[2026-05-06 16:59:03]       Trainable pct:    11.50%
+[2026-05-06 16:59:03]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:59:03]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:59:04]     Result | best_epoch=75 | stop=105 | acc=0.5500 | bal_acc=0.5500 | pred_hist=[20, 20] | collapse_ratio=0.5000 | collapse=False
+[2026-05-06 16:59:04]     spatial_conv=[4, 64] top_abs_channels=[('Cz', 0.16640574), ('FC6', 0.12184617), ('C4', 0.12154108), ('P2', 0.116304), ('C5', 0.10981595), ('FC4', 0.10705245), ('FC5', 0.10654786), ('Pz', 0.10344101)]
+[2026-05-06 16:59:04]     spatial_update=delta_l2=1.00351917 max_abs=0.20523120 relative=0.88657874 changed=True
+
+[2026-05-06 16:59:05] Fold 4/5 | subject=8
+[2026-05-06 16:59:05]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:59:05]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:59:05]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:59:05]     Fine-tune strategy:      new
+[2026-05-06 16:59:05]     Pretrained loading path: from_pretrained
+[2026-05-06 16:59:05]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:59:05]     Phase 1 (new):
+[2026-05-06 16:59:05]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:59:05]       Total params:     15,638
+[2026-05-06 16:59:05]       Trainable params: 1,798
+[2026-05-06 16:59:05]       Trainable pct:    11.50%
+[2026-05-06 16:59:05]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:59:05]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:59:07]     Result | best_epoch=127 | stop=157 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[18, 22] | collapse_ratio=0.5500 | collapse=False
+[2026-05-06 16:59:07]     spatial_conv=[4, 64] top_abs_channels=[('FC6', 0.14229821), ('F2', 0.14082557), ('P3', 0.12909862), ('C4', 0.11439983), ('FC5', 0.11389761), ('PO3', 0.11160043), ('CP3', 0.10871392), ('P6', 0.09709564)]
+[2026-05-06 16:59:07]     spatial_update=delta_l2=1.39475504 max_abs=0.30106732 relative=1.23222377 changed=True
+
+[2026-05-06 16:59:08] Fold 5/5 | subject=8
+[2026-05-06 16:59:08]     Train windows:           160 | counts=[80, 80]
+[2026-05-06 16:59:08]     Test windows:            40 | counts=[20, 20]
+[2026-05-06 16:59:08]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:59:08]     Fine-tune strategy:      new
+[2026-05-06 16:59:08]     Pretrained loading path: from_pretrained
+[2026-05-06 16:59:08]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:59:08]     Phase 1 (new):
+[2026-05-06 16:59:08]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:59:08]       Total params:     15,638
+[2026-05-06 16:59:08]       Trainable params: 1,798
+[2026-05-06 16:59:08]       Trainable pct:    11.50%
+[2026-05-06 16:59:08]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:59:08]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:59:09]     Result | best_epoch=80 | stop=110 | acc=0.4750 | bal_acc=0.4750 | pred_hist=[21, 19] | collapse_ratio=0.5250 | collapse=False
+[2026-05-06 16:59:09]     spatial_conv=[4, 64] top_abs_channels=[('C2', 0.14721815), ('Cz', 0.1400796), ('T7', 0.12858599), ('C3', 0.12602811), ('CP3', 0.11857918), ('CPz', 0.11696337), ('FC2', 0.10952838), ('Oz', 0.10623287)]
+[2026-05-06 16:59:09]     spatial_update=delta_l2=1.09024450 max_abs=0.19467337 relative=0.96319794 changed=True
+[2026-05-06 16:59:09]   Subject 8 summary: acc=0.5100±0.0255  bal_acc=0.5100±0.0255
+
+[2026-05-06 16:59:09] Subject 9: 240 windows | class_counts=[120, 120]
+
+[2026-05-06 16:59:10] Fold 1/5 | subject=9
+[2026-05-06 16:59:10]     Train windows:           192 | counts=[96, 96]
+[2026-05-06 16:59:10]     Test windows:            48 | counts=[24, 24]
+[2026-05-06 16:59:10]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:59:10]     Fine-tune strategy:      new
+[2026-05-06 16:59:10]     Pretrained loading path: from_pretrained
+[2026-05-06 16:59:10]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:59:10]     Phase 1 (new):
+[2026-05-06 16:59:10]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:59:10]       Total params:     15,638
+[2026-05-06 16:59:10]       Trainable params: 1,798
+[2026-05-06 16:59:10]       Trainable pct:    11.50%
+[2026-05-06 16:59:10]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:59:10]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:59:10]     Result | best_epoch=12 | stop=42 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[40, 8] | collapse_ratio=0.8333 | collapse=False
+[2026-05-06 16:59:10]     spatial_conv=[4, 64] top_abs_channels=[('CP4', 0.1141227), ('F8', 0.10595185), ('Fz', 0.10322182), ('T8', 0.08831474), ('TP7', 0.08624583), ('FC3', 0.0852858), ('F2', 0.08486056), ('P6', 0.08408315)]
+[2026-05-06 16:59:10]     spatial_update=delta_l2=0.25791571 max_abs=0.03936614 relative=0.22786071 changed=True
+
+[2026-05-06 16:59:11] Fold 2/5 | subject=9
+[2026-05-06 16:59:11]     Train windows:           192 | counts=[96, 96]
+[2026-05-06 16:59:11]     Test windows:            48 | counts=[24, 24]
+[2026-05-06 16:59:11]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:59:11]     Fine-tune strategy:      new
+[2026-05-06 16:59:11]     Pretrained loading path: from_pretrained
+[2026-05-06 16:59:11]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:59:11]     Phase 1 (new):
+[2026-05-06 16:59:11]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:59:11]       Total params:     15,638
+[2026-05-06 16:59:11]       Trainable params: 1,798
+[2026-05-06 16:59:11]       Trainable pct:    11.50%
+[2026-05-06 16:59:11]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:59:11]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:59:12]     Result | best_epoch=64 | stop=94 | acc=0.5208 | bal_acc=0.5208 | pred_hist=[21, 27] | collapse_ratio=0.5625 | collapse=False
+[2026-05-06 16:59:12]     spatial_conv=[4, 64] top_abs_channels=[('FCz', 0.13324961), ('C4', 0.1184674), ('F4', 0.11421014), ('FC2', 0.11394808), ('C3', 0.10152427), ('P6', 0.10149842), ('F8', 0.09992304), ('FC6', 0.0968826)]
+[2026-05-06 16:59:12]     spatial_update=delta_l2=0.93007362 max_abs=0.17707158 relative=0.82169183 changed=True
+
+[2026-05-06 16:59:13] Fold 3/5 | subject=9
+[2026-05-06 16:59:13]     Train windows:           192 | counts=[96, 96]
+[2026-05-06 16:59:13]     Test windows:            48 | counts=[24, 24]
+[2026-05-06 16:59:13]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:59:13]     Fine-tune strategy:      new
+[2026-05-06 16:59:13]     Pretrained loading path: from_pretrained
+[2026-05-06 16:59:13]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:59:13]     Phase 1 (new):
+[2026-05-06 16:59:13]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:59:13]       Total params:     15,638
+[2026-05-06 16:59:13]       Trainable params: 1,798
+[2026-05-06 16:59:13]       Trainable pct:    11.50%
+[2026-05-06 16:59:13]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:59:13]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:59:14]     Result | best_epoch=64 | stop=94 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[26, 22] | collapse_ratio=0.5417 | collapse=False
+[2026-05-06 16:59:14]     spatial_conv=[4, 64] top_abs_channels=[('FC2', 0.13835302), ('CP2', 0.11288517), ('F4', 0.10970565), ('P3', 0.10755835), ('Fz', 0.10086127), ('C5', 0.10050581), ('FCz', 0.09882824), ('FC4', 0.0957029)]
+[2026-05-06 16:59:14]     spatial_update=delta_l2=0.89739087 max_abs=0.19260146 relative=0.79281761 changed=True
+
+[2026-05-06 16:59:15] Fold 4/5 | subject=9
+[2026-05-06 16:59:15]     Train windows:           192 | counts=[96, 96]
+[2026-05-06 16:59:15]     Test windows:            48 | counts=[24, 24]
+[2026-05-06 16:59:15]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:59:15]     Fine-tune strategy:      new
+[2026-05-06 16:59:15]     Pretrained loading path: from_pretrained
+[2026-05-06 16:59:15]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:59:15]     Phase 1 (new):
+[2026-05-06 16:59:15]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:59:15]       Total params:     15,638
+[2026-05-06 16:59:15]       Trainable params: 1,798
+[2026-05-06 16:59:15]       Trainable pct:    11.50%
+[2026-05-06 16:59:15]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:59:15]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:59:17]     Result | best_epoch=110 | stop=140 | acc=0.5625 | bal_acc=0.5625 | pred_hist=[27, 21] | collapse_ratio=0.5625 | collapse=False
+[2026-05-06 16:59:17]     spatial_conv=[4, 64] top_abs_channels=[('CP5', 0.14255708), ('C4', 0.13880378), ('P7', 0.10717607), ('TP7', 0.1029122), ('F4', 0.10020227), ('P3', 0.09791221), ('C2', 0.09778894), ('CP2', 0.09657078)]
+[2026-05-06 16:59:17]     spatial_update=delta_l2=1.23518582 max_abs=0.21354504 relative=1.09124920 changed=True
+
+[2026-05-06 16:59:17] Fold 5/5 | subject=9
+[2026-05-06 16:59:17]     Train windows:           192 | counts=[96, 96]
+[2026-05-06 16:59:17]     Test windows:            48 | counts=[24, 24]
+[2026-05-06 16:59:17]     Downstream model:        SignalJEPA_PreLocal
+[2026-05-06 16:59:17]     Fine-tune strategy:      new
+[2026-05-06 16:59:17]     Pretrained loading path: from_pretrained
+[2026-05-06 16:59:17]     Pretrained repo:         braindecode/signal-jepa_without-chans
+[2026-05-06 16:59:17]     Phase 1 (new):
+[2026-05-06 16:59:17]       Trainable groups: ['spatial_conv.', 'final_layer.']
+[2026-05-06 16:59:17]       Total params:     15,638
+[2026-05-06 16:59:17]       Trainable params: 1,798
+[2026-05-06 16:59:17]       Trainable pct:    11.50%
+[2026-05-06 16:59:17]       Trainable parameter names: ['spatial_conv.1.weight', 'spatial_conv.1.bias', 'final_layer.1.weight', 'final_layer.1.bias']
+[2026-05-06 16:59:17]     Sanity check passed: finite logits/loss on one training batch for SignalJEPA_PreLocal.
+[2026-05-06 16:59:19]     Result | best_epoch=70 | stop=100 | acc=0.4375 | bal_acc=0.4375 | pred_hist=[27, 21] | collapse_ratio=0.5625 | collapse=False
+[2026-05-06 16:59:19]     spatial_conv=[4, 64] top_abs_channels=[('CP4', 0.15847141), ('CP2', 0.11492349), ('FC1', 0.10684398), ('CP5', 0.10478775), ('P2', 0.10088038), ('FC6', 0.09939189), ('FC3', 0.09385364), ('FCz', 0.09240158)]
+[2026-05-06 16:59:19]     spatial_update=delta_l2=1.01499416 max_abs=0.18872100 relative=0.89671655 changed=True
+[2026-05-06 16:59:19]   Subject 9 summary: acc=0.5042±0.0404  bal_acc=0.5042±0.0404
+
+[2026-05-06 16:59:19] Total folds completed: 45
+[2026-05-06 16:59:19] ======================================================================
+[2026-05-06 16:59:19] AGGREGATED RESULTS
+[2026-05-06 16:59:19] ======================================================================
+[2026-05-06 16:59:19]   1: acc=0.6400±0.0752  bal_acc=0.6400±0.0752
+[2026-05-06 16:59:19]   2: acc=0.4800±0.0731  bal_acc=0.4800±0.0731
+[2026-05-06 16:59:19]   3: acc=0.6250±0.0725  bal_acc=0.6250±0.0725
+[2026-05-06 16:59:19]   4: acc=0.7300±0.0485  bal_acc=0.7300±0.0485
+[2026-05-06 16:59:19]   5: acc=0.9900±0.0122  bal_acc=0.9900±0.0122
+[2026-05-06 16:59:19]   6: acc=0.8200±0.0534  bal_acc=0.8200±0.0534
+[2026-05-06 16:59:19]   7: acc=0.4875±0.0667  bal_acc=0.4875±0.0667
+[2026-05-06 16:59:19]   8: acc=0.5100±0.0255  bal_acc=0.5100±0.0255
+[2026-05-06 16:59:19]   9: acc=0.5042±0.0404  bal_acc=0.5042±0.0404
+[2026-05-06 16:59:19] ----------------------------------------------------------------------
+[2026-05-06 16:59:19]   OVERALL: acc=0.6430±0.1750  bal_acc=0.6430±0.1750
+[2026-05-06 16:59:19] ======================================================================
+
+[2026-05-06 16:59:19] ======================================================================
+[2026-05-06 16:59:19] EXPERIMENT SUMMARY
+[2026-05-06 16:59:19] ======================================================================
+[2026-05-06 16:59:19] Run ID:                 20260506_1653_b3a6d6ed
+[2026-05-06 16:59:19] Dataset:                Cho2017
+[2026-05-06 16:59:19] Labels kept:            ['left_hand', 'right_hand']
+[2026-05-06 16:59:19] Model:                  SignalJEPA_PreLocal
+[2026-05-06 16:59:19] Pretrained mode:        from_pretrained
+[2026-05-06 16:59:19] Strategy:               new
+[2026-05-06 16:59:19] Window:                 3.200s / 409 samples
+[2026-05-06 16:59:19] Artifacts:              /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1653_b3a6d6ed
+[2026-05-06 16:59:19] Mean Accuracy:          0.6430 ± 0.1750
+[2026-05-06 16:59:19] Mean Balanced Accuracy: 0.6430 ± 0.1750
+[2026-05-06 16:59:19] ======================================================================
+
+[2026-05-06 16:59:19] Spatial convolution analysis saved:
+[2026-05-06 16:59:19]   Long channel CSV:        /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1653_b3a6d6ed/spatial_conv_analysis/spatial_channel_importance_long.csv
+[2026-05-06 16:59:19]   Fold diagnostics CSV:    /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1653_b3a6d6ed/spatial_conv_analysis/fold_diagnostics.csv
+[2026-05-06 16:59:19]   Fold weight JSON:        /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1653_b3a6d6ed/spatial_conv_analysis/spatial_conv_weights_by_fold.json
+[2026-05-06 16:59:19]   Global importance CSV:   /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1653_b3a6d6ed/spatial_conv_analysis/spatial_channel_importance_global.csv
+[2026-05-06 16:59:19]   Subject importance CSV:  /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1653_b3a6d6ed/spatial_conv_analysis/spatial_channel_importance_by_subject.csv
+[2026-05-06 16:59:19]   Diagnostic summary JSON: /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1653_b3a6d6ed/spatial_conv_analysis/diagnostic_summary.json
+
+[2026-05-06 16:59:19] Diagnostic summary:
+[2026-05-06 16:59:19] {
+  "n_folds": 45,
+  "collapse_rate": 0.08888888888888889,
+  "mean_collapse_ratio": 0.617777778,
+  "mean_spatial_delta_l2": 1.0001585491111111,
+  "mean_spatial_relative_delta": 0.8836097371111111,
+  "spatial_changed_rate": 1.0,
+  "mean_confidence": 0.6648961435555557,
+  "mean_normalized_prediction_entropy": 0.7948898906666667
+}
+
+[2026-05-06 16:59:19] Top global channels by mean absolute spatial weight:
+[2026-05-06 16:59:19]   Global topomap:          /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1653_b3a6d6ed/spatial_conv_analysis/global_mean_abs_spatial_weight_topomap.png
+[2026-05-06 16:59:19]   Global filter grid:      /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1653_b3a6d6ed/spatial_conv_analysis/global_mean_spatial_filters_topomap_grid.png
+[2026-05-06 16:59:20]   Subject topomaps saved in: /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1653_b3a6d6ed/spatial_conv_analysis
+[2026-05-06 16:59:20] CV results saved to:      /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1653_b3a6d6ed/cv_results.json
+[2026-05-06 16:59:20] Subject metrics saved to: /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1653_b3a6d6ed/subject_metrics.json
+[2026-05-06 16:59:20] Global metrics saved to:  /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1653_b3a6d6ed/global_metrics.json
+[2026-05-06 16:59:20] Run metadata saved to:    /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1653_b3a6d6ed/run_metadata.json
+
+[2026-05-06 16:59:20] All artifacts in: /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1653_b3a6d6ed

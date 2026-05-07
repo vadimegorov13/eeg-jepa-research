@@ -1,0 +1,49 @@
+{
+  "run_id": "20260506_1653_b3a6d6ed",
+  "artifact_dir": "/home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1653_b3a6d6ed",
+  "dataset_name": "Cho2017",
+  "dataset_source": "moabb",
+  "preprocessed_concat_dir": "/home/vegorov/Repos/eeg_jepa_research/preprocessed_concat_datasets/Cho2017_048eba1d_wacff46_subjects_98eacc98",
+  "labels_to_keep": [
+    "left_hand",
+    "right_hand"
+  ],
+  "excluded_subjects": [],
+  "target_window_duration_s": 3.2,
+  "window_samples": 409,
+  "subjects": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
+  ],
+  "model_name": "SignalJEPA_PreLocal",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "pretrained_checkpoint_info": {
+    "loading_path": "from_pretrained",
+    "repo_id": "braindecode/signal-jepa_without-chans",
+    "mode": "from_pretrained",
+    "model_name": "SignalJEPA_PreLocal"
+  },
+  "cv_seed": 12,
+  "global_metrics": {
+    "mean_accuracy": 0.6429629629629628,
+    "std_accuracy": 0.17501724390840728,
+    "mean_balanced_accuracy": 0.6429629629629628,
+    "std_balanced_accuracy": 0.17501724390840728,
+    "n_groups": 9,
+    "n_folds_total": 45
+  },
+  "extract_spatial_conv_weights": true,
+  "save_spatial_weight_plots": true,
+  "collapse_threshold": 0.9,
+  "log_spatial_update_stats": true,
+  "log_probability_diagnostics": true
+}

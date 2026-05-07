@@ -1,0 +1,147 @@
+Notebook:       /home/vegorov/Repos/eeg_jepa_research/src/moabb_mi_sjepa.ipynb
+Configurations: /home/vegorov/Repos/eeg_jepa_research/src/utils/experiments/configs/moabb_dataset_sweep_2.json
+Total configs:  12
+
+[1/12] Running config override:
+{
+  "dataset_name": "Lee2019_MI",
+  "pretrained_mode": "from_pretrained"
+}
+  status:       completed
+  elapsed_sec:  200.722
+  run_id:       20260506_1649_a59a34e0
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Lee2019_MI/20260506_1649_a59a34e0
+
+[2/12] Running config override:
+{
+  "dataset_name": "Lee2019_MI",
+  "pretrained_mode": "random"
+}
+  status:       completed
+  elapsed_sec:  35.908
+  run_id:       20260506_1653_2fb617a8
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Lee2019_MI/20260506_1653_2fb617a8
+
+[3/12] Running config override:
+{
+  "dataset_name": "Cho2017",
+  "pretrained_mode": "from_pretrained"
+}
+  status:       completed
+  elapsed_sec:  334.85
+  run_id:       20260506_1653_b3a6d6ed
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1653_b3a6d6ed
+
+[4/12] Running config override:
+{
+  "dataset_name": "Cho2017",
+  "pretrained_mode": "random"
+}
+  status:       completed
+  elapsed_sec:  79.031
+  run_id:       20260506_1659_c29fb78e
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Cho2017/20260506_1659_c29fb78e
+
+[5/12] Running config override:
+{
+  "dataset_name": "PhysionetMI",
+  "pretrained_mode": "from_pretrained"
+}
+  status:       completed
+  elapsed_sec:  36.587
+  run_id:       20260506_1700_aa2d5ee5
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/PhysionetMI/20260506_1700_aa2d5ee5
+
+[6/12] Running config override:
+{
+  "dataset_name": "PhysionetMI",
+  "pretrained_mode": "random"
+}
+  status:       completed
+  elapsed_sec:  8.766
+  run_id:       20260506_1701_3f280f1c
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/PhysionetMI/20260506_1701_3f280f1c
+
+[7/12] Running config override:
+{
+  "dataset_name": "BNCI2014_001",
+  "pretrained_mode": "from_pretrained"
+}
+  status:       completed
+  elapsed_sec:  331.893
+  run_id:       20260506_1701_34f0bd48
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/BNCI2014_001/20260506_1701_34f0bd48
+
+[8/12] Running config override:
+{
+  "dataset_name": "BNCI2014_001",
+  "pretrained_mode": "random"
+}
+  status:       completed
+  elapsed_sec:  54.27
+  run_id:       20260506_1707_5e16d409
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/BNCI2014_001/20260506_1707_5e16d409
+
+[9/12] Running config override:
+{
+  "dataset_name": "Weibo2014",
+  "pretrained_mode": "from_pretrained"
+}
+  status:       completed
+  elapsed_sec:  467.054
+  run_id:       20260506_1707_5caee101
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Weibo2014/20260506_1707_5caee101
+
+[10/12] Running config override:
+{
+  "dataset_name": "Weibo2014",
+  "pretrained_mode": "random"
+}
+  status:       completed
+  elapsed_sec:  40.523
+  run_id:       20260506_1715_441303b9
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/moabb-mi-sjepa/Weibo2014/20260506_1715_441303b9
+
+[11/12] Running config override:
+{
+  "dataset_name": "Stieger2021",
+  "pretrained_mode": "from_pretrained"
+}
+Traceback (most recent call last):
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/nbclient/client.py", line 657, in async_setup_kernel
+    raise e
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/nbclient/client.py", line 654, in async_setup_kernel
+    yield
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/nbclient/client.py", line 1009, in async_execute_cell
+    raise DeadKernelError("Kernel died") from None
+nbclient.exceptions.DeadKernelError: Kernel died
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vegorov/Repos/eeg_jepa_research/src/utils/experiments/experiments.py", line 570, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/vegorov/Repos/eeg_jepa_research/src/utils/experiments/experiments.py", line 490, in main
+    result = execute_one(
+             ^^^^^^^^^^^^
+  File "/home/vegorov/Repos/eeg_jepa_research/src/utils/experiments/experiments.py", line 388, in execute_one
+    client.execute()
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vegorov/snap/code/237/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/nbclient/client.py", line 693, in async_execute
+    async with self.async_setup_kernel(**kwargs):
+  File "/home/vegorov/snap/code/237/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/contextlib.py", line 231, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/nbclient/client.py", line 660, in async_setup_kernel
+    await self._async_cleanup_kernel()
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/nbclient/client.py", line 504, in _async_cleanup_kernel
+    assert self.km is not None
+           ^^^^^^^^^^^^^^^^^^^
+AssertionError
