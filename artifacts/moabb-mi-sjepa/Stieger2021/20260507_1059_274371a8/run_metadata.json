@@ -1,0 +1,45 @@
+{
+  "run_id": "20260507_1059_274371a8",
+  "artifact_dir": "c:\\Repos\\eeg-jepa-research\\artifacts\\moabb-mi-sjepa\\Stieger2021\\20260507_1059_274371a8",
+  "dataset_name": "Stieger2021",
+  "dataset_source": "moabb",
+  "preprocessed_concat_dir": "c:\\Repos\\eeg-jepa-research\\preprocessed_concat_datasets\\Stieger2021_048eba1d_wacff46_subjects_0e789b7a",
+  "labels_to_keep": [
+    "left_hand",
+    "right_hand"
+  ],
+  "excluded_subjects": [],
+  "target_window_duration_s": 3.2,
+  "window_samples": 409,
+  "subjects": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "model_name": "SignalJEPA_PreLocal",
+  "pretrained_mode": "random",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "pretrained_checkpoint_info": {
+    "loading_path": "random_initialization",
+    "repo_id": null,
+    "mode": "random",
+    "model_name": "SignalJEPA_PreLocal"
+  },
+  "cv_seed": 12,
+  "global_metrics": {
+    "mean_accuracy": 0.8229227083450258,
+    "std_accuracy": 0.07804713301619785,
+    "mean_balanced_accuracy": 0.8226524388090497,
+    "std_balanced_accuracy": 0.07828362554764925,
+    "n_groups": 5,
+    "n_folds_total": 25
+  },
+  "extract_spatial_conv_weights": true,
+  "save_spatial_weight_plots": true,
+  "collapse_threshold": 0.9,
+  "log_spatial_update_stats": true,
+  "log_probability_diagnostics": true
+}

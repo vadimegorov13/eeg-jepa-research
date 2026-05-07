@@ -1,0 +1,49 @@
+{
+  "run_id": "20260507_1209_c3143a70",
+  "artifact_dir": "c:\\Repos\\eeg-jepa-research\\artifacts\\moabb-mi-sjepa\\Weibo2014\\20260507_1209_c3143a70",
+  "dataset_name": "Weibo2014",
+  "dataset_source": "moabb",
+  "preprocessed_concat_dir": "c:\\Repos\\eeg-jepa-research\\preprocessed_concat_datasets\\Weibo2014_048eba1d_w74c5d9_subjects_98eacc98",
+  "labels_to_keep": [
+    "left_hand",
+    "right_hand"
+  ],
+  "excluded_subjects": [],
+  "target_window_duration_s": 7.2,
+  "window_samples": 921,
+  "subjects": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
+  ],
+  "model_name": "SignalJEPA_PreLocal",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "pretrained_checkpoint_info": {
+    "loading_path": "from_pretrained",
+    "repo_id": "braindecode/signal-jepa_without-chans",
+    "mode": "from_pretrained",
+    "model_name": "SignalJEPA_PreLocal"
+  },
+  "cv_seed": 12,
+  "global_metrics": {
+    "mean_accuracy": 0.5281746031746033,
+    "std_accuracy": 0.0859177387721935,
+    "mean_balanced_accuracy": 0.5281746031746033,
+    "std_balanced_accuracy": 0.08591773877219351,
+    "n_groups": 9,
+    "n_folds_total": 45
+  },
+  "extract_spatial_conv_weights": true,
+  "save_spatial_weight_plots": true,
+  "collapse_threshold": 0.9,
+  "log_spatial_update_stats": true,
+  "log_probability_diagnostics": true
+}

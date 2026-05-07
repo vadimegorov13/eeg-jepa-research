@@ -1,0 +1,47 @@
+{
+  "artifact_dir": "c:\\Repos\\eeg-jepa-research\\artifacts\\curated-eegmmidb-sjepa",
+  "dataset_source": "curated",
+  "dataset_name": "Curated_EEGMMIDB",
+  "dataset_path": "c:\\Repos\\eeg-jepa-research\\_datasets\\eegmmidb",
+  "preprocessed_dir": null,
+  "labels_to_keep": [
+    "left_hand",
+    "right_hand"
+  ],
+  "exclude_subjects": [],
+  "subjects_to_use": null,
+  "mi_runs": [
+    "04",
+    "08",
+    "12"
+  ],
+  "fallback_mi_runs_if_empty": [
+    "02",
+    "06",
+    "10"
+  ],
+  "raw_label_to_name": {
+    "5": "left_hand",
+    "6": "right_hand"
+  },
+  "target_window_duration_s": 4.2,
+  "original_sfreq": 160.0,
+  "file_pattern": "SUB_(\\d+)_(SIG|ANN)_(\\d+)\\.csv",
+  "curated_signal_units": "microvolts",
+  "sfreq": 128,
+  "bandpass_low": 0.5,
+  "bandpass_high": 40.0,
+  "channel_montage": "standard_1020",
+  "model_name": "SignalJEPA_PreLocal",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "cv_folds": 5,
+  "val_split": 0.0,
+  "batch_size": 32,
+  "n_epochs": 50,
+  "early_stopping_patience": null,
+  "learning_rate": 0.001,
+  "seed": 12,
+  "set_seed": true
+}

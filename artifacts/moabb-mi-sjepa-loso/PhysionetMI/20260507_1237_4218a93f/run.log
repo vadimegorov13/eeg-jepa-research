@@ -1,0 +1,92 @@
+[2026-05-07 12:37:41] Using device: cuda
+[2026-05-07 12:37:41] Seed control disabled
+[2026-05-07 12:37:41] ======================================================================
+[2026-05-07 12:37:41] CONFIGURATION
+[2026-05-07 12:37:41] ======================================================================
+[2026-05-07 12:37:41]   artifact_dir: c:\Repos\eeg-jepa-research\artifacts\moabb-mi-sjepa-loso
+[2026-05-07 12:37:41]   bandpass_high: 40.0
+[2026-05-07 12:37:41]   bandpass_low: 0.5
+[2026-05-07 12:37:41]   batch_size: 32
+[2026-05-07 12:37:41]   dataset_name: PhysionetMI
+[2026-05-07 12:37:41]   dataset_source: moabb
+[2026-05-07 12:37:41]   early_stopping_patience: 30
+[2026-05-07 12:37:41]   exclude_subjects: [88]
+[2026-05-07 12:37:41]   labels_to_keep: ['left_hand', 'right_hand']
+[2026-05-07 12:37:41]   learning_rate: 0.0001
+[2026-05-07 12:37:41]   moabb_dataset_kwargs: {'imagined': True, 'executed': False}
+[2026-05-07 12:37:41]   model_name: SignalJEPA_PreLocal
+[2026-05-07 12:37:41]   n_epochs: 500
+[2026-05-07 12:37:41]   preprocessed_concat_dir: None
+[2026-05-07 12:37:41]   pretrained_mode: from_pretrained
+[2026-05-07 12:37:41]   pretrained_repo_id: None
+[2026-05-07 12:37:41]   seed: None
+[2026-05-07 12:37:41]   set_seed: False
+[2026-05-07 12:37:41]   sfreq: 128
+[2026-05-07 12:37:41]   strategy: new
+[2026-05-07 12:37:41]   subjects_to_use: None
+[2026-05-07 12:37:41]   target_window_duration_s: 3.2
+[2026-05-07 12:37:41]   val_split: 0.2
+[2026-05-07 12:37:41]   warmup_epochs: 10
+[2026-05-07 12:37:41] ======================================================================
+[2026-05-07 12:37:41] Config saved to: c:\Repos\eeg-jepa-research\artifacts\moabb-mi-sjepa-loso\PhysionetMI\20260507_1237_4218a93f\config.json
+[2026-05-07 12:37:41] Epoch window configuration:
+[2026-05-07 12:37:41]   Target sfreq:            128 Hz
+[2026-05-07 12:37:41]   Requested duration:      3.200 s
+[2026-05-07 12:37:41]   Expected window samples: 409
+
+[2026-05-07 12:37:41] Preprocessed concat dataset exists: False at c:\Repos\eeg-jepa-research\preprocessed_concat_datasets\PhysionetMI_048eba1d_wacff46_subjects_98eacc98
+
+[2026-05-07 12:37:41] Building MOABBDataset for PhysionetMI...
+[2026-05-07 12:37:41]   Subject IDs:     [1, 2, 3, 4, 5, 6, 7, 8, 9]
+[2026-05-07 12:37:41]   Dataset kwargs:  {'imagined': True, 'executed': False}
+[2026-05-07 12:37:43]   Recordings loaded: 54
+[2026-05-07 12:37:43]   Raw labels:        ['feet', 'hands', 'left_hand', 'rest', 'right_hand']
+[2026-05-07 12:37:43] Applying preprocessing...
+[2026-05-07 12:37:48] Saved preprocessed raw concat dataset to: c:\Repos\eeg-jepa-research\preprocessed_concat_datasets\PhysionetMI_048eba1d_wacff46_subjects_98eacc98
+
+[2026-05-07 12:37:50] Post-load raw validation
+[2026-05-07 12:37:50]   Recordings:          54
+[2026-05-07 12:37:50]   Subjects loaded:     ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+[2026-05-07 12:37:50]   sfreq first rec:     128.0 Hz
+[2026-05-07 12:37:50]   EEG channel count:   64
+[2026-05-07 12:37:50]   Labels present:      ['feet', 'hands', 'left_hand', 'rest', 'right_hand']
+[2026-05-07 12:37:50]   Labels selected:     ['left_hand', 'right_hand']
+[2026-05-07 12:37:50] Annotation counts before filtering: {np.str_('feet'): 204, np.str_('hands'): 201, np.str_('left_hand'): 206, np.str_('rest'): 756, np.str_('right_hand'): 199}
+[2026-05-07 12:37:50] Filtered annotations: kept 405 / 1566
+[2026-05-07 12:37:50] Annotation counts after filtering:  {np.str_('left_hand'): 206, np.str_('right_hand'): 199}
+[2026-05-07 12:37:50] Updated annotation durations:       405
+[2026-05-07 12:37:50] Dropped recordings with zero kept events: 27
+[2026-05-07 12:37:50] Window shape: (64, 409)
+[2026-05-07 12:37:50] Window sample length expected=409, got=409
+[2026-05-07 12:37:50] Class mapping: {'left_hand': 0, 'right_hand': 1}
+[2026-05-07 12:37:50] Global class counts: [206, 199]
+[2026-05-07 12:37:50] Chance level: 0.50
+[2026-05-07 12:37:50] Summarizing per-subject windows...
+[2026-05-07 12:37:50]   Subject 1: n_windows=45, window_shape=(64, 409), class_counts=[23, 22]
+[2026-05-07 12:37:50]   Subject 2: n_windows=45, window_shape=(64, 409), class_counts=[23, 22]
+[2026-05-07 12:37:50]   Subject 3: n_windows=45, window_shape=(64, 409), class_counts=[23, 22]
+[2026-05-07 12:37:50]   Subject 4: n_windows=45, window_shape=(64, 409), class_counts=[23, 22]
+[2026-05-07 12:37:50]   Subject 5: n_windows=45, window_shape=(64, 409), class_counts=[21, 24]
+[2026-05-07 12:37:50]   Subject 6: n_windows=45, window_shape=(64, 409), class_counts=[24, 21]
+[2026-05-07 12:37:50]   Subject 7: n_windows=45, window_shape=(64, 409), class_counts=[23, 22]
+[2026-05-07 12:37:50]   Subject 8: n_windows=45, window_shape=(64, 409), class_counts=[22, 23]
+[2026-05-07 12:37:50]   Subject 9: n_windows=45, window_shape=(64, 409), class_counts=[24, 21]
+[2026-05-07 12:37:51] SignalJEPA_PreLocal instantiated successfully.
+[2026-05-07 12:37:51]   Loading mode:          from_pretrained
+[2026-05-07 12:37:51]   Repo:                  braindecode/signal-jepa_without-chans
+[2026-05-07 12:37:51]   Total parameters:      15,638
+[2026-05-07 12:37:51]   Trainable parameters:  15,638
+[2026-05-07 12:45:22] All imports loaded successfully.
+[2026-05-07 12:45:22] Runtime Environment:
+[2026-05-07 12:45:22]   - Python: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+[2026-05-07 12:45:22]   - Platform: Windows-10-10.0.26200-SP0
+
+[2026-05-07 12:45:22] Working directory: c:\Repos\eeg-jepa-research
+[2026-05-07 12:45:22] Selected dataset defaults:
+[2026-05-07 12:45:22]   Dataset:                 PhysionetMI
+[2026-05-07 12:45:22]   Goal:                    hard cross-dataset stress test
+[2026-05-07 12:45:22]   Labels:                  ['left_hand', 'right_hand']
+[2026-05-07 12:45:22]   Class mapping:           {'left_hand': 0, 'right_hand': 1}
+[2026-05-07 12:45:22]   Excluded subjects:       [88]
+[2026-05-07 12:45:22]   Dataset kwargs:          {'imagined': True, 'executed': False}
+[2026-05-07 12:45:22]   Target window duration:  3.2

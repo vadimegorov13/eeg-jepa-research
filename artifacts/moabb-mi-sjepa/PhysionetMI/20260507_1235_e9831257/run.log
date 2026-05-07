@@ -1,0 +1,49 @@
+[2026-05-07 12:35:16] Using device: cuda
+[2026-05-07 12:35:16] Seed initialized: 12
+[2026-05-07 12:35:16] ======================================================================
+[2026-05-07 12:35:16] CONFIGURATION
+[2026-05-07 12:35:16] ======================================================================
+[2026-05-07 12:35:16]   artifact_dir: c:\Repos\eeg-jepa-research\artifacts\moabb-mi-sjepa
+[2026-05-07 12:35:16]   bandpass_high: 40.0
+[2026-05-07 12:35:16]   bandpass_low: 0.5
+[2026-05-07 12:35:16]   batch_size: 32
+[2026-05-07 12:35:16]   collapse_threshold: 0.9
+[2026-05-07 12:35:16]   cv_folds: 5
+[2026-05-07 12:35:16]   dataset_name: PhysionetMI
+[2026-05-07 12:35:16]   dataset_source: moabb
+[2026-05-07 12:35:16]   early_stopping_patience: None
+[2026-05-07 12:35:16]   exclude_subjects: [88]
+[2026-05-07 12:35:16]   extract_spatial_conv_weights: True
+[2026-05-07 12:35:16]   labels_to_keep: ['left_hand', 'right_hand']
+[2026-05-07 12:35:16]   learning_rate: 0.001
+[2026-05-07 12:35:16]   log_probability_diagnostics: True
+[2026-05-07 12:35:16]   log_spatial_update_stats: True
+[2026-05-07 12:35:16]   max_spatial_filters_to_plot: 8
+[2026-05-07 12:35:16]   moabb_dataset_kwargs: {'imagined': True, 'executed': False}
+[2026-05-07 12:35:16]   model_name: SignalJEPA_PreLocal
+[2026-05-07 12:35:16]   n_epochs: 50
+[2026-05-07 12:35:16]   plot_individual_spatial_filters: True
+[2026-05-07 12:35:16]   preprocessed_concat_dir: None
+[2026-05-07 12:35:16]   pretrained_mode: from_pretrained
+[2026-05-07 12:35:16]   save_spatial_weight_plots: True
+[2026-05-07 12:35:16]   seed: 12
+[2026-05-07 12:35:16]   set_seed: True
+[2026-05-07 12:35:16]   sfreq: 128
+[2026-05-07 12:35:16]   strategy: new
+[2026-05-07 12:35:16]   subjects_to_use: None
+[2026-05-07 12:35:16]   target_window_duration_s: 3.2
+[2026-05-07 12:35:16]   topomap_dpi: 160
+[2026-05-07 12:35:16]   val_split: 0.2
+[2026-05-07 12:35:16]   warmup_epochs: 10
+[2026-05-07 12:35:16] ======================================================================
+[2026-05-07 12:35:16] Config saved to: c:\Repos\eeg-jepa-research\artifacts\moabb-mi-sjepa\PhysionetMI\20260507_1235_e9831257\config.json
+[2026-05-07 12:35:16] Epoch window configuration:
+[2026-05-07 12:35:16]   Target sfreq:            128 Hz
+[2026-05-07 12:35:16]   Requested duration:      3.200 s
+[2026-05-07 12:35:16]   Expected window samples: 409
+
+[2026-05-07 12:35:16] Preprocessed concat dataset exists: False at c:\Repos\eeg-jepa-research\preprocessed_concat_datasets\PhysionetMI_048eba1d_wacff46_subjects_224f4495
+
+[2026-05-07 12:35:16] Building MOABBDataset for PhysionetMI...
+[2026-05-07 12:35:16]   Subject IDs:     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109]
+[2026-05-07 12:35:16]   Dataset kwargs:  {'imagined': True, 'executed': False}
