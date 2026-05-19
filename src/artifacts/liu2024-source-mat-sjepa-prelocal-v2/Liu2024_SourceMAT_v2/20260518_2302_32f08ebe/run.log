@@ -1,0 +1,1979 @@
+[2026-05-18 23:02:38] Run ID:     20260518_2302_32f08ebe
+[2026-05-18 23:02:38] Artifacts:  /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA.worktrees/copilot-code-improvement-liu2024source/src/artifacts/liu2024-source-mat-sjepa-prelocal-v2/Liu2024_SourceMAT_v2/20260518_2302_32f08ebe
+[2026-05-18 23:02:38] Using device: mps
+[2026-05-18 23:02:39] Seed initialized: 12
+[2026-05-18 23:02:39] Source extract dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_figshare/sourcedata
+[2026-05-18 23:02:39] Found 50 .mat files
+[2026-05-18 23:02:45] Subjects loaded: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
+[2026-05-18 23:02:59] X_ALL shape: (2000, 29, 537) | Y_ALL counts: [1000, 1000]
+[2026-05-18 23:02:59] ======================================================================
+[2026-05-18 23:02:59] STARTING WITHIN-SUBJECT CV (v2 — full fine-tuning + augmentation)
+[2026-05-18 23:02:59] ======================================================================
+[2026-05-18 23:02:59] Dataset:    Liu2024_SourceMAT_v2
+[2026-05-18 23:02:59] Strategy:   full  (warmup=10, total=100 epochs)
+[2026-05-18 23:02:59] Optimizer:  AdamW  lr=0.0005  wd=0.0001
+[2026-05-18 23:02:59] Noise aug:  fraction=0.05
+[2026-05-18 23:02:59] Device:     mps
+[2026-05-18 23:02:59] ======================================================================
+[2026-05-18 23:02:59] 
+Subject 1: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:02:59] 
+Fold 1/5 | subject=1
+[2026-05-18 23:02:59]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:02:59]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:00]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:03]     Result | best_epoch=29 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:03:03]     Spatial update | delta_l2=0.2610433 | relative_delta=0.22338667 | changed=True
+[2026-05-18 23:03:03] 
+Fold 2/5 | subject=1
+[2026-05-18 23:03:03]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:03:03]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:03]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:06]     Result | best_epoch=60 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:03:06]     Spatial update | delta_l2=0.27606076 | relative_delta=0.2362378 | changed=True
+[2026-05-18 23:03:06] 
+Fold 3/5 | subject=1
+[2026-05-18 23:03:06]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:03:06]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:07]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:09]     Result | best_epoch=38 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:03:09]     Spatial update | delta_l2=0.26287067 | relative_delta=0.22495044 | changed=True
+[2026-05-18 23:03:09] 
+Fold 4/5 | subject=1
+[2026-05-18 23:03:09]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:03:09]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:10]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:12]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:03:12]     Spatial update | delta_l2=0.25890346 | relative_delta=0.22155551 | changed=True
+[2026-05-18 23:03:13] 
+Fold 5/5 | subject=1
+[2026-05-18 23:03:13]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:03:13]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:13]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:15]     Result | best_epoch=47 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:03:15]     Spatial update | delta_l2=0.27944815 | relative_delta=0.23913654 | changed=True
+[2026-05-18 23:03:15]   Subject 1: acc=0.5250±0.1225  bal_acc=0.5250±0.1225
+[2026-05-18 23:03:15] 
+Subject 2: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:03:16] 
+Fold 1/5 | subject=2
+[2026-05-18 23:03:16]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:03:16]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:16]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:18]     Result | best_epoch=50 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:03:18]     Spatial update | delta_l2=0.19417297 | relative_delta=0.16616268 | changed=True
+[2026-05-18 23:03:19] 
+Fold 2/5 | subject=2
+[2026-05-18 23:03:19]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:03:19]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:19]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:21]     Result | best_epoch=57 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:03:21]     Spatial update | delta_l2=0.23443193 | relative_delta=0.2006141 | changed=True
+[2026-05-18 23:03:22] 
+Fold 3/5 | subject=2
+[2026-05-18 23:03:22]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:03:22]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:22]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:25]     Result | best_epoch=42 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:03:25]     Spatial update | delta_l2=0.21528309 | relative_delta=0.18422757 | changed=True
+[2026-05-18 23:03:25] 
+Fold 4/5 | subject=2
+[2026-05-18 23:03:25]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:03:25]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:25]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:28]     Result | best_epoch=35 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:03:28]     Spatial update | delta_l2=0.23243331 | relative_delta=0.1989038 | changed=True
+[2026-05-18 23:03:28] 
+Fold 5/5 | subject=2
+[2026-05-18 23:03:28]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:03:28]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:29]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:31]     Result | best_epoch=49 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:03:31]     Spatial update | delta_l2=0.2036361 | relative_delta=0.17426071 | changed=True
+[2026-05-18 23:03:31]   Subject 2: acc=0.5750±0.1500  bal_acc=0.5750±0.1500
+[2026-05-18 23:03:31] 
+Subject 3: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:03:31] 
+Fold 1/5 | subject=3
+[2026-05-18 23:03:31]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:03:31]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:32]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:34]     Result | best_epoch=1 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:03:34]     Spatial update | delta_l2=0.28402601 | relative_delta=0.24305402 | changed=True
+[2026-05-18 23:03:34] 
+Fold 2/5 | subject=3
+[2026-05-18 23:03:34]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:03:34]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:35]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:37]     Result | best_epoch=99 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:03:37]     Spatial update | delta_l2=0.25921093 | relative_delta=0.22181863 | changed=True
+[2026-05-18 23:03:38] 
+Fold 3/5 | subject=3
+[2026-05-18 23:03:38]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:03:38]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:38]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:40]     Result | best_epoch=47 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:03:40]     Spatial update | delta_l2=0.30843083 | relative_delta=0.26393835 | changed=True
+[2026-05-18 23:03:41] 
+Fold 4/5 | subject=3
+[2026-05-18 23:03:41]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:03:41]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:41]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:43]     Result | best_epoch=80 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:03:43]     Spatial update | delta_l2=0.30826137 | relative_delta=0.26379333 | changed=True
+[2026-05-18 23:03:44] 
+Fold 5/5 | subject=3
+[2026-05-18 23:03:44]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:03:44]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:44]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:46]     Result | best_epoch=49 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:03:46]     Spatial update | delta_l2=0.27995942 | relative_delta=0.23957405 | changed=True
+[2026-05-18 23:03:46]   Subject 3: acc=0.5000±0.1369  bal_acc=0.5000±0.1369
+[2026-05-18 23:03:46] 
+Subject 4: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:03:47] 
+Fold 1/5 | subject=4
+[2026-05-18 23:03:47]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:03:47]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:47]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:50]     Result | best_epoch=54 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:03:50]     Spatial update | delta_l2=0.23571608 | relative_delta=0.20171301 | changed=True
+[2026-05-18 23:03:50] 
+Fold 2/5 | subject=4
+[2026-05-18 23:03:50]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:03:50]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:50]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:53]     Result | best_epoch=51 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:03:53]     Spatial update | delta_l2=0.2503428 | relative_delta=0.21422976 | changed=True
+[2026-05-18 23:03:53] 
+Fold 3/5 | subject=4
+[2026-05-18 23:03:53]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:03:53]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:54]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:56]     Result | best_epoch=65 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:03:56]     Spatial update | delta_l2=0.21833829 | relative_delta=0.18684205 | changed=True
+[2026-05-18 23:03:57] 
+Fold 4/5 | subject=4
+[2026-05-18 23:03:57]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:03:57]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:03:57]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:03:59]     Result | best_epoch=1 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:03:59]     Spatial update | delta_l2=0.28148712 | relative_delta=0.24088138 | changed=True
+[2026-05-18 23:04:00] 
+Fold 5/5 | subject=4
+[2026-05-18 23:04:00]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:00]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:00]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:02]     Result | best_epoch=63 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:04:02]     Spatial update | delta_l2=0.22488672 | relative_delta=0.19244583 | changed=True
+[2026-05-18 23:04:02]   Subject 4: acc=0.6750±0.1275  bal_acc=0.6750±0.1275
+[2026-05-18 23:04:02] 
+Subject 5: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:04:03] 
+Fold 1/5 | subject=5
+[2026-05-18 23:04:03]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:03]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:03]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:05]     Result | best_epoch=9 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:04:05]     Spatial update | delta_l2=0.35355049 | relative_delta=0.3025493 | changed=True
+[2026-05-18 23:04:06] 
+Fold 2/5 | subject=5
+[2026-05-18 23:04:06]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:06]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:06]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:08]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:04:08]     Spatial update | delta_l2=0.31604657 | relative_delta=0.27045548 | changed=True
+[2026-05-18 23:04:09] 
+Fold 3/5 | subject=5
+[2026-05-18 23:04:09]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:09]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:09]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:12]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:04:12]     Spatial update | delta_l2=0.3324723 | relative_delta=0.28451172 | changed=True
+[2026-05-18 23:04:12] 
+Fold 4/5 | subject=5
+[2026-05-18 23:04:12]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:12]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:12]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:15]     Result | best_epoch=65 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:04:15]     Spatial update | delta_l2=0.35655265 | relative_delta=0.30511839 | changed=True
+[2026-05-18 23:04:15] 
+Fold 5/5 | subject=5
+[2026-05-18 23:04:15]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:15]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:16]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:18]     Result | best_epoch=1 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:04:18]     Spatial update | delta_l2=0.33504136 | relative_delta=0.28671019 | changed=True
+[2026-05-18 23:04:18]   Subject 5: acc=0.6250±0.0791  bal_acc=0.6250±0.0791
+[2026-05-18 23:04:18] 
+Subject 6: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:04:18] 
+Fold 1/5 | subject=6
+[2026-05-18 23:04:18]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:18]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:19]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:21]     Result | best_epoch=53 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:04:21]     Spatial update | delta_l2=0.28438479 | relative_delta=0.24336105 | changed=True
+[2026-05-18 23:04:22] 
+Fold 2/5 | subject=6
+[2026-05-18 23:04:22]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:22]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:22]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:24]     Result | best_epoch=46 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:04:24]     Spatial update | delta_l2=0.28460158 | relative_delta=0.24354657 | changed=True
+[2026-05-18 23:04:25] 
+Fold 3/5 | subject=6
+[2026-05-18 23:04:25]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:25]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:25]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:27]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:04:27]     Spatial update | delta_l2=0.27549192 | relative_delta=0.23575101 | changed=True
+[2026-05-18 23:04:28] 
+Fold 4/5 | subject=6
+[2026-05-18 23:04:28]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:28]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:28]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:30]     Result | best_epoch=42 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:04:30]     Spatial update | delta_l2=0.23204948 | relative_delta=0.19857533 | changed=True
+[2026-05-18 23:04:31] 
+Fold 5/5 | subject=6
+[2026-05-18 23:04:31]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:31]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:31]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:34]     Result | best_epoch=42 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:04:34]     Spatial update | delta_l2=0.24110841 | relative_delta=0.20632747 | changed=True
+[2026-05-18 23:04:34]   Subject 6: acc=0.5500±0.1275  bal_acc=0.5500±0.1275
+[2026-05-18 23:04:34] 
+Subject 7: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:04:34] 
+Fold 1/5 | subject=7
+[2026-05-18 23:04:34]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:34]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:34]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:37]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:04:37]     Spatial update | delta_l2=0.24624565 | relative_delta=0.21072365 | changed=True
+[2026-05-18 23:04:37] 
+Fold 2/5 | subject=7
+[2026-05-18 23:04:37]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:37]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:38]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:40]     Result | best_epoch=1 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:04:40]     Spatial update | delta_l2=0.31864682 | relative_delta=0.27268063 | changed=True
+[2026-05-18 23:04:40] 
+Fold 3/5 | subject=7
+[2026-05-18 23:04:40]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:40]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:41]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:43]     Result | best_epoch=55 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:04:43]     Spatial update | delta_l2=0.2998722 | relative_delta=0.25661433 | changed=True
+[2026-05-18 23:04:43] 
+Fold 4/5 | subject=7
+[2026-05-18 23:04:43]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:43]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:44]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:46]     Result | best_epoch=64 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:04:46]     Spatial update | delta_l2=0.3197289 | relative_delta=0.27360662 | changed=True
+[2026-05-18 23:04:47] 
+Fold 5/5 | subject=7
+[2026-05-18 23:04:47]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:47]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:47]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:49]     Result | best_epoch=50 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:04:49]     Spatial update | delta_l2=0.2776966 | relative_delta=0.23763766 | changed=True
+[2026-05-18 23:04:49]   Subject 7: acc=0.4750±0.1458  bal_acc=0.4750±0.1458
+[2026-05-18 23:04:49] 
+Subject 8: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:04:50] 
+Fold 1/5 | subject=8
+[2026-05-18 23:04:50]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:50]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:50]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:52]     Result | best_epoch=46 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:04:52]     Spatial update | delta_l2=0.20997006 | relative_delta=0.17968096 | changed=True
+[2026-05-18 23:04:53] 
+Fold 2/5 | subject=8
+[2026-05-18 23:04:53]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:53]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:53]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:55]     Result | best_epoch=62 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:04:55]     Spatial update | delta_l2=0.21226354 | relative_delta=0.1816436 | changed=True
+[2026-05-18 23:04:56] 
+Fold 3/5 | subject=8
+[2026-05-18 23:04:56]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:56]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:56]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:04:58]     Result | best_epoch=50 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:04:58]     Spatial update | delta_l2=0.1814253 | relative_delta=0.15525391 | changed=True
+[2026-05-18 23:04:59] 
+Fold 4/5 | subject=8
+[2026-05-18 23:04:59]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:04:59]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:04:59]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:02]     Result | best_epoch=48 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:05:02]     Spatial update | delta_l2=0.22595281 | relative_delta=0.19335814 | changed=True
+[2026-05-18 23:05:02] 
+Fold 5/5 | subject=8
+[2026-05-18 23:05:02]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:02]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:02]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:05]     Result | best_epoch=50 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:05:05]     Spatial update | delta_l2=0.21514116 | relative_delta=0.18410611 | changed=True
+[2026-05-18 23:05:05]   Subject 8: acc=0.7000±0.1275  bal_acc=0.7000±0.1275
+[2026-05-18 23:05:05] 
+Subject 9: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:05:05] 
+Fold 1/5 | subject=9
+[2026-05-18 23:05:05]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:05]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:05]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:08]     Result | best_epoch=50 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:05:08]     Spatial update | delta_l2=0.24657259 | relative_delta=0.21100342 | changed=True
+[2026-05-18 23:05:08] 
+Fold 2/5 | subject=9
+[2026-05-18 23:05:08]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:08]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:08]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:11]     Result | best_epoch=57 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:05:11]     Spatial update | delta_l2=0.2451854 | relative_delta=0.20981634 | changed=True
+[2026-05-18 23:05:11] 
+Fold 3/5 | subject=9
+[2026-05-18 23:05:11]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:11]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:12]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:14]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:05:14]     Spatial update | delta_l2=0.25478531 | relative_delta=0.21803142 | changed=True
+[2026-05-18 23:05:14] 
+Fold 4/5 | subject=9
+[2026-05-18 23:05:14]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:14]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:15]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:17]     Result | best_epoch=32 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:05:17]     Spatial update | delta_l2=0.24493337 | relative_delta=0.20960067 | changed=True
+[2026-05-18 23:05:18] 
+Fold 5/5 | subject=9
+[2026-05-18 23:05:18]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:18]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:18]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:20]     Result | best_epoch=1 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:05:20]     Spatial update | delta_l2=0.22194854 | relative_delta=0.1899315 | changed=True
+[2026-05-18 23:05:20]   Subject 9: acc=0.6000±0.1837  bal_acc=0.6000±0.1837
+[2026-05-18 23:05:20] 
+Subject 10: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:05:21] 
+Fold 1/5 | subject=10
+[2026-05-18 23:05:21]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:21]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:21]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:23]     Result | best_epoch=53 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:05:23]     Spatial update | delta_l2=0.2997691 | relative_delta=0.25652611 | changed=True
+[2026-05-18 23:05:24] 
+Fold 2/5 | subject=10
+[2026-05-18 23:05:24]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:24]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:24]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:26]     Result | best_epoch=4 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:05:26]     Spatial update | delta_l2=0.29986331 | relative_delta=0.25660672 | changed=True
+[2026-05-18 23:05:27] 
+Fold 3/5 | subject=10
+[2026-05-18 23:05:27]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:27]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:27]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:29]     Result | best_epoch=1 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:05:29]     Spatial update | delta_l2=0.26151431 | relative_delta=0.22378973 | changed=True
+[2026-05-18 23:05:30] 
+Fold 4/5 | subject=10
+[2026-05-18 23:05:30]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:30]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:30]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:33]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:05:33]     Spatial update | delta_l2=0.26423836 | relative_delta=0.22612082 | changed=True
+[2026-05-18 23:05:33] 
+Fold 5/5 | subject=10
+[2026-05-18 23:05:33]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:33]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:33]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:36]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:05:36]     Spatial update | delta_l2=0.30241146 | relative_delta=0.2587873 | changed=True
+[2026-05-18 23:05:36]   Subject 10: acc=0.5000±0.1118  bal_acc=0.5000±0.1118
+[2026-05-18 23:05:36] 
+Subject 11: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:05:36] 
+Fold 1/5 | subject=11
+[2026-05-18 23:05:36]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:36]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:37]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:39]     Result | best_epoch=98 | stop=100 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-18 23:05:39]     Spatial update | delta_l2=0.2479776 | relative_delta=0.21220575 | changed=True
+[2026-05-18 23:05:39] 
+Fold 2/5 | subject=11
+[2026-05-18 23:05:39]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:39]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:40]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:42]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:05:42]     Spatial update | delta_l2=0.26957312 | relative_delta=0.23068602 | changed=True
+[2026-05-18 23:05:43] 
+Fold 3/5 | subject=11
+[2026-05-18 23:05:43]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:43]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:43]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:45]     Result | best_epoch=5 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:05:45]     Spatial update | delta_l2=0.27017203 | relative_delta=0.23119854 | changed=True
+[2026-05-18 23:05:46] 
+Fold 4/5 | subject=11
+[2026-05-18 23:05:46]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:46]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:46]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:48]     Result | best_epoch=23 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:05:48]     Spatial update | delta_l2=0.25072637 | relative_delta=0.214558 | changed=True
+[2026-05-18 23:05:49] 
+Fold 5/5 | subject=11
+[2026-05-18 23:05:49]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:49]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:49]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:51]     Result | best_epoch=50 | stop=100 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-18 23:05:51]     Spatial update | delta_l2=0.23797314 | relative_delta=0.20364448 | changed=True
+[2026-05-18 23:05:51]   Subject 11: acc=0.3750±0.1118  bal_acc=0.3750±0.1118
+[2026-05-18 23:05:51] 
+Subject 12: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:05:52] 
+Fold 1/5 | subject=12
+[2026-05-18 23:05:52]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:52]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:52]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:55]     Result | best_epoch=32 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:05:55]     Spatial update | delta_l2=0.25981677 | relative_delta=0.22233707 | changed=True
+[2026-05-18 23:05:55] 
+Fold 2/5 | subject=12
+[2026-05-18 23:05:55]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:55]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:55]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:05:58]     Result | best_epoch=63 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:05:58]     Spatial update | delta_l2=0.25206806 | relative_delta=0.21570615 | changed=True
+[2026-05-18 23:05:58] 
+Fold 3/5 | subject=12
+[2026-05-18 23:05:58]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:05:58]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:05:59]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:01]     Result | best_epoch=60 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:06:01]     Spatial update | delta_l2=0.23899479 | relative_delta=0.20451875 | changed=True
+[2026-05-18 23:06:01] 
+Fold 4/5 | subject=12
+[2026-05-18 23:06:01]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:01]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:02]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:04]     Result | best_epoch=25 | stop=100 | acc=0.1250 | bal_acc=0.1250 | collapse=False
+[2026-05-18 23:06:04]     Spatial update | delta_l2=0.23503978 | relative_delta=0.20113427 | changed=True
+[2026-05-18 23:06:05] 
+Fold 5/5 | subject=12
+[2026-05-18 23:06:05]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:05]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:05]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:07]     Result | best_epoch=46 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:06:07]     Spatial update | delta_l2=0.27349021 | relative_delta=0.23403806 | changed=True
+[2026-05-18 23:06:07]   Subject 12: acc=0.4750±0.2151  bal_acc=0.4750±0.2151
+[2026-05-18 23:06:07] 
+Subject 13: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:06:08] 
+Fold 1/5 | subject=13
+[2026-05-18 23:06:08]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:08]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:08]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:10]     Result | best_epoch=47 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:06:10]     Spatial update | delta_l2=0.26076515 | relative_delta=0.22314864 | changed=True
+[2026-05-18 23:06:11] 
+Fold 2/5 | subject=13
+[2026-05-18 23:06:11]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:11]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:11]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:13]     Result | best_epoch=58 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:06:13]     Spatial update | delta_l2=0.28105217 | relative_delta=0.24050917 | changed=True
+[2026-05-18 23:06:14] 
+Fold 3/5 | subject=13
+[2026-05-18 23:06:14]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:14]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:14]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:17]     Result | best_epoch=34 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:06:17]     Spatial update | delta_l2=0.26519573 | relative_delta=0.22694009 | changed=True
+[2026-05-18 23:06:17] 
+Fold 4/5 | subject=13
+[2026-05-18 23:06:17]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:17]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:17]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:20]     Result | best_epoch=99 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:06:20]     Spatial update | delta_l2=0.32367533 | relative_delta=0.27698376 | changed=True
+[2026-05-18 23:06:20] 
+Fold 5/5 | subject=13
+[2026-05-18 23:06:20]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:20]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:21]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:23]     Result | best_epoch=53 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:06:23]     Spatial update | delta_l2=0.2478208 | relative_delta=0.21207157 | changed=True
+[2026-05-18 23:06:23]   Subject 13: acc=0.6750±0.1275  bal_acc=0.6750±0.1275
+[2026-05-18 23:06:23] 
+Subject 14: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:06:23] 
+Fold 1/5 | subject=14
+[2026-05-18 23:06:23]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:23]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:24]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:26]     Result | best_epoch=58 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:06:26]     Spatial update | delta_l2=0.25423413 | relative_delta=0.21755975 | changed=True
+[2026-05-18 23:06:27] 
+Fold 2/5 | subject=14
+[2026-05-18 23:06:27]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:27]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:27]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:29]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:06:29]     Spatial update | delta_l2=0.27520218 | relative_delta=0.23550307 | changed=True
+[2026-05-18 23:06:30] 
+Fold 3/5 | subject=14
+[2026-05-18 23:06:30]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:30]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:30]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:32]     Result | best_epoch=52 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:06:32]     Spatial update | delta_l2=0.26846922 | relative_delta=0.22974136 | changed=True
+[2026-05-18 23:06:33] 
+Fold 4/5 | subject=14
+[2026-05-18 23:06:33]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:33]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:33]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:35]     Result | best_epoch=57 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:06:35]     Spatial update | delta_l2=0.26188328 | relative_delta=0.22410548 | changed=True
+[2026-05-18 23:06:36] 
+Fold 5/5 | subject=14
+[2026-05-18 23:06:36]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:36]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:36]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:38]     Result | best_epoch=57 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:06:38]     Spatial update | delta_l2=0.27661492 | relative_delta=0.23671202 | changed=True
+[2026-05-18 23:06:38]   Subject 14: acc=0.6500±0.1458  bal_acc=0.6500±0.1458
+[2026-05-18 23:06:38] 
+Subject 15: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:06:39] 
+Fold 1/5 | subject=15
+[2026-05-18 23:06:39]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:39]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:39]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:42]     Result | best_epoch=1 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:06:42]     Spatial update | delta_l2=0.35617391 | relative_delta=0.30479428 | changed=True
+[2026-05-18 23:06:42] 
+Fold 2/5 | subject=15
+[2026-05-18 23:06:42]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:42]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:43]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:45]     Result | best_epoch=100 | stop=100 | acc=0.1250 | bal_acc=0.1250 | collapse=False
+[2026-05-18 23:06:45]     Spatial update | delta_l2=0.34345297 | relative_delta=0.29390838 | changed=True
+[2026-05-18 23:06:45] 
+Fold 3/5 | subject=15
+[2026-05-18 23:06:45]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:45]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:46]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:48]     Result | best_epoch=1 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:06:48]     Spatial update | delta_l2=0.31002261 | relative_delta=0.2653005 | changed=True
+[2026-05-18 23:06:49] 
+Fold 4/5 | subject=15
+[2026-05-18 23:06:49]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:49]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:49]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:51]     Result | best_epoch=62 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:06:51]     Spatial update | delta_l2=0.36152985 | relative_delta=0.3093776 | changed=True
+[2026-05-18 23:06:52] 
+Fold 5/5 | subject=15
+[2026-05-18 23:06:52]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:52]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:52]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:54]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:06:54]     Spatial update | delta_l2=0.33719548 | relative_delta=0.28855357 | changed=True
+[2026-05-18 23:06:54]   Subject 15: acc=0.3750±0.1581  bal_acc=0.3750±0.1581
+[2026-05-18 23:06:54] 
+Subject 16: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:06:55] 
+Fold 1/5 | subject=16
+[2026-05-18 23:06:55]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:55]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:55]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:06:57]     Result | best_epoch=40 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:06:57]     Spatial update | delta_l2=0.24840487 | relative_delta=0.21257139 | changed=True
+[2026-05-18 23:06:58] 
+Fold 2/5 | subject=16
+[2026-05-18 23:06:58]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:06:58]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:06:58]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:00]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:07:00]     Spatial update | delta_l2=0.26766185 | relative_delta=0.22905046 | changed=True
+[2026-05-18 23:07:01] 
+Fold 3/5 | subject=16
+[2026-05-18 23:07:01]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:01]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:01]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:03]     Result | best_epoch=1 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:07:03]     Spatial update | delta_l2=0.24247822 | relative_delta=0.20749968 | changed=True
+[2026-05-18 23:07:04] 
+Fold 4/5 | subject=16
+[2026-05-18 23:07:04]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:04]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:04]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:07]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=True
+[2026-05-18 23:07:07]     Spatial update | delta_l2=0.26098278 | relative_delta=0.22333488 | changed=True
+[2026-05-18 23:07:07] 
+Fold 5/5 | subject=16
+[2026-05-18 23:07:07]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:07]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:08]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:10]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:07:10]     Spatial update | delta_l2=0.24576189 | relative_delta=0.21030967 | changed=True
+[2026-05-18 23:07:10]   Subject 16: acc=0.5250±0.0935  bal_acc=0.5250±0.0935
+[2026-05-18 23:07:10] 
+Subject 17: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:07:10] 
+Fold 1/5 | subject=17
+[2026-05-18 23:07:10]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:10]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:11]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:13]     Result | best_epoch=20 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:07:13]     Spatial update | delta_l2=0.29928225 | relative_delta=0.25610949 | changed=True
+[2026-05-18 23:07:13] 
+Fold 2/5 | subject=17
+[2026-05-18 23:07:13]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:14]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:14]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:16]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:07:16]     Spatial update | delta_l2=0.28127892 | relative_delta=0.24070321 | changed=True
+[2026-05-18 23:07:17] 
+Fold 3/5 | subject=17
+[2026-05-18 23:07:17]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:17]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:17]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:19]     Result | best_epoch=62 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:07:19]     Spatial update | delta_l2=0.30453829 | relative_delta=0.26060731 | changed=True
+[2026-05-18 23:07:20] 
+Fold 4/5 | subject=17
+[2026-05-18 23:07:20]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:20]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:20]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:22]     Result | best_epoch=2 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:07:22]     Spatial update | delta_l2=0.29243003 | relative_delta=0.25024573 | changed=True
+[2026-05-18 23:07:23] 
+Fold 5/5 | subject=17
+[2026-05-18 23:07:23]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:23]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:23]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:26]     Result | best_epoch=46 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:07:26]     Spatial update | delta_l2=0.2707729 | relative_delta=0.23171274 | changed=True
+[2026-05-18 23:07:26]   Subject 17: acc=0.5250±0.1458  bal_acc=0.5250±0.1458
+[2026-05-18 23:07:26] 
+Subject 18: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:07:26] 
+Fold 1/5 | subject=18
+[2026-05-18 23:07:26]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:26]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:26]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:29]     Result | best_epoch=57 | stop=100 | acc=1.0000 | bal_acc=1.0000 | collapse=False
+[2026-05-18 23:07:29]     Spatial update | delta_l2=0.29136237 | relative_delta=0.24933208 | changed=True
+[2026-05-18 23:07:29] 
+Fold 2/5 | subject=18
+[2026-05-18 23:07:29]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:29]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:29]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:32]     Result | best_epoch=77 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:07:32]     Spatial update | delta_l2=0.2797698 | relative_delta=0.23941179 | changed=True
+[2026-05-18 23:07:32] 
+Fold 3/5 | subject=18
+[2026-05-18 23:07:32]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:32]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:33]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:35]     Result | best_epoch=49 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=True
+[2026-05-18 23:07:35]     Spatial update | delta_l2=0.28869359 | relative_delta=0.24704829 | changed=True
+[2026-05-18 23:07:35] 
+Fold 4/5 | subject=18
+[2026-05-18 23:07:35]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:35]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:36]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:38]     Result | best_epoch=49 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:07:38]     Spatial update | delta_l2=0.30866888 | relative_delta=0.26414205 | changed=True
+[2026-05-18 23:07:38] 
+Fold 5/5 | subject=18
+[2026-05-18 23:07:38]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:39]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:39]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:41]     Result | best_epoch=56 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:07:41]     Spatial update | delta_l2=0.29576086 | relative_delta=0.25309607 | changed=True
+[2026-05-18 23:07:41]   Subject 18: acc=0.6750±0.1871  bal_acc=0.6750±0.1871
+[2026-05-18 23:07:41] 
+Subject 19: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:07:42] 
+Fold 1/5 | subject=19
+[2026-05-18 23:07:42]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:42]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:42]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:44]     Result | best_epoch=58 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:07:44]     Spatial update | delta_l2=0.23109702 | relative_delta=0.19776027 | changed=True
+[2026-05-18 23:07:45] 
+Fold 2/5 | subject=19
+[2026-05-18 23:07:45]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:45]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:45]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:47]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:07:47]     Spatial update | delta_l2=0.26102971 | relative_delta=0.22337504 | changed=True
+[2026-05-18 23:07:48] 
+Fold 3/5 | subject=19
+[2026-05-18 23:07:48]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:48]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:48]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:50]     Result | best_epoch=33 | stop=100 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-18 23:07:50]     Spatial update | delta_l2=0.21543152 | relative_delta=0.18435459 | changed=True
+[2026-05-18 23:07:51] 
+Fold 4/5 | subject=19
+[2026-05-18 23:07:51]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:51]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:51]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:53]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:07:53]     Spatial update | delta_l2=0.23009165 | relative_delta=0.19689993 | changed=True
+[2026-05-18 23:07:54] 
+Fold 5/5 | subject=19
+[2026-05-18 23:07:54]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:54]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:54]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:07:57]     Result | best_epoch=31 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:07:57]     Spatial update | delta_l2=0.28102861 | relative_delta=0.24048901 | changed=True
+[2026-05-18 23:07:57]   Subject 19: acc=0.5500±0.1500  bal_acc=0.5500±0.1500
+[2026-05-18 23:07:57] 
+Subject 20: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:07:57] 
+Fold 1/5 | subject=20
+[2026-05-18 23:07:57]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:07:57]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:07:58]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:00]     Result | best_epoch=52 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:08:00]     Spatial update | delta_l2=0.26445629 | relative_delta=0.22630732 | changed=True
+[2026-05-18 23:08:00] 
+Fold 2/5 | subject=20
+[2026-05-18 23:08:00]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:00]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:01]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:03]     Result | best_epoch=75 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:08:03]     Spatial update | delta_l2=0.28174917 | relative_delta=0.24110563 | changed=True
+[2026-05-18 23:08:04] 
+Fold 3/5 | subject=20
+[2026-05-18 23:08:04]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:04]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:04]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:06]     Result | best_epoch=50 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:08:06]     Spatial update | delta_l2=0.23974549 | relative_delta=0.20516116 | changed=True
+[2026-05-18 23:08:07] 
+Fold 4/5 | subject=20
+[2026-05-18 23:08:07]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:07]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:07]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:09]     Result | best_epoch=60 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:08:09]     Spatial update | delta_l2=0.27046414 | relative_delta=0.23144851 | changed=True
+[2026-05-18 23:08:10] 
+Fold 5/5 | subject=20
+[2026-05-18 23:08:10]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:10]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:10]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:12]     Result | best_epoch=2 | stop=100 | acc=1.0000 | bal_acc=1.0000 | collapse=False
+[2026-05-18 23:08:12]     Spatial update | delta_l2=0.30638708 | relative_delta=0.26218941 | changed=True
+[2026-05-18 23:08:12]   Subject 20: acc=0.7250±0.1458  bal_acc=0.7250±0.1458
+[2026-05-18 23:08:12] 
+Subject 21: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:08:13] 
+Fold 1/5 | subject=21
+[2026-05-18 23:08:13]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:13]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:13]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:16]     Result | best_epoch=43 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:08:16]     Spatial update | delta_l2=0.21339657 | relative_delta=0.18261319 | changed=True
+[2026-05-18 23:08:16] 
+Fold 2/5 | subject=21
+[2026-05-18 23:08:16]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:16]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:16]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:19]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:08:19]     Spatial update | delta_l2=0.21507301 | relative_delta=0.1840478 | changed=True
+[2026-05-18 23:08:19] 
+Fold 3/5 | subject=21
+[2026-05-18 23:08:19]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:19]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:20]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:22]     Result | best_epoch=32 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:08:22]     Spatial update | delta_l2=0.24090204 | relative_delta=0.20615087 | changed=True
+[2026-05-18 23:08:23] 
+Fold 4/5 | subject=21
+[2026-05-18 23:08:23]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:23]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:23]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:25]     Result | best_epoch=1 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:08:25]     Spatial update | delta_l2=0.21050744 | relative_delta=0.18014082 | changed=True
+[2026-05-18 23:08:26] 
+Fold 5/5 | subject=21
+[2026-05-18 23:08:26]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:26]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:26]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:28]     Result | best_epoch=48 | stop=100 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-18 23:08:28]     Spatial update | delta_l2=0.18928928 | relative_delta=0.16198348 | changed=True
+[2026-05-18 23:08:28]   Subject 21: acc=0.4250±0.1275  bal_acc=0.4250±0.1275
+[2026-05-18 23:08:28] 
+Subject 22: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:08:29] 
+Fold 1/5 | subject=22
+[2026-05-18 23:08:29]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:29]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:29]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:31]     Result | best_epoch=43 | stop=100 | acc=1.0000 | bal_acc=1.0000 | collapse=False
+[2026-05-18 23:08:31]     Spatial update | delta_l2=0.26015543 | relative_delta=0.22262688 | changed=True
+[2026-05-18 23:08:32] 
+Fold 2/5 | subject=22
+[2026-05-18 23:08:32]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:32]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:32]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:34]     Result | best_epoch=53 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:08:34]     Spatial update | delta_l2=0.18835794 | relative_delta=0.16118649 | changed=True
+[2026-05-18 23:08:35] 
+Fold 3/5 | subject=22
+[2026-05-18 23:08:35]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:35]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:35]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:38]     Result | best_epoch=48 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:08:38]     Spatial update | delta_l2=0.22081993 | relative_delta=0.18896569 | changed=True
+[2026-05-18 23:08:38] 
+Fold 4/5 | subject=22
+[2026-05-18 23:08:38]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:38]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:38]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:41]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:08:41]     Spatial update | delta_l2=0.22614967 | relative_delta=0.19352659 | changed=True
+[2026-05-18 23:08:41] 
+Fold 5/5 | subject=22
+[2026-05-18 23:08:41]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:41]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:42]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:44]     Result | best_epoch=51 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=True
+[2026-05-18 23:08:44]     Spatial update | delta_l2=0.21007521 | relative_delta=0.17977095 | changed=True
+[2026-05-18 23:08:44]   Subject 22: acc=0.6750±0.2318  bal_acc=0.6750±0.2318
+[2026-05-18 23:08:44] 
+Subject 23: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:08:44] 
+Fold 1/5 | subject=23
+[2026-05-18 23:08:44]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:44]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:45]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:47]     Result | best_epoch=32 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:08:47]     Spatial update | delta_l2=0.29752546 | relative_delta=0.25460612 | changed=True
+[2026-05-18 23:08:48] 
+Fold 2/5 | subject=23
+[2026-05-18 23:08:48]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:48]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:48]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:50]     Result | best_epoch=58 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:08:50]     Spatial update | delta_l2=0.31812303 | relative_delta=0.2722324 | changed=True
+[2026-05-18 23:08:51] 
+Fold 3/5 | subject=23
+[2026-05-18 23:08:51]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:51]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:51]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:53]     Result | best_epoch=33 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:08:53]     Spatial update | delta_l2=0.30222303 | relative_delta=0.25862604 | changed=True
+[2026-05-18 23:08:54] 
+Fold 4/5 | subject=23
+[2026-05-18 23:08:54]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:54]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:54]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:08:56]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:08:56]     Spatial update | delta_l2=0.26874728 | relative_delta=0.22997932 | changed=True
+[2026-05-18 23:08:57] 
+Fold 5/5 | subject=23
+[2026-05-18 23:08:57]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:08:57]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:08:57]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:00]     Result | best_epoch=56 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:09:00]     Spatial update | delta_l2=0.28378278 | relative_delta=0.24284588 | changed=True
+[2026-05-18 23:09:00]   Subject 23: acc=0.5000±0.0791  bal_acc=0.5000±0.0791
+[2026-05-18 23:09:00] 
+Subject 24: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:09:00] 
+Fold 1/5 | subject=24
+[2026-05-18 23:09:00]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:00]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:00]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:03]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:09:03]     Spatial update | delta_l2=0.28452232 | relative_delta=0.24347874 | changed=True
+[2026-05-18 23:09:03] 
+Fold 2/5 | subject=24
+[2026-05-18 23:09:03]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:03]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:04]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:06]     Result | best_epoch=1 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:09:06]     Spatial update | delta_l2=0.29943247 | relative_delta=0.25623804 | changed=True
+[2026-05-18 23:09:06] 
+Fold 3/5 | subject=24
+[2026-05-18 23:09:06]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:06]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:07]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:09]     Result | best_epoch=1 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:09:09]     Spatial update | delta_l2=0.27411704 | relative_delta=0.23457446 | changed=True
+[2026-05-18 23:09:10] 
+Fold 4/5 | subject=24
+[2026-05-18 23:09:10]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:10]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:10]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:12]     Result | best_epoch=47 | stop=100 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-18 23:09:12]     Spatial update | delta_l2=0.25967296 | relative_delta=0.222214 | changed=True
+[2026-05-18 23:09:13] 
+Fold 5/5 | subject=24
+[2026-05-18 23:09:13]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:13]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:13]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:15]     Result | best_epoch=38 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:09:15]     Spatial update | delta_l2=0.28177711 | relative_delta=0.24112954 | changed=True
+[2026-05-18 23:09:15]   Subject 24: acc=0.6250±0.2372  bal_acc=0.6250±0.2372
+[2026-05-18 23:09:15] 
+Subject 25: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:09:16] 
+Fold 1/5 | subject=25
+[2026-05-18 23:09:16]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:16]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:16]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:19]     Result | best_epoch=13 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:09:19]     Spatial update | delta_l2=0.22014871 | relative_delta=0.1883913 | changed=True
+[2026-05-18 23:09:19] 
+Fold 2/5 | subject=25
+[2026-05-18 23:09:19]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:19]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:19]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:22]     Result | best_epoch=30 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:09:22]     Spatial update | delta_l2=0.22832497 | relative_delta=0.1953881 | changed=True
+[2026-05-18 23:09:22] 
+Fold 3/5 | subject=25
+[2026-05-18 23:09:22]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:22]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:22]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:25]     Result | best_epoch=62 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:09:25]     Spatial update | delta_l2=0.2185543 | relative_delta=0.1870269 | changed=True
+[2026-05-18 23:09:25] 
+Fold 4/5 | subject=25
+[2026-05-18 23:09:25]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:25]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:26]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:28]     Result | best_epoch=66 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:09:28]     Spatial update | delta_l2=0.26201514 | relative_delta=0.22421832 | changed=True
+[2026-05-18 23:09:28] 
+Fold 5/5 | subject=25
+[2026-05-18 23:09:28]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:28]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:29]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:31]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:09:31]     Spatial update | delta_l2=0.26109562 | relative_delta=0.22343144 | changed=True
+[2026-05-18 23:09:31]   Subject 25: acc=0.6250±0.0791  bal_acc=0.6250±0.0791
+[2026-05-18 23:09:31] 
+Subject 26: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:09:32] 
+Fold 1/5 | subject=26
+[2026-05-18 23:09:32]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:32]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:32]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:34]     Result | best_epoch=1 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:09:34]     Spatial update | delta_l2=0.24348666 | relative_delta=0.20836265 | changed=True
+[2026-05-18 23:09:35] 
+Fold 2/5 | subject=26
+[2026-05-18 23:09:35]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:35]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:35]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:37]     Result | best_epoch=1 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:09:37]     Spatial update | delta_l2=0.27440311 | relative_delta=0.23481927 | changed=True
+[2026-05-18 23:09:38] 
+Fold 3/5 | subject=26
+[2026-05-18 23:09:38]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:38]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:38]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:41]     Result | best_epoch=1 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:09:41]     Spatial update | delta_l2=0.25496286 | relative_delta=0.21818336 | changed=True
+[2026-05-18 23:09:41] 
+Fold 4/5 | subject=26
+[2026-05-18 23:09:41]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:41]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:41]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:44]     Result | best_epoch=1 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:09:44]     Spatial update | delta_l2=0.2227632 | relative_delta=0.19062864 | changed=True
+[2026-05-18 23:09:44] 
+Fold 5/5 | subject=26
+[2026-05-18 23:09:44]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:44]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:45]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:47]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=True
+[2026-05-18 23:09:47]     Spatial update | delta_l2=0.23221786 | relative_delta=0.19871943 | changed=True
+[2026-05-18 23:09:47]   Subject 26: acc=0.6500±0.1837  bal_acc=0.6500±0.1837
+[2026-05-18 23:09:47] 
+Subject 27: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:09:47] 
+Fold 1/5 | subject=27
+[2026-05-18 23:09:47]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:47]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:48]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:50]     Result | best_epoch=18 | stop=100 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-18 23:09:50]     Spatial update | delta_l2=0.19563636 | relative_delta=0.16741497 | changed=True
+[2026-05-18 23:09:50] 
+Fold 2/5 | subject=27
+[2026-05-18 23:09:50]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:50]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:51]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:53]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:09:53]     Spatial update | delta_l2=0.19678801 | relative_delta=0.16840049 | changed=True
+[2026-05-18 23:09:54] 
+Fold 3/5 | subject=27
+[2026-05-18 23:09:54]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:54]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:54]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:56]     Result | best_epoch=1 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:09:56]     Spatial update | delta_l2=0.16949926 | relative_delta=0.14504825 | changed=True
+[2026-05-18 23:09:57] 
+Fold 4/5 | subject=27
+[2026-05-18 23:09:57]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:09:57]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:09:57]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:09:59]     Result | best_epoch=21 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:09:59]     Spatial update | delta_l2=0.16744106 | relative_delta=0.14328696 | changed=True
+[2026-05-18 23:10:00] 
+Fold 5/5 | subject=27
+[2026-05-18 23:10:00]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:00]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:00]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:02]     Result | best_epoch=47 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:10:02]     Spatial update | delta_l2=0.17864471 | relative_delta=0.15287444 | changed=True
+[2026-05-18 23:10:02]   Subject 27: acc=0.5000±0.1768  bal_acc=0.5000±0.1768
+[2026-05-18 23:10:02] 
+Subject 28: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:10:03] 
+Fold 1/5 | subject=28
+[2026-05-18 23:10:03]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:03]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:03]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:06]     Result | best_epoch=55 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:10:06]     Spatial update | delta_l2=0.23665201 | relative_delta=0.20251393 | changed=True
+[2026-05-18 23:10:06] 
+Fold 2/5 | subject=28
+[2026-05-18 23:10:06]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:06]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:07]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:09]     Result | best_epoch=48 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:10:09]     Spatial update | delta_l2=0.2786558 | relative_delta=0.23845849 | changed=True
+[2026-05-18 23:10:09] 
+Fold 3/5 | subject=28
+[2026-05-18 23:10:09]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:09]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:10]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:12]     Result | best_epoch=47 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:10:12]     Spatial update | delta_l2=0.29422315 | relative_delta=0.25178018 | changed=True
+[2026-05-18 23:10:12] 
+Fold 4/5 | subject=28
+[2026-05-18 23:10:12]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:13]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:13]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:15]     Result | best_epoch=55 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:10:15]     Spatial update | delta_l2=0.24423566 | relative_delta=0.20900361 | changed=True
+[2026-05-18 23:10:16] 
+Fold 5/5 | subject=28
+[2026-05-18 23:10:16]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:16]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:16]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:18]     Result | best_epoch=32 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:10:18]     Spatial update | delta_l2=0.24140703 | relative_delta=0.20658302 | changed=True
+[2026-05-18 23:10:18]   Subject 28: acc=0.5750±0.0612  bal_acc=0.5750±0.0612
+[2026-05-18 23:10:18] 
+Subject 29: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:10:19] 
+Fold 1/5 | subject=29
+[2026-05-18 23:10:19]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:19]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:19]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:21]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:10:21]     Spatial update | delta_l2=0.2677338 | relative_delta=0.22911203 | changed=True
+[2026-05-18 23:10:22] 
+Fold 2/5 | subject=29
+[2026-05-18 23:10:22]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:22]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:22]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:24]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:10:24]     Spatial update | delta_l2=0.29350185 | relative_delta=0.25116293 | changed=True
+[2026-05-18 23:10:25] 
+Fold 3/5 | subject=29
+[2026-05-18 23:10:25]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:25]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:26]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:28]     Result | best_epoch=1 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:10:28]     Spatial update | delta_l2=0.29170934 | relative_delta=0.249629 | changed=True
+[2026-05-18 23:10:28] 
+Fold 4/5 | subject=29
+[2026-05-18 23:10:28]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:28]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:29]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:31]     Result | best_epoch=1 | stop=100 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-18 23:10:31]     Spatial update | delta_l2=0.30088012 | relative_delta=0.25747686 | changed=True
+[2026-05-18 23:10:31] 
+Fold 5/5 | subject=29
+[2026-05-18 23:10:31]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:32]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:32]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:34]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:10:34]     Spatial update | delta_l2=0.29485263 | relative_delta=0.25231886 | changed=True
+[2026-05-18 23:10:34]   Subject 29: acc=0.4750±0.1458  bal_acc=0.4750±0.1458
+[2026-05-18 23:10:34] 
+Subject 30: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:10:35] 
+Fold 1/5 | subject=30
+[2026-05-18 23:10:35]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:35]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:35]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:37]     Result | best_epoch=12 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:10:37]     Spatial update | delta_l2=0.25422253 | relative_delta=0.21754982 | changed=True
+[2026-05-18 23:10:38] 
+Fold 2/5 | subject=30
+[2026-05-18 23:10:38]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:38]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:38]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:40]     Result | best_epoch=80 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:10:40]     Spatial update | delta_l2=0.30927365 | relative_delta=0.26465958 | changed=True
+[2026-05-18 23:10:41] 
+Fold 3/5 | subject=30
+[2026-05-18 23:10:41]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:41]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:41]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:44]     Result | best_epoch=1 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:10:44]     Spatial update | delta_l2=0.2722281 | relative_delta=0.23295802 | changed=True
+[2026-05-18 23:10:44] 
+Fold 4/5 | subject=30
+[2026-05-18 23:10:44]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:44]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:44]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:47]     Result | best_epoch=46 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:10:47]     Spatial update | delta_l2=0.28395359 | relative_delta=0.24299205 | changed=True
+[2026-05-18 23:10:47] 
+Fold 5/5 | subject=30
+[2026-05-18 23:10:47]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:47]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:47]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:50]     Result | best_epoch=64 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:10:50]     Spatial update | delta_l2=0.28291115 | relative_delta=0.24209999 | changed=True
+[2026-05-18 23:10:50]   Subject 30: acc=0.6250±0.1118  bal_acc=0.6250±0.1118
+[2026-05-18 23:10:50] 
+Subject 31: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:10:50] 
+Fold 1/5 | subject=31
+[2026-05-18 23:10:50]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:50]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:51]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:53]     Result | best_epoch=2 | stop=100 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-18 23:10:53]     Spatial update | delta_l2=0.23238113 | relative_delta=0.19885914 | changed=True
+[2026-05-18 23:10:53] 
+Fold 2/5 | subject=31
+[2026-05-18 23:10:53]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:53]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:54]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:56]     Result | best_epoch=1 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:10:56]     Spatial update | delta_l2=0.25073451 | relative_delta=0.21456497 | changed=True
+[2026-05-18 23:10:57] 
+Fold 3/5 | subject=31
+[2026-05-18 23:10:57]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:10:57]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:10:57]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:10:59]     Result | best_epoch=1 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:10:59]     Spatial update | delta_l2=0.24475974 | relative_delta=0.20945209 | changed=True
+[2026-05-18 23:11:00] 
+Fold 4/5 | subject=31
+[2026-05-18 23:11:00]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:00]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:00]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:02]     Result | best_epoch=1 | stop=100 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-18 23:11:02]     Spatial update | delta_l2=0.24144861 | relative_delta=0.2066186 | changed=True
+[2026-05-18 23:11:03] 
+Fold 5/5 | subject=31
+[2026-05-18 23:11:03]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:03]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:03]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:05]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:11:05]     Spatial update | delta_l2=0.25792422 | relative_delta=0.22071753 | changed=True
+[2026-05-18 23:11:05]   Subject 31: acc=0.4250±0.1871  bal_acc=0.4250±0.1871
+[2026-05-18 23:11:05] 
+Subject 32: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:11:06] 
+Fold 1/5 | subject=32
+[2026-05-18 23:11:06]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:06]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:06]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:09]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:11:09]     Spatial update | delta_l2=0.25224949 | relative_delta=0.2158614 | changed=True
+[2026-05-18 23:11:09] 
+Fold 2/5 | subject=32
+[2026-05-18 23:11:09]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:09]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:09]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:12]     Result | best_epoch=86 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:11:12]     Spatial update | delta_l2=0.23138571 | relative_delta=0.19800731 | changed=True
+[2026-05-18 23:11:12] 
+Fold 3/5 | subject=32
+[2026-05-18 23:11:12]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:12]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:13]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:15]     Result | best_epoch=10 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:11:15]     Spatial update | delta_l2=0.25636798 | relative_delta=0.21938578 | changed=True
+[2026-05-18 23:11:15] 
+Fold 4/5 | subject=32
+[2026-05-18 23:11:15]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:15]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:16]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:18]     Result | best_epoch=53 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:11:18]     Spatial update | delta_l2=0.26616893 | relative_delta=0.22777291 | changed=True
+[2026-05-18 23:11:19] 
+Fold 5/5 | subject=32
+[2026-05-18 23:11:19]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:19]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:19]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:21]     Result | best_epoch=10 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:11:21]     Spatial update | delta_l2=0.25073417 | relative_delta=0.21456467 | changed=True
+[2026-05-18 23:11:21]   Subject 32: acc=0.6000±0.2000  bal_acc=0.6000±0.2000
+[2026-05-18 23:11:21] 
+Subject 33: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:11:22] 
+Fold 1/5 | subject=33
+[2026-05-18 23:11:22]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:22]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:22]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:24]     Result | best_epoch=48 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:11:24]     Spatial update | delta_l2=0.28682705 | relative_delta=0.245451 | changed=True
+[2026-05-18 23:11:25] 
+Fold 2/5 | subject=33
+[2026-05-18 23:11:25]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:25]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:25]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:27]     Result | best_epoch=1 | stop=100 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-18 23:11:27]     Spatial update | delta_l2=0.259936 | relative_delta=0.22243911 | changed=True
+[2026-05-18 23:11:28] 
+Fold 3/5 | subject=33
+[2026-05-18 23:11:28]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:28]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:28]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:31]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:11:31]     Spatial update | delta_l2=0.26107164 | relative_delta=0.22341092 | changed=True
+[2026-05-18 23:11:31] 
+Fold 4/5 | subject=33
+[2026-05-18 23:11:31]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:31]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:31]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:34]     Result | best_epoch=47 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:11:34]     Spatial update | delta_l2=0.26330009 | relative_delta=0.22531791 | changed=True
+[2026-05-18 23:11:34] 
+Fold 5/5 | subject=33
+[2026-05-18 23:11:34]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:34]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:35]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:37]     Result | best_epoch=54 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:11:37]     Spatial update | delta_l2=0.26067471 | relative_delta=0.22307125 | changed=True
+[2026-05-18 23:11:37]   Subject 33: acc=0.5000±0.1768  bal_acc=0.5000±0.1768
+[2026-05-18 23:11:37] 
+Subject 34: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:11:37] 
+Fold 1/5 | subject=34
+[2026-05-18 23:11:37]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:37]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:38]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:40]     Result | best_epoch=52 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:11:40]     Spatial update | delta_l2=0.27175574 | relative_delta=0.23255379 | changed=True
+[2026-05-18 23:11:41] 
+Fold 2/5 | subject=34
+[2026-05-18 23:11:41]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:41]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:41]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:43]     Result | best_epoch=54 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:11:43]     Spatial update | delta_l2=0.25435662 | relative_delta=0.21766457 | changed=True
+[2026-05-18 23:11:44] 
+Fold 3/5 | subject=34
+[2026-05-18 23:11:44]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:44]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:44]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:46]     Result | best_epoch=57 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:11:46]     Spatial update | delta_l2=0.2584386 | relative_delta=0.22115771 | changed=True
+[2026-05-18 23:11:47] 
+Fold 4/5 | subject=34
+[2026-05-18 23:11:47]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:47]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:47]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:49]     Result | best_epoch=45 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:11:49]     Spatial update | delta_l2=0.24053124 | relative_delta=0.20583357 | changed=True
+[2026-05-18 23:11:50] 
+Fold 5/5 | subject=34
+[2026-05-18 23:11:50]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:50]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:50]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:53]     Result | best_epoch=73 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:11:53]     Spatial update | delta_l2=0.2399451 | relative_delta=0.20533197 | changed=True
+[2026-05-18 23:11:53]   Subject 34: acc=0.7750±0.0935  bal_acc=0.7750±0.0935
+[2026-05-18 23:11:53] 
+Subject 35: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:11:53] 
+Fold 1/5 | subject=35
+[2026-05-18 23:11:53]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:53]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:53]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:56]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:11:56]     Spatial update | delta_l2=0.23936397 | relative_delta=0.20483468 | changed=True
+[2026-05-18 23:11:56] 
+Fold 2/5 | subject=35
+[2026-05-18 23:11:56]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:56]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:11:57]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:11:59]     Result | best_epoch=93 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:11:59]     Spatial update | delta_l2=0.28002782 | relative_delta=0.23963259 | changed=True
+[2026-05-18 23:11:59] 
+Fold 3/5 | subject=35
+[2026-05-18 23:11:59]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:11:59]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:00]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:02]     Result | best_epoch=51 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:12:02]     Spatial update | delta_l2=0.24667787 | relative_delta=0.21109352 | changed=True
+[2026-05-18 23:12:03] 
+Fold 4/5 | subject=35
+[2026-05-18 23:12:03]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:03]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:03]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:05]     Result | best_epoch=1 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:12:05]     Spatial update | delta_l2=0.24785789 | relative_delta=0.21210331 | changed=True
+[2026-05-18 23:12:06] 
+Fold 5/5 | subject=35
+[2026-05-18 23:12:06]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:06]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:06]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:08]     Result | best_epoch=19 | stop=100 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-18 23:12:08]     Spatial update | delta_l2=0.24797115 | relative_delta=0.21220023 | changed=True
+[2026-05-18 23:12:08]   Subject 35: acc=0.6250±0.2372  bal_acc=0.6250±0.2372
+[2026-05-18 23:12:08] 
+Subject 36: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:12:09] 
+Fold 1/5 | subject=36
+[2026-05-18 23:12:09]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:09]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:09]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:11]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:12:11]     Spatial update | delta_l2=0.29520164 | relative_delta=0.25261752 | changed=True
+[2026-05-18 23:12:12] 
+Fold 2/5 | subject=36
+[2026-05-18 23:12:12]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:12]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:12]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:15]     Result | best_epoch=9 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:12:15]     Spatial update | delta_l2=0.31564616 | relative_delta=0.27011283 | changed=True
+[2026-05-18 23:12:15] 
+Fold 3/5 | subject=36
+[2026-05-18 23:12:15]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:15]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:15]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:18]     Result | best_epoch=1 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:12:18]     Spatial update | delta_l2=0.30897119 | relative_delta=0.26440076 | changed=True
+[2026-05-18 23:12:18] 
+Fold 4/5 | subject=36
+[2026-05-18 23:12:18]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:18]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:19]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:21]     Result | best_epoch=29 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:12:21]     Spatial update | delta_l2=0.29234519 | relative_delta=0.25017313 | changed=True
+[2026-05-18 23:12:21] 
+Fold 5/5 | subject=36
+[2026-05-18 23:12:21]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:21]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:22]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:24]     Result | best_epoch=1 | stop=100 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-18 23:12:24]     Spatial update | delta_l2=0.28706826 | relative_delta=0.24565742 | changed=True
+[2026-05-18 23:12:24]   Subject 36: acc=0.4250±0.1000  bal_acc=0.4250±0.1000
+[2026-05-18 23:12:24] 
+Subject 37: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:12:25] 
+Fold 1/5 | subject=37
+[2026-05-18 23:12:25]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:25]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:25]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:27]     Result | best_epoch=40 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:12:27]     Spatial update | delta_l2=0.28967629 | relative_delta=0.24788923 | changed=True
+[2026-05-18 23:12:28] 
+Fold 2/5 | subject=37
+[2026-05-18 23:12:28]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:28]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:28]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:30]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:12:30]     Spatial update | delta_l2=0.27946347 | relative_delta=0.23914965 | changed=True
+[2026-05-18 23:12:31] 
+Fold 3/5 | subject=37
+[2026-05-18 23:12:31]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:31]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:31]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:33]     Result | best_epoch=9 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:12:33]     Spatial update | delta_l2=0.27250102 | relative_delta=0.23319156 | changed=True
+[2026-05-18 23:12:34] 
+Fold 4/5 | subject=37
+[2026-05-18 23:12:34]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:34]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:34]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:37]     Result | best_epoch=1 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:12:37]     Spatial update | delta_l2=0.23698205 | relative_delta=0.20279636 | changed=True
+[2026-05-18 23:12:37] 
+Fold 5/5 | subject=37
+[2026-05-18 23:12:37]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:37]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:37]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:40]     Result | best_epoch=30 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:12:40]     Spatial update | delta_l2=0.32494891 | relative_delta=0.27807362 | changed=True
+[2026-05-18 23:12:40]   Subject 37: acc=0.6000±0.0935  bal_acc=0.6000±0.0935
+[2026-05-18 23:12:40] 
+Subject 38: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:12:40] 
+Fold 1/5 | subject=38
+[2026-05-18 23:12:40]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:40]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:41]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:43]     Result | best_epoch=1 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:12:43]     Spatial update | delta_l2=0.27489954 | relative_delta=0.23524409 | changed=True
+[2026-05-18 23:12:43] 
+Fold 2/5 | subject=38
+[2026-05-18 23:12:43]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:43]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:44]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:46]     Result | best_epoch=45 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:12:46]     Spatial update | delta_l2=0.25759212 | relative_delta=0.22043333 | changed=True
+[2026-05-18 23:12:47] 
+Fold 3/5 | subject=38
+[2026-05-18 23:12:47]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:47]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:47]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:49]     Result | best_epoch=55 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:12:49]     Spatial update | delta_l2=0.26697164 | relative_delta=0.22845982 | changed=True
+[2026-05-18 23:12:50] 
+Fold 4/5 | subject=38
+[2026-05-18 23:12:50]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:50]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:50]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:52]     Result | best_epoch=1 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:12:52]     Spatial update | delta_l2=0.23181749 | relative_delta=0.19837681 | changed=True
+[2026-05-18 23:12:53] 
+Fold 5/5 | subject=38
+[2026-05-18 23:12:53]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:53]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:53]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:55]     Result | best_epoch=54 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:12:55]     Spatial update | delta_l2=0.29124584 | relative_delta=0.24923236 | changed=True
+[2026-05-18 23:12:55]   Subject 38: acc=0.5750±0.1696  bal_acc=0.5750±0.1696
+[2026-05-18 23:12:55] 
+Subject 39: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:12:56] 
+Fold 1/5 | subject=39
+[2026-05-18 23:12:56]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:56]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:12:56]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:12:59]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=True
+[2026-05-18 23:12:59]     Spatial update | delta_l2=0.19612314 | relative_delta=0.16783153 | changed=True
+[2026-05-18 23:12:59] 
+Fold 2/5 | subject=39
+[2026-05-18 23:12:59]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:12:59]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:00]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:02]     Result | best_epoch=46 | stop=100 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-18 23:13:02]     Spatial update | delta_l2=0.24060955 | relative_delta=0.20590058 | changed=True
+[2026-05-18 23:13:02] 
+Fold 3/5 | subject=39
+[2026-05-18 23:13:02]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:02]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:03]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:05]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:13:05]     Spatial update | delta_l2=0.21944998 | relative_delta=0.18779337 | changed=True
+[2026-05-18 23:13:06] 
+Fold 4/5 | subject=39
+[2026-05-18 23:13:06]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:06]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:06]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:08]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:13:08]     Spatial update | delta_l2=0.22634246 | relative_delta=0.19369157 | changed=True
+[2026-05-18 23:13:09] 
+Fold 5/5 | subject=39
+[2026-05-18 23:13:09]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:09]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:09]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:11]     Result | best_epoch=38 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:13:11]     Spatial update | delta_l2=0.22247629 | relative_delta=0.19038312 | changed=True
+[2026-05-18 23:13:11]   Subject 39: acc=0.4750±0.1458  bal_acc=0.4750±0.1458
+[2026-05-18 23:13:11] 
+Subject 40: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:13:12] 
+Fold 1/5 | subject=40
+[2026-05-18 23:13:12]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:12]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:12]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:14]     Result | best_epoch=1 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:13:14]     Spatial update | delta_l2=0.22900737 | relative_delta=0.19597206 | changed=True
+[2026-05-18 23:13:15] 
+Fold 2/5 | subject=40
+[2026-05-18 23:13:15]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:15]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:15]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:17]     Result | best_epoch=71 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:13:17]     Spatial update | delta_l2=0.22458208 | relative_delta=0.19218514 | changed=True
+[2026-05-18 23:13:18] 
+Fold 3/5 | subject=40
+[2026-05-18 23:13:18]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:18]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:18]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:21]     Result | best_epoch=2 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:13:21]     Spatial update | delta_l2=0.22880725 | relative_delta=0.19580081 | changed=True
+[2026-05-18 23:13:21] 
+Fold 4/5 | subject=40
+[2026-05-18 23:13:21]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:21]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:22]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:24]     Result | best_epoch=58 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:13:24]     Spatial update | delta_l2=0.2174799 | relative_delta=0.18610748 | changed=True
+[2026-05-18 23:13:24] 
+Fold 5/5 | subject=40
+[2026-05-18 23:13:24]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:24]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:25]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:27]     Result | best_epoch=55 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:13:27]     Spatial update | delta_l2=0.2257867 | relative_delta=0.19321598 | changed=True
+[2026-05-18 23:13:27]   Subject 40: acc=0.5750±0.1275  bal_acc=0.5750±0.1275
+[2026-05-18 23:13:27] 
+Subject 41: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:13:28] 
+Fold 1/5 | subject=41
+[2026-05-18 23:13:28]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:28]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:28]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:30]     Result | best_epoch=52 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:13:30]     Spatial update | delta_l2=0.22109053 | relative_delta=0.18919726 | changed=True
+[2026-05-18 23:13:31] 
+Fold 2/5 | subject=41
+[2026-05-18 23:13:31]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:31]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:31]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:33]     Result | best_epoch=1 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:13:33]     Spatial update | delta_l2=0.27133696 | relative_delta=0.23219543 | changed=True
+[2026-05-18 23:13:34] 
+Fold 3/5 | subject=41
+[2026-05-18 23:13:34]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:34]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:34]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:36]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:13:36]     Spatial update | delta_l2=0.28574164 | relative_delta=0.24452217 | changed=True
+[2026-05-18 23:13:37] 
+Fold 4/5 | subject=41
+[2026-05-18 23:13:37]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:37]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:37]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:40]     Result | best_epoch=59 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:13:40]     Spatial update | delta_l2=0.25361271 | relative_delta=0.21702797 | changed=True
+[2026-05-18 23:13:40] 
+Fold 5/5 | subject=41
+[2026-05-18 23:13:40]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:40]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:40]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:43]     Result | best_epoch=29 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:13:43]     Spatial update | delta_l2=0.23602135 | relative_delta=0.20197424 | changed=True
+[2026-05-18 23:13:43]   Subject 41: acc=0.7000±0.1000  bal_acc=0.7000±0.1000
+[2026-05-18 23:13:43] 
+Subject 42: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:13:43] 
+Fold 1/5 | subject=42
+[2026-05-18 23:13:43]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:43]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:44]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:46]     Result | best_epoch=47 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:13:46]     Spatial update | delta_l2=0.27662783 | relative_delta=0.23672307 | changed=True
+[2026-05-18 23:13:46] 
+Fold 2/5 | subject=42
+[2026-05-18 23:13:46]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:46]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:47]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:49]     Result | best_epoch=8 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:13:49]     Spatial update | delta_l2=0.29900563 | relative_delta=0.25587277 | changed=True
+[2026-05-18 23:13:50] 
+Fold 3/5 | subject=42
+[2026-05-18 23:13:50]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:50]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:50]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:52]     Result | best_epoch=64 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:13:52]     Spatial update | delta_l2=0.2851447 | relative_delta=0.24401134 | changed=True
+[2026-05-18 23:13:53] 
+Fold 4/5 | subject=42
+[2026-05-18 23:13:53]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:53]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:53]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:55]     Result | best_epoch=47 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:13:55]     Spatial update | delta_l2=0.31457354 | relative_delta=0.26919494 | changed=True
+[2026-05-18 23:13:56] 
+Fold 5/5 | subject=42
+[2026-05-18 23:13:56]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:56]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:56]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:13:58]     Result | best_epoch=1 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:13:58]     Spatial update | delta_l2=0.29124232 | relative_delta=0.24922935 | changed=True
+[2026-05-18 23:13:58]   Subject 42: acc=0.6250±0.2236  bal_acc=0.6250±0.2236
+[2026-05-18 23:13:58] 
+Subject 43: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:13:59] 
+Fold 1/5 | subject=43
+[2026-05-18 23:13:59]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:13:59]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:13:59]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:02]     Result | best_epoch=8 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:14:02]     Spatial update | delta_l2=0.26861794 | relative_delta=0.22986863 | changed=True
+[2026-05-18 23:14:02] 
+Fold 2/5 | subject=43
+[2026-05-18 23:14:02]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:02]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:02]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:05]     Result | best_epoch=57 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:14:05]     Spatial update | delta_l2=0.26722096 | relative_delta=0.22867318 | changed=True
+[2026-05-18 23:14:05] 
+Fold 3/5 | subject=43
+[2026-05-18 23:14:05]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:05]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:06]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:08]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:14:08]     Spatial update | delta_l2=0.2934343 | relative_delta=0.25110513 | changed=True
+[2026-05-18 23:14:08] 
+Fold 4/5 | subject=43
+[2026-05-18 23:14:08]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:08]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:09]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:11]     Result | best_epoch=81 | stop=100 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-18 23:14:11]     Spatial update | delta_l2=0.30328886 | relative_delta=0.25953812 | changed=True
+[2026-05-18 23:14:12] 
+Fold 5/5 | subject=43
+[2026-05-18 23:14:12]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:12]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:12]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:14]     Result | best_epoch=1 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:14:14]     Spatial update | delta_l2=0.29998174 | relative_delta=0.25670807 | changed=True
+[2026-05-18 23:14:14]   Subject 43: acc=0.4750±0.2151  bal_acc=0.4750±0.2151
+[2026-05-18 23:14:14] 
+Subject 44: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:14:15] 
+Fold 1/5 | subject=44
+[2026-05-18 23:14:15]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:15]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:15]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:17]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:14:17]     Spatial update | delta_l2=0.32244547 | relative_delta=0.27593131 | changed=True
+[2026-05-18 23:14:18] 
+Fold 2/5 | subject=44
+[2026-05-18 23:14:18]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:18]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:18]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:20]     Result | best_epoch=66 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:14:20]     Spatial update | delta_l2=0.26484897 | relative_delta=0.22664335 | changed=True
+[2026-05-18 23:14:21] 
+Fold 3/5 | subject=44
+[2026-05-18 23:14:21]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:21]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:21]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:24]     Result | best_epoch=74 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:14:24]     Spatial update | delta_l2=0.29983624 | relative_delta=0.25658356 | changed=True
+[2026-05-18 23:14:24] 
+Fold 4/5 | subject=44
+[2026-05-18 23:14:24]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:24]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:24]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:27]     Result | best_epoch=1 | stop=100 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-18 23:14:27]     Spatial update | delta_l2=0.29161488 | relative_delta=0.24954817 | changed=True
+[2026-05-18 23:14:27] 
+Fold 5/5 | subject=44
+[2026-05-18 23:14:27]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:27]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:28]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:30]     Result | best_epoch=52 | stop=100 | acc=0.1250 | bal_acc=0.1250 | collapse=False
+[2026-05-18 23:14:30]     Spatial update | delta_l2=0.26252389 | relative_delta=0.22465368 | changed=True
+[2026-05-18 23:14:30]   Subject 44: acc=0.3500±0.1658  bal_acc=0.3500±0.1658
+[2026-05-18 23:14:30] 
+Subject 45: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:14:30] 
+Fold 1/5 | subject=45
+[2026-05-18 23:14:30]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:30]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:31]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:33]     Result | best_epoch=1 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:14:33]     Spatial update | delta_l2=0.28467611 | relative_delta=0.24361035 | changed=True
+[2026-05-18 23:14:34] 
+Fold 2/5 | subject=45
+[2026-05-18 23:14:34]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:34]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:34]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:36]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:14:36]     Spatial update | delta_l2=0.27852128 | relative_delta=0.23834338 | changed=True
+[2026-05-18 23:14:37] 
+Fold 3/5 | subject=45
+[2026-05-18 23:14:37]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:37]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:37]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:39]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:14:39]     Spatial update | delta_l2=0.25638013 | relative_delta=0.21939618 | changed=True
+[2026-05-18 23:14:40] 
+Fold 4/5 | subject=45
+[2026-05-18 23:14:40]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:40]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:40]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:42]     Result | best_epoch=99 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:14:42]     Spatial update | delta_l2=0.26672863 | relative_delta=0.22825186 | changed=True
+[2026-05-18 23:14:43] 
+Fold 5/5 | subject=45
+[2026-05-18 23:14:43]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:43]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:43]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:46]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:14:46]     Spatial update | delta_l2=0.26650844 | relative_delta=0.22806344 | changed=True
+[2026-05-18 23:14:46]   Subject 45: acc=0.6000±0.0935  bal_acc=0.6000±0.0935
+[2026-05-18 23:14:46] 
+Subject 46: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:14:46] 
+Fold 1/5 | subject=46
+[2026-05-18 23:14:46]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:46]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:47]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:49]     Result | best_epoch=53 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:14:49]     Spatial update | delta_l2=0.28908507 | relative_delta=0.24738329 | changed=True
+[2026-05-18 23:14:49] 
+Fold 2/5 | subject=46
+[2026-05-18 23:14:49]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:49]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:50]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:52]     Result | best_epoch=52 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:14:52]     Spatial update | delta_l2=0.3044822 | relative_delta=0.26055932 | changed=True
+[2026-05-18 23:14:52] 
+Fold 3/5 | subject=46
+[2026-05-18 23:14:52]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:52]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:53]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:55]     Result | best_epoch=22 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:14:55]     Spatial update | delta_l2=0.28458369 | relative_delta=0.24353126 | changed=True
+[2026-05-18 23:14:56] 
+Fold 4/5 | subject=46
+[2026-05-18 23:14:56]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:56]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:56]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:14:58]     Result | best_epoch=61 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:14:58]     Spatial update | delta_l2=0.32541566 | relative_delta=0.27847303 | changed=True
+[2026-05-18 23:14:59] 
+Fold 5/5 | subject=46
+[2026-05-18 23:14:59]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:14:59]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:14:59]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:01]     Result | best_epoch=1 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:15:01]     Spatial update | delta_l2=0.26355964 | relative_delta=0.22554001 | changed=True
+[2026-05-18 23:15:01]   Subject 46: acc=0.6000±0.1458  bal_acc=0.6000±0.1458
+[2026-05-18 23:15:01] 
+Subject 47: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:15:02] 
+Fold 1/5 | subject=47
+[2026-05-18 23:15:02]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:02]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:02]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:04]     Result | best_epoch=45 | stop=100 | acc=0.1250 | bal_acc=0.1250 | collapse=False
+[2026-05-18 23:15:04]     Spatial update | delta_l2=0.30188262 | relative_delta=0.25833474 | changed=True
+[2026-05-18 23:15:05] 
+Fold 2/5 | subject=47
+[2026-05-18 23:15:05]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:05]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:05]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:08]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:15:08]     Spatial update | delta_l2=0.32108916 | relative_delta=0.27477065 | changed=True
+[2026-05-18 23:15:08] 
+Fold 3/5 | subject=47
+[2026-05-18 23:15:08]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:08]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:08]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:11]     Result | best_epoch=72 | stop=100 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-18 23:15:11]     Spatial update | delta_l2=0.28551448 | relative_delta=0.24432778 | changed=True
+[2026-05-18 23:15:11] 
+Fold 4/5 | subject=47
+[2026-05-18 23:15:11]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:11]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:12]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:14]     Result | best_epoch=2 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:15:14]     Spatial update | delta_l2=0.31378426 | relative_delta=0.26851952 | changed=True
+[2026-05-18 23:15:14] 
+Fold 5/5 | subject=47
+[2026-05-18 23:15:14]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:14]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:15]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:17]     Result | best_epoch=1 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:15:17]     Spatial update | delta_l2=0.31730837 | relative_delta=0.27153526 | changed=True
+[2026-05-18 23:15:17]   Subject 47: acc=0.4750±0.2550  bal_acc=0.4750±0.2550
+[2026-05-18 23:15:17] 
+Subject 48: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:15:18] 
+Fold 1/5 | subject=48
+[2026-05-18 23:15:18]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:18]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:18]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:20]     Result | best_epoch=61 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:15:20]     Spatial update | delta_l2=0.27736557 | relative_delta=0.23735438 | changed=True
+[2026-05-18 23:15:21] 
+Fold 2/5 | subject=48
+[2026-05-18 23:15:21]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:21]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:21]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:23]     Result | best_epoch=34 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:15:23]     Spatial update | delta_l2=0.30077014 | relative_delta=0.25738274 | changed=True
+[2026-05-18 23:15:24] 
+Fold 3/5 | subject=48
+[2026-05-18 23:15:24]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:24]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:24]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:26]     Result | best_epoch=54 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:15:26]     Spatial update | delta_l2=0.29486235 | relative_delta=0.25232718 | changed=True
+[2026-05-18 23:15:27] 
+Fold 4/5 | subject=48
+[2026-05-18 23:15:27]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:27]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:27]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:30]     Result | best_epoch=32 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:15:30]     Spatial update | delta_l2=0.30903684 | relative_delta=0.26445694 | changed=True
+[2026-05-18 23:15:30] 
+Fold 5/5 | subject=48
+[2026-05-18 23:15:30]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:30]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:31]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:33]     Result | best_epoch=65 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:15:33]     Spatial update | delta_l2=0.28268991 | relative_delta=0.24191066 | changed=True
+[2026-05-18 23:15:33]   Subject 48: acc=0.6000±0.1658  bal_acc=0.6000±0.1658
+[2026-05-18 23:15:33] 
+Subject 49: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:15:33] 
+Fold 1/5 | subject=49
+[2026-05-18 23:15:33]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:33]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:34]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:36]     Result | best_epoch=1 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-18 23:15:36]     Spatial update | delta_l2=0.3379151 | relative_delta=0.28916938 | changed=True
+[2026-05-18 23:15:37] 
+Fold 2/5 | subject=49
+[2026-05-18 23:15:37]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:37]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:37]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:39]     Result | best_epoch=98 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:15:39]     Spatial update | delta_l2=0.29948768 | relative_delta=0.25628528 | changed=True
+[2026-05-18 23:15:40] 
+Fold 3/5 | subject=49
+[2026-05-18 23:15:40]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:40]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:40]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:42]     Result | best_epoch=59 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:15:42]     Spatial update | delta_l2=0.33510716 | relative_delta=0.2867665 | changed=True
+[2026-05-18 23:15:43] 
+Fold 4/5 | subject=49
+[2026-05-18 23:15:43]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:43]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:43]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:46]     Result | best_epoch=98 | stop=100 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-18 23:15:46]     Spatial update | delta_l2=0.33405446 | relative_delta=0.28586565 | changed=True
+[2026-05-18 23:15:46] 
+Fold 5/5 | subject=49
+[2026-05-18 23:15:46]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:46]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:46]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:49]     Result | best_epoch=1 | stop=100 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-18 23:15:49]     Spatial update | delta_l2=0.31587436 | relative_delta=0.27030811 | changed=True
+[2026-05-18 23:15:49]   Subject 49: acc=0.6000±0.2151  bal_acc=0.6000±0.2151
+[2026-05-18 23:15:49] 
+Subject 50: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:15:49] 
+Fold 1/5 | subject=50
+[2026-05-18 23:15:49]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:49]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:50]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:52]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:15:52]     Spatial update | delta_l2=0.27367303 | relative_delta=0.2341945 | changed=True
+[2026-05-18 23:15:52] 
+Fold 2/5 | subject=50
+[2026-05-18 23:15:52]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:52]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:53]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:55]     Result | best_epoch=65 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:15:55]     Spatial update | delta_l2=0.28057685 | relative_delta=0.24010242 | changed=True
+[2026-05-18 23:15:55] 
+Fold 3/5 | subject=50
+[2026-05-18 23:15:55]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:56]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:56]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:15:58]     Result | best_epoch=1 | stop=100 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-18 23:15:58]     Spatial update | delta_l2=0.27017285 | relative_delta=0.23119924 | changed=True
+[2026-05-18 23:15:59] 
+Fold 4/5 | subject=50
+[2026-05-18 23:15:59]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:15:59]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:15:59]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:16:01]     Result | best_epoch=1 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:16:01]     Spatial update | delta_l2=0.25776708 | relative_delta=0.22058306 | changed=True
+[2026-05-18 23:16:02] 
+Fold 5/5 | subject=50
+[2026-05-18 23:16:02]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:16:02]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:16:02]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:16:04]     Result | best_epoch=57 | stop=100 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-18 23:16:04]     Spatial update | delta_l2=0.23825434 | relative_delta=0.20388511 | changed=True
+[2026-05-18 23:16:04]   Subject 50: acc=0.5000±0.1369  bal_acc=0.5000±0.1369
+[2026-05-18 23:16:04] 
+======================================================================
+[2026-05-18 23:16:04] AGGREGATED RESULTS (v2)
+[2026-05-18 23:16:04] ======================================================================
+[2026-05-18 23:16:04]   1: acc=0.5250±0.1225  bal_acc=0.5250±0.1225
+[2026-05-18 23:16:04]   2: acc=0.5750±0.1500  bal_acc=0.5750±0.1500
+[2026-05-18 23:16:04]   3: acc=0.5000±0.1369  bal_acc=0.5000±0.1369
+[2026-05-18 23:16:04]   4: acc=0.6750±0.1275  bal_acc=0.6750±0.1275
+[2026-05-18 23:16:04]   5: acc=0.6250±0.0791  bal_acc=0.6250±0.0791
+[2026-05-18 23:16:04]   6: acc=0.5500±0.1275  bal_acc=0.5500±0.1275
+[2026-05-18 23:16:04]   7: acc=0.4750±0.1458  bal_acc=0.4750±0.1458
+[2026-05-18 23:16:04]   8: acc=0.7000±0.1275  bal_acc=0.7000±0.1275
+[2026-05-18 23:16:04]   9: acc=0.6000±0.1837  bal_acc=0.6000±0.1837
+[2026-05-18 23:16:04]   10: acc=0.5000±0.1118  bal_acc=0.5000±0.1118
+[2026-05-18 23:16:04]   11: acc=0.3750±0.1118  bal_acc=0.3750±0.1118
+[2026-05-18 23:16:04]   12: acc=0.4750±0.2151  bal_acc=0.4750±0.2151
+[2026-05-18 23:16:04]   13: acc=0.6750±0.1275  bal_acc=0.6750±0.1275
+[2026-05-18 23:16:04]   14: acc=0.6500±0.1458  bal_acc=0.6500±0.1458
+[2026-05-18 23:16:04]   15: acc=0.3750±0.1581  bal_acc=0.3750±0.1581
+[2026-05-18 23:16:04]   16: acc=0.5250±0.0935  bal_acc=0.5250±0.0935
+[2026-05-18 23:16:04]   17: acc=0.5250±0.1458  bal_acc=0.5250±0.1458
+[2026-05-18 23:16:04]   18: acc=0.6750±0.1871  bal_acc=0.6750±0.1871
+[2026-05-18 23:16:04]   19: acc=0.5500±0.1500  bal_acc=0.5500±0.1500
+[2026-05-18 23:16:04]   20: acc=0.7250±0.1458  bal_acc=0.7250±0.1458
+[2026-05-18 23:16:04]   21: acc=0.4250±0.1275  bal_acc=0.4250±0.1275
+[2026-05-18 23:16:04]   22: acc=0.6750±0.2318  bal_acc=0.6750±0.2318
+[2026-05-18 23:16:04]   23: acc=0.5000±0.0791  bal_acc=0.5000±0.0791
+[2026-05-18 23:16:04]   24: acc=0.6250±0.2372  bal_acc=0.6250±0.2372
+[2026-05-18 23:16:04]   25: acc=0.6250±0.0791  bal_acc=0.6250±0.0791
+[2026-05-18 23:16:04]   26: acc=0.6500±0.1837  bal_acc=0.6500±0.1837
+[2026-05-18 23:16:04]   27: acc=0.5000±0.1768  bal_acc=0.5000±0.1768
+[2026-05-18 23:16:04]   28: acc=0.5750±0.0612  bal_acc=0.5750±0.0612
+[2026-05-18 23:16:04]   29: acc=0.4750±0.1458  bal_acc=0.4750±0.1458
+[2026-05-18 23:16:04]   30: acc=0.6250±0.1118  bal_acc=0.6250±0.1118
+[2026-05-18 23:16:04]   31: acc=0.4250±0.1871  bal_acc=0.4250±0.1871
+[2026-05-18 23:16:04]   32: acc=0.6000±0.2000  bal_acc=0.6000±0.2000
+[2026-05-18 23:16:04]   33: acc=0.5000±0.1768  bal_acc=0.5000±0.1768
+[2026-05-18 23:16:04]   34: acc=0.7750±0.0935  bal_acc=0.7750±0.0935
+[2026-05-18 23:16:04]   35: acc=0.6250±0.2372  bal_acc=0.6250±0.2372
+[2026-05-18 23:16:04]   36: acc=0.4250±0.1000  bal_acc=0.4250±0.1000
+[2026-05-18 23:16:04]   37: acc=0.6000±0.0935  bal_acc=0.6000±0.0935
+[2026-05-18 23:16:04]   38: acc=0.5750±0.1696  bal_acc=0.5750±0.1696
+[2026-05-18 23:16:04]   39: acc=0.4750±0.1458  bal_acc=0.4750±0.1458
+[2026-05-18 23:16:04]   40: acc=0.5750±0.1275  bal_acc=0.5750±0.1275
+[2026-05-18 23:16:04]   41: acc=0.7000±0.1000  bal_acc=0.7000±0.1000
+[2026-05-18 23:16:04]   42: acc=0.6250±0.2236  bal_acc=0.6250±0.2236
+[2026-05-18 23:16:04]   43: acc=0.4750±0.2151  bal_acc=0.4750±0.2151
+[2026-05-18 23:16:04]   44: acc=0.3500±0.1658  bal_acc=0.3500±0.1658
+[2026-05-18 23:16:04]   45: acc=0.6000±0.0935  bal_acc=0.6000±0.0935
+[2026-05-18 23:16:04]   46: acc=0.6000±0.1458  bal_acc=0.6000±0.1458
+[2026-05-18 23:16:04]   47: acc=0.4750±0.2550  bal_acc=0.4750±0.2550
+[2026-05-18 23:16:04]   48: acc=0.6000±0.1658  bal_acc=0.6000±0.1658
+[2026-05-18 23:16:04]   49: acc=0.6000±0.2151  bal_acc=0.6000±0.2151
+[2026-05-18 23:16:04]   50: acc=0.5000±0.1369  bal_acc=0.5000±0.1369
+[2026-05-18 23:16:04] ----------------------------------------------------------------------
+[2026-05-18 23:16:04]   OVERALL: acc=0.5610±0.1835  bal_acc=0.5610±0.1835
+[2026-05-18 23:16:04] ======================================================================
+[2026-05-18 23:16:04] 
+BASELINE (original): acc=0.4925±0.1643  bal_acc=0.4925±0.1643
+[2026-05-18 23:16:04] Improvement:         Δacc=+0.0685
+[2026-05-18 23:16:04] ======================================================================
+[2026-05-18 23:16:04] CV results saved to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA.worktrees/copilot-code-improvement-liu2024source/src/artifacts/liu2024-source-mat-sjepa-prelocal-v2/Liu2024_SourceMAT_v2/20260518_2302_32f08ebe/cv_results.json

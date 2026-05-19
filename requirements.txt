@@ -1,7 +1,10 @@
 braindecode==1.4
 mne==1.11.0
 mne-bids==0.18.0
-moabb==1.4.3
+# moabb==1.4.3
+# Temporary unreleased Liu2024 fix.
+# Remove once MOABB releases PR #994 https://github.com/NeuroTechX/moabb/pull/994 to PyPI.
+moabb @ git+https://github.com/NeuroTechX/moabb.git@973a01a
 huggingface_hub==1.11.0
 
 torch==2.10.0

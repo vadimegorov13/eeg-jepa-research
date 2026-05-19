@@ -1,0 +1,51 @@
+Liu2024 S-JEPA-style CSP/FBCSP run
+Artifacts: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/artifacts/liu2024-sjepa-style-csp-fbcsp/20260518_152240
+Target window: 537 samples = 4.195312s
+Loaded MOABBDataset Liu2024
+Recordings: 50
+ recording_index  subject session run  sfreq  n_channels  n_times  duration_s                   annotation_counts
+               0        1       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+               1        2       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+               2        3       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+               3        4       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+               4        5       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+               5        6       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+               6        7       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+               7        8       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+               8        9       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+               9       10       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+              10       11       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+              11       12       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+              12       13       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+              13       14       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+              14       15       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+              15       16       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+              16       17       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+              17       18       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+              18       19       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+              19       20       0   0  500.0          32   160000       320.0 {'left_hand': 20, 'right_hand': 19}
+Applying preprocessing: pick EEG -> resample 128 Hz -> filter 0.5-40 Hz -> average reference
+Preprocessing complete.
+Annotation duration summary after preprocessing:
+              count  mean  std  min  25%  50%  75%  max
+description                                            
+left_hand    1000.0   4.0  0.0  4.0  4.0  4.0  4.0  4.0
+right_hand    950.0   4.0  0.0  4.0  4.0  4.0  4.0  4.0
+Overlap summary for target S-JEPA-style window:
+{
+  "n_pairs": 1900,
+  "n_any_overlap": 1900,
+  "fraction_any_overlap": 1.0,
+  "n_major_overlap_gt_25pct": 1251,
+  "fraction_major_overlap_gt_25pct": 0.6584210526315789,
+  "min_gap_s": 0.001999999999995339,
+  "median_gap_s": 2.0060000000000002,
+  "max_gap_s": 4.004000000000005
+}
+Filtered annotations: kept 1950 / 1950
+Window offset calculation:
+  min annotation samples floor: 512
+  median annotation samples:    512
+  target_window_samples:       537
+  trial_stop_offset_samples:   25
+Created windows dataset with 1950 windows.

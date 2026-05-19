@@ -1,0 +1,8 @@
+model_name,n_components,csp_reg,filter_order,fbcsp_bands,feature_select,feature_k,svm_C,name
+FBCSP_SVM,4,,2,coarse,none,12,1.0,fbcsp_coarse_unreg_no_fs
+FBCSP_SVM,4,,2,dense,none,12,1.0,fbcsp_dense_unreg_no_fs
+FBCSP_SVM,4,,2,dense,f_classif,12,1.0,fbcsp_dense_unreg_fclassif_k12
+FBCSP_SVM,4,,2,dense,f_classif,24,1.0,fbcsp_dense_unreg_fclassif_k24
+FBCSP_SVM,4,ledoit_wolf,2,dense,f_classif,12,1.0,fbcsp_dense_ledoit_fclassif_k12
+FBCSP_SVM,4,,2,coarse,none,12,0.1,fbcsp_coarse_unreg_C0p1
+FBCSP_SVM,4,,2,coarse,none,12,10.0,fbcsp_coarse_unreg_C10

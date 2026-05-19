@@ -1,0 +1,45 @@
+[2026-05-18 23:01:01] Run ID:     20260518_2301_32f08ebe
+[2026-05-18 23:01:01] Artifacts:  /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA.worktrees/copilot-code-improvement-liu2024source/src/artifacts/liu2024-source-mat-sjepa-prelocal-v2/Liu2024_SourceMAT_v2/20260518_2301_32f08ebe
+[2026-05-18 23:01:01] Using device: mps
+[2026-05-18 23:01:02] Seed initialized: 12
+[2026-05-18 23:01:02] Source extract dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_figshare/sourcedata
+[2026-05-18 23:01:02] Found 50 .mat files
+[2026-05-18 23:01:08] Subjects loaded: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
+[2026-05-18 23:01:22] X_ALL shape: (2000, 29, 537) | Y_ALL counts: [1000, 1000]
+[2026-05-18 23:01:22] ======================================================================
+[2026-05-18 23:01:22] STARTING WITHIN-SUBJECT CV (v2 — full fine-tuning + augmentation)
+[2026-05-18 23:01:22] ======================================================================
+[2026-05-18 23:01:22] Dataset:    Liu2024_SourceMAT_v2
+[2026-05-18 23:01:22] Strategy:   full  (warmup=10, total=100 epochs)
+[2026-05-18 23:01:22] Optimizer:  AdamW  lr=0.0005  wd=0.0001
+[2026-05-18 23:01:22] Noise aug:  fraction=0.05
+[2026-05-18 23:01:22] Device:     mps
+[2026-05-18 23:01:22] ======================================================================
+[2026-05-18 23:01:22] 
+Subject 1: 40 windows | class_counts=[20, 20]
+[2026-05-18 23:01:23] 
+Fold 1/5 | subject=1
+[2026-05-18 23:01:23]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:01:23]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:01:24]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:01:27]     Result | best_epoch=29 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-18 23:01:27]     Spatial update | delta_l2=0.2610433 | relative_delta=0.22338667 | changed=True
+[2026-05-18 23:01:28] 
+Fold 2/5 | subject=1
+[2026-05-18 23:01:28]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:01:28]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:01:28]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:01:30]     Result | best_epoch=60 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:01:30]     Spatial update | delta_l2=0.27606076 | relative_delta=0.2362378 | changed=True
+[2026-05-18 23:01:31] 
+Fold 3/5 | subject=1
+[2026-05-18 23:01:31]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:01:31]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:01:31]     Phase 2 (full): 16,010/16,010 params
+[2026-05-18 23:01:33]     Result | best_epoch=38 | stop=100 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-18 23:01:33]     Spatial update | delta_l2=0.26287067 | relative_delta=0.22495044 | changed=True
+[2026-05-18 23:01:35] 
+Fold 4/5 | subject=1
+[2026-05-18 23:01:35]     Train: 32 | Test: 8 | Strategy: full
+[2026-05-18 23:01:35]     Phase 1 (warmup): 2,170/16,010 params
+[2026-05-18 23:01:35]     Phase 2 (full): 16,010/16,010 params

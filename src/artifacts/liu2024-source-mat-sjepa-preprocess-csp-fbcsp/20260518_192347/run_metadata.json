@@ -1,0 +1,84 @@
+{
+  "notebook": "liu2024_source_mat_sjepa_preprocess_csp_fbcsp",
+  "source": "original Figshare sourcedata .mat files",
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_figshare/sourcedata",
+  "n_subjects": 50,
+  "source_sfreq": 500,
+  "target_sfreq": 128,
+  "preprocessing_order": [
+    "select 29 EEG channels; drop CPz source reference, EOG, and marker",
+    "concatenate trials per subject into RawArray",
+    "resample to 128 Hz",
+    "bandpass 0.5-40 Hz",
+    "average reference",
+    "reshape back to trials",
+    "crop fixed 537-sample MI window starting at 2.0s"
+  ],
+  "target_window_samples": 537,
+  "effective_window_duration_s": 4.1953125,
+  "mi_window_start_s": 2.0,
+  "mi_window_start_sample": 256,
+  "mi_window_stop_sample": 793,
+  "cv": {
+    "type": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 2026
+  },
+  "csp": {
+    "model": "CSP_LDA",
+    "feature_band": [
+      8.0,
+      30.0
+    ],
+    "n_components": 4,
+    "reg": "ledoit_wolf",
+    "log": true,
+    "norm_trace": false
+  },
+  "fbcsp": {
+    "model": "FBCSP_LDA",
+    "bands": [
+      [
+        4,
+        8
+      ],
+      [
+        8,
+        12
+      ],
+      [
+        12,
+        16
+      ],
+      [
+        16,
+        20
+      ],
+      [
+        20,
+        24
+      ],
+      [
+        24,
+        28
+      ],
+      [
+        28,
+        32
+      ],
+      [
+        32,
+        36
+      ],
+      [
+        36,
+        40
+      ]
+    ],
+    "n_components_per_band": 4,
+    "reg": "ledoit_wolf",
+    "log": true,
+    "norm_trace": false
+  }
+}

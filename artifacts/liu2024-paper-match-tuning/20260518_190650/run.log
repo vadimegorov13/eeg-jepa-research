@@ -1,0 +1,74 @@
+Liu2024 paper-match tuning run
+Artifacts: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-paper-match-tuning/20260518_190650
+RUN_PROFILE: focused
+Using existing extracted source dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_figshare/sourcedata
+Total .mat files found: 50
+  preview: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_figshare/sourcedata/sourcedata/sub-01/sub-01_task-motor-imagery_eeg.mat
+  preview: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_figshare/sourcedata/sourcedata/sub-02/sub-02_task-motor-imagery_eeg.mat
+  preview: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_figshare/sourcedata/sourcedata/sub-03/sub-03_task-motor-imagery_eeg.mat
+  preview: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_figshare/sourcedata/sourcedata/sub-04/sub-04_task-motor-imagery_eeg.mat
+  preview: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_figshare/sourcedata/sourcedata/sub-05/sub-05_task-motor-imagery_eeg.mat
+Selected raw data: eeg.rawdata, shape=(40, 33, 4000)
+Selected labels:   eeg.label, shape=(40,), counts={np.int64(1): np.int64(20), np.int64(2): np.int64(20)}
+ subject_id  rawdata_shape   label_values
+          1 (40, 33, 4000) {1: 20, 2: 20}
+          2 (40, 33, 4000) {1: 20, 2: 20}
+          3 (40, 33, 4000) {1: 20, 2: 20}
+          4 (40, 33, 4000) {1: 20, 2: 20}
+          5 (40, 33, 4000) {1: 20, 2: 20}
+          6 (40, 33, 4000) {1: 20, 2: 20}
+          7 (40, 33, 4000) {1: 20, 2: 20}
+          8 (40, 33, 4000) {1: 20, 2: 20}
+          9 (40, 33, 4000) {1: 20, 2: 20}
+         10 (40, 33, 4000) {1: 20, 2: 20}
+         11 (40, 33, 4000) {1: 20, 2: 20}
+         12 (40, 33, 4000) {1: 20, 2: 20}
+         13 (40, 33, 4000) {1: 20, 2: 20}
+         14 (40, 33, 4000) {1: 20, 2: 20}
+         15 (40, 33, 4000) {1: 20, 2: 20}
+         16 (40, 33, 4000) {1: 20, 2: 20}
+         17 (40, 33, 4000) {1: 20, 2: 20}
+         18 (40, 33, 4000) {1: 20, 2: 20}
+         19 (40, 33, 4000) {1: 20, 2: 20}
+         20 (40, 33, 4000) {1: 20, 2: 20}
+         21 (40, 33, 4000) {1: 20, 2: 20}
+         22 (40, 33, 4000) {1: 20, 2: 20}
+         23 (40, 33, 4000) {1: 20, 2: 20}
+         24 (40, 33, 4000) {1: 20, 2: 20}
+         25 (40, 33, 4000) {1: 20, 2: 20}
+         26 (40, 33, 4000) {1: 20, 2: 20}
+         27 (40, 33, 4000) {1: 20, 2: 20}
+         28 (40, 33, 4000) {1: 20, 2: 20}
+         29 (40, 33, 4000) {1: 20, 2: 20}
+         30 (40, 33, 4000) {1: 20, 2: 20}
+         31 (40, 33, 4000) {1: 20, 2: 20}
+         32 (40, 33, 4000) {1: 20, 2: 20}
+         33 (40, 33, 4000) {1: 20, 2: 20}
+         34 (40, 33, 4000) {1: 20, 2: 20}
+         35 (40, 33, 4000) {1: 20, 2: 20}
+         36 (40, 33, 4000) {1: 20, 2: 20}
+         37 (40, 33, 4000) {1: 20, 2: 20}
+         38 (40, 33, 4000) {1: 20, 2: 20}
+         39 (40, 33, 4000) {1: 20, 2: 20}
+         40 (40, 33, 4000) {1: 20, 2: 20}
+         41 (40, 33, 4000) {1: 20, 2: 20}
+         42 (40, 33, 4000) {1: 20, 2: 20}
+         43 (40, 33, 4000) {1: 20, 2: 20}
+         44 (40, 33, 4000) {1: 20, 2: 20}
+         45 (40, 33, 4000) {1: 20, 2: 20}
+         46 (40, 33, 4000) {1: 20, 2: 20}
+         47 (40, 33, 4000) {1: 20, 2: 20}
+         48 (40, 33, 4000) {1: 20, 2: 20}
+         49 (40, 33, 4000) {1: 20, 2: 20}
+         50 (40, 33, 4000) {1: 20, 2: 20}
+Preprocessing variants: 9
+CSP model variants:     0
+FBCSP model variants:   7
+Example raw subject 1: X=(40, 33, 4000), labels={np.int64(1): np.int64(20), np.int64(2): np.int64(20)}
+[FBCSP 1/9 | 1/7] paper_0to4_avg_after + fbcsp_coarse_unreg_no_fs
+  -> acc=0.5094, distance_to_paper=0.0663
+[FBCSP 1/9 | 2/7] paper_0to4_avg_after + fbcsp_dense_unreg_no_fs
+  -> acc=0.5190, distance_to_paper=0.0567
+[FBCSP 1/9 | 3/7] paper_0to4_avg_after + fbcsp_dense_unreg_fclassif_k12
+  -> acc=0.5184, distance_to_paper=0.0573
+[FBCSP 1/9 | 4/7] paper_0to4_avg_after + fbcsp_dense_unreg_fclassif_k24

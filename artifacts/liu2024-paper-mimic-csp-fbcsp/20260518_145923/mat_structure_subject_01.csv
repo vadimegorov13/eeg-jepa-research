@@ -1,0 +1,4 @@
+name,type,shape,dtype,fields
+eeg,mat_struct,,,"['rawdata', 'label']"
+eeg.rawdata,ndarray,"(40, 33, 4000)",float64,
+eeg.label,ndarray,"(40,)",uint8,
