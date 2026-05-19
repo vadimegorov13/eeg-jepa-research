@@ -1,0 +1,1474 @@
+[2026-05-19 12:46:27] Run ID:     20260519_1246_fcd0bc6a
+[2026-05-19 12:46:27] Artifacts:  /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-mat-sjepa-prelocal/Liu2024_SourceMAT/20260519_1246_fcd0bc6a
+[2026-05-19 12:46:27] Using device: mps
+[2026-05-19 12:46:28] Seed initialized: 12
+[2026-05-19 12:46:28] Source extract dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_figshare/sourcedata
+[2026-05-19 12:46:28] Found 50 .mat files
+[2026-05-19 12:46:33] Subjects loaded: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
+[2026-05-19 12:46:46] X_ALL shape: (2000, 29, 537) | Y_ALL counts: [1000, 1000]
+[2026-05-19 12:46:47] ======================================================================
+[2026-05-19 12:46:47] STARTING WITHIN-SUBJECT CV (full fine-tuning + augmentation)
+[2026-05-19 12:46:47] ======================================================================
+[2026-05-19 12:46:47] Dataset:    Liu2024_SourceMAT
+[2026-05-19 12:46:47] Strategy:   new  (warmup=10, total=120 epochs)
+[2026-05-19 12:46:47] Optimizer:  AdamW  lr=0.0002  wd=0.0001
+[2026-05-19 12:46:47] Noise aug:  fraction=0.05
+[2026-05-19 12:46:47] Device:     mps
+[2026-05-19 12:46:47] ======================================================================
+[2026-05-19 12:46:47] 
+Subject 1: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:46:47] 
+Fold 1/5 | subject=1
+[2026-05-19 12:46:47]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:46:48]     Result | best_epoch=12 | stop=32 | acc=0.1250 | bal_acc=0.1250 | collapse=False
+[2026-05-19 12:46:48]     Spatial update | delta_l2=0.01670734 | relative_delta=0.01429723 | changed=True
+[2026-05-19 12:46:49] 
+Fold 2/5 | subject=1
+[2026-05-19 12:46:49]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:46:51]     Result | best_epoch=108 | stop=120 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:46:51]     Spatial update | delta_l2=0.07661176 | relative_delta=0.06556018 | changed=True
+[2026-05-19 12:46:52] 
+Fold 3/5 | subject=1
+[2026-05-19 12:46:52]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:46:53]     Result | best_epoch=46 | stop=52 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:46:53]     Spatial update | delta_l2=0.0442117 | relative_delta=0.03783397 | changed=True
+[2026-05-19 12:46:53] 
+Fold 4/5 | subject=1
+[2026-05-19 12:46:53]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:46:54]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:46:54]     Spatial update | delta_l2=0.00215394 | relative_delta=0.00184322 | changed=True
+[2026-05-19 12:46:54] 
+Fold 5/5 | subject=1
+[2026-05-19 12:46:54]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:46:56]     Result | best_epoch=82 | stop=102 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:46:56]     Spatial update | delta_l2=0.07682968 | relative_delta=0.06574666 | changed=True
+[2026-05-19 12:46:56]   Subject 1: acc=0.3500±0.1458  bal_acc=0.3500±0.1458
+[2026-05-19 12:46:56] 
+Subject 2: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:46:56] 
+Fold 1/5 | subject=2
+[2026-05-19 12:46:56]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:46:58]     Result | best_epoch=85 | stop=105 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:46:58]     Spatial update | delta_l2=0.07575869 | relative_delta=0.06483017 | changed=True
+[2026-05-19 12:46:59] 
+Fold 2/5 | subject=2
+[2026-05-19 12:46:59]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:01]     Result | best_epoch=96 | stop=116 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:47:01]     Spatial update | delta_l2=0.07490517 | relative_delta=0.06409977 | changed=True
+[2026-05-19 12:47:01] 
+Fold 3/5 | subject=2
+[2026-05-19 12:47:01]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:03]     Result | best_epoch=96 | stop=116 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:47:03]     Spatial update | delta_l2=0.08056021 | relative_delta=0.06893905 | changed=True
+[2026-05-19 12:47:04] 
+Fold 4/5 | subject=2
+[2026-05-19 12:47:04]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:06]     Result | best_epoch=114 | stop=120 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:47:06]     Spatial update | delta_l2=0.08311253 | relative_delta=0.07112319 | changed=True
+[2026-05-19 12:47:07] 
+Fold 5/5 | subject=2
+[2026-05-19 12:47:07]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:09]     Result | best_epoch=105 | stop=116 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:47:09]     Spatial update | delta_l2=0.07823422 | relative_delta=0.06694859 | changed=True
+[2026-05-19 12:47:09]   Subject 2: acc=0.6000±0.0500  bal_acc=0.6000±0.0500
+[2026-05-19 12:47:09] 
+Subject 3: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:47:09] 
+Fold 1/5 | subject=3
+[2026-05-19 12:47:09]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:10]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:47:10]     Spatial update | delta_l2=0.00215401 | relative_delta=0.00184329 | changed=True
+[2026-05-19 12:47:10] 
+Fold 2/5 | subject=3
+[2026-05-19 12:47:10]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:12]     Result | best_epoch=117 | stop=120 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:47:12]     Spatial update | delta_l2=0.09005409 | relative_delta=0.07706339 | changed=True
+[2026-05-19 12:47:13] 
+Fold 3/5 | subject=3
+[2026-05-19 12:47:13]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:15]     Result | best_epoch=117 | stop=120 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:47:15]     Spatial update | delta_l2=0.0906682 | relative_delta=0.07758892 | changed=True
+[2026-05-19 12:47:15] 
+Fold 4/5 | subject=3
+[2026-05-19 12:47:15]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:17]     Result | best_epoch=117 | stop=120 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:47:17]     Spatial update | delta_l2=0.08726984 | relative_delta=0.07468079 | changed=True
+[2026-05-19 12:47:18] 
+Fold 5/5 | subject=3
+[2026-05-19 12:47:18]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:20]     Result | best_epoch=85 | stop=105 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:47:20]     Spatial update | delta_l2=0.08875458 | relative_delta=0.07595135 | changed=True
+[2026-05-19 12:47:20]   Subject 3: acc=0.5500±0.1000  bal_acc=0.5500±0.1000
+[2026-05-19 12:47:20] 
+Subject 4: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:47:20] 
+Fold 1/5 | subject=4
+[2026-05-19 12:47:20]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:22]     Result | best_epoch=85 | stop=105 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:47:22]     Spatial update | delta_l2=0.08573177 | relative_delta=0.07336459 | changed=True
+[2026-05-19 12:47:23] 
+Fold 2/5 | subject=4
+[2026-05-19 12:47:23]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:25]     Result | best_epoch=107 | stop=120 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:47:25]     Spatial update | delta_l2=0.09589314 | relative_delta=0.08206014 | changed=True
+[2026-05-19 12:47:25] 
+Fold 3/5 | subject=4
+[2026-05-19 12:47:25]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:26]     Result | best_epoch=10 | stop=24 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:47:26]     Spatial update | delta_l2=0.0061584 | relative_delta=0.00527002 | changed=True
+[2026-05-19 12:47:26] 
+Fold 4/5 | subject=4
+[2026-05-19 12:47:26]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:27]     Result | best_epoch=1 | stop=21 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-19 12:47:27]     Spatial update | delta_l2=0.00215397 | relative_delta=0.00184325 | changed=True
+[2026-05-19 12:47:27] 
+Fold 5/5 | subject=4
+[2026-05-19 12:47:27]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:28]     Result | best_epoch=2 | stop=22 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:47:28]     Spatial update | delta_l2=0.00372393 | relative_delta=0.00318674 | changed=True
+[2026-05-19 12:47:28]   Subject 4: acc=0.6250±0.1581  bal_acc=0.6250±0.1581
+[2026-05-19 12:47:28] 
+Subject 5: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:47:28] 
+Fold 1/5 | subject=5
+[2026-05-19 12:47:28]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:30]     Result | best_epoch=66 | stop=86 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:47:30]     Spatial update | delta_l2=0.07672618 | relative_delta=0.06565809 | changed=True
+[2026-05-19 12:47:30] 
+Fold 2/5 | subject=5
+[2026-05-19 12:47:30]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:31]     Result | best_epoch=1 | stop=21 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:47:31]     Spatial update | delta_l2=0.00215397 | relative_delta=0.00184325 | changed=True
+[2026-05-19 12:47:31] 
+Fold 3/5 | subject=5
+[2026-05-19 12:47:31]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:32]     Result | best_epoch=1 | stop=21 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:47:32]     Spatial update | delta_l2=0.002154 | relative_delta=0.00184328 | changed=True
+[2026-05-19 12:47:32] 
+Fold 4/5 | subject=5
+[2026-05-19 12:47:32]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:34]     Result | best_epoch=103 | stop=120 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:47:34]     Spatial update | delta_l2=0.08621069 | relative_delta=0.07377442 | changed=True
+[2026-05-19 12:47:35] 
+Fold 5/5 | subject=5
+[2026-05-19 12:47:35]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:35]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:47:35]     Spatial update | delta_l2=0.00215367 | relative_delta=0.00184299 | changed=True
+[2026-05-19 12:47:35]   Subject 5: acc=0.5000±0.1768  bal_acc=0.5000±0.1768
+[2026-05-19 12:47:35] 
+Subject 6: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:47:36] 
+Fold 1/5 | subject=6
+[2026-05-19 12:47:36]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:38]     Result | best_epoch=94 | stop=114 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:47:38]     Spatial update | delta_l2=0.08288154 | relative_delta=0.07092551 | changed=True
+[2026-05-19 12:47:38] 
+Fold 2/5 | subject=6
+[2026-05-19 12:47:38]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:39]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:47:39]     Spatial update | delta_l2=0.00215393 | relative_delta=0.00184321 | changed=True
+[2026-05-19 12:47:39] 
+Fold 3/5 | subject=6
+[2026-05-19 12:47:39]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:40]     Result | best_epoch=2 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:47:40]     Spatial update | delta_l2=0.00215393 | relative_delta=0.00184321 | changed=True
+[2026-05-19 12:47:40] 
+Fold 4/5 | subject=6
+[2026-05-19 12:47:40]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:42]     Result | best_epoch=92 | stop=112 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:47:42]     Spatial update | delta_l2=0.0814854 | relative_delta=0.06973078 | changed=True
+[2026-05-19 12:47:43] 
+Fold 5/5 | subject=6
+[2026-05-19 12:47:43]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:44]     Result | best_epoch=64 | stop=84 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:47:44]     Spatial update | delta_l2=0.06440359 | relative_delta=0.05511309 | changed=True
+[2026-05-19 12:47:44]   Subject 6: acc=0.5500±0.0612  bal_acc=0.5500±0.0612
+[2026-05-19 12:47:44] 
+Subject 7: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:47:45] 
+Fold 1/5 | subject=7
+[2026-05-19 12:47:45]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:45]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:47:45]     Spatial update | delta_l2=0.00215382 | relative_delta=0.00184312 | changed=True
+[2026-05-19 12:47:46] 
+Fold 2/5 | subject=7
+[2026-05-19 12:47:46]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:46]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:47:46]     Spatial update | delta_l2=0.00215397 | relative_delta=0.00184325 | changed=True
+[2026-05-19 12:47:47] 
+Fold 3/5 | subject=7
+[2026-05-19 12:47:47]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:49]     Result | best_epoch=117 | stop=120 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:47:49]     Spatial update | delta_l2=0.09634583 | relative_delta=0.08244752 | changed=True
+[2026-05-19 12:47:49] 
+Fold 4/5 | subject=7
+[2026-05-19 12:47:49]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:50]     Result | best_epoch=5 | stop=25 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:47:50]     Spatial update | delta_l2=0.00791592 | relative_delta=0.00677401 | changed=True
+[2026-05-19 12:47:50] 
+Fold 5/5 | subject=7
+[2026-05-19 12:47:50]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:51]     Result | best_epoch=4 | stop=24 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:47:51]     Spatial update | delta_l2=0.00706729 | relative_delta=0.00604781 | changed=True
+[2026-05-19 12:47:51]   Subject 7: acc=0.4250±0.1275  bal_acc=0.4250±0.1275
+[2026-05-19 12:47:51] 
+Subject 8: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:47:51] 
+Fold 1/5 | subject=8
+[2026-05-19 12:47:51]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:53]     Result | best_epoch=120 | stop=120 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:47:53]     Spatial update | delta_l2=0.08057814 | relative_delta=0.0689544 | changed=True
+[2026-05-19 12:47:54] 
+Fold 2/5 | subject=8
+[2026-05-19 12:47:54]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:56]     Result | best_epoch=112 | stop=120 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-19 12:47:56]     Spatial update | delta_l2=0.06407126 | relative_delta=0.0548287 | changed=True
+[2026-05-19 12:47:56] 
+Fold 3/5 | subject=8
+[2026-05-19 12:47:56]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:47:58]     Result | best_epoch=117 | stop=120 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:47:58]     Spatial update | delta_l2=0.06950395 | relative_delta=0.05947771 | changed=True
+[2026-05-19 12:47:59] 
+Fold 4/5 | subject=8
+[2026-05-19 12:47:59]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:01]     Result | best_epoch=85 | stop=105 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:48:01]     Spatial update | delta_l2=0.0858882 | relative_delta=0.07349845 | changed=True
+[2026-05-19 12:48:01] 
+Fold 5/5 | subject=8
+[2026-05-19 12:48:01]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:03]     Result | best_epoch=109 | stop=120 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:48:03]     Spatial update | delta_l2=0.07388654 | relative_delta=0.06322809 | changed=True
+[2026-05-19 12:48:03]   Subject 8: acc=0.7000±0.1000  bal_acc=0.7000±0.1000
+[2026-05-19 12:48:03] 
+Subject 9: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:48:04] 
+Fold 1/5 | subject=9
+[2026-05-19 12:48:04]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:05]     Result | best_epoch=64 | stop=84 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:48:05]     Spatial update | delta_l2=0.07487592 | relative_delta=0.06407475 | changed=True
+[2026-05-19 12:48:06] 
+Fold 2/5 | subject=9
+[2026-05-19 12:48:06]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:08]     Result | best_epoch=103 | stop=105 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:48:08]     Spatial update | delta_l2=0.08593425 | relative_delta=0.07353787 | changed=True
+[2026-05-19 12:48:08] 
+Fold 3/5 | subject=9
+[2026-05-19 12:48:08]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:09]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:48:09]     Spatial update | delta_l2=0.00215392 | relative_delta=0.00184321 | changed=True
+[2026-05-19 12:48:09] 
+Fold 4/5 | subject=9
+[2026-05-19 12:48:09]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:10]     Result | best_epoch=50 | stop=52 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-19 12:48:10]     Spatial update | delta_l2=0.04188361 | relative_delta=0.03584172 | changed=True
+[2026-05-19 12:48:11] 
+Fold 5/5 | subject=9
+[2026-05-19 12:48:11]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:11]     Result | best_epoch=1 | stop=21 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:48:11]     Spatial update | delta_l2=0.00215394 | relative_delta=0.00184323 | changed=True
+[2026-05-19 12:48:11]   Subject 9: acc=0.6250±0.1768  bal_acc=0.6250±0.1768
+[2026-05-19 12:48:11] 
+Subject 10: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:48:12] 
+Fold 1/5 | subject=10
+[2026-05-19 12:48:12]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:12]     Result | best_epoch=31 | stop=33 | acc=0.1250 | bal_acc=0.1250 | collapse=False
+[2026-05-19 12:48:12]     Spatial update | delta_l2=0.01684843 | relative_delta=0.01441797 | changed=True
+[2026-05-19 12:48:13] 
+Fold 2/5 | subject=10
+[2026-05-19 12:48:13]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:13]     Result | best_epoch=4 | stop=24 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:48:13]     Spatial update | delta_l2=0.00668225 | relative_delta=0.0057183 | changed=True
+[2026-05-19 12:48:14] 
+Fold 3/5 | subject=10
+[2026-05-19 12:48:14]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:14]     Result | best_epoch=5 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:48:14]     Spatial update | delta_l2=0.00215399 | relative_delta=0.00184326 | changed=True
+[2026-05-19 12:48:15] 
+Fold 4/5 | subject=10
+[2026-05-19 12:48:15]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:15]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:48:15]     Spatial update | delta_l2=0.00215388 | relative_delta=0.00184317 | changed=True
+[2026-05-19 12:48:16] 
+Fold 5/5 | subject=10
+[2026-05-19 12:48:16]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:16]     Result | best_epoch=2 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:48:16]     Spatial update | delta_l2=0.00215402 | relative_delta=0.00184329 | changed=True
+[2026-05-19 12:48:16]   Subject 10: acc=0.4000±0.1458  bal_acc=0.4000±0.1458
+[2026-05-19 12:48:16] 
+Subject 11: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:48:17] 
+Fold 1/5 | subject=11
+[2026-05-19 12:48:17]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:19]     Result | best_epoch=103 | stop=120 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:48:19]     Spatial update | delta_l2=0.07939396 | relative_delta=0.06794104 | changed=True
+[2026-05-19 12:48:19] 
+Fold 2/5 | subject=11
+[2026-05-19 12:48:19]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:20]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:48:20]     Spatial update | delta_l2=0.002154 | relative_delta=0.00184327 | changed=True
+[2026-05-19 12:48:20] 
+Fold 3/5 | subject=11
+[2026-05-19 12:48:20]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:21]     Result | best_epoch=5 | stop=25 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:48:21]     Spatial update | delta_l2=0.00804354 | relative_delta=0.00688322 | changed=True
+[2026-05-19 12:48:21] 
+Fold 4/5 | subject=11
+[2026-05-19 12:48:21]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:22]     Result | best_epoch=12 | stop=32 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:48:22]     Spatial update | delta_l2=0.01783498 | relative_delta=0.01526221 | changed=True
+[2026-05-19 12:48:22] 
+Fold 5/5 | subject=11
+[2026-05-19 12:48:22]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:24]     Result | best_epoch=92 | stop=112 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:48:24]     Spatial update | delta_l2=0.08395791 | relative_delta=0.07184662 | changed=True
+[2026-05-19 12:48:24]   Subject 11: acc=0.4750±0.2291  bal_acc=0.4750±0.2291
+[2026-05-19 12:48:24] 
+Subject 12: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:48:25] 
+Fold 1/5 | subject=12
+[2026-05-19 12:48:25]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:25]     Result | best_epoch=23 | stop=25 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:48:25]     Spatial update | delta_l2=0.00843875 | relative_delta=0.00722142 | changed=True
+[2026-05-19 12:48:26] 
+Fold 2/5 | subject=12
+[2026-05-19 12:48:26]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:28]     Result | best_epoch=113 | stop=120 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:48:28]     Spatial update | delta_l2=0.08512209 | relative_delta=0.07284286 | changed=True
+[2026-05-19 12:48:28] 
+Fold 3/5 | subject=12
+[2026-05-19 12:48:28]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:30]     Result | best_epoch=96 | stop=111 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-19 12:48:30]     Spatial update | delta_l2=0.08759194 | relative_delta=0.07495642 | changed=True
+[2026-05-19 12:48:31] 
+Fold 4/5 | subject=12
+[2026-05-19 12:48:31]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:33]     Result | best_epoch=91 | stop=103 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:48:33]     Spatial update | delta_l2=0.08759403 | relative_delta=0.07495821 | changed=True
+[2026-05-19 12:48:33] 
+Fold 5/5 | subject=12
+[2026-05-19 12:48:33]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:35]     Result | best_epoch=90 | stop=110 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:48:35]     Spatial update | delta_l2=0.09452559 | relative_delta=0.08088986 | changed=True
+[2026-05-19 12:48:35]   Subject 12: acc=0.5500±0.2031  bal_acc=0.5500±0.2031
+[2026-05-19 12:48:35] 
+Subject 13: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:48:36] 
+Fold 1/5 | subject=13
+[2026-05-19 12:48:36]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:36]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:48:36]     Spatial update | delta_l2=0.00215393 | relative_delta=0.00184321 | changed=True
+[2026-05-19 12:48:36] 
+Fold 2/5 | subject=13
+[2026-05-19 12:48:36]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:38]     Result | best_epoch=104 | stop=120 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-19 12:48:38]     Spatial update | delta_l2=0.07831205 | relative_delta=0.06701519 | changed=True
+[2026-05-19 12:48:39] 
+Fold 3/5 | subject=13
+[2026-05-19 12:48:39]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:41]     Result | best_epoch=67 | stop=87 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:48:41]     Spatial update | delta_l2=0.07843879 | relative_delta=0.06712365 | changed=True
+[2026-05-19 12:48:41] 
+Fold 4/5 | subject=13
+[2026-05-19 12:48:41]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:43]     Result | best_epoch=101 | stop=120 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:48:43]     Spatial update | delta_l2=0.11222291 | relative_delta=0.09603426 | changed=True
+[2026-05-19 12:48:44] 
+Fold 5/5 | subject=13
+[2026-05-19 12:48:44]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:46]     Result | best_epoch=108 | stop=120 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:48:46]     Spatial update | delta_l2=0.10094874 | relative_delta=0.08638645 | changed=True
+[2026-05-19 12:48:46]   Subject 13: acc=0.6000±0.2000  bal_acc=0.6000±0.2000
+[2026-05-19 12:48:46] 
+Subject 14: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:48:46] 
+Fold 1/5 | subject=14
+[2026-05-19 12:48:46]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:48]     Result | best_epoch=108 | stop=120 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:48:48]     Spatial update | delta_l2=0.09021286 | relative_delta=0.07719927 | changed=True
+[2026-05-19 12:48:49] 
+Fold 2/5 | subject=14
+[2026-05-19 12:48:49]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:49]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:48:49]     Spatial update | delta_l2=0.00215388 | relative_delta=0.00184317 | changed=True
+[2026-05-19 12:48:50] 
+Fold 3/5 | subject=14
+[2026-05-19 12:48:50]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:52]     Result | best_epoch=85 | stop=105 | acc=0.5000 | bal_acc=0.5000 | collapse=True
+[2026-05-19 12:48:52]     Spatial update | delta_l2=0.07597909 | relative_delta=0.06501878 | changed=True
+[2026-05-19 12:48:52] 
+Fold 4/5 | subject=14
+[2026-05-19 12:48:52]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:53]     Result | best_epoch=10 | stop=21 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:48:53]     Spatial update | delta_l2=0.00215402 | relative_delta=0.00184329 | changed=True
+[2026-05-19 12:48:53] 
+Fold 5/5 | subject=14
+[2026-05-19 12:48:53]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:54]     Result | best_epoch=52 | stop=52 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:48:54]     Spatial update | delta_l2=0.04338647 | relative_delta=0.03712778 | changed=True
+[2026-05-19 12:48:54]   Subject 14: acc=0.5000±0.1768  bal_acc=0.5000±0.1768
+[2026-05-19 12:48:54] 
+Subject 15: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:48:54] 
+Fold 1/5 | subject=15
+[2026-05-19 12:48:54]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:55]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:48:55]     Spatial update | delta_l2=0.00215389 | relative_delta=0.00184318 | changed=True
+[2026-05-19 12:48:55] 
+Fold 2/5 | subject=15
+[2026-05-19 12:48:55]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:57]     Result | best_epoch=69 | stop=84 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:48:57]     Spatial update | delta_l2=0.07654468 | relative_delta=0.06550278 | changed=True
+[2026-05-19 12:48:57] 
+Fold 3/5 | subject=15
+[2026-05-19 12:48:57]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:58]     Result | best_epoch=1 | stop=21 | acc=0.1250 | bal_acc=0.1250 | collapse=False
+[2026-05-19 12:48:58]     Spatial update | delta_l2=0.00215397 | relative_delta=0.00184325 | changed=True
+[2026-05-19 12:48:58] 
+Fold 4/5 | subject=15
+[2026-05-19 12:48:58]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:48:59]     Result | best_epoch=1 | stop=21 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:48:59]     Spatial update | delta_l2=0.00215401 | relative_delta=0.00184328 | changed=True
+[2026-05-19 12:48:59] 
+Fold 5/5 | subject=15
+[2026-05-19 12:48:59]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:00]     Result | best_epoch=1 | stop=21 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:49:00]     Spatial update | delta_l2=0.00215402 | relative_delta=0.00184329 | changed=True
+[2026-05-19 12:49:00]   Subject 15: acc=0.4750±0.2424  bal_acc=0.4750±0.2424
+[2026-05-19 12:49:00] 
+Subject 16: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:49:00] 
+Fold 1/5 | subject=16
+[2026-05-19 12:49:00]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:02]     Result | best_epoch=82 | stop=84 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:49:02]     Spatial update | delta_l2=0.06138257 | relative_delta=0.05252786 | changed=True
+[2026-05-19 12:49:02] 
+Fold 2/5 | subject=16
+[2026-05-19 12:49:02]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:03]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:49:03]     Spatial update | delta_l2=0.00215363 | relative_delta=0.00184296 | changed=True
+[2026-05-19 12:49:03] 
+Fold 3/5 | subject=16
+[2026-05-19 12:49:03]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:04]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:49:04]     Spatial update | delta_l2=0.00215382 | relative_delta=0.00184312 | changed=True
+[2026-05-19 12:49:04] 
+Fold 4/5 | subject=16
+[2026-05-19 12:49:04]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:04]     Result | best_epoch=1 | stop=21 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:49:04]     Spatial update | delta_l2=0.00215387 | relative_delta=0.00184316 | changed=True
+[2026-05-19 12:49:05] 
+Fold 5/5 | subject=16
+[2026-05-19 12:49:05]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:05]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:49:05]     Spatial update | delta_l2=0.002154 | relative_delta=0.00184328 | changed=True
+[2026-05-19 12:49:05]   Subject 16: acc=0.5250±0.1458  bal_acc=0.5250±0.1458
+[2026-05-19 12:49:05] 
+Subject 17: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:49:06] 
+Fold 1/5 | subject=17
+[2026-05-19 12:49:06]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:07]     Result | best_epoch=32 | stop=40 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:49:07]     Spatial update | delta_l2=0.02879645 | relative_delta=0.02464244 | changed=True
+[2026-05-19 12:49:07] 
+Fold 2/5 | subject=17
+[2026-05-19 12:49:07]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:08]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:49:08]     Spatial update | delta_l2=0.00215403 | relative_delta=0.0018433 | changed=True
+[2026-05-19 12:49:08] 
+Fold 3/5 | subject=17
+[2026-05-19 12:49:08]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:10]     Result | best_epoch=103 | stop=103 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:49:10]     Spatial update | delta_l2=0.0792689 | relative_delta=0.06783402 | changed=True
+[2026-05-19 12:49:10] 
+Fold 4/5 | subject=17
+[2026-05-19 12:49:10]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:11]     Result | best_epoch=2 | stop=22 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:49:11]     Spatial update | delta_l2=0.00370199 | relative_delta=0.00316796 | changed=True
+[2026-05-19 12:49:11] 
+Fold 5/5 | subject=17
+[2026-05-19 12:49:11]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:12]     Result | best_epoch=45 | stop=52 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:49:12]     Spatial update | delta_l2=0.04298338 | relative_delta=0.03678284 | changed=True
+[2026-05-19 12:49:12]   Subject 17: acc=0.5750±0.1275  bal_acc=0.5750±0.1275
+[2026-05-19 12:49:12] 
+Subject 18: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:49:13] 
+Fold 1/5 | subject=18
+[2026-05-19 12:49:13]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:15]     Result | best_epoch=99 | stop=119 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-19 12:49:15]     Spatial update | delta_l2=0.08666265 | relative_delta=0.07416119 | changed=True
+[2026-05-19 12:49:15] 
+Fold 2/5 | subject=18
+[2026-05-19 12:49:15]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:17]     Result | best_epoch=113 | stop=120 | acc=0.5000 | bal_acc=0.5000 | collapse=True
+[2026-05-19 12:49:17]     Spatial update | delta_l2=0.08887212 | relative_delta=0.07605193 | changed=True
+[2026-05-19 12:49:18] 
+Fold 3/5 | subject=18
+[2026-05-19 12:49:18]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:20]     Result | best_epoch=111 | stop=113 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:49:20]     Spatial update | delta_l2=0.09008082 | relative_delta=0.07708627 | changed=True
+[2026-05-19 12:49:20] 
+Fold 4/5 | subject=18
+[2026-05-19 12:49:20]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:22]     Result | best_epoch=93 | stop=113 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:49:22]     Spatial update | delta_l2=0.08282787 | relative_delta=0.07087959 | changed=True
+[2026-05-19 12:49:23] 
+Fold 5/5 | subject=18
+[2026-05-19 12:49:23]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:25]     Result | best_epoch=117 | stop=119 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:49:25]     Spatial update | delta_l2=0.08973727 | relative_delta=0.07679228 | changed=True
+[2026-05-19 12:49:25]   Subject 18: acc=0.7250±0.1225  bal_acc=0.7250±0.1225
+[2026-05-19 12:49:25] 
+Subject 19: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:49:26] 
+Fold 1/5 | subject=19
+[2026-05-19 12:49:26]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:27]     Result | best_epoch=72 | stop=92 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:49:27]     Spatial update | delta_l2=0.08004033 | relative_delta=0.06849416 | changed=True
+[2026-05-19 12:49:28] 
+Fold 2/5 | subject=19
+[2026-05-19 12:49:28]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:28]     Result | best_epoch=2 | stop=22 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:49:28]     Spatial update | delta_l2=0.00362314 | relative_delta=0.00310048 | changed=True
+[2026-05-19 12:49:29] 
+Fold 3/5 | subject=19
+[2026-05-19 12:49:29]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:31]     Result | best_epoch=105 | stop=120 | acc=0.1250 | bal_acc=0.1250 | collapse=False
+[2026-05-19 12:49:31]     Spatial update | delta_l2=0.07399457 | relative_delta=0.06332053 | changed=True
+[2026-05-19 12:49:32] 
+Fold 4/5 | subject=19
+[2026-05-19 12:49:32]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:32]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:49:32]     Spatial update | delta_l2=0.00215395 | relative_delta=0.00184323 | changed=True
+[2026-05-19 12:49:32] 
+Fold 5/5 | subject=19
+[2026-05-19 12:49:32]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:34]     Result | best_epoch=105 | stop=120 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:49:34]     Spatial update | delta_l2=0.08785621 | relative_delta=0.07518257 | changed=True
+[2026-05-19 12:49:34]   Subject 19: acc=0.4250±0.1696  bal_acc=0.4250±0.1696
+[2026-05-19 12:49:34] 
+Subject 20: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:49:35] 
+Fold 1/5 | subject=20
+[2026-05-19 12:49:35]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:37]     Result | best_epoch=113 | stop=120 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:49:37]     Spatial update | delta_l2=0.0837482 | relative_delta=0.07166716 | changed=True
+[2026-05-19 12:49:38] 
+Fold 2/5 | subject=20
+[2026-05-19 12:49:38]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:39]     Result | best_epoch=102 | stop=103 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:49:39]     Spatial update | delta_l2=0.10100529 | relative_delta=0.08643484 | changed=True
+[2026-05-19 12:49:40] 
+Fold 3/5 | subject=20
+[2026-05-19 12:49:40]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:42]     Result | best_epoch=80 | stop=100 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:49:42]     Spatial update | delta_l2=0.08774678 | relative_delta=0.07508893 | changed=True
+[2026-05-19 12:49:42] 
+Fold 4/5 | subject=20
+[2026-05-19 12:49:42]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:44]     Result | best_epoch=85 | stop=105 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:49:44]     Spatial update | delta_l2=0.08955165 | relative_delta=0.07663344 | changed=True
+[2026-05-19 12:49:44] 
+Fold 5/5 | subject=20
+[2026-05-19 12:49:44]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:45]     Result | best_epoch=5 | stop=25 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-19 12:49:45]     Spatial update | delta_l2=0.00922632 | relative_delta=0.00789538 | changed=True
+[2026-05-19 12:49:45]   Subject 20: acc=0.7250±0.0935  bal_acc=0.7250±0.0935
+[2026-05-19 12:49:45] 
+Subject 21: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:49:45] 
+Fold 1/5 | subject=21
+[2026-05-19 12:49:45]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:46]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:49:46]     Spatial update | delta_l2=0.00215399 | relative_delta=0.00184327 | changed=True
+[2026-05-19 12:49:46] 
+Fold 2/5 | subject=21
+[2026-05-19 12:49:46]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:47]     Result | best_epoch=22 | stop=42 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:49:47]     Spatial update | delta_l2=0.03153414 | relative_delta=0.02698521 | changed=True
+[2026-05-19 12:49:48] 
+Fold 3/5 | subject=21
+[2026-05-19 12:49:48]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:49]     Result | best_epoch=32 | stop=52 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:49:49]     Spatial update | delta_l2=0.04015032 | relative_delta=0.03435846 | changed=True
+[2026-05-19 12:49:49] 
+Fold 4/5 | subject=21
+[2026-05-19 12:49:49]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:50]     Result | best_epoch=2 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:49:50]     Spatial update | delta_l2=0.00215344 | relative_delta=0.0018428 | changed=True
+[2026-05-19 12:49:50] 
+Fold 5/5 | subject=21
+[2026-05-19 12:49:50]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:51]     Result | best_epoch=22 | stop=42 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:49:51]     Spatial update | delta_l2=0.02793374 | relative_delta=0.02390418 | changed=True
+[2026-05-19 12:49:51]   Subject 21: acc=0.4000±0.0935  bal_acc=0.4000±0.0935
+[2026-05-19 12:49:51] 
+Subject 22: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:49:51] 
+Fold 1/5 | subject=22
+[2026-05-19 12:49:51]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:53]     Result | best_epoch=117 | stop=120 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:49:53]     Spatial update | delta_l2=0.07911398 | relative_delta=0.06770144 | changed=True
+[2026-05-19 12:49:54] 
+Fold 2/5 | subject=22
+[2026-05-19 12:49:54]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:56]     Result | best_epoch=108 | stop=120 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:49:56]     Spatial update | delta_l2=0.07077472 | relative_delta=0.06056516 | changed=True
+[2026-05-19 12:49:57] 
+Fold 3/5 | subject=22
+[2026-05-19 12:49:57]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:58]     Result | best_epoch=75 | stop=95 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:49:58]     Spatial update | delta_l2=0.07840977 | relative_delta=0.06709882 | changed=True
+[2026-05-19 12:49:59] 
+Fold 4/5 | subject=22
+[2026-05-19 12:49:59]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:49:59]     Result | best_epoch=4 | stop=24 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:49:59]     Spatial update | delta_l2=0.00641889 | relative_delta=0.00549294 | changed=True
+[2026-05-19 12:50:00] 
+Fold 5/5 | subject=22
+[2026-05-19 12:50:00]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:02]     Result | best_epoch=91 | stop=111 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:50:02]     Spatial update | delta_l2=0.08182751 | relative_delta=0.07002353 | changed=True
+[2026-05-19 12:50:02]   Subject 22: acc=0.4250±0.0612  bal_acc=0.4250±0.0612
+[2026-05-19 12:50:02] 
+Subject 23: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:50:02] 
+Fold 1/5 | subject=23
+[2026-05-19 12:50:02]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:04]     Result | best_epoch=67 | stop=80 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:50:04]     Spatial update | delta_l2=0.07008355 | relative_delta=0.0599737 | changed=True
+[2026-05-19 12:50:04] 
+Fold 2/5 | subject=23
+[2026-05-19 12:50:04]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:06]     Result | best_epoch=91 | stop=111 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:50:06]     Spatial update | delta_l2=0.07306268 | relative_delta=0.06252307 | changed=True
+[2026-05-19 12:50:07] 
+Fold 3/5 | subject=23
+[2026-05-19 12:50:07]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:07]     Result | best_epoch=32 | stop=52 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:50:07]     Spatial update | delta_l2=0.03938099 | relative_delta=0.03370011 | changed=True
+[2026-05-19 12:50:08] 
+Fold 4/5 | subject=23
+[2026-05-19 12:50:08]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:08]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:50:08]     Spatial update | delta_l2=0.00215361 | relative_delta=0.00184295 | changed=True
+[2026-05-19 12:50:09] 
+Fold 5/5 | subject=23
+[2026-05-19 12:50:09]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:11]     Result | best_epoch=92 | stop=111 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:50:11]     Spatial update | delta_l2=0.07064266 | relative_delta=0.06045215 | changed=True
+[2026-05-19 12:50:11]   Subject 23: acc=0.5750±0.1871  bal_acc=0.5750±0.1871
+[2026-05-19 12:50:11] 
+Subject 24: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:50:12] 
+Fold 1/5 | subject=24
+[2026-05-19 12:50:12]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:12]     Result | best_epoch=1 | stop=21 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:50:12]     Spatial update | delta_l2=0.002154 | relative_delta=0.00184327 | changed=True
+[2026-05-19 12:50:13] 
+Fold 2/5 | subject=24
+[2026-05-19 12:50:13]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:13]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:50:13]     Spatial update | delta_l2=0.00215396 | relative_delta=0.00184324 | changed=True
+[2026-05-19 12:50:14] 
+Fold 3/5 | subject=24
+[2026-05-19 12:50:14]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:14]     Result | best_epoch=1 | stop=21 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:50:14]     Spatial update | delta_l2=0.002154 | relative_delta=0.00184328 | changed=True
+[2026-05-19 12:50:14] 
+Fold 4/5 | subject=24
+[2026-05-19 12:50:14]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:16]     Result | best_epoch=102 | stop=105 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:50:16]     Spatial update | delta_l2=0.08673223 | relative_delta=0.07422073 | changed=True
+[2026-05-19 12:50:17] 
+Fold 5/5 | subject=24
+[2026-05-19 12:50:17]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:18]     Result | best_epoch=31 | stop=45 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:50:18]     Spatial update | delta_l2=0.03209527 | relative_delta=0.02746538 | changed=True
+[2026-05-19 12:50:18]   Subject 24: acc=0.5500±0.1696  bal_acc=0.5500±0.1696
+[2026-05-19 12:50:18] 
+Subject 25: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:50:18] 
+Fold 1/5 | subject=25
+[2026-05-19 12:50:18]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:20]     Result | best_epoch=66 | stop=86 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:50:20]     Spatial update | delta_l2=0.07069601 | relative_delta=0.0604978 | changed=True
+[2026-05-19 12:50:20] 
+Fold 2/5 | subject=25
+[2026-05-19 12:50:20]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:21]     Result | best_epoch=34 | stop=40 | acc=0.5000 | bal_acc=0.5000 | collapse=True
+[2026-05-19 12:50:21]     Spatial update | delta_l2=0.02713 | relative_delta=0.02321638 | changed=True
+[2026-05-19 12:50:21] 
+Fold 3/5 | subject=25
+[2026-05-19 12:50:21]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:24]     Result | best_epoch=104 | stop=120 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:50:24]     Spatial update | delta_l2=0.07805832 | relative_delta=0.06679806 | changed=True
+[2026-05-19 12:50:24] 
+Fold 4/5 | subject=25
+[2026-05-19 12:50:24]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:26]     Result | best_epoch=104 | stop=120 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:50:26]     Spatial update | delta_l2=0.07465009 | relative_delta=0.06388149 | changed=True
+[2026-05-19 12:50:27] 
+Fold 5/5 | subject=25
+[2026-05-19 12:50:27]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:27]     Result | best_epoch=5 | stop=25 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:50:27]     Spatial update | delta_l2=0.00841323 | relative_delta=0.00719959 | changed=True
+[2026-05-19 12:50:27]   Subject 25: acc=0.5500±0.1696  bal_acc=0.5500±0.1696
+[2026-05-19 12:50:27] 
+Subject 26: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:50:28] 
+Fold 1/5 | subject=26
+[2026-05-19 12:50:28]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:28]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:50:28]     Spatial update | delta_l2=0.00215396 | relative_delta=0.00184324 | changed=True
+[2026-05-19 12:50:29] 
+Fold 2/5 | subject=26
+[2026-05-19 12:50:29]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:29]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:50:29]     Spatial update | delta_l2=0.00215386 | relative_delta=0.00184316 | changed=True
+[2026-05-19 12:50:30] 
+Fold 3/5 | subject=26
+[2026-05-19 12:50:30]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:30]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:50:30]     Spatial update | delta_l2=0.00215376 | relative_delta=0.00184307 | changed=True
+[2026-05-19 12:50:30] 
+Fold 4/5 | subject=26
+[2026-05-19 12:50:30]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:31]     Result | best_epoch=1 | stop=21 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:50:31]     Spatial update | delta_l2=0.00215285 | relative_delta=0.00184229 | changed=True
+[2026-05-19 12:50:31] 
+Fold 5/5 | subject=26
+[2026-05-19 12:50:31]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:32]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:50:32]     Spatial update | delta_l2=0.00215348 | relative_delta=0.00184283 | changed=True
+[2026-05-19 12:50:32]   Subject 26: acc=0.5000±0.0791  bal_acc=0.5000±0.0791
+[2026-05-19 12:50:32] 
+Subject 27: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:50:32] 
+Fold 1/5 | subject=27
+[2026-05-19 12:50:32]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:34]     Result | best_epoch=64 | stop=84 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:50:34]     Spatial update | delta_l2=0.06662925 | relative_delta=0.05701769 | changed=True
+[2026-05-19 12:50:34] 
+Fold 2/5 | subject=27
+[2026-05-19 12:50:34]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:35]     Result | best_epoch=9 | stop=21 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:50:35]     Spatial update | delta_l2=0.00215405 | relative_delta=0.00184332 | changed=True
+[2026-05-19 12:50:35] 
+Fold 3/5 | subject=27
+[2026-05-19 12:50:35]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:36]     Result | best_epoch=18 | stop=38 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:50:36]     Spatial update | delta_l2=0.02472578 | relative_delta=0.02115898 | changed=True
+[2026-05-19 12:50:37] 
+Fold 4/5 | subject=27
+[2026-05-19 12:50:37]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:37]     Result | best_epoch=25 | stop=45 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:50:37]     Spatial update | delta_l2=0.0307164 | relative_delta=0.02628542 | changed=True
+[2026-05-19 12:50:38] 
+Fold 5/5 | subject=27
+[2026-05-19 12:50:38]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:39]     Result | best_epoch=74 | stop=80 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:50:39]     Spatial update | delta_l2=0.05610971 | relative_delta=0.04801564 | changed=True
+[2026-05-19 12:50:39]   Subject 27: acc=0.5250±0.1458  bal_acc=0.5250±0.1458
+[2026-05-19 12:50:39] 
+Subject 28: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:50:40] 
+Fold 1/5 | subject=28
+[2026-05-19 12:50:40]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:42]     Result | best_epoch=91 | stop=111 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:50:42]     Spatial update | delta_l2=0.08223109 | relative_delta=0.0703689 | changed=True
+[2026-05-19 12:50:43] 
+Fold 2/5 | subject=28
+[2026-05-19 12:50:43]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:45]     Result | best_epoch=117 | stop=120 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:50:45]     Spatial update | delta_l2=0.08352342 | relative_delta=0.07147481 | changed=True
+[2026-05-19 12:50:45] 
+Fold 3/5 | subject=28
+[2026-05-19 12:50:45]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:46]     Result | best_epoch=27 | stop=47 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:50:46]     Spatial update | delta_l2=0.03955969 | relative_delta=0.03385304 | changed=True
+[2026-05-19 12:50:46] 
+Fold 4/5 | subject=28
+[2026-05-19 12:50:46]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:48]     Result | best_epoch=64 | stop=84 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:50:48]     Spatial update | delta_l2=0.07315951 | relative_delta=0.06260593 | changed=True
+[2026-05-19 12:50:49] 
+Fold 5/5 | subject=28
+[2026-05-19 12:50:49]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:50]     Result | best_epoch=83 | stop=84 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:50:50]     Spatial update | delta_l2=0.06913852 | relative_delta=0.05916499 | changed=True
+[2026-05-19 12:50:50]   Subject 28: acc=0.5750±0.0612  bal_acc=0.5750±0.0612
+[2026-05-19 12:50:50] 
+Subject 29: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:50:51] 
+Fold 1/5 | subject=29
+[2026-05-19 12:50:51]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:51]     Result | best_epoch=1 | stop=21 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:50:51]     Spatial update | delta_l2=0.00215404 | relative_delta=0.00184331 | changed=True
+[2026-05-19 12:50:52] 
+Fold 2/5 | subject=29
+[2026-05-19 12:50:52]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:52]     Result | best_epoch=2 | stop=21 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:50:52]     Spatial update | delta_l2=0.002154 | relative_delta=0.00184327 | changed=True
+[2026-05-19 12:50:53] 
+Fold 3/5 | subject=29
+[2026-05-19 12:50:53]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:53]     Result | best_epoch=2 | stop=22 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:50:53]     Spatial update | delta_l2=0.00369589 | relative_delta=0.00316274 | changed=True
+[2026-05-19 12:50:54] 
+Fold 4/5 | subject=29
+[2026-05-19 12:50:54]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:54]     Result | best_epoch=1 | stop=21 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:50:54]     Spatial update | delta_l2=0.00215396 | relative_delta=0.00184324 | changed=True
+[2026-05-19 12:50:55] 
+Fold 5/5 | subject=29
+[2026-05-19 12:50:55]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:55]     Result | best_epoch=2 | stop=22 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:50:55]     Spatial update | delta_l2=0.00372985 | relative_delta=0.00319181 | changed=True
+[2026-05-19 12:50:55]   Subject 29: acc=0.4750±0.2000  bal_acc=0.4750±0.2000
+[2026-05-19 12:50:55] 
+Subject 30: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:50:56] 
+Fold 1/5 | subject=30
+[2026-05-19 12:50:56]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:50:57]     Result | best_epoch=50 | stop=70 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:50:57]     Spatial update | delta_l2=0.06499308 | relative_delta=0.05561754 | changed=True
+[2026-05-19 12:50:58] 
+Fold 2/5 | subject=30
+[2026-05-19 12:50:58]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:00]     Result | best_epoch=120 | stop=120 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:51:00]     Spatial update | delta_l2=0.08500072 | relative_delta=0.072739 | changed=True
+[2026-05-19 12:51:00] 
+Fold 3/5 | subject=30
+[2026-05-19 12:51:00]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:01]     Result | best_epoch=9 | stop=29 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:51:01]     Spatial update | delta_l2=0.0132658 | relative_delta=0.01135215 | changed=True
+[2026-05-19 12:51:01] 
+Fold 4/5 | subject=30
+[2026-05-19 12:51:01]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:03]     Result | best_epoch=117 | stop=120 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:51:03]     Spatial update | delta_l2=0.09044058 | relative_delta=0.07739414 | changed=True
+[2026-05-19 12:51:04] 
+Fold 5/5 | subject=30
+[2026-05-19 12:51:04]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:05]     Result | best_epoch=64 | stop=84 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:51:05]     Spatial update | delta_l2=0.07421373 | relative_delta=0.06350808 | changed=True
+[2026-05-19 12:51:05]   Subject 30: acc=0.7000±0.0612  bal_acc=0.7000±0.0612
+[2026-05-19 12:51:05] 
+Subject 31: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:51:06] 
+Fold 1/5 | subject=31
+[2026-05-19 12:51:06]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:06]     Result | best_epoch=2 | stop=22 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:51:06]     Spatial update | delta_l2=0.00351909 | relative_delta=0.00301144 | changed=True
+[2026-05-19 12:51:07] 
+Fold 2/5 | subject=31
+[2026-05-19 12:51:07]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:07]     Result | best_epoch=4 | stop=24 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:51:07]     Spatial update | delta_l2=0.00616767 | relative_delta=0.00527795 | changed=True
+[2026-05-19 12:51:08] 
+Fold 3/5 | subject=31
+[2026-05-19 12:51:08]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:08]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:51:08]     Spatial update | delta_l2=0.00215402 | relative_delta=0.00184329 | changed=True
+[2026-05-19 12:51:09] 
+Fold 4/5 | subject=31
+[2026-05-19 12:51:09]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:09]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:51:09]     Spatial update | delta_l2=0.00215356 | relative_delta=0.0018429 | changed=True
+[2026-05-19 12:51:10] 
+Fold 5/5 | subject=31
+[2026-05-19 12:51:10]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:10]     Result | best_epoch=5 | stop=25 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:51:10]     Spatial update | delta_l2=0.0083367 | relative_delta=0.00713409 | changed=True
+[2026-05-19 12:51:10]   Subject 31: acc=0.4250±0.0612  bal_acc=0.4250±0.0612
+[2026-05-19 12:51:10] 
+Subject 32: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:51:11] 
+Fold 1/5 | subject=32
+[2026-05-19 12:51:11]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:12]     Result | best_epoch=64 | stop=84 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:51:12]     Spatial update | delta_l2=0.066991 | relative_delta=0.05732726 | changed=True
+[2026-05-19 12:51:13] 
+Fold 2/5 | subject=32
+[2026-05-19 12:51:13]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:14]     Result | best_epoch=12 | stop=32 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:51:14]     Spatial update | delta_l2=0.01704161 | relative_delta=0.01458328 | changed=True
+[2026-05-19 12:51:14] 
+Fold 3/5 | subject=32
+[2026-05-19 12:51:14]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:16]     Result | best_epoch=69 | stop=89 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:51:16]     Spatial update | delta_l2=0.07682014 | relative_delta=0.0657385 | changed=True
+[2026-05-19 12:51:16] 
+Fold 4/5 | subject=32
+[2026-05-19 12:51:16]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:18]     Result | best_epoch=112 | stop=120 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:51:18]     Spatial update | delta_l2=0.08152238 | relative_delta=0.06976242 | changed=True
+[2026-05-19 12:51:19] 
+Fold 5/5 | subject=32
+[2026-05-19 12:51:19]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:20]     Result | best_epoch=22 | stop=42 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-19 12:51:20]     Spatial update | delta_l2=0.03148314 | relative_delta=0.02694156 | changed=True
+[2026-05-19 12:51:20]   Subject 32: acc=0.6500±0.1658  bal_acc=0.6500±0.1658
+[2026-05-19 12:51:20] 
+Subject 33: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:51:20] 
+Fold 1/5 | subject=33
+[2026-05-19 12:51:20]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:22]     Result | best_epoch=80 | stop=100 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:51:22]     Spatial update | delta_l2=0.08354057 | relative_delta=0.07148948 | changed=True
+[2026-05-19 12:51:22] 
+Fold 2/5 | subject=33
+[2026-05-19 12:51:22]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:23]     Result | best_epoch=1 | stop=21 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:51:23]     Spatial update | delta_l2=0.00215393 | relative_delta=0.00184322 | changed=True
+[2026-05-19 12:51:23] 
+Fold 3/5 | subject=33
+[2026-05-19 12:51:23]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:24]     Result | best_epoch=12 | stop=32 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-19 12:51:24]     Spatial update | delta_l2=0.01789032 | relative_delta=0.01530957 | changed=True
+[2026-05-19 12:51:24] 
+Fold 4/5 | subject=33
+[2026-05-19 12:51:24]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:26]     Result | best_epoch=99 | stop=119 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:51:26]     Spatial update | delta_l2=0.08837949 | relative_delta=0.07563036 | changed=True
+[2026-05-19 12:51:27] 
+Fold 5/5 | subject=33
+[2026-05-19 12:51:27]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:29]     Result | best_epoch=96 | stop=102 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:51:29]     Spatial update | delta_l2=0.07721895 | relative_delta=0.06607978 | changed=True
+[2026-05-19 12:51:29]   Subject 33: acc=0.6250±0.1581  bal_acc=0.6250±0.1581
+[2026-05-19 12:51:29] 
+Subject 34: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:51:29] 
+Fold 1/5 | subject=34
+[2026-05-19 12:51:29]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:31]     Result | best_epoch=117 | stop=120 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-19 12:51:31]     Spatial update | delta_l2=0.08428903 | relative_delta=0.07212997 | changed=True
+[2026-05-19 12:51:32] 
+Fold 2/5 | subject=34
+[2026-05-19 12:51:32]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:34]     Result | best_epoch=109 | stop=120 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:51:34]     Spatial update | delta_l2=0.09350744 | relative_delta=0.08001858 | changed=True
+[2026-05-19 12:51:35] 
+Fold 3/5 | subject=34
+[2026-05-19 12:51:35]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:37]     Result | best_epoch=103 | stop=120 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:51:37]     Spatial update | delta_l2=0.09166012 | relative_delta=0.07843775 | changed=True
+[2026-05-19 12:51:37] 
+Fold 4/5 | subject=34
+[2026-05-19 12:51:37]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:39]     Result | best_epoch=114 | stop=120 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-19 12:51:39]     Spatial update | delta_l2=0.09026089 | relative_delta=0.07724036 | changed=True
+[2026-05-19 12:51:40] 
+Fold 5/5 | subject=34
+[2026-05-19 12:51:40]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:42]     Result | best_epoch=94 | stop=114 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-19 12:51:42]     Spatial update | delta_l2=0.08085332 | relative_delta=0.06918988 | changed=True
+[2026-05-19 12:51:42]   Subject 34: acc=0.8000±0.1000  bal_acc=0.8000±0.1000
+[2026-05-19 12:51:42] 
+Subject 35: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:51:42] 
+Fold 1/5 | subject=35
+[2026-05-19 12:51:42]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:43]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:51:43]     Spatial update | delta_l2=0.00215404 | relative_delta=0.00184331 | changed=True
+[2026-05-19 12:51:43] 
+Fold 2/5 | subject=35
+[2026-05-19 12:51:43]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:45]     Result | best_epoch=85 | stop=105 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:51:45]     Spatial update | delta_l2=0.0815819 | relative_delta=0.06981335 | changed=True
+[2026-05-19 12:51:46] 
+Fold 3/5 | subject=35
+[2026-05-19 12:51:46]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:46]     Result | best_epoch=25 | stop=29 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:51:46]     Spatial update | delta_l2=0.01458739 | relative_delta=0.0124831 | changed=True
+[2026-05-19 12:51:47] 
+Fold 4/5 | subject=35
+[2026-05-19 12:51:47]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:47]     Result | best_epoch=4 | stop=24 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:51:47]     Spatial update | delta_l2=0.00665155 | relative_delta=0.00569204 | changed=True
+[2026-05-19 12:51:48] 
+Fold 5/5 | subject=35
+[2026-05-19 12:51:48]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:49]     Result | best_epoch=85 | stop=105 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:51:49]     Spatial update | delta_l2=0.09321564 | relative_delta=0.07976888 | changed=True
+[2026-05-19 12:51:49]   Subject 35: acc=0.5500±0.1275  bal_acc=0.5500±0.1275
+[2026-05-19 12:51:49] 
+Subject 36: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:51:50] 
+Fold 1/5 | subject=36
+[2026-05-19 12:51:50]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:50]     Result | best_epoch=2 | stop=22 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:51:50]     Spatial update | delta_l2=0.00397448 | relative_delta=0.00340114 | changed=True
+[2026-05-19 12:51:51] 
+Fold 2/5 | subject=36
+[2026-05-19 12:51:51]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:52]     Result | best_epoch=64 | stop=84 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:51:52]     Spatial update | delta_l2=0.0761317 | relative_delta=0.06514937 | changed=True
+[2026-05-19 12:51:53] 
+Fold 3/5 | subject=36
+[2026-05-19 12:51:53]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:53]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:51:53]     Spatial update | delta_l2=0.00215403 | relative_delta=0.0018433 | changed=True
+[2026-05-19 12:51:54] 
+Fold 4/5 | subject=36
+[2026-05-19 12:51:54]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:55]     Result | best_epoch=64 | stop=84 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:51:55]     Spatial update | delta_l2=0.07430002 | relative_delta=0.06358192 | changed=True
+[2026-05-19 12:51:56] 
+Fold 5/5 | subject=36
+[2026-05-19 12:51:56]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:56]     Result | best_epoch=1 | stop=21 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:51:56]     Spatial update | delta_l2=0.00215392 | relative_delta=0.0018432 | changed=True
+[2026-05-19 12:51:56]   Subject 36: acc=0.4000±0.1458  bal_acc=0.4000±0.1458
+[2026-05-19 12:51:56] 
+Subject 37: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:51:57] 
+Fold 1/5 | subject=37
+[2026-05-19 12:51:57]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:51:59]     Result | best_epoch=105 | stop=120 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:51:59]     Spatial update | delta_l2=0.08055065 | relative_delta=0.06893087 | changed=True
+[2026-05-19 12:51:59] 
+Fold 2/5 | subject=37
+[2026-05-19 12:51:59]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:00]     Result | best_epoch=1 | stop=21 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:52:00]     Spatial update | delta_l2=0.00215393 | relative_delta=0.00184322 | changed=True
+[2026-05-19 12:52:00] 
+Fold 3/5 | subject=37
+[2026-05-19 12:52:00]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:01]     Result | best_epoch=9 | stop=29 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:52:01]     Spatial update | delta_l2=0.01466541 | relative_delta=0.01254986 | changed=True
+[2026-05-19 12:52:01] 
+Fold 4/5 | subject=37
+[2026-05-19 12:52:01]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:02]     Result | best_epoch=5 | stop=25 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:52:02]     Spatial update | delta_l2=0.00861297 | relative_delta=0.00737051 | changed=True
+[2026-05-19 12:52:02] 
+Fold 5/5 | subject=37
+[2026-05-19 12:52:02]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:04]     Result | best_epoch=83 | stop=103 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:52:04]     Spatial update | delta_l2=0.07924735 | relative_delta=0.06781558 | changed=True
+[2026-05-19 12:52:04]   Subject 37: acc=0.5000±0.2236  bal_acc=0.5000±0.2236
+[2026-05-19 12:52:04] 
+Subject 38: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:52:05] 
+Fold 1/5 | subject=38
+[2026-05-19 12:52:05]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:05]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:52:05]     Spatial update | delta_l2=0.00215399 | relative_delta=0.00184327 | changed=True
+[2026-05-19 12:52:05] 
+Fold 2/5 | subject=38
+[2026-05-19 12:52:05]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:07]     Result | best_epoch=82 | stop=102 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:52:07]     Spatial update | delta_l2=0.0780327 | relative_delta=0.06677614 | changed=True
+[2026-05-19 12:52:08] 
+Fold 3/5 | subject=38
+[2026-05-19 12:52:08]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:10]     Result | best_epoch=103 | stop=120 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:52:10]     Spatial update | delta_l2=0.08827435 | relative_delta=0.07554039 | changed=True
+[2026-05-19 12:52:10] 
+Fold 4/5 | subject=38
+[2026-05-19 12:52:10]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:11]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:52:11]     Spatial update | delta_l2=0.00215394 | relative_delta=0.00184323 | changed=True
+[2026-05-19 12:52:11] 
+Fold 5/5 | subject=38
+[2026-05-19 12:52:11]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:13]     Result | best_epoch=112 | stop=120 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:52:13]     Spatial update | delta_l2=0.08915529 | relative_delta=0.07629425 | changed=True
+[2026-05-19 12:52:13]   Subject 38: acc=0.5750±0.0612  bal_acc=0.5750±0.0612
+[2026-05-19 12:52:13] 
+Subject 39: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:52:14] 
+Fold 1/5 | subject=39
+[2026-05-19 12:52:14]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:14]     Result | best_epoch=3 | stop=23 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:52:14]     Spatial update | delta_l2=0.00550904 | relative_delta=0.00471434 | changed=True
+[2026-05-19 12:52:15] 
+Fold 2/5 | subject=39
+[2026-05-19 12:52:15]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:17]     Result | best_epoch=93 | stop=113 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:52:17]     Spatial update | delta_l2=0.07456298 | relative_delta=0.06380695 | changed=True
+[2026-05-19 12:52:17] 
+Fold 3/5 | subject=39
+[2026-05-19 12:52:17]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:18]     Result | best_epoch=2 | stop=22 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:52:18]     Spatial update | delta_l2=0.00375633 | relative_delta=0.00321446 | changed=True
+[2026-05-19 12:52:18] 
+Fold 4/5 | subject=39
+[2026-05-19 12:52:18]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:19]     Result | best_epoch=1 | stop=21 | acc=0.1250 | bal_acc=0.1250 | collapse=False
+[2026-05-19 12:52:19]     Spatial update | delta_l2=0.00215401 | relative_delta=0.00184328 | changed=True
+[2026-05-19 12:52:19] 
+Fold 5/5 | subject=39
+[2026-05-19 12:52:19]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:21]     Result | best_epoch=54 | stop=74 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:52:21]     Spatial update | delta_l2=0.05938785 | relative_delta=0.0508209 | changed=True
+[2026-05-19 12:52:21]   Subject 39: acc=0.4000±0.2151  bal_acc=0.4000±0.2151
+[2026-05-19 12:52:21] 
+Subject 40: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:52:21] 
+Fold 1/5 | subject=40
+[2026-05-19 12:52:21]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:22]     Result | best_epoch=4 | stop=24 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:52:22]     Spatial update | delta_l2=0.00607534 | relative_delta=0.00519895 | changed=True
+[2026-05-19 12:52:22] 
+Fold 2/5 | subject=40
+[2026-05-19 12:52:22]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:24]     Result | best_epoch=85 | stop=105 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:52:24]     Spatial update | delta_l2=0.06904639 | relative_delta=0.05908615 | changed=True
+[2026-05-19 12:52:25] 
+Fold 3/5 | subject=40
+[2026-05-19 12:52:25]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:25]     Result | best_epoch=2 | stop=22 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:52:25]     Spatial update | delta_l2=0.00386591 | relative_delta=0.00330824 | changed=True
+[2026-05-19 12:52:26] 
+Fold 4/5 | subject=40
+[2026-05-19 12:52:26]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:27]     Result | best_epoch=93 | stop=113 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:52:27]     Spatial update | delta_l2=0.0639606 | relative_delta=0.05473401 | changed=True
+[2026-05-19 12:52:28] 
+Fold 5/5 | subject=40
+[2026-05-19 12:52:28]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:30]     Result | best_epoch=85 | stop=105 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:52:30]     Spatial update | delta_l2=0.06956074 | relative_delta=0.0595263 | changed=True
+[2026-05-19 12:52:30]   Subject 40: acc=0.5250±0.0935  bal_acc=0.5250±0.0935
+[2026-05-19 12:52:30] 
+Subject 41: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:52:30] 
+Fold 1/5 | subject=41
+[2026-05-19 12:52:30]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:31]     Result | best_epoch=12 | stop=32 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:52:31]     Spatial update | delta_l2=0.01640159 | relative_delta=0.01403559 | changed=True
+[2026-05-19 12:52:31] 
+Fold 2/5 | subject=41
+[2026-05-19 12:52:31]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:32]     Result | best_epoch=4 | stop=21 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:52:32]     Spatial update | delta_l2=0.00215397 | relative_delta=0.00184325 | changed=True
+[2026-05-19 12:52:32] 
+Fold 3/5 | subject=41
+[2026-05-19 12:52:32]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:33]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:52:33]     Spatial update | delta_l2=0.00215399 | relative_delta=0.00184327 | changed=True
+[2026-05-19 12:52:33] 
+Fold 4/5 | subject=41
+[2026-05-19 12:52:33]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:35]     Result | best_epoch=96 | stop=116 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:52:35]     Spatial update | delta_l2=0.08775667 | relative_delta=0.07509739 | changed=True
+[2026-05-19 12:52:36] 
+Fold 5/5 | subject=41
+[2026-05-19 12:52:36]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:38]     Result | best_epoch=118 | stop=120 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:52:38]     Spatial update | delta_l2=0.08845484 | relative_delta=0.07569485 | changed=True
+[2026-05-19 12:52:38]   Subject 41: acc=0.5500±0.1696  bal_acc=0.5500±0.1696
+[2026-05-19 12:52:38] 
+Subject 42: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:52:38] 
+Fold 1/5 | subject=42
+[2026-05-19 12:52:38]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:41]     Result | best_epoch=120 | stop=120 | acc=0.5000 | bal_acc=0.5000 | collapse=True
+[2026-05-19 12:52:41]     Spatial update | delta_l2=0.08670003 | relative_delta=0.07419317 | changed=True
+[2026-05-19 12:52:41] 
+Fold 2/5 | subject=42
+[2026-05-19 12:52:41]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:43]     Result | best_epoch=64 | stop=84 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:52:43]     Spatial update | delta_l2=0.07161703 | relative_delta=0.06128596 | changed=True
+[2026-05-19 12:52:43] 
+Fold 3/5 | subject=42
+[2026-05-19 12:52:43]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:45]     Result | best_epoch=96 | stop=116 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:52:45]     Spatial update | delta_l2=0.07914154 | relative_delta=0.06772502 | changed=True
+[2026-05-19 12:52:46] 
+Fold 4/5 | subject=42
+[2026-05-19 12:52:46]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:48]     Result | best_epoch=96 | stop=116 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:52:48]     Spatial update | delta_l2=0.084054 | relative_delta=0.07192884 | changed=True
+[2026-05-19 12:52:48] 
+Fold 5/5 | subject=42
+[2026-05-19 12:52:48]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:49]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:52:49]     Spatial update | delta_l2=0.00215392 | relative_delta=0.00184321 | changed=True
+[2026-05-19 12:52:49]   Subject 42: acc=0.5500±0.1275  bal_acc=0.5500±0.1275
+[2026-05-19 12:52:49] 
+Subject 43: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:52:49] 
+Fold 1/5 | subject=43
+[2026-05-19 12:52:49]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:50]     Result | best_epoch=22 | stop=28 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:52:50]     Spatial update | delta_l2=0.01204558 | relative_delta=0.01030795 | changed=True
+[2026-05-19 12:52:50] 
+Fold 2/5 | subject=43
+[2026-05-19 12:52:50]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:52]     Result | best_epoch=79 | stop=95 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:52:52]     Spatial update | delta_l2=0.07816311 | relative_delta=0.06688774 | changed=True
+[2026-05-19 12:52:52] 
+Fold 3/5 | subject=43
+[2026-05-19 12:52:52]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:53]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:52:53]     Spatial update | delta_l2=0.00215392 | relative_delta=0.00184321 | changed=True
+[2026-05-19 12:52:53] 
+Fold 4/5 | subject=43
+[2026-05-19 12:52:53]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:55]     Result | best_epoch=112 | stop=120 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:52:55]     Spatial update | delta_l2=0.08440568 | relative_delta=0.07222979 | changed=True
+[2026-05-19 12:52:56] 
+Fold 5/5 | subject=43
+[2026-05-19 12:52:56]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:56]     Result | best_epoch=8 | stop=28 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:52:56]     Spatial update | delta_l2=0.01265839 | relative_delta=0.01083236 | changed=True
+[2026-05-19 12:52:56]   Subject 43: acc=0.5250±0.1225  bal_acc=0.5250±0.1225
+[2026-05-19 12:52:56] 
+Subject 44: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:52:57] 
+Fold 1/5 | subject=44
+[2026-05-19 12:52:57]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:57]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:52:57]     Spatial update | delta_l2=0.00215399 | relative_delta=0.00184327 | changed=True
+[2026-05-19 12:52:58] 
+Fold 2/5 | subject=44
+[2026-05-19 12:52:58]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:52:59]     Result | best_epoch=64 | stop=84 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:52:59]     Spatial update | delta_l2=0.07367726 | relative_delta=0.06304899 | changed=True
+[2026-05-19 12:53:00] 
+Fold 3/5 | subject=44
+[2026-05-19 12:53:00]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:01]     Result | best_epoch=64 | stop=84 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:53:01]     Spatial update | delta_l2=0.0749909 | relative_delta=0.06417313 | changed=True
+[2026-05-19 12:53:02] 
+Fold 4/5 | subject=44
+[2026-05-19 12:53:02]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:02]     Result | best_epoch=1 | stop=21 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:53:02]     Spatial update | delta_l2=0.00215399 | relative_delta=0.00184327 | changed=True
+[2026-05-19 12:53:03] 
+Fold 5/5 | subject=44
+[2026-05-19 12:53:03]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:03]     Result | best_epoch=18 | stop=21 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:53:03]     Spatial update | delta_l2=0.00215401 | relative_delta=0.00184329 | changed=True
+[2026-05-19 12:53:03]   Subject 44: acc=0.5250±0.1458  bal_acc=0.5250±0.1458
+[2026-05-19 12:53:03] 
+Subject 45: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:53:04] 
+Fold 1/5 | subject=45
+[2026-05-19 12:53:04]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:04]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:53:04]     Spatial update | delta_l2=0.00215402 | relative_delta=0.00184329 | changed=True
+[2026-05-19 12:53:05] 
+Fold 2/5 | subject=45
+[2026-05-19 12:53:05]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:05]     Result | best_epoch=12 | stop=32 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:53:05]     Spatial update | delta_l2=0.01799471 | relative_delta=0.01539889 | changed=True
+[2026-05-19 12:53:06] 
+Fold 3/5 | subject=45
+[2026-05-19 12:53:06]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:06]     Result | best_epoch=1 | stop=21 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:53:06]     Spatial update | delta_l2=0.002154 | relative_delta=0.00184328 | changed=True
+[2026-05-19 12:53:07] 
+Fold 4/5 | subject=45
+[2026-05-19 12:53:07]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:07]     Result | best_epoch=1 | stop=21 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:53:07]     Spatial update | delta_l2=0.00215403 | relative_delta=0.0018433 | changed=True
+[2026-05-19 12:53:08] 
+Fold 5/5 | subject=45
+[2026-05-19 12:53:08]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:08]     Result | best_epoch=1 | stop=21 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:53:08]     Spatial update | delta_l2=0.00215401 | relative_delta=0.00184329 | changed=True
+[2026-05-19 12:53:08]   Subject 45: acc=0.4250±0.1871  bal_acc=0.4250±0.1871
+[2026-05-19 12:53:08] 
+Subject 46: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:53:09] 
+Fold 1/5 | subject=46
+[2026-05-19 12:53:09]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:11]     Result | best_epoch=99 | stop=119 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:53:11]     Spatial update | delta_l2=0.09020253 | relative_delta=0.07719042 | changed=True
+[2026-05-19 12:53:11] 
+Fold 2/5 | subject=46
+[2026-05-19 12:53:11]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:12]     Result | best_epoch=32 | stop=42 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:53:12]     Spatial update | delta_l2=0.03203096 | relative_delta=0.02741035 | changed=True
+[2026-05-19 12:53:13] 
+Fold 3/5 | subject=46
+[2026-05-19 12:53:13]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:14]     Result | best_epoch=89 | stop=109 | acc=0.8750 | bal_acc=0.8750 | collapse=False
+[2026-05-19 12:53:14]     Spatial update | delta_l2=0.08110898 | relative_delta=0.06940866 | changed=True
+[2026-05-19 12:53:15] 
+Fold 4/5 | subject=46
+[2026-05-19 12:53:15]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:15]     Result | best_epoch=12 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:53:15]     Spatial update | delta_l2=0.00215394 | relative_delta=0.00184323 | changed=True
+[2026-05-19 12:53:16] 
+Fold 5/5 | subject=46
+[2026-05-19 12:53:16]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:16]     Result | best_epoch=1 | stop=21 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:53:16]     Spatial update | delta_l2=0.00215399 | relative_delta=0.00184326 | changed=True
+[2026-05-19 12:53:16]   Subject 46: acc=0.5250±0.2000  bal_acc=0.5250±0.2000
+[2026-05-19 12:53:16] 
+Subject 47: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:53:17] 
+Fold 1/5 | subject=47
+[2026-05-19 12:53:17]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:19]     Result | best_epoch=100 | stop=120 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:53:19]     Spatial update | delta_l2=0.09053415 | relative_delta=0.07747421 | changed=True
+[2026-05-19 12:53:19] 
+Fold 2/5 | subject=47
+[2026-05-19 12:53:19]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:20]     Result | best_epoch=2 | stop=21 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:53:20]     Spatial update | delta_l2=0.00215315 | relative_delta=0.00184255 | changed=True
+[2026-05-19 12:53:20] 
+Fold 3/5 | subject=47
+[2026-05-19 12:53:20]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:21]     Result | best_epoch=32 | stop=52 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:53:21]     Spatial update | delta_l2=0.04117242 | relative_delta=0.03523312 | changed=True
+[2026-05-19 12:53:22] 
+Fold 4/5 | subject=47
+[2026-05-19 12:53:22]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:22]     Result | best_epoch=2 | stop=22 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:53:22]     Spatial update | delta_l2=0.00383784 | relative_delta=0.00328421 | changed=True
+[2026-05-19 12:53:23] 
+Fold 5/5 | subject=47
+[2026-05-19 12:53:23]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:23]     Result | best_epoch=12 | stop=32 | acc=0.7500 | bal_acc=0.7500 | collapse=False
+[2026-05-19 12:53:23]     Spatial update | delta_l2=0.01615419 | relative_delta=0.01382388 | changed=True
+[2026-05-19 12:53:23]   Subject 47: acc=0.5000±0.1768  bal_acc=0.5000±0.1768
+[2026-05-19 12:53:23] 
+Subject 48: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:53:24] 
+Fold 1/5 | subject=48
+[2026-05-19 12:53:24]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:25]     Result | best_epoch=64 | stop=84 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:53:25]     Spatial update | delta_l2=0.07365238 | relative_delta=0.06302771 | changed=True
+[2026-05-19 12:53:26] 
+Fold 2/5 | subject=48
+[2026-05-19 12:53:26]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:27]     Result | best_epoch=22 | stop=42 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:53:27]     Spatial update | delta_l2=0.02822053 | relative_delta=0.0241496 | changed=True
+[2026-05-19 12:53:27] 
+Fold 3/5 | subject=48
+[2026-05-19 12:53:27]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:29]     Result | best_epoch=104 | stop=120 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:53:29]     Spatial update | delta_l2=0.08331743 | relative_delta=0.07129853 | changed=True
+[2026-05-19 12:53:30] 
+Fold 4/5 | subject=48
+[2026-05-19 12:53:30]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:30]     Result | best_epoch=1 | stop=21 | acc=0.2500 | bal_acc=0.2500 | collapse=False
+[2026-05-19 12:53:30]     Spatial update | delta_l2=0.00215346 | relative_delta=0.00184282 | changed=True
+[2026-05-19 12:53:31] 
+Fold 5/5 | subject=48
+[2026-05-19 12:53:31]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:33]     Result | best_epoch=113 | stop=120 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:53:33]     Spatial update | delta_l2=0.08142763 | relative_delta=0.06968134 | changed=True
+[2026-05-19 12:53:33]   Subject 48: acc=0.4750±0.1837  bal_acc=0.4750±0.1837
+[2026-05-19 12:53:33] 
+Subject 49: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:53:33] 
+Fold 1/5 | subject=49
+[2026-05-19 12:53:33]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:34]     Result | best_epoch=1 | stop=21 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:53:34]     Spatial update | delta_l2=0.00215402 | relative_delta=0.00184329 | changed=True
+[2026-05-19 12:53:34] 
+Fold 2/5 | subject=49
+[2026-05-19 12:53:34]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:36]     Result | best_epoch=64 | stop=84 | acc=0.5000 | bal_acc=0.5000 | collapse=True
+[2026-05-19 12:53:36]     Spatial update | delta_l2=0.07322823 | relative_delta=0.06266474 | changed=True
+[2026-05-19 12:53:36] 
+Fold 3/5 | subject=49
+[2026-05-19 12:53:36]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:37]     Result | best_epoch=5 | stop=25 | acc=0.5000 | bal_acc=0.5000 | collapse=True
+[2026-05-19 12:53:37]     Spatial update | delta_l2=0.00820498 | relative_delta=0.00702138 | changed=True
+[2026-05-19 12:53:37] 
+Fold 4/5 | subject=49
+[2026-05-19 12:53:37]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:38]     Result | best_epoch=1 | stop=21 | acc=0.6250 | bal_acc=0.6250 | collapse=False
+[2026-05-19 12:53:38]     Spatial update | delta_l2=0.00215401 | relative_delta=0.00184329 | changed=True
+[2026-05-19 12:53:38] 
+Fold 5/5 | subject=49
+[2026-05-19 12:53:38]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:39]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:53:39]     Spatial update | delta_l2=0.00215402 | relative_delta=0.0018433 | changed=True
+[2026-05-19 12:53:39]   Subject 49: acc=0.5000±0.0791  bal_acc=0.5000±0.0791
+[2026-05-19 12:53:39] 
+Subject 50: 40 windows | class_counts=[20, 20]
+[2026-05-19 12:53:39] 
+Fold 1/5 | subject=50
+[2026-05-19 12:53:39]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:40]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:53:40]     Spatial update | delta_l2=0.00215401 | relative_delta=0.00184328 | changed=True
+[2026-05-19 12:53:40] 
+Fold 2/5 | subject=50
+[2026-05-19 12:53:40]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:42]     Result | best_epoch=117 | stop=120 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:53:42]     Spatial update | delta_l2=0.08186132 | relative_delta=0.07005246 | changed=True
+[2026-05-19 12:53:43] 
+Fold 3/5 | subject=50
+[2026-05-19 12:53:43]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:43]     Result | best_epoch=5 | stop=25 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:53:43]     Spatial update | delta_l2=0.00828647 | relative_delta=0.00709111 | changed=True
+[2026-05-19 12:53:44] 
+Fold 4/5 | subject=50
+[2026-05-19 12:53:44]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:44]     Result | best_epoch=2 | stop=22 | acc=0.3750 | bal_acc=0.3750 | collapse=False
+[2026-05-19 12:53:44]     Spatial update | delta_l2=0.00388772 | relative_delta=0.0033269 | changed=True
+[2026-05-19 12:53:45] 
+Fold 5/5 | subject=50
+[2026-05-19 12:53:45]     Train: 32 | Test: 8 | Strategy: new
+[2026-05-19 12:53:46]     Result | best_epoch=1 | stop=21 | acc=0.5000 | bal_acc=0.5000 | collapse=False
+[2026-05-19 12:53:46]     Spatial update | delta_l2=0.00215339 | relative_delta=0.00184275 | changed=True
+[2026-05-19 12:53:46]   Subject 50: acc=0.4250±0.0612  bal_acc=0.4250±0.0612
+[2026-05-19 12:53:46] 
+======================================================================
+[2026-05-19 12:53:46] AGGREGATED RESULTS
+[2026-05-19 12:53:46] ======================================================================
+[2026-05-19 12:53:46]   1: acc=0.3500±0.1458  bal_acc=0.3500±0.1458
+[2026-05-19 12:53:46]   2: acc=0.6000±0.0500  bal_acc=0.6000±0.0500
+[2026-05-19 12:53:46]   3: acc=0.5500±0.1000  bal_acc=0.5500±0.1000
+[2026-05-19 12:53:46]   4: acc=0.6250±0.1581  bal_acc=0.6250±0.1581
+[2026-05-19 12:53:46]   5: acc=0.5000±0.1768  bal_acc=0.5000±0.1768
+[2026-05-19 12:53:46]   6: acc=0.5500±0.0612  bal_acc=0.5500±0.0612
+[2026-05-19 12:53:46]   7: acc=0.4250±0.1275  bal_acc=0.4250±0.1275
+[2026-05-19 12:53:46]   8: acc=0.7000±0.1000  bal_acc=0.7000±0.1000
+[2026-05-19 12:53:46]   9: acc=0.6250±0.1768  bal_acc=0.6250±0.1768
+[2026-05-19 12:53:46]   10: acc=0.4000±0.1458  bal_acc=0.4000±0.1458
+[2026-05-19 12:53:46]   11: acc=0.4750±0.2291  bal_acc=0.4750±0.2291
+[2026-05-19 12:53:46]   12: acc=0.5500±0.2031  bal_acc=0.5500±0.2031
+[2026-05-19 12:53:46]   13: acc=0.6000±0.2000  bal_acc=0.6000±0.2000
+[2026-05-19 12:53:46]   14: acc=0.5000±0.1768  bal_acc=0.5000±0.1768
+[2026-05-19 12:53:46]   15: acc=0.4750±0.2424  bal_acc=0.4750±0.2424
+[2026-05-19 12:53:46]   16: acc=0.5250±0.1458  bal_acc=0.5250±0.1458
+[2026-05-19 12:53:46]   17: acc=0.5750±0.1275  bal_acc=0.5750±0.1275
+[2026-05-19 12:53:46]   18: acc=0.7250±0.1225  bal_acc=0.7250±0.1225
+[2026-05-19 12:53:46]   19: acc=0.4250±0.1696  bal_acc=0.4250±0.1696
+[2026-05-19 12:53:46]   20: acc=0.7250±0.0935  bal_acc=0.7250±0.0935
+[2026-05-19 12:53:46]   21: acc=0.4000±0.0935  bal_acc=0.4000±0.0935
+[2026-05-19 12:53:46]   22: acc=0.4250±0.0612  bal_acc=0.4250±0.0612
+[2026-05-19 12:53:46]   23: acc=0.5750±0.1871  bal_acc=0.5750±0.1871
+[2026-05-19 12:53:46]   24: acc=0.5500±0.1696  bal_acc=0.5500±0.1696
+[2026-05-19 12:53:46]   25: acc=0.5500±0.1696  bal_acc=0.5500±0.1696
+[2026-05-19 12:53:46]   26: acc=0.5000±0.0791  bal_acc=0.5000±0.0791
+[2026-05-19 12:53:46]   27: acc=0.5250±0.1458  bal_acc=0.5250±0.1458
+[2026-05-19 12:53:46]   28: acc=0.5750±0.0612  bal_acc=0.5750±0.0612
+[2026-05-19 12:53:46]   29: acc=0.4750±0.2000  bal_acc=0.4750±0.2000
+[2026-05-19 12:53:46]   30: acc=0.7000±0.0612  bal_acc=0.7000±0.0612
+[2026-05-19 12:53:46]   31: acc=0.4250±0.0612  bal_acc=0.4250±0.0612
+[2026-05-19 12:53:46]   32: acc=0.6500±0.1658  bal_acc=0.6500±0.1658
+[2026-05-19 12:53:46]   33: acc=0.6250±0.1581  bal_acc=0.6250±0.1581
+[2026-05-19 12:53:46]   34: acc=0.8000±0.1000  bal_acc=0.8000±0.1000
+[2026-05-19 12:53:46]   35: acc=0.5500±0.1275  bal_acc=0.5500±0.1275
+[2026-05-19 12:53:46]   36: acc=0.4000±0.1458  bal_acc=0.4000±0.1458
+[2026-05-19 12:53:46]   37: acc=0.5000±0.2236  bal_acc=0.5000±0.2236
+[2026-05-19 12:53:46]   38: acc=0.5750±0.0612  bal_acc=0.5750±0.0612
+[2026-05-19 12:53:46]   39: acc=0.4000±0.2151  bal_acc=0.4000±0.2151
+[2026-05-19 12:53:46]   40: acc=0.5250±0.0935  bal_acc=0.5250±0.0935
+[2026-05-19 12:53:46]   41: acc=0.5500±0.1696  bal_acc=0.5500±0.1696
+[2026-05-19 12:53:46]   42: acc=0.5500±0.1275  bal_acc=0.5500±0.1275
+[2026-05-19 12:53:46]   43: acc=0.5250±0.1225  bal_acc=0.5250±0.1225
+[2026-05-19 12:53:46]   44: acc=0.5250±0.1458  bal_acc=0.5250±0.1458
+[2026-05-19 12:53:46]   45: acc=0.4250±0.1871  bal_acc=0.4250±0.1871
+[2026-05-19 12:53:46]   46: acc=0.5250±0.2000  bal_acc=0.5250±0.2000
+[2026-05-19 12:53:46]   47: acc=0.5000±0.1768  bal_acc=0.5000±0.1768
+[2026-05-19 12:53:46]   48: acc=0.4750±0.1837  bal_acc=0.4750±0.1837
+[2026-05-19 12:53:46]   49: acc=0.5000±0.0791  bal_acc=0.5000±0.0791
+[2026-05-19 12:53:46]   50: acc=0.4250±0.0612  bal_acc=0.4250±0.0612
+[2026-05-19 12:53:46] ----------------------------------------------------------------------
+[2026-05-19 12:53:46]   OVERALL: acc=0.5325±0.1768  bal_acc=0.5325±0.1768
+[2026-05-19 12:53:46] CV results saved to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-mat-sjepa-prelocal/Liu2024_SourceMAT/20260519_1246_fcd0bc6a/cv_results.json
