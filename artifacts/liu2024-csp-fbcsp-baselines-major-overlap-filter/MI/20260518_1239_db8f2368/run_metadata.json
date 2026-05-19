@@ -1,0 +1,121 @@
+{
+  "run_id": "20260518_1239_db8f2368",
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-csp-fbcsp-baselines-major-overlap-filter/MI/20260518_1239_db8f2368",
+  "dataset_name": "Liu2024",
+  "dataset_source": "auto",
+  "effective_dataset_source": "moabb",
+  "preprocessed_concat_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/preprocessed_concat_datasets/Liu2024_MI_048eba1d_subjects_66243829",
+  "labels_to_keep": [
+    "left_hand",
+    "right_hand"
+  ],
+  "excluded_subjects": [],
+  "paradigm": "MI",
+  "subjects": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50"
+  ],
+  "run_models": [
+    "CSP_LDA",
+    "FBCSP_LDA"
+  ],
+  "cv_seed": null,
+  "target_window_samples": 537,
+  "effective_window_duration_s": 4.1953125,
+  "drop_overlapping_events_for_csp": true,
+  "overlap_filter_mode": "major_overlap_only",
+  "max_allowed_overlap_with_next_event_samples": null,
+  "nonoverlap_selection_strategy": "balanced_greedy",
+  "min_events_per_class_after_nonoverlap": 5,
+  "on_overlapping_events": "warn",
+  "global_metrics": {
+    "CSP_LDA": {
+      "mean_accuracy": 0.4673333333333334,
+      "std_accuracy": 0.22904536183423968,
+      "mean_balanced_accuracy": 0.4686666666666666,
+      "std_balanced_accuracy": 0.22941083961603326,
+      "mean_roc_auc": 0.4497777777777778,
+      "std_roc_auc": 0.28953338364843795,
+      "n_subjects": 50,
+      "n_folds_total": 250
+    },
+    "FBCSP_LDA": {
+      "mean_accuracy": 0.4494666666666667,
+      "std_accuracy": 0.1999381682198552,
+      "mean_balanced_accuracy": 0.4606666666666666,
+      "std_balanced_accuracy": 0.20359982536556578,
+      "mean_roc_auc": 0.44088888888888894,
+      "std_roc_auc": 0.2983695612185137,
+      "n_subjects": 50,
+      "n_folds_total": 250
+    }
+  },
+  "collapse_diagnostics": {
+    "CSP_LDA": {
+      "n_folds": 250,
+      "n_collapsed_single_class": 31,
+      "collapsed_fraction": 0.124,
+      "single_class_prediction_counts": {
+        "0": 16,
+        "1": 15
+      }
+    },
+    "FBCSP_LDA": {
+      "n_folds": 250,
+      "n_collapsed_single_class": 34,
+      "collapsed_fraction": 0.136,
+      "single_class_prediction_counts": {
+        "0": 18,
+        "1": 16
+      }
+    }
+  }
+}
