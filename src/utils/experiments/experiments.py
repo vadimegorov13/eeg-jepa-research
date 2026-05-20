@@ -33,7 +33,7 @@ def configure_windows_event_loop_policy() -> None:
     if platform.system() != "Windows":
         return
     try:
-        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy()) # type: ignore
     except Exception:
         # Keep execution resilient if policy cannot be changed in this environment.
         pass
