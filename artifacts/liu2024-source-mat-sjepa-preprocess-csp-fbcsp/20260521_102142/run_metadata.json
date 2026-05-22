@@ -1,0 +1,192 @@
+{
+  "notebook": "liu2024_source_mat_sjepa_preprocess_csp_fbcsp",
+  "source": "original Figshare sourcedata .mat files",
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+  "n_subjects": 50,
+  "source_sfreq": 500,
+  "target_sfreq": 128,
+  "preprocessing_order": [
+    "select 29 EEG channels; drop CPz source reference, EOG, and marker",
+    "treat Liu source values as microvolts and convert to MNE volts",
+    "concatenate source trials per subject into MNE RawArray",
+    "average reference",
+    "resample to 128 Hz",
+    "bandpass 0.5-40 Hz",
+    "scale volts to microvolts",
+    "reshape back to trials",
+    "crop fixed 537-sample S-JEPA window starting at 2.0s"
+  ],
+  "source_values_assumed": "microvolts",
+  "final_downstream_units": "microvolts",
+  "target_window_samples": 537,
+  "effective_window_duration_s": 4.1953125,
+  "mi_window_start_s": 2.0,
+  "mi_window_start_sample": 256,
+  "mi_window_stop_sample": 793,
+  "channel_names": [
+    "Fp1",
+    "Fp2",
+    "Fz",
+    "F3",
+    "F4",
+    "F7",
+    "F8",
+    "FCz",
+    "FC3",
+    "FC4",
+    "FT7",
+    "FT8",
+    "Cz",
+    "C3",
+    "C4",
+    "T3",
+    "T4",
+    "CP3",
+    "CP4",
+    "TP7",
+    "TP8",
+    "Pz",
+    "P3",
+    "P4",
+    "T5",
+    "T6",
+    "Oz",
+    "O1",
+    "O2"
+  ],
+  "channel_convention": "Liu2024 paper / EEGLAB names; CPz source reference dropped",
+  "cv": {
+    "type": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 2026,
+    "assert_balanced_folds": true,
+    "expected_train_class_counts_per_fold": [
+      16,
+      16
+    ],
+    "expected_test_class_counts_per_fold": [
+      4,
+      4
+    ]
+  },
+  "paper_targets": {
+    "CSP_LDA": 55.57,
+    "FBCSP_SVM": 57.57
+  },
+  "csp": {
+    "model": "CSP_LDA",
+    "feature_band": [
+      8.0,
+      30.0
+    ],
+    "n_components": 4,
+    "reg": "ledoit_wolf",
+    "log": true,
+    "norm_trace": false
+  },
+  "fbcsp": {
+    "model": "FBCSP_SVM",
+    "bands": [
+      [
+        8,
+        12
+      ],
+      [
+        9,
+        13
+      ],
+      [
+        10,
+        14
+      ],
+      [
+        11,
+        15
+      ],
+      [
+        12,
+        16
+      ],
+      [
+        13,
+        17
+      ],
+      [
+        14,
+        18
+      ],
+      [
+        15,
+        19
+      ],
+      [
+        16,
+        20
+      ],
+      [
+        17,
+        21
+      ],
+      [
+        18,
+        22
+      ],
+      [
+        19,
+        23
+      ],
+      [
+        20,
+        24
+      ],
+      [
+        21,
+        25
+      ],
+      [
+        22,
+        26
+      ],
+      [
+        23,
+        27
+      ],
+      [
+        24,
+        28
+      ],
+      [
+        25,
+        29
+      ],
+      [
+        26,
+        30
+      ]
+    ],
+    "n_components_per_band": 4,
+    "reg": "ledoit_wolf",
+    "log": true,
+    "norm_trace": false,
+    "svm": {
+      "kernel": "linear",
+      "C": 1.0,
+      "standardize_features": true
+    }
+  },
+  "outputs": {
+    "cv_results": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-mat-sjepa-preprocess-csp-fbcsp/20260521_102142/cv_results.csv",
+    "global_metrics": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-mat-sjepa-preprocess-csp-fbcsp/20260521_102142/global_metrics.csv",
+    "global_method_comparison": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-mat-sjepa-preprocess-csp-fbcsp/20260521_102142/global_method_comparison.csv",
+    "subject_metrics": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-mat-sjepa-preprocess-csp-fbcsp/20260521_102142/subject_metrics.csv",
+    "subject_level_summary": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-mat-sjepa-preprocess-csp-fbcsp/20260521_102142/subject_level_summary.csv",
+    "collapse_diagnostics": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-mat-sjepa-preprocess-csp-fbcsp/20260521_102142/collapse_diagnostics.csv",
+    "confusion_plot": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-mat-sjepa-preprocess-csp-fbcsp/20260521_102142/sjepa_cv_confusion_matrices_csp_fbcsp.png",
+    "confusion_metrics": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-mat-sjepa-preprocess-csp-fbcsp/20260521_102142/sjepa_cv_confusion_metrics.csv",
+    "subject_plot": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-mat-sjepa-preprocess-csp-fbcsp/20260521_102142/liu2024_csp_fbcsp_subject_bars_sjepa_style.png",
+    "global_accuracy_plot": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-mat-sjepa-preprocess-csp-fbcsp/20260521_102142/csp_fbcsp_global_accuracy_summary.png",
+    "subject_accuracy_with_means_plot": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-mat-sjepa-preprocess-csp-fbcsp/20260521_102142/csp_fbcsp_subject_accuracy_with_means.png",
+    "subject_accuracy_distribution_plot": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-mat-sjepa-preprocess-csp-fbcsp/20260521_102142/csp_fbcsp_subject_accuracy_distribution.png"
+  }
+}
