@@ -1,18 +1,18 @@
 # Artifact comparison summary
 
-Loaded runs: 201
+Loaded runs: 25
 
 Primary metric: `mean_balanced_accuracy`
 
 Best run:
-- Run ID: `20260526_1547_aadf8511`
-- Experiment: `c099_control_noresample500_fixed537_0p5_40_chz`
-- Metric: 0.5795
-- Collapse rate: 0.404
+- Run ID: `20260528_1818_991cbaa1`
+- Experiment: `hpaug_005_noise0p02`
+- Metric: 0.5435
+- Collapse rate: 0.528
 - Filter band: 0.5-40Hz
-- Effective sfreq: 500.0
-- Effective window duration: 1.074
-- Window duration mismatch flag: True
+- Effective sfreq: 128.0
+- Effective window duration: 4.1953125
+- Window duration mismatch flag: False
 
 Generated tables:
 - `leaderboard.csv`
