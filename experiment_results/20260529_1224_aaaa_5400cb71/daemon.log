@@ -1,0 +1,34 @@
+Notebook:       /home/vegorov/Repos/eeg_jepa_research/src/liu2024/liu2024_source_mat_sjepa_prelocal_clean_pipeline.ipynb
+Configurations: /home/vegorov/Repos/eeg_jepa_research/src/utils/experiments/configs/aaaa.json
+Total configs:  1
+
+[1/1] Running config override:
+{
+  "experiment_name": "iir_0.5_40_avg_ref_537_samples",
+  "config_note": "Current S-JEPA-style preprocessing reference point: average reference, 0.5-40 Hz FIR, 537 samples.",
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "normalization_mode": "none",
+  "batch_size": 4,
+  "gradient_clip_norm": 2.0,
+  "learning_rate": 0.0004
+}
+  status:       completed
+  elapsed_sec:  956.198
+  run_id:       20260529_1224_6b570a00
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1224_6b570a00
+
+Finished.
+Results dir:    experiment_results/20260529_1224_aaaa_5400cb71
+Summary JSON:   experiment_results/20260529_1224_aaaa_5400cb71/results.json
+Artifact list:  experiment_results/20260529_1224_aaaa_5400cb71/artifact_ids.json

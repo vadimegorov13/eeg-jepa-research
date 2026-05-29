@@ -1,0 +1,657 @@
+[2026-05-29 13:11:18] Run ID:     20260529_1311_93f1ebcb
+[2026-05-29 13:11:18] Artifacts:  /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1311_93f1ebcb
+[2026-05-29 13:11:18] Config:     /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1311_93f1ebcb/config.json
+[2026-05-29 13:11:18] Using device: cpu
+[2026-05-29 13:11:18] Seed initialized: 2027
+[2026-05-29 13:11:18] Configured preprocessing pipeline:
+[2026-05-29 13:11:18]   - [ON] source::select_eeg_channels | - select Liu EEG channels, drop CPz reference, EOG, and marker before model input
+[2026-05-29 13:11:18]   - [ON] source::demean | mode=baseline_window_mean | baseline_window_s=[0.0, 2.0]
+[2026-05-29 13:11:18]   - [off] source::detrend | mode=none
+[2026-05-29 13:11:18]   - [off] source::eog_correction | mode=none
+[2026-05-29 13:11:18]   - [off] source::artifact_clipping | mode=none | percentile=99.5
+[2026-05-29 13:11:18]   - [ON] mne_raw::reference | timing=before_resample_filter | mode=average
+[2026-05-29 13:11:18]   - [ON] mne_raw::resample | sfreq=128
+[2026-05-29 13:11:18]   - [ON] mne_raw::bandpass_filter | l_freq=0.5 | h_freq=40.0 | method=fir | phase=zero | fir_design=firwin
+[2026-05-29 13:11:18]   - [off] mne_raw::notch_filter | timing=after_bandpass
+[2026-05-29 13:11:18]   - [ON] window::crop_fixed_mi_window | start_s=2.0 | target_window_samples=537
+[2026-05-29 13:11:18]   - [off] window::bad_trial_rejection
+[2026-05-29 13:11:18]   - [off] split::fold_safe_normalization | mode=none
+[2026-05-29 13:11:18] Source extract dir: /home/vegorov/Repos/eeg_jepa_research/liu2024_data/liu2024_figshare/sourcedata
+[2026-05-29 13:11:18] Found 50 .mat files
+[2026-05-29 13:11:18] MAT structure preview saved to: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1311_93f1ebcb/mat_structure_preview_first_subject.csv
+[2026-05-29 13:11:25] Subjects loaded: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
+[2026-05-29 13:11:25] Subject inventory saved to: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1311_93f1ebcb/subject_inventory.csv
+[2026-05-29 13:11:39] X_ALL shape: (2000, 29, 537) | Y_ALL counts: [1000, 1000]
+[2026-05-29 13:11:39] Preprocessing steps used:
+[2026-05-29 13:11:39]   - select 29 EEG channels; drop CPz source reference, EOG, and marker
+[2026-05-29 13:11:39]   - source demean: subtract baseline mean [0.0, 2.0]s
+[2026-05-29 13:11:39]   - source detrend skipped
+[2026-05-29 13:11:39]   - EOG correction skipped
+[2026-05-29 13:11:39]   - source artifact clipping skipped
+[2026-05-29 13:11:39]   - convert source microvolts to MNE volts
+[2026-05-29 13:11:39]   - average reference at before resample/filter
+[2026-05-29 13:11:39]   - resample to 128 Hz
+[2026-05-29 13:11:39]   - FIR bandpass 0.5–40.0 Hz | phase=zero | fir_design=firwin
+[2026-05-29 13:11:39]   - convert MNE volts to model microvolts
+[2026-05-29 13:11:39]   - crop fixed window samples [256:793]
+[2026-05-29 13:11:39]   - bad-trial rejection skipped
+[2026-05-29 13:11:39] Window summary saved to: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1311_93f1ebcb/window_counts_by_subject.csv
+[2026-05-29 13:11:39] ======================================================================
+[2026-05-29 13:11:39] STARTING WITHIN-SUBJECT EVALUATION
+[2026-05-29 13:11:39] ======================================================================
+[2026-05-29 13:11:39] Experiment:    next_confirm_best_accuracy_537_seed2027
+[2026-05-29 13:11:39] Subjects:      ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50']
+[2026-05-29 13:11:39] Model:         SignalJEPA_PreLocal
+[2026-05-29 13:11:39] Pretrained:    from_pretrained
+[2026-05-29 13:11:39] Strategy:      new
+[2026-05-29 13:11:39] Preprocessing: demean=baseline_window_mean | detrend=none | eog=none | clip=none | ref=average@before_resample_filter | resample=True->128 | filter=True 0.5–40.0 fir
+[2026-05-29 13:11:39] Normalization: none | reject_bad_trials=False
+[2026-05-29 13:11:39] Evaluation:    stratified_kfold | cv_folds=5 | n_repeats=10 | test_size=0.4
+[2026-05-29 13:11:39] Seed:          base=2027 | cv=2027 | split=2027 | val=2027
+[2026-05-29 13:11:39] Window:        start=2.0s | samples=537 | duration=4.1953s | effective sfreq=128.0
+[2026-05-29 13:11:39] Optimizer:     adam | lr=0.0004 | wd=0.0
+[2026-05-29 13:11:39] Augmentation:  noise=0.0 | shift=0 | ch_drop=0.0
+[2026-05-29 13:11:39] Val split:     0.2
+[2026-05-29 13:11:39] Max epochs:    5000 | patience=50
+[2026-05-29 13:11:39] Device:        cpu
+[2026-05-29 13:11:39] ======================================================================
+[2026-05-29 13:11:39] \nSubject 1: 40 windows | class_counts=[20, 20]
+
+[2026-05-29 13:11:39] Fold 1/5 | subject=1
+[2026-05-29 13:11:39]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:11:39]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:11:39]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:11:39]     Normalization: none | fit_scope=none
+[2026-05-29 13:11:39]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:11:40]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[7, 1] | collapse=False
+[2026-05-29 13:11:40]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13339257), ('Cz', 0.12909959), ('P4', 0.1236826), ('FCz', 0.12242383), ('C4', 0.12188701), ('FC4', 0.12053274), ('Fp1', 0.11304539), ('C3', 0.11042112)]
+[2026-05-29 13:11:40]     spatial_update=delta_l2=0.01136660 max_abs=0.00214511 relative=0.00957248 changed=True
+
+[2026-05-29 13:11:41] Fold 2/5 | subject=1
+[2026-05-29 13:11:41]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:11:41]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:11:41]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:11:41]     Normalization: none | fit_scope=none
+[2026-05-29 13:11:41]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:11:44]     Result | best_epoch=61 | stop=111 | final_phase_epochs=111 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[6, 2] | collapse=False
+[2026-05-29 13:11:44]     spatial_conv=[4, 29] top_abs_channels=[('FCz', 0.16302134), ('C3', 0.1231624), ('Fp1', 0.11554745), ('FT8', 0.11517563), ('F7', 0.11330925), ('T3', 0.11197032), ('Cz', 0.1106166), ('T4', 0.10917631)]
+[2026-05-29 13:11:44]     spatial_update=delta_l2=0.44309516 max_abs=0.10137046 relative=0.37315662 changed=True
+
+[2026-05-29 13:11:44] Fold 3/5 | subject=1
+[2026-05-29 13:11:44]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:11:44]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:11:44]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:11:44]     Normalization: none | fit_scope=none
+[2026-05-29 13:11:44]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:11:45]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[8, 0] | collapse=True
+[2026-05-29 13:11:45]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13320392), ('Cz', 0.12996297), ('P4', 0.1243069), ('C4', 0.12279588), ('FCz', 0.12090145), ('FC4', 0.12004359), ('Fp1', 0.11394209), ('C3', 0.11037521)]
+[2026-05-29 13:11:45]     spatial_update=delta_l2=0.01073200 max_abs=0.00208917 relative=0.00903805 changed=True
+
+[2026-05-29 13:11:46] Fold 4/5 | subject=1
+[2026-05-29 13:11:46]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:11:46]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:11:46]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:11:46]     Normalization: none | fit_scope=none
+[2026-05-29 13:11:46]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:11:53]     Result | best_epoch=269 | stop=319 | final_phase_epochs=319 | acc=0.7500 | bal_acc=0.7500 | pred_hist=[4, 4] | collapse=False
+[2026-05-29 13:11:53]     spatial_conv=[4, 29] top_abs_channels=[('O2', 0.17522343), ('T6', 0.15174365), ('TP7', 0.15077521), ('FCz', 0.13810928), ('P3', 0.13048732), ('CP3', 0.11605816), ('FT7', 0.10907808), ('TP8', 0.10845475)]
+[2026-05-29 13:11:53]     spatial_update=delta_l2=1.06885445 max_abs=0.24408945 relative=0.90014551 changed=True
+
+[2026-05-29 13:11:53] Fold 5/5 | subject=1
+[2026-05-29 13:11:53]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:11:53]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:11:53]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:11:53]     Normalization: none | fit_scope=none
+[2026-05-29 13:11:53]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:11:59]     Result | best_epoch=242 | stop=291 | final_phase_epochs=291 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[1, 7] | collapse=False
+[2026-05-29 13:11:59]     spatial_conv=[4, 29] top_abs_channels=[('FT7', 0.17538022), ('FC4', 0.14991812), ('FC3', 0.12963486), ('P3', 0.12702212), ('TP7', 0.12616889), ('Fp1', 0.1219502), ('T6', 0.12019859), ('F3', 0.11997969)]
+[2026-05-29 13:11:59]     spatial_update=delta_l2=1.09309344 max_abs=0.29297830 relative=0.92055860 changed=True
+[2026-05-29 13:11:59]   Subject 1: acc=0.5500±0.1275  bal_acc=0.5500±0.1275
+[2026-05-29 13:11:59] \nSubject 2: 40 windows | class_counts=[20, 20]
+
+[2026-05-29 13:11:59] Fold 1/5 | subject=2
+[2026-05-29 13:11:59]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:11:59]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:11:59]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:11:59]     Normalization: none | fit_scope=none
+[2026-05-29 13:11:59]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:12:02]     Result | best_epoch=73 | stop=123 | final_phase_epochs=123 | acc=0.7500 | bal_acc=0.7500 | pred_hist=[6, 2] | collapse=False
+[2026-05-29 13:12:02]     spatial_conv=[4, 29] top_abs_channels=[('FC4', 0.1244836), ('F7', 0.12133136), ('Cz', 0.12060563), ('Pz', 0.12014402), ('Oz', 0.11783329), ('C3', 0.11546317), ('FC3', 0.11426236), ('F8', 0.11328649)]
+[2026-05-29 13:12:02]     spatial_update=delta_l2=0.51387313 max_abs=0.11280602 relative=0.43276294 changed=True
+
+[2026-05-29 13:12:02] Fold 2/5 | subject=2
+[2026-05-29 13:12:02]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:12:02]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:12:02]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:12:02]     Normalization: none | fit_scope=none
+[2026-05-29 13:12:02]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:12:10]     Result | best_epoch=301 | stop=351 | final_phase_epochs=351 | acc=0.2500 | bal_acc=0.2500 | pred_hist=[2, 6] | collapse=False
+[2026-05-29 13:12:10]     spatial_conv=[4, 29] top_abs_channels=[('CP3', 0.20659907), ('F4', 0.14934722), ('T4', 0.14710465), ('FC3', 0.14401115), ('FT7', 0.12155563), ('Fp1', 0.11767057), ('TP7', 0.11581367), ('P4', 0.11233422)]
+[2026-05-29 13:12:10]     spatial_update=delta_l2=1.20677272 max_abs=0.26905568 relative=1.01629464 changed=True
+
+[2026-05-29 13:12:10] Fold 3/5 | subject=2
+[2026-05-29 13:12:10]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:12:10]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:12:10]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:12:10]     Normalization: none | fit_scope=none
+[2026-05-29 13:12:10]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:12:12]     Result | best_epoch=28 | stop=78 | final_phase_epochs=78 | acc=0.7500 | bal_acc=0.7500 | pred_hist=[6, 2] | collapse=False
+[2026-05-29 13:12:12]     spatial_conv=[4, 29] top_abs_channels=[('FCz', 0.13381015), ('F8', 0.12543288), ('Oz', 0.1226382), ('FC4', 0.12010327), ('C4', 0.11757131), ('C3', 0.11718273), ('P4', 0.11594453), ('Cz', 0.11524234)]
+[2026-05-29 13:12:12]     spatial_update=delta_l2=0.25979674 max_abs=0.04763372 relative=0.21879019 changed=True
+
+[2026-05-29 13:12:13] Fold 4/5 | subject=2
+[2026-05-29 13:12:13]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:12:13]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:12:13]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:12:13]     Normalization: none | fit_scope=none
+[2026-05-29 13:12:13]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:12:15]     Result | best_epoch=72 | stop=122 | final_phase_epochs=122 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[3, 5] | collapse=False
+[2026-05-29 13:12:15]     spatial_conv=[4, 29] top_abs_channels=[('T3', 0.13453442), ('Fp1', 0.12594523), ('FCz', 0.12253986), ('Cz', 0.12105079), ('F7', 0.12097296), ('TP7', 0.11831657), ('O1', 0.11730622), ('FC3', 0.11574474)]
+[2026-05-29 13:12:15]     spatial_update=delta_l2=0.45729708 max_abs=0.11373474 relative=0.38511691 changed=True
+
+[2026-05-29 13:12:16] Fold 5/5 | subject=2
+[2026-05-29 13:12:16]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:12:16]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:12:16]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:12:16]     Normalization: none | fit_scope=none
+[2026-05-29 13:12:16]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:12:17]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[4, 4] | collapse=False
+[2026-05-29 13:12:17]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13378081), ('Cz', 0.12982494), ('P4', 0.123234), ('C4', 0.12154991), ('FCz', 0.12052444), ('FC4', 0.12047242), ('Fp1', 0.11465824), ('C3', 0.11000566)]
+[2026-05-29 13:12:17]     spatial_update=delta_l2=0.01200365 max_abs=0.00216126 relative=0.01010898 changed=True
+[2026-05-29 13:12:17]   Subject 2: acc=0.5750±0.1871  bal_acc=0.5750±0.1871
+[2026-05-29 13:12:17] \nSubject 3: 40 windows | class_counts=[20, 20]
+
+[2026-05-29 13:12:18] Fold 1/5 | subject=3
+[2026-05-29 13:12:18]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:12:18]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:12:18]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:12:18]     Normalization: none | fit_scope=none
+[2026-05-29 13:12:18]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:12:26]     Result | best_epoch=380 | stop=430 | final_phase_epochs=430 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[5, 3] | collapse=False
+[2026-05-29 13:12:26]     spatial_conv=[4, 29] top_abs_channels=[('FC3', 0.19394378), ('CP4', 0.19362745), ('P4', 0.17377827), ('Pz', 0.1569345), ('P3', 0.1516462), ('C4', 0.14820756), ('T5', 0.13754849), ('TP7', 0.12163816)]
+[2026-05-29 13:12:26]     spatial_update=delta_l2=1.22143798 max_abs=0.40842409 relative=1.02864513 changed=True
+
+[2026-05-29 13:12:27] Fold 2/5 | subject=3
+[2026-05-29 13:12:27]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:12:27]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:12:27]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:12:27]     Normalization: none | fit_scope=none
+[2026-05-29 13:12:27]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:12:45]     Result | best_epoch=895 | stop=945 | final_phase_epochs=945 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[3, 5] | collapse=False
+[2026-05-29 13:12:45]     spatial_conv=[4, 29] top_abs_channels=[('P4', 0.23755899), ('T5', 0.18391842), ('C3', 0.16157165), ('C4', 0.14863372), ('Pz', 0.13626872), ('CP4', 0.13301468), ('CP3', 0.13079453), ('F8', 0.12862329)]
+[2026-05-29 13:12:45]     spatial_update=delta_l2=1.35814501 max_abs=0.34411079 relative=1.14377420 changed=True
+
+[2026-05-29 13:12:46] Fold 3/5 | subject=3
+[2026-05-29 13:12:46]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:12:46]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:12:46]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:12:46]     Normalization: none | fit_scope=none
+[2026-05-29 13:12:46]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:12:47]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[8, 0] | collapse=True
+[2026-05-29 13:12:47]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13360091), ('Cz', 0.12965798), ('P4', 0.12297306), ('C4', 0.12156311), ('FC4', 0.12018432), ('FCz', 0.1200354), ('Fp1', 0.1131814), ('C3', 0.11030506)]
+[2026-05-29 13:12:47]     spatial_update=delta_l2=0.01176217 max_abs=0.00228848 relative=0.00990562 changed=True
+
+[2026-05-29 13:12:48] Fold 4/5 | subject=3
+[2026-05-29 13:12:48]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:12:48]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:12:48]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:12:48]     Normalization: none | fit_scope=none
+[2026-05-29 13:12:48]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:12:55]     Result | best_epoch=296 | stop=346 | final_phase_epochs=346 | acc=0.8750 | bal_acc=0.8750 | pred_hist=[5, 3] | collapse=False
+[2026-05-29 13:12:55]     spatial_conv=[4, 29] top_abs_channels=[('P4', 0.20668852), ('Pz', 0.18951282), ('T6', 0.16494304), ('C4', 0.1351698), ('F4', 0.13358396), ('FC3', 0.13136184), ('C3', 0.12471917), ('CP3', 0.11518371)]
+[2026-05-29 13:12:55]     spatial_update=delta_l2=1.22299752 max_abs=0.31021997 relative=1.02995850 changed=True
+
+[2026-05-29 13:12:56] Fold 5/5 | subject=3
+[2026-05-29 13:12:56]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:12:56]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:12:56]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:12:56]     Normalization: none | fit_scope=none
+[2026-05-29 13:12:56]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:12:59]     Result | best_epoch=113 | stop=163 | final_phase_epochs=163 | acc=0.7500 | bal_acc=0.7500 | pred_hist=[4, 4] | collapse=False
+[2026-05-29 13:12:59]     spatial_conv=[4, 29] top_abs_channels=[('FC3', 0.17372297), ('Pz', 0.14832151), ('FCz', 0.13847171), ('T3', 0.13431415), ('F4', 0.1310993), ('C3', 0.11938408), ('Fp1', 0.11642342), ('TP7', 0.11490917)]
+[2026-05-29 13:12:59]     spatial_update=delta_l2=0.77156249 max_abs=0.23469640 relative=0.64977838 changed=True
+[2026-05-29 13:12:59]   Subject 3: acc=0.6250±0.1768  bal_acc=0.6250±0.1768
+[2026-05-29 13:12:59] \nSubject 4: 40 windows | class_counts=[20, 20]
+
+[2026-05-29 13:12:59] Fold 1/5 | subject=4
+[2026-05-29 13:12:59]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:12:59]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:12:59]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:12:59]     Normalization: none | fit_scope=none
+[2026-05-29 13:12:59]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:13:03]     Result | best_epoch=125 | stop=175 | final_phase_epochs=175 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[3, 5] | collapse=False
+[2026-05-29 13:13:03]     spatial_conv=[4, 29] top_abs_channels=[('FC4', 0.16149093), ('Oz', 0.13121027), ('O2', 0.13096656), ('Fp1', 0.12648307), ('P4', 0.11718971), ('FCz', 0.11637133), ('Fp2', 0.11030877), ('C3', 0.1083893)]
+[2026-05-29 13:13:03]     spatial_update=delta_l2=0.59997288 max_abs=0.13814017 relative=0.50527263 changed=True
+
+[2026-05-29 13:13:04] Fold 2/5 | subject=4
+[2026-05-29 13:13:04]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:13:04]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:13:04]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:13:04]     Normalization: none | fit_scope=none
+[2026-05-29 13:13:04]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:13:16]     Result | best_epoch=534 | stop=584 | final_phase_epochs=584 | acc=0.7500 | bal_acc=0.7500 | pred_hist=[4, 4] | collapse=False
+[2026-05-29 13:13:16]     spatial_conv=[4, 29] top_abs_channels=[('FC4', 0.1693489), ('FC3', 0.13522872), ('T6', 0.13202232), ('Fz', 0.12895781), ('Cz', 0.12499172), ('Oz', 0.11590065), ('CP3', 0.11150403), ('F4', 0.11103493)]
+[2026-05-29 13:13:16]     spatial_update=delta_l2=1.07595488 max_abs=0.35064074 relative=0.90612521 changed=True
+
+[2026-05-29 13:13:17] Fold 3/5 | subject=4
+[2026-05-29 13:13:17]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:13:17]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:13:17]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:13:17]     Normalization: none | fit_scope=none
+[2026-05-29 13:13:17]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:13:18]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[6, 2] | collapse=False
+[2026-05-29 13:13:18]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13351581), ('Cz', 0.12923168), ('P4', 0.12320904), ('C4', 0.12152274), ('FCz', 0.12144461), ('FC4', 0.12017503), ('Fp1', 0.11393335), ('C3', 0.11026011)]
+[2026-05-29 13:13:18]     spatial_update=delta_l2=0.00931719 max_abs=0.00209245 relative=0.00784656 changed=True
+
+[2026-05-29 13:13:18] Fold 4/5 | subject=4
+[2026-05-29 13:13:18]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:13:18]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:13:18]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:13:18]     Normalization: none | fit_scope=none
+[2026-05-29 13:13:18]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:13:21]     Result | best_epoch=94 | stop=144 | final_phase_epochs=144 | acc=0.8750 | bal_acc=0.8750 | pred_hist=[3, 5] | collapse=False
+[2026-05-29 13:13:21]     spatial_conv=[4, 29] top_abs_channels=[('O2', 0.13091856), ('Cz', 0.1301586), ('Fp1', 0.12617086), ('Fp2', 0.12444216), ('FC4', 0.11952962), ('T4', 0.11944221), ('O1', 0.11796555), ('F7', 0.11080652)]
+[2026-05-29 13:13:21]     spatial_update=delta_l2=0.56299194 max_abs=0.15588281 relative=0.47412879 changed=True
+
+[2026-05-29 13:13:22] Fold 5/5 | subject=4
+[2026-05-29 13:13:22]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:13:22]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:13:22]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:13:22]     Normalization: none | fit_scope=none
+[2026-05-29 13:13:22]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:13:23]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[8, 0] | collapse=True
+[2026-05-29 13:13:23]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13358764), ('Cz', 0.12989701), ('P4', 0.12451564), ('C4', 0.12216789), ('FCz', 0.1208625), ('FC4', 0.12008937), ('Fp1', 0.1135204), ('C3', 0.11016713)]
+[2026-05-29 13:13:23]     spatial_update=delta_l2=0.01001874 max_abs=0.00230692 relative=0.00843738 changed=True
+[2026-05-29 13:13:23]   Subject 4: acc=0.6500±0.1458  bal_acc=0.6500±0.1458
+[2026-05-29 13:13:23] \nSubject 5: 40 windows | class_counts=[20, 20]
+
+[2026-05-29 13:13:23] Fold 1/5 | subject=5
+[2026-05-29 13:13:23]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:13:23]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:13:23]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:13:23]     Normalization: none | fit_scope=none
+[2026-05-29 13:13:23]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:13:25]     Result | best_epoch=58 | stop=106 | final_phase_epochs=106 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[5, 3] | collapse=False
+[2026-05-29 13:13:25]     spatial_conv=[4, 29] top_abs_channels=[('FCz', 0.13554624), ('P4', 0.12897952), ('FC4', 0.12891318), ('Fp1', 0.12382504), ('O2', 0.1193775), ('Fz', 0.11893283), ('C4', 0.11643286), ('F8', 0.11603193)]
+[2026-05-29 13:13:25]     spatial_update=delta_l2=0.50477082 max_abs=0.11259831 relative=0.42509734 changed=True
+
+[2026-05-29 13:13:26] Fold 2/5 | subject=5
+[2026-05-29 13:13:26]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:13:26]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:13:26]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:13:26]     Normalization: none | fit_scope=none
+[2026-05-29 13:13:26]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:13:31]     Result | best_epoch=180 | stop=230 | final_phase_epochs=230 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[5, 3] | collapse=False
+[2026-05-29 13:13:31]     spatial_conv=[4, 29] top_abs_channels=[('TP8', 0.16483356), ('Fp1', 0.12732133), ('FT7', 0.12699449), ('FT8', 0.11862912), ('P4', 0.11297375), ('O1', 0.11186947), ('Oz', 0.11130747), ('T5', 0.10775731)]
+[2026-05-29 13:13:31]     spatial_update=delta_l2=0.82590757 max_abs=0.19840942 relative=0.69554559 changed=True
+
+[2026-05-29 13:13:31] Fold 3/5 | subject=5
+[2026-05-29 13:13:31]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:13:31]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:13:31]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:13:31]     Normalization: none | fit_scope=none
+[2026-05-29 13:13:31]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:13:32]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[7, 1] | collapse=False
+[2026-05-29 13:13:32]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13393506), ('Cz', 0.13041866), ('P4', 0.12364388), ('FCz', 0.12109984), ('C4', 0.12108119), ('FC4', 0.12086028), ('Fp1', 0.11473754), ('C3', 0.10863419)]
+[2026-05-29 13:13:32]     spatial_update=delta_l2=0.01254699 max_abs=0.00224979 relative=0.01056656 changed=True
+
+[2026-05-29 13:13:33] Fold 4/5 | subject=5
+[2026-05-29 13:13:33]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:13:33]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:13:33]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:13:33]     Normalization: none | fit_scope=none
+[2026-05-29 13:13:33]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:14:01]     Result | best_epoch=1298 | stop=1326 | final_phase_epochs=1326 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[3, 5] | collapse=False
+[2026-05-29 13:14:01]     spatial_conv=[4, 29] top_abs_channels=[('F8', 0.17076275), ('T5', 0.15553319), ('TP8', 0.15190905), ('Fp1', 0.14350133), ('FCz', 0.11883979), ('P4', 0.11609341), ('CP3', 0.11312839), ('F7', 0.10757287)]
+[2026-05-29 13:14:01]     spatial_update=delta_l2=1.07419035 max_abs=0.27564376 relative=0.90463919 changed=True
+
+[2026-05-29 13:14:01] Fold 5/5 | subject=5
+[2026-05-29 13:14:01]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:14:01]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:14:01]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:14:01]     Normalization: none | fit_scope=none
+[2026-05-29 13:14:01]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:14:02]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[8, 0] | collapse=True
+[2026-05-29 13:14:02]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13374463), ('Cz', 0.13055542), ('P4', 0.12253387), ('C4', 0.12117571), ('FCz', 0.12084705), ('FC4', 0.12047513), ('Fp1', 0.11456963), ('C3', 0.10918029)]
+[2026-05-29 13:14:02]     spatial_update=delta_l2=0.01245211 max_abs=0.00219148 relative=0.01048666 changed=True
+[2026-05-29 13:14:02]   Subject 5: acc=0.5500±0.1000  bal_acc=0.5500±0.1000
+[2026-05-29 13:14:02] \nSubject 6: 40 windows | class_counts=[20, 20]
+
+[2026-05-29 13:14:03] Fold 1/5 | subject=6
+[2026-05-29 13:14:03]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:14:03]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:14:03]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:14:03]     Normalization: none | fit_scope=none
+[2026-05-29 13:14:03]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:14:08]     Result | best_epoch=218 | stop=268 | final_phase_epochs=268 | acc=0.7500 | bal_acc=0.7500 | pred_hist=[6, 2] | collapse=False
+[2026-05-29 13:14:08]     spatial_conv=[4, 29] top_abs_channels=[('F4', 0.17820621), ('FT8', 0.13792524), ('F8', 0.12704031), ('Fp1', 0.12402648), ('TP8', 0.12297151), ('T6', 0.12136251), ('Pz', 0.12096997), ('P3', 0.11750528)]
+[2026-05-29 13:14:08]     spatial_update=delta_l2=0.95046381 max_abs=0.26180839 relative=0.80044176 changed=True
+
+[2026-05-29 13:14:09] Fold 2/5 | subject=6
+[2026-05-29 13:14:09]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:14:09]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:14:09]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:14:09]     Normalization: none | fit_scope=none
+[2026-05-29 13:14:09]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:14:10]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[7, 1] | collapse=False
+[2026-05-29 13:14:10]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13299897), ('Cz', 0.1290988), ('P4', 0.12425604), ('FCz', 0.12142923), ('FC4', 0.12099219), ('C4', 0.12083412), ('Fp1', 0.11420254), ('C3', 0.11005645)]
+[2026-05-29 13:14:10]     spatial_update=delta_l2=0.01111007 max_abs=0.00204261 relative=0.00935645 changed=True
+
+[2026-05-29 13:14:10] Fold 3/5 | subject=6
+[2026-05-29 13:14:10]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:14:10]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:14:10]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:14:10]     Normalization: none | fit_scope=none
+[2026-05-29 13:14:10]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:14:14]     Result | best_epoch=154 | stop=204 | final_phase_epochs=204 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[5, 3] | collapse=False
+[2026-05-29 13:14:14]     spatial_conv=[4, 29] top_abs_channels=[('Fp1', 0.16132671), ('F4', 0.14749525), ('T3', 0.14122902), ('O1', 0.13108733), ('FC4', 0.13100605), ('F8', 0.12677532), ('CP3', 0.1205395), ('FCz', 0.11308411)]
+[2026-05-29 13:14:14]     spatial_update=delta_l2=0.79830405 max_abs=0.18064200 relative=0.67229903 changed=True
+
+[2026-05-29 13:14:14] Fold 4/5 | subject=6
+[2026-05-29 13:14:14]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:14:14]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:14:14]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:14:14]     Normalization: none | fit_scope=none
+[2026-05-29 13:14:14]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:14:15]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[7, 1] | collapse=False
+[2026-05-29 13:14:15]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13323089), ('Cz', 0.12969585), ('P4', 0.12418914), ('C4', 0.12257323), ('FC4', 0.12163293), ('FCz', 0.11999717), ('Fp1', 0.11498754), ('C3', 0.11024162)]
+[2026-05-29 13:14:15]     spatial_update=delta_l2=0.01109077 max_abs=0.00205588 relative=0.00934020 changed=True
+
+[2026-05-29 13:14:16] Fold 5/5 | subject=6
+[2026-05-29 13:14:16]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:14:16]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:14:16]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:14:16]     Normalization: none | fit_scope=none
+[2026-05-29 13:14:16]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:14:21]     Result | best_epoch=195 | stop=245 | final_phase_epochs=245 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[6, 2] | collapse=False
+[2026-05-29 13:14:21]     spatial_conv=[4, 29] top_abs_channels=[('FC4', 0.14751276), ('Fz', 0.13117401), ('F4', 0.1295729), ('O1', 0.12335325), ('CP3', 0.11344028), ('Cz', 0.11003582), ('P3', 0.10663861), ('FT8', 0.10522224)]
+[2026-05-29 13:14:21]     spatial_update=delta_l2=0.89213536 max_abs=0.26490918 relative=0.75131992 changed=True
+[2026-05-29 13:14:21]   Subject 6: acc=0.4750±0.1458  bal_acc=0.4750±0.1458
+[2026-05-29 13:14:21] \nSubject 7: 40 windows | class_counts=[20, 20]
+
+[2026-05-29 13:14:21] Fold 1/5 | subject=7
+[2026-05-29 13:14:21]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:14:21]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:14:21]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:14:21]     Normalization: none | fit_scope=none
+[2026-05-29 13:14:21]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:14:29]     Result | best_epoch=369 | stop=419 | final_phase_epochs=419 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[3, 5] | collapse=False
+[2026-05-29 13:14:29]     spatial_conv=[4, 29] top_abs_channels=[('Fp1', 0.17162098), ('Cz', 0.16521762), ('T3', 0.16374847), ('CP3', 0.14918414), ('F4', 0.1483378), ('C3', 0.12404072), ('TP7', 0.11751263), ('Fz', 0.11359643)]
+[2026-05-29 13:14:29]     spatial_update=delta_l2=1.11283632 max_abs=0.43329691 relative=0.93718525 changed=True
+
+[2026-05-29 13:14:30] Fold 2/5 | subject=7
+[2026-05-29 13:14:30]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:14:30]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:14:30]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:14:30]     Normalization: none | fit_scope=none
+[2026-05-29 13:14:30]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:14:31]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[8, 0] | collapse=True
+[2026-05-29 13:14:31]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13344342), ('Cz', 0.12935108), ('P4', 0.1233017), ('C4', 0.12142444), ('FCz', 0.12121183), ('FC4', 0.12009995), ('Fp1', 0.11492815), ('C3', 0.11059055)]
+[2026-05-29 13:14:31]     spatial_update=delta_l2=0.00967485 max_abs=0.00195429 relative=0.00814776 changed=True
+
+[2026-05-29 13:14:31] Fold 3/5 | subject=7
+[2026-05-29 13:14:31]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:14:31]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:14:31]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:14:31]     Normalization: none | fit_scope=none
+[2026-05-29 13:14:31]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:14:45]     Result | best_epoch=612 | stop=633 | final_phase_epochs=633 | acc=0.2500 | bal_acc=0.2500 | pred_hist=[6, 2] | collapse=False
+[2026-05-29 13:14:45]     spatial_conv=[4, 29] top_abs_channels=[('Fz', 0.21520868), ('Cz', 0.19138792), ('FC4', 0.14998618), ('TP7', 0.13730922), ('CP4', 0.12791511), ('C4', 0.11651631), ('CP3', 0.11587209), ('F4', 0.11071925)]
+[2026-05-29 13:14:45]     spatial_update=delta_l2=1.14985159 max_abs=0.29703537 relative=0.96835800 changed=True
+
+[2026-05-29 13:14:45] Fold 4/5 | subject=7
+[2026-05-29 13:14:45]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:14:45]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:14:45]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:14:45]     Normalization: none | fit_scope=none
+[2026-05-29 13:14:45]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:14:56]     Result | best_epoch=474 | stop=524 | final_phase_epochs=524 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[5, 3] | collapse=False
+[2026-05-29 13:14:56]     spatial_conv=[4, 29] top_abs_channels=[('P3', 0.20443103), ('F4', 0.19503094), ('Cz', 0.19427259), ('Fp1', 0.13143824), ('CP3', 0.12778252), ('FCz', 0.12191552), ('Fz', 0.1146143), ('Pz', 0.11242258)]
+[2026-05-29 13:14:56]     spatial_update=delta_l2=1.20228944 max_abs=0.30359420 relative=1.01251900 changed=True
+
+[2026-05-29 13:14:56] Fold 5/5 | subject=7
+[2026-05-29 13:14:56]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:14:56]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:14:56]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:14:56]     Normalization: none | fit_scope=none
+[2026-05-29 13:14:56]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:15:01]     Result | best_epoch=147 | stop=197 | final_phase_epochs=197 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[3, 5] | collapse=False
+[2026-05-29 13:15:01]     spatial_conv=[4, 29] top_abs_channels=[('Cz', 0.15677314), ('Pz', 0.15011343), ('C4', 0.14473443), ('T3', 0.14366798), ('C3', 0.13269663), ('FC4', 0.11367014), ('Fp2', 0.11155947), ('F4', 0.11049239)]
+[2026-05-29 13:15:01]     spatial_update=delta_l2=0.76366450 max_abs=0.21679956 relative=0.64312702 changed=True
+[2026-05-29 13:15:01]   Subject 7: acc=0.5250±0.1458  bal_acc=0.5250±0.1458
+[2026-05-29 13:15:01] \nSubject 8: 40 windows | class_counts=[20, 20]
+
+[2026-05-29 13:15:02] Fold 1/5 | subject=8
+[2026-05-29 13:15:02]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:15:02]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:15:02]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:15:02]     Normalization: none | fit_scope=none
+[2026-05-29 13:15:02]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:15:04]     Result | best_epoch=56 | stop=106 | final_phase_epochs=106 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[5, 3] | collapse=False
+[2026-05-29 13:15:04]     spatial_conv=[4, 29] top_abs_channels=[('FC4', 0.14942712), ('T6', 0.13986954), ('P4', 0.13808854), ('FCz', 0.13194068), ('Cz', 0.12855381), ('TP7', 0.12524323), ('Oz', 0.11899434), ('CP3', 0.11857359)]
+[2026-05-29 13:15:04]     spatial_update=delta_l2=0.49696931 max_abs=0.12696413 relative=0.41852724 changed=True
+
+[2026-05-29 13:15:05] Fold 2/5 | subject=8
+[2026-05-29 13:15:05]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:15:05]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:15:05]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:15:05]     Normalization: none | fit_scope=none
+[2026-05-29 13:15:05]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:15:20]     Result | best_epoch=683 | stop=733 | final_phase_epochs=733 | acc=0.8750 | bal_acc=0.8750 | pred_hist=[5, 3] | collapse=False
+[2026-05-29 13:15:20]     spatial_conv=[4, 29] top_abs_channels=[('C4', 0.20224126), ('P4', 0.19683358), ('P3', 0.18573767), ('TP7', 0.17308596), ('Cz', 0.13799097), ('O1', 0.1317811), ('F3', 0.1190621), ('Oz', 0.115538)]
+[2026-05-29 13:15:20]     spatial_update=delta_l2=1.23559620 max_abs=0.34000380 relative=1.04056860 changed=True
+
+[2026-05-29 13:15:21] Fold 3/5 | subject=8
+[2026-05-29 13:15:21]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:15:21]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:15:21]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:15:21]     Normalization: none | fit_scope=none
+[2026-05-29 13:15:21]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:15:37]     Result | best_epoch=697 | stop=747 | final_phase_epochs=747 | acc=0.7500 | bal_acc=0.7500 | pred_hist=[6, 2] | collapse=False
+[2026-05-29 13:15:37]     spatial_conv=[4, 29] top_abs_channels=[('P4', 0.15715915), ('FC3', 0.15421563), ('T6', 0.14934234), ('Cz', 0.14260462), ('TP7', 0.1375688), ('Oz', 0.12987292), ('FC4', 0.12715022), ('P3', 0.11556729)]
+[2026-05-29 13:15:37]     spatial_update=delta_l2=1.06410439 max_abs=0.27272442 relative=0.89614521 changed=True
+
+[2026-05-29 13:15:37] Fold 4/5 | subject=8
+[2026-05-29 13:15:37]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:15:37]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:15:37]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:15:37]     Normalization: none | fit_scope=none
+[2026-05-29 13:15:37]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:16:29]     Result | best_epoch=2346 | stop=2396 | final_phase_epochs=2396 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[4, 4] | collapse=False
+[2026-05-29 13:16:29]     spatial_conv=[4, 29] top_abs_channels=[('FC4', 0.23321421), ('CP4', 0.17883836), ('Cz', 0.14943177), ('FC3', 0.13640331), ('O1', 0.13502923), ('F3', 0.11252081), ('P3', 0.10330448), ('P4', 0.10158014)]
+[2026-05-29 13:16:29]     spatial_update=delta_l2=1.36008497 max_abs=0.37273665 relative=1.14540795 changed=True
+
+[2026-05-29 13:16:29] Fold 5/5 | subject=8
+[2026-05-29 13:16:29]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:16:29]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:16:29]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:16:29]     Normalization: none | fit_scope=none
+[2026-05-29 13:16:29]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:16:41]     Result | best_epoch=344 | stop=394 | final_phase_epochs=394 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[3, 5] | collapse=False
+[2026-05-29 13:16:41]     spatial_conv=[4, 29] top_abs_channels=[('F7', 0.16226505), ('T6', 0.16092731), ('FC4', 0.15979767), ('Cz', 0.14711922), ('TP7', 0.14612657), ('P4', 0.13157651), ('O1', 0.12374061), ('F4', 0.11491492)]
+[2026-05-29 13:16:41]     spatial_update=delta_l2=0.91014902 max_abs=0.23354596 relative=0.76649029 changed=True
+[2026-05-29 13:16:41]   Subject 8: acc=0.6750±0.1275  bal_acc=0.6750±0.1275
+[2026-05-29 13:16:41] \nSubject 9: 40 windows | class_counts=[20, 20]
+
+[2026-05-29 13:16:42] Fold 1/5 | subject=9
+[2026-05-29 13:16:42]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:16:42]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:16:42]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:16:42]     Normalization: none | fit_scope=none
+[2026-05-29 13:16:42]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:16:44]     Result | best_epoch=14 | stop=64 | final_phase_epochs=64 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[6, 2] | collapse=False
+[2026-05-29 13:16:44]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.14370343), ('Cz', 0.13062179), ('C4', 0.1297517), ('P4', 0.12966287), ('FC4', 0.12902525), ('FCz', 0.11465244), ('Fp1', 0.11381951), ('C3', 0.10717776)]
+[2026-05-29 13:16:44]     spatial_update=delta_l2=0.12515158 max_abs=0.02800706 relative=0.10539755 changed=True
+
+[2026-05-29 13:16:45] Fold 2/5 | subject=9
+[2026-05-29 13:16:45]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:16:45]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:16:45]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:16:45]     Normalization: none | fit_scope=none
+[2026-05-29 13:16:45]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:16:49]     Result | best_epoch=118 | stop=168 | final_phase_epochs=168 | acc=0.8750 | bal_acc=0.8750 | pred_hist=[3, 5] | collapse=False
+[2026-05-29 13:16:49]     spatial_conv=[4, 29] top_abs_channels=[('P4', 0.15476851), ('C4', 0.14214188), ('Oz', 0.12642631), ('FC4', 0.12123977), ('TP7', 0.12087024), ('P3', 0.12077229), ('T3', 0.11286588), ('O1', 0.11231864)]
+[2026-05-29 13:16:49]     spatial_update=delta_l2=0.70244411 max_abs=0.23354284 relative=0.59156971 changed=True
+
+[2026-05-29 13:16:50] Fold 3/5 | subject=9
+[2026-05-29 13:16:50]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:16:50]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:16:50]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:16:50]     Normalization: none | fit_scope=none
+[2026-05-29 13:16:50]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:17:13]     Result | best_epoch=948 | stop=998 | final_phase_epochs=998 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[5, 3] | collapse=False
+[2026-05-29 13:17:13]     spatial_conv=[4, 29] top_abs_channels=[('TP8', 0.14801282), ('FC4', 0.1423409), ('FCz', 0.13746417), ('F4', 0.13334256), ('FT8', 0.12879744), ('Oz', 0.12660509), ('Cz', 0.12653011), ('CP4', 0.11918788)]
+[2026-05-29 13:17:13]     spatial_update=delta_l2=1.36780703 max_abs=0.43336964 relative=1.15191116 changed=True
+
+[2026-05-29 13:17:14] Fold 4/5 | subject=9
+[2026-05-29 13:17:14]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:17:14]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:17:14]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:17:14]     Normalization: none | fit_scope=none
+[2026-05-29 13:17:14]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:17:16]     Result | best_epoch=50 | stop=98 | final_phase_epochs=98 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[3, 5] | collapse=False
+[2026-05-29 13:17:16]     spatial_conv=[4, 29] top_abs_channels=[('C4', 0.15817808), ('P4', 0.13751659), ('T3', 0.1293276), ('FCz', 0.12264947), ('Cz', 0.11673717), ('Oz', 0.11501355), ('Fp2', 0.11101898), ('FC4', 0.10837042)]
+[2026-05-29 13:17:16]     spatial_update=delta_l2=0.37850368 max_abs=0.08683169 relative=0.31876032 changed=True
+
+[2026-05-29 13:17:17] Fold 5/5 | subject=9
+[2026-05-29 13:17:17]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:17:17]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:17:17]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:17:17]     Normalization: none | fit_scope=none
+[2026-05-29 13:17:17]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:17:18]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[7, 1] | collapse=False
+[2026-05-29 13:17:18]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13311985), ('Cz', 0.12973768), ('P4', 0.12376489), ('C4', 0.12215573), ('FCz', 0.12097582), ('FC4', 0.1204173), ('Fp1', 0.1142889), ('C3', 0.10981227)]
+[2026-05-29 13:17:18]     spatial_update=delta_l2=0.01055877 max_abs=0.00216184 relative=0.00889216 changed=True
+[2026-05-29 13:17:18]   Subject 9: acc=0.5500±0.1871  bal_acc=0.5500±0.1871
+[2026-05-29 13:17:18] \nSubject 10: 40 windows | class_counts=[20, 20]
+
+[2026-05-29 13:17:18] Fold 1/5 | subject=10
+[2026-05-29 13:17:18]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:17:18]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:17:18]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:17:18]     Normalization: none | fit_scope=none
+[2026-05-29 13:17:18]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:17:19]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[8, 0] | collapse=True
+[2026-05-29 13:17:19]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13349661), ('Cz', 0.13015732), ('P4', 0.12381241), ('C4', 0.12275931), ('FCz', 0.12133687), ('FC4', 0.12023832), ('Fp1', 0.11287923), ('C3', 0.11101304)]
+[2026-05-29 13:17:19]     spatial_update=delta_l2=0.01164840 max_abs=0.00221638 relative=0.00980981 changed=True
+
+[2026-05-29 13:17:19] Fold 2/5 | subject=10
+[2026-05-29 13:17:19]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:17:19]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:17:19]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:17:19]     Normalization: none | fit_scope=none
+[2026-05-29 13:17:19]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:17:21]     Result | best_epoch=2 | stop=51 | final_phase_epochs=51 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[7, 1] | collapse=False
+[2026-05-29 13:17:21]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13238017), ('Cz', 0.12950008), ('P4', 0.12404057), ('FCz', 0.12240323), ('C4', 0.12145449), ('FC4', 0.12099871), ('Fp1', 0.11383226), ('C3', 0.11130863)]
+[2026-05-29 13:17:21]     spatial_update=delta_l2=0.01471421 max_abs=0.00222530 relative=0.01239171 changed=True
+
+[2026-05-29 13:17:21] Fold 3/5 | subject=10
+[2026-05-29 13:17:21]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:17:21]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:17:21]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:17:21]     Normalization: none | fit_scope=none
+[2026-05-29 13:17:21]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:17:22]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[7, 1] | collapse=False
+[2026-05-29 13:17:22]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.1331525), ('Cz', 0.12939656), ('P4', 0.12378132), ('C4', 0.12227684), ('FCz', 0.12162983), ('FC4', 0.12049607), ('Fp1', 0.11366504), ('C3', 0.11145805)]
+[2026-05-29 13:17:22]     spatial_update=delta_l2=0.01115586 max_abs=0.00207977 relative=0.00939501 changed=True
+
+[2026-05-29 13:17:23] Fold 4/5 | subject=10
+[2026-05-29 13:17:23]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:17:23]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:17:23]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:17:23]     Normalization: none | fit_scope=none
+[2026-05-29 13:17:23]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:17:25]     Result | best_epoch=53 | stop=103 | final_phase_epochs=103 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[7, 1] | collapse=False
+[2026-05-29 13:17:25]     spatial_conv=[4, 29] top_abs_channels=[('Cz', 0.14415504), ('Pz', 0.12629077), ('F4', 0.12137601), ('FC4', 0.11820041), ('Fp1', 0.11672068), ('C4', 0.1166076), ('P4', 0.11642773), ('Oz', 0.11257775)]
+[2026-05-29 13:17:25]     spatial_update=delta_l2=0.42187668 max_abs=0.11995475 relative=0.35528729 changed=True
+
+[2026-05-29 13:17:26] Fold 5/5 | subject=10
+[2026-05-29 13:17:26]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:17:26]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:17:26]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:17:26]     Normalization: none | fit_scope=none
+[2026-05-29 13:17:26]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:17:27]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[7, 1] | collapse=False
+[2026-05-29 13:17:27]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13310406), ('Cz', 0.12936942), ('P4', 0.12362634), ('C4', 0.12220481), ('FCz', 0.12144553), ('FC4', 0.1210936), ('Fp1', 0.11358388), ('C3', 0.11155113)]
+[2026-05-29 13:17:27]     spatial_update=delta_l2=0.01130667 max_abs=0.00231554 relative=0.00952202 changed=True
+[2026-05-29 13:17:27]   Subject 10: acc=0.5000±0.1118  bal_acc=0.5000±0.1118
+[2026-05-29 13:17:27] \nSubject 11: 40 windows | class_counts=[20, 20]
+
+[2026-05-29 13:17:28] Fold 1/5 | subject=11
+[2026-05-29 13:17:28]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:17:28]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:17:28]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:17:28]     Normalization: none | fit_scope=none
+[2026-05-29 13:17:28]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:17:38]     Result | best_epoch=378 | stop=428 | final_phase_epochs=428 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[5, 3] | collapse=False
+[2026-05-29 13:17:38]     spatial_conv=[4, 29] top_abs_channels=[('P4', 0.1819905), ('FCz', 0.16027816), ('FC4', 0.1402563), ('Fp2', 0.13963166), ('Oz', 0.13758749), ('CP3', 0.13635929), ('P3', 0.1303691), ('FT8', 0.13007967)]
+[2026-05-29 13:17:38]     spatial_update=delta_l2=1.04994914 max_abs=0.21879123 relative=0.88422424 changed=True
+
+[2026-05-29 13:17:39] Fold 2/5 | subject=11
+[2026-05-29 13:17:39]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:17:39]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:17:39]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:17:39]     Normalization: none | fit_scope=none
+[2026-05-29 13:17:39]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:17:41]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[8, 0] | collapse=True
+[2026-05-29 13:17:41]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13219702), ('Cz', 0.13098097), ('P4', 0.12352734), ('C4', 0.12274034), ('FC4', 0.12075219), ('FCz', 0.12050194), ('Fp1', 0.11374412), ('C3', 0.11023709)]
+[2026-05-29 13:17:41]     spatial_update=delta_l2=0.01170228 max_abs=0.00207598 relative=0.00985518 changed=True
+
+[2026-05-29 13:17:41] Fold 3/5 | subject=11
+[2026-05-29 13:17:41]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:17:41]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:17:41]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:17:41]     Normalization: none | fit_scope=none
+[2026-05-29 13:17:41]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:17:43]     Result | best_epoch=17 | stop=67 | final_phase_epochs=67 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[4, 4] | collapse=False
+[2026-05-29 13:17:43]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13062477), ('C4', 0.12685306), ('O1', 0.11773124), ('C3', 0.11745688), ('Cz', 0.11646397), ('P4', 0.11624818), ('Fp1', 0.11328203), ('FCz', 0.11048438)]
+[2026-05-29 13:17:43]     spatial_update=delta_l2=0.15020385 max_abs=0.02727965 relative=0.12649554 changed=True
+
+[2026-05-29 13:17:43] Fold 4/5 | subject=11
+[2026-05-29 13:17:43]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:17:43]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:17:43]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:17:43]     Normalization: none | fit_scope=none
+[2026-05-29 13:17:43]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:17:44]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[8, 0] | collapse=True
+[2026-05-29 13:17:44]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13268107), ('Cz', 0.12974387), ('P4', 0.12326501), ('C4', 0.12272502), ('FCz', 0.12103923), ('FC4', 0.11948767), ('Fp1', 0.11405049), ('C3', 0.11102898)]
+[2026-05-29 13:17:44]     spatial_update=delta_l2=0.01093220 max_abs=0.00199092 relative=0.00920665 changed=True
+
+[2026-05-29 13:17:44] Fold 5/5 | subject=11
+[2026-05-29 13:17:44]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:17:44]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:17:44]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:17:44]     Normalization: none | fit_scope=none
+[2026-05-29 13:17:44]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:17:45]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[7, 1] | collapse=False
+[2026-05-29 13:17:45]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13275975), ('Cz', 0.12973225), ('P4', 0.12406699), ('C4', 0.1228572), ('FCz', 0.12052687), ('FC4', 0.11980732), ('Fp1', 0.11367508), ('C3', 0.11017187)]
+[2026-05-29 13:17:45]     spatial_update=delta_l2=0.01025329 max_abs=0.00221662 relative=0.00863490 changed=True
+[2026-05-29 13:17:45]   Subject 11: acc=0.5000±0.0791  bal_acc=0.5000±0.0791
+[2026-05-29 13:17:45] \nSubject 12: 40 windows | class_counts=[20, 20]
+
+[2026-05-29 13:17:45] Fold 1/5 | subject=12
+[2026-05-29 13:17:45]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:17:45]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:17:45]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:17:45]     Normalization: none | fit_scope=none
+[2026-05-29 13:17:45]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:17:48]     Result | best_epoch=103 | stop=153 | final_phase_epochs=153 | acc=0.8750 | bal_acc=0.8750 | pred_hist=[5, 3] | collapse=False
+[2026-05-29 13:17:48]     spatial_conv=[4, 29] top_abs_channels=[('P3', 0.16092689), ('Cz', 0.16064537), ('O1', 0.15143354), ('Oz', 0.14811963), ('FCz', 0.12592074), ('FC4', 0.11884422), ('T6', 0.11531615), ('FT8', 0.11351591)]
+[2026-05-29 13:17:48]     spatial_update=delta_l2=0.63981787 max_abs=0.18756172 relative=0.53882845 changed=True
+
+[2026-05-29 13:17:48] Fold 2/5 | subject=12
+[2026-05-29 13:17:48]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:17:48]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:17:48]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:17:48]     Normalization: none | fit_scope=none
+[2026-05-29 13:17:48]     Phase 1 (new): 2,170/16,010 params
+[2026-05-29 13:17:49]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[8, 0] | collapse=True
+[2026-05-29 13:17:49]     spatial_conv=[4, 29] top_abs_channels=[('Oz', 0.13300139), ('Cz', 0.12982699), ('P4', 0.12360987), ('FCz', 0.12195625), ('C4', 0.12106209), ('FC4', 0.12084082), ('Fp1', 0.11444336), ('C3', 0.10925742)]
+[2026-05-29 13:17:49]     spatial_update=delta_l2=0.01109658 max_abs=0.00206444 relative=0.00934509 changed=True
+
+[2026-05-29 13:17:49] Fold 3/5 | subject=12
+[2026-05-29 13:17:49]     Train: 32 | counts=[16, 16]
+[2026-05-29 13:17:49]     Test:  8 | counts=[4, 4]
+[2026-05-29 13:17:49]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-05-29 13:17:49]     Normalization: none | fit_scope=none
+[2026-05-29 13:17:49]     Phase 1 (new): 2,170/16,010 params
