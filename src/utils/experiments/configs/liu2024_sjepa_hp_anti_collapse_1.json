@@ -1,0 +1,38 @@
+[
+  {
+    "learning_rate": 0.0004,
+    "batch_size": 8,
+    "optimizer_name": "adamw",
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "augmentation_noise_fraction": 0.0,
+    "augmentation_time_shift_samples": 0,
+    "augmentation_channel_dropout_prob": 0.0,
+    "experiment_name": "hpabest_001_bs8_adamw_wd1em4_clip1",
+    "sweep_group": "HP_anti_collapse_best"
+  },
+  {
+    "learning_rate": 0.0004,
+    "batch_size": 4,
+    "optimizer_name": "adamw",
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "augmentation_noise_fraction": 0.0,
+    "augmentation_time_shift_samples": 0,
+    "augmentation_channel_dropout_prob": 0.0,
+    "experiment_name": "hpabest_002_bs4_adamw_wd1em4_clip1",
+    "sweep_group": "HP_anti_collapse_best"
+  },
+  {
+    "learning_rate": 0.0004,
+    "batch_size": 8,
+    "optimizer_name": "adamw",
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 0.5,
+    "augmentation_noise_fraction": 0.0,
+    "augmentation_time_shift_samples": 0,
+    "augmentation_channel_dropout_prob": 0.0,
+    "experiment_name": "hpabest_003_bs8_adamw_wd1em4_clip0p5",
+    "sweep_group": "HP_anti_collapse_best"
+  }
+]

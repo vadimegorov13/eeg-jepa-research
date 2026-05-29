@@ -1,0 +1,50 @@
+[
+  {
+    "learning_rate": 0.0005,
+    "batch_size": 8,
+    "optimizer_name": "adamw",
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "augmentation_noise_fraction": 0.005,
+    "augmentation_time_shift_samples": 4,
+    "augmentation_channel_dropout_prob": 0.025,
+    "experiment_name": "hpabest_017_bs8_mildaug1",
+    "sweep_group": "HP_anti_collapse_best"
+  },
+  {
+    "learning_rate": 0.0005,
+    "batch_size": 8,
+    "optimizer_name": "adamw",
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "augmentation_noise_fraction": 0.01,
+    "augmentation_time_shift_samples": 8,
+    "augmentation_channel_dropout_prob": 0.05,
+    "experiment_name": "hpabest_018_bs8_mildaug2",
+    "sweep_group": "HP_anti_collapse_best"
+  },
+  {
+    "learning_rate": 0.0005,
+    "batch_size": 4,
+    "optimizer_name": "adamw",
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "augmentation_noise_fraction": 0.005,
+    "augmentation_time_shift_samples": 4,
+    "augmentation_channel_dropout_prob": 0.025,
+    "experiment_name": "hpabest_019_bs4_mildaug1",
+    "sweep_group": "HP_anti_collapse_best"
+  },
+  {
+    "learning_rate": 0.0005,
+    "batch_size": 4,
+    "optimizer_name": "adamw",
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "augmentation_noise_fraction": 0.01,
+    "augmentation_time_shift_samples": 8,
+    "augmentation_channel_dropout_prob": 0.05,
+    "experiment_name": "hpabest_020_bs4_mildaug2",
+    "sweep_group": "HP_anti_collapse_best"
+  }
+]

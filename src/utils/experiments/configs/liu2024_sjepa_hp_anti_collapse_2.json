@@ -1,0 +1,50 @@
+[
+  {
+    "learning_rate": 0.0004,
+    "batch_size": 8,
+    "optimizer_name": "adam",
+    "weight_decay": 0.0,
+    "gradient_clip_norm": 1.0,
+    "augmentation_noise_fraction": 0.0,
+    "augmentation_time_shift_samples": 0,
+    "augmentation_channel_dropout_prob": 0.0,
+    "experiment_name": "hpabest_005_bs8_adam_clip1",
+    "sweep_group": "HP_anti_collapse_best"
+  },
+  {
+    "learning_rate": 0.0004,
+    "batch_size": 4,
+    "optimizer_name": "adam",
+    "weight_decay": 0.0,
+    "gradient_clip_norm": 1.0,
+    "augmentation_noise_fraction": 0.0,
+    "augmentation_time_shift_samples": 0,
+    "augmentation_channel_dropout_prob": 0.0,
+    "experiment_name": "hpabest_006_bs4_adam_clip1",
+    "sweep_group": "HP_anti_collapse_best"
+  },
+  {
+    "learning_rate": 0.0004,
+    "batch_size": 8,
+    "optimizer_name": "adamw",
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "augmentation_noise_fraction": 0.005,
+    "augmentation_time_shift_samples": 4,
+    "augmentation_channel_dropout_prob": 0.025,
+    "experiment_name": "hpabest_007_bs8_mildaug1",
+    "sweep_group": "HP_anti_collapse_best"
+  },
+  {
+    "learning_rate": 0.0004,
+    "batch_size": 8,
+    "optimizer_name": "adamw",
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "augmentation_noise_fraction": 0.01,
+    "augmentation_time_shift_samples": 8,
+    "augmentation_channel_dropout_prob": 0.05,
+    "experiment_name": "hpabest_008_bs8_mildaug2",
+    "sweep_group": "HP_anti_collapse_best"
+  }
+]
