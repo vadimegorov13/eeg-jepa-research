@@ -1,6 +1,6 @@
 # Artifact comparison summary
 
-Loaded runs: 128
+Loaded runs: 169
 
 Primary metric: `mean_balanced_accuracy`
 
@@ -13,6 +13,9 @@ Best run:
 - Effective sfreq: 500.0
 - Effective window duration: 1.074
 - Window duration mismatch flag: True
+- Checkpoint metric: nan
+- Label smoothing: nan
+- Prediction balance loss weight: nan
 
 Generated tables:
 - `leaderboard.csv`

@@ -1,0 +1,888 @@
+Notebook:       /home/vegorov/Repos/eeg_jepa_research/src/liu2024/liu2024_source_mat_sjepa_prelocal_anticollapse.ipynb
+Configurations: /home/vegorov/Repos/eeg_jepa_research/src/utils/experiments/configs/liu2024_sjepa_anticollapse_best_sweep.json
+Total configs:  16
+
+[1/16] Running config override:
+{
+  "mi_window_start_s": 2.0,
+  "resample": true,
+  "resample_sfreq": 128,
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "filter_method": "fir",
+  "filter_phase": "zero",
+  "filter_fir_design": "firwin",
+  "filter_iir_params": null,
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "normalization_mode": "none",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "batch_size": 4,
+  "n_epochs": 5000,
+  "early_stopping_patience": 50,
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "val_split": 0.2,
+  "learning_rate": 0.0004,
+  "optimizer_name": "adam",
+  "weight_decay": 0.0,
+  "gradient_clip_norm": null,
+  "augmentation_noise_fraction": 0.0,
+  "augmentation_time_shift_samples": 0,
+  "augmentation_channel_dropout_prob": 0.0,
+  "evaluation_mode": "stratified_kfold",
+  "cv_folds": 5,
+  "assert_balanced_folds": true,
+  "set_seed": true,
+  "seed": 2026,
+  "cv_random_state": 2026,
+  "val_split_random_state": 2026,
+  "split_random_state": 2026,
+  "experiment_name": "anticollapse_537_balacc_no_smoothing",
+  "config_note": "Anti-collapse sweep: samples=537, target_window_s=4.1953125, checkpoint=valid_balanced_accuracy, label_smoothing=0.0, prediction_balance_loss_weight=0.0, lr=0.0004, val_split=0.2. Baseline with only checkpoint metric changed.",
+  "target_window_samples": 537,
+  "target_window_s": 4.1953125,
+  "label_smoothing": 0.0,
+  "prediction_balance_loss_weight": 0.0
+}
+  status:       completed
+  elapsed_sec:  397.559
+  run_id:       20260529_1320_979904ed
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1320_979904ed
+
+[2/16] Running config override:
+{
+  "mi_window_start_s": 2.0,
+  "resample": true,
+  "resample_sfreq": 128,
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "filter_method": "fir",
+  "filter_phase": "zero",
+  "filter_fir_design": "firwin",
+  "filter_iir_params": null,
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "normalization_mode": "none",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "batch_size": 4,
+  "n_epochs": 5000,
+  "early_stopping_patience": 50,
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "val_split": 0.2,
+  "learning_rate": 0.0004,
+  "optimizer_name": "adam",
+  "weight_decay": 0.0,
+  "gradient_clip_norm": null,
+  "augmentation_noise_fraction": 0.0,
+  "augmentation_time_shift_samples": 0,
+  "augmentation_channel_dropout_prob": 0.0,
+  "evaluation_mode": "stratified_kfold",
+  "cv_folds": 5,
+  "assert_balanced_folds": true,
+  "set_seed": true,
+  "seed": 2026,
+  "cv_random_state": 2026,
+  "val_split_random_state": 2026,
+  "split_random_state": 2026,
+  "experiment_name": "anticollapse_537_balacc_ls005",
+  "config_note": "Anti-collapse sweep: samples=537, target_window_s=4.1953125, checkpoint=valid_balanced_accuracy, label_smoothing=0.05, prediction_balance_loss_weight=0.0, lr=0.0004, val_split=0.2. Main label smoothing candidate.",
+  "target_window_samples": 537,
+  "target_window_s": 4.1953125,
+  "label_smoothing": 0.05,
+  "prediction_balance_loss_weight": 0.0
+}
+  status:       completed
+  elapsed_sec:  399.717
+  run_id:       20260529_1326_23d3aef7
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1326_23d3aef7
+
+[3/16] Running config override:
+{
+  "mi_window_start_s": 2.0,
+  "resample": true,
+  "resample_sfreq": 128,
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "filter_method": "fir",
+  "filter_phase": "zero",
+  "filter_fir_design": "firwin",
+  "filter_iir_params": null,
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "normalization_mode": "none",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "batch_size": 4,
+  "n_epochs": 5000,
+  "early_stopping_patience": 50,
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "val_split": 0.2,
+  "learning_rate": 0.0004,
+  "optimizer_name": "adam",
+  "weight_decay": 0.0,
+  "gradient_clip_norm": null,
+  "augmentation_noise_fraction": 0.0,
+  "augmentation_time_shift_samples": 0,
+  "augmentation_channel_dropout_prob": 0.0,
+  "evaluation_mode": "stratified_kfold",
+  "cv_folds": 5,
+  "assert_balanced_folds": true,
+  "set_seed": true,
+  "seed": 2026,
+  "cv_random_state": 2026,
+  "val_split_random_state": 2026,
+  "split_random_state": 2026,
+  "experiment_name": "anticollapse_537_balacc_ls010",
+  "config_note": "Anti-collapse sweep: samples=537, target_window_s=4.1953125, checkpoint=valid_balanced_accuracy, label_smoothing=0.1, prediction_balance_loss_weight=0.0, lr=0.0004, val_split=0.2. Stronger label smoothing candidate.",
+  "target_window_samples": 537,
+  "target_window_s": 4.1953125,
+  "label_smoothing": 0.1,
+  "prediction_balance_loss_weight": 0.0
+}
+  status:       completed
+  elapsed_sec:  396.925
+  run_id:       20260529_1333_8a971391
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1333_8a971391
+
+[4/16] Running config override:
+{
+  "mi_window_start_s": 2.0,
+  "resample": true,
+  "resample_sfreq": 128,
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "filter_method": "fir",
+  "filter_phase": "zero",
+  "filter_fir_design": "firwin",
+  "filter_iir_params": null,
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "normalization_mode": "none",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "batch_size": 4,
+  "n_epochs": 5000,
+  "early_stopping_patience": 50,
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "val_split": 0.2,
+  "learning_rate": 0.0004,
+  "optimizer_name": "adam",
+  "weight_decay": 0.0,
+  "gradient_clip_norm": null,
+  "augmentation_noise_fraction": 0.0,
+  "augmentation_time_shift_samples": 0,
+  "augmentation_channel_dropout_prob": 0.0,
+  "evaluation_mode": "stratified_kfold",
+  "cv_folds": 5,
+  "assert_balanced_folds": true,
+  "set_seed": true,
+  "seed": 2026,
+  "cv_random_state": 2026,
+  "val_split_random_state": 2026,
+  "split_random_state": 2026,
+  "experiment_name": "anticollapse_537_balacc_ls005_balance001",
+  "config_note": "Anti-collapse sweep: samples=537, target_window_s=4.1953125, checkpoint=valid_balanced_accuracy, label_smoothing=0.05, prediction_balance_loss_weight=0.01, lr=0.0004, val_split=0.2. Main combined anti-collapse candidate.",
+  "target_window_samples": 537,
+  "target_window_s": 4.1953125,
+  "label_smoothing": 0.05,
+  "prediction_balance_loss_weight": 0.01
+}
+  status:       completed
+  elapsed_sec:  406.106
+  run_id:       20260529_1340_a6a36265
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1340_a6a36265
+
+[5/16] Running config override:
+{
+  "mi_window_start_s": 2.0,
+  "resample": true,
+  "resample_sfreq": 128,
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "filter_method": "fir",
+  "filter_phase": "zero",
+  "filter_fir_design": "firwin",
+  "filter_iir_params": null,
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "normalization_mode": "none",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "batch_size": 4,
+  "n_epochs": 5000,
+  "early_stopping_patience": 50,
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "val_split": 0.2,
+  "learning_rate": 0.0004,
+  "optimizer_name": "adam",
+  "weight_decay": 0.0,
+  "gradient_clip_norm": null,
+  "augmentation_noise_fraction": 0.0,
+  "augmentation_time_shift_samples": 0,
+  "augmentation_channel_dropout_prob": 0.0,
+  "evaluation_mode": "stratified_kfold",
+  "cv_folds": 5,
+  "assert_balanced_folds": true,
+  "set_seed": true,
+  "seed": 2026,
+  "cv_random_state": 2026,
+  "val_split_random_state": 2026,
+  "split_random_state": 2026,
+  "experiment_name": "anticollapse_537_balacc_ls010_balance001",
+  "config_note": "Anti-collapse sweep: samples=537, target_window_s=4.1953125, checkpoint=valid_balanced_accuracy, label_smoothing=0.1, prediction_balance_loss_weight=0.01, lr=0.0004, val_split=0.2. Stronger smoothing with weak balance penalty.",
+  "target_window_samples": 537,
+  "target_window_s": 4.1953125,
+  "label_smoothing": 0.1,
+  "prediction_balance_loss_weight": 0.01
+}
+  status:       completed
+  elapsed_sec:  405.153
+  run_id:       20260529_1346_a3e28827
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1346_a3e28827
+
+[6/16] Running config override:
+{
+  "mi_window_start_s": 2.0,
+  "resample": true,
+  "resample_sfreq": 128,
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "filter_method": "fir",
+  "filter_phase": "zero",
+  "filter_fir_design": "firwin",
+  "filter_iir_params": null,
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "normalization_mode": "none",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "batch_size": 4,
+  "n_epochs": 5000,
+  "early_stopping_patience": 50,
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "val_split": 0.2,
+  "learning_rate": 0.0004,
+  "optimizer_name": "adam",
+  "weight_decay": 0.0,
+  "gradient_clip_norm": null,
+  "augmentation_noise_fraction": 0.0,
+  "augmentation_time_shift_samples": 0,
+  "augmentation_channel_dropout_prob": 0.0,
+  "evaluation_mode": "stratified_kfold",
+  "cv_folds": 5,
+  "assert_balanced_folds": true,
+  "set_seed": true,
+  "seed": 2026,
+  "cv_random_state": 2026,
+  "val_split_random_state": 2026,
+  "split_random_state": 2026,
+  "experiment_name": "anticollapse_537_balacc_ls005_balance005",
+  "config_note": "Anti-collapse sweep: samples=537, target_window_s=4.1953125, checkpoint=valid_balanced_accuracy, label_smoothing=0.05, prediction_balance_loss_weight=0.05, lr=0.0004, val_split=0.2. Stronger prediction-balance penalty; check for forced uniform predictions.",
+  "target_window_samples": 537,
+  "target_window_s": 4.1953125,
+  "label_smoothing": 0.05,
+  "prediction_balance_loss_weight": 0.05
+}
+  status:       completed
+  elapsed_sec:  407.7
+  run_id:       20260529_1353_5837dadc
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1353_5837dadc
+
+[7/16] Running config override:
+{
+  "mi_window_start_s": 2.0,
+  "resample": true,
+  "resample_sfreq": 128,
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "filter_method": "fir",
+  "filter_phase": "zero",
+  "filter_fir_design": "firwin",
+  "filter_iir_params": null,
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "normalization_mode": "none",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "batch_size": 4,
+  "n_epochs": 5000,
+  "early_stopping_patience": 50,
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "val_split": 0.2,
+  "learning_rate": 0.0003,
+  "optimizer_name": "adam",
+  "weight_decay": 0.0,
+  "gradient_clip_norm": null,
+  "augmentation_noise_fraction": 0.0,
+  "augmentation_time_shift_samples": 0,
+  "augmentation_channel_dropout_prob": 0.0,
+  "evaluation_mode": "stratified_kfold",
+  "cv_folds": 5,
+  "assert_balanced_folds": true,
+  "set_seed": true,
+  "seed": 2026,
+  "cv_random_state": 2026,
+  "val_split_random_state": 2026,
+  "split_random_state": 2026,
+  "experiment_name": "anticollapse_537_balacc_ls005_lr0003",
+  "config_note": "Anti-collapse sweep: samples=537, target_window_s=4.1953125, checkpoint=valid_balanced_accuracy, label_smoothing=0.05, prediction_balance_loss_weight=0.0, lr=0.0003, val_split=0.2. Lower LR stability candidate.",
+  "target_window_samples": 537,
+  "target_window_s": 4.1953125,
+  "label_smoothing": 0.05,
+  "prediction_balance_loss_weight": 0.0
+}
+  status:       completed
+  elapsed_sec:  401.525
+  run_id:       20260529_1400_b7dd005a
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1400_b7dd005a
+
+[8/16] Running config override:
+{
+  "mi_window_start_s": 2.0,
+  "resample": true,
+  "resample_sfreq": 128,
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "filter_method": "fir",
+  "filter_phase": "zero",
+  "filter_fir_design": "firwin",
+  "filter_iir_params": null,
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "normalization_mode": "none",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "batch_size": 4,
+  "n_epochs": 5000,
+  "early_stopping_patience": 50,
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "val_split": 0.4,
+  "learning_rate": 0.0004,
+  "optimizer_name": "adam",
+  "weight_decay": 0.0,
+  "gradient_clip_norm": null,
+  "augmentation_noise_fraction": 0.0,
+  "augmentation_time_shift_samples": 0,
+  "augmentation_channel_dropout_prob": 0.0,
+  "evaluation_mode": "stratified_kfold",
+  "cv_folds": 5,
+  "assert_balanced_folds": true,
+  "set_seed": true,
+  "seed": 2026,
+  "cv_random_state": 2026,
+  "val_split_random_state": 2026,
+  "split_random_state": 2026,
+  "experiment_name": "anticollapse_537_balacc_ls005_valsplit04",
+  "config_note": "Anti-collapse sweep: samples=537, target_window_s=4.1953125, checkpoint=valid_balanced_accuracy, label_smoothing=0.05, prediction_balance_loss_weight=0.0, lr=0.0004, val_split=0.4. Larger validation split for more reliable checkpointing.",
+  "target_window_samples": 537,
+  "target_window_s": 4.1953125,
+  "label_smoothing": 0.05,
+  "prediction_balance_loss_weight": 0.0
+}
+  status:       completed
+  elapsed_sec:  395.313
+  run_id:       20260529_1407_6a2a5f74
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1407_6a2a5f74
+
+[9/16] Running config override:
+{
+  "mi_window_start_s": 2.0,
+  "resample": true,
+  "resample_sfreq": 128,
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "filter_method": "fir",
+  "filter_phase": "zero",
+  "filter_fir_design": "firwin",
+  "filter_iir_params": null,
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "normalization_mode": "none",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "batch_size": 4,
+  "n_epochs": 5000,
+  "early_stopping_patience": 50,
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "val_split": 0.2,
+  "learning_rate": 0.0004,
+  "optimizer_name": "adam",
+  "weight_decay": 0.0,
+  "gradient_clip_norm": null,
+  "augmentation_noise_fraction": 0.0,
+  "augmentation_time_shift_samples": 0,
+  "augmentation_channel_dropout_prob": 0.0,
+  "evaluation_mode": "stratified_kfold",
+  "cv_folds": 5,
+  "assert_balanced_folds": true,
+  "set_seed": true,
+  "seed": 2026,
+  "cv_random_state": 2026,
+  "val_split_random_state": 2026,
+  "split_random_state": 2026,
+  "experiment_name": "anticollapse_512_balacc_no_smoothing",
+  "config_note": "Anti-collapse sweep: samples=512, target_window_s=4.0, checkpoint=valid_balanced_accuracy, label_smoothing=0.0, prediction_balance_loss_weight=0.0, lr=0.0004, val_split=0.2. Baseline with only checkpoint metric changed.",
+  "target_window_samples": 512,
+  "target_window_s": 4.0,
+  "label_smoothing": 0.0,
+  "prediction_balance_loss_weight": 0.0
+}
+  status:       completed
+  elapsed_sec:  426.603
+  run_id:       20260529_1413_bd4672f3
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1413_bd4672f3
+
+[10/16] Running config override:
+{
+  "mi_window_start_s": 2.0,
+  "resample": true,
+  "resample_sfreq": 128,
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "filter_method": "fir",
+  "filter_phase": "zero",
+  "filter_fir_design": "firwin",
+  "filter_iir_params": null,
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "normalization_mode": "none",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "batch_size": 4,
+  "n_epochs": 5000,
+  "early_stopping_patience": 50,
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "val_split": 0.2,
+  "learning_rate": 0.0004,
+  "optimizer_name": "adam",
+  "weight_decay": 0.0,
+  "gradient_clip_norm": null,
+  "augmentation_noise_fraction": 0.0,
+  "augmentation_time_shift_samples": 0,
+  "augmentation_channel_dropout_prob": 0.0,
+  "evaluation_mode": "stratified_kfold",
+  "cv_folds": 5,
+  "assert_balanced_folds": true,
+  "set_seed": true,
+  "seed": 2026,
+  "cv_random_state": 2026,
+  "val_split_random_state": 2026,
+  "split_random_state": 2026,
+  "experiment_name": "anticollapse_512_balacc_ls005",
+  "config_note": "Anti-collapse sweep: samples=512, target_window_s=4.0, checkpoint=valid_balanced_accuracy, label_smoothing=0.05, prediction_balance_loss_weight=0.0, lr=0.0004, val_split=0.2. Main label smoothing candidate.",
+  "target_window_samples": 512,
+  "target_window_s": 4.0,
+  "label_smoothing": 0.05,
+  "prediction_balance_loss_weight": 0.0
+}
+  status:       completed
+  elapsed_sec:  409.739
+  run_id:       20260529_1420_210586fc
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1420_210586fc
+
+[11/16] Running config override:
+{
+  "mi_window_start_s": 2.0,
+  "resample": true,
+  "resample_sfreq": 128,
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "filter_method": "fir",
+  "filter_phase": "zero",
+  "filter_fir_design": "firwin",
+  "filter_iir_params": null,
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "normalization_mode": "none",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "batch_size": 4,
+  "n_epochs": 5000,
+  "early_stopping_patience": 50,
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "val_split": 0.2,
+  "learning_rate": 0.0004,
+  "optimizer_name": "adam",
+  "weight_decay": 0.0,
+  "gradient_clip_norm": null,
+  "augmentation_noise_fraction": 0.0,
+  "augmentation_time_shift_samples": 0,
+  "augmentation_channel_dropout_prob": 0.0,
+  "evaluation_mode": "stratified_kfold",
+  "cv_folds": 5,
+  "assert_balanced_folds": true,
+  "set_seed": true,
+  "seed": 2026,
+  "cv_random_state": 2026,
+  "val_split_random_state": 2026,
+  "split_random_state": 2026,
+  "experiment_name": "anticollapse_512_balacc_ls010",
+  "config_note": "Anti-collapse sweep: samples=512, target_window_s=4.0, checkpoint=valid_balanced_accuracy, label_smoothing=0.1, prediction_balance_loss_weight=0.0, lr=0.0004, val_split=0.2. Stronger label smoothing candidate.",
+  "target_window_samples": 512,
+  "target_window_s": 4.0,
+  "label_smoothing": 0.1,
+  "prediction_balance_loss_weight": 0.0
+}
+  status:       completed
+  elapsed_sec:  400.838
+  run_id:       20260529_1427_c885bb84
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1427_c885bb84
+
+[12/16] Running config override:
+{
+  "mi_window_start_s": 2.0,
+  "resample": true,
+  "resample_sfreq": 128,
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "filter_method": "fir",
+  "filter_phase": "zero",
+  "filter_fir_design": "firwin",
+  "filter_iir_params": null,
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "normalization_mode": "none",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "batch_size": 4,
+  "n_epochs": 5000,
+  "early_stopping_patience": 50,
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "val_split": 0.2,
+  "learning_rate": 0.0004,
+  "optimizer_name": "adam",
+  "weight_decay": 0.0,
+  "gradient_clip_norm": null,
+  "augmentation_noise_fraction": 0.0,
+  "augmentation_time_shift_samples": 0,
+  "augmentation_channel_dropout_prob": 0.0,
+  "evaluation_mode": "stratified_kfold",
+  "cv_folds": 5,
+  "assert_balanced_folds": true,
+  "set_seed": true,
+  "seed": 2026,
+  "cv_random_state": 2026,
+  "val_split_random_state": 2026,
+  "split_random_state": 2026,
+  "experiment_name": "anticollapse_512_balacc_ls005_balance001",
+  "config_note": "Anti-collapse sweep: samples=512, target_window_s=4.0, checkpoint=valid_balanced_accuracy, label_smoothing=0.05, prediction_balance_loss_weight=0.01, lr=0.0004, val_split=0.2. Main combined anti-collapse candidate.",
+  "target_window_samples": 512,
+  "target_window_s": 4.0,
+  "label_smoothing": 0.05,
+  "prediction_balance_loss_weight": 0.01
+}
+  status:       completed
+  elapsed_sec:  404.666
+  run_id:       20260529_1434_53b14381
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1434_53b14381
+
+[13/16] Running config override:
+{
+  "mi_window_start_s": 2.0,
+  "resample": true,
+  "resample_sfreq": 128,
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "filter_method": "fir",
+  "filter_phase": "zero",
+  "filter_fir_design": "firwin",
+  "filter_iir_params": null,
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "normalization_mode": "none",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "batch_size": 4,
+  "n_epochs": 5000,
+  "early_stopping_patience": 50,
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "val_split": 0.2,
+  "learning_rate": 0.0004,
+  "optimizer_name": "adam",
+  "weight_decay": 0.0,
+  "gradient_clip_norm": null,
+  "augmentation_noise_fraction": 0.0,
+  "augmentation_time_shift_samples": 0,
+  "augmentation_channel_dropout_prob": 0.0,
+  "evaluation_mode": "stratified_kfold",
+  "cv_folds": 5,
+  "assert_balanced_folds": true,
+  "set_seed": true,
+  "seed": 2026,
+  "cv_random_state": 2026,
+  "val_split_random_state": 2026,
+  "split_random_state": 2026,
+  "experiment_name": "anticollapse_512_balacc_ls010_balance001",
+  "config_note": "Anti-collapse sweep: samples=512, target_window_s=4.0, checkpoint=valid_balanced_accuracy, label_smoothing=0.1, prediction_balance_loss_weight=0.01, lr=0.0004, val_split=0.2. Stronger smoothing with weak balance penalty.",
+  "target_window_samples": 512,
+  "target_window_s": 4.0,
+  "label_smoothing": 0.1,
+  "prediction_balance_loss_weight": 0.01
+}
+  status:       completed
+  elapsed_sec:  408.831
+  run_id:       20260529_1441_197ce023
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1441_197ce023
+
+[14/16] Running config override:
+{
+  "mi_window_start_s": 2.0,
+  "resample": true,
+  "resample_sfreq": 128,
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "filter_method": "fir",
+  "filter_phase": "zero",
+  "filter_fir_design": "firwin",
+  "filter_iir_params": null,
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "normalization_mode": "none",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "batch_size": 4,
+  "n_epochs": 5000,
+  "early_stopping_patience": 50,
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "val_split": 0.2,
+  "learning_rate": 0.0004,
+  "optimizer_name": "adam",
+  "weight_decay": 0.0,
+  "gradient_clip_norm": null,
+  "augmentation_noise_fraction": 0.0,
+  "augmentation_time_shift_samples": 0,
+  "augmentation_channel_dropout_prob": 0.0,
+  "evaluation_mode": "stratified_kfold",
+  "cv_folds": 5,
+  "assert_balanced_folds": true,
+  "set_seed": true,
+  "seed": 2026,
+  "cv_random_state": 2026,
+  "val_split_random_state": 2026,
+  "split_random_state": 2026,
+  "experiment_name": "anticollapse_512_balacc_ls005_balance005",
+  "config_note": "Anti-collapse sweep: samples=512, target_window_s=4.0, checkpoint=valid_balanced_accuracy, label_smoothing=0.05, prediction_balance_loss_weight=0.05, lr=0.0004, val_split=0.2. Stronger prediction-balance penalty; check for forced uniform predictions.",
+  "target_window_samples": 512,
+  "target_window_s": 4.0,
+  "label_smoothing": 0.05,
+  "prediction_balance_loss_weight": 0.05
+}
+  status:       completed
+  elapsed_sec:  407.907
+  run_id:       20260529_1447_783f4111
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1447_783f4111
+
+[15/16] Running config override:
+{
+  "mi_window_start_s": 2.0,
+  "resample": true,
+  "resample_sfreq": 128,
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "filter_method": "fir",
+  "filter_phase": "zero",
+  "filter_fir_design": "firwin",
+  "filter_iir_params": null,
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "normalization_mode": "none",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "batch_size": 4,
+  "n_epochs": 5000,
+  "early_stopping_patience": 50,
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "val_split": 0.2,
+  "learning_rate": 0.0003,
+  "optimizer_name": "adam",
+  "weight_decay": 0.0,
+  "gradient_clip_norm": null,
+  "augmentation_noise_fraction": 0.0,
+  "augmentation_time_shift_samples": 0,
+  "augmentation_channel_dropout_prob": 0.0,
+  "evaluation_mode": "stratified_kfold",
+  "cv_folds": 5,
+  "assert_balanced_folds": true,
+  "set_seed": true,
+  "seed": 2026,
+  "cv_random_state": 2026,
+  "val_split_random_state": 2026,
+  "split_random_state": 2026,
+  "experiment_name": "anticollapse_512_balacc_ls005_lr0003",
+  "config_note": "Anti-collapse sweep: samples=512, target_window_s=4.0, checkpoint=valid_balanced_accuracy, label_smoothing=0.05, prediction_balance_loss_weight=0.0, lr=0.0003, val_split=0.2. Lower LR stability candidate.",
+  "target_window_samples": 512,
+  "target_window_s": 4.0,
+  "label_smoothing": 0.05,
+  "prediction_balance_loss_weight": 0.0
+}
+  status:       completed
+  elapsed_sec:  404.809
+  run_id:       20260529_1454_becfef8b
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1454_becfef8b
+
+[16/16] Running config override:
+{
+  "mi_window_start_s": 2.0,
+  "resample": true,
+  "resample_sfreq": 128,
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "filter_method": "fir",
+  "filter_phase": "zero",
+  "filter_fir_design": "firwin",
+  "filter_iir_params": null,
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "normalization_mode": "none",
+  "pretrained_mode": "from_pretrained",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "batch_size": 4,
+  "n_epochs": 5000,
+  "early_stopping_patience": 50,
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "val_split": 0.4,
+  "learning_rate": 0.0004,
+  "optimizer_name": "adam",
+  "weight_decay": 0.0,
+  "gradient_clip_norm": null,
+  "augmentation_noise_fraction": 0.0,
+  "augmentation_time_shift_samples": 0,
+  "augmentation_channel_dropout_prob": 0.0,
+  "evaluation_mode": "stratified_kfold",
+  "cv_folds": 5,
+  "assert_balanced_folds": true,
+  "set_seed": true,
+  "seed": 2026,
+  "cv_random_state": 2026,
+  "val_split_random_state": 2026,
+  "split_random_state": 2026,
+  "experiment_name": "anticollapse_512_balacc_ls005_valsplit04",
+  "config_note": "Anti-collapse sweep: samples=512, target_window_s=4.0, checkpoint=valid_balanced_accuracy, label_smoothing=0.05, prediction_balance_loss_weight=0.0, lr=0.0004, val_split=0.4. Larger validation split for more reliable checkpointing.",
+  "target_window_samples": 512,
+  "target_window_s": 4.0,
+  "label_smoothing": 0.05,
+  "prediction_balance_loss_weight": 0.0
+}
+  status:       completed
+  elapsed_sec:  394.452
+  run_id:       20260529_1501_5727cd90
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1501_5727cd90
+
+Finished.
+Results dir:    experiment_results/20260529_1320_liu2024_sjepa_anticollapse_best_sweep_0a9ef621
+Summary JSON:   experiment_results/20260529_1320_liu2024_sjepa_anticollapse_best_sweep_0a9ef621/results.json
+Artifact list:  experiment_results/20260529_1320_liu2024_sjepa_anticollapse_best_sweep_0a9ef621/artifact_ids.json
