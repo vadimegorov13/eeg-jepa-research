@@ -1,0 +1,308 @@
+Notebook:       /home/vegorov/Repos/eeg_jepa_research/src/liu2024/liu2024_source_mat_sjepa_prelocal_anticollapse.ipynb
+Configurations: /home/vegorov/Repos/eeg_jepa_research/src/utils/experiments/configs/liu2024_sjepa_537_only_timing_hp_sweep.json
+Total configs:  10
+
+[1/10] Running config override:
+{
+  "experiment_name": "sjepa537_start1p5_bs4_lr0p0004",
+  "config_note": "537-sample S-JEPA-compatible window at 128 Hz. Window starts at 1.5s and lasts ~4.195s. 0.5-40 Hz, average reference, checkpoint by validation balanced accuracy.",
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "mi_window_start_s": 1.5,
+  "normalization_mode": "none",
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "label_smoothing": 0.0,
+  "prediction_balance_loss_weight": 0.0,
+  "batch_size": 4,
+  "gradient_clip_norm": 2.0,
+  "learning_rate": 0.0004
+}
+  status:       completed
+  elapsed_sec:  416.959
+  run_id:       20260529_1853_3dde1cb0
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1853_3dde1cb0
+
+[2/10] Running config override:
+{
+  "experiment_name": "sjepa537_start2p0_bs4_lr0p0004",
+  "config_note": "537-sample S-JEPA-compatible window at 128 Hz. Window starts at 2.0s and lasts ~4.195s. 0.5-40 Hz, average reference, checkpoint by validation balanced accuracy.",
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "mi_window_start_s": 2.0,
+  "normalization_mode": "none",
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "label_smoothing": 0.0,
+  "prediction_balance_loss_weight": 0.0,
+  "batch_size": 4,
+  "gradient_clip_norm": 2.0,
+  "learning_rate": 0.0004
+}
+  status:       completed
+  elapsed_sec:  414.559
+  run_id:       20260529_1900_fd842cac
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1900_fd842cac
+
+[3/10] Running config override:
+{
+  "experiment_name": "sjepa537_start2p25_bs4_lr0p0004",
+  "config_note": "537-sample S-JEPA-compatible window at 128 Hz. Window starts at 2.25s and lasts ~4.195s. 0.5-40 Hz, average reference, checkpoint by validation balanced accuracy.",
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "mi_window_start_s": 2.25,
+  "normalization_mode": "none",
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "label_smoothing": 0.0,
+  "prediction_balance_loss_weight": 0.0,
+  "batch_size": 4,
+  "gradient_clip_norm": 2.0,
+  "learning_rate": 0.0004
+}
+  status:       completed
+  elapsed_sec:  429.518
+  run_id:       20260529_1907_bc2805ca
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1907_bc2805ca
+
+[4/10] Running config override:
+{
+  "experiment_name": "sjepa537_start2p5_bs4_lr0p0004",
+  "config_note": "537-sample S-JEPA-compatible window at 128 Hz. Window starts at 2.5s and lasts ~4.195s. 0.5-40 Hz, average reference, checkpoint by validation balanced accuracy.",
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "mi_window_start_s": 2.5,
+  "normalization_mode": "none",
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "label_smoothing": 0.0,
+  "prediction_balance_loss_weight": 0.0,
+  "batch_size": 4,
+  "gradient_clip_norm": 2.0,
+  "learning_rate": 0.0004
+}
+  status:       completed
+  elapsed_sec:  430.617
+  run_id:       20260529_1914_103a30b4
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1914_103a30b4
+
+[5/10] Running config override:
+{
+  "experiment_name": "sjepa537_start1p5_bs8_lr0p0004",
+  "config_note": "537-sample S-JEPA-compatible window at 128 Hz. Window starts at 1.5s and lasts ~4.195s. 0.5-40 Hz, average reference, checkpoint by validation balanced accuracy.",
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "mi_window_start_s": 1.5,
+  "normalization_mode": "none",
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "label_smoothing": 0.0,
+  "prediction_balance_loss_weight": 0.0,
+  "batch_size": 8,
+  "gradient_clip_norm": 2.0,
+  "learning_rate": 0.0004
+}
+  status:       completed
+  elapsed_sec:  317.162
+  run_id:       20260529_1921_943e794e
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1921_943e794e
+
+[6/10] Running config override:
+{
+  "experiment_name": "sjepa537_start2p0_bs8_lr0p0004",
+  "config_note": "537-sample S-JEPA-compatible window at 128 Hz. Window starts at 2.0s and lasts ~4.195s. 0.5-40 Hz, average reference, checkpoint by validation balanced accuracy.",
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "mi_window_start_s": 2.0,
+  "normalization_mode": "none",
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "label_smoothing": 0.0,
+  "prediction_balance_loss_weight": 0.0,
+  "batch_size": 8,
+  "gradient_clip_norm": 2.0,
+  "learning_rate": 0.0004
+}
+  status:       completed
+  elapsed_sec:  318.746
+  run_id:       20260529_1927_efac93a1
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1927_efac93a1
+
+[7/10] Running config override:
+{
+  "experiment_name": "sjepa537_start2p25_bs8_lr0p0004",
+  "config_note": "537-sample S-JEPA-compatible window at 128 Hz. Window starts at 2.25s and lasts ~4.195s. 0.5-40 Hz, average reference, checkpoint by validation balanced accuracy.",
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "mi_window_start_s": 2.25,
+  "normalization_mode": "none",
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "label_smoothing": 0.0,
+  "prediction_balance_loss_weight": 0.0,
+  "batch_size": 8,
+  "gradient_clip_norm": 2.0,
+  "learning_rate": 0.0004
+}
+  status:       completed
+  elapsed_sec:  320.044
+  run_id:       20260529_1932_761c19fc
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1932_761c19fc
+
+[8/10] Running config override:
+{
+  "experiment_name": "sjepa537_start2p5_bs8_lr0p0004",
+  "config_note": "537-sample S-JEPA-compatible window at 128 Hz. Window starts at 2.5s and lasts ~4.195s. 0.5-40 Hz, average reference, checkpoint by validation balanced accuracy.",
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "mi_window_start_s": 2.5,
+  "normalization_mode": "none",
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "label_smoothing": 0.0,
+  "prediction_balance_loss_weight": 0.0,
+  "batch_size": 8,
+  "gradient_clip_norm": 2.0,
+  "learning_rate": 0.0004
+}
+  status:       completed
+  elapsed_sec:  316.355
+  run_id:       20260529_1937_362f0fdb
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1937_362f0fdb
+
+[9/10] Running config override:
+{
+  "experiment_name": "sjepa537_start2p0_bs4_lr0p0003",
+  "config_note": "537-sample S-JEPA-compatible window at 128 Hz. Window starts at 2.0s and lasts ~4.195s. 0.5-40 Hz, average reference, checkpoint by validation balanced accuracy.",
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "mi_window_start_s": 2.0,
+  "normalization_mode": "none",
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "label_smoothing": 0.0,
+  "prediction_balance_loss_weight": 0.0,
+  "batch_size": 4,
+  "gradient_clip_norm": 2.0,
+  "learning_rate": 0.0003
+}
+  status:       completed
+  elapsed_sec:  434.044
+  run_id:       20260529_1942_a103328d
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1942_a103328d
+
+[10/10] Running config override:
+{
+  "experiment_name": "sjepa537_start2p0_bs4_lr0p0005",
+  "config_note": "537-sample S-JEPA-compatible window at 128 Hz. Window starts at 2.0s and lasts ~4.195s. 0.5-40 Hz, average reference, checkpoint by validation balanced accuracy.",
+  "demean_mode": "baseline_window_mean",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "mi_window_start_s": 2.0,
+  "normalization_mode": "none",
+  "checkpoint_metric": "valid_balanced_accuracy",
+  "label_smoothing": 0.0,
+  "prediction_balance_loss_weight": 0.0,
+  "batch_size": 4,
+  "gradient_clip_norm": 2.0,
+  "learning_rate": 0.0005
+}
+  status:       completed
+  elapsed_sec:  440.266
+  run_id:       20260529_1950_51601fb8
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260529_1950_51601fb8
+
+Finished.
+Results dir:    experiment_results/20260529_1853_liu2024_sjepa_537_only_timing_hp_sweep_8a94b533
+Summary JSON:   experiment_results/20260529_1853_liu2024_sjepa_537_only_timing_hp_sweep_8a94b533/results.json
+Artifact list:  experiment_results/20260529_1853_liu2024_sjepa_537_only_timing_hp_sweep_8a94b533/artifact_ids.json
