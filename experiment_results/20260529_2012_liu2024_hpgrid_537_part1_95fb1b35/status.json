@@ -1,0 +1,40 @@
+{
+  "run_id": "20260529_2012_liu2024_hpgrid_537_part1_95fb1b35",
+  "state": "running",
+  "pid": 299298,
+  "pid_running": true,
+  "notebook": "/home/vegorov/Repos/eeg_jepa_research/src/liu2024/liu2024_source_mat_sjepa_prelocal_anticollapse.ipynb",
+  "configs": "/home/vegorov/Repos/eeg_jepa_research/src/utils/experiments/configs/liu2024_hpgrid_537_part1.json",
+  "total_configs": 144,
+  "completed_configs": 135,
+  "failed_configs": 0,
+  "current_config_index": 135,
+  "latest_result": {
+    "status": "completed",
+    "error": null,
+    "config": {
+      "experiment_name": "hpgrid537_bs4_lr0p0003_clip2_start1_test0p4_iir_trial_mean",
+      "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. Sweeps batch size, learning rate, gradient clipping, MI window start, test size, filter method, and demean mode.",
+      "sweep_group": "537_hpgrid_batch_lr_clip_start_test_filter_demean",
+      "target_window_samples": 537,
+      "target_window_s": 4.2,
+      "batch_size": 4,
+      "learning_rate": 0.0003,
+      "gradient_clip_norm": 2,
+      "mi_window_start_s": 1,
+      "test_size": 0.4,
+      "filter_method": "iir",
+      "demean_mode": "trial_mean",
+      "filter_iir_params": {
+        "order": 2,
+        "ftype": "butter"
+      }
+    },
+    "artifact_dir": "/home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_1349_0eca1cef",
+    "run_id": "20260531_1349_0eca1cef",
+    "elapsed_seconds": 1752.372
+  },
+  "results_dir": "experiment_results/20260529_2012_liu2024_hpgrid_537_part1_95fb1b35",
+  "started_at": "2026-05-29T20:12:36",
+  "updated_at": "2026-05-31T14:18:53"
+}
