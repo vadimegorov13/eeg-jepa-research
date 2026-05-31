@@ -1,0 +1,1628 @@
+Notebook:       /home/vegorov/Repos/eeg_jepa_research/src/liu2024/liu2024_source_mat_sjepa_prelocal_anticollapse.ipynb
+Configurations: /home/vegorov/Repos/eeg_jepa_research/src/utils/experiments/configs/liu2024_hpgrid_537_demean_none_part2.json
+Total configs:  72
+
+[1/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip0_start0_test0p2_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 0,
+  "test_size": 0.2,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  728.254
+  run_id:       20260530_1205_ce3d2d0d
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1205_ce3d2d0d
+
+[2/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip0_start0_test0p2_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 0,
+  "test_size": 0.2,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  847.313
+  run_id:       20260530_1217_820d0f5c
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1217_820d0f5c
+
+[3/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip0_start0_test0p4_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 0,
+  "test_size": 0.4,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  728.887
+  run_id:       20260530_1231_4983d423
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1231_4983d423
+
+[4/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip0_start0_test0p4_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 0,
+  "test_size": 0.4,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  848.115
+  run_id:       20260530_1243_2029f52b
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1243_2029f52b
+
+[5/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip0_start1_test0p2_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 1,
+  "test_size": 0.2,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  790.569
+  run_id:       20260530_1257_467e6509
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1257_467e6509
+
+[6/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip0_start1_test0p2_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 1,
+  "test_size": 0.2,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  848.775
+  run_id:       20260530_1311_733f364f
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1311_733f364f
+
+[7/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip0_start1_test0p4_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 1,
+  "test_size": 0.4,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  802.009
+  run_id:       20260530_1325_7fd06acf
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1325_7fd06acf
+
+[8/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip0_start1_test0p4_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 1,
+  "test_size": 0.4,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  856.88
+  run_id:       20260530_1338_27aa8a84
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1338_27aa8a84
+
+[9/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip0_start2_test0p2_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 2,
+  "test_size": 0.2,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  772.33
+  run_id:       20260530_1352_dc5dfb01
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1352_dc5dfb01
+
+[10/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip0_start2_test0p2_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 2,
+  "test_size": 0.2,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  770.321
+  run_id:       20260530_1405_3fe842a5
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1405_3fe842a5
+
+[11/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip0_start2_test0p4_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 2,
+  "test_size": 0.4,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  767.67
+  run_id:       20260530_1418_c39905ff
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1418_c39905ff
+
+[12/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip0_start2_test0p4_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 2,
+  "test_size": 0.4,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  773.33
+  run_id:       20260530_1431_23808c92
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1431_23808c92
+
+[13/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip1_start0_test0p2_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 0,
+  "test_size": 0.2,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  747.694
+  run_id:       20260530_1444_21dece75
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1444_21dece75
+
+[14/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip1_start0_test0p2_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 0,
+  "test_size": 0.2,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  872.119
+  run_id:       20260530_1456_4ef6f6e3
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1456_4ef6f6e3
+
+[15/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip1_start0_test0p4_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 0,
+  "test_size": 0.4,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  760.626
+  run_id:       20260530_1511_532f9061
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1511_532f9061
+
+[16/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip1_start0_test0p4_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 0,
+  "test_size": 0.4,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  881.586
+  run_id:       20260530_1523_9207a13d
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1523_9207a13d
+
+[17/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip1_start1_test0p2_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 1,
+  "test_size": 0.2,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  818.503
+  run_id:       20260530_1538_7c3cc5de
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1538_7c3cc5de
+
+[18/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip1_start1_test0p2_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 1,
+  "test_size": 0.2,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  881.837
+  run_id:       20260530_1552_62bd44b3
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1552_62bd44b3
+
+[19/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip1_start1_test0p4_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 1,
+  "test_size": 0.4,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  827.015
+  run_id:       20260530_1606_790cda23
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1606_790cda23
+
+[20/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip1_start1_test0p4_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 1,
+  "test_size": 0.4,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  883.648
+  run_id:       20260530_1620_418e2c85
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1620_418e2c85
+
+[21/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip1_start2_test0p2_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 2,
+  "test_size": 0.2,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  792.339
+  run_id:       20260530_1635_23b694fb
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1635_23b694fb
+
+[22/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip1_start2_test0p2_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 2,
+  "test_size": 0.2,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  795.349
+  run_id:       20260530_1648_2252e491
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1648_2252e491
+
+[23/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip1_start2_test0p4_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 2,
+  "test_size": 0.4,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  780.959
+  run_id:       20260530_1701_f2d83571
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1701_f2d83571
+
+[24/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip1_start2_test0p4_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 2,
+  "test_size": 0.4,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  796.874
+  run_id:       20260530_1714_0c94f320
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1714_0c94f320
+
+[25/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip2_start0_test0p2_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 0,
+  "test_size": 0.2,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  756.958
+  run_id:       20260530_1728_891e52b9
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1728_891e52b9
+
+[26/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip2_start0_test0p2_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 0,
+  "test_size": 0.2,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  868.361
+  run_id:       20260530_1740_5b03f627
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1740_5b03f627
+
+[27/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip2_start0_test0p4_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 0,
+  "test_size": 0.4,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  755.446
+  run_id:       20260530_1755_e96f6566
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1755_e96f6566
+
+[28/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip2_start0_test0p4_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 0,
+  "test_size": 0.4,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  875.361
+  run_id:       20260530_1807_d36a6e51
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1807_d36a6e51
+
+[29/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip2_start1_test0p2_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 1,
+  "test_size": 0.2,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  822.843
+  run_id:       20260530_1822_98874a02
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1822_98874a02
+
+[30/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip2_start1_test0p2_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 1,
+  "test_size": 0.2,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  884.065
+  run_id:       20260530_1836_749d04b1
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1836_749d04b1
+
+[31/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip2_start1_test0p4_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 1,
+  "test_size": 0.4,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  823.292
+  run_id:       20260530_1850_f52ac9b4
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1850_f52ac9b4
+
+[32/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip2_start1_test0p4_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 1,
+  "test_size": 0.4,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  883.567
+  run_id:       20260530_1904_912360b2
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1904_912360b2
+
+[33/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip2_start2_test0p2_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 2,
+  "test_size": 0.2,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  789.783
+  run_id:       20260530_1919_46895297
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1919_46895297
+
+[34/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip2_start2_test0p2_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 2,
+  "test_size": 0.2,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  800.545
+  run_id:       20260530_1932_b5a82d04
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1932_b5a82d04
+
+[35/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip2_start2_test0p4_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 2,
+  "test_size": 0.4,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  802.858
+  run_id:       20260530_1945_c638bcc7
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1945_c638bcc7
+
+[36/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0004_clip2_start2_test0p4_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0004,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 2,
+  "test_size": 0.4,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  797.752
+  run_id:       20260530_1959_c99f1b2d
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_1959_c99f1b2d
+
+[37/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip0_start0_test0p2_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 0,
+  "test_size": 0.2,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  823.152
+  run_id:       20260530_2012_a12fbbce
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_2012_a12fbbce
+
+[38/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip0_start0_test0p2_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 0,
+  "test_size": 0.2,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  1012.011
+  run_id:       20260530_2026_815d3c68
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_2026_815d3c68
+
+[39/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip0_start0_test0p4_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 0,
+  "test_size": 0.4,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  825.345
+  run_id:       20260530_2043_698b44ff
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_2043_698b44ff
+
+[40/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip0_start0_test0p4_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 0,
+  "test_size": 0.4,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  1010.174
+  run_id:       20260530_2056_d832c178
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_2056_d832c178
+
+[41/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip0_start1_test0p2_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 1,
+  "test_size": 0.2,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  873.973
+  run_id:       20260530_2113_530c396e
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_2113_530c396e
+
+[42/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip0_start1_test0p2_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 1,
+  "test_size": 0.2,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  992.256
+  run_id:       20260530_2128_8c646f87
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_2128_8c646f87
+
+[43/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip0_start1_test0p4_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 1,
+  "test_size": 0.4,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  891.666
+  run_id:       20260530_2144_a1f0401a
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_2144_a1f0401a
+
+[44/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip0_start1_test0p4_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 1,
+  "test_size": 0.4,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  1005.042
+  run_id:       20260530_2159_6c08b403
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_2159_6c08b403
+
+[45/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip0_start2_test0p2_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 2,
+  "test_size": 0.2,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  827.797
+  run_id:       20260530_2216_65c03e4d
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_2216_65c03e4d
+
+[46/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip0_start2_test0p2_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 2,
+  "test_size": 0.2,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  911.525
+  run_id:       20260530_2230_506e1c2b
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_2230_506e1c2b
+
+[47/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip0_start2_test0p4_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 2,
+  "test_size": 0.4,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  833.49
+  run_id:       20260530_2245_65af33c1
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_2245_65af33c1
+
+[48/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip0_start2_test0p4_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 0,
+  "mi_window_start_s": 2,
+  "test_size": 0.4,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  907.751
+  run_id:       20260530_2259_5464d8ba
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_2259_5464d8ba
+
+[49/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip1_start0_test0p2_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 0,
+  "test_size": 0.2,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  854.312
+  run_id:       20260530_2314_b3729f59
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_2314_b3729f59
+
+[50/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip1_start0_test0p2_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 0,
+  "test_size": 0.2,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  1040.246
+  run_id:       20260530_2328_9a961c88
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_2328_9a961c88
+
+[51/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip1_start0_test0p4_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 0,
+  "test_size": 0.4,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  853.465
+  run_id:       20260530_2346_3c662f3e
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260530_2346_3c662f3e
+
+[52/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip1_start0_test0p4_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 0,
+  "test_size": 0.4,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  1042.721
+  run_id:       20260531_0000_d55e842c
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0000_d55e842c
+
+[53/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip1_start1_test0p2_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 1,
+  "test_size": 0.2,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  900.371
+  run_id:       20260531_0017_04a0dcc9
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0017_04a0dcc9
+
+[54/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip1_start1_test0p2_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 1,
+  "test_size": 0.2,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  1012.381
+  run_id:       20260531_0032_8a78c02f
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0032_8a78c02f
+
+[55/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip1_start1_test0p4_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 1,
+  "test_size": 0.4,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  909.582
+  run_id:       20260531_0049_02692948
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0049_02692948
+
+[56/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip1_start1_test0p4_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 1,
+  "test_size": 0.4,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  1018.653
+  run_id:       20260531_0104_a6b626f3
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0104_a6b626f3
+
+[57/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip1_start2_test0p2_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 2,
+  "test_size": 0.2,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  864.35
+  run_id:       20260531_0121_50745fe5
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0121_50745fe5
+
+[58/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip1_start2_test0p2_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 2,
+  "test_size": 0.2,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  936.383
+  run_id:       20260531_0136_c8453793
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0136_c8453793
+
+[59/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip1_start2_test0p4_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 2,
+  "test_size": 0.4,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  858.537
+  run_id:       20260531_0151_8b0a6c0a
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0151_8b0a6c0a
+
+[60/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip1_start2_test0p4_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 1,
+  "mi_window_start_s": 2,
+  "test_size": 0.4,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  943.486
+  run_id:       20260531_0206_ca085978
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0206_ca085978
+
+[61/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip2_start0_test0p2_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 0,
+  "test_size": 0.2,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  879.189
+  run_id:       20260531_0221_b8b53238
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0221_b8b53238
+
+[62/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip2_start0_test0p2_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 0,
+  "test_size": 0.2,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  953.395
+  run_id:       20260531_0236_0a268f13
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0236_0a268f13
+
+[63/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip2_start0_test0p4_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 0,
+  "test_size": 0.4,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  797.503
+  run_id:       20260531_0252_a8ac61d0
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0252_a8ac61d0
+
+[64/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip2_start0_test0p4_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 0,
+  "test_size": 0.4,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  935.058
+  run_id:       20260531_0305_3931e7ba
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0305_3931e7ba
+
+[65/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip2_start1_test0p2_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 1,
+  "test_size": 0.2,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  811.946
+  run_id:       20260531_0321_76f488d9
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0321_76f488d9
+
+[66/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip2_start1_test0p2_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 1,
+  "test_size": 0.2,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  917.871
+  run_id:       20260531_0334_022a1d49
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0334_022a1d49
+
+[67/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip2_start1_test0p4_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 1,
+  "test_size": 0.4,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  810.403
+  run_id:       20260531_0349_0877b151
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0349_0877b151
+
+[68/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip2_start1_test0p4_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 1,
+  "test_size": 0.4,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  918.254
+  run_id:       20260531_0403_c48f04a4
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0403_c48f04a4
+
+[69/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip2_start2_test0p2_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 2,
+  "test_size": 0.2,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  781.954
+  run_id:       20260531_0418_31680605
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0418_31680605
+
+[70/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip2_start2_test0p2_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 2,
+  "test_size": 0.2,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  847.765
+  run_id:       20260531_0431_1e4802cc
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0431_1e4802cc
+
+[71/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip2_start2_test0p4_fir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 2,
+  "test_size": 0.4,
+  "filter_method": "fir",
+  "demean_mode": "none",
+  "filter_iir_params": null
+}
+  status:       completed
+  elapsed_sec:  771.71
+  run_id:       20260531_0445_911d2dcb
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0445_911d2dcb
+
+[72/72] Running config override:
+{
+  "experiment_name": "hpgrid537_bs8_lr0p0003_clip2_start2_test0p4_iir_none",
+  "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
+  "sweep_group": "537_hpgrid_demean_none_addon",
+  "target_window_samples": 537,
+  "target_window_s": 4.2,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 2,
+  "mi_window_start_s": 2,
+  "test_size": 0.4,
+  "filter_method": "iir",
+  "demean_mode": "none",
+  "filter_iir_params": {
+    "order": 2,
+    "ftype": "butter"
+  }
+}
+  status:       completed
+  elapsed_sec:  848.595
+  run_id:       20260531_0458_e21f0033
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_0458_e21f0033
+
+Finished.
+Results dir:    experiment_results/20260530_1205_liu2024_hpgrid_537_demean_none_part2_7bbf48e0
+Summary JSON:   experiment_results/20260530_1205_liu2024_hpgrid_537_demean_none_part2_7bbf48e0/results.json
+Artifact list:  experiment_results/20260530_1205_liu2024_hpgrid_537_demean_none_part2_7bbf48e0/artifact_ids.json
