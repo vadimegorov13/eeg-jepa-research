@@ -1,40 +1,16 @@
 {
   "run_id": "20260530_1203_liu2024_hpgrid_537_demean_none_part1_0b799255",
-  "state": "running",
+  "state": "completed",
   "pid": 1041503,
   "pid_running": true,
   "notebook": "/home/vegorov/Repos/eeg_jepa_research/src/liu2024/liu2024_source_mat_sjepa_prelocal_anticollapse.ipynb",
-  "configs": "/home/vegorov/Repos/eeg_jepa_research/src/utils/experiments/configs/liu2024_hpgrid_537_demean_none_part1.json",
+  "configs": "experiment_results/20260530_1203_liu2024_hpgrid_537_demean_none_part1_0b799255/configs.json",
   "total_configs": 72,
-  "completed_configs": 70,
+  "completed_configs": 72,
   "failed_configs": 0,
-  "current_config_index": 70,
-  "latest_result": {
-    "status": "completed",
-    "error": null,
-    "config": {
-      "experiment_name": "hpgrid537_bs4_lr0p0003_clip2_start2_test0p2_iir_none",
-      "config_note": "Minimal override grid based on hpbest_012: 537 samples, 0.5-40 Hz, average reference, new+pretrained S-JEPA. This add-on grid only tests demean_mode=none while sweeping batch size, learning rate, gradient clipping, MI window start, test size, and filter method.",
-      "sweep_group": "537_hpgrid_demean_none_addon",
-      "target_window_samples": 537,
-      "target_window_s": 4.2,
-      "batch_size": 4,
-      "learning_rate": 0.0003,
-      "gradient_clip_norm": 2,
-      "mi_window_start_s": 2,
-      "test_size": 0.2,
-      "filter_method": "iir",
-      "demean_mode": "none",
-      "filter_iir_params": {
-        "order": 2,
-        "ftype": "butter"
-      }
-    },
-    "artifact_dir": "/home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-source-mat-sjepa-prelocal/20260531_1351_f268067d",
-    "run_id": "20260531_1351_f268067d",
-    "elapsed_seconds": 1406.486
-  },
   "results_dir": "experiment_results/20260530_1203_liu2024_hpgrid_537_demean_none_part1_0b799255",
-  "started_at": "2026-05-30T12:03:51",
-  "updated_at": "2026-05-31T14:14:45"
+  "summary_json": "experiment_results/20260530_1203_liu2024_hpgrid_537_demean_none_part1_0b799255/results.json",
+  "artifact_ids_json": "experiment_results/20260530_1203_liu2024_hpgrid_537_demean_none_part1_0b799255/artifact_ids.json",
+  "finished_at": "2026-05-31T15:06:21",
+  "updated_at": "2026-05-31T15:06:21"
 }
