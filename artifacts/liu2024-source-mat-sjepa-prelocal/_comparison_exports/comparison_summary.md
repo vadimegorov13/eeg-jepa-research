@@ -1,17 +1,28 @@
 # Artifact comparison summary
 
+<<<<<<< HEAD
 Loaded runs: 72
+=======
+Loaded runs: 8
+>>>>>>> origin/main
 
 Primary metric: `mean_balanced_accuracy`
 
 Best run:
+<<<<<<< HEAD
 - Run ID: `20260531_0219_8756f3ab`
 - Experiment: `hpgrid537_bs4_lr0p0003_clip0_start1_test0p2_fir_none`
 - Metric: 0.5685
 - Collapse rate: 0.408
+=======
+- Run ID: `20260531_1525_ada6c888`
+- Experiment: `twfb_short153_start2p5_fir_none_bs8_lr0p0004`
+- Metric: 0.5435
+- Collapse rate: 0.516
+>>>>>>> origin/main
 - Filter band: 0.5-40Hz
 - Effective sfreq: 128.0
-- Effective window duration: 4.1953125
+- Effective window duration: 1.1953125
 - Window duration mismatch flag: False
 - Checkpoint metric: valid_loss
 - Label smoothing: 0.0
