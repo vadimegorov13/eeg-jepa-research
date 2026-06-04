@@ -20,15 +20,7 @@ Run in daemon mode (detached/background):
 ```bash
 python src/utils/experiments/experiments.py \
   --notebook src/liu2024/liu2024_source_mat_sjepa_prelocal_anticollapse.ipynb \
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-  --configs src/utils/experiments/configs/liu2024_hpgrid_537_demean_none_part2.json \
-=======
-  --configs src/utils/experiments/configs/liu2024_hpgrid_537_demean_none_part1.json \
->>>>>>> Stashed changes
-=======
-  --configs src/utils/experiments/configs/liu2024_twfb_short153_timing_sweep.json \
->>>>>>> origin/main
+  --configs src/utils/experiments/configs/liu2024_hpbest537_mi_start_timing_sweep.json \
   --kernel-name eeg-jepa \
   --daemon
 ```
