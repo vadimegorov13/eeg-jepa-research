@@ -1,0 +1,70 @@
+{
+  "run_id": "20260614_1120_82d1a0d1",
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-riemann-crosssubject-fusion/20260614_1120_82d1a0d1",
+  "experiment_name": "sjepa_riemann_crosssubject_fusion",
+  "config_note": "EA + cross-subject LOSO; fuse frozen S-JEPA embeddings with Riemannian tangent features.",
+  "fusion_config": {
+    "eval_mode": "loso",
+    "decodable_subjects": [
+      7,
+      20,
+      23,
+      26,
+      28,
+      37,
+      38,
+      40,
+      44,
+      45
+    ],
+    "branches": [
+      "riemann",
+      "sjepa",
+      "fusion"
+    ],
+    "fusion_method": "concat_logreg",
+    "euclidean_alignment": true,
+    "align_before_sjepa": true,
+    "tangent_metric": "riemann",
+    "cov_estimator": "oas",
+    "logreg_C": 1.0,
+    "standardize": true,
+    "embedding_module": "final_layer",
+    "embedding_pool": "mean",
+    "embedding_batch": 64,
+    "sjepa_embeddings_path": null,
+    "within_cv_folds": 5,
+    "seed": 2026
+  },
+  "branches_run": [
+    "riemann",
+    "sjepa",
+    "fusion"
+  ],
+  "sjepa_available": true,
+  "tangent_backend": "pyriemann",
+  "summary": {
+    "eval_mode": "loso",
+    "euclidean_alignment": true,
+    "fusion_method": "concat_logreg",
+    "sjepa_available": true,
+    "n_subjects_eval": 10,
+    "branch_summary": {
+      "riemann": {
+        "mean_balanced_accuracy": 0.5199999999999999,
+        "std": 0.04684489774185066,
+        "n": 10
+      },
+      "sjepa": {
+        "mean_balanced_accuracy": 0.5,
+        "std": 0.07168604389202189,
+        "n": 10
+      },
+      "fusion": {
+        "mean_balanced_accuracy": 0.5275,
+        "std": 0.05062114182829145,
+        "n": 10
+      }
+    }
+  }
+}

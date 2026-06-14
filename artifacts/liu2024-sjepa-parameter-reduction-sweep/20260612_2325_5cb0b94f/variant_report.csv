@@ -1,0 +1,6 @@
+variant,init,total_params,trainable_params_new,trainable_params_full,embed_dim,n_transformer_like_layers,predictor_params,spatial_weight_shape,model_optimizer_state_MB,suggested_batch_size_by_budget,status
+tiny,random,4102,574,4102,,0,0,"[2, 1, 29, 1]",0.07,"{'2GB': 256, '4GB': 256, '8GB': 256, '12GB': 256, '16GB': 256}",ok
+small,random,16010,2170,16010,,0,0,"[4, 1, 29, 1]",0.26,"{'2GB': 256, '4GB': 256, '8GB': 256, '12GB': 256, '16GB': 256}",ok
+medium,random,59034,4218,59034,,0,0,"[4, 1, 29, 1]",0.94,"{'2GB': 256, '4GB': 256, '8GB': 256, '12GB': 256, '16GB': 256}",ok
+baseline_scratch,random,16010,2170,16010,,0,0,"[4, 1, 29, 1]",0.26,"{'2GB': 256, '4GB': 256, '8GB': 256, '12GB': 256, '16GB': 256}",ok
+baseline_pretrained,from_pretrained,16010,2170,16010,,0,0,"[4, 1, 29, 1]",0.26,"{'2GB': 256, '4GB': 256, '8GB': 256, '12GB': 256, '16GB': 256}",ok

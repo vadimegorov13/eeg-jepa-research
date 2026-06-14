@@ -1,0 +1,147 @@
+{
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-twfb-shifting-window-diagnostics",
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+  "experiment_name": "twfb_shifting_window_diagnostics",
+  "config_note": "TWFB-style time-window x filter-band sweep with covariance + MDM (MDRM). DGF not implemented. Shorter seconds-first window so it can shift across 0-4 s.",
+  "subjects_to_use": null,
+  "exclude_subjects": [],
+  "source_unit": "microvolts",
+  "final_model_unit": "microvolts",
+  "demean_mode": "none",
+  "baseline_window_s": [
+    0.0,
+    2.0
+  ],
+  "detrend_mode": "none",
+  "eog_correction": "none",
+  "artifact_clip_mode": "none",
+  "artifact_clip_abs_value": null,
+  "artifact_clip_percentile": 99.5,
+  "reference_mode": "average",
+  "reference_timing": "before_resample_filter",
+  "resample": true,
+  "resample_sfreq": 128,
+  "filter_enabled": true,
+  "filter_low": 0.5,
+  "filter_high": 40.0,
+  "filter_method": "fir",
+  "filter_phase": "zero",
+  "filter_fir_design": "firwin",
+  "filter_l_trans_bandwidth": "auto",
+  "filter_h_trans_bandwidth": "auto",
+  "filter_iir_params": null,
+  "notch_freqs": null,
+  "notch_before_bandpass": false,
+  "target_window_s": 2.0,
+  "target_window_samples": null,
+  "mi_window_start_s": 1.5,
+  "reject_bad_trials": false,
+  "reject_peak_to_peak_threshold": null,
+  "reject_abs_threshold": null,
+  "min_trials_per_class_after_reject": null,
+  "normalization_mode": "none",
+  "normalization_eps": 1e-06,
+  "model_name": "SignalJEPA_PreLocal",
+  "pretrained_mode": "from_pretrained",
+  "pretrained_repo_id": "braindecode/signal-jepa_without-chans",
+  "strategy": "new",
+  "warmup_epochs": 10,
+  "evaluation_mode": "stratified_kfold",
+  "cv_folds": 5,
+  "n_repeats": 10,
+  "test_size": 0.4,
+  "split_random_state": 2026,
+  "assert_balanced_folds": true,
+  "batch_size": 4,
+  "n_epochs": 5000,
+  "early_stopping_patience": 50,
+  "val_split": 0.2,
+  "learning_rate": 0.0003,
+  "optimizer_name": "adam",
+  "weight_decay": 0.0,
+  "gradient_clip_norm": null,
+  "checkpoint_metric": "valid_loss",
+  "label_smoothing": 0.0,
+  "prediction_balance_loss_weight": 1.0,
+  "augmentation": {
+    "enabled": false,
+    "name": "none",
+    "random_state": 2026,
+    "transforms": []
+  },
+  "seed": 2026,
+  "set_seed": true,
+  "cv_random_state": 2026,
+  "val_split_random_state": 2026,
+  "extract_spatial_conv_weights": true,
+  "save_spatial_weight_plots": false,
+  "plot_individual_spatial_filters": false,
+  "max_spatial_filters_to_plot": 8,
+  "topomap_dpi": 160,
+  "topomap_value_mode": "relative_zscore",
+  "topomap_cmap": "RdBu_r",
+  "collapse_threshold": 0.9,
+  "log_spatial_update_stats": true,
+  "log_probability_diagnostics": true,
+  "twfb": {
+    "window_start_grid_s": [
+      0.0,
+      0.5,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "filter_bands_hz": [
+      [
+        8,
+        12
+      ],
+      [
+        10,
+        14
+      ],
+      [
+        12,
+        16
+      ],
+      [
+        14,
+        18
+      ],
+      [
+        16,
+        20
+      ],
+      [
+        18,
+        22
+      ],
+      [
+        20,
+        24
+      ],
+      [
+        22,
+        26
+      ],
+      [
+        24,
+        28
+      ],
+      [
+        26,
+        30
+      ],
+      [
+        8,
+        30
+      ]
+    ],
+    "cov_estimator": "oas",
+    "cov_shrinkage": 0.001,
+    "max_subjects": null,
+    "selection_metric": "balanced_accuracy"
+  },
+  "effective_sfreq": 128.0,
+  "sfreq": 128.0
+}

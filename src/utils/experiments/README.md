@@ -19,8 +19,8 @@ Run in daemon mode (detached/background):
 
 ```bash
 python src/utils/experiments/experiments.py \
-  --notebook src/liu2024/liu2024_source_mat_sjepa_prelocal_anticollapse.ipynb \
-  --configs src/utils/experiments/configs/liu2024_hpbest537_mi_start_timing_sweep.json \
+  --notebook src/liu2024/liu2024_source_mat_sjepa_prelocal_augmented_clean.ipynb \
+  --configs src/utils/experiments/configs/augmentation_sweep.json \
   --kernel-name eeg-jepa \
   --daemon
 ```
