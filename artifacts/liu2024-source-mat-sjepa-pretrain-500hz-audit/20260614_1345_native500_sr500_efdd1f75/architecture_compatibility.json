@@ -1,0 +1,143 @@
+{
+  "ran": true,
+  "modes": [
+    {
+      "sfreq_mode": "resample_128",
+      "effective_sfreq_hz": 128.0,
+      "n_times": 538,
+      "init": "from_pretrained",
+      "total_params": 16010,
+      "output_shape": [
+        2,
+        2
+      ],
+      "observed_trailing_time_dims": [
+        4,
+        8,
+        16,
+        32,
+        64,
+        538
+      ],
+      "first_temporal_kernel_samples": 32,
+      "first_temporal_kernel_s": 0.25,
+      "model_sfreq_attrs": {
+        "sfreq": 128.0
+      },
+      "forward_error": null,
+      "kernels": [
+        {
+          "module": "feature_encoder.1.0",
+          "type": "Conv1d",
+          "kernel_time_samples": 32,
+          "kernel_time_s": 0.25,
+          "out_channels": 8
+        },
+        {
+          "module": "feature_encoder.2.0",
+          "type": "Conv1d",
+          "kernel_time_samples": 2,
+          "kernel_time_s": 0.01562,
+          "out_channels": 16
+        },
+        {
+          "module": "feature_encoder.3.0",
+          "type": "Conv1d",
+          "kernel_time_samples": 2,
+          "kernel_time_s": 0.01562,
+          "out_channels": 32
+        },
+        {
+          "module": "feature_encoder.4.0",
+          "type": "Conv1d",
+          "kernel_time_samples": 2,
+          "kernel_time_s": 0.01562,
+          "out_channels": 64
+        },
+        {
+          "module": "feature_encoder.5.0",
+          "type": "Conv1d",
+          "kernel_time_samples": 2,
+          "kernel_time_s": 0.01562,
+          "out_channels": 64
+        },
+        {
+          "module": "spatial_conv.1",
+          "type": "Conv2d",
+          "kernel_time_samples": 1,
+          "kernel_time_s": 0.00781,
+          "out_channels": 4
+        }
+      ]
+    },
+    {
+      "sfreq_mode": "native_500",
+      "effective_sfreq_hz": 500.0,
+      "n_times": 2100,
+      "init": "from_pretrained",
+      "total_params": 22154,
+      "output_shape": [
+        2,
+        2
+      ],
+      "observed_trailing_time_dims": [
+        16,
+        32,
+        64,
+        129,
+        259,
+        2100
+      ],
+      "first_temporal_kernel_samples": 32,
+      "first_temporal_kernel_s": 0.064,
+      "model_sfreq_attrs": {
+        "sfreq": 128.0
+      },
+      "forward_error": null,
+      "kernels": [
+        {
+          "module": "feature_encoder.1.0",
+          "type": "Conv1d",
+          "kernel_time_samples": 32,
+          "kernel_time_s": 0.064,
+          "out_channels": 8
+        },
+        {
+          "module": "feature_encoder.2.0",
+          "type": "Conv1d",
+          "kernel_time_samples": 2,
+          "kernel_time_s": 0.004,
+          "out_channels": 16
+        },
+        {
+          "module": "feature_encoder.3.0",
+          "type": "Conv1d",
+          "kernel_time_samples": 2,
+          "kernel_time_s": 0.004,
+          "out_channels": 32
+        },
+        {
+          "module": "feature_encoder.4.0",
+          "type": "Conv1d",
+          "kernel_time_samples": 2,
+          "kernel_time_s": 0.004,
+          "out_channels": 64
+        },
+        {
+          "module": "feature_encoder.5.0",
+          "type": "Conv1d",
+          "kernel_time_samples": 2,
+          "kernel_time_s": 0.004,
+          "out_channels": 64
+        },
+        {
+          "module": "spatial_conv.1",
+          "type": "Conv2d",
+          "kernel_time_samples": 1,
+          "kernel_time_s": 0.002,
+          "out_channels": 4
+        }
+      ]
+    }
+  ]
+}

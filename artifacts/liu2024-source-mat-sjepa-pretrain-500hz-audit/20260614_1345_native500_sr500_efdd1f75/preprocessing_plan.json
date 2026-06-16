@@ -1,0 +1,89 @@
+[
+  {
+    "stage": "source",
+    "name": "select_eeg_channels",
+    "description": "select Liu EEG channels, drop CPz reference, EOG, and marker before model input",
+    "enabled": true
+  },
+  {
+    "stage": "source",
+    "name": "demean",
+    "mode": "none",
+    "baseline_window_s": [
+      0.0,
+      2.0
+    ],
+    "enabled": false
+  },
+  {
+    "stage": "source",
+    "name": "detrend",
+    "mode": "none",
+    "enabled": false
+  },
+  {
+    "stage": "source",
+    "name": "eog_correction",
+    "mode": "none",
+    "enabled": false
+  },
+  {
+    "stage": "source",
+    "name": "artifact_clipping",
+    "mode": "none",
+    "abs_value": null,
+    "percentile": 99.5,
+    "enabled": false
+  },
+  {
+    "stage": "mne_raw",
+    "name": "reference",
+    "timing": "before_resample_filter",
+    "mode": "average",
+    "enabled": true
+  },
+  {
+    "stage": "mne_raw",
+    "name": "resample",
+    "sfreq": 500.0,
+    "enabled": false
+  },
+  {
+    "stage": "mne_raw",
+    "name": "bandpass_filter",
+    "enabled": true,
+    "l_freq": 0.5,
+    "h_freq": 40.0,
+    "method": "fir",
+    "phase": "zero",
+    "fir_design": "firwin",
+    "iir_params": null
+  },
+  {
+    "stage": "mne_raw",
+    "name": "notch_filter",
+    "timing": "after_bandpass",
+    "freqs": null,
+    "enabled": false
+  },
+  {
+    "stage": "window",
+    "name": "crop_fixed_mi_window",
+    "start_s": 1.5,
+    "target_window_samples": null,
+    "enabled": true
+  },
+  {
+    "stage": "window",
+    "name": "bad_trial_rejection",
+    "enabled": false,
+    "peak_to_peak_threshold": null,
+    "abs_threshold": null
+  },
+  {
+    "stage": "split",
+    "name": "fold_safe_normalization",
+    "mode": "none",
+    "enabled": false
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "active_sfreq_mode": "native_500",
+  "modes": {
+    "resample_128": {
+      "sfreq_mode": "resample_128",
+      "source_sfreq": 500.0,
+      "resample": true,
+      "resample_sfreq": 128.0,
+      "effective_sfreq": 128.0,
+      "window_start_s": 1.5,
+      "window_len_s_requested": 4.2,
+      "window_samples": 538,
+      "start_sample": 192,
+      "stop_sample": 730,
+      "effective_window_duration_s": 4.203125,
+      "source_samples_per_trial": 4000,
+      "resampled_samples_per_trial": 1024,
+      "window_fits_in_trial": true,
+      "legacy_fixed_window_check": null
+    },
+    "native_500": {
+      "sfreq_mode": "native_500",
+      "source_sfreq": 500.0,
+      "resample": false,
+      "resample_sfreq": 500.0,
+      "effective_sfreq": 500.0,
+      "window_start_s": 1.5,
+      "window_len_s_requested": 4.2,
+      "window_samples": 2100,
+      "start_sample": 750,
+      "stop_sample": 2850,
+      "effective_window_duration_s": 4.2,
+      "source_samples_per_trial": 4000,
+      "resampled_samples_per_trial": 4000,
+      "window_fits_in_trial": true,
+      "legacy_fixed_window_check": null
+    }
+  }
+}
