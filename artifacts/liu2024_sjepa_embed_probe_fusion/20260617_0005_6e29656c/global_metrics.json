@@ -1,0 +1,28 @@
+{
+  "experiment_name": "A_probe_lda_finetuned",
+  "feature_set": "sjepa",
+  "classifier": "shrinkage_lda",
+  "cv_scheme": "sjepa_5fold",
+  "sjepa_pretrained": true,
+  "finetune_spatial_conv": true,
+  "n_subjects": 50,
+  "n_folds_total": 250,
+  "mean_accuracy": 0.5225,
+  "std_accuracy": 0.1842335964809056,
+  "mean_balanced_accuracy": 0.5225,
+  "std_balanced_accuracy": 0.1842335964809056,
+  "n_collapsed_folds": 3,
+  "collapse_rate": 0.012,
+  "left_recall_agg": 0.497,
+  "right_recall_agg": 0.548,
+  "confusion_matrix": [
+    [
+      497,
+      503
+    ],
+    [
+      452,
+      548
+    ]
+  ]
+}

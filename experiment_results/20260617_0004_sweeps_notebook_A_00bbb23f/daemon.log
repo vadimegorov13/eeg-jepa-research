@@ -1,0 +1,130 @@
+/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/.venv/lib/python3.11/site-packages/nbformat/__init__.py:96: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  validate(nb)
+Notebook:       /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_sjepa_embed_probe_fusion.ipynb
+Configurations: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/utils/experiments/configs/sweeps_notebook_A.json
+Total configs:  9
+
+[1/9] Running config override:
+{
+  "experiment_name": "A_probe_lda_frozen_mean",
+  "config_note": "baseline: frozen S-JEPA mean-pool + shrinkage LDA",
+  "feature_set": "sjepa",
+  "classifier": "shrinkage_lda",
+  "embedding_pool": "mean",
+  "finetune_spatial_conv": false
+}
+  status:       completed
+  elapsed_sec:  25.472
+  run_id:       20260617_0004_df885eef
+  artifact_dir: ../../artifacts/liu2024_sjepa_embed_probe_fusion/20260617_0004_df885eef
+
+[2/9] Running config override:
+{
+  "experiment_name": "A_probe_logreg_frozen_mean",
+  "config_note": "frozen S-JEPA mean-pool + L2-logistic",
+  "feature_set": "sjepa",
+  "classifier": "logistic_l2",
+  "embedding_pool": "mean",
+  "finetune_spatial_conv": false
+}
+  status:       completed
+  elapsed_sec:  24.722
+  run_id:       20260617_0004_968050a4
+  artifact_dir: ../../artifacts/liu2024_sjepa_embed_probe_fusion/20260617_0004_968050a4
+
+[3/9] Running config override:
+{
+  "experiment_name": "A_probe_lda_meanmax",
+  "config_note": "richer pooling (mean+max, 128-d) + shrinkage LDA",
+  "feature_set": "sjepa",
+  "classifier": "shrinkage_lda",
+  "embedding_pool": "meanmax",
+  "finetune_spatial_conv": false
+}
+  status:       completed
+  elapsed_sec:  24.769
+  run_id:       20260617_0005_6751bec6
+  artifact_dir: ../../artifacts/liu2024_sjepa_embed_probe_fusion/20260617_0005_6751bec6
+
+[4/9] Running config override:
+{
+  "experiment_name": "A_probe_lda_finetuned",
+  "config_note": "fine-tune spatial_conv per fold (new-pre-local spirit)",
+  "feature_set": "sjepa",
+  "classifier": "shrinkage_lda",
+  "embedding_pool": "mean",
+  "finetune_spatial_conv": true
+}
+  status:       completed
+  elapsed_sec:  187.448
+  run_id:       20260617_0005_6e29656c
+  artifact_dir: ../../artifacts/liu2024_sjepa_embed_probe_fusion/20260617_0005_6e29656c
+
+[5/9] Running config override:
+{
+  "experiment_name": "A_riemann_only_lda",
+  "config_note": "filter-bank tangent features alone (mini Riemannian base)",
+  "feature_set": "riemann",
+  "classifier": "shrinkage_lda"
+}
+  status:       completed
+  elapsed_sec:  54.67
+  run_id:       20260617_0008_6ca625cf
+  artifact_dir: ../../artifacts/liu2024_sjepa_embed_probe_fusion/20260617_0008_6ca625cf
+
+[6/9] Running config override:
+{
+  "experiment_name": "A_fusion_lda",
+  "config_note": "KEY: S-JEPA + Riemannian feature fusion, shrinkage LDA",
+  "feature_set": "sjepa+riemann",
+  "classifier": "shrinkage_lda",
+  "embedding_pool": "mean",
+  "finetune_spatial_conv": false
+}
+  status:       completed
+  elapsed_sec:  58.9
+  run_id:       20260617_0009_f6163ced
+  artifact_dir: ../../artifacts/liu2024_sjepa_embed_probe_fusion/20260617_0009_f6163ced
+
+[7/9] Running config override:
+{
+  "experiment_name": "A_fusion_logreg",
+  "config_note": "S-JEPA + Riemannian feature fusion, L2-logistic",
+  "feature_set": "sjepa+riemann",
+  "classifier": "logistic_l2"
+}
+  status:       completed
+  elapsed_sec:  58.644
+  run_id:       20260617_0010_58cf6147
+  artifact_dir: ../../artifacts/liu2024_sjepa_embed_probe_fusion/20260617_0010_58cf6147
+
+[8/9] Running config override:
+{
+  "experiment_name": "A_probe_lda_randominit",
+  "config_note": "CONTROL: random-init S-JEPA (does pretraining matter?)",
+  "feature_set": "sjepa",
+  "classifier": "shrinkage_lda",
+  "sjepa_pretrained": false
+}
+  status:       completed
+  elapsed_sec:  24.438
+  run_id:       20260617_0011_4b819b49
+  artifact_dir: ../../artifacts/liu2024_sjepa_embed_probe_fusion/20260617_0011_4b819b49
+
+[9/9] Running config override:
+{
+  "experiment_name": "A_fusion_lda_liu_holdout",
+  "config_note": "fusion under Liu 60/40 repeated holdout protocol",
+  "feature_set": "sjepa+riemann",
+  "classifier": "shrinkage_lda",
+  "cv_scheme": "liu_repeated_holdout"
+}
+  status:       completed
+  elapsed_sec:  87.905
+  run_id:       20260617_0011_bc898169
+  artifact_dir: ../../artifacts/liu2024_sjepa_embed_probe_fusion/20260617_0011_bc898169
+
+Finished.
+Results dir:    experiment_results/20260617_0004_sweeps_notebook_A_00bbb23f
+Summary JSON:   experiment_results/20260617_0004_sweeps_notebook_A_00bbb23f/results.json
+Artifact list:  experiment_results/20260617_0004_sweeps_notebook_A_00bbb23f/artifact_ids.json

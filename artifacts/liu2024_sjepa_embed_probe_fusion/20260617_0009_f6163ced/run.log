@@ -1,0 +1,76 @@
+[2026-06-17 00:09:34] ======================================================================
+[2026-06-17 00:09:34] Experiment: A_fusion_lda
+[2026-06-17 00:09:34] Note:       KEY: S-JEPA + Riemannian feature fusion, shrinkage LDA
+[2026-06-17 00:09:34] Run ID:     20260617_0009_f6163ced
+[2026-06-17 00:09:34] Artifacts:  ../../artifacts/liu2024_sjepa_embed_probe_fusion/20260617_0009_f6163ced
+[2026-06-17 00:09:34] Device:     mps | seed=2026
+[2026-06-17 00:09:34] ======================================================================
+[2026-06-17 00:09:34] N channels: 29 | first 5: ['Fp1', 'Fp2', 'Fz', 'F3', 'F4']
+[2026-06-17 00:09:34] Riemannian feature builder defined.
+[2026-06-17 00:09:34] Feature assembly + subject runner defined.
+[2026-06-17 00:09:34] Found 50 .mat files | using 50 subjects
+[2026-06-17 00:09:34] S-JEPA: from_pretrained braindecode/signal-jepa_without-chans
+[2026-06-17 00:09:35]   params total=16,010 trainable=2,170 (spatial_conv+final_layer)
+[2026-06-17 00:09:35] ======================================================================
+[2026-06-17 00:09:36]   [hook=feature_encoder pool=mean] embedding matrix: (40, 64)
+[2026-06-17 00:09:36]   Sub 01: bal_acc= 60.0% ± 14.6%  collapse=0/5
+[2026-06-17 00:09:37]   Sub 02: bal_acc= 37.5% ±  7.9%  collapse=0/5
+[2026-06-17 00:09:39]   Sub 03: bal_acc= 52.5% ±  5.0%  collapse=0/5
+[2026-06-17 00:09:40]   Sub 04: bal_acc= 50.0% ± 15.8%  collapse=0/5
+[2026-06-17 00:09:40]   Sub 05: bal_acc= 50.0% ± 11.2%  collapse=0/5
+[2026-06-17 00:09:42]   Sub 06: bal_acc= 50.0% ±  7.9%  collapse=1/5
+[2026-06-17 00:09:43]   Sub 07: bal_acc= 75.0% ±  7.9%  collapse=0/5
+[2026-06-17 00:09:44]   Sub 08: bal_acc= 32.5% ± 23.2%  collapse=0/5
+[2026-06-17 00:09:45]   Sub 09: bal_acc= 45.0% ± 12.7%  collapse=0/5
+[2026-06-17 00:09:46]   Sub 10: bal_acc= 55.0% ± 24.5%  collapse=0/5
+[2026-06-17 00:09:47]   Sub 11: bal_acc= 65.0% ±  5.0%  collapse=0/5
+[2026-06-17 00:09:48]   Sub 12: bal_acc= 45.0% ±  6.1%  collapse=1/5
+[2026-06-17 00:09:49]   Sub 13: bal_acc= 52.5% ± 21.5%  collapse=1/5
+[2026-06-17 00:09:50]   Sub 14: bal_acc= 42.5% ± 20.3%  collapse=0/5
+[2026-06-17 00:09:51]   Sub 15: bal_acc= 42.5% ±  6.1%  collapse=0/5
+[2026-06-17 00:09:52]   Sub 16: bal_acc= 47.5% ±  9.4%  collapse=0/5
+[2026-06-17 00:09:53]   Sub 17: bal_acc= 50.0% ± 13.7%  collapse=0/5
+[2026-06-17 00:09:54]   Sub 18: bal_acc= 57.5% ± 12.7%  collapse=0/5
+[2026-06-17 00:09:55]   Sub 19: bal_acc= 45.0% ± 15.0%  collapse=0/5
+[2026-06-17 00:09:56]   Sub 20: bal_acc= 72.5% ± 18.4%  collapse=0/5
+[2026-06-17 00:09:57]   Sub 21: bal_acc= 55.0% ± 17.0%  collapse=0/5
+[2026-06-17 00:09:58]   Sub 22: bal_acc= 70.0% ±  6.1%  collapse=0/5
+[2026-06-17 00:09:59]   Sub 23: bal_acc= 70.0% ± 17.0%  collapse=0/5
+[2026-06-17 00:10:00]   Sub 24: bal_acc= 45.0% ± 21.8%  collapse=0/5
+[2026-06-17 00:10:01]   Sub 25: bal_acc= 50.0% ± 15.8%  collapse=0/5
+[2026-06-17 00:10:02]   Sub 26: bal_acc= 47.5% ± 12.2%  collapse=0/5
+[2026-06-17 00:10:03]   Sub 27: bal_acc= 40.0% ±  9.4%  collapse=0/5
+[2026-06-17 00:10:04]   Sub 28: bal_acc= 65.0% ± 16.6%  collapse=0/5
+[2026-06-17 00:10:05]   Sub 29: bal_acc= 62.5% ± 13.7%  collapse=0/5
+[2026-06-17 00:10:06]   Sub 30: bal_acc= 65.0% ±  5.0%  collapse=0/5
+[2026-06-17 00:10:07]   Sub 31: bal_acc= 65.0% ±  9.4%  collapse=0/5
+[2026-06-17 00:10:08]   Sub 32: bal_acc= 57.5% ± 12.7%  collapse=0/5
+[2026-06-17 00:10:09]   Sub 33: bal_acc= 37.5% ± 11.2%  collapse=0/5
+[2026-06-17 00:10:10]   Sub 34: bal_acc= 57.5% ± 18.7%  collapse=0/5
+[2026-06-17 00:10:11]   Sub 35: bal_acc= 57.5% ± 18.7%  collapse=0/5
+[2026-06-17 00:10:12]   Sub 36: bal_acc= 55.0% ± 10.0%  collapse=0/5
+[2026-06-17 00:10:13]   Sub 37: bal_acc= 57.5% ±  6.1%  collapse=1/5
+[2026-06-17 00:10:14]   Sub 38: bal_acc= 57.5% ± 17.0%  collapse=1/5
+[2026-06-17 00:10:15]   Sub 39: bal_acc= 45.0% ± 12.7%  collapse=0/5
+[2026-06-17 00:10:16]   Sub 40: bal_acc= 67.5% ± 12.7%  collapse=0/5
+[2026-06-17 00:10:17]   Sub 41: bal_acc= 52.5% ±  9.4%  collapse=0/5
+[2026-06-17 00:10:18]   Sub 42: bal_acc= 42.5% ± 12.7%  collapse=0/5
+[2026-06-17 00:10:19]   Sub 43: bal_acc= 55.0% ± 12.7%  collapse=0/5
+[2026-06-17 00:10:20]   Sub 44: bal_acc= 65.0% ± 16.6%  collapse=0/5
+[2026-06-17 00:10:21]   Sub 45: bal_acc= 47.5% ± 12.2%  collapse=0/5
+[2026-06-17 00:10:22]   Sub 46: bal_acc= 55.0% ± 10.0%  collapse=0/5
+[2026-06-17 00:10:24]   Sub 47: bal_acc= 57.5% ± 17.0%  collapse=0/5
+[2026-06-17 00:10:25]   Sub 48: bal_acc= 55.0% ± 12.7%  collapse=0/5
+[2026-06-17 00:10:26]   Sub 49: bal_acc= 50.0% ± 11.2%  collapse=0/5
+[2026-06-17 00:10:26]   Sub 50: bal_acc= 57.5% ± 12.7%  collapse=0/5
+[2026-06-17 00:10:26] ======================================================================
+[2026-06-17 00:10:26] Done. Total folds: 250
+[2026-06-17 00:10:27] ======================================================================
+[2026-06-17 00:10:27] GLOBAL — S-JEPA probe/fusion [sjepa+riemann | shrinkage_lda]
+[2026-06-17 00:10:27]   Balanced accuracy: 53.85% ± 16.87%
+[2026-06-17 00:10:27]   Accuracy:          53.85% ± 16.87%
+[2026-06-17 00:10:27]   Left/Right recall: 53.1% / 54.6%
+[2026-06-17 00:10:27]   Collapsed folds:   5/250 (2.0%)
+[2026-06-17 00:10:27]   Artifacts: ../../artifacts/liu2024_sjepa_embed_probe_fusion/20260617_0009_f6163ced
+[2026-06-17 00:10:27] ======================================================================
+[2026-06-17 00:10:27] Saved CSV/JSON artifacts + confusion_matrix.png + subject_performance.png

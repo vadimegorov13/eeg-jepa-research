@@ -1,0 +1,12 @@
+[
+  {"experiment_name": "B_twfb_fgmdm_full_honest", "config_note": "HONEST CEILING: 7x19 grid, in-fold selection, FgMDM",        "branches": "twfb",        "twfb_classifier": "fgmdm",  "twfb_grid": "full"},
+  {"experiment_name": "B_twfb_tslda_full",        "config_note": "TWFB ceiling, TangentSpace+PCA+LDA reading",                 "branches": "twfb",        "twfb_classifier": "ts_lda", "twfb_grid": "full"},
+  {"experiment_name": "B_twfb_canonical_fast",    "config_note": "fast sanity: 3 windows x 3 bands, FgMDM",                    "branches": "twfb",        "twfb_classifier": "fgmdm",  "twfb_grid": "canonical"},
+  {"experiment_name": "B_sjepa_only",             "config_note": "S-JEPA branch alone within this harness",                    "branches": "sjepa"},
+  {"experiment_name": "B_fusion_weighted",        "config_note": "KEY: honest TWFB + S-JEPA, validation-weighted fusion",      "branches": "twfb+sjepa",  "twfb_classifier": "ts_lda", "twfb_grid": "full", "fusion": "weighted"},
+  {"experiment_name": "B_fusion_stacking",        "config_note": "KEY: honest TWFB + S-JEPA, logistic stacking fusion",        "branches": "twfb+sjepa",  "twfb_classifier": "ts_lda", "twfb_grid": "full", "fusion": "stacking"},
+  {"experiment_name": "B_twfb_matlab_like",       "config_note": "mimic published filtering: causal one-pass + 50 Hz notch",   "branches": "twfb",        "twfb_classifier": "fgmdm",  "twfb_grid": "full", "twfb_filter_phase": "causal", "twfb_notch_hz": 50},
+  {"experiment_name": "B_twfb_logeuclid",         "config_note": "log-Euclidean metric instead of affine-invariant",           "branches": "twfb",        "twfb_classifier": "ts_lda", "twfb_grid": "full", "twfb_metric": "logeuclid"},
+  {"experiment_name": "B_fusion_randominit",      "config_note": "CONTROL: fusion with random-init S-JEPA",                    "branches": "twfb+sjepa",  "twfb_classifier": "ts_lda", "twfb_grid": "full", "fusion": "weighted", "sjepa_pretrained": false},
+  {"experiment_name": "B_fusion_liu_holdout",     "config_note": "fusion under Liu 60/40 repeated holdout protocol",           "branches": "twfb+sjepa",  "twfb_classifier": "ts_lda", "twfb_grid": "full", "fusion": "weighted", "cv_scheme": "liu_repeated_holdout"}
+]
