@@ -1,0 +1,141 @@
+{
+  "config": {
+    "experiment_name": "sjepa_twfb_hybrid",
+    "source_roots": [
+      "/home/vegorov/Repos/Liu2024_matlab_code/sourcedata",
+      "/home/vegorov/Repos/eeg_jepa_research/liu2024_data/liu2024_figshare/sourcedata"
+    ],
+    "artifact_dir": "/home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-sjepa-twfb-hybrid",
+    "subjects_to_use": null,
+    "channel_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "marker_channel_index": 32,
+    "onset_marker_value": 2,
+    "onset_plausible_range": [
+      800,
+      1300
+    ],
+    "onset_fallback_sample": 1003,
+    "native_sfreq": 500,
+    "preroll_samples": 800,
+    "mi_segment_samples": 2000,
+    "sjepa_repo_id": "braindecode/signal-jepa_without-chans",
+    "sjepa_checkpoint_path": null,
+    "sjepa_init": "pretrained",
+    "sjepa_sfreq": 128,
+    "sjepa_window_start_s": 1.5,
+    "sjepa_window_samples": 537,
+    "sjepa_bandpass_hz": [
+      0.5,
+      40.0
+    ],
+    "embedding_hook": "feature_encoder",
+    "embedding_pool": "mean",
+    "sjepa_embedding_cache_dir": "/home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024_sjepa_embeddings_lda/embeddings",
+    "freq_bands": [
+      [
+        8,
+        12
+      ],
+      [
+        8,
+        20
+      ],
+      [
+        8,
+        30
+      ],
+      [
+        12,
+        20
+      ],
+      [
+        15,
+        20
+      ],
+      [
+        15,
+        30
+      ],
+      [
+        20,
+        30
+      ],
+      [
+        8,
+        15
+      ]
+    ],
+    "notch_freq": 50.0,
+    "notch_Q": 6.0,
+    "butter_order": 2,
+    "tw_starts_s": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "tw_len_s": 2.0,
+    "fixed_window_s": [
+      0.0,
+      4.0
+    ],
+    "cov_shrinkage": 0.1,
+    "tangent_metric": "logeuclid",
+    "personalize": "twfb",
+    "run_branches": [
+      "sjepa",
+      "riemann",
+      "fusion"
+    ],
+    "classifier": "shrinkage_lda",
+    "n_repeats": 10,
+    "test_size": 0.4,
+    "inner_folds": 3,
+    "random_state": 2026,
+    "device": "auto"
+  },
+  "summary": {
+    "sjepa": {
+      "bacc_mean": 0.5122500000000001,
+      "bacc_std": 0.08161671559984587
+    },
+    "riemann": {
+      "bacc_mean": 0.516375,
+      "bacc_std": 0.0970867911999887
+    },
+    "fusion": {
+      "bacc_mean": 0.5195000000000001,
+      "bacc_std": 0.09488379036204965
+    }
+  },
+  "n_subjects": 50
+}
