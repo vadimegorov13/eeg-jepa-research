@@ -2,10 +2,10 @@
   "config": {
     "experiment_name": "twfb_dgfmdm_timewindow_faithful",
     "source_roots": [
-      "/home/vadimegorov/eeg/Liu2024_matlab_code/sourcedata",
-      "/home/vadimegorov/eeg/eeg-jepa-research/liu2024_data/liu2024_figshare/sourcedata"
+      "/home/vegorov/Repos/Liu2024_matlab_code/sourcedata",
+      "/home/vegorov/Repos/eeg_jepa_research/liu2024_data/liu2024_figshare/sourcedata"
     ],
-    "artifact_dir": "/home/vadimegorov/eeg/eeg-jepa-research/artifacts/liu2024-twfb-dgfmdm-timewindow-faithful",
+    "artifact_dir": "/home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-twfb-dgfmdm-timewindow-faithful",
     "native_sfreq": 500,
     "channel_indices": [
       0,
@@ -45,11 +45,7 @@
       1300
     ],
     "onset_fallback_sample": 1003,
-    "subjects_to_use": [
-      8,
-      13,
-      14
-    ],
+    "subjects_to_use": null,
     "preroll_samples": 800,
     "mi_window_samples": 2000,
     "notch_freq": 50.0,
@@ -103,9 +99,9 @@
     "cov_shrinkage": 0.1,
     "run_shipped_fb_leaky": true,
     "run_twfb_leaky": true,
-    "run_twfb_honest": false,
+    "run_twfb_honest": true,
     "run_perband_fixed": true,
-    "n_repeats": 3,
+    "n_repeats": 10,
     "train_size": 24,
     "test_size": 16,
     "honest_test_frac": 0.4,
@@ -114,13 +110,21 @@
   },
   "summary": {
     "shipped_fb_leaky": [
-      0.6805555555555555,
-      0.043368041655544406
+      0.6714999999999999,
+      0.09355132008580058
     ],
     "twfb_leaky": [
-      0.7569444444444443,
-      0.03182344232608222
+      0.77125,
+      0.048724155891579475
+    ],
+    "twfb_honest_acc": [
+      0.5223749999999999,
+      0.0687336483337332
+    ],
+    "twfb_honest_bacc": [
+      0.5223749999999999,
+      0.0687336483337332
     ]
   },
-  "n_subjects": 3
+  "n_subjects": 50
 }
