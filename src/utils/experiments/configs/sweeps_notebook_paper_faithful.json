@@ -1,0 +1,43 @@
+[
+  {
+    "experiment_name": "PF_honest_lda_ltsa_19band",
+    "config_note": "paper grid + LTSA, honest+leaky",
+    "twfb_classifier": "lda_ltsa",
+    "run_leaky": true,
+    "run_honest": true
+  },
+  {
+    "experiment_name": "PF_honest_fgmdm_19band",
+    "config_note": "paper grid, FgMDM (DGFMDM) classifier",
+    "twfb_classifier": "fgmdm",
+    "run_leaky": true,
+    "run_honest": true
+  },
+  {
+    "experiment_name": "PF_5fold_lda_ltsa",
+    "config_note": "protocol-match S-JEPA probe (5-fold, 32 train)",
+    "twfb_classifier": "lda_ltsa",
+    "cv_scheme": "sjepa_5fold"
+  },
+  {
+    "experiment_name": "PF_no_ltsa_tangent_lda",
+    "config_note": "ablation: skip LTSA (pre_pca only) + LDA",
+    "twfb_classifier": "lda_ltsa",
+    "ltsa_pre_pca": 20,
+    "ltsa_n_components": 20,
+    "ltsa_n_neighbors": 12
+  },
+  {
+    "experiment_name": "PF_causal_filter",
+    "config_note": "causal one-pass filtering (matches MATLAB)",
+    "twfb_classifier": "lda_ltsa",
+    "filter_phase": "causal"
+  },
+  {
+    "experiment_name": "PF_honest_only_full",
+    "config_note": "honest only, faster (skip leaky+fixed)",
+    "run_leaky": false,
+    "run_perband_fixed": false,
+    "twfb_classifier": "lda_ltsa"
+  }
+]
