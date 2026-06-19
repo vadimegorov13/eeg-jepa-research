@@ -1,0 +1,109 @@
+/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/nbformat/__init__.py:96: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  validate(nb)
+Notebook:       /home/vegorov/Repos/eeg_jepa_research/src/liu2024/liu2024_twfb_dgfmdm_sjepa_hybrid.ipynb
+Configurations: /home/vegorov/Repos/eeg_jepa_research/src/utils/experiments/configs/sweeps_notebook_B.json
+Total configs:  10
+
+[1/10] Running config override:
+{
+  "experiment_name": "B_twfb_fgmdm_full_honest",
+  "config_note": "HONEST CEILING: 7x19 grid, in-fold selection, FgMDM",
+  "branches": "twfb",
+  "twfb_classifier": "fgmdm",
+  "twfb_grid": "full"
+}
+  status:       completed
+  elapsed_sec:  33643.28
+  run_id:       20260617_0728_448db0ba
+  artifact_dir: ../../artifacts/liu2024_twfb_dgfmdm_sjepa_hybrid/20260617_0728_448db0ba
+
+[2/10] Running config override:
+{
+  "experiment_name": "B_twfb_tslda_full",
+  "config_note": "TWFB ceiling, TangentSpace+PCA+LDA reading",
+  "branches": "twfb",
+  "twfb_classifier": "ts_lda",
+  "twfb_grid": "full"
+}
+  status:       completed
+  elapsed_sec:  25813.313
+  run_id:       20260617_1649_166bdf24
+  artifact_dir: ../../artifacts/liu2024_twfb_dgfmdm_sjepa_hybrid/20260617_1649_166bdf24
+
+[3/10] Running config override:
+{
+  "experiment_name": "B_twfb_canonical_fast",
+  "config_note": "fast sanity: 3 windows x 3 bands, FgMDM",
+  "branches": "twfb",
+  "twfb_classifier": "fgmdm",
+  "twfb_grid": "canonical"
+}
+  status:       completed
+  elapsed_sec:  2287.571
+  run_id:       20260617_2359_7c295dbb
+  artifact_dir: ../../artifacts/liu2024_twfb_dgfmdm_sjepa_hybrid/20260617_2359_7c295dbb
+
+[4/10] Running config override:
+{
+  "experiment_name": "B_sjepa_only",
+  "config_note": "S-JEPA branch alone within this harness",
+  "branches": "sjepa"
+}
+  status:       completed
+  elapsed_sec:  33654.643
+  run_id:       20260618_0037_d8f5cf50
+  artifact_dir: ../../artifacts/liu2024_twfb_dgfmdm_sjepa_hybrid/20260618_0037_d8f5cf50
+
+[5/10] Running config override:
+{
+  "experiment_name": "B_fusion_weighted",
+  "config_note": "KEY: honest TWFB + S-JEPA, validation-weighted fusion",
+  "branches": "twfb+sjepa",
+  "twfb_classifier": "ts_lda",
+  "twfb_grid": "full",
+  "fusion": "weighted"
+}
+Traceback (most recent call last):
+  File "/home/vegorov/Repos/eeg_jepa_research/src/utils/experiments/experiments.py", line 570, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/vegorov/Repos/eeg_jepa_research/src/utils/experiments/experiments.py", line 490, in main
+    result = execute_one(
+             ^^^^^^^^^^^^
+  File "/home/vegorov/Repos/eeg_jepa_research/src/utils/experiments/experiments.py", line 388, in execute_one
+    client.execute()
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vegorov/miniforge3/envs/dl/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/nbclient/client.py", line 693, in async_execute
+    async with self.async_setup_kernel(**kwargs):
+  File "/home/vegorov/miniforge3/envs/dl/lib/python3.11/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/nbclient/client.py", line 648, in async_setup_kernel
+    await self.async_start_new_kernel(**kwargs)
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/nbclient/client.py", line 550, in async_start_new_kernel
+    await ensure_async(self.km.start_kernel(extra_arguments=self.extra_arguments, **kwargs))
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 214, in ensure_async
+    result = await obj
+             ^^^^^^^^^
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/jupyter_client/manager.py", line 97, in wrapper
+    raise e
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/jupyter_client/manager.py", line 88, in wrapper
+    out = await method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/jupyter_client/manager.py", line 441, in _async_start_kernel
+    kernel_cmd, kw = await self._async_pre_start_kernel(**kw)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/jupyter_client/manager.py", line 403, in _async_pre_start_kernel
+    self.kernel_spec,
+    ^^^^^^^^^^^^^^^^
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/jupyter_client/manager.py", line 196, in kernel_spec
+    self._kernel_spec = self.kernel_spec_manager.get_kernel_spec(self.kernel_name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vegorov/Repos/eeg_jepa_research/.venv/lib/python3.11/site-packages/jupyter_client/kernelspec.py", line 287, in get_kernel_spec
+    raise NoSuchKernel(kernel_name)
+jupyter_client.kernelspec.NoSuchKernel: No such kernel named eeg-jepa
