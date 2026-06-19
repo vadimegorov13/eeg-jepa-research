@@ -1,0 +1,30 @@
+{
+  "experiment_name": "B_twfb_canonical_fast",
+  "branches": "twfb",
+  "fusion": "weighted",
+  "twfb_classifier": "fgmdm",
+  "twfb_grid": "canonical",
+  "twfb_metric": "riemann",
+  "sjepa_pretrained": true,
+  "cv_scheme": "sjepa_5fold",
+  "n_subjects": 50,
+  "n_folds_total": 250,
+  "mean_accuracy": 0.5255,
+  "std_accuracy": 0.2072657384745041,
+  "mean_balanced_accuracy": 0.5255,
+  "std_balanced_accuracy": 0.2072657384745041,
+  "n_collapsed_folds": 0,
+  "collapse_rate": 0.0,
+  "left_recall_agg": 0.528,
+  "right_recall_agg": 0.523,
+  "confusion_matrix": [
+    [
+      528,
+      472
+    ],
+    [
+      477,
+      523
+    ]
+  ]
+}
