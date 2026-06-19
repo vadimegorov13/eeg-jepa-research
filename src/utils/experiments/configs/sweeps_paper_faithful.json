@@ -1,0 +1,74 @@
+[
+  {
+    "experiment_name": "PV2_honest_lda_ltsa_full",
+    "config_note": "paper 19x7 + LTSA + LDA; leaky+honest",
+    "twfb_classifier": "lda_ltsa",
+    "use_ltsa": true
+  },
+  {
+    "experiment_name": "PV2_honest_fgmdm_full",
+    "config_note": "19x7, FgMDM on covariance (no LTSA reading)",
+    "twfb_classifier": "fgmdm"
+  },
+  {
+    "experiment_name": "PV2_no_ltsa_ablation",
+    "config_note": "ablation: TangentSpace->PCA->LDA, LTSA OFF",
+    "twfb_classifier": "lda_ltsa",
+    "use_ltsa": false
+  },
+  {
+    "experiment_name": "PV2_canonical_quick",
+    "config_note": "fast: 3 windows x 3 bands + LTSA",
+    "freq_bands": [
+      [
+        8,
+        13
+      ],
+      [
+        13,
+        30
+      ],
+      [
+        8,
+        30
+      ]
+    ],
+    "time_window_starts_s": [
+      0.0,
+      1.5,
+      3.0
+    ],
+    "n_repeats": 5
+  },
+  {
+    "experiment_name": "PV2_causal_filter",
+    "config_note": "causal one-pass filtering (matches MATLAB)",
+    "filter_phase": "causal"
+  },
+  {
+    "experiment_name": "PV2_logeuclid",
+    "config_note": "log-Euclidean tangent metric",
+    "twfb_metric": "logeuclid"
+  },
+  {
+    "experiment_name": "PV2_kfold5",
+    "config_note": "5-fold (32 train) protocol match",
+    "cv_scheme": "kfold5"
+  },
+  {
+    "experiment_name": "PV2_rebuild_cache",
+    "config_note": "force recompute + overwrite covariance cache",
+    "covariance_cache_mode": "rebuild"
+  },
+  {
+    "experiment_name": "PV2_use_cache_only",
+    "config_note": "reuse cached covariances only (fast)",
+    "covariance_cache_mode": "readonly"
+  },
+  {
+    "experiment_name": "PV2_honest_only",
+    "config_note": "honest only (skip leaky + fixed) for speed",
+    "run_twfb_leaky": false,
+    "run_perband_fixed": false
+  }
+]

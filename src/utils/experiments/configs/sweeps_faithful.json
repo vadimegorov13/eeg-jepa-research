@@ -1,0 +1,132 @@
+[
+  {
+    "experiment_name": "v2_regularized_default",
+    "config_note": "trace-norm + 0.1 shrinkage (stable), causal filter",
+    "covariance_cache_mode": "auto"
+  },
+  {
+    "experiment_name": "v2_raw_scatter_matlab",
+    "config_note": "bit-for-bit MATLAB covariance (no reg)",
+    "cov_trace_normalize": false,
+    "cov_shrinkage": 0.0
+  },
+  {
+    "experiment_name": "v2_zero_phase_filter",
+    "config_note": "zero-phase filtfilt instead of causal",
+    "filter_phase": "zero"
+  },
+  {
+    "experiment_name": "v2_logeuclid_metric",
+    "config_note": "log-Euclidean FgMDM metric",
+    "fgmdm_metric": "logeuclid"
+  },
+  {
+    "experiment_name": "v2_kfold5",
+    "config_note": "5-fold (32 train) instead of 60/40 repeated holdout",
+    "cv_scheme": "kfold5"
+  },
+  {
+    "experiment_name": "v2_paper19_bands",
+    "config_note": "paper's 19 bands instead of the 8 shipped (NOT the shipped method)",
+    "freq_bands": [
+      [
+        8,
+        12
+      ],
+      [
+        9,
+        13
+      ],
+      [
+        10,
+        14
+      ],
+      [
+        11,
+        15
+      ],
+      [
+        12,
+        16
+      ],
+      [
+        13,
+        17
+      ],
+      [
+        14,
+        18
+      ],
+      [
+        15,
+        19
+      ],
+      [
+        16,
+        20
+      ],
+      [
+        17,
+        21
+      ],
+      [
+        18,
+        22
+      ],
+      [
+        19,
+        23
+      ],
+      [
+        20,
+        24
+      ],
+      [
+        21,
+        25
+      ],
+      [
+        22,
+        26
+      ],
+      [
+        23,
+        27
+      ],
+      [
+        24,
+        28
+      ],
+      [
+        25,
+        29
+      ],
+      [
+        26,
+        30
+      ]
+    ]
+  },
+  {
+    "experiment_name": "v2_rebuild_cache",
+    "config_note": "force recompute + overwrite covariance cache",
+    "covariance_cache_mode": "rebuild"
+  },
+  {
+    "experiment_name": "v2_use_cache_only",
+    "config_note": "reuse cached covariances only (fast; errors if missing)",
+    "covariance_cache_mode": "readonly"
+  },
+  {
+    "experiment_name": "v2_honest_only_fast",
+    "config_note": "honest protocols only (skip leaky + fixed)",
+    "run_shipped_fb_leaky": false,
+    "run_twfb_leaky": false,
+    "run_perband_fixed": false
+  },
+  {
+    "experiment_name": "v2_more_repeats",
+    "config_note": "20 repeats for tighter estimates",
+    "n_repeats": 20
+  }
+]
