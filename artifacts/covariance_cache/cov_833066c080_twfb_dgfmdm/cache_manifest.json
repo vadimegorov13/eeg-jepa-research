@@ -1,0 +1,149 @@
+{
+  "cov_signature": "833066c080",
+  "built_by": "twfb_dgfmdm_faithful",
+  "config_subset": {
+    "native_sfreq": 500,
+    "channel_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "marker_channel_index": 32,
+    "onset_marker_value": 2,
+    "onset_plausible_range": [
+      800,
+      1300
+    ],
+    "onset_fallback_sample": 1003,
+    "preroll_samples": 800,
+    "mi_window_samples": 2000,
+    "notch_freq": 50.0,
+    "notch_Q": 6.0,
+    "butter_order": 2,
+    "filter_phase": "causal",
+    "freq_bands": [
+      [
+        8,
+        12
+      ],
+      [
+        8,
+        20
+      ],
+      [
+        8,
+        30
+      ],
+      [
+        12,
+        20
+      ],
+      [
+        15,
+        20
+      ],
+      [
+        15,
+        30
+      ],
+      [
+        20,
+        30
+      ],
+      [
+        8,
+        15
+      ]
+    ],
+    "time_window_starts_s": [
+      0.0,
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "time_window_len_s": 1.0,
+    "cov_trace_normalize": true,
+    "cov_shrinkage": 0.1
+  },
+  "array_shape": "(n_trials, n_channels, n_channels)  n_channels=29",
+  "keys": {
+    "fb__{lo}_{hi}": "full 0-4 s covariance for band [lo,hi]",
+    "tw__{lo}_{hi}__{wstart}": "covariance over the 1-s window starting at {wstart}s for band [lo,hi]",
+    "y": "labels (0=left,1=right)",
+    "onsets": "per-trial MI onset sample",
+    "_cov_sig": "signature string"
+  },
+  "bands": [
+    [
+      8,
+      12
+    ],
+    [
+      8,
+      20
+    ],
+    [
+      8,
+      30
+    ],
+    [
+      12,
+      20
+    ],
+    [
+      15,
+      20
+    ],
+    [
+      15,
+      30
+    ],
+    [
+      20,
+      30
+    ],
+    [
+      8,
+      15
+    ]
+  ],
+  "windows": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0
+  ],
+  "win_len_s": 1.0
+}
