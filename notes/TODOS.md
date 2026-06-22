@@ -14,5 +14,3 @@ Meeting at 4:30pm on Wednesday
 Output the covariance matrix. 
 
 link to paper, link to data, link to covariance matrix for each TWFB on a trial
-
-Try normal classifier again, i nede a better understanding on what is going on.
