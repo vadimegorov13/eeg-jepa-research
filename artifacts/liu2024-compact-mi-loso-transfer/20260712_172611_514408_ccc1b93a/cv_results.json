@@ -1,0 +1,1342 @@
+[
+  {
+    "subject_id": "sub-01",
+    "fold_id": 0,
+    "test_indices": [
+      3,
+      7,
+      11,
+      13,
+      16,
+      20,
+      24,
+      38
+    ],
+    "true_labels": [
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "predictions": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "probabilities": [
+      [
+        0.19016674160957336,
+        0.8098332285881042
+      ],
+      [
+        0.10995584726333618,
+        0.890044093132019
+      ],
+      [
+        0.08066216111183167,
+        0.919337809085846
+      ],
+      [
+        0.13465864956378937,
+        0.8653413653373718
+      ],
+      [
+        0.16535350680351257,
+        0.8346465229988098
+      ],
+      [
+        0.11387928575277328,
+        0.8861207365989685
+      ],
+      [
+        0.15937460958957672,
+        0.8406254649162292
+      ],
+      [
+        0.15253619849681854,
+        0.847463846206665
+      ]
+    ],
+    "accuracy": 0.5,
+    "balanced_accuracy": 0.5,
+    "confusion_matrix": [
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    "prediction_histogram": [
+      0,
+      8
+    ],
+    "collapse_diagnostics": {
+      "collapsed": true
+    },
+    "parameter_count": 12513,
+    "trainable_parameter_count": 12513,
+    "training_seconds": 1.3518783748149872,
+    "seed": 2026,
+    "source_subject_ids": [
+      "sub-03",
+      "sub-07",
+      "sub-09"
+    ],
+    "checkpoint_signature": "0b5a8d80281a6da3",
+    "checkpoint_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/checkpoint_cache/compact-mi-loso/0b5a8d80281a6da3.pt",
+    "classifier_head": "final_layer",
+    "adaptation_mode": "target_only",
+    "target_train_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      12,
+      14,
+      15,
+      17,
+      18,
+      19,
+      21,
+      22,
+      23,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      39
+    ]
+  },
+  {
+    "subject_id": "sub-01",
+    "fold_id": 1,
+    "test_indices": [
+      5,
+      8,
+      15,
+      22,
+      23,
+      28,
+      36,
+      39
+    ],
+    "true_labels": [
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1
+    ],
+    "predictions": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "probabilities": [
+      [
+        0.49744269251823425,
+        0.5025573372840881
+      ],
+      [
+        0.420284241437912,
+        0.5797157883644104
+      ],
+      [
+        0.4272416830062866,
+        0.5727583169937134
+      ],
+      [
+        0.44028544425964355,
+        0.5597145557403564
+      ],
+      [
+        0.40129879117012024,
+        0.5987011790275574
+      ],
+      [
+        0.4962446987628937,
+        0.5037552714347839
+      ],
+      [
+        0.45946913957595825,
+        0.5405308604240417
+      ],
+      [
+        0.5078964233398438,
+        0.49210354685783386
+      ]
+    ],
+    "accuracy": 0.375,
+    "balanced_accuracy": 0.375,
+    "confusion_matrix": [
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "prediction_histogram": [
+      1,
+      7
+    ],
+    "collapse_diagnostics": {
+      "collapsed": false
+    },
+    "parameter_count": 12513,
+    "trainable_parameter_count": 12513,
+    "training_seconds": 1.35015366692096,
+    "seed": 2026,
+    "source_subject_ids": [
+      "sub-03",
+      "sub-07",
+      "sub-09"
+    ],
+    "checkpoint_signature": "0b5a8d80281a6da3",
+    "checkpoint_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/checkpoint_cache/compact-mi-loso/0b5a8d80281a6da3.pt",
+    "classifier_head": "final_layer",
+    "adaptation_mode": "target_only",
+    "target_train_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      24,
+      25,
+      26,
+      27,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      37,
+      38
+    ]
+  },
+  {
+    "subject_id": "sub-01",
+    "fold_id": 2,
+    "test_indices": [
+      1,
+      2,
+      4,
+      6,
+      12,
+      17,
+      21,
+      33
+    ],
+    "true_labels": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "predictions": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0
+    ],
+    "probabilities": [
+      [
+        0.559999942779541,
+        0.44000008702278137
+      ],
+      [
+        0.2904752492904663,
+        0.7095248103141785
+      ],
+      [
+        0.33686715364456177,
+        0.6631328463554382
+      ],
+      [
+        0.5248174071311951,
+        0.47518259286880493
+      ],
+      [
+        0.527143120765686,
+        0.47285687923431396
+      ],
+      [
+        0.46160152554512024,
+        0.5383983850479126
+      ],
+      [
+        0.407866895198822,
+        0.592133104801178
+      ],
+      [
+        0.6425555944442749,
+        0.3574444353580475
+      ]
+    ],
+    "accuracy": 0.5,
+    "balanced_accuracy": 0.5,
+    "confusion_matrix": [
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "prediction_histogram": [
+      4,
+      4
+    ],
+    "collapse_diagnostics": {
+      "collapsed": false
+    },
+    "parameter_count": 12513,
+    "trainable_parameter_count": 12513,
+    "training_seconds": 1.3497528748121113,
+    "seed": 2026,
+    "source_subject_ids": [
+      "sub-03",
+      "sub-07",
+      "sub-09"
+    ],
+    "checkpoint_signature": "0b5a8d80281a6da3",
+    "checkpoint_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/checkpoint_cache/compact-mi-loso/0b5a8d80281a6da3.pt",
+    "classifier_head": "final_layer",
+    "adaptation_mode": "target_only",
+    "target_train_indices": [
+      0,
+      3,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ]
+  },
+  {
+    "subject_id": "sub-01",
+    "fold_id": 3,
+    "test_indices": [
+      0,
+      9,
+      10,
+      19,
+      26,
+      27,
+      29,
+      34
+    ],
+    "true_labels": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0
+    ],
+    "predictions": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "probabilities": [
+      [
+        0.9406042695045471,
+        0.05939576402306557
+      ],
+      [
+        0.9541704654693604,
+        0.04582952708005905
+      ],
+      [
+        0.9519075155258179,
+        0.04809248819947243
+      ],
+      [
+        0.9622608423233032,
+        0.0377391092479229
+      ],
+      [
+        0.9315782785415649,
+        0.06842169910669327
+      ],
+      [
+        0.929866373538971,
+        0.07013364881277084
+      ],
+      [
+        0.9211361408233643,
+        0.07886392623186111
+      ],
+      [
+        0.9388163089752197,
+        0.06118374690413475
+      ]
+    ],
+    "accuracy": 0.5,
+    "balanced_accuracy": 0.5,
+    "confusion_matrix": [
+      [
+        4,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    "prediction_histogram": [
+      8,
+      0
+    ],
+    "collapse_diagnostics": {
+      "collapsed": true
+    },
+    "parameter_count": 12513,
+    "trainable_parameter_count": 12513,
+    "training_seconds": 1.3463158749509603,
+    "seed": 2026,
+    "source_subject_ids": [
+      "sub-03",
+      "sub-07",
+      "sub-09"
+    ],
+    "checkpoint_signature": "0b5a8d80281a6da3",
+    "checkpoint_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/checkpoint_cache/compact-mi-loso/0b5a8d80281a6da3.pt",
+    "classifier_head": "final_layer",
+    "adaptation_mode": "target_only",
+    "target_train_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      28,
+      30,
+      31,
+      32,
+      33,
+      35,
+      36,
+      37,
+      38,
+      39
+    ]
+  },
+  {
+    "subject_id": "sub-01",
+    "fold_id": 4,
+    "test_indices": [
+      14,
+      18,
+      25,
+      30,
+      31,
+      32,
+      35,
+      37
+    ],
+    "true_labels": [
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1
+    ],
+    "predictions": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "probabilities": [
+      [
+        0.39810416102409363,
+        0.6018958687782288
+      ],
+      [
+        0.6371989250183105,
+        0.36280107498168945
+      ],
+      [
+        0.5776230692863464,
+        0.42237699031829834
+      ],
+      [
+        0.6926047801971436,
+        0.30739521980285645
+      ],
+      [
+        0.7520064115524292,
+        0.2479936182498932
+      ],
+      [
+        0.6664627194404602,
+        0.3335372805595398
+      ],
+      [
+        0.8404681086540222,
+        0.1595318466424942
+      ],
+      [
+        0.6852226257324219,
+        0.31477734446525574
+      ]
+    ],
+    "accuracy": 0.375,
+    "balanced_accuracy": 0.375,
+    "confusion_matrix": [
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    "prediction_histogram": [
+      7,
+      1
+    ],
+    "collapse_diagnostics": {
+      "collapsed": false
+    },
+    "parameter_count": 12513,
+    "trainable_parameter_count": 12513,
+    "training_seconds": 1.354309958172962,
+    "seed": 2026,
+    "source_subject_ids": [
+      "sub-03",
+      "sub-07",
+      "sub-09"
+    ],
+    "checkpoint_signature": "0b5a8d80281a6da3",
+    "checkpoint_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/checkpoint_cache/compact-mi-loso/0b5a8d80281a6da3.pt",
+    "classifier_head": "final_layer",
+    "adaptation_mode": "target_only",
+    "target_train_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15,
+      16,
+      17,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      26,
+      27,
+      28,
+      29,
+      33,
+      34,
+      36,
+      38,
+      39
+    ]
+  },
+  {
+    "subject_id": "sub-03",
+    "fold_id": 0,
+    "test_indices": [
+      3,
+      7,
+      11,
+      13,
+      16,
+      20,
+      24,
+      38
+    ],
+    "true_labels": [
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "predictions": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "probabilities": [
+      [
+        0.1395709365606308,
+        0.8604291081428528
+      ],
+      [
+        0.026005608960986137,
+        0.9739943146705627
+      ],
+      [
+        0.08952870965003967,
+        0.9104712605476379
+      ],
+      [
+        0.038165416568517685,
+        0.9618346095085144
+      ],
+      [
+        0.10483292490243912,
+        0.8951670527458191
+      ],
+      [
+        0.11884274333715439,
+        0.8811572194099426
+      ],
+      [
+        0.01605677790939808,
+        0.9839432239532471
+      ],
+      [
+        0.08816544711589813,
+        0.9118345379829407
+      ]
+    ],
+    "accuracy": 0.5,
+    "balanced_accuracy": 0.5,
+    "confusion_matrix": [
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    "prediction_histogram": [
+      0,
+      8
+    ],
+    "collapse_diagnostics": {
+      "collapsed": true
+    },
+    "parameter_count": 12513,
+    "trainable_parameter_count": 12513,
+    "training_seconds": 1.3542698749806732,
+    "seed": 2026,
+    "source_subject_ids": [
+      "sub-01",
+      "sub-07",
+      "sub-09"
+    ],
+    "checkpoint_signature": "f56d708267c09f14",
+    "checkpoint_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/checkpoint_cache/compact-mi-loso/f56d708267c09f14.pt",
+    "classifier_head": "final_layer",
+    "adaptation_mode": "target_only",
+    "target_train_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      12,
+      14,
+      15,
+      17,
+      18,
+      19,
+      21,
+      22,
+      23,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      39
+    ]
+  },
+  {
+    "subject_id": "sub-03",
+    "fold_id": 1,
+    "test_indices": [
+      5,
+      8,
+      15,
+      22,
+      23,
+      28,
+      36,
+      39
+    ],
+    "true_labels": [
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1
+    ],
+    "predictions": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "probabilities": [
+      [
+        0.08702537417411804,
+        0.9129745960235596
+      ],
+      [
+        0.01988949067890644,
+        0.9801105260848999
+      ],
+      [
+        0.029039116576313972,
+        0.9709609150886536
+      ],
+      [
+        0.09901904314756393,
+        0.9009808897972107
+      ],
+      [
+        0.03706243261694908,
+        0.9629376530647278
+      ],
+      [
+        0.07044509053230286,
+        0.9295548796653748
+      ],
+      [
+        0.10178671777248383,
+        0.8982133269309998
+      ],
+      [
+        0.06382516771554947,
+        0.9361748695373535
+      ]
+    ],
+    "accuracy": 0.5,
+    "balanced_accuracy": 0.5,
+    "confusion_matrix": [
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    "prediction_histogram": [
+      0,
+      8
+    ],
+    "collapse_diagnostics": {
+      "collapsed": true
+    },
+    "parameter_count": 12513,
+    "trainable_parameter_count": 12513,
+    "training_seconds": 1.3543992908671498,
+    "seed": 2026,
+    "source_subject_ids": [
+      "sub-01",
+      "sub-07",
+      "sub-09"
+    ],
+    "checkpoint_signature": "f56d708267c09f14",
+    "checkpoint_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/checkpoint_cache/compact-mi-loso/f56d708267c09f14.pt",
+    "classifier_head": "final_layer",
+    "adaptation_mode": "target_only",
+    "target_train_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      24,
+      25,
+      26,
+      27,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      37,
+      38
+    ]
+  },
+  {
+    "subject_id": "sub-03",
+    "fold_id": 2,
+    "test_indices": [
+      1,
+      2,
+      4,
+      6,
+      12,
+      17,
+      21,
+      33
+    ],
+    "true_labels": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "predictions": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "probabilities": [
+      [
+        0.2314625233411789,
+        0.7685374617576599
+      ],
+      [
+        0.11951344460248947,
+        0.8804864883422852
+      ],
+      [
+        0.0692589282989502,
+        0.9307410717010498
+      ],
+      [
+        0.17844972014427185,
+        0.8215502500534058
+      ],
+      [
+        0.25670382380485535,
+        0.7432962656021118
+      ],
+      [
+        0.04931455850601196,
+        0.950685441493988
+      ],
+      [
+        0.18238936364650726,
+        0.8176106214523315
+      ],
+      [
+        0.11264920979738235,
+        0.8873507976531982
+      ]
+    ],
+    "accuracy": 0.5,
+    "balanced_accuracy": 0.5,
+    "confusion_matrix": [
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    "prediction_histogram": [
+      0,
+      8
+    ],
+    "collapse_diagnostics": {
+      "collapsed": true
+    },
+    "parameter_count": 12513,
+    "trainable_parameter_count": 12513,
+    "training_seconds": 1.3510699169710279,
+    "seed": 2026,
+    "source_subject_ids": [
+      "sub-01",
+      "sub-07",
+      "sub-09"
+    ],
+    "checkpoint_signature": "f56d708267c09f14",
+    "checkpoint_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/checkpoint_cache/compact-mi-loso/f56d708267c09f14.pt",
+    "classifier_head": "final_layer",
+    "adaptation_mode": "target_only",
+    "target_train_indices": [
+      0,
+      3,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ]
+  },
+  {
+    "subject_id": "sub-03",
+    "fold_id": 3,
+    "test_indices": [
+      0,
+      9,
+      10,
+      19,
+      26,
+      27,
+      29,
+      34
+    ],
+    "true_labels": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0
+    ],
+    "predictions": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "probabilities": [
+      [
+        0.6637241840362549,
+        0.33627578616142273
+      ],
+      [
+        0.6228470206260681,
+        0.3771529495716095
+      ],
+      [
+        0.7062802910804749,
+        0.29371970891952515
+      ],
+      [
+        0.5719076991081238,
+        0.428092360496521
+      ],
+      [
+        0.6630546450614929,
+        0.3369453549385071
+      ],
+      [
+        0.5001841187477112,
+        0.49981585144996643
+      ],
+      [
+        0.5490627288818359,
+        0.4509372115135193
+      ],
+      [
+        0.809741735458374,
+        0.19025826454162598
+      ]
+    ],
+    "accuracy": 0.5,
+    "balanced_accuracy": 0.5,
+    "confusion_matrix": [
+      [
+        4,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    "prediction_histogram": [
+      8,
+      0
+    ],
+    "collapse_diagnostics": {
+      "collapsed": true
+    },
+    "parameter_count": 12513,
+    "trainable_parameter_count": 12513,
+    "training_seconds": 1.351096250116825,
+    "seed": 2026,
+    "source_subject_ids": [
+      "sub-01",
+      "sub-07",
+      "sub-09"
+    ],
+    "checkpoint_signature": "f56d708267c09f14",
+    "checkpoint_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/checkpoint_cache/compact-mi-loso/f56d708267c09f14.pt",
+    "classifier_head": "final_layer",
+    "adaptation_mode": "target_only",
+    "target_train_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      28,
+      30,
+      31,
+      32,
+      33,
+      35,
+      36,
+      37,
+      38,
+      39
+    ]
+  },
+  {
+    "subject_id": "sub-03",
+    "fold_id": 4,
+    "test_indices": [
+      14,
+      18,
+      25,
+      30,
+      31,
+      32,
+      35,
+      37
+    ],
+    "true_labels": [
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1
+    ],
+    "predictions": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "probabilities": [
+      [
+        0.8806325197219849,
+        0.11936745047569275
+      ],
+      [
+        0.8051135540008545,
+        0.1948864459991455
+      ],
+      [
+        0.8246200084686279,
+        0.1753799319267273
+      ],
+      [
+        0.7812650203704834,
+        0.2187349498271942
+      ],
+      [
+        0.8539883494377136,
+        0.14601169526576996
+      ],
+      [
+        0.7956123948097229,
+        0.2043875902891159
+      ],
+      [
+        0.9314267635345459,
+        0.06857326626777649
+      ],
+      [
+        0.8817893862724304,
+        0.1182105764746666
+      ]
+    ],
+    "accuracy": 0.5,
+    "balanced_accuracy": 0.5,
+    "confusion_matrix": [
+      [
+        4,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    "prediction_histogram": [
+      8,
+      0
+    ],
+    "collapse_diagnostics": {
+      "collapsed": true
+    },
+    "parameter_count": 12513,
+    "trainable_parameter_count": 12513,
+    "training_seconds": 1.3540573751088232,
+    "seed": 2026,
+    "source_subject_ids": [
+      "sub-01",
+      "sub-07",
+      "sub-09"
+    ],
+    "checkpoint_signature": "f56d708267c09f14",
+    "checkpoint_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/checkpoint_cache/compact-mi-loso/f56d708267c09f14.pt",
+    "classifier_head": "final_layer",
+    "adaptation_mode": "target_only",
+    "target_train_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15,
+      16,
+      17,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      26,
+      27,
+      28,
+      29,
+      33,
+      34,
+      36,
+      38,
+      39
+    ]
+  }
+]

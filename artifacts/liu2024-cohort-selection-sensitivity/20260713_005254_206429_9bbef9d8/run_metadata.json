@@ -1,0 +1,256 @@
+{
+  "run_id": "20260713_005254_206429_9bbef9d8",
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/20260713_005254_206429_9bbef9d8",
+  "experiment_name": "cohort_selection_locked_shallow_primary",
+  "config_note": "Locked Shallow OOF cohort-selection sensitivity; outcome-ranked oracle is invalid.",
+  "analysis_role": "locked_primary",
+  "source_artifact": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260712_165746_790145_fd8ab986",
+  "subjects": [
+    "sub-01",
+    "sub-02",
+    "sub-03",
+    "sub-04",
+    "sub-05",
+    "sub-06",
+    "sub-07",
+    "sub-08",
+    "sub-09",
+    "sub-10",
+    "sub-11",
+    "sub-12",
+    "sub-13",
+    "sub-14",
+    "sub-15",
+    "sub-16",
+    "sub-17",
+    "sub-18",
+    "sub-19",
+    "sub-20",
+    "sub-21",
+    "sub-22",
+    "sub-23",
+    "sub-24",
+    "sub-25",
+    "sub-26",
+    "sub-27",
+    "sub-28",
+    "sub-29",
+    "sub-30",
+    "sub-31",
+    "sub-32",
+    "sub-33",
+    "sub-34",
+    "sub-35",
+    "sub-36",
+    "sub-37",
+    "sub-38",
+    "sub-39",
+    "sub-40",
+    "sub-41",
+    "sub-42",
+    "sub-43",
+    "sub-44",
+    "sub-45",
+    "sub-46",
+    "sub-47",
+    "sub-48",
+    "sub-49",
+    "sub-50"
+  ],
+  "channel_names": [
+    "Fp1",
+    "Fp2",
+    "Fz",
+    "F3",
+    "F4",
+    "F7",
+    "F8",
+    "FCz",
+    "FC3",
+    "FC4",
+    "FT7",
+    "FT8",
+    "Cz",
+    "C3",
+    "C4",
+    "T3",
+    "T4",
+    "CP3",
+    "CP4",
+    "TP7",
+    "TP8",
+    "Pz",
+    "P3",
+    "P4",
+    "T5",
+    "T6",
+    "Oz",
+    "O1",
+    "O2"
+  ],
+  "seed": 20260713,
+  "global_metrics": {
+    "analysis_role": "locked_primary",
+    "source_artifact": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260712_165746_790145_fd8ab986",
+    "validation": {
+      "subject_ids_exact": true,
+      "n_subjects": 50,
+      "trials_per_subject": 40,
+      "n_exactly_once_oof_predictions": 2000
+    },
+    "cohorts": {
+      "Full50": {
+        "analysis_role": "locked_primary",
+        "n_subjects": 50,
+        "coverage_fraction": 1.0,
+        "mean_subject_ba": 0.5745,
+        "ci95_low": 0.5415,
+        "ci95_high": 0.607,
+        "selection_status": "fixed_outcome_blind"
+      },
+      "Lv14_fixed": {
+        "analysis_role": "locked_primary",
+        "n_subjects": 14,
+        "coverage_fraction": 0.28,
+        "mean_subject_ba": 0.5285714285714287,
+        "ci95_low": 0.47142857142857153,
+        "ci95_high": 0.5946428571428573,
+        "selection_status": "fixed_outcome_blind"
+      },
+      "non_Lv36": {
+        "analysis_role": "locked_primary",
+        "n_subjects": 36,
+        "coverage_fraction": 0.72,
+        "mean_subject_ba": 0.5923611111111112,
+        "ci95_low": 0.5555555555555558,
+        "ci95_high": 0.6291666666666665,
+        "selection_status": "fixed_outcome_blind"
+      }
+    },
+    "qc": {
+      "scope": "full_recording_transductive_label_blind_not_fold_local",
+      "signature": "36b61eb313b2e037",
+      "cache_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/qc_cache/qc_36b61eb313b2e037",
+      "policy_counts": {
+        "marker_valid": {
+          "pass": 47,
+          "fail": 3
+        },
+        "all_finite": {
+          "pass": 50,
+          "fail": 0
+        },
+        "robust_scale_plausible": {
+          "pass": 50,
+          "fail": 0
+        },
+        "no_flat_channels": {
+          "pass": 50,
+          "fail": 0
+        },
+        "peak_to_peak_plausible": {
+          "pass": 50,
+          "fail": 0
+        },
+        "extreme_fraction_plausible": {
+          "pass": 50,
+          "fail": 0
+        },
+        "clipped_fraction_plausible": {
+          "pass": 50,
+          "fail": 0
+        },
+        "covariance_numerically_valid": {
+          "pass": 49,
+          "fail": 1
+        },
+        "combined_fixed": {
+          "pass": 46,
+          "fail": 4
+        }
+      },
+      "combined_coverage": 0.92
+    },
+    "clinical_holm_family": [
+      {
+        "clinical_family": "paralysis_side",
+        "kruskal_statistic": 0.06481453072745902,
+        "p_value": 0.7990421158415313,
+        "holm_p": 1.0
+      },
+      {
+        "clinical_family": "nihss",
+        "kruskal_statistic": 2.400476344313053,
+        "p_value": 0.12129831019721711,
+        "holm_p": 0.6064915509860855
+      },
+      {
+        "clinical_family": "age",
+        "kruskal_statistic": 3.044022233812984,
+        "p_value": 0.2182724737824456,
+        "holm_p": 0.7239926114046777
+      },
+      {
+        "clinical_family": "duration",
+        "kruskal_statistic": 6.478219022262212,
+        "p_value": 0.09052546106745428,
+        "holm_p": 0.5431527664047257
+      },
+      {
+        "clinical_family": "mRS",
+        "kruskal_statistic": 7.579268810276213,
+        "p_value": 0.18099815285116944,
+        "holm_p": 0.7239926114046777
+      },
+      {
+        "clinical_family": "MBI",
+        "kruskal_statistic": 2.288930700866227,
+        "p_value": 0.5146448070853515,
+        "holm_p": 1.0
+      }
+    ],
+    "selector": {
+      "r2": -0.051381768419275664,
+      "mae": 0.09854499335850857,
+      "spearman_rho": 0.17966644010911134,
+      "spearman_p": 0.21185187082917523,
+      "calibration_slope": 0.22835884484064212,
+      "calibration_intercept": 0.4442943090647156,
+      "pre_evaluation_scores_sha256": "aacd5c5130cfd56d51d03405d06700840502c30c9a275c8479d7a1a7eee6f494"
+    },
+    "oracle_invalid": {
+      "status": "INVALID_CIRCULAR_NOT_DEPLOYABLE",
+      "target_ba": 0.75,
+      "largest_prefix_at_or_above_target_n": 7
+    },
+    "trial_abstention_status": "POSTHOC_DESCRIPTIVE_UNCALIBRATED_CONFIDENCE"
+  },
+  "artifacts": {
+    "coverage_risk_with_invalid_oracle.png": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/20260713_005254_206429_9bbef9d8/coverage_risk_with_invalid_oracle.png",
+    "qc_features.csv": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/20260713_005254_206429_9bbef9d8/qc_features.csv",
+    "trial_confidence_abstention.png": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/20260713_005254_206429_9bbef9d8/trial_confidence_abstention.png",
+    "oracle_invalid_curve.csv": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/20260713_005254_206429_9bbef9d8/oracle_invalid_curve.csv",
+    "cohort_results.csv": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/20260713_005254_206429_9bbef9d8/cohort_results.csv",
+    "run.log": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/20260713_005254_206429_9bbef9d8/run.log",
+    "config.json": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/20260713_005254_206429_9bbef9d8/config.json",
+    "qc_feature_distributions.png": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/20260713_005254_206429_9bbef9d8/qc_feature_distributions.png",
+    "global_metrics.json": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/20260713_005254_206429_9bbef9d8/global_metrics.json",
+    "selector_predictions.csv": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/20260713_005254_206429_9bbef9d8/selector_predictions.csv",
+    "clinical_strata.csv": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/20260713_005254_206429_9bbef9d8/clinical_strata.csv",
+    "coverage_risk.csv": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/20260713_005254_206429_9bbef9d8/coverage_risk.csv",
+    "cohort_balanced_accuracy.png": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/20260713_005254_206429_9bbef9d8/cohort_balanced_accuracy.png",
+    "selector_scores_pre_evaluation.csv": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/20260713_005254_206429_9bbef9d8/selector_scores_pre_evaluation.csv",
+    "selector_calibration.png": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/20260713_005254_206429_9bbef9d8/selector_calibration.png",
+    "trial_abstention.csv": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/20260713_005254_206429_9bbef9d8/trial_abstention.csv",
+    "run_metadata.json": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/20260713_005254_206429_9bbef9d8/run_metadata.json"
+  },
+  "qc_cache": {
+    "signature": "36b61eb313b2e037",
+    "path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-cohort-selection-sensitivity/qc_cache/qc_36b61eb313b2e037"
+  },
+  "validity_warnings": [
+    "QC is full-recording transductive, not strict fold-local.",
+    "oracle_invalid is circular and not deployable.",
+    "Trial confidence abstention is posthoc and uncalibrated."
+  ]
+}

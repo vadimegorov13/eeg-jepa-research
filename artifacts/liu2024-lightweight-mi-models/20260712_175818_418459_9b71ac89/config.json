@@ -1,0 +1,65 @@
+{
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-lightweight-mi-models",
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+  "experiment_name": "lightweight_mi_locked_fblightconvnet",
+  "config_note": "Locked exactly-once lightweight target-only benchmark.",
+  "subjects_to_use": null,
+  "channel_set": "liu29",
+  "native_sfreq": 500,
+  "target_sfreq": 128,
+  "marker_channel_index": 32,
+  "onset_marker_value": 2,
+  "onset_plausible_range": [
+    800,
+    1300
+  ],
+  "window_seconds": 4.0,
+  "bandpass_hz": [
+    4.0,
+    40.0
+  ],
+  "filter_order": 4,
+  "normalization_mode": "channel_standardize",
+  "normalization_eps": 1e-06,
+  "model_name": "FBLightConvNet",
+  "allow_optional_models": false,
+  "model_kwargs": {
+    "win_len": 256
+  },
+  "optional_model_kwargs": {
+    "EEGInceptionMI": {
+      "n_convs": 3,
+      "n_filters": 16
+    },
+    "MSVTNet": {
+      "n_filters_list": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "num_layers": 1
+    },
+    "CTNet": {
+      "embed_dim": 20,
+      "num_layers": 2
+    }
+  },
+  "evaluation_mode": "stratified_5fold",
+  "cv_folds": 5,
+  "cv_random_state": 2026,
+  "expected_global_split_hash": "801ec1d2c981335f",
+  "batch_size": 8,
+  "n_epochs": 20,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.01,
+  "gradient_clip_norm": 1.0,
+  "seeds": [
+    2026
+  ],
+  "seed": 2026,
+  "set_seed": true,
+  "bootstrap_iterations": 10000,
+  "collapse_threshold": 0.9,
+  "shallow_reference_artifact": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260712_165746_790145_fd8ab986/subject_metrics.json"
+}

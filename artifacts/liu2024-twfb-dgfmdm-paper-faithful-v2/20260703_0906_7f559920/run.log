@@ -1,0 +1,38 @@
+[2026-07-03 09:06:27] ======================================================================
+[2026-07-03 09:06:27] Experiment: twfb_dgfmdm_paper_faithful_v2
+[2026-07-03 09:06:27] Note:       paper Table-3: 19 bands x 7 windows + LTSA; cache + leaky/honest
+[2026-07-03 09:06:27] Run ID:     20260703_0906_7f559920
+[2026-07-03 09:06:27] Artifacts:  /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-twfb-dgfmdm-paper-faithful-v2/20260703_0906_7f559920
+[2026-07-03 09:06:27] Cov cache:  /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/covariance_cache/cov_90b378e769  (mode=auto, sig=90b378e769)
+[2026-07-03 09:06:27] ======================================================================
+[2026-07-03 09:06:27] Loader defined.
+[2026-07-03 09:06:27] Covariance builder + cache I/O defined.
+[2026-07-03 09:06:27] Paper pipeline (LTSA-style SPD reduction -> FgMDM, i.e. paper Table 3 Steps 4-5) + leaky/honest protocols defined.
+[2026-07-03 09:06:27] using source root: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata  (50 subjects)
+[2026-07-03 09:06:27] ======================================================================
+[2026-07-03 09:06:44]   sub-01 [cache   ]: twfb_leaky= 81.2  twfb_honest= 42.5   ( 16.8s)
+[2026-07-03 09:07:01]   sub-03 [cache   ]: twfb_leaky= 78.8  twfb_honest= 55.0   ( 33.5s)
+[2026-07-03 09:07:17]   sub-07 [cache   ]: twfb_leaky= 82.5  twfb_honest= 46.2   ( 49.9s)
+[2026-07-03 09:07:33]   sub-09 [cache   ]: twfb_leaky= 80.0  twfb_honest= 53.8   ( 66.1s)
+[2026-07-03 09:07:50]   sub-10 [cache   ]: twfb_leaky= 83.8  twfb_honest= 55.0   ( 82.2s)
+[2026-07-03 09:08:06]   sub-11 [cache   ]: twfb_leaky= 83.8  twfb_honest= 61.3   ( 98.8s)
+[2026-07-03 09:08:23]   sub-14 [cache   ]: twfb_leaky= 82.5  twfb_honest= 50.0   (115.4s)
+[2026-07-03 09:08:39]   sub-15 [cache   ]: twfb_leaky= 80.0  twfb_honest= 47.5   (131.9s)
+[2026-07-03 09:08:55]   sub-17 [cache   ]: twfb_leaky= 81.2  twfb_honest= 47.5   (148.1s)
+[2026-07-03 09:09:12]   sub-29 [cache   ]: twfb_leaky= 82.5  twfb_honest= 48.8   (164.4s)
+[2026-07-03 09:09:28]   sub-31 [cache   ]: twfb_leaky= 78.8  twfb_honest= 51.2   (180.5s)
+[2026-07-03 09:09:44]   sub-32 [cache   ]: twfb_leaky= 80.0  twfb_honest= 50.0   (196.6s)
+[2026-07-03 09:10:00]   sub-37 [cache   ]: twfb_leaky= 82.5  twfb_honest= 50.0   (212.8s)
+[2026-07-03 09:10:16]   sub-41 [cache   ]: twfb_leaky= 87.5  twfb_honest= 52.5   (228.8s)
+[2026-07-03 09:10:16] ======================================================================
+[2026-07-03 09:10:16] cov source: 14 from cache, 0 computed
+[2026-07-03 09:10:16] ======================================================================
+[2026-07-03 09:10:16] Paper-faithful TWFB-DGFMDM + LTSA — Liu2024, n=14  [clf=fgmdm_ltsa use_ltsa=True]
+[2026-07-03 09:10:16]   Paper TWFB+LTSA (leaky max-on-test)         : 81.79%  ± 2.34
+[2026-07-03 09:10:16]   Paper TWFB+LTSA honest nested-CV (bal.acc)  : 50.80%  ± 4.59
+[2026-07-03 09:10:16]   Liu2024 Table 4 TWFB+DGFMDRM (reported)     : 72.21%
+[2026-07-03 09:10:16]   >>> LEAKAGE GAP (leaky - honest): 31.0 pts
+[2026-07-03 09:10:16]   honest vs chance: mean=50.80%  wilcoxon p=0.562  (6/14 > 0.5)
+[2026-07-03 09:10:16] ======================================================================
+[2026-07-03 09:10:16] Saved subject_results.csv, summary.json, global_metrics.json, subject_metrics.json, run_metadata.json + PNG
+[2026-07-03 09:10:16] Artifacts: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-twfb-dgfmdm-paper-faithful-v2/20260703_0906_7f559920

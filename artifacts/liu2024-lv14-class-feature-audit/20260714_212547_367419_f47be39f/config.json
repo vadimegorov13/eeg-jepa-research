@@ -1,0 +1,95 @@
+{
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-lv14-class-feature-audit",
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+  "experiment_name": "lv14_class_feature_audit_proxy_canonical_sensitivity",
+  "config_note": "Sensitivity only: geometry-matched proxy A/B/C/D labels; not an exact Lv canonical-state reproduction.",
+  "locked_shallow_subject_results": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260712_165746_790145_fd8ab986/subject_results.csv",
+  "locked_prelocal_subject_metrics": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal/20260703_0835_5d8bfb69/subject_metrics.json",
+  "subjects_to_use": [
+    1,
+    3,
+    7,
+    9,
+    10,
+    11,
+    14,
+    15,
+    17,
+    29,
+    31,
+    32,
+    37,
+    41
+  ],
+  "flagged_subjects": [
+    15
+  ],
+  "sfreq": 500,
+  "marker_channel_index": 32,
+  "marker_value": 2,
+  "onset_plausible_range": [
+    800,
+    1300
+  ],
+  "onset_fallback_sample": 1003,
+  "mi_window_s": [
+    0.0,
+    4.0
+  ],
+  "filter_order": 4,
+  "average_reference": true,
+  "bands_hz": [
+    [
+      8,
+      12
+    ],
+    [
+      13,
+      20
+    ],
+    [
+      20,
+      30
+    ],
+    [
+      8,
+      30
+    ]
+  ],
+  "cv_folds": 5,
+  "cv_random_state": 2026,
+  "lda_shrinkage": "auto",
+  "permutation_iterations": 2000,
+  "bootstrap_iterations": 5000,
+  "bootstrap_seed": 202607,
+  "split_half_repeats": 100,
+  "split_half_seed": 202608,
+  "correlation_permutations": 20000,
+  "enable_sjepa": true,
+  "sjepa_model_id": "braindecode/signal-jepa_without-chans",
+  "sjepa_model_revision": null,
+  "sjepa_checkpoint_path": null,
+  "sjepa_sfreq": 128,
+  "sjepa_bandpass_hz": [
+    0.5,
+    40.0
+  ],
+  "sjepa_hook": "feature_encoder",
+  "sjepa_pooling": "mean",
+  "sjepa_embedding_dim": 64,
+  "sjepa_batch_size": 16,
+  "device": "auto",
+  "state_naming_mode": "proxy_canonical",
+  "microstate_sfreq": 250,
+  "microstate_band_hz": [
+    1.0,
+    30.0
+  ],
+  "n_states": 4,
+  "gfp_min_peak_distance_ms": 30.0,
+  "gfp_max_peaks": 20000,
+  "kmeans_n_init": 20,
+  "allow_transductive_group_maps": true,
+  "seed": 2026,
+  "set_seed": true
+}

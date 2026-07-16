@@ -1,0 +1,111 @@
+Notebook:       /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_multiscale_riemann_fusion.ipynb
+Configurations: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/utils/experiments/configs/sweep_multiscale_riemann_fusion_development_remaining.json
+Total configs:  6
+
+[1/6] Running config override:
+{
+  "experiment_name": "multiscale_development_motor8_fulltrial_oas_tangent_lda",
+  "config_note": "Low-dimensional motor8 montage with full-trial filtering; compare with full29 full-trial control.",
+  "subjects_to_use": null,
+  "outer_protocol": "stratified_5fold",
+  "spatial_mode": "motor8",
+  "filter_context": "full_trial_then_crop",
+  "covariance_estimator": "oas",
+  "base_classifier": "tangent_lda",
+  "enable_sjepa": false
+}
+  status:       completed
+  elapsed_sec:  197.71
+  run_id:       20260712_134137_488391_6d763ea1
+  artifact_dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-multiscale-riemann-fusion/20260712_134137_488391_6d763ea1
+
+[2/6] Running config override:
+{
+  "experiment_name": "multiscale_development_motor13_fulltrial_oas_tangent_lda",
+  "config_note": "Symmetric motor13 montage control adding F3/F4 and FCz/Cz/Pz to motor8.",
+  "subjects_to_use": null,
+  "outer_protocol": "stratified_5fold",
+  "spatial_mode": "motor13",
+  "filter_context": "full_trial_then_crop",
+  "covariance_estimator": "oas",
+  "base_classifier": "tangent_lda",
+  "enable_sjepa": false
+}
+  status:       completed
+  elapsed_sec:  331.436
+  run_id:       20260712_134454_761769_798ed1b2
+  artifact_dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-multiscale-riemann-fusion/20260712_134454_761769_798ed1b2
+
+[3/6] Running config override:
+{
+  "experiment_name": "multiscale_development_motor8_fulltrial_oas_mdm_riemann",
+  "config_note": "Classifier control on the lowest-dimensional principled montage: affine-invariant MDM.",
+  "subjects_to_use": null,
+  "outer_protocol": "stratified_5fold",
+  "spatial_mode": "motor8",
+  "filter_context": "full_trial_then_crop",
+  "covariance_estimator": "oas",
+  "base_classifier": "mdm_riemann",
+  "enable_sjepa": false
+}
+  status:       completed
+  elapsed_sec:  184.122
+  run_id:       20260712_135026_306945_afa95f86
+  artifact_dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-multiscale-riemann-fusion/20260712_135026_306945_afa95f86
+
+[4/6] Running config override:
+{
+  "experiment_name": "multiscale_development_motor8_fulltrial_oas_mdm_logeuclid",
+  "config_note": "Metric control matched to motor8 affine-invariant MDM: log-Euclidean MDM.",
+  "subjects_to_use": null,
+  "outer_protocol": "stratified_5fold",
+  "spatial_mode": "motor8",
+  "filter_context": "full_trial_then_crop",
+  "covariance_estimator": "oas",
+  "base_classifier": "mdm_logeuclid",
+  "enable_sjepa": false
+}
+  status:       completed
+  elapsed_sec:  134.58
+  run_id:       20260712_135330_083377_b064e4c2
+  artifact_dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-multiscale-riemann-fusion/20260712_135330_083377_b064e4c2
+
+[5/6] Running config override:
+{
+  "experiment_name": "multiscale_development_motor8_fulltrial_oas_mdm_target_shrink",
+  "config_note": "Target-only prototype shrinkage: class means shrink 25% toward the unlabeled outer-training Riemannian mean.",
+  "subjects_to_use": null,
+  "outer_protocol": "stratified_5fold",
+  "spatial_mode": "motor8",
+  "filter_context": "full_trial_then_crop",
+  "covariance_estimator": "oas",
+  "base_classifier": "mdm_riemann_prototype",
+  "prototype_shrinkage": 0.25,
+  "enable_sjepa": false
+}
+  status:       completed
+  elapsed_sec:  255.329
+  run_id:       20260712_135544_692661_31ae0572
+  artifact_dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-multiscale-riemann-fusion/20260712_135544_692661_31ae0572
+
+[6/6] Running config override:
+{
+  "experiment_name": "multiscale_development_average_reference_subspace_fulltrial_oas_tangent_lda",
+  "config_note": "Full-montage control projecting average-referenced sensors into an explicit 28D orthonormal Helmert subspace.",
+  "subjects_to_use": null,
+  "outer_protocol": "stratified_5fold",
+  "spatial_mode": "average_reference_subspace",
+  "filter_context": "full_trial_then_crop",
+  "covariance_estimator": "oas",
+  "base_classifier": "tangent_lda",
+  "enable_sjepa": false
+}
+  status:       completed
+  elapsed_sec:  1534.242
+  run_id:       20260712_140000_124340_e080556f
+  artifact_dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-multiscale-riemann-fusion/20260712_140000_124340_e080556f
+
+Finished.
+Results dir:    experiment_results/20260712_1341_sweep_multiscale_riemann_fusion_development_remaining_093928e2
+Summary JSON:   experiment_results/20260712_1341_sweep_multiscale_riemann_fusion_development_remaining_093928e2/results.json
+Artifact list:  experiment_results/20260712_1341_sweep_multiscale_riemann_fusion_development_remaining_093928e2/artifact_ids.json

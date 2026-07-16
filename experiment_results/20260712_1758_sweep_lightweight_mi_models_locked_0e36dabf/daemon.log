@@ -1,0 +1,188 @@
+Notebook:       /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_lightweight_mi_models.ipynb
+Configurations: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/utils/experiments/configs/sweep_lightweight_mi_models_locked.json
+Total configs:  3
+
+[1/3] Running config override:
+{
+  "experiment_name": "lightweight_mi_locked_fblightconvnet",
+  "model_name": "FBLightConvNet",
+  "model_kwargs": {
+    "win_len": 256
+  }
+}
+  status:       completed
+  elapsed_sec:  400.286
+  run_id:       20260712_175818_418459_9b71ac89
+  artifact_dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-lightweight-mi-models/20260712_175818_418459_9b71ac89
+
+[2/3] Running config override:
+{
+  "experiment_name": "lightweight_mi_locked_sincshallow",
+  "model_name": "SincShallowNet",
+  "model_kwargs": {}
+}
+  status:       failed
+  elapsed_sec:  23.916
+  run_id:       20260712_180458_526123_8da2b645
+  artifact_dir: None
+  error:        An error occurred while executing the following cell:
+------------------
+print("Full CONFIG banner:\n"+json.dumps(CONFIG,indent=2)); kwargs=resolved_model_kwargs()
+paths=locate_subject_files(CONFIG["source_extract_dir"],CONFIG["subjects_to_use"]); SUBJECTS=[subject_id(p) for p in paths]; loaded={}; all_splits={}; inventory=[]
+for p in paths:
+    sid=subject_id(p); x,y,CH_NAMES,onsets=load_subject(p,CONFIG); splits=make_splits(y,CONFIG,sid); loaded[sid]=(x,y); all_splits[sid]=splits; inventory.append({"subject_id":sid,"path":str(p),"n_trials":len(y),"subject_split_hash":stable_hash(splits)})
+split_hashes={stable_hash(v) for v in all_splits.values()}
+if split_hashes!={CONFIG["expected_global_split_hash"]}: raise AssertionError(f"Subject split hashes {split_hashes} != locked {CONFIG['expected_global_split_hash']}")
+GLOBAL_SPLIT_HASH=CONFIG["expected_global_split_hash"]
+FOLD_RESULTS=[]
+for sid in SUBJECTS:
+    x,y=loaded[sid]
+    for split in all_splits[sid]:
+        tr=np.asarray(split["train_indices"]); te=np.asarray(split["test_indices"]); mean,scale=fit_normalizer(x[tr],CONFIG["normalization_mode"],CONFIG["normalization_eps"]); xtr=((x[tr]-mean)/scale).astype("float32"); xte=((x[te]-mean)/scale).astype("float32"); probs=[]; curves=[]; elapsed=0.0; model=None
+        for seed in CONFIG["seeds"]:
+            model=build_model(CONFIG["model_name"],x.shape[1],x.shape[2],CONFIG["target_sfreq"],DEVICE,kwargs); prob,curve,seconds=train_with_curves(model,xtr,y[tr],xte,CONFIG,seed); probs.append(prob); curves.append(curve); elapsed+=seconds
+        prob=np.mean(probs,axis=0); pred=prob.argmax(1); FOLD_RESULTS.append(fold_result(sid,split["fold_id"],te,y[te],pred,prob,model,elapsed,BASE_SEED,{"seed_ensemble":CONFIG["seeds"],"training_loss_curves":curves,"split_hash":stable_hash(split),"global_split_hash":GLOBAL_SPLIT_HASH,"model_kwargs":kwargs}))
+    observed=sorted(i for r in FOLD_RESULTS if r["subject_id"]==sid for i in r["test_indices"])
+    if observed!=list(range(40)): raise AssertionError(f"{sid}: not exactly one OOF prediction per original trial")
+subject_inventory_path=ARTIFACT_DIR/"subject_inventory.csv"; pd.DataFrame(inventory).to_csv(subject_inventory_path,index=False); (ARTIFACT_DIR/"splits.json").write_text(json.dumps(all_splits,indent=2),encoding="utf-8")
+------------------
+
+----- stdout -----
+[2026-07-12 18:04:59] Full CONFIG banner:
+{
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-lightweight-mi-models",
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+  "experiment_name": "lightweight_mi_locked_sincshallow",
+  "config_note": "Locked exactly-once lightweight target-only benchmark.",
+  "subjects_to_use": null,
+  "channel_set": "liu29",
+  "native_sfreq": 500,
+  "target_sfreq": 128,
+  "marker_channel_index": 32,
+  "onset_marker_value": 2,
+  "onset_plausible_range": [
+    800,
+    1300
+  ],
+  "window_seconds": 4.0,
+  "bandpass_hz": [
+    4.0,
+    40.0
+  ],
+  "filter_order": 4,
+  "normalization_mode": "channel_standardize",
+  "normalization_eps": 1e-06,
+  "model_name": "SincShallowNet",
+  "allow_optional_models": false,
+  "model_kwargs": {},
+  "optional_model_kwargs": {
+    "EEGInceptionMI": {
+      "n_convs": 3,
+      "n_filters": 16
+    },
+    "MSVTNet": {
+      "n_filters_list": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "num_layers": 1
+    },
+    "CTNet": {
+      "embed_dim": 20,
+      "num_layers": 2
+    }
+  },
+  "evaluation_mode": "stratified_5fold",
+  "cv_folds": 5,
+  "cv_random_state": 2026,
+  "expected_global_split_hash": "801ec1d2c981335f",
+  "batch_size": 8,
+  "n_epochs": 20,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.01,
+  "gradient_clip_norm": 1.0,
+  "seeds": [
+    2026
+  ],
+  "seed": 2026,
+  "set_seed": true,
+  "bootstrap_iterations": 10000,
+  "collapse_threshold": 0.9,
+  "shallow_reference_artifact": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260712_165746_790145_fd8ab986/subject_metrics.json"
+}
+----- stderr -----
+/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/.venv/lib/python3.11/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mRuntimeError[39m                              Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[7][39m[32m, line 14[39m
+[32m     12[39m     tr=np.asarray(split[[33m"[39m[33mtrain_indices[39m[33m"[39m]); te=np.asarray(split[[33m"[39m[33mtest_indices[39m[33m"[39m]); mean,scale=fit_normalizer(x[tr],CONFIG[[33m"[39m[33mnormalization_mode[39m[33m"[39m],CONFIG[[33m"[39m[33mnormalization_eps[39m[33m"[39m]); xtr=((x[tr]-mean)/scale).astype([33m"[39m[33mfloat32[39m[33m"[39m); xte=((x[te]-mean)/scale).astype([33m"[39m[33mfloat32[39m[33m"[39m); probs=[]; curves=[]; elapsed=[32m0.0[39m; model=[38;5;28;01mNone[39;00m
+[32m     13[39m     [38;5;28;01mfor[39;00m seed [38;5;129;01min[39;00m CONFIG[[33m"[39m[33mseeds[39m[33m"[39m]:
+[32m---> [39m[32m14[39m         model=build_model(CONFIG[[33m"[39m[33mmodel_name[39m[33m"[39m],x.shape[[32m1[39m],x.shape[[32m2[39m],CONFIG[[33m"[39m[33mtarget_sfreq[39m[33m"[39m],DEVICE,kwargs); prob,curve,seconds=train_with_curves(model,xtr,y[tr],xte,CONFIG,seed); probs.append(prob); curves.append(curve); elapsed+=seconds
+[32m     15[39m     prob=np.mean(probs,axis=[32m0[39m); pred=prob.argmax([32m1[39m); FOLD_RESULTS.append(fold_result(sid,split[[33m"[39m[33mfold_id[39m[33m"[39m],te,y[te],pred,prob,model,elapsed,BASE_SEED,{[33m"[39m[33mseed_ensemble[39m[33m"[39m:CONFIG[[33m"[39m[33mseeds[39m[33m"[39m],[33m"[39m[33mtraining_loss_curves[39m[33m"[39m:curves,[33m"[39m[33msplit_hash[39m[33m"[39m:stable_hash(split),[33m"[39m[33mglobal_split_hash[39m[33m"[39m:GLOBAL_SPLIT_HASH,[33m"[39m[33mmodel_kwargs[39m[33m"[39m:kwargs}))
+[32m     16[39m observed=[38;5;28msorted[39m(i [38;5;28;01mfor[39;00m r [38;5;129;01min[39;00m FOLD_RESULTS [38;5;28;01mif[39;00m r[[33m"[39m[33msubject_id[39m[33m"[39m]==sid [38;5;28;01mfor[39;00m i [38;5;129;01min[39;00m r[[33m"[39m[33mtest_indices[39m[33m"[39m])
+
+[36mCell[39m[36m [39m[32mIn[6][39m[32m, line 18[39m, in [36mtrain_with_curves[39m[34m(model, x_train, y_train, x_test, cfg, seed)[39m
+[32m     16[39m     model.train(); total=[32m0.0[39m; count=[32m0[39m
+[32m     17[39m     [38;5;28;01mfor[39;00m xb,yb [38;5;129;01min[39;00m loader:
+[32m---> [39m[32m18[39m         opt.zero_grad(set_to_none=[38;5;28;01mTrue[39;00m); loss=nn.functional.cross_entropy(model(xb.to(device)),yb.to(device)); [43mloss[49m[43m.[49m[43mbackward[49m[43m([49m[43m)[49m; nn.utils.clip_grad_norm_(model.parameters(),cfg[[33m"[39m[33mgradient_clip_norm[39m[33m"[39m]); opt.step(); total+=[38;5;28mfloat[39m(loss.detach())*[38;5;28mlen[39m(xb); count+=[38;5;28mlen[39m(xb)
+[32m     19[39m     curve.append(total/count)
+[32m     20[39m model.eval()
+
+[36mFile [39m[32m~/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/.venv/lib/python3.11/site-packages/torch/_tensor.py:630[39m, in [36mTensor.backward[39m[34m(self, gradient, retain_graph, create_graph, inputs)[39m
+[32m    620[39m [38;5;28;01mif[39;00m has_torch_function_unary([38;5;28mself[39m):
+[32m    621[39m     [38;5;28;01mreturn[39;00m handle_torch_function(
+[32m    622[39m         Tensor.backward,
+[32m    623[39m         ([38;5;28mself[39m,),
+[32m   (...)[39m[32m    628[39m         inputs=inputs,
+[32m    629[39m     )
+[32m--> [39m[32m630[39m [43mtorch[49m[43m.[49m[43mautograd[49m[43m.[49m[43mbackward[49m[43m([49m
+[32m    631[39m [43m    [49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43mgradient[49m[43m,[49m[43m [49m[43mretain_graph[49m[43m,[49m[43m [49m[43mcreate_graph[49m[43m,[49m[43m [49m[43minputs[49m[43m=[49m[43minputs[49m
+[32m    632[39m [43m[49m[43m)[49m
+
+[36mFile [39m[32m~/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/.venv/lib/python3.11/site-packages/torch/autograd/__init__.py:364[39m, in [36mbackward[39m[34m(tensors, grad_tensors, retain_graph, create_graph, grad_variables, inputs)[39m
+[32m    359[39m     retain_graph = create_graph
+[32m    361[39m [38;5;66;03m# The reason we repeat the same comment below is that[39;00m
+[32m    362[39m [38;5;66;03m# some Python versions print out the first line of a multi-line function[39;00m
+[32m    363[39m [38;5;66;03m# calls in the traceback and some print out the last line[39;00m
+[32m--> [39m[32m364[39m [43m_engine_run_backward[49m[43m([49m
+[32m    365[39m [43m    [49m[43mtensors[49m[43m,[49m
+[32m    366[39m [43m    [49m[43mgrad_tensors_[49m[43m,[49m
+[32m    367[39m [43m    [49m[43mretain_graph[49m[43m,[49m
+[32m    368[39m [43m    [49m[43mcreate_graph[49m[43m,[49m
+[32m    369[39m [43m    [49m[43minputs_tuple[49m[43m,[49m
+[32m    370[39m [43m    [49m[43mallow_unreachable[49m[43m=[49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m
+[32m    371[39m [43m    [49m[43maccumulate_grad[49m[43m=[49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m
+[32m    372[39m [43m[49m[43m)[49m
+
+[36mFile [39m[32m~/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/.venv/lib/python3.11/site-packages/torch/autograd/graph.py:865[39m, in [36m_engine_run_backward[39m[34m(t_outputs, *args, **kwargs)[39m
+[32m    863[39m     unregister_hooks = _register_logging_hooks_on_whole_graph(t_outputs)
+[32m    864[39m [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m865[39m     [38;5;28;01mreturn[39;00m [43mVariable[49m[43m.[49m[43m_execution_engine[49m[43m.[49m[43mrun_backward[49m[43m([49m[43m  [49m[38;5;66;43;03m# Calls into the C++ engine to run the backward pass[39;49;00m
+[32m    866[39m [43m        [49m[43mt_outputs[49m[43m,[49m[43m [49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m
+[32m    867[39m [43m    [49m[43m)[49m  [38;5;66;03m# Calls into the C++ engine to run the backward pass[39;00m
+[32m    868[39m [38;5;28;01mfinally[39;00m:
+[32m    869[39m     [38;5;28;01mif[39;00m attach_logging_hooks:
+
+[31mRuntimeError[39m: view size is not compatible with input tensor's size and stride (at least one dimension spans across two contiguous subspaces). Use .reshape(...) instead.
+
+
+[3/3] Running config override:
+{
+  "experiment_name": "lightweight_mi_locked_eegitnet",
+  "model_name": "EEGITNet",
+  "model_kwargs": {}
+}
+  status:       completed
+  elapsed_sec:  560.825
+  run_id:       20260712_180522_285112_d9904883
+  artifact_dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-lightweight-mi-models/20260712_180522_285112_d9904883
+
+Finished.
+Results dir:    experiment_results/20260712_1758_sweep_lightweight_mi_models_locked_0e36dabf
+Summary JSON:   experiment_results/20260712_1758_sweep_lightweight_mi_models_locked_0e36dabf/results.json
+Artifact list:  experiment_results/20260712_1758_sweep_lightweight_mi_models_locked_0e36dabf/artifact_ids.json

@@ -1,0 +1,144 @@
+{
+  "primary_metric": "complete exactly-once subject pooled outer-OOF balanced accuracy, averaged over valid subjects",
+  "outer_protocol": "stratified_5fold",
+  "methods": {
+    "asymmetry": {
+      "mean_subject_balanced_accuracy": 0.5285,
+      "subject_metric_name": "complete_exactly_once_pooled_outer_oof_balanced_accuracy",
+      "bootstrap_95_ci_over_subjects": [
+        0.49450000000000005,
+        0.563
+      ],
+      "n_valid_complete_subjects": 50
+    },
+    "asymmetry_scale_1s": {
+      "mean_subject_balanced_accuracy": 0.526,
+      "subject_metric_name": "complete_exactly_once_pooled_outer_oof_balanced_accuracy",
+      "bootstrap_95_ci_over_subjects": [
+        0.4915,
+        0.5615
+      ],
+      "n_valid_complete_subjects": 50
+    },
+    "asymmetry_scale_2s": {
+      "mean_subject_balanced_accuracy": 0.5285,
+      "subject_metric_name": "complete_exactly_once_pooled_outer_oof_balanced_accuracy",
+      "bootstrap_95_ci_over_subjects": [
+        0.4935,
+        0.5645
+      ],
+      "n_valid_complete_subjects": 50
+    },
+    "asymmetry_scale_4s": {
+      "mean_subject_balanced_accuracy": 0.518,
+      "subject_metric_name": "complete_exactly_once_pooled_outer_oof_balanced_accuracy",
+      "bootstrap_95_ci_over_subjects": [
+        0.4855,
+        0.5509999999999999
+      ],
+      "n_valid_complete_subjects": 50
+    },
+    "fixed_single_view": {
+      "mean_subject_balanced_accuracy": 0.5235,
+      "subject_metric_name": "complete_exactly_once_pooled_outer_oof_balanced_accuracy",
+      "bootstrap_95_ci_over_subjects": [
+        0.48949999999999994,
+        0.5609999999999999
+      ],
+      "n_valid_complete_subjects": 50
+    },
+    "hierarchical_elastic_net_stack": {
+      "mean_subject_balanced_accuracy": 0.535,
+      "subject_metric_name": "complete_exactly_once_pooled_outer_oof_balanced_accuracy",
+      "bootstrap_95_ci_over_subjects": [
+        0.5139999999999999,
+        0.5589999999999999
+      ],
+      "n_valid_complete_subjects": 50
+    },
+    "nested_best_single_view": {
+      "mean_subject_balanced_accuracy": 0.511,
+      "subject_metric_name": "complete_exactly_once_pooled_outer_oof_balanced_accuracy",
+      "bootstrap_95_ci_over_subjects": [
+        0.48100000000000004,
+        0.5425
+      ],
+      "n_valid_complete_subjects": 50
+    },
+    "riemann_asymmetry_fusion": {
+      "mean_subject_balanced_accuracy": 0.533,
+      "subject_metric_name": "complete_exactly_once_pooled_outer_oof_balanced_accuracy",
+      "bootstrap_95_ci_over_subjects": [
+        0.4985000000000001,
+        0.569
+      ],
+      "n_valid_complete_subjects": 50
+    },
+    "riemann_equal_multiscale": {
+      "mean_subject_balanced_accuracy": 0.5275,
+      "subject_metric_name": "complete_exactly_once_pooled_outer_oof_balanced_accuracy",
+      "bootstrap_95_ci_over_subjects": [
+        0.48748749999999996,
+        0.5695
+      ],
+      "n_valid_complete_subjects": 50
+    },
+    "riemann_scale_1s": {
+      "mean_subject_balanced_accuracy": 0.5235000000000001,
+      "subject_metric_name": "complete_exactly_once_pooled_outer_oof_balanced_accuracy",
+      "bootstrap_95_ci_over_subjects": [
+        0.49150000000000005,
+        0.556
+      ],
+      "n_valid_complete_subjects": 50
+    },
+    "riemann_scale_2s": {
+      "mean_subject_balanced_accuracy": 0.523,
+      "subject_metric_name": "complete_exactly_once_pooled_outer_oof_balanced_accuracy",
+      "bootstrap_95_ci_over_subjects": [
+        0.48950000000000005,
+        0.5585
+      ],
+      "n_valid_complete_subjects": 50
+    },
+    "riemann_scale_4s": {
+      "mean_subject_balanced_accuracy": 0.513,
+      "subject_metric_name": "complete_exactly_once_pooled_outer_oof_balanced_accuracy",
+      "bootstrap_95_ci_over_subjects": [
+        0.47200000000000003,
+        0.556
+      ],
+      "n_valid_complete_subjects": 50
+    },
+    "riemann_stable_topk": {
+      "mean_subject_balanced_accuracy": 0.5379999999999999,
+      "subject_metric_name": "complete_exactly_once_pooled_outer_oof_balanced_accuracy",
+      "bootstrap_95_ci_over_subjects": [
+        0.49900000000000005,
+        0.578
+      ],
+      "n_valid_complete_subjects": 50
+    }
+  },
+  "planned_paired_comparisons": {
+    "fusion_vs_riemann": {
+      "method_a": "riemann_asymmetry_fusion",
+      "method_b": "riemann_stable_topk",
+      "n_subjects": 50,
+      "mean_paired_delta": -0.004999999999999989,
+      "bootstrap_95_ci": [
+        -0.047499999999999994,
+        0.039000000000000014
+      ],
+      "wilcoxon_statistic": 517.5,
+      "wilcoxon_pvalue": 0.8015165509434101,
+      "inference_unit": "subject"
+    },
+    "fusion_vs_sjepa": null
+  },
+  "n_fold_failures": 0,
+  "invalid_subjects_with_any_fold_failure": [],
+  "n_invalid_subject_methods": 0,
+  "invalid_subject_methods": [],
+  "outer_test_used_for_selection": false
+}

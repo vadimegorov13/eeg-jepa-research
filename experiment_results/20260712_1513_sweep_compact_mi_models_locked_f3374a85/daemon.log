@@ -1,0 +1,566 @@
+Notebook:       /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_compact_mi_models.ipynb
+Configurations: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/utils/experiments/configs/sweep_compact_mi_models_locked.json
+Total configs:  6
+
+[1/6] Running config override:
+{
+  "experiment_name": "compact_mi_locked_fbcnet",
+  "model_name": "FBCNet"
+}
+  status:       failed
+  elapsed_sec:  5.828
+  run_id:       20260712_151309_566031_e67d809f
+  artifact_dir: None
+  error:        An error occurred while executing the following cell:
+------------------
+print("Full CONFIG banner:\n"+json.dumps(CONFIG,indent=2))
+if CONFIG["model_name"] in OPTIONAL_MODELS and not CONFIG["allow_optional_models"]: raise ValueError("Optional model requires allow_optional_models=true")
+paths=locate_subject_files(CONFIG["source_extract_dir"],CONFIG["subjects_to_use"]); SUBJECTS=[subject_id(p) for p in paths]; FOLD_RESULTS=[]; inventory=[]; CH_NAMES=[]
+for p in paths:
+    x,y,CH_NAMES,onsets=load_subject(p,CONFIG); splits=make_splits(y,CONFIG,subject_id(p)); inventory.append({"subject_id":subject_id(p),"path":str(p),"n_trials":len(y),"split_hash":stable_hash(splits)})
+    for split in splits:
+        tr=np.asarray(split["train_indices"]); te=np.asarray(split["test_indices"]); mean,scale=fit_normalizer(x[tr],CONFIG["normalization_mode"],CONFIG["normalization_eps"]); seed_rows=[]
+        for seed in CONFIG["seeds"]:
+            seed_everything(seed); model=build_model(CONFIG["model_name"],x.shape[1],x.shape[2],CONFIG["target_sfreq"],DEVICE); pred,prob,elapsed=train_eval(model,((x[tr]-mean)/scale).astype('float32'),y[tr],((x[te]-mean)/scale).astype('float32'),y[te],CONFIG,seed,epochs=CONFIG["source_locked_epochs"]); seed_rows.append((pred,prob,elapsed,model))
+        prob=np.mean([r[1] for r in seed_rows],axis=0); pred=prob.argmax(1); FOLD_RESULTS.append(fold_result(subject_id(p),split["fold_id"],te,y[te],pred,prob,seed_rows[-1][3],sum(r[2] for r in seed_rows),BASE_SEED,{"seed_ensemble":CONFIG["seeds"],"split_hash":stable_hash(split)}))
+subject_inventory_path=ARTIFACT_DIR/"subject_inventory.csv"; pd.DataFrame(inventory).to_csv(subject_inventory_path,index=False)
+(ARTIFACT_DIR/"splits.json").write_text(json.dumps({r["subject_id"]:make_splits(load_subject(Path(r["path"]),CONFIG)[1],CONFIG,r["subject_id"]) for r in inventory},indent=2),encoding="utf-8")
+------------------
+
+----- stdout -----
+[2026-07-12 15:13:10] Full CONFIG banner:
+{
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models",
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+  "experiment_name": "compact_mi_locked_fbcnet",
+  "config_note": "Locked target-only compact MI benchmark.",
+  "subjects_to_use": null,
+  "channel_set": "liu29",
+  "native_sfreq": 500,
+  "target_sfreq": 128,
+  "marker_channel_index": 32,
+  "onset_marker_value": 2,
+  "onset_plausible_range": [
+    900,
+    1100
+  ],
+  "window_seconds": 4.0,
+  "bandpass_hz": [
+    4.0,
+    40.0
+  ],
+  "filter_order": 4,
+  "normalization_mode": "channel_standardize",
+  "normalization_eps": 1e-06,
+  "model_name": "FBCNet",
+  "allow_optional_models": false,
+  "evaluation_mode": "stratified_5fold",
+  "cv_folds": 5,
+  "cv_random_state": 2026,
+  "persist_splits": true,
+  "epoch_selection": "fixed_source_locked",
+  "source_locked_epochs": 20,
+  "batch_size": 8,
+  "n_epochs": 20,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.01,
+  "gradient_clip_norm": 1.0,
+  "seeds": [
+    2026
+  ],
+  "seed": 2026,
+  "set_seed": true,
+  "bootstrap_iterations": 10000,
+  "collapse_threshold": 0.9,
+  "classical_reference_artifact": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-multiscale-riemann-fusion/20260712_145032_844360_89d4f1fc/subject_results.csv"
+}
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mValueError[39m                                Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[6][39m[32m, line 5[39m
+[32m      3[39m paths=locate_subject_files(CONFIG[[33m"[39m[33msource_extract_dir[39m[33m"[39m],CONFIG[[33m"[39m[33msubjects_to_use[39m[33m"[39m]); SUBJECTS=[subject_id(p) [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m paths]; FOLD_RESULTS=[]; inventory=[]; CH_NAMES=[]
+[32m      4[39m [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m paths:
+[32m----> [39m[32m5[39m     x,y,CH_NAMES,onsets=load_subject(p,CONFIG); splits=make_splits(y,CONFIG,subject_id(p)); inventory.append({[33m"[39m[33msubject_id[39m[33m"[39m:subject_id(p),[33m"[39m[33mpath[39m[33m"[39m:[38;5;28mstr[39m(p),[33m"[39m[33mn_trials[39m[33m"[39m:[38;5;28mlen[39m(y),[33m"[39m[33msplit_hash[39m[33m"[39m:stable_hash(splits)})
+[32m      6[39m     [38;5;28;01mfor[39;00m split [38;5;129;01min[39;00m splits:
+[32m      7[39m         tr=np.asarray(split[[33m"[39m[33mtrain_indices[39m[33m"[39m]); te=np.asarray(split[[33m"[39m[33mtest_indices[39m[33m"[39m]); mean,scale=fit_normalizer(x[tr],CONFIG[[33m"[39m[33mnormalization_mode[39m[33m"[39m],CONFIG[[33m"[39m[33mnormalization_eps[39m[33m"[39m]); seed_rows=[]
+
+[36mFile [39m[32m~/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/modern_mi_common.py:55[39m, in [36mload_subject[39m[34m(path, cfg)[39m
+[32m     53[39m     hits = hits[(hits >= plausible[[32m0[39m]) & (hits <= plausible[[32m1[39m])]
+[32m     54[39m     [38;5;28;01mif[39;00m [38;5;28mlen[39m(hits) != [32m1[39m:
+[32m---> [39m[32m55[39m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([33mf[39m[33m"[39m[33mExpected one plausible MI marker, found [39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(hits)[38;5;132;01m}[39;00m[33m in [39m[38;5;132;01m{[39;00mpath[38;5;132;01m}[39;00m[33m"[39m)
+[32m     56[39m     onsets.append([38;5;28mint[39m(hits[[32m0[39m]))
+[32m     57[39m names = LIU29
+
+[31mValueError[39m: Expected one plausible MI marker, found 0 in /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata/sub-01/sub-01_task-motor-imagery_eeg.mat
+
+
+[2/6] Running config override:
+{
+  "experiment_name": "compact_mi_locked_eegtcnet",
+  "model_name": "EEGTCNet"
+}
+  status:       failed
+  elapsed_sec:  4.383
+  run_id:       20260712_151314_195956_5f66335d
+  artifact_dir: None
+  error:        An error occurred while executing the following cell:
+------------------
+print("Full CONFIG banner:\n"+json.dumps(CONFIG,indent=2))
+if CONFIG["model_name"] in OPTIONAL_MODELS and not CONFIG["allow_optional_models"]: raise ValueError("Optional model requires allow_optional_models=true")
+paths=locate_subject_files(CONFIG["source_extract_dir"],CONFIG["subjects_to_use"]); SUBJECTS=[subject_id(p) for p in paths]; FOLD_RESULTS=[]; inventory=[]; CH_NAMES=[]
+for p in paths:
+    x,y,CH_NAMES,onsets=load_subject(p,CONFIG); splits=make_splits(y,CONFIG,subject_id(p)); inventory.append({"subject_id":subject_id(p),"path":str(p),"n_trials":len(y),"split_hash":stable_hash(splits)})
+    for split in splits:
+        tr=np.asarray(split["train_indices"]); te=np.asarray(split["test_indices"]); mean,scale=fit_normalizer(x[tr],CONFIG["normalization_mode"],CONFIG["normalization_eps"]); seed_rows=[]
+        for seed in CONFIG["seeds"]:
+            seed_everything(seed); model=build_model(CONFIG["model_name"],x.shape[1],x.shape[2],CONFIG["target_sfreq"],DEVICE); pred,prob,elapsed=train_eval(model,((x[tr]-mean)/scale).astype('float32'),y[tr],((x[te]-mean)/scale).astype('float32'),y[te],CONFIG,seed,epochs=CONFIG["source_locked_epochs"]); seed_rows.append((pred,prob,elapsed,model))
+        prob=np.mean([r[1] for r in seed_rows],axis=0); pred=prob.argmax(1); FOLD_RESULTS.append(fold_result(subject_id(p),split["fold_id"],te,y[te],pred,prob,seed_rows[-1][3],sum(r[2] for r in seed_rows),BASE_SEED,{"seed_ensemble":CONFIG["seeds"],"split_hash":stable_hash(split)}))
+subject_inventory_path=ARTIFACT_DIR/"subject_inventory.csv"; pd.DataFrame(inventory).to_csv(subject_inventory_path,index=False)
+(ARTIFACT_DIR/"splits.json").write_text(json.dumps({r["subject_id"]:make_splits(load_subject(Path(r["path"]),CONFIG)[1],CONFIG,r["subject_id"]) for r in inventory},indent=2),encoding="utf-8")
+------------------
+
+----- stdout -----
+[2026-07-12 15:13:14] Full CONFIG banner:
+{
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models",
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+  "experiment_name": "compact_mi_locked_eegtcnet",
+  "config_note": "Locked target-only compact MI benchmark.",
+  "subjects_to_use": null,
+  "channel_set": "liu29",
+  "native_sfreq": 500,
+  "target_sfreq": 128,
+  "marker_channel_index": 32,
+  "onset_marker_value": 2,
+  "onset_plausible_range": [
+    900,
+    1100
+  ],
+  "window_seconds": 4.0,
+  "bandpass_hz": [
+    4.0,
+    40.0
+  ],
+  "filter_order": 4,
+  "normalization_mode": "channel_standardize",
+  "normalization_eps": 1e-06,
+  "model_name": "EEGTCNet",
+  "allow_optional_models": false,
+  "evaluation_mode": "stratified_5fold",
+  "cv_folds": 5,
+  "cv_random_state": 2026,
+  "persist_splits": true,
+  "epoch_selection": "fixed_source_locked",
+  "source_locked_epochs": 20,
+  "batch_size": 8,
+  "n_epochs": 20,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.01,
+  "gradient_clip_norm": 1.0,
+  "seeds": [
+    2026
+  ],
+  "seed": 2026,
+  "set_seed": true,
+  "bootstrap_iterations": 10000,
+  "collapse_threshold": 0.9,
+  "classical_reference_artifact": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-multiscale-riemann-fusion/20260712_145032_844360_89d4f1fc/subject_results.csv"
+}
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mValueError[39m                                Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[6][39m[32m, line 5[39m
+[32m      3[39m paths=locate_subject_files(CONFIG[[33m"[39m[33msource_extract_dir[39m[33m"[39m],CONFIG[[33m"[39m[33msubjects_to_use[39m[33m"[39m]); SUBJECTS=[subject_id(p) [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m paths]; FOLD_RESULTS=[]; inventory=[]; CH_NAMES=[]
+[32m      4[39m [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m paths:
+[32m----> [39m[32m5[39m     x,y,CH_NAMES,onsets=load_subject(p,CONFIG); splits=make_splits(y,CONFIG,subject_id(p)); inventory.append({[33m"[39m[33msubject_id[39m[33m"[39m:subject_id(p),[33m"[39m[33mpath[39m[33m"[39m:[38;5;28mstr[39m(p),[33m"[39m[33mn_trials[39m[33m"[39m:[38;5;28mlen[39m(y),[33m"[39m[33msplit_hash[39m[33m"[39m:stable_hash(splits)})
+[32m      6[39m     [38;5;28;01mfor[39;00m split [38;5;129;01min[39;00m splits:
+[32m      7[39m         tr=np.asarray(split[[33m"[39m[33mtrain_indices[39m[33m"[39m]); te=np.asarray(split[[33m"[39m[33mtest_indices[39m[33m"[39m]); mean,scale=fit_normalizer(x[tr],CONFIG[[33m"[39m[33mnormalization_mode[39m[33m"[39m],CONFIG[[33m"[39m[33mnormalization_eps[39m[33m"[39m]); seed_rows=[]
+
+[36mFile [39m[32m~/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/modern_mi_common.py:55[39m, in [36mload_subject[39m[34m(path, cfg)[39m
+[32m     53[39m     hits = hits[(hits >= plausible[[32m0[39m]) & (hits <= plausible[[32m1[39m])]
+[32m     54[39m     [38;5;28;01mif[39;00m [38;5;28mlen[39m(hits) != [32m1[39m:
+[32m---> [39m[32m55[39m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([33mf[39m[33m"[39m[33mExpected one plausible MI marker, found [39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(hits)[38;5;132;01m}[39;00m[33m in [39m[38;5;132;01m{[39;00mpath[38;5;132;01m}[39;00m[33m"[39m)
+[32m     56[39m     onsets.append([38;5;28mint[39m(hits[[32m0[39m]))
+[32m     57[39m names = LIU29
+
+[31mValueError[39m: Expected one plausible MI marker, found 0 in /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata/sub-01/sub-01_task-motor-imagery_eeg.mat
+
+
+[3/6] Running config override:
+{
+  "experiment_name": "compact_mi_locked_ifnet",
+  "model_name": "IFNet"
+}
+  status:       failed
+  elapsed_sec:  4.355
+  run_id:       20260712_151318_557869_b6ce70fd
+  artifact_dir: None
+  error:        An error occurred while executing the following cell:
+------------------
+print("Full CONFIG banner:\n"+json.dumps(CONFIG,indent=2))
+if CONFIG["model_name"] in OPTIONAL_MODELS and not CONFIG["allow_optional_models"]: raise ValueError("Optional model requires allow_optional_models=true")
+paths=locate_subject_files(CONFIG["source_extract_dir"],CONFIG["subjects_to_use"]); SUBJECTS=[subject_id(p) for p in paths]; FOLD_RESULTS=[]; inventory=[]; CH_NAMES=[]
+for p in paths:
+    x,y,CH_NAMES,onsets=load_subject(p,CONFIG); splits=make_splits(y,CONFIG,subject_id(p)); inventory.append({"subject_id":subject_id(p),"path":str(p),"n_trials":len(y),"split_hash":stable_hash(splits)})
+    for split in splits:
+        tr=np.asarray(split["train_indices"]); te=np.asarray(split["test_indices"]); mean,scale=fit_normalizer(x[tr],CONFIG["normalization_mode"],CONFIG["normalization_eps"]); seed_rows=[]
+        for seed in CONFIG["seeds"]:
+            seed_everything(seed); model=build_model(CONFIG["model_name"],x.shape[1],x.shape[2],CONFIG["target_sfreq"],DEVICE); pred,prob,elapsed=train_eval(model,((x[tr]-mean)/scale).astype('float32'),y[tr],((x[te]-mean)/scale).astype('float32'),y[te],CONFIG,seed,epochs=CONFIG["source_locked_epochs"]); seed_rows.append((pred,prob,elapsed,model))
+        prob=np.mean([r[1] for r in seed_rows],axis=0); pred=prob.argmax(1); FOLD_RESULTS.append(fold_result(subject_id(p),split["fold_id"],te,y[te],pred,prob,seed_rows[-1][3],sum(r[2] for r in seed_rows),BASE_SEED,{"seed_ensemble":CONFIG["seeds"],"split_hash":stable_hash(split)}))
+subject_inventory_path=ARTIFACT_DIR/"subject_inventory.csv"; pd.DataFrame(inventory).to_csv(subject_inventory_path,index=False)
+(ARTIFACT_DIR/"splits.json").write_text(json.dumps({r["subject_id"]:make_splits(load_subject(Path(r["path"]),CONFIG)[1],CONFIG,r["subject_id"]) for r in inventory},indent=2),encoding="utf-8")
+------------------
+
+----- stdout -----
+[2026-07-12 15:13:19] Full CONFIG banner:
+{
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models",
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+  "experiment_name": "compact_mi_locked_ifnet",
+  "config_note": "Locked target-only compact MI benchmark.",
+  "subjects_to_use": null,
+  "channel_set": "liu29",
+  "native_sfreq": 500,
+  "target_sfreq": 128,
+  "marker_channel_index": 32,
+  "onset_marker_value": 2,
+  "onset_plausible_range": [
+    900,
+    1100
+  ],
+  "window_seconds": 4.0,
+  "bandpass_hz": [
+    4.0,
+    40.0
+  ],
+  "filter_order": 4,
+  "normalization_mode": "channel_standardize",
+  "normalization_eps": 1e-06,
+  "model_name": "IFNet",
+  "allow_optional_models": false,
+  "evaluation_mode": "stratified_5fold",
+  "cv_folds": 5,
+  "cv_random_state": 2026,
+  "persist_splits": true,
+  "epoch_selection": "fixed_source_locked",
+  "source_locked_epochs": 20,
+  "batch_size": 8,
+  "n_epochs": 20,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.01,
+  "gradient_clip_norm": 1.0,
+  "seeds": [
+    2026
+  ],
+  "seed": 2026,
+  "set_seed": true,
+  "bootstrap_iterations": 10000,
+  "collapse_threshold": 0.9,
+  "classical_reference_artifact": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-multiscale-riemann-fusion/20260712_145032_844360_89d4f1fc/subject_results.csv"
+}
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mValueError[39m                                Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[6][39m[32m, line 5[39m
+[32m      3[39m paths=locate_subject_files(CONFIG[[33m"[39m[33msource_extract_dir[39m[33m"[39m],CONFIG[[33m"[39m[33msubjects_to_use[39m[33m"[39m]); SUBJECTS=[subject_id(p) [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m paths]; FOLD_RESULTS=[]; inventory=[]; CH_NAMES=[]
+[32m      4[39m [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m paths:
+[32m----> [39m[32m5[39m     x,y,CH_NAMES,onsets=load_subject(p,CONFIG); splits=make_splits(y,CONFIG,subject_id(p)); inventory.append({[33m"[39m[33msubject_id[39m[33m"[39m:subject_id(p),[33m"[39m[33mpath[39m[33m"[39m:[38;5;28mstr[39m(p),[33m"[39m[33mn_trials[39m[33m"[39m:[38;5;28mlen[39m(y),[33m"[39m[33msplit_hash[39m[33m"[39m:stable_hash(splits)})
+[32m      6[39m     [38;5;28;01mfor[39;00m split [38;5;129;01min[39;00m splits:
+[32m      7[39m         tr=np.asarray(split[[33m"[39m[33mtrain_indices[39m[33m"[39m]); te=np.asarray(split[[33m"[39m[33mtest_indices[39m[33m"[39m]); mean,scale=fit_normalizer(x[tr],CONFIG[[33m"[39m[33mnormalization_mode[39m[33m"[39m],CONFIG[[33m"[39m[33mnormalization_eps[39m[33m"[39m]); seed_rows=[]
+
+[36mFile [39m[32m~/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/modern_mi_common.py:55[39m, in [36mload_subject[39m[34m(path, cfg)[39m
+[32m     53[39m     hits = hits[(hits >= plausible[[32m0[39m]) & (hits <= plausible[[32m1[39m])]
+[32m     54[39m     [38;5;28;01mif[39;00m [38;5;28mlen[39m(hits) != [32m1[39m:
+[32m---> [39m[32m55[39m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([33mf[39m[33m"[39m[33mExpected one plausible MI marker, found [39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(hits)[38;5;132;01m}[39;00m[33m in [39m[38;5;132;01m{[39;00mpath[38;5;132;01m}[39;00m[33m"[39m)
+[32m     56[39m     onsets.append([38;5;28mint[39m(hits[[32m0[39m]))
+[32m     57[39m names = LIU29
+
+[31mValueError[39m: Expected one plausible MI marker, found 0 in /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata/sub-01/sub-01_task-motor-imagery_eeg.mat
+
+
+[4/6] Running config override:
+{
+  "experiment_name": "compact_mi_locked_fbmsnet",
+  "model_name": "FBMSNet"
+}
+  status:       failed
+  elapsed_sec:  4.404
+  run_id:       20260712_151322_966510_f8843ceb
+  artifact_dir: None
+  error:        An error occurred while executing the following cell:
+------------------
+print("Full CONFIG banner:\n"+json.dumps(CONFIG,indent=2))
+if CONFIG["model_name"] in OPTIONAL_MODELS and not CONFIG["allow_optional_models"]: raise ValueError("Optional model requires allow_optional_models=true")
+paths=locate_subject_files(CONFIG["source_extract_dir"],CONFIG["subjects_to_use"]); SUBJECTS=[subject_id(p) for p in paths]; FOLD_RESULTS=[]; inventory=[]; CH_NAMES=[]
+for p in paths:
+    x,y,CH_NAMES,onsets=load_subject(p,CONFIG); splits=make_splits(y,CONFIG,subject_id(p)); inventory.append({"subject_id":subject_id(p),"path":str(p),"n_trials":len(y),"split_hash":stable_hash(splits)})
+    for split in splits:
+        tr=np.asarray(split["train_indices"]); te=np.asarray(split["test_indices"]); mean,scale=fit_normalizer(x[tr],CONFIG["normalization_mode"],CONFIG["normalization_eps"]); seed_rows=[]
+        for seed in CONFIG["seeds"]:
+            seed_everything(seed); model=build_model(CONFIG["model_name"],x.shape[1],x.shape[2],CONFIG["target_sfreq"],DEVICE); pred,prob,elapsed=train_eval(model,((x[tr]-mean)/scale).astype('float32'),y[tr],((x[te]-mean)/scale).astype('float32'),y[te],CONFIG,seed,epochs=CONFIG["source_locked_epochs"]); seed_rows.append((pred,prob,elapsed,model))
+        prob=np.mean([r[1] for r in seed_rows],axis=0); pred=prob.argmax(1); FOLD_RESULTS.append(fold_result(subject_id(p),split["fold_id"],te,y[te],pred,prob,seed_rows[-1][3],sum(r[2] for r in seed_rows),BASE_SEED,{"seed_ensemble":CONFIG["seeds"],"split_hash":stable_hash(split)}))
+subject_inventory_path=ARTIFACT_DIR/"subject_inventory.csv"; pd.DataFrame(inventory).to_csv(subject_inventory_path,index=False)
+(ARTIFACT_DIR/"splits.json").write_text(json.dumps({r["subject_id"]:make_splits(load_subject(Path(r["path"]),CONFIG)[1],CONFIG,r["subject_id"]) for r in inventory},indent=2),encoding="utf-8")
+------------------
+
+----- stdout -----
+[2026-07-12 15:13:23] Full CONFIG banner:
+{
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models",
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+  "experiment_name": "compact_mi_locked_fbmsnet",
+  "config_note": "Locked target-only compact MI benchmark.",
+  "subjects_to_use": null,
+  "channel_set": "liu29",
+  "native_sfreq": 500,
+  "target_sfreq": 128,
+  "marker_channel_index": 32,
+  "onset_marker_value": 2,
+  "onset_plausible_range": [
+    900,
+    1100
+  ],
+  "window_seconds": 4.0,
+  "bandpass_hz": [
+    4.0,
+    40.0
+  ],
+  "filter_order": 4,
+  "normalization_mode": "channel_standardize",
+  "normalization_eps": 1e-06,
+  "model_name": "FBMSNet",
+  "allow_optional_models": false,
+  "evaluation_mode": "stratified_5fold",
+  "cv_folds": 5,
+  "cv_random_state": 2026,
+  "persist_splits": true,
+  "epoch_selection": "fixed_source_locked",
+  "source_locked_epochs": 20,
+  "batch_size": 8,
+  "n_epochs": 20,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.01,
+  "gradient_clip_norm": 1.0,
+  "seeds": [
+    2026
+  ],
+  "seed": 2026,
+  "set_seed": true,
+  "bootstrap_iterations": 10000,
+  "collapse_threshold": 0.9,
+  "classical_reference_artifact": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-multiscale-riemann-fusion/20260712_145032_844360_89d4f1fc/subject_results.csv"
+}
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mValueError[39m                                Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[6][39m[32m, line 5[39m
+[32m      3[39m paths=locate_subject_files(CONFIG[[33m"[39m[33msource_extract_dir[39m[33m"[39m],CONFIG[[33m"[39m[33msubjects_to_use[39m[33m"[39m]); SUBJECTS=[subject_id(p) [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m paths]; FOLD_RESULTS=[]; inventory=[]; CH_NAMES=[]
+[32m      4[39m [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m paths:
+[32m----> [39m[32m5[39m     x,y,CH_NAMES,onsets=load_subject(p,CONFIG); splits=make_splits(y,CONFIG,subject_id(p)); inventory.append({[33m"[39m[33msubject_id[39m[33m"[39m:subject_id(p),[33m"[39m[33mpath[39m[33m"[39m:[38;5;28mstr[39m(p),[33m"[39m[33mn_trials[39m[33m"[39m:[38;5;28mlen[39m(y),[33m"[39m[33msplit_hash[39m[33m"[39m:stable_hash(splits)})
+[32m      6[39m     [38;5;28;01mfor[39;00m split [38;5;129;01min[39;00m splits:
+[32m      7[39m         tr=np.asarray(split[[33m"[39m[33mtrain_indices[39m[33m"[39m]); te=np.asarray(split[[33m"[39m[33mtest_indices[39m[33m"[39m]); mean,scale=fit_normalizer(x[tr],CONFIG[[33m"[39m[33mnormalization_mode[39m[33m"[39m],CONFIG[[33m"[39m[33mnormalization_eps[39m[33m"[39m]); seed_rows=[]
+
+[36mFile [39m[32m~/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/modern_mi_common.py:55[39m, in [36mload_subject[39m[34m(path, cfg)[39m
+[32m     53[39m     hits = hits[(hits >= plausible[[32m0[39m]) & (hits <= plausible[[32m1[39m])]
+[32m     54[39m     [38;5;28;01mif[39;00m [38;5;28mlen[39m(hits) != [32m1[39m:
+[32m---> [39m[32m55[39m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([33mf[39m[33m"[39m[33mExpected one plausible MI marker, found [39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(hits)[38;5;132;01m}[39;00m[33m in [39m[38;5;132;01m{[39;00mpath[38;5;132;01m}[39;00m[33m"[39m)
+[32m     56[39m     onsets.append([38;5;28mint[39m(hits[[32m0[39m]))
+[32m     57[39m names = LIU29
+
+[31mValueError[39m: Expected one plausible MI marker, found 0 in /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata/sub-01/sub-01_task-motor-imagery_eeg.mat
+
+
+[5/6] Running config override:
+{
+  "experiment_name": "compact_mi_locked_eegnet",
+  "model_name": "EEGNet"
+}
+  status:       failed
+  elapsed_sec:  4.408
+  run_id:       20260712_151327_367003_bd56b076
+  artifact_dir: None
+  error:        An error occurred while executing the following cell:
+------------------
+print("Full CONFIG banner:\n"+json.dumps(CONFIG,indent=2))
+if CONFIG["model_name"] in OPTIONAL_MODELS and not CONFIG["allow_optional_models"]: raise ValueError("Optional model requires allow_optional_models=true")
+paths=locate_subject_files(CONFIG["source_extract_dir"],CONFIG["subjects_to_use"]); SUBJECTS=[subject_id(p) for p in paths]; FOLD_RESULTS=[]; inventory=[]; CH_NAMES=[]
+for p in paths:
+    x,y,CH_NAMES,onsets=load_subject(p,CONFIG); splits=make_splits(y,CONFIG,subject_id(p)); inventory.append({"subject_id":subject_id(p),"path":str(p),"n_trials":len(y),"split_hash":stable_hash(splits)})
+    for split in splits:
+        tr=np.asarray(split["train_indices"]); te=np.asarray(split["test_indices"]); mean,scale=fit_normalizer(x[tr],CONFIG["normalization_mode"],CONFIG["normalization_eps"]); seed_rows=[]
+        for seed in CONFIG["seeds"]:
+            seed_everything(seed); model=build_model(CONFIG["model_name"],x.shape[1],x.shape[2],CONFIG["target_sfreq"],DEVICE); pred,prob,elapsed=train_eval(model,((x[tr]-mean)/scale).astype('float32'),y[tr],((x[te]-mean)/scale).astype('float32'),y[te],CONFIG,seed,epochs=CONFIG["source_locked_epochs"]); seed_rows.append((pred,prob,elapsed,model))
+        prob=np.mean([r[1] for r in seed_rows],axis=0); pred=prob.argmax(1); FOLD_RESULTS.append(fold_result(subject_id(p),split["fold_id"],te,y[te],pred,prob,seed_rows[-1][3],sum(r[2] for r in seed_rows),BASE_SEED,{"seed_ensemble":CONFIG["seeds"],"split_hash":stable_hash(split)}))
+subject_inventory_path=ARTIFACT_DIR/"subject_inventory.csv"; pd.DataFrame(inventory).to_csv(subject_inventory_path,index=False)
+(ARTIFACT_DIR/"splits.json").write_text(json.dumps({r["subject_id"]:make_splits(load_subject(Path(r["path"]),CONFIG)[1],CONFIG,r["subject_id"]) for r in inventory},indent=2),encoding="utf-8")
+------------------
+
+----- stdout -----
+[2026-07-12 15:13:27] Full CONFIG banner:
+{
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models",
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+  "experiment_name": "compact_mi_locked_eegnet",
+  "config_note": "Locked target-only compact MI benchmark.",
+  "subjects_to_use": null,
+  "channel_set": "liu29",
+  "native_sfreq": 500,
+  "target_sfreq": 128,
+  "marker_channel_index": 32,
+  "onset_marker_value": 2,
+  "onset_plausible_range": [
+    900,
+    1100
+  ],
+  "window_seconds": 4.0,
+  "bandpass_hz": [
+    4.0,
+    40.0
+  ],
+  "filter_order": 4,
+  "normalization_mode": "channel_standardize",
+  "normalization_eps": 1e-06,
+  "model_name": "EEGNet",
+  "allow_optional_models": false,
+  "evaluation_mode": "stratified_5fold",
+  "cv_folds": 5,
+  "cv_random_state": 2026,
+  "persist_splits": true,
+  "epoch_selection": "fixed_source_locked",
+  "source_locked_epochs": 20,
+  "batch_size": 8,
+  "n_epochs": 20,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.01,
+  "gradient_clip_norm": 1.0,
+  "seeds": [
+    2026
+  ],
+  "seed": 2026,
+  "set_seed": true,
+  "bootstrap_iterations": 10000,
+  "collapse_threshold": 0.9,
+  "classical_reference_artifact": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-multiscale-riemann-fusion/20260712_145032_844360_89d4f1fc/subject_results.csv"
+}
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mValueError[39m                                Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[6][39m[32m, line 5[39m
+[32m      3[39m paths=locate_subject_files(CONFIG[[33m"[39m[33msource_extract_dir[39m[33m"[39m],CONFIG[[33m"[39m[33msubjects_to_use[39m[33m"[39m]); SUBJECTS=[subject_id(p) [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m paths]; FOLD_RESULTS=[]; inventory=[]; CH_NAMES=[]
+[32m      4[39m [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m paths:
+[32m----> [39m[32m5[39m     x,y,CH_NAMES,onsets=load_subject(p,CONFIG); splits=make_splits(y,CONFIG,subject_id(p)); inventory.append({[33m"[39m[33msubject_id[39m[33m"[39m:subject_id(p),[33m"[39m[33mpath[39m[33m"[39m:[38;5;28mstr[39m(p),[33m"[39m[33mn_trials[39m[33m"[39m:[38;5;28mlen[39m(y),[33m"[39m[33msplit_hash[39m[33m"[39m:stable_hash(splits)})
+[32m      6[39m     [38;5;28;01mfor[39;00m split [38;5;129;01min[39;00m splits:
+[32m      7[39m         tr=np.asarray(split[[33m"[39m[33mtrain_indices[39m[33m"[39m]); te=np.asarray(split[[33m"[39m[33mtest_indices[39m[33m"[39m]); mean,scale=fit_normalizer(x[tr],CONFIG[[33m"[39m[33mnormalization_mode[39m[33m"[39m],CONFIG[[33m"[39m[33mnormalization_eps[39m[33m"[39m]); seed_rows=[]
+
+[36mFile [39m[32m~/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/modern_mi_common.py:55[39m, in [36mload_subject[39m[34m(path, cfg)[39m
+[32m     53[39m     hits = hits[(hits >= plausible[[32m0[39m]) & (hits <= plausible[[32m1[39m])]
+[32m     54[39m     [38;5;28;01mif[39;00m [38;5;28mlen[39m(hits) != [32m1[39m:
+[32m---> [39m[32m55[39m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([33mf[39m[33m"[39m[33mExpected one plausible MI marker, found [39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(hits)[38;5;132;01m}[39;00m[33m in [39m[38;5;132;01m{[39;00mpath[38;5;132;01m}[39;00m[33m"[39m)
+[32m     56[39m     onsets.append([38;5;28mint[39m(hits[[32m0[39m]))
+[32m     57[39m names = LIU29
+
+[31mValueError[39m: Expected one plausible MI marker, found 0 in /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata/sub-01/sub-01_task-motor-imagery_eeg.mat
+
+
+[6/6] Running config override:
+{
+  "experiment_name": "compact_mi_locked_shallowfbcspnet",
+  "model_name": "ShallowFBCSPNet"
+}
+  status:       failed
+  elapsed_sec:  4.407
+  run_id:       20260712_151331_752303_0ef9e77d
+  artifact_dir: None
+  error:        An error occurred while executing the following cell:
+------------------
+print("Full CONFIG banner:\n"+json.dumps(CONFIG,indent=2))
+if CONFIG["model_name"] in OPTIONAL_MODELS and not CONFIG["allow_optional_models"]: raise ValueError("Optional model requires allow_optional_models=true")
+paths=locate_subject_files(CONFIG["source_extract_dir"],CONFIG["subjects_to_use"]); SUBJECTS=[subject_id(p) for p in paths]; FOLD_RESULTS=[]; inventory=[]; CH_NAMES=[]
+for p in paths:
+    x,y,CH_NAMES,onsets=load_subject(p,CONFIG); splits=make_splits(y,CONFIG,subject_id(p)); inventory.append({"subject_id":subject_id(p),"path":str(p),"n_trials":len(y),"split_hash":stable_hash(splits)})
+    for split in splits:
+        tr=np.asarray(split["train_indices"]); te=np.asarray(split["test_indices"]); mean,scale=fit_normalizer(x[tr],CONFIG["normalization_mode"],CONFIG["normalization_eps"]); seed_rows=[]
+        for seed in CONFIG["seeds"]:
+            seed_everything(seed); model=build_model(CONFIG["model_name"],x.shape[1],x.shape[2],CONFIG["target_sfreq"],DEVICE); pred,prob,elapsed=train_eval(model,((x[tr]-mean)/scale).astype('float32'),y[tr],((x[te]-mean)/scale).astype('float32'),y[te],CONFIG,seed,epochs=CONFIG["source_locked_epochs"]); seed_rows.append((pred,prob,elapsed,model))
+        prob=np.mean([r[1] for r in seed_rows],axis=0); pred=prob.argmax(1); FOLD_RESULTS.append(fold_result(subject_id(p),split["fold_id"],te,y[te],pred,prob,seed_rows[-1][3],sum(r[2] for r in seed_rows),BASE_SEED,{"seed_ensemble":CONFIG["seeds"],"split_hash":stable_hash(split)}))
+subject_inventory_path=ARTIFACT_DIR/"subject_inventory.csv"; pd.DataFrame(inventory).to_csv(subject_inventory_path,index=False)
+(ARTIFACT_DIR/"splits.json").write_text(json.dumps({r["subject_id"]:make_splits(load_subject(Path(r["path"]),CONFIG)[1],CONFIG,r["subject_id"]) for r in inventory},indent=2),encoding="utf-8")
+------------------
+
+----- stdout -----
+[2026-07-12 15:13:32] Full CONFIG banner:
+{
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models",
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+  "experiment_name": "compact_mi_locked_shallowfbcspnet",
+  "config_note": "Locked target-only compact MI benchmark.",
+  "subjects_to_use": null,
+  "channel_set": "liu29",
+  "native_sfreq": 500,
+  "target_sfreq": 128,
+  "marker_channel_index": 32,
+  "onset_marker_value": 2,
+  "onset_plausible_range": [
+    900,
+    1100
+  ],
+  "window_seconds": 4.0,
+  "bandpass_hz": [
+    4.0,
+    40.0
+  ],
+  "filter_order": 4,
+  "normalization_mode": "channel_standardize",
+  "normalization_eps": 1e-06,
+  "model_name": "ShallowFBCSPNet",
+  "allow_optional_models": false,
+  "evaluation_mode": "stratified_5fold",
+  "cv_folds": 5,
+  "cv_random_state": 2026,
+  "persist_splits": true,
+  "epoch_selection": "fixed_source_locked",
+  "source_locked_epochs": 20,
+  "batch_size": 8,
+  "n_epochs": 20,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.01,
+  "gradient_clip_norm": 1.0,
+  "seeds": [
+    2026
+  ],
+  "seed": 2026,
+  "set_seed": true,
+  "bootstrap_iterations": 10000,
+  "collapse_threshold": 0.9,
+  "classical_reference_artifact": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-multiscale-riemann-fusion/20260712_145032_844360_89d4f1fc/subject_results.csv"
+}
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mValueError[39m                                Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[6][39m[32m, line 5[39m
+[32m      3[39m paths=locate_subject_files(CONFIG[[33m"[39m[33msource_extract_dir[39m[33m"[39m],CONFIG[[33m"[39m[33msubjects_to_use[39m[33m"[39m]); SUBJECTS=[subject_id(p) [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m paths]; FOLD_RESULTS=[]; inventory=[]; CH_NAMES=[]
+[32m      4[39m [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m paths:
+[32m----> [39m[32m5[39m     x,y,CH_NAMES,onsets=load_subject(p,CONFIG); splits=make_splits(y,CONFIG,subject_id(p)); inventory.append({[33m"[39m[33msubject_id[39m[33m"[39m:subject_id(p),[33m"[39m[33mpath[39m[33m"[39m:[38;5;28mstr[39m(p),[33m"[39m[33mn_trials[39m[33m"[39m:[38;5;28mlen[39m(y),[33m"[39m[33msplit_hash[39m[33m"[39m:stable_hash(splits)})
+[32m      6[39m     [38;5;28;01mfor[39;00m split [38;5;129;01min[39;00m splits:
+[32m      7[39m         tr=np.asarray(split[[33m"[39m[33mtrain_indices[39m[33m"[39m]); te=np.asarray(split[[33m"[39m[33mtest_indices[39m[33m"[39m]); mean,scale=fit_normalizer(x[tr],CONFIG[[33m"[39m[33mnormalization_mode[39m[33m"[39m],CONFIG[[33m"[39m[33mnormalization_eps[39m[33m"[39m]); seed_rows=[]
+
+[36mFile [39m[32m~/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/modern_mi_common.py:55[39m, in [36mload_subject[39m[34m(path, cfg)[39m
+[32m     53[39m     hits = hits[(hits >= plausible[[32m0[39m]) & (hits <= plausible[[32m1[39m])]
+[32m     54[39m     [38;5;28;01mif[39;00m [38;5;28mlen[39m(hits) != [32m1[39m:
+[32m---> [39m[32m55[39m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([33mf[39m[33m"[39m[33mExpected one plausible MI marker, found [39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(hits)[38;5;132;01m}[39;00m[33m in [39m[38;5;132;01m{[39;00mpath[38;5;132;01m}[39;00m[33m"[39m)
+[32m     56[39m     onsets.append([38;5;28mint[39m(hits[[32m0[39m]))
+[32m     57[39m names = LIU29
+
+[31mValueError[39m: Expected one plausible MI marker, found 0 in /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata/sub-01/sub-01_task-motor-imagery_eeg.mat
+
+
+Finished.
+Results dir:    experiment_results/20260712_1513_sweep_compact_mi_models_locked_f3374a85
+Summary JSON:   experiment_results/20260712_1513_sweep_compact_mi_models_locked_f3374a85/results.json
+Artifact list:  experiment_results/20260712_1513_sweep_compact_mi_models_locked_f3374a85/artifact_ids.json

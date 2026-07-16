@@ -1,0 +1,136 @@
+[2026-07-07 09:12:25] ======================================================================
+[2026-07-07 09:12:25] Experiment: multiwindow_riemann_sjepa_stacking
+[2026-07-07 09:12:25] Note:       Honest nested-CV: multi-window Riemannian probability ensemble (no test-visible window selection) fused with frozen S-JEPA embeddings via inner-CV-fit logistic stacking. SMOKE-TEST CONFIG BY DEFAULT -- see the 'Scaling up' section near the end of the notebook before a full run.
+[2026-07-07 09:12:25] Run ID:     20260707_0912_700a2c85
+[2026-07-07 09:12:25] Artifacts:  /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-multiwindow-riemann-sjepa-stacking/20260707_0912_700a2c85
+[2026-07-07 09:12:25] ======================================================================
+[2026-07-07 09:12:25] data loader defined
+[2026-07-07 09:12:25] Branch A (multi-window Riemannian ensemble) defined
+[2026-07-07 09:12:25] Branch B (frozen S-JEPA embeddings) defined
+[2026-07-07 09:12:25] Sanity-check helpers defined: assert_no_overlap, label_balance, collapse_flag
+[2026-07-07 09:12:25] source: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata (50 subjects)
+[2026-07-07 09:12:27] sub-01: riemann=68.8 sjepa=62.5 fusion=37.5  (  2.1s)
+[2026-07-07 09:12:28] sub-02: riemann=56.2 sjepa=68.8 fusion=68.8  (  3.3s)
+[2026-07-07 09:12:29] sub-03: riemann=37.5 sjepa=62.5 fusion=37.5  (  4.6s)
+[2026-07-07 09:12:31] sub-04: riemann=62.5 sjepa=56.2 fusion=56.2  (  5.8s)
+[2026-07-07 09:12:32] sub-05: riemann=50.0 sjepa=62.5 fusion=62.5  (  7.0s)
+[2026-07-07 09:12:33] sub-06: riemann=37.5 sjepa=56.2 fusion=50.0  (  8.4s)
+[2026-07-07 09:12:34] sub-07: riemann=62.5 sjepa=75.0 fusion=75.0  (  9.6s)
+[2026-07-07 09:12:36] sub-08: riemann=62.5 sjepa=37.5 fusion=43.8  ( 10.8s)
+[2026-07-07 09:12:37] sub-09: riemann=50.0 sjepa=56.2 fusion=43.8  ( 12.6s)
+[2026-07-07 09:12:39] sub-10: riemann=56.2 sjepa=62.5 fusion=62.5  ( 13.8s)
+[2026-07-07 09:12:40] sub-11: riemann=62.5 sjepa=56.2 fusion=37.5  ( 15.1s)
+[2026-07-07 09:12:41] sub-12: riemann=31.2 sjepa=43.8 fusion=56.2  ( 16.2s)
+[2026-07-07 09:12:42] sub-13: riemann=56.2 sjepa=50.0 fusion=43.8  ( 17.4s)
+[2026-07-07 09:12:43] sub-14: riemann=37.5 sjepa=43.8 fusion=50.0  ( 18.5s)
+[2026-07-07 09:12:45] sub-15: riemann=50.0 sjepa=37.5 fusion=37.5  ( 19.7s)
+[2026-07-07 09:12:46] sub-16: riemann=25.0 sjepa=68.8 fusion=25.0  ( 20.8s)
+[2026-07-07 09:12:47] sub-17: riemann=31.2 sjepa=50.0 fusion=43.8  ( 22.0s)
+[2026-07-07 09:12:48] sub-18: riemann=37.5 sjepa=50.0 fusion=56.2  ( 23.1s)
+[2026-07-07 09:12:49] sub-19: riemann=56.2 sjepa=56.2 fusion=50.0  ( 24.3s)
+[2026-07-07 09:12:50] sub-20: riemann=75.0 sjepa=62.5 fusion=68.8  ( 25.5s)
+[2026-07-07 09:12:51] sub-21: riemann=31.2 sjepa=56.2 fusion=31.2  ( 26.6s)
+[2026-07-07 09:12:53] sub-22: riemann=56.2 sjepa=62.5 fusion=37.5  ( 27.8s)
+[2026-07-07 09:12:54] sub-23: riemann=81.2 sjepa=68.8 fusion=68.8  ( 28.9s)
+[2026-07-07 09:12:55] sub-24: riemann=62.5 sjepa=37.5 fusion=43.8  ( 30.1s)
+[2026-07-07 09:12:56] sub-25: riemann=68.8 sjepa=50.0 fusion=50.0  ( 31.2s)
+[2026-07-07 09:12:57] sub-26: riemann=56.2 sjepa=43.8 fusion=56.2  ( 32.4s)
+[2026-07-07 09:12:58] sub-27: riemann=68.8 sjepa=37.5 fusion=50.0  ( 33.5s)
+[2026-07-07 09:13:00] sub-28: riemann=37.5 sjepa=56.2 fusion=43.8  ( 34.6s)
+[2026-07-07 09:13:01] sub-29: riemann=50.0 sjepa=43.8 fusion=43.8  ( 35.8s)
+[2026-07-07 09:13:02] sub-30: riemann=62.5 sjepa=62.5 fusion=56.2  ( 36.9s)
+[2026-07-07 09:13:03] sub-31: riemann=56.2 sjepa=68.8 fusion=68.8  ( 38.1s)
+[2026-07-07 09:13:04] sub-32: riemann=68.8 sjepa=56.2 fusion=56.2  ( 39.2s)
+[2026-07-07 09:13:05] sub-33: riemann=56.2 sjepa=37.5 fusion=50.0  ( 40.4s)
+[2026-07-07 09:13:06] sub-34: riemann=37.5 sjepa=56.2 fusion=62.5  ( 41.5s)
+[2026-07-07 09:13:08] sub-35: riemann=43.8 sjepa=56.2 fusion=62.5  ( 42.7s)
+[2026-07-07 09:13:09] sub-36: riemann=31.2 sjepa=43.8 fusion=43.8  ( 43.8s)
+[2026-07-07 09:13:10] sub-37: riemann=37.5 sjepa=62.5 fusion=37.5  ( 45.0s)
+[2026-07-07 09:13:11] sub-38: riemann=62.5 sjepa=62.5 fusion=56.2  ( 46.2s)
+[2026-07-07 09:13:12] sub-39: riemann=56.2 sjepa=50.0 fusion=56.2  ( 47.3s)
+[2026-07-07 09:13:13] sub-40: riemann=56.2 sjepa=56.2 fusion=62.5  ( 48.4s)
+[2026-07-07 09:13:14] sub-41: riemann=62.5 sjepa=43.8 fusion=56.2  ( 49.6s)
+[2026-07-07 09:13:16] sub-42: riemann=62.5 sjepa=56.2 fusion=43.8  ( 50.7s)
+[2026-07-07 09:13:17] sub-43: riemann=50.0 sjepa=62.5 fusion=56.2  ( 51.9s)
+[2026-07-07 09:13:18] sub-44: riemann=75.0 sjepa=50.0 fusion=31.2  ( 53.0s)
+[2026-07-07 09:13:19] sub-45: riemann=62.5 sjepa=43.8 fusion=68.8  ( 54.2s)
+[2026-07-07 09:13:20] sub-46: riemann=31.2 sjepa=62.5 fusion=37.5  ( 55.3s)
+[2026-07-07 09:13:21] sub-47: riemann=50.0 sjepa=50.0 fusion=43.8  ( 56.5s)
+[2026-07-07 09:13:23] sub-48: riemann=37.5 sjepa=50.0 fusion=50.0  ( 57.6s)
+[2026-07-07 09:13:24] sub-49: riemann=50.0 sjepa=56.2 fusion=43.8  ( 58.7s)
+[2026-07-07 09:13:25] sub-50: riemann=37.5 sjepa=50.0 fusion=37.5  ( 59.9s)
+[2026-07-07 09:13:25] Train/test overlap check: PASS on all 50 folds across 50 subject(s)
+[2026-07-07 09:13:25]   sub-01 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-02 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-03 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-04 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-05 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-06 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-07 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-08 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-09 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-10 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-11 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-12 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-13 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-14 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-15 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-16 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-17 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-18 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-19 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-20 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-21 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-22 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-23 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-24 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-25 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-26 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-27 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-28 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-29 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-30 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-31 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-32 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-33 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-34 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-35 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-36 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-37 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-38 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-39 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-40 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-41 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-42 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-43 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-44 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-45 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-46 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-47 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-48 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-49 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25]   sub-50 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:13:25] Collapse rate (fold predicts >95% one class): {'riemann': np.float64(0.0), 'sjepa': np.float64(0.0), 'fusion': np.float64(0.02)}
+[2026-07-07 09:13:25] ======================================================================
+[2026-07-07 09:13:25] Multi-window Riemannian ensemble x frozen S-JEPA stacking -- Liu2024, n=50 subject(s)
+[2026-07-07 09:13:25]   riemann : bal-acc 52.12% +/- 13.56  acc 52.12%  collapse   0%
+[2026-07-07 09:13:25]   sjepa   : bal-acc 54.25% +/- 9.39  acc 54.25%  collapse   0%
+[2026-07-07 09:13:25]   fusion  : bal-acc 50.25% +/- 11.45  acc 50.25%  collapse   2%
+[2026-07-07 09:13:25]   Wilcoxon fusion vs riemann: dMean=-1.88pp p=0.5094
+[2026-07-07 09:13:25]   Wilcoxon fusion vs sjepa  : dMean=-4.00pp p=0.0556
+[2026-07-07 09:13:25] ======================================================================
+[2026-07-07 09:13:25] riemann confusion matrix (rows=true[left,right], cols=pred[left,right]):
+[[234 166]
+ [217 183]]
+
+[2026-07-07 09:13:25] sjepa confusion matrix (rows=true[left,right], cols=pred[left,right]):
+[[223 177]
+ [189 211]]
+
+[2026-07-07 09:13:25] fusion confusion matrix (rows=true[left,right], cols=pred[left,right]):
+[[191 209]
+ [189 211]]
+
+[2026-07-07 09:13:25] Saved: fold_results.csv, subject_summary.csv, comparison_vs_baselines.csv, confusion_matrix_*.csv,
+[2026-07-07 09:13:25]        global_metrics.json, subject_metrics.json, branch_balacc.png
+[2026-07-07 09:13:25] Artifacts: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-multiwindow-riemann-sjepa-stacking/20260707_0912_700a2c85

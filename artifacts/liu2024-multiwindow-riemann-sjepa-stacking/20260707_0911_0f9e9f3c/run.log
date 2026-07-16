@@ -1,0 +1,42 @@
+[2026-07-07 09:11:00] ======================================================================
+[2026-07-07 09:11:00] Experiment: multiwindow_riemann_sjepa_stacking
+[2026-07-07 09:11:00] Note:       Honest nested-CV: multi-window Riemannian probability ensemble (no test-visible window selection) fused with frozen S-JEPA embeddings via inner-CV-fit logistic stacking. SMOKE-TEST CONFIG BY DEFAULT -- see the 'Scaling up' section near the end of the notebook before a full run.
+[2026-07-07 09:11:00] Run ID:     20260707_0911_0f9e9f3c
+[2026-07-07 09:11:00] Artifacts:  /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-multiwindow-riemann-sjepa-stacking/20260707_0911_0f9e9f3c
+[2026-07-07 09:11:00] ======================================================================
+[2026-07-07 09:11:00] data loader defined
+[2026-07-07 09:11:00] Branch A (multi-window Riemannian ensemble) defined
+[2026-07-07 09:11:00] Branch B (frozen S-JEPA embeddings) defined
+[2026-07-07 09:11:00] Sanity-check helpers defined: assert_no_overlap, label_balance, collapse_flag
+[2026-07-07 09:11:00] source: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata (50 subjects)
+[2026-07-07 09:11:02] sub-01: riemann=68.8 sjepa=62.5 fusion=37.5  (  2.1s)
+[2026-07-07 09:11:03] sub-03: riemann=37.5 sjepa=62.5 fusion=37.5  (  3.3s)
+[2026-07-07 09:11:03] Train/test overlap check: PASS on all 2 folds across 2 subject(s)
+[2026-07-07 09:11:03]   sub-01 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:11:03]   sub-03 fold0: train n=24 balance={'0': 12, '1': 12}  test n=16 balance={'0': 8, '1': 8}
+[2026-07-07 09:11:03] Collapse rate (fold predicts >95% one class): {'riemann': np.float64(0.0), 'sjepa': np.float64(0.0), 'fusion': np.float64(0.0)}
+[2026-07-07 09:11:03] ======================================================================
+[2026-07-07 09:11:03] Multi-window Riemannian ensemble x frozen S-JEPA stacking -- Liu2024, n=2 subject(s)
+[2026-07-07 09:11:03]   riemann : bal-acc 53.12% +/- 15.62  acc 53.12%  collapse   0%
+[2026-07-07 09:11:03]   sjepa   : bal-acc 62.50% +/- 0.00  acc 62.50%  collapse   0%
+[2026-07-07 09:11:03]   fusion  : bal-acc 37.50% +/- 0.00  acc 37.50%  collapse   0%
+[2026-07-07 09:11:03]   Wilcoxon fusion vs riemann: dMean=-15.62pp p=1.0000
+[2026-07-07 09:11:03]   Wilcoxon fusion vs sjepa  : dMean=-25.00pp p=0.5000
+[2026-07-07 09:11:03] ======================================================================
+[2026-07-07 09:11:03] riemann confusion matrix (rows=true[left,right], cols=pred[left,right]):
+[[10  6]
+ [ 9  7]]
+
+[2026-07-07 09:11:03] sjepa confusion matrix (rows=true[left,right], cols=pred[left,right]):
+[[ 9  7]
+ [ 5 11]]
+
+[2026-07-07 09:11:03] fusion confusion matrix (rows=true[left,right], cols=pred[left,right]):
+[[ 6 10]
+ [10  6]]
+
+[2026-07-07 09:11:03] Saved: fold_results.csv, subject_summary.csv, comparison_vs_baselines.csv, confusion_matrix_*.csv,
+[2026-07-07 09:11:03]        global_metrics.json, subject_metrics.json, branch_balacc.png
+[2026-07-07 09:11:03] Artifacts: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-multiwindow-riemann-sjepa-stacking/20260707_0911_0f9e9f3c
+[2026-07-07 09:12:25] python 3.11.15 | numpy 2.4.3 | torch 2.10.0
+[2026-07-07 09:12:25] device=cpu  channels=29  bands=2  windows=[0.0, 2.0]  subjects=None  n_repeats=1  inner_folds=2

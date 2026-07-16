@@ -1,0 +1,31 @@
+[
+  {
+    "experiment_name": "sjepa_stabilized_prelocal_control",
+    "config_note": "Pretrained PreLocal control without stabilization penalties.",
+    "spatial_deviation_weight": 0.0,
+    "row_norm_weight": 0.0,
+    "orthogonality_weight": 0.0,
+    "gradient_clip_norm": null
+  },
+  {
+    "experiment_name": "sjepa_stabilized_prelocal_regularized",
+    "config_note": "Moderate spatial deviation, row-norm, orthogonality, and clipping stabilization.",
+    "spatial_deviation_weight": 0.01,
+    "row_norm_weight": 0.001,
+    "orthogonality_weight": 0.001,
+    "gradient_clip_norm": 1.0
+  },
+  {
+    "experiment_name": "sjepa_stabilized_prelocal_seed_ensemble",
+    "config_note": "Regularized fixed three-seed probability ensemble.",
+    "ensemble_seeds": [2026, 2027, 2028]
+  },
+  {
+    "experiment_name": "sjepa_stabilized_frozen_probe",
+    "config_note": "Frozen pretrained encoder and spatial layer; classifier-only probe control.",
+    "mode": "frozen_probe",
+    "spatial_deviation_weight": 0.0,
+    "row_norm_weight": 0.0,
+    "orthogonality_weight": 0.0
+  }
+]

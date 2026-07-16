@@ -1,0 +1,134 @@
+Notebook:       /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_compact_mi_loso_transfer.ipynb
+Configurations: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/utils/experiments/configs/sweep_compact_mi_loso_transfer_pilot.json
+Total configs:  6
+
+[1/6] Running config override:
+{
+  "experiment_name": "compact_loso_pilot_fbcnet_target_only",
+  "model_name": "FBCNet",
+  "adaptation_mode": "target_only",
+  "subjects_to_use": [
+    1,
+    3,
+    7,
+    9
+  ],
+  "target_subjects": [
+    1,
+    3
+  ]
+}
+  status:       completed
+  elapsed_sec:  26.291
+  run_id:       20260712_172611_514408_ccc1b93a
+  artifact_dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-loso-transfer/20260712_172611_514408_ccc1b93a
+
+[2/6] Running config override:
+{
+  "experiment_name": "compact_loso_pilot_fbcnet_frozen_encoder",
+  "model_name": "FBCNet",
+  "adaptation_mode": "frozen_encoder",
+  "subjects_to_use": [
+    1,
+    3,
+    7,
+    9
+  ],
+  "target_subjects": [
+    1,
+    3
+  ]
+}
+  status:       completed
+  elapsed_sec:  11.576
+  run_id:       20260712_172637_596316_5841224b
+  artifact_dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-loso-transfer/20260712_172637_596316_5841224b
+
+[3/6] Running config override:
+{
+  "experiment_name": "compact_loso_pilot_fbcnet_full_finetune",
+  "model_name": "FBCNet",
+  "adaptation_mode": "full_finetune",
+  "subjects_to_use": [
+    1,
+    3,
+    7,
+    9
+  ],
+  "target_subjects": [
+    1,
+    3
+  ]
+}
+  status:       completed
+  elapsed_sec:  21.803
+  run_id:       20260712_172649_047295_0d656011
+  artifact_dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-loso-transfer/20260712_172649_047295_0d656011
+
+[4/6] Running config override:
+{
+  "experiment_name": "compact_loso_pilot_eegtcnet_target_only",
+  "model_name": "EEGTCNet",
+  "adaptation_mode": "target_only",
+  "subjects_to_use": [
+    1,
+    3,
+    7,
+    9
+  ],
+  "target_subjects": [
+    1,
+    3
+  ]
+}
+  status:       completed
+  elapsed_sec:  15.29
+  run_id:       20260712_172710_833967_d74f4d66
+  artifact_dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-loso-transfer/20260712_172710_833967_d74f4d66
+
+[5/6] Running config override:
+{
+  "experiment_name": "compact_loso_pilot_eegtcnet_frozen_encoder",
+  "model_name": "EEGTCNet",
+  "adaptation_mode": "frozen_encoder",
+  "subjects_to_use": [
+    1,
+    3,
+    7,
+    9
+  ],
+  "target_subjects": [
+    1,
+    3
+  ]
+}
+  status:       completed
+  elapsed_sec:  9.444
+  run_id:       20260712_172726_178103_5fd640b6
+  artifact_dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-loso-transfer/20260712_172726_178103_5fd640b6
+
+[6/6] Running config override:
+{
+  "experiment_name": "compact_loso_pilot_eegtcnet_full_finetune",
+  "model_name": "EEGTCNet",
+  "adaptation_mode": "full_finetune",
+  "subjects_to_use": [
+    1,
+    3,
+    7,
+    9
+  ],
+  "target_subjects": [
+    1,
+    3
+  ]
+}
+  status:       completed
+  elapsed_sec:  14.236
+  run_id:       20260712_172735_615232_9daf3bd5
+  artifact_dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-loso-transfer/20260712_172735_615232_9daf3bd5
+
+Finished.
+Results dir:    experiment_results/20260712_1726_sweep_compact_mi_loso_transfer_pilot_a4fe9ccd
+Summary JSON:   experiment_results/20260712_1726_sweep_compact_mi_loso_transfer_pilot_a4fe9ccd/results.json
+Artifact list:  experiment_results/20260712_1726_sweep_compact_mi_loso_transfer_pilot_a4fe9ccd/artifact_ids.json

@@ -1,0 +1,51 @@
+{
+  "primary_metric": "mean repeat-level 60/40 balanced accuracy per subject, averaged over valid subjects",
+  "outer_protocol": "repeated_60_40",
+  "methods": {
+    "fixed_single_view": {
+      "mean_subject_balanced_accuracy": 0.526875,
+      "subject_metric_name": "mean_repeat_level_60_40_balanced_accuracy",
+      "bootstrap_95_ci_over_subjects": [
+        0.49925,
+        0.5568749999999999
+      ],
+      "n_valid_complete_subjects": 50
+    },
+    "riemann_equal_short_scales": {
+      "mean_subject_balanced_accuracy": 0.55375,
+      "subject_metric_name": "mean_repeat_level_60_40_balanced_accuracy",
+      "bootstrap_95_ci_over_subjects": [
+        0.5231250000000001,
+        0.585875
+      ],
+      "n_valid_complete_subjects": 50
+    },
+    "riemann_scale_1s": {
+      "mean_subject_balanced_accuracy": 0.5521249999999999,
+      "subject_metric_name": "mean_repeat_level_60_40_balanced_accuracy",
+      "bootstrap_95_ci_over_subjects": [
+        0.5245000000000001,
+        0.58075
+      ],
+      "n_valid_complete_subjects": 50
+    },
+    "riemann_scale_2s": {
+      "mean_subject_balanced_accuracy": 0.5505,
+      "subject_metric_name": "mean_repeat_level_60_40_balanced_accuracy",
+      "bootstrap_95_ci_over_subjects": [
+        0.519625,
+        0.583375
+      ],
+      "n_valid_complete_subjects": 50
+    }
+  },
+  "planned_paired_comparisons": {
+    "fusion_vs_riemann": null,
+    "fusion_vs_sjepa": null
+  },
+  "n_fold_failures": 0,
+  "invalid_subjects_with_any_fold_failure": [],
+  "n_invalid_subject_methods": 0,
+  "invalid_subject_methods": [],
+  "outer_test_used_for_selection": false
+}

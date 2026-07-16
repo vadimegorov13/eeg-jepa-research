@@ -124,7 +124,10 @@ def read_json_array(path: Path) -> list[dict[str, Any]]:
     for i, item in enumerate(data):
         if not isinstance(item, dict):
             raise ValueError(f"Configuration at index {i} is not a JSON object.")
-    return data
+    enabled = [item for item in data if item.get("enabled", True)]
+    if not enabled:
+        raise ValueError("Configurations file has no enabled entries.")
+    return enabled
 
 
 def collect_text_outputs(nb: nbformat.NotebookNode) -> str:

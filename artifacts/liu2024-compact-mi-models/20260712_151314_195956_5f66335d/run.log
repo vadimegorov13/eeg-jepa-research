@@ -1,0 +1,51 @@
+[2026-07-12 15:13:14] Run ID:     20260712_151314_195956_5f66335d
+[2026-07-12 15:13:14] Artifacts:  /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260712_151314_195956_5f66335d
+[2026-07-12 15:13:14] Config:     /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260712_151314_195956_5f66335d/config.json
+[2026-07-12 15:13:14] Using device: mps
+[2026-07-12 15:13:14] Seed initialized: 2026
+[2026-07-12 15:13:14] Full CONFIG banner:
+{
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models",
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+  "experiment_name": "compact_mi_locked_eegtcnet",
+  "config_note": "Locked target-only compact MI benchmark.",
+  "subjects_to_use": null,
+  "channel_set": "liu29",
+  "native_sfreq": 500,
+  "target_sfreq": 128,
+  "marker_channel_index": 32,
+  "onset_marker_value": 2,
+  "onset_plausible_range": [
+    900,
+    1100
+  ],
+  "window_seconds": 4.0,
+  "bandpass_hz": [
+    4.0,
+    40.0
+  ],
+  "filter_order": 4,
+  "normalization_mode": "channel_standardize",
+  "normalization_eps": 1e-06,
+  "model_name": "EEGTCNet",
+  "allow_optional_models": false,
+  "evaluation_mode": "stratified_5fold",
+  "cv_folds": 5,
+  "cv_random_state": 2026,
+  "persist_splits": true,
+  "epoch_selection": "fixed_source_locked",
+  "source_locked_epochs": 20,
+  "batch_size": 8,
+  "n_epochs": 20,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.01,
+  "gradient_clip_norm": 1.0,
+  "seeds": [
+    2026
+  ],
+  "seed": 2026,
+  "set_seed": true,
+  "bootstrap_iterations": 10000,
+  "collapse_threshold": 0.9,
+  "classical_reference_artifact": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-multiscale-riemann-fusion/20260712_145032_844360_89d4f1fc/subject_results.csv"
+}
