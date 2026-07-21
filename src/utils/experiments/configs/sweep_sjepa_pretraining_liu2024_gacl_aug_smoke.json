@@ -1,6 +1,6 @@
 [
   {
-    "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke",
+    "artifact_dir": "artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke",
     "all_subject_ids": [1, 2, 3, 4, 7, 9, 10, 11, 14, 15, 17, 29, 31, 32, 37, 41],
     "downstream_only_subject_ids": [1, 3, 7, 9, 10, 11, 14, 15, 17, 29, 31, 32, 37, 41],
     "n_pretraining_val_subjects": 1,
@@ -9,7 +9,18 @@
     "batch_size": 8,
     "n_epochs": 1,
     "early_stopping_patience": 1,
-    "device": "cpu",
+    "chunk_shuffle": false,
+    "window_preload": true,
+    "cache_preprocessed_chunks": true,
+    "use_iir_filter": false,
+    "model_input_unit": "microvolts",
+    "drop_last_training_batch": false,
+    "fixed_validation_masks": true,
+    "validation_mask_seed": 424242,
+    "min_free_disk_gb": 0.25,
+    "verification_only": true,
+    "verification_backprop": true,
+    "device": "auto",
     "log_verbosity": "compact",
     "augmentation": {
       "enabled": true,
