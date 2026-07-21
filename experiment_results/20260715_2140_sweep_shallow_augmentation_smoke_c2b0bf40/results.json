@@ -1,0 +1,83 @@
+[
+  {
+    "status": "completed",
+    "error": null,
+    "config": {
+      "experiment_name": "shallow_augmentation_smoke_control",
+      "config_note": "Prespecified subjects 01/03/07; matched locked Shallow control without augmentation.",
+      "subjects_to_use": [
+        1,
+        3,
+        7
+      ],
+      "model_name": "ShallowFBCSPNet",
+      "augmentation": {
+        "enabled": false,
+        "name": "none",
+        "transforms": []
+      }
+    },
+    "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260715_214010_146912_f58cef10",
+    "run_id": "20260715_214010_146912_f58cef10",
+    "elapsed_seconds": 58.966
+  },
+  {
+    "status": "completed",
+    "error": null,
+    "config": {
+      "experiment_name": "shallow_augmentation_smoke_relative_noise",
+      "config_note": "Prespecified subjects 01/03/07; training-only per-trial/channel SD-scaled Gaussian noise.",
+      "subjects_to_use": [
+        1,
+        3,
+        7
+      ],
+      "model_name": "ShallowFBCSPNet",
+      "augmentation": {
+        "enabled": true,
+        "name": "relative_gaussian_noise_p05_s01",
+        "transforms": [
+          {
+            "name": "relative_gaussian_noise",
+            "probability": 0.5,
+            "std_fraction": 0.1
+          }
+        ]
+      }
+    },
+    "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260715_214108_991747_c575e8eb",
+    "run_id": "20260715_214108_991747_c575e8eb",
+    "elapsed_seconds": 59.448
+  },
+  {
+    "status": "completed",
+    "error": null,
+    "config": {
+      "experiment_name": "shallow_augmentation_smoke_amplitude_scale",
+      "config_note": "Prespecified subjects 01/03/07; training-only modest whole-trial amplitude scaling.",
+      "subjects_to_use": [
+        1,
+        3,
+        7
+      ],
+      "model_name": "ShallowFBCSPNet",
+      "augmentation": {
+        "enabled": true,
+        "name": "amplitude_scale_p05_0p9_1p1",
+        "transforms": [
+          {
+            "name": "amplitude_scale",
+            "probability": 0.5,
+            "interval": [
+              0.9,
+              1.1
+            ]
+          }
+        ]
+      }
+    },
+    "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260715_214208_676643_46ef90c8",
+    "run_id": "20260715_214208_676643_46ef90c8",
+    "elapsed_seconds": 60.436
+  }
+]

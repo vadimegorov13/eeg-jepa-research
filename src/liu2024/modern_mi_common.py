@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import hashlib
+import importlib.metadata
 import json
 import random
 import time
@@ -27,6 +28,16 @@ LIGHTWEIGHT_OPTIONAL_MODELS = ["EEGInceptionMI", "MSVTNet", "CTNet"]
 
 def stable_hash(payload, length=16):
     return hashlib.sha256(json.dumps(payload, sort_keys=True, default=str).encode()).hexdigest()[:length]
+
+
+def array_hash(*arrays, length=16):
+    digest = hashlib.sha256()
+    for array in arrays:
+        value = np.ascontiguousarray(array)
+        digest.update(str(value.dtype).encode())
+        digest.update(str(value.shape).encode())
+        digest.update(value.tobytes())
+    return digest.hexdigest()[:length]
 
 
 def subject_id(path):
@@ -156,16 +167,45 @@ def configure_adaptation(model, mode):
     return head_name, parameter_count(model, True)
 
 
-def train_eval(model, x_train, y_train, x_test, y_test, cfg, seed, lr=None, epochs=None):
+def augment_training_batch(x, cfg):
+    augmentation = cfg.get("augmentation") or {"enabled": False}
+    if not augmentation.get("enabled", False):
+        return x
+    transformed = x
+    for spec in augmentation.get("transforms", []):
+        probability = float(spec.get("probability", 1.0))
+        if not 0.0 <= probability <= 1.0:
+            raise ValueError(f"Augmentation probability must be in [0,1], got {probability}")
+        apply_mask = (torch.rand(len(transformed), 1, 1, device=transformed.device) < probability).to(transformed.dtype)
+        name = spec["name"]
+        if name == "relative_gaussian_noise":
+            std_fraction = float(spec["std_fraction"])
+            if std_fraction < 0:
+                raise ValueError("std_fraction must be non-negative")
+            channel_scale = transformed.std(dim=-1, keepdim=True, unbiased=False).clamp_min(float(cfg.get("normalization_eps", 1e-6)))
+            transformed = transformed + apply_mask * std_fraction * channel_scale * torch.randn_like(transformed)
+        elif name == "amplitude_scale":
+            low, high = map(float, spec["interval"])
+            if not 0 < low <= high:
+                raise ValueError(f"Invalid amplitude interval: {[low, high]}")
+            factors = low + (high - low) * torch.rand(len(transformed), 1, 1, device=transformed.device)
+            transformed = transformed * (1.0 + apply_mask * (factors - 1.0))
+        else:
+            raise ValueError(f"Unsupported training augmentation {name!r}")
+    return transformed
+
+
+def train_eval(model, x_train, y_train, x_test, y_test, cfg, seed, lr=None, epochs=None, batch_size=None):
     random.seed(seed); np.random.seed(seed); torch.manual_seed(seed)
     device = next(model.parameters()).device
-    loader = DataLoader(TensorDataset(torch.from_numpy(x_train), torch.from_numpy(y_train).long()), batch_size=cfg["batch_size"], shuffle=True, generator=torch.Generator().manual_seed(seed))
+    loader = DataLoader(TensorDataset(torch.from_numpy(x_train), torch.from_numpy(y_train).long()), batch_size=batch_size or cfg["batch_size"], shuffle=True, generator=torch.Generator().manual_seed(seed))
     optimizer = torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=lr or cfg["learning_rate"], weight_decay=cfg["weight_decay"])
     start = time.perf_counter(); model.train()
     for _ in range(int(epochs or cfg["n_epochs"])):
         for xb, yb in loader:
             optimizer.zero_grad(set_to_none=True)
-            loss = nn.functional.cross_entropy(model(xb.to(device)), yb.to(device))
+            xb = augment_training_batch(xb.to(device), cfg)
+            loss = nn.functional.cross_entropy(model(xb), yb.to(device))
             loss.backward(); nn.utils.clip_grad_norm_(model.parameters(), cfg["gradient_clip_norm"]); optimizer.step()
     elapsed = time.perf_counter() - start
     model.eval()
@@ -183,8 +223,24 @@ def fold_result(sid, fold_id, test_idx, y, pred, prob, model, elapsed, seed, ext
 
 
 def checkpoint_signature(cfg, source_ids, model_name):
-    keys = ["channel_set", "native_sfreq", "target_sfreq", "window_seconds", "bandpass_hz", "normalization_mode", "source_epochs", "seed"]
-    return stable_hash({"model": model_name, "sources": sorted(source_ids), "config": {k: cfg[k] for k in keys}})
+    keys = [
+        "channel_set", "native_sfreq", "target_sfreq", "marker_channel_index",
+        "onset_marker_value", "onset_plausible_range", "window_seconds",
+        "bandpass_hz", "filter_order", "normalization_mode", "normalization_eps",
+        "model_kwargs", "source_epochs", "source_batch_size", "batch_size", "learning_rate",
+        "weight_decay", "gradient_clip_norm", "seed",
+    ]
+    versions = {
+        package: importlib.metadata.version(package)
+        for package in ("braindecode", "torch")
+    }
+    payload = {
+        "model": model_name,
+        "sources": sorted(source_ids),
+        "config": {key: cfg.get(key) for key in keys},
+        "software_versions": versions,
+    }
+    return stable_hash(payload)
 
 
 def assert_source_exclusion(target_id, source_ids):

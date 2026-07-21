@@ -1,0 +1,32 @@
+[
+  {
+    "experiment_name": "sjepa_prelocal_clean_full50_frozen",
+    "config_note": "Frozen clean full50 rerun: independent per-trial preprocessing, exact marker-2 0-4 s crop, explicit inner validation, inner-train-only normalization scope, pinned PreLocal adapter/head, and exactly-once OOF artifacts. Do not alter after outer results are inspected.",
+    "subjects_to_use": null,
+    "exclude_subjects": [],
+    "target_sfreq": 128,
+    "mi_window_seconds": 4.0,
+    "average_reference": true,
+    "bandpass_hz": [
+      0.5,
+      40.0
+    ],
+    "normalization_mode": "none",
+    "normalization_eps": 1e-06,
+    "pretrained_repo_id": "braindecode/signal-jepa_without-chans",
+    "pretrained_revision": "213876ea30f0764fd25c055efcb55d1d1652a371",
+    "strategy": "new",
+    "cv_folds": 5,
+    "cv_seed": 2026,
+    "val_fraction": 0.2,
+    "val_seed": 2026,
+    "batch_size": 16,
+    "n_epochs": 5000,
+    "early_stopping_patience": 50,
+    "early_stopping_threshold": 0.0,
+    "learning_rate": 0.0005,
+    "weight_decay": 0.0,
+    "seed": 2026,
+    "collapse_threshold": 0.875
+  }
+]

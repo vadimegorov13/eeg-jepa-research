@@ -1,0 +1,2030 @@
+{
+  "provenance": {
+    "locked_artifact": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260712_165746_790145_fd8ab986",
+    "run_id": "20260712_165746_790145_fd8ab986",
+    "global_split_hash": "801ec1d2c981335f",
+    "file_sha256": {
+      "config.json": "4c1cea029b1f9d9d16419c38e3a028ad291a744e6fd0f1fb45ff601e0b83f04b",
+      "run_metadata.json": "8e9d799276e33ab4fe7277c5c8984dcec2b631708f1f2d4c5c4c4f89de348a3d",
+      "subject_inventory.csv": "b982b12792b1081ddb86e6508c3c46e64d31f0c84f7472e7229f09b87a5fe359",
+      "splits.json": "550d8adbc3948d73d524456d93209fb651e54c576dff5c7faf6ba83111c22c8f"
+    }
+  },
+  "folds": [
+    {
+      "target_subject": "sub-01",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-01",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-01",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-01",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-01",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-02",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-02",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-02",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-02",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-02",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-03",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-03",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-03",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-03",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-03",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-04",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-04",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-04",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-04",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-04",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-05",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-05",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-05",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-05",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-05",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-06",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-06",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-06",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-06",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-06",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-07",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-07",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-07",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-07",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-07",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-08",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-08",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-08",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-08",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-08",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-09",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-09",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-09",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-09",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-09",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-10",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-10",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-10",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-10",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-10",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-11",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-11",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-11",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-11",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-11",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-12",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-12",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-12",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-12",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-12",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-13",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-13",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-13",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-13",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-13",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-14",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-14",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-14",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-14",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-14",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-15",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-15",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-15",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-15",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-15",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-16",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-16",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-16",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-16",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-16",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-17",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-17",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-17",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-17",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-17",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-18",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-18",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-18",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-18",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-18",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-19",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-19",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-19",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-19",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-19",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-20",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-20",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-20",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-20",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-20",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-21",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-21",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-21",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-21",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-21",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-22",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-22",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-22",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-22",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-22",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-23",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-23",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-23",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-23",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-23",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-24",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-24",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-24",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-24",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-24",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-25",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-25",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-25",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-25",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-25",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-26",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-26",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-26",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-26",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-26",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-27",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-27",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-27",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-27",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-27",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-28",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-28",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-28",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-28",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-28",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-29",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-29",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-29",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-29",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-29",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-30",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-30",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-30",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-30",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-30",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-31",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-31",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-31",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-31",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-31",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-32",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-32",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-32",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-32",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-32",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-33",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-33",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-33",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-33",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-33",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-34",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-34",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-34",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-34",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-34",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-35",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-35",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-35",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-35",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-35",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-36",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-36",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-36",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-36",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-36",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-37",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-37",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-37",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-37",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-37",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-38",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-38",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-38",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-38",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-38",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-39",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-39",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-39",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-39",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-39",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-40",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-40",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-40",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-40",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-40",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-41",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-41",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-41",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-41",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-41",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-42",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-42",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-42",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-42",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-42",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-43",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-43",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-43",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-43",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-43",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-44",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-44",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-44",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-44",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-44",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-45",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-45",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-45",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-45",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-45",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-46",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-46",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-46",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-46",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-46",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-47",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-47",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-47",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-47",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-47",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-48",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-48",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-48",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-48",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-48",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-49",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-49",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-49",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-49",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-49",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-50",
+      "fold_id": 0,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-50",
+      "fold_id": 1,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-50",
+      "fold_id": 2,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-50",
+      "fold_id": 3,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    },
+    {
+      "target_subject": "sub-50",
+      "fold_id": 4,
+      "split_hash": "801ec1d2c981335f",
+      "train_count": 32,
+      "test_count": 8,
+      "disjoint": true
+    }
+  ],
+  "leakage_assertions": {
+    "configured_targets_exact": true,
+    "methods_exact": true,
+    "split_hash_exact": true,
+    "exactly_once_oof": true,
+    "all_targets_excluded_from_sources": true,
+    "all_target_centers_use_32_training_trials": true,
+    "all_source_centers_source_subject_only": true,
+    "all_source_centers_map_to_target_center": true,
+    "all_target_test_indices_excluded_from_centers": true,
+    "outer_test_used_for_center": false,
+    "outer_test_used_for_fit": false,
+    "outer_test_used_for_selection": false,
+    "hyperparameter_selection_present": false
+  }
+}

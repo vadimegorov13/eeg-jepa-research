@@ -1,0 +1,39 @@
+[
+  {
+    "experiment_name": "shallow_loso_fullsource_smoke_target_only",
+    "config_note": "Prespecified subjects 01/03/07; matched target-only Shallow control for the full-source smoke test.",
+    "model_name": "ShallowFBCSPNet",
+    "model_kwargs": {},
+    "adaptation_mode": "target_only",
+    "subjects_to_use": null,
+    "target_subjects": [1, 3, 7],
+    "source_epochs": 20,
+    "source_batch_size": 64,
+    "adaptation_epochs": 20
+  },
+  {
+    "experiment_name": "shallow_loso_fullsource_smoke_frozen_encoder",
+    "config_note": "Prespecified subjects 01/03/07; 49-source Shallow pretraining with classifier-only target adaptation.",
+    "model_name": "ShallowFBCSPNet",
+    "model_kwargs": {},
+    "adaptation_mode": "frozen_encoder",
+    "subjects_to_use": null,
+    "target_subjects": [1, 3, 7],
+    "source_epochs": 20,
+    "source_batch_size": 64,
+    "adaptation_epochs": 20
+  },
+  {
+    "experiment_name": "shallow_loso_fullsource_smoke_full_finetune",
+    "config_note": "Prespecified subjects 01/03/07; 49-source Shallow pretraining with low-rate full target adaptation.",
+    "model_name": "ShallowFBCSPNet",
+    "model_kwargs": {},
+    "adaptation_mode": "full_finetune",
+    "subjects_to_use": null,
+    "target_subjects": [1, 3, 7],
+    "source_epochs": 20,
+    "source_batch_size": 64,
+    "adaptation_epochs": 20,
+    "finetune_learning_rate": 0.00003
+  }
+]

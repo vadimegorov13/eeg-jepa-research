@@ -1,0 +1,73 @@
+[
+  {
+    "status": "completed",
+    "error": null,
+    "config": {
+      "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke",
+      "all_subject_ids": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        9,
+        10,
+        11,
+        14,
+        15,
+        17,
+        29,
+        31,
+        32,
+        37,
+        41
+      ],
+      "downstream_only_subject_ids": [
+        1,
+        3,
+        7,
+        9,
+        10,
+        11,
+        14,
+        15,
+        17,
+        29,
+        31,
+        32,
+        37,
+        41
+      ],
+      "n_pretraining_val_subjects": 1,
+      "train_subject_chunk_size": 1,
+      "val_subject_chunk_size": 1,
+      "batch_size": 8,
+      "n_epochs": 1,
+      "early_stopping_patience": 1,
+      "device": "cpu",
+      "log_verbosity": "compact",
+      "augmentation": {
+        "enabled": true,
+        "name": "gacl_inspired_sensor_rotation_noise",
+        "random_state": 2026,
+        "transforms": [
+          {
+            "name": "sensors_rotation",
+            "probability": 0.5,
+            "axis": "z",
+            "max_degrees": 10.0,
+            "spherical_splines": true
+          },
+          {
+            "name": "gaussian_noise",
+            "probability": 1.0,
+            "std_microvolts": 2.0
+          }
+        ]
+      }
+    },
+    "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke/20260719_1133_213d695a",
+    "run_id": "20260719_1133_213d695a",
+    "elapsed_seconds": 28.868
+  }
+]

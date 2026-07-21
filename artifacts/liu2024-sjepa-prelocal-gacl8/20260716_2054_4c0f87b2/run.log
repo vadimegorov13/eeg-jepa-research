@@ -1,0 +1,584 @@
+[2026-07-16 20:54:57] Run ID:     20260716_2054_4c0f87b2
+[2026-07-16 20:54:57] Artifacts:  /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2
+[2026-07-16 20:54:57] Config:     /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/config.json
+[2026-07-16 20:54:57] Using device: mps
+[2026-07-16 20:54:59] Seed initialized: 2026
+[2026-07-16 20:54:59] Configured preprocessing pipeline:
+[2026-07-16 20:54:59]   - [ON] source::select_eeg_channels | - select Liu EEG channels, drop CPz reference, EOG, and marker before model input
+[2026-07-16 20:54:59]   - [off] source::demean | mode=none | baseline_window_s=[0.0, 2.0]
+[2026-07-16 20:54:59]   - [off] source::detrend | mode=none
+[2026-07-16 20:54:59]   - [off] source::eog_correction | mode=none
+[2026-07-16 20:54:59]   - [off] source::artifact_clipping | mode=none | percentile=99.5
+[2026-07-16 20:54:59]   - [off] mne_raw::reference | timing=before_resample_filter | mode=none
+[2026-07-16 20:54:59]   - [ON] mne_raw::resample | sfreq=128
+[2026-07-16 20:54:59]   - [off] mne_raw::bandpass_filter | l_freq=0.5 | h_freq=40.0 | method=fir | phase=zero | fir_design=firwin
+[2026-07-16 20:54:59]   - [off] mne_raw::notch_filter | timing=after_bandpass
+[2026-07-16 20:54:59]   - [ON] window::crop_fixed_mi_window | start_s=0.0 | target_window_samples=1024
+[2026-07-16 20:54:59]   - [off] window::bad_trial_rejection
+[2026-07-16 20:54:59]   - [off] split::fold_safe_normalization | mode=none
+[2026-07-16 20:54:59] Source extract dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata
+[2026-07-16 20:54:59] Found 50 .mat files
+[2026-07-16 20:54:59] MAT structure preview saved to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/mat_structure_preview_first_subject.csv
+[2026-07-16 20:55:01] Subjects loaded: [1, 2, 3, 4, 5, 6, 7, 8]
+[2026-07-16 20:55:01] Subject inventory saved to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/subject_inventory.csv
+[2026-07-16 20:55:05] X_ALL shape: (320, 29, 1024) | Y_ALL counts: [160, 160]
+[2026-07-16 20:55:05] Preprocessing steps used:
+[2026-07-16 20:55:05]   - select 29 EEG channels; drop CPz source reference, EOG, and marker
+[2026-07-16 20:55:05]   - source demean skipped
+[2026-07-16 20:55:05]   - source detrend skipped
+[2026-07-16 20:55:05]   - EOG correction skipped
+[2026-07-16 20:55:05]   - source artifact clipping skipped
+[2026-07-16 20:55:05]   - convert source microvolts to MNE volts
+[2026-07-16 20:55:05]   - reference skipped at before resample/filter
+[2026-07-16 20:55:05]   - resample to 128 Hz
+[2026-07-16 20:55:05]   - bandpass skipped
+[2026-07-16 20:55:05]   - convert MNE volts to model microvolts
+[2026-07-16 20:55:05]   - crop fixed window samples [0:1024]
+[2026-07-16 20:55:05]   - bad-trial rejection skipped
+[2026-07-16 20:55:05] Window summary saved to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/window_counts_by_subject.csv
+[2026-07-16 20:55:06] ======================================================================
+[2026-07-16 20:55:06] STARTING WITHIN-SUBJECT EVALUATION
+[2026-07-16 20:55:06] ======================================================================
+[2026-07-16 20:55:06] Experiment:    sjepa_prelocal_gacl8_fulltrial_minimal_preprocessing
+[2026-07-16 20:55:06] Subjects:      ['1', '2', '3', '4', '5', '6', '7', '8']
+[2026-07-16 20:55:06] Model:         SignalJEPA_PreLocal
+[2026-07-16 20:55:06] Pretrained:    from_pretrained
+[2026-07-16 20:55:06] Strategy:      new
+[2026-07-16 20:55:06] Preprocessing: demean=none | detrend=none | eog=none | clip=none | ref=none@before_resample_filter | resample=True->128 | filter=False 0.5–40.0 fir
+[2026-07-16 20:55:06] Normalization: none | reject_bad_trials=False
+[2026-07-16 20:55:06] Evaluation:    stratified_kfold | cv_folds=5 | n_repeats=10 | test_size=0.4
+[2026-07-16 20:55:06] Seed:          base=2026 | cv=2026 | split=2026 | val=2026
+[2026-07-16 20:55:06] Window:        start=0.0s | samples=1024 | duration=8.0000s | effective sfreq=128.0
+[2026-07-16 20:55:06] Optimizer:     adam | lr=0.0005 | wd=0.0
+[2026-07-16 20:55:06] Augmentation:  name=gacl_inspired_sensor_rotation_noise | enabled=True | transforms=2
+[2026-07-16 20:55:06] Val split:     0.2
+[2026-07-16 20:55:06] Max epochs:    5000 | patience=50
+[2026-07-16 20:55:06] Device:        mps
+[2026-07-16 20:55:06] ======================================================================
+[2026-07-16 20:55:06] \nSubject 1: 40 windows | class_counts=[20, 20]
+
+[2026-07-16 20:55:06] Fold 1/5 | subject=1
+[2026-07-16 20:55:06]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:55:06]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:55:06]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:55:06]     Normalization: none | fit_scope=none
+[2026-07-16 20:55:06]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:55:06] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:55:12]     Result | best_epoch=3 | stop=52 | final_phase_epochs=52 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[2, 6] | collapse=False
+[2026-07-16 20:55:12]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15284219), ('O2', 0.14449814), ('T3', 0.12673673), ('T4', 0.12268741), ('O1', 0.12180042), ('CP3', 0.1207819), ('C3', 0.11555418), ('CP4', 0.11029822)]
+[2026-07-16 20:55:12]     spatial_update=delta_l2=0.00879164 max_abs=0.00100065 relative=0.00736640 changed=True
+
+[2026-07-16 20:55:12] Fold 2/5 | subject=1
+[2026-07-16 20:55:12]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:55:12]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:55:12]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:55:12]     Normalization: none | fit_scope=none
+[2026-07-16 20:55:12]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:55:12] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:55:16]     Result | best_epoch=4 | stop=54 | final_phase_epochs=54 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[2, 6] | collapse=False
+[2026-07-16 20:55:16]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15316454), ('O2', 0.14399076), ('T3', 0.12684168), ('O1', 0.12330291), ('T4', 0.12327146), ('CP3', 0.12058558), ('C3', 0.11560766), ('CP4', 0.11023277)]
+[2026-07-16 20:55:16]     spatial_update=delta_l2=0.01626357 max_abs=0.00200245 relative=0.01362702 changed=True
+
+[2026-07-16 20:55:16] Fold 3/5 | subject=1
+[2026-07-16 20:55:16]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:55:16]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:55:16]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:55:16]     Normalization: none | fit_scope=none
+[2026-07-16 20:55:16]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:55:16] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:55:29]     Result | best_epoch=165 | stop=214 | final_phase_epochs=214 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[3, 5] | collapse=False
+[2026-07-16 20:55:29]     spatial_conv=[4, 29] top_abs_channels=[('O2', 0.17303719), ('T3', 0.17132606), ('Pz', 0.16606189), ('CP3', 0.14236802), ('T5', 0.13908744), ('F4', 0.13588147), ('CP4', 0.12635383), ('C3', 0.11870046)]
+[2026-07-16 20:55:29]     spatial_update=delta_l2=0.49861325 max_abs=0.09829371 relative=0.41778126 changed=True
+
+[2026-07-16 20:55:29] Fold 4/5 | subject=1
+[2026-07-16 20:55:29]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:55:29]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:55:29]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:55:29]     Normalization: none | fit_scope=none
+[2026-07-16 20:55:29]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:55:29] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:55:33]     Result | best_epoch=4 | stop=52 | final_phase_epochs=52 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[4, 4] | collapse=False
+[2026-07-16 20:55:33]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15302747), ('O2', 0.14443845), ('T3', 0.12676832), ('O1', 0.12229854), ('T4', 0.12223232), ('CP3', 0.12103422), ('C3', 0.11605048), ('CP4', 0.110573)]
+[2026-07-16 20:55:33]     spatial_update=delta_l2=0.00914070 max_abs=0.00100067 relative=0.00765887 changed=True
+
+[2026-07-16 20:55:33] Fold 5/5 | subject=1
+[2026-07-16 20:55:33]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:55:33]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:55:33]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:55:33]     Normalization: none | fit_scope=none
+[2026-07-16 20:55:33]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:55:33] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:55:37]     Result | best_epoch=4 | stop=54 | final_phase_epochs=54 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[1, 7] | collapse=False
+[2026-07-16 20:55:37]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15265237), ('O2', 0.14468786), ('T3', 0.12766467), ('T4', 0.12377916), ('O1', 0.12328038), ('CP3', 0.12051029), ('C3', 0.11527237), ('CP4', 0.11080684)]
+[2026-07-16 20:55:37]     spatial_update=delta_l2=0.01701581 max_abs=0.00200435 relative=0.01425732 changed=True
+[2026-07-16 20:55:37]   Subject 1: acc=0.5500±0.0612  bal_acc=0.5500±0.0612
+[2026-07-16 20:55:37] \nSubject 2: 40 windows | class_counts=[20, 20]
+
+[2026-07-16 20:55:37] Fold 1/5 | subject=2
+[2026-07-16 20:55:37]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:55:37]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:55:37]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:55:37]     Normalization: none | fit_scope=none
+[2026-07-16 20:55:37]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:55:37] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:55:48]     Result | best_epoch=113 | stop=163 | final_phase_epochs=163 | acc=0.8750 | bal_acc=0.8750 | pred_hist=[3, 5] | collapse=False
+[2026-07-16 20:55:48]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.16542904), ('O1', 0.14202522), ('T3', 0.14174771), ('CP3', 0.13171902), ('O2', 0.12701233), ('CP4', 0.12545051), ('Fp2', 0.12387031), ('P3', 0.12199651)]
+[2026-07-16 20:55:48]     spatial_update=delta_l2=0.32962495 max_abs=0.06932957 relative=0.27618827 changed=True
+
+[2026-07-16 20:55:48] Fold 2/5 | subject=2
+[2026-07-16 20:55:48]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:55:48]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:55:48]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:55:48]     Normalization: none | fit_scope=none
+[2026-07-16 20:55:48]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:55:48] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:55:53]     Result | best_epoch=15 | stop=63 | final_phase_epochs=63 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[4, 4] | collapse=False
+[2026-07-16 20:55:53]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15482596), ('O2', 0.14212441), ('T3', 0.12519245), ('O1', 0.12424449), ('CP3', 0.11967568), ('T4', 0.11843292), ('C3', 0.11778755), ('CP4', 0.11625742)]
+[2026-07-16 20:55:53]     spatial_update=delta_l2=0.05013639 max_abs=0.00647860 relative=0.04200860 changed=True
+
+[2026-07-16 20:55:53] Fold 3/5 | subject=2
+[2026-07-16 20:55:53]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:55:53]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:55:53]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:55:53]     Normalization: none | fit_scope=none
+[2026-07-16 20:55:53]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:55:53] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:55:58]     Result | best_epoch=28 | stop=78 | final_phase_epochs=78 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[3, 5] | collapse=False
+[2026-07-16 20:55:58]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15334663), ('O2', 0.14168672), ('T3', 0.13498867), ('O1', 0.12739101), ('T4', 0.12331047), ('CP3', 0.12247731), ('P3', 0.11818589), ('C3', 0.11592565)]
+[2026-07-16 20:55:58]     spatial_update=delta_l2=0.09252029 max_abs=0.01455529 relative=0.07752149 changed=True
+
+[2026-07-16 20:55:58] Fold 4/5 | subject=2
+[2026-07-16 20:55:58]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:55:58]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:55:58]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:55:58]     Normalization: none | fit_scope=none
+[2026-07-16 20:55:58]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:55:58] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:56:06]     Result | best_epoch=67 | stop=116 | final_phase_epochs=116 | acc=0.7500 | bal_acc=0.7500 | pred_hist=[2, 6] | collapse=False
+[2026-07-16 20:56:06]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15891105), ('T3', 0.14774564), ('O2', 0.13595119), ('O1', 0.13078032), ('Fz', 0.11969049), ('P3', 0.11955561), ('C3', 0.11842668), ('CP3', 0.1122163)]
+[2026-07-16 20:56:06]     spatial_update=delta_l2=0.21909225 max_abs=0.03709026 relative=0.18357442 changed=True
+
+[2026-07-16 20:56:06] Fold 5/5 | subject=2
+[2026-07-16 20:56:06]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:56:06]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:56:06]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:56:06]     Normalization: none | fit_scope=none
+[2026-07-16 20:56:06]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:56:06] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:56:11]     Result | best_epoch=14 | stop=62 | final_phase_epochs=62 | acc=0.8750 | bal_acc=0.8750 | pred_hist=[5, 3] | collapse=False
+[2026-07-16 20:56:11]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15530592), ('O2', 0.1412399), ('T3', 0.12674049), ('O1', 0.12425424), ('C3', 0.11944312), ('T4', 0.11938046), ('CP3', 0.11782753), ('CP4', 0.11647948)]
+[2026-07-16 20:56:11]     spatial_update=delta_l2=0.04892994 max_abs=0.00590520 relative=0.04099773 changed=True
+[2026-07-16 20:56:11]   Subject 2: acc=0.7250±0.1458  bal_acc=0.7250±0.1458
+[2026-07-16 20:56:11] \nSubject 3: 40 windows | class_counts=[20, 20]
+
+[2026-07-16 20:56:11] Fold 1/5 | subject=3
+[2026-07-16 20:56:11]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:56:11]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:56:11]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:56:11]     Normalization: none | fit_scope=none
+[2026-07-16 20:56:11]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:56:11] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:56:27]     Result | best_epoch=151 | stop=201 | final_phase_epochs=201 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[2, 6] | collapse=False
+[2026-07-16 20:56:27]     spatial_conv=[4, 29] top_abs_channels=[('O2', 0.16559637), ('Pz', 0.14873107), ('F7', 0.1294198), ('Fz', 0.12464701), ('FT8', 0.12220257), ('FT7', 0.11893795), ('T3', 0.11187132), ('T4', 0.11087184)]
+[2026-07-16 20:56:27]     spatial_update=delta_l2=0.46473861 max_abs=0.09723999 relative=0.38939816 changed=True
+
+[2026-07-16 20:56:27] Fold 2/5 | subject=3
+[2026-07-16 20:56:27]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:56:27]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:56:27]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:56:27]     Normalization: none | fit_scope=none
+[2026-07-16 20:56:27]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:56:27] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:56:58]     Result | best_epoch=395 | stop=445 | final_phase_epochs=445 | acc=0.2500 | bal_acc=0.2500 | pred_hist=[6, 2] | collapse=False
+[2026-07-16 20:56:58]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.19692303), ('T6', 0.17365696), ('Fz', 0.14633155), ('P4', 0.1440718), ('C4', 0.12427767), ('F7', 0.12320197), ('F8', 0.11700684), ('CP3', 0.11213237)]
+[2026-07-16 20:56:58]     spatial_update=delta_l2=0.77589400 max_abs=0.17605282 relative=0.65011103 changed=True
+
+[2026-07-16 20:56:58] Fold 3/5 | subject=3
+[2026-07-16 20:56:58]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:56:58]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:56:58]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:56:58]     Normalization: none | fit_scope=none
+[2026-07-16 20:56:58]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:56:58] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:57:08]     Result | best_epoch=79 | stop=129 | final_phase_epochs=129 | acc=0.7500 | bal_acc=0.7500 | pred_hist=[4, 4] | collapse=False
+[2026-07-16 20:57:08]     spatial_conv=[4, 29] top_abs_channels=[('O2', 0.15826821), ('Pz', 0.15343615), ('CP3', 0.11854046), ('Fz', 0.11633766), ('T3', 0.11366811), ('T4', 0.10964836), ('P3', 0.10864445), ('FT7', 0.10856587)]
+[2026-07-16 20:57:08]     spatial_update=delta_l2=0.26867691 max_abs=0.04639131 relative=0.22512073 changed=True
+
+[2026-07-16 20:57:08] Fold 4/5 | subject=3
+[2026-07-16 20:57:08]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:57:08]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:57:08]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:57:08]     Normalization: none | fit_scope=none
+[2026-07-16 20:57:08]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:57:08] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:57:18]     Result | best_epoch=94 | stop=143 | final_phase_epochs=143 | acc=0.8750 | bal_acc=0.8750 | pred_hist=[5, 3] | collapse=False
+[2026-07-16 20:57:18]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.16480601), ('O2', 0.15134537), ('C4', 0.12440807), ('O1', 0.11963221), ('C3', 0.11315499), ('CP3', 0.11119301), ('T4', 0.11091366), ('F3', 0.10741507)]
+[2026-07-16 20:57:18]     spatial_update=delta_l2=0.30535023 max_abs=0.05529508 relative=0.25584881 changed=True
+
+[2026-07-16 20:57:18] Fold 5/5 | subject=3
+[2026-07-16 20:57:18]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:57:18]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:57:18]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:57:18]     Normalization: none | fit_scope=none
+[2026-07-16 20:57:18]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:57:18] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:57:23]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[5, 3] | collapse=False
+[2026-07-16 20:57:23]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15253903), ('O2', 0.14414139), ('T3', 0.12698479), ('T4', 0.12183762), ('O1', 0.12161215), ('CP3', 0.12137439), ('C3', 0.1152309), ('CP4', 0.11068314)]
+[2026-07-16 20:57:23]     spatial_update=delta_l2=0.00538483 max_abs=0.00050000 relative=0.00451188 changed=True
+[2026-07-16 20:57:23]   Subject 3: acc=0.6000±0.2151  bal_acc=0.6000±0.2151
+[2026-07-16 20:57:23] \nSubject 4: 40 windows | class_counts=[20, 20]
+
+[2026-07-16 20:57:23] Fold 1/5 | subject=4
+[2026-07-16 20:57:23]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:57:23]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:57:23]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:57:23]     Normalization: none | fit_scope=none
+[2026-07-16 20:57:23]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:57:23] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:57:27]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[3, 5] | collapse=False
+[2026-07-16 20:57:27]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15353885), ('O2', 0.14389136), ('T3', 0.12698478), ('O1', 0.12236211), ('T4', 0.1218376), ('CP3', 0.12112416), ('C3', 0.11523093), ('CP4', 0.11093329)]
+[2026-07-16 20:57:27]     spatial_update=delta_l2=0.00538472 max_abs=0.00050000 relative=0.00451178 changed=True
+
+[2026-07-16 20:57:27] Fold 2/5 | subject=4
+[2026-07-16 20:57:27]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:57:27]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:57:27]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:57:27]     Normalization: none | fit_scope=none
+[2026-07-16 20:57:27]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:57:27] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:57:40]     Result | best_epoch=125 | stop=174 | final_phase_epochs=174 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[6, 2] | collapse=False
+[2026-07-16 20:57:40]     spatial_conv=[4, 29] top_abs_channels=[('FCz', 0.15004602), ('Pz', 0.14354017), ('O2', 0.13056725), ('O1', 0.12872088), ('T4', 0.12633453), ('Fp1', 0.12573642), ('C3', 0.12484118), ('Cz', 0.11699554)]
+[2026-07-16 20:57:40]     spatial_update=delta_l2=0.38062479 max_abs=0.08212349 relative=0.31892033 changed=True
+
+[2026-07-16 20:57:40] Fold 3/5 | subject=4
+[2026-07-16 20:57:40]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:57:40]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:57:40]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:57:40]     Normalization: none | fit_scope=none
+[2026-07-16 20:57:40]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:57:40] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:57:57]     Result | best_epoch=149 | stop=199 | final_phase_epochs=199 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[1, 7] | collapse=False
+[2026-07-16 20:57:57]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.18524507), ('Cz', 0.14033756), ('F3', 0.13564269), ('Fp1', 0.1298776), ('O1', 0.12795283), ('T4', 0.12551798), ('FCz', 0.12534077), ('C3', 0.12508194)]
+[2026-07-16 20:57:57]     spatial_update=delta_l2=0.39353036 max_abs=0.07407771 relative=0.32973374 changed=True
+
+[2026-07-16 20:57:57] Fold 4/5 | subject=4
+[2026-07-16 20:57:57]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:57:57]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:57:57]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:57:57]     Normalization: none | fit_scope=none
+[2026-07-16 20:57:57]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:57:57] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:58:05]     Result | best_epoch=51 | stop=100 | final_phase_epochs=100 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[7, 1] | collapse=False
+[2026-07-16 20:58:05]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.14544232), ('O2', 0.1345738), ('T3', 0.13302305), ('O1', 0.11811556), ('T4', 0.11778592), ('CP3', 0.11718474), ('C3', 0.11619754), ('Fp1', 0.11258996)]
+[2026-07-16 20:58:05]     spatial_update=delta_l2=0.13973069 max_abs=0.02704049 relative=0.11707844 changed=True
+
+[2026-07-16 20:58:05] Fold 5/5 | subject=4
+[2026-07-16 20:58:05]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:58:05]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:58:05]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:58:05]     Normalization: none | fit_scope=none
+[2026-07-16 20:58:05]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:58:05] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:58:09]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.7500 | bal_acc=0.7500 | pred_hist=[6, 2] | collapse=False
+[2026-07-16 20:58:09]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15328901), ('O2', 0.14414138), ('T3', 0.12648478), ('T4', 0.12208758), ('O1', 0.12186211), ('CP3', 0.12112433), ('C3', 0.11498089), ('CP4', 0.11068303)]
+[2026-07-16 20:58:09]     spatial_update=delta_l2=0.00538484 max_abs=0.00050000 relative=0.00451189 changed=True
+[2026-07-16 20:58:09]   Subject 4: acc=0.5750±0.1275  bal_acc=0.5750±0.1275
+[2026-07-16 20:58:09] \nSubject 5: 40 windows | class_counts=[20, 20]
+
+[2026-07-16 20:58:09] Fold 1/5 | subject=5
+[2026-07-16 20:58:09]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:58:09]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:58:09]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:58:09]     Normalization: none | fit_scope=none
+[2026-07-16 20:58:09]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:58:09] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:58:13]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[4, 4] | collapse=False
+[2026-07-16 20:58:13]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15278903), ('O2', 0.14389138), ('T3', 0.12673478), ('T4', 0.1218376), ('O1', 0.12161212), ('CP3', 0.12137437), ('C3', 0.1154809), ('CP4', 0.11043314)]
+[2026-07-16 20:58:13]     spatial_update=delta_l2=0.00538497 max_abs=0.00050000 relative=0.00451199 changed=True
+
+[2026-07-16 20:58:13] Fold 2/5 | subject=5
+[2026-07-16 20:58:13]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:58:13]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:58:13]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:58:13]     Normalization: none | fit_scope=none
+[2026-07-16 20:58:13]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:58:13] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:58:17]     Result | best_epoch=2 | stop=51 | final_phase_epochs=51 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[5, 3] | collapse=False
+[2026-07-16 20:58:17]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15328899), ('O2', 0.14439137), ('T3', 0.1264848), ('T4', 0.12208758), ('O1', 0.12186213), ('CP3', 0.12137438), ('C3', 0.1154809), ('CP4', 0.11093313)]
+[2026-07-16 20:58:17]     spatial_update=delta_l2=0.00538498 max_abs=0.00050000 relative=0.00451200 changed=True
+
+[2026-07-16 20:58:17] Fold 3/5 | subject=5
+[2026-07-16 20:58:17]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:58:17]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:58:17]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:58:17]     Normalization: none | fit_scope=none
+[2026-07-16 20:58:17]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:58:17] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:58:46]     Result | best_epoch=427 | stop=477 | final_phase_epochs=477 | acc=0.2500 | bal_acc=0.2500 | pred_hist=[6, 2] | collapse=False
+[2026-07-16 20:58:46]     spatial_conv=[4, 29] top_abs_channels=[('O2', 0.1628767), ('Pz', 0.14990176), ('CP3', 0.14649245), ('Fp1', 0.14495373), ('TP8', 0.12671569), ('TP7', 0.12399806), ('CP4', 0.12240233), ('T4', 0.11817358)]
+[2026-07-16 20:58:46]     spatial_update=delta_l2=0.85836017 max_abs=0.18579824 relative=0.71920832 changed=True
+
+[2026-07-16 20:58:46] Fold 4/5 | subject=5
+[2026-07-16 20:58:46]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:58:46]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:58:46]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:58:46]     Normalization: none | fit_scope=none
+[2026-07-16 20:58:46]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:58:46] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:58:49]     Result | best_epoch=2 | stop=51 | final_phase_epochs=51 | acc=0.2500 | bal_acc=0.2500 | pred_hist=[6, 2] | collapse=False
+[2026-07-16 20:58:49]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15303901), ('O2', 0.14414138), ('T3', 0.12673478), ('T4', 0.1218376), ('CP3', 0.12137438), ('O1', 0.12136213), ('C3', 0.11523093), ('CP4', 0.11068314)]
+[2026-07-16 20:58:49]     spatial_update=delta_l2=0.00538497 max_abs=0.00050000 relative=0.00451199 changed=True
+
+[2026-07-16 20:58:49] Fold 5/5 | subject=5
+[2026-07-16 20:58:49]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:58:49]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:58:49]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:58:49]     Normalization: none | fit_scope=none
+[2026-07-16 20:58:49]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:58:49] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:58:52]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[5, 3] | collapse=False
+[2026-07-16 20:58:52]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15278903), ('O2', 0.14439134), ('T3', 0.12673476), ('T4', 0.1220876), ('O1', 0.12161212), ('CP3', 0.12135869), ('C3', 0.11523092), ('CP4', 0.11093313)]
+[2026-07-16 20:58:52]     spatial_update=delta_l2=0.00537952 max_abs=0.00050000 relative=0.00450743 changed=True
+[2026-07-16 20:58:52]   Subject 5: acc=0.3500±0.0935  bal_acc=0.3500±0.0935
+[2026-07-16 20:58:52] \nSubject 6: 40 windows | class_counts=[20, 20]
+
+[2026-07-16 20:58:52] Fold 1/5 | subject=6
+[2026-07-16 20:58:52]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:58:52]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:58:52]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:58:52]     Normalization: none | fit_scope=none
+[2026-07-16 20:58:52]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:58:52] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:59:02]     Result | best_epoch=121 | stop=169 | final_phase_epochs=169 | acc=0.7500 | bal_acc=0.7500 | pred_hist=[6, 2] | collapse=False
+[2026-07-16 20:59:02]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.16058621), ('O2', 0.1584339), ('O1', 0.13756342), ('C3', 0.12504284), ('T3', 0.1175274), ('T4', 0.11313593), ('C4', 0.11178823), ('Fz', 0.10662847)]
+[2026-07-16 20:59:02]     spatial_update=delta_l2=0.31274867 max_abs=0.06312344 relative=0.26204786 changed=True
+
+[2026-07-16 20:59:02] Fold 2/5 | subject=6
+[2026-07-16 20:59:02]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:59:02]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:59:02]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:59:02]     Normalization: none | fit_scope=none
+[2026-07-16 20:59:02]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:59:02] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:59:16]     Result | best_epoch=192 | stop=239 | final_phase_epochs=239 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[5, 3] | collapse=False
+[2026-07-16 20:59:16]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.16749179), ('O2', 0.14872469), ('C4', 0.12926175), ('Fz', 0.12802738), ('O1', 0.1262788), ('C3', 0.12440836), ('T3', 0.11977468), ('T4', 0.11355978)]
+[2026-07-16 20:59:16]     spatial_update=delta_l2=0.44972063 max_abs=0.10001904 relative=0.37681480 changed=True
+
+[2026-07-16 20:59:16] Fold 3/5 | subject=6
+[2026-07-16 20:59:16]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:59:16]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:59:16]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:59:16]     Normalization: none | fit_scope=none
+[2026-07-16 20:59:16]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:59:16] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:59:19]     Result | best_epoch=3 | stop=52 | final_phase_epochs=52 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[4, 4] | collapse=False
+[2026-07-16 20:59:19]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15256557), ('O2', 0.14431278), ('T3', 0.12710284), ('O1', 0.12260076), ('T4', 0.12207198), ('CP3', 0.12084842), ('C3', 0.11507277), ('CP4', 0.11077049)]
+[2026-07-16 20:59:19]     spatial_update=delta_l2=0.00932392 max_abs=0.00100066 relative=0.00781239 changed=True
+
+[2026-07-16 20:59:19] Fold 4/5 | subject=6
+[2026-07-16 20:59:19]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:59:19]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:59:19]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:59:19]     Normalization: none | fit_scope=none
+[2026-07-16 20:59:19]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:59:19] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:59:29]     Result | best_epoch=126 | stop=176 | final_phase_epochs=176 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[1, 7] | collapse=False
+[2026-07-16 20:59:29]     spatial_conv=[4, 29] top_abs_channels=[('O2', 0.16482949), ('Pz', 0.14464414), ('O1', 0.13412106), ('Fz', 0.13211249), ('C3', 0.12674069), ('C4', 0.12510206), ('FT7', 0.11886714), ('T3', 0.11698586)]
+[2026-07-16 20:59:29]     spatial_update=delta_l2=0.31810418 max_abs=0.06491287 relative=0.26653516 changed=True
+
+[2026-07-16 20:59:29] Fold 5/5 | subject=6
+[2026-07-16 20:59:29]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:59:29]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:59:29]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:59:29]     Normalization: none | fit_scope=none
+[2026-07-16 20:59:29]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:59:29] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 20:59:45]     Result | best_epoch=227 | stop=276 | final_phase_epochs=276 | acc=0.5000 | bal_acc=0.5000 | pred_hist=[6, 2] | collapse=False
+[2026-07-16 20:59:45]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.14584753), ('O1', 0.13614015), ('C4', 0.13399827), ('P4', 0.13038327), ('FT7', 0.12216883), ('T4', 0.12201218), ('F4', 0.11951588), ('T6', 0.11789314)]
+[2026-07-16 20:59:45]     spatial_update=delta_l2=0.45743738 max_abs=0.10919821 relative=0.38328056 changed=True
+[2026-07-16 20:59:45]   Subject 6: acc=0.5000±0.1369  bal_acc=0.5000±0.1369
+[2026-07-16 20:59:45] \nSubject 7: 40 windows | class_counts=[20, 20]
+
+[2026-07-16 20:59:45] Fold 1/5 | subject=7
+[2026-07-16 20:59:45]     Train: 32 | counts=[16, 16]
+[2026-07-16 20:59:45]     Test:  8 | counts=[4, 4]
+[2026-07-16 20:59:45]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 20:59:45]     Normalization: none | fit_scope=none
+[2026-07-16 20:59:45]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 20:59:45] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 21:00:02]     Result | best_epoch=233 | stop=283 | final_phase_epochs=283 | acc=0.7500 | bal_acc=0.7500 | pred_hist=[4, 4] | collapse=False
+[2026-07-16 21:00:02]     spatial_conv=[4, 29] top_abs_channels=[('CP4', 0.15978922), ('Pz', 0.1535596), ('CP3', 0.14950354), ('T3', 0.14906433), ('T6', 0.14493074), ('O2', 0.1407467), ('Cz', 0.1359134), ('F4', 0.12414301)]
+[2026-07-16 21:00:02]     spatial_update=delta_l2=0.68735676 max_abs=0.13237627 relative=0.57592689 changed=True
+
+[2026-07-16 21:00:02] Fold 2/5 | subject=7
+[2026-07-16 21:00:02]     Train: 32 | counts=[16, 16]
+[2026-07-16 21:00:02]     Test:  8 | counts=[4, 4]
+[2026-07-16 21:00:02]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 21:00:02]     Normalization: none | fit_scope=none
+[2026-07-16 21:00:02]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 21:00:02] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 21:00:23]     Result | best_epoch=233 | stop=283 | final_phase_epochs=283 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[3, 5] | collapse=False
+[2026-07-16 21:00:23]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.1939225), ('T3', 0.16418636), ('CP4', 0.15841767), ('T5', 0.13361371), ('Fp1', 0.12360071), ('P3', 0.12313855), ('F3', 0.11947088), ('F4', 0.11502416)]
+[2026-07-16 21:00:23]     spatial_update=delta_l2=0.64434310 max_abs=0.13332875 relative=0.53988633 changed=True
+
+[2026-07-16 21:00:23] Fold 3/5 | subject=7
+[2026-07-16 21:00:23]     Train: 32 | counts=[16, 16]
+[2026-07-16 21:00:23]     Test:  8 | counts=[4, 4]
+[2026-07-16 21:00:23]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 21:00:23]     Normalization: none | fit_scope=none
+[2026-07-16 21:00:23]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 21:00:23] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 21:00:27]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[3, 5] | collapse=False
+[2026-07-16 21:00:27]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15303901), ('O2', 0.14414136), ('T3', 0.1264848), ('T4', 0.12208758), ('O1', 0.12186197), ('CP3', 0.12112588), ('C3', 0.1152309), ('CP4', 0.11093313)]
+[2026-07-16 21:00:27]     spatial_update=delta_l2=0.00538437 max_abs=0.00050000 relative=0.00451149 changed=True
+
+[2026-07-16 21:00:27] Fold 4/5 | subject=7
+[2026-07-16 21:00:27]     Train: 32 | counts=[16, 16]
+[2026-07-16 21:00:27]     Test:  8 | counts=[4, 4]
+[2026-07-16 21:00:27]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 21:00:27]     Normalization: none | fit_scope=none
+[2026-07-16 21:00:27]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 21:00:27] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 21:00:31]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.3750 | bal_acc=0.3750 | pred_hist=[1, 7] | collapse=False
+[2026-07-16 21:00:31]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15328921), ('O2', 0.14389138), ('T3', 0.12673479), ('O1', 0.12211206), ('T4', 0.12208758), ('CP3', 0.1206245), ('C3', 0.11548099), ('CP4', 0.11093313)]
+[2026-07-16 21:00:31]     spatial_update=delta_l2=0.00538485 max_abs=0.00050000 relative=0.00451189 changed=True
+
+[2026-07-16 21:00:31] Fold 5/5 | subject=7
+[2026-07-16 21:00:31]     Train: 32 | counts=[16, 16]
+[2026-07-16 21:00:31]     Test:  8 | counts=[4, 4]
+[2026-07-16 21:00:31]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 21:00:31]     Normalization: none | fit_scope=none
+[2026-07-16 21:00:31]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 21:00:31] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 21:00:38]     Result | best_epoch=23 | stop=72 | final_phase_epochs=72 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[3, 5] | collapse=False
+[2026-07-16 21:00:38]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15581654), ('O2', 0.14053197), ('T3', 0.12989731), ('T4', 0.12545264), ('O1', 0.12311967), ('CP3', 0.11879529), ('CP4', 0.11746069), ('C3', 0.11416371)]
+[2026-07-16 21:00:38]     spatial_update=delta_l2=0.07279918 max_abs=0.01084955 relative=0.06099745 changed=True
+[2026-07-16 21:00:38]   Subject 7: acc=0.5500±0.1500  bal_acc=0.5500±0.1500
+[2026-07-16 21:00:38] \nSubject 8: 40 windows | class_counts=[20, 20]
+
+[2026-07-16 21:00:38] Fold 1/5 | subject=8
+[2026-07-16 21:00:38]     Train: 32 | counts=[16, 16]
+[2026-07-16 21:00:38]     Test:  8 | counts=[4, 4]
+[2026-07-16 21:00:38]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 21:00:38]     Normalization: none | fit_scope=none
+[2026-07-16 21:00:38]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 21:00:38] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 21:00:41]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[1, 7] | collapse=False
+[2026-07-16 21:00:41]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15303902), ('O2', 0.14439137), ('T3', 0.1264848), ('T4', 0.12183759), ('O1', 0.12136213), ('CP3', 0.12112439), ('C3', 0.11498091), ('CP4', 0.11093315)]
+[2026-07-16 21:00:41]     spatial_update=delta_l2=0.00538444 max_abs=0.00050000 relative=0.00451155 changed=True
+
+[2026-07-16 21:00:41] Fold 2/5 | subject=8
+[2026-07-16 21:00:41]     Train: 32 | counts=[16, 16]
+[2026-07-16 21:00:41]     Test:  8 | counts=[4, 4]
+[2026-07-16 21:00:41]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 21:00:41]     Normalization: none | fit_scope=none
+[2026-07-16 21:00:41]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 21:00:41] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 21:00:45]     Result | best_epoch=1 | stop=51 | final_phase_epochs=51 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[3, 5] | collapse=False
+[2026-07-16 21:00:45]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.15278886), ('O2', 0.14439136), ('T3', 0.12673478), ('T4', 0.12183768), ('O1', 0.12136213), ('CP3', 0.12112609), ('C3', 0.11498092), ('CP4', 0.1109331)]
+[2026-07-16 21:00:45]     spatial_update=delta_l2=0.00538418 max_abs=0.00050000 relative=0.00451134 changed=True
+
+[2026-07-16 21:00:45] Fold 3/5 | subject=8
+[2026-07-16 21:00:45]     Train: 32 | counts=[16, 16]
+[2026-07-16 21:00:45]     Test:  8 | counts=[4, 4]
+[2026-07-16 21:00:45]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 21:00:45]     Normalization: none | fit_scope=none
+[2026-07-16 21:00:45]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 21:00:45] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 21:01:00]     Result | best_epoch=154 | stop=204 | final_phase_epochs=204 | acc=0.7500 | bal_acc=0.7500 | pred_hist=[4, 4] | collapse=False
+[2026-07-16 21:01:00]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.18488881), ('O2', 0.16025393), ('C3', 0.15479402), ('FT7', 0.13476779), ('CP4', 0.12578237), ('CP3', 0.11324716), ('T3', 0.1116195), ('Fz', 0.11118824)]
+[2026-07-16 21:01:00]     spatial_update=delta_l2=0.55976765 max_abs=0.10033709 relative=0.46902170 changed=True
+
+[2026-07-16 21:01:00] Fold 4/5 | subject=8
+[2026-07-16 21:01:00]     Train: 32 | counts=[16, 16]
+[2026-07-16 21:01:00]     Test:  8 | counts=[4, 4]
+[2026-07-16 21:01:00]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 21:01:00]     Normalization: none | fit_scope=none
+[2026-07-16 21:01:00]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 21:01:00] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 21:01:21]     Result | best_epoch=217 | stop=267 | final_phase_epochs=267 | acc=0.6250 | bal_acc=0.6250 | pred_hist=[1, 7] | collapse=False
+[2026-07-16 21:01:21]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.18099347), ('CP3', 0.15843427), ('P3', 0.12538666), ('CP4', 0.12410272), ('O1', 0.12118797), ('O2', 0.11854778), ('T3', 0.11416426), ('T4', 0.11339404)]
+[2026-07-16 21:01:21]     spatial_update=delta_l2=0.53091569 max_abs=0.11605615 relative=0.44484704 changed=True
+
+[2026-07-16 21:01:21] Fold 5/5 | subject=8
+[2026-07-16 21:01:21]     Train: 32 | counts=[16, 16]
+[2026-07-16 21:01:21]     Test:  8 | counts=[4, 4]
+[2026-07-16 21:01:21]     Model: SignalJEPA_PreLocal | Pretrained: from_pretrained | Strategy: new
+[2026-07-16 21:01:21]     Normalization: none | fit_scope=none
+[2026-07-16 21:01:21]     Phase 1 (new): 3,706/17,546 params
+[2026-07-16 21:01:21] [augmentation] 'gacl_inspired_sensor_rotation_noise' -> 2 transform(s), train iterator only
+[2026-07-16 21:01:48]     Result | best_epoch=339 | stop=389 | final_phase_epochs=389 | acc=0.7500 | bal_acc=0.7500 | pred_hist=[6, 2] | collapse=False
+[2026-07-16 21:01:48]     spatial_conv=[4, 29] top_abs_channels=[('Pz', 0.19057319), ('C3', 0.16142292), ('CP4', 0.15064999), ('T3', 0.13869296), ('O2', 0.13687105), ('CP3', 0.13109037), ('O1', 0.11336678), ('T4', 0.11283734)]
+[2026-07-16 21:01:48]     spatial_update=delta_l2=0.62404589 max_abs=0.16855213 relative=0.52287957 changed=True
+[2026-07-16 21:01:48]   Subject 8: acc=0.6750±0.0612  bal_acc=0.6750±0.0612
+
+[2026-07-16 21:01:48] Total evaluation splits completed: 40
+[2026-07-16 21:01:49] ======================================================================
+[2026-07-16 21:01:49] AGGREGATED RESULTS
+[2026-07-16 21:01:49] ======================================================================
+[2026-07-16 21:01:49]   1: acc=0.5500±0.0612  bal_acc=0.5500±0.0612
+[2026-07-16 21:01:49]   2: acc=0.7250±0.1458  bal_acc=0.7250±0.1458
+[2026-07-16 21:01:49]   3: acc=0.6000±0.2151  bal_acc=0.6000±0.2151
+[2026-07-16 21:01:49]   4: acc=0.5750±0.1275  bal_acc=0.5750±0.1275
+[2026-07-16 21:01:49]   5: acc=0.3500±0.0935  bal_acc=0.3500±0.0935
+[2026-07-16 21:01:49]   6: acc=0.5000±0.1369  bal_acc=0.5000±0.1369
+[2026-07-16 21:01:49]   7: acc=0.5500±0.1500  bal_acc=0.5500±0.1500
+[2026-07-16 21:01:49]   8: acc=0.6750±0.0612  bal_acc=0.6750±0.0612
+[2026-07-16 21:01:49] ----------------------------------------------------------------------
+[2026-07-16 21:01:49]   OVERALL: acc=0.5656±0.1700  bal_acc=0.5656±0.1700
+[2026-07-16 21:01:49] ======================================================================
+[2026-07-16 21:01:49] Performance tables saved:
+[2026-07-16 21:01:49]   Fold-level results:       /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/fold_level_results.csv
+[2026-07-16 21:01:49]   Subject-level summary:    /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/subject_level_summary.csv
+[2026-07-16 21:01:49]   Global method comparison: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/global_method_comparison.csv
+[2026-07-16 21:01:49] Subject performance plot saved to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/sjepa_prelocal_subject_performance.png
+[2026-07-16 21:01:49] Global performance plot saved to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/sjepa_prelocal_global_performance_summary.png
+[2026-07-16 21:01:50] Aggregated confusion matrix plot saved to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/sjepa_prelocal_aggregated_confusion_matrix.png
+[2026-07-16 21:01:50] Confusion metrics saved to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/sjepa_prelocal_confusion_metrics.csv
+
+[2026-07-16 21:01:50] ======================================================================
+[2026-07-16 21:01:50] EXPERIMENT SUMMARY
+[2026-07-16 21:01:50] ======================================================================
+[2026-07-16 21:01:50] Run ID:                 20260716_2054_4c0f87b2
+[2026-07-16 21:01:50] Experiment:             sjepa_prelocal_gacl8_fulltrial_minimal_preprocessing
+[2026-07-16 21:01:50] Subjects:               8
+[2026-07-16 21:01:50] Model:                  SignalJEPA_PreLocal
+[2026-07-16 21:01:50] Pretrained mode:        from_pretrained
+[2026-07-16 21:01:50] Strategy:               new
+[2026-07-16 21:01:50] Preprocessing:          none | ref=none | resample=True->128 | filter=False 0.5–40.0 fir
+[2026-07-16 21:01:50] Window:                 start=0.0s | 8.000s / 1024 samples
+[2026-07-16 21:01:50] Artifacts:              /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2
+[2026-07-16 21:01:50] Mean Accuracy:          0.5656 ± 0.1700
+[2026-07-16 21:01:50] Mean Balanced Accuracy: 0.5656 ± 0.1700
+[2026-07-16 21:01:50] ======================================================================
+
+[2026-07-16 21:01:50] Spatial convolution analysis saved:
+[2026-07-16 21:01:50]   Long channel CSV:        /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/spatial_conv_analysis/spatial_channel_importance_long.csv
+[2026-07-16 21:01:50]   Fold diagnostics CSV:    /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/spatial_conv_analysis/fold_diagnostics.csv
+[2026-07-16 21:01:50]   Fold weight JSON:        /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/spatial_conv_analysis/spatial_conv_weights_by_fold.json
+[2026-07-16 21:01:50]   Global importance CSV:   /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/spatial_conv_analysis/spatial_channel_importance_global.csv
+[2026-07-16 21:01:50]   Subject importance CSV:  /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/spatial_conv_analysis/spatial_channel_importance_by_subject.csv
+[2026-07-16 21:01:50]   Diagnostic summary JSON: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/spatial_conv_analysis/diagnostic_summary.json
+
+[2026-07-16 21:01:50] Diagnostic summary:
+[2026-07-16 21:01:50] {
+  "n_folds": 40,
+  "collapse_rate": 0.0,
+  "mean_collapse_ratio": 0.684375,
+  "mean_spatial_delta_l2": 0.24007060674999997,
+  "mean_spatial_relative_delta": 0.201151898,
+  "spatial_changed_rate": 1.0,
+  "mean_confidence": 0.5580985705,
+  "mean_normalized_prediction_entropy": 0.9654344027499999
+}
+
+[2026-07-16 21:01:50] Top global channels by mean absolute spatial weight:
+[2026-07-16 21:01:50] CV results saved to:      /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/cv_results.json
+[2026-07-16 21:01:50] Subject metrics saved to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/subject_metrics.json
+[2026-07-16 21:01:50] Global metrics saved to:  /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/global_metrics.json
+[2026-07-16 21:01:50] Subject performance plot: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/sjepa_prelocal_subject_performance.png
+[2026-07-16 21:01:50] Global performance plot:  /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/sjepa_prelocal_global_performance_summary.png
+[2026-07-16 21:01:50] Confusion matrix plot:    /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/sjepa_prelocal_aggregated_confusion_matrix.png
+[2026-07-16 21:01:50] Run metadata saved to:    /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2/run_metadata.json
+
+[2026-07-16 21:01:50] All artifacts in: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-gacl8/20260716_2054_4c0f87b2

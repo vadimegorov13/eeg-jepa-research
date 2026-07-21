@@ -1,0 +1,67 @@
+{
+  "run_id": "20260715_203008_458234_b2061b8a",
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-loso-transfer/20260715_203008_458234_b2061b8a",
+  "experiment_name": "shallow_loso_fullsource_smoke_target_only",
+  "config_note": "Prespecified subjects 01/03/07; matched target-only Shallow control for the full-source smoke test.",
+  "subjects": [
+    "sub-01",
+    "sub-03",
+    "sub-07"
+  ],
+  "channel_names": [
+    "Fp1",
+    "Fp2",
+    "Fz",
+    "F3",
+    "F4",
+    "F7",
+    "F8",
+    "FCz",
+    "FC3",
+    "FC4",
+    "FT7",
+    "FT8",
+    "Cz",
+    "C3",
+    "C4",
+    "T3",
+    "T4",
+    "CP3",
+    "CP4",
+    "TP7",
+    "TP8",
+    "Pz",
+    "P3",
+    "P4",
+    "T5",
+    "T6",
+    "Oz",
+    "O1",
+    "O2"
+  ],
+  "model_name": "ShallowFBCSPNet",
+  "seed": 2026,
+  "global_metrics": {
+    "mean_subject_balanced_accuracy": 0.5499999999999999,
+    "subject_bootstrap_95_ci": [
+      0.45,
+      0.65
+    ],
+    "n_subjects": 3,
+    "n_folds_total": 15,
+    "collapse_rate": 0.13333333333333333,
+    "mean_training_seconds": 4.466735644312576
+  },
+  "artifacts": {
+    "checkpoint_provenance.json": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-loso-transfer/20260715_203008_458234_b2061b8a/checkpoint_provenance.json",
+    "run.log": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-loso-transfer/20260715_203008_458234_b2061b8a/run.log",
+    "config.json": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-loso-transfer/20260715_203008_458234_b2061b8a/config.json",
+    "fold_results.csv": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-loso-transfer/20260715_203008_458234_b2061b8a/fold_results.csv",
+    "global_metrics.json": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-loso-transfer/20260715_203008_458234_b2061b8a/global_metrics.json",
+    "subject_results.csv": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-loso-transfer/20260715_203008_458234_b2061b8a/subject_results.csv",
+    "cv_results.json": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-loso-transfer/20260715_203008_458234_b2061b8a/cv_results.json",
+    "loso_subject_performance.png": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-loso-transfer/20260715_203008_458234_b2061b8a/loso_subject_performance.png",
+    "subject_metrics.json": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-loso-transfer/20260715_203008_458234_b2061b8a/subject_metrics.json",
+    "subject_inventory.csv": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-loso-transfer/20260715_203008_458234_b2061b8a/subject_inventory.csv"
+  }
+}

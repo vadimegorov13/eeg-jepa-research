@@ -1,0 +1,354 @@
+[2026-07-15 21:58:16] Run ID:     20260715_2158_59cfff7f
+[2026-07-15 21:58:16] Artifacts:  /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-shallow-riemann-same-fold-fusion/20260715_2158_59cfff7f
+[2026-07-15 21:58:16] Config:     /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-shallow-riemann-same-fold-fusion/20260715_2158_59cfff7f/config.json
+[2026-07-15 21:58:16] Seed initialized: 2026
+[2026-07-15 21:58:16] Validated locked Shallow artifact: 250 folds, 2000 OOF predictions
+[2026-07-15 21:58:16] ========================================================================
+[2026-07-15 21:58:16] {
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-shallow-riemann-same-fold-fusion",
+  "average_reference": true,
+  "bands_hz": [
+    [
+      8.0,
+      12.0
+    ],
+    [
+      13.0,
+      20.0
+    ],
+    [
+      20.0,
+      30.0
+    ],
+    [
+      8.0,
+      30.0
+    ]
+  ],
+  "base_classifier": "tangent_lda",
+  "bootstrap_iterations": 10000,
+  "bootstrap_seed": 202607,
+  "collapse_threshold": 0.9,
+  "config_note": "Primary same-fold 50/50 probability fusion of immutable locked Shallow OOF predictions and recomputed motor13 1 s/2 s Riemann predictions.",
+  "covariance_estimator": "oas",
+  "cv_folds": 5,
+  "cv_random_state": 2026,
+  "evaluation_mode": "reuse_locked_stratified_5fold",
+  "expected_channel_set": "liu29",
+  "expected_global_split_hash": "801ec1d2c981335f",
+  "expected_liu29_names": [
+    "Fp1",
+    "Fp2",
+    "Fz",
+    "F3",
+    "F4",
+    "F7",
+    "F8",
+    "FCz",
+    "FC3",
+    "FC4",
+    "FT7",
+    "FT8",
+    "Cz",
+    "C3",
+    "C4",
+    "T3",
+    "T4",
+    "CP3",
+    "CP4",
+    "TP7",
+    "TP8",
+    "Pz",
+    "P3",
+    "P4",
+    "T5",
+    "T6",
+    "Oz",
+    "O1",
+    "O2"
+  ],
+  "expected_shallow_experiment_name": "compact_mi_locked_shallowfbcspnet",
+  "expected_shallow_model_name": "ShallowFBCSPNet",
+  "expected_shallow_run_id": "20260712_165746_790145_fd8ab986",
+  "expected_subject_count": 50,
+  "expected_trials_per_subject": 40,
+  "experiment_name": "locked_shallow_motor13_short_scale_same_fold_fusion",
+  "fail_on_any_fold_error": true,
+  "filter_context": "full_trial_then_crop",
+  "filter_order": 4,
+  "lda_shrinkage": "auto",
+  "lda_solver": "lsqr",
+  "locked_shallow_artifact": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260712_165746_790145_fd8ab986",
+  "margin_scale_eps": 1e-08,
+  "marker_channel_index": 32,
+  "mi_window_s": [
+    0.0,
+    4.0
+  ],
+  "native_sfreq": 500,
+  "onset_fallback_sample": 1003,
+  "onset_marker_value": 2,
+  "onset_plausible_range": [
+    800,
+    1300
+  ],
+  "riemann_probability_mapping": "sigmoid_of_training_margin_scaled_score",
+  "riemann_weight": 0.5,
+  "run_synthetic_checks": false,
+  "seed": 2026,
+  "set_seed": true,
+  "shallow_weight": 0.5,
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+  "spatial_mode": "motor13",
+  "subjects_to_use": null,
+  "tangent_metric": "riemann",
+  "temporal_scales": {
+    "1s": {
+      "length_s": 1.0,
+      "starts_s": [
+        0.0,
+        1.0,
+        2.0,
+        3.0
+      ]
+    },
+    "2s": {
+      "length_s": 2.0,
+      "starts_s": [
+        0.0,
+        1.0,
+        2.0
+      ]
+    }
+  },
+  "trace_normalize": true
+}
+[2026-07-15 21:58:16] ========================================================================
+[2026-07-15 21:58:18] sub-01: completed fixed same-fold fusion
+[2026-07-15 21:58:20] sub-02: completed fixed same-fold fusion
+[2026-07-15 21:58:21] sub-03: completed fixed same-fold fusion
+[2026-07-15 21:58:23] sub-04: completed fixed same-fold fusion
+[2026-07-15 21:58:24] sub-05: completed fixed same-fold fusion
+[2026-07-15 21:58:26] sub-06: completed fixed same-fold fusion
+[2026-07-15 21:58:28] sub-07: completed fixed same-fold fusion
+[2026-07-15 21:58:29] sub-08: completed fixed same-fold fusion
+[2026-07-15 21:58:31] sub-09: completed fixed same-fold fusion
+[2026-07-15 21:58:33] sub-10: completed fixed same-fold fusion
+[2026-07-15 21:58:34] sub-11: completed fixed same-fold fusion
+[2026-07-15 21:58:36] sub-12: completed fixed same-fold fusion
+[2026-07-15 21:58:37] sub-13: completed fixed same-fold fusion
+[2026-07-15 21:58:39] sub-14: completed fixed same-fold fusion
+[2026-07-15 21:58:41] sub-15: completed fixed same-fold fusion
+[2026-07-15 21:58:42] sub-16: completed fixed same-fold fusion
+[2026-07-15 21:58:44] sub-17: completed fixed same-fold fusion
+[2026-07-15 21:58:45] sub-18: completed fixed same-fold fusion
+[2026-07-15 21:58:47] sub-19: completed fixed same-fold fusion
+[2026-07-15 21:58:49] sub-20: completed fixed same-fold fusion
+[2026-07-15 21:58:50] sub-21: completed fixed same-fold fusion
+[2026-07-15 21:58:52] sub-22: completed fixed same-fold fusion
+[2026-07-15 21:58:54] sub-23: completed fixed same-fold fusion
+[2026-07-15 21:58:55] sub-24: completed fixed same-fold fusion
+[2026-07-15 21:58:57] sub-25: completed fixed same-fold fusion
+[2026-07-15 21:58:59] sub-26: completed fixed same-fold fusion
+[2026-07-15 21:59:00] sub-27: completed fixed same-fold fusion
+[2026-07-15 21:59:02] sub-28: completed fixed same-fold fusion
+[2026-07-15 21:59:03] sub-29: completed fixed same-fold fusion
+[2026-07-15 21:59:05] sub-30: completed fixed same-fold fusion
+[2026-07-15 21:59:07] sub-31: completed fixed same-fold fusion
+[2026-07-15 21:59:08] sub-32: completed fixed same-fold fusion
+[2026-07-15 21:59:10] sub-33: completed fixed same-fold fusion
+[2026-07-15 21:59:11] sub-34: completed fixed same-fold fusion
+[2026-07-15 21:59:13] sub-35: completed fixed same-fold fusion
+[2026-07-15 21:59:15] sub-36: completed fixed same-fold fusion
+[2026-07-15 21:59:16] sub-37: completed fixed same-fold fusion
+[2026-07-15 21:59:18] sub-38: completed fixed same-fold fusion
+[2026-07-15 21:59:20] sub-39: completed fixed same-fold fusion
+[2026-07-15 21:59:21] sub-40: completed fixed same-fold fusion
+[2026-07-15 21:59:23] sub-41: completed fixed same-fold fusion
+[2026-07-15 21:59:25] sub-42: completed fixed same-fold fusion
+[2026-07-15 21:59:26] sub-43: completed fixed same-fold fusion
+[2026-07-15 21:59:28] sub-44: completed fixed same-fold fusion
+[2026-07-15 21:59:29] sub-45: completed fixed same-fold fusion
+[2026-07-15 21:59:31] sub-46: completed fixed same-fold fusion
+[2026-07-15 21:59:33] sub-47: completed fixed same-fold fusion
+[2026-07-15 21:59:34] sub-48: completed fixed same-fold fusion
+[2026-07-15 21:59:36] sub-49: completed fixed same-fold fusion
+[2026-07-15 21:59:37] sub-50: completed fixed same-fold fusion
+[2026-07-15 21:59:38] {
+  "primary_estimand": "mean_subject_pooled_exactly_once_oof_balanced_accuracy",
+  "n_subjects": 50,
+  "n_trials": 2000,
+  "n_folds": 250,
+  "global_split_hash": "801ec1d2c981335f",
+  "methods": {
+    "shallow_locked": {
+      "mean_subject_balanced_accuracy": 0.5745,
+      "subject_bootstrap_95_ci": [
+        0.5425,
+        0.6065
+      ],
+      "n_subjects": 50
+    },
+    "riemann_1s": {
+      "mean_subject_balanced_accuracy": 0.5539999999999999,
+      "subject_bootstrap_95_ci": [
+        0.5175,
+        0.5905
+      ],
+      "n_subjects": 50
+    },
+    "riemann_2s": {
+      "mean_subject_balanced_accuracy": 0.5545,
+      "subject_bootstrap_95_ci": [
+        0.5159999999999999,
+        0.594
+      ],
+      "n_subjects": 50
+    },
+    "riemann_equal_short_scales": {
+      "mean_subject_balanced_accuracy": 0.5595,
+      "subject_bootstrap_95_ci": [
+        0.5215,
+        0.5970124999999998
+      ],
+      "n_subjects": 50
+    },
+    "shallow_riemann_fusion": {
+      "mean_subject_balanced_accuracy": 0.579,
+      "subject_bootstrap_95_ci": [
+        0.5475,
+        0.6114999999999999
+      ],
+      "n_subjects": 50
+    }
+  },
+  "paired_vs_shallow": {
+    "riemann_1s": {
+      "method": "riemann_1s",
+      "reference": "shallow_locked",
+      "mean_delta": -0.020499999999999997,
+      "mean_delta_points": -2.05,
+      "paired_subject_bootstrap_95_ci": [
+        -0.056499999999999995,
+        0.015500000000000003
+      ],
+      "paired_subject_bootstrap_95_ci_points": [
+        -5.6499999999999995,
+        1.5500000000000003
+      ],
+      "wilcoxon_statistic": 444.0,
+      "wilcoxon_p_value": 0.29135716350139884,
+      "wins": 20,
+      "ties": 4,
+      "losses": 26,
+      "n_subjects": 50,
+      "inference_unit": "subject"
+    },
+    "riemann_2s": {
+      "method": "riemann_2s",
+      "reference": "shallow_locked",
+      "mean_delta": -0.020000000000000004,
+      "mean_delta_points": -2.0000000000000004,
+      "paired_subject_bootstrap_95_ci": [
+        -0.057012500000000015,
+        0.018499999999999996
+      ],
+      "paired_subject_bootstrap_95_ci_points": [
+        -5.701250000000002,
+        1.8499999999999996
+      ],
+      "wilcoxon_statistic": 521.5,
+      "wilcoxon_p_value": 0.26259603542420296,
+      "wins": 21,
+      "ties": 0,
+      "losses": 29,
+      "n_subjects": 50,
+      "inference_unit": "subject"
+    },
+    "riemann_equal_short_scales": {
+      "method": "riemann_equal_short_scales",
+      "reference": "shallow_locked",
+      "mean_delta": -0.015,
+      "mean_delta_points": -1.5,
+      "paired_subject_bootstrap_95_ci": [
+        -0.052499999999999984,
+        0.023512499999999836
+      ],
+      "paired_subject_bootstrap_95_ci_points": [
+        -5.249999999999998,
+        2.3512499999999834
+      ],
+      "wilcoxon_statistic": 490.0,
+      "wilcoxon_p_value": 0.31468553681212663,
+      "wins": 23,
+      "ties": 2,
+      "losses": 25,
+      "n_subjects": 50,
+      "inference_unit": "subject"
+    },
+    "shallow_riemann_fusion": {
+      "method": "shallow_riemann_fusion",
+      "reference": "shallow_locked",
+      "mean_delta": 0.004499999999999995,
+      "mean_delta_points": 0.4499999999999995,
+      "paired_subject_bootstrap_95_ci": [
+        -0.009500000000000012,
+        0.018999999999999996
+      ],
+      "paired_subject_bootstrap_95_ci_points": [
+        -0.9500000000000012,
+        1.8999999999999997
+      ],
+      "wilcoxon_statistic": 397.0,
+      "wilcoxon_p_value": 0.6634520291549739,
+      "wins": 21,
+      "ties": 9,
+      "losses": 20,
+      "n_subjects": 50,
+      "inference_unit": "subject"
+    }
+  },
+  "protocol": {
+    "shallow_retrained": false,
+    "shallow_selected": false,
+    "riemann_outer_train_only": true,
+    "outer_test_used_for_selection": false,
+    "repeated_60_40_consumed": false,
+    "learned_stack": false,
+    "fusion_weights": {
+      "shallow": 0.5,
+      "riemann_equal_short_scales": 0.5
+    },
+    "riemann_probability_mapping": "sigmoid_of_training_margin_scaled_score"
+  }
+}
+[2026-07-15 21:59:38] Primary same-fold fusion summary
+[2026-07-15 21:59:38] Locked Shallow: 57.45% BA, 95% CI 54.25-60.65%
+[2026-07-15 21:59:38] Riemann 1 s: 55.40% BA, 95% CI 51.75-59.05%
+[2026-07-15 21:59:38] Riemann 2 s: 55.45% BA, 95% CI 51.60-59.40%
+[2026-07-15 21:59:38] Equal Riemann: 55.95% BA, 95% CI 52.15-59.70%
+[2026-07-15 21:59:38] 50/50 Fusion: 57.90% BA, 95% CI 54.75-61.15%
+[2026-07-15 21:59:38] Fusion vs Shallow: +0.45 points, p=0.663452
+[2026-07-15 21:59:38] {
+  "locked_shallow_artifact_validated_before_raw_processing": true,
+  "all_50_subjects_present": true,
+  "forty_unique_test_trials_per_subject_method": true,
+  "liu29_provenance_exact": true,
+  "split_hash_exact": true,
+  "all_outer_train_test_disjoint": true,
+  "shallow_retrained": false,
+  "shallow_selected": false,
+  "outer_test_used_for_selection": false,
+  "outer_test_used_for_transform_fit": false,
+  "repeated_60_40_predictions_or_transforms_consumed": false,
+  "learned_stack_present": false,
+  "trial_filters_cross_boundaries": false,
+  "covariance_scope": "single_trial_only",
+  "tangent_scaler_classifier_margin_scale_fit_scope": "outer_train_only"
+}
+[2026-07-15 21:59:38] CV results saved to:      /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-shallow-riemann-same-fold-fusion/20260715_2158_59cfff7f/cv_results.json
+[2026-07-15 21:59:38] Subject metrics saved to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-shallow-riemann-same-fold-fusion/20260715_2158_59cfff7f/subject_metrics.json
+[2026-07-15 21:59:38] Global metrics saved to:  /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-shallow-riemann-same-fold-fusion/20260715_2158_59cfff7f/global_metrics.json
+[2026-07-15 21:59:38] Run metadata saved to:    /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-shallow-riemann-same-fold-fusion/20260715_2158_59cfff7f/run_metadata.json
+
+[2026-07-15 21:59:38] All artifacts in: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-shallow-riemann-same-fold-fusion/20260715_2158_59cfff7f

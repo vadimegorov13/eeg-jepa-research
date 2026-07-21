@@ -1,0 +1,75 @@
+{
+  "run_id": "20260715_214108_991747_c575e8eb",
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260715_214108_991747_c575e8eb",
+  "experiment_name": "shallow_augmentation_smoke_relative_noise",
+  "config_note": "Prespecified subjects 01/03/07; training-only per-trial/channel SD-scaled Gaussian noise.",
+  "subjects": [
+    "sub-01",
+    "sub-03",
+    "sub-07"
+  ],
+  "channel_names": [
+    "Fp1",
+    "Fp2",
+    "Fz",
+    "F3",
+    "F4",
+    "F7",
+    "F8",
+    "FCz",
+    "FC3",
+    "FC4",
+    "FT7",
+    "FT8",
+    "Cz",
+    "C3",
+    "C4",
+    "T3",
+    "T4",
+    "CP3",
+    "CP4",
+    "TP7",
+    "TP8",
+    "Pz",
+    "P3",
+    "P4",
+    "T5",
+    "T6",
+    "Oz",
+    "O1",
+    "O2"
+  ],
+  "model_name": "ShallowFBCSPNet",
+  "seed": 2026,
+  "global_metrics": {
+    "mean_subject_balanced_accuracy": 0.525,
+    "subject_bootstrap_95_ci": [
+      0.45,
+      0.6
+    ],
+    "n_subjects": 3,
+    "n_folds_total": 15,
+    "collapse_rate": 0.13333333333333333,
+    "mean_training_seconds": 3.38869126100714,
+    "classical_reference_comparison_skipped": {
+      "reason": "configured cohort does not exactly match reference cohort",
+      "n_current": 3,
+      "n_reference": 50,
+      "reference_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-multiscale-riemann-fusion/20260712_145032_844360_89d4f1fc/subject_metrics.json",
+      "reference_method": "riemann_equal_short_scales"
+    },
+    "holm_scope": "Across six primary model runs; apply Holm after collecting their paired subject rows. No within-run p-value can perform cross-run correction."
+  },
+  "artifacts": {
+    "compact_mi_subject_performance.png": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260715_214108_991747_c575e8eb/compact_mi_subject_performance.png",
+    "run.log": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260715_214108_991747_c575e8eb/run.log",
+    "splits.json": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260715_214108_991747_c575e8eb/splits.json",
+    "config.json": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260715_214108_991747_c575e8eb/config.json",
+    "fold_results.csv": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260715_214108_991747_c575e8eb/fold_results.csv",
+    "global_metrics.json": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260715_214108_991747_c575e8eb/global_metrics.json",
+    "subject_results.csv": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260715_214108_991747_c575e8eb/subject_results.csv",
+    "cv_results.json": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260715_214108_991747_c575e8eb/cv_results.json",
+    "subject_metrics.json": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260715_214108_991747_c575e8eb/subject_metrics.json",
+    "subject_inventory.csv": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260715_214108_991747_c575e8eb/subject_inventory.csv"
+  }
+}

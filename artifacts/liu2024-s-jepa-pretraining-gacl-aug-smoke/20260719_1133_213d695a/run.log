@@ -1,0 +1,302 @@
+[2026-07-19 11:33:38] Using device: cpu
+[2026-07-19 11:33:38] Seed set to: 42
+[2026-07-19 11:33:38] [setup] config saved: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke/20260719_1133_213d695a/config.json  seed=42  device=cpu  log_verbosity=compact
+[2026-07-19 11:33:38] Liu2024 S-JEPA pretraining split (Lv14 held out as downstream-only):
+[2026-07-19 11:33:38]   Train subjects (1):             [2]
+[2026-07-19 11:33:38]   Validation subjects (1):        [4]
+[2026-07-19 11:33:38]   Downstream-only Lv14 (14):    [1, 3, 7, 9, 10, 11, 14, 15, 17, 29, 31, 32, 37, 41]
+[2026-07-19 11:33:38]   Train chunk size:               1
+[2026-07-19 11:33:38]   Validation chunk size:          1
+[2026-07-19 11:33:38]   Chunk shuffle (train):          True
+[2026-07-19 11:33:38]   Window preload:                 False
+
+[2026-07-19 11:33:38] Reference chunk prepared for geometry/model sanity setup.
+[2026-07-19 11:33:38]   Reference subjects:             [2]
+[2026-07-19 11:33:38]   Reference recordings (trials):  40
+[2026-07-19 11:33:38] Pretraining window parameters:
+[2026-07-19 11:33:38]   sfreq:                      128 Hz
+[2026-07-19 11:33:38]   pretrain_duration_s:        4.0 s
+[2026-07-19 11:33:38]   sampling_interval_s:        1.0 s
+[2026-07-19 11:33:38]   window_size_samples:        512
+[2026-07-19 11:33:38]   sampling_interval_samples:  128
+[2026-07-19 11:33:38] Preprocessors ready for chunked train/validation streaming.
+
+[2026-07-19 11:33:39] Reference chunk windows ready:
+[2026-07-19 11:33:39]   Subjects:                    [2]
+[2026-07-19 11:33:39]   Recordings by paradigm:      {'MI': 40}
+[2026-07-19 11:33:39]   Window count:                200
+[2026-07-19 11:33:39] Geometry summary:
+[2026-07-19 11:33:39]   Montage present:          True
+[2026-07-19 11:33:40]   Montage kind:             DigMontage
+[2026-07-19 11:33:40]   EEG channels:             29
+[2026-07-19 11:33:40]   Valid EEG positions:      29
+[2026-07-19 11:33:40]   Valid position ratio:     1.000
+[2026-07-19 11:33:40]   Any all-zero channels:    False
+[2026-07-19 11:33:40]   Valid xyz min/max:        x[-0.0868, 0.0836] y[-0.0828, 0.1153] z[0.0251, 0.1402]
+[2026-07-19 11:33:40]   First channel xyz preview:
+[2026-07-19 11:33:40]        Fp1: (-0.0309,  0.1146,  0.0279) valid=True
+[2026-07-19 11:33:40]        Fp2: ( 0.0284,  0.1153,  0.0277) valid=True
+[2026-07-19 11:33:40]         Fz: (-0.0012,  0.0933,  0.1026) valid=True
+[2026-07-19 11:33:40]         F3: (-0.0518,  0.0867,  0.0787) valid=True
+[2026-07-19 11:33:40]         F4: ( 0.0503,  0.0874,  0.0773) valid=True
+[2026-07-19 11:33:40]         F7: (-0.0719,  0.0731,  0.0258) valid=True
+[2026-07-19 11:33:40]         F8: ( 0.0714,  0.0745,  0.0251) valid=True
+[2026-07-19 11:33:40]        FCz: (-0.0013,  0.0635,  0.1266) valid=True
+[2026-07-19 11:33:40] Sanitized SignalJEPA channel metadata:
+[2026-07-19 11:33:40]   EEG channels:             29
+[2026-07-19 11:33:40]   Valid xyz channels:       29
+[2026-07-19 11:33:40]   Sanitized xyz min/max:    x[-0.0868, 0.0836] y[-0.0828, 0.1153] z[0.0251, 0.1402]
+
+[2026-07-19 11:33:40] EEG channel geometry summary:
+[2026-07-19 11:33:40]   N_CHANNELS:               29
+[2026-07-19 11:33:40]   CH_POSITIONS shape:       (29, 3)
+[2026-07-19 11:33:40]   Sanitized CHS_INFO count: 29
+[2026-07-19 11:33:40] Training-only augmentation: gacl_inspired_sensor_rotation_noise (2 transforms); validation remains clean.
+[2026-07-19 11:33:40] Window sanity checks (reference-train-chunk):
+[2026-07-19 11:33:40]   Total windows:          200
+[2026-07-19 11:33:40]   Window shape (C, T):    (29, 512)
+[2026-07-19 11:33:40]   Mean:                   5.4544e-06
+[2026-07-19 11:33:40]   Std(signal) (µV):       1.1901e-05
+[2026-07-19 11:33:40]   Max:                    1.6965e-04
+[2026-07-19 11:33:41] Window sanity checks (validation-preview-chunk):
+[2026-07-19 11:33:41]   Total windows:          200
+[2026-07-19 11:33:41]   Window shape (C, T):    (29, 512)
+[2026-07-19 11:33:41]   Mean:                   1.0882e-05
+[2026-07-19 11:33:41]   Std(signal) (µV):       1.7850e-05
+[2026-07-19 11:33:41]   Max:                    1.6235e-04
+[2026-07-19 11:33:41] Feature encoder token geometry:
+[2026-07-19 11:33:41]   WINDOW_SIZE_SAMPLES:  512
+[2026-07-19 11:33:41]   N_TOK_PER_CHANNEL:    3
+[2026-07-19 11:33:41]   EMB_DIM:              64
+[2026-07-19 11:33:41]   TOTAL_TOKENS:         87
+[2026-07-19 11:33:41] Student / teacher backbone summary:
+[2026-07-19 11:33:41]   Student parameters:           3,455,862
+[2026-07-19 11:33:41]   Feature encoder parameters:   13,840
+[2026-07-19 11:33:41]   Positional encoder params:    870
+[2026-07-19 11:33:41]   Transformer parameters:       3,441,152
+[2026-07-19 11:33:41]   Teacher trainable parameters: 0
+[2026-07-19 11:33:41] Backbone finite probe: OK
+[2026-07-19 11:33:41] Radius-based random spatial block mask sampler:
+[2026-07-19 11:33:41]   n_channels:               29
+[2026-07-19 11:33:41]   n_valid_channels:         29
+[2026-07-19 11:33:41]   head_diameter (valid):    0.206672
+[2026-07-19 11:33:41]   mask_diameter_percent:    60
+[2026-07-19 11:33:41]   mask_diameter:            0.124003
+[2026-07-19 11:33:41]   mask_radius:              0.062002
+[2026-07-19 11:33:41]   n_tok_per_channel:        3
+[2026-07-19 11:33:41] Mask check: Cz
+[2026-07-19 11:33:41]   radius: 0.062002
+[2026-07-19 11:33:41]   masked channels: 2
+[2026-07-19 11:33:41]   masked tokens: 6
+[2026-07-19 11:33:41]   masked names: ['FCz', 'Cz']
+[2026-07-19 11:33:41] 40% mask around Cz:
+[2026-07-19 11:33:41]   radius: 0.041334
+[2026-07-19 11:33:41]   masked channels (2): ['FCz', 'Cz']
+
+[2026-07-19 11:33:41] 60% mask around Cz:
+[2026-07-19 11:33:41]   radius: 0.062002
+[2026-07-19 11:33:41]   masked channels (2): ['FCz', 'Cz']
+
+[2026-07-19 11:33:41] 80% mask around Cz:
+[2026-07-19 11:33:41]   radius: 0.082669
+[2026-07-19 11:33:41]   masked channels (8): ['Fz', 'FCz', 'FC3', 'Cz', 'C3', 'C4', 'CP3', 'Pz']
+
+[2026-07-19 11:33:41] 40% mask around C4:
+[2026-07-19 11:33:41]   radius: 0.041334
+[2026-07-19 11:33:41]   masked channels (3): ['FC4', 'C4', 'CP4']
+
+[2026-07-19 11:33:41] 60% mask around C4:
+[2026-07-19 11:33:41]   radius: 0.062002
+[2026-07-19 11:33:41]   masked channels (3): ['FC4', 'C4', 'CP4']
+
+[2026-07-19 11:33:41] 80% mask around C4:
+[2026-07-19 11:33:41]   radius: 0.082669
+[2026-07-19 11:33:41]   masked channels (10): ['F4', 'FCz', 'FC4', 'FT8', 'Cz', 'C4', 'T4', 'CP4', 'TP8', 'P4']
+
+[2026-07-19 11:33:41] 40% mask around Oz:
+[2026-07-19 11:33:41]   radius: 0.041334
+[2026-07-19 11:33:41]   masked channels (3): ['Oz', 'O1', 'O2']
+
+[2026-07-19 11:33:41] 60% mask around Oz:
+[2026-07-19 11:33:41]   radius: 0.062002
+[2026-07-19 11:33:41]   masked channels (3): ['Oz', 'O1', 'O2']
+
+[2026-07-19 11:33:41] 80% mask around Oz:
+[2026-07-19 11:33:41]   radius: 0.082669
+[2026-07-19 11:33:41]   masked channels (6): ['Pz', 'P3', 'P4', 'Oz', 'O1', 'O2']
+
+[2026-07-19 11:33:41] 40% mask around Cz:
+[2026-07-19 11:33:41]   radius: 0.041334
+[2026-07-19 11:33:41]   masked channels (2): ['FCz', 'Cz']
+
+[2026-07-19 11:33:41] 60% mask around Cz:
+[2026-07-19 11:33:41]   radius: 0.062002
+[2026-07-19 11:33:41]   masked channels (2): ['FCz', 'Cz']
+
+[2026-07-19 11:33:41] 80% mask around Cz:
+[2026-07-19 11:33:41]   radius: 0.082669
+[2026-07-19 11:33:41]   masked channels (8): ['Fz', 'FCz', 'FC3', 'Cz', 'C3', 'C4', 'CP3', 'Pz']
+
+[2026-07-19 11:33:42] Token-routing:
+[2026-07-19 11:33:42]   Full token shape:         (87, 64)
+[2026-07-19 11:33:42]   Visible token shape:      (75, 64)
+[2026-07-19 11:33:42]   Masked token shape:       (12, 64)
+[2026-07-19 11:33:42]   Sample masked channels:   4
+[2026-07-19 11:33:42] Single-sample token routing validated OK.
+[2026-07-19 11:33:42] MaskedTokenPredictor initialized:
+[2026-07-19 11:33:42]   d_model:          64
+[2026-07-19 11:33:42]   nhead:            8
+[2026-07-19 11:33:42]   num_layers:       4
+[2026-07-19 11:33:42]   dim_feedforward:  256
+[2026-07-19 11:33:42]   Total parameters: 267,136
+
+[2026-07-19 11:33:42] Predictor shape test: OK
+[2026-07-19 11:33:42]   student_context: (1, 75, 64)
+[2026-07-19 11:33:42]   masked_pos_enc:  (1, 12, 64)
+[2026-07-19 11:33:42]   prediction:      (1, 12, 64)
+[2026-07-19 11:33:44] Augmentation boundary check: training=augmented, validation=clean
+[2026-07-19 11:33:44] Optimizer: Adam
+[2026-07-19 11:33:44] Learning rate:             0.001
+[2026-07-19 11:33:44] Weight decay:              0.0
+[2026-07-19 11:33:44] Debug train chunk subjects: [2]
+[2026-07-19 11:33:44] Debug train windows:        200
+[2026-07-19 11:33:44] Debug val chunk subjects:   [4]
+[2026-07-19 11:33:44] Debug val windows:          200
+
+[2026-07-19 11:33:44] Running first-batch debug (dry-run before optimizer step)...
+[2026-07-19 11:33:44]   [debug] first-sample training path:
+[2026-07-19 11:33:44]     x_single:             (1, 29, 512)
+[2026-07-19 11:33:44]     teacher_full_tokens:  (1, 87, 64)
+[2026-07-19 11:33:44]     student_visible:      (1, 78, 64)
+[2026-07-19 11:33:44]     masked_queries:       (1, 9, 64)
+[2026-07-19 11:33:44]     predicted_masked:     (1, 9, 64)
+[2026-07-19 11:33:44]     teacher_masked:       (1, 9, 64)
+[2026-07-19 11:33:44]     center_channel:       26
+[2026-07-19 11:33:44]     masked_channels:      3
+[2026-07-19 11:33:44]     masked_tokens:        9
+[2026-07-19 11:33:44]     visible_tokens:       78
+[2026-07-19 11:33:44]     sample_loss:          1.083660
+[2026-07-19 11:33:45]   Dry-run first training-batch loss: 1.112019
+[2026-07-19 11:33:45]   First training-batch loss (updated): 1.125580
+[2026-07-19 11:33:45]   Mean masked channels:               4.38
+[2026-07-19 11:33:45]   Mean masked tokens:                 13.12
+[2026-07-19 11:33:45]   First validation-batch loss: 0.768583
+[2026-07-19 11:33:45] ======================================================================
+[2026-07-19 11:33:45] [setup] STARTING LIU2024 S-JEPA PRETRAINING
+[2026-07-19 11:33:45] ======================================================================
+[2026-07-19 11:33:45] [setup] run_id:                  20260719_1133_213d695a
+[2026-07-19 11:33:45] [setup] seed:                    42
+[2026-07-19 11:33:45] [setup] device:                  cpu
+[2026-07-19 11:33:45] [setup] paradigms:               ['MI']
+[2026-07-19 11:33:45] [setup] train_subjects:          1  [2]
+[2026-07-19 11:33:45] [setup] val_subjects:            1  [4]
+[2026-07-19 11:33:45] [setup] excluded_subjects:       [1, 3, 7, 9, 10, 11, 14, 15, 17, 29, 31, 32, 37, 41]
+[2026-07-19 11:33:45] [setup] train_chunk_size:        1
+[2026-07-19 11:33:45] [setup] val_chunk_size:          1
+[2026-07-19 11:33:45] [setup] train_chunks_per_epoch:  1
+[2026-07-19 11:33:45] [setup] val_chunks_per_epoch:    1
+[2026-07-19 11:33:45] [setup] batch_size:              8
+[2026-07-19 11:33:45] [setup] early_stopping_patience: 1
+[2026-07-19 11:33:45] [setup] window_preload:          False
+[2026-07-19 11:33:45] [setup] pretrain_duration:       4.0 s
+[2026-07-19 11:33:45] [setup] sampling_interval:       1.0 s
+[2026-07-19 11:33:45] [setup] mask_diameter:           60%
+[2026-07-19 11:33:45] [setup] ema_decay:               0.996
+[2026-07-19 11:33:45] [setup] epoch_limit:             1
+[2026-07-19 11:33:45] [setup] log_verbosity:           compact
+[2026-07-19 11:33:45] ======================================================================
+[2026-07-19 11:33:55] [train] epoch 1 chunk 1/1 subjects=[2] windows=200 batches=25 loss=0.217584 running=0.217584 time=9.9s
+[2026-07-19 11:33:59] [val] epoch 1 chunk 1/1 subjects=[4] windows=200 batches=25 loss=0.058635 running=0.058635 time=3.9s
+[2026-07-19 11:34:00] [epoch]   1/1  train_loss=0.217584  val_loss=0.058635  best_val=0.058635  patience=0/1  train_chunks=1  val_chunks=1  train_time=10.0s  val_time=4.0s
+[2026-07-19 11:34:00] ======================================================================
+[2026-07-19 11:34:00] [epoch] training complete. Best val loss: 0.058635 at epoch 1.
+[2026-07-19 11:34:00] [epoch] stop reason: max_epochs_reached
+[2026-07-19 11:34:00] ======================================================================
+[2026-07-19 11:34:00] ======================================================================
+[2026-07-19 11:34:00] LOSS HISTORY SUMMARY
+[2026-07-19 11:34:00] ======================================================================
+[2026-07-19 11:34:00]   Epochs completed:     1
+[2026-07-19 11:34:00]   First train loss:     0.217584
+[2026-07-19 11:34:00]   Last train loss:      0.217584
+[2026-07-19 11:34:00]   First val loss:       0.058635
+[2026-07-19 11:34:00]   Last val loss:        0.058635
+[2026-07-19 11:34:00]   Best val loss:        0.058635 (epoch 1)
+[2026-07-19 11:34:00]   Total train time:     10.0 s
+[2026-07-19 11:34:00]   Total validation time:4.0 s
+[2026-07-19 11:34:00]   Stop reason:          max_epochs_reached
+[2026-07-19 11:34:00] Mask coverage statistics:
+[2026-07-19 11:34:00]   n_channels: 29
+[2026-07-19 11:34:00]   n_tok_per_channel: 3
+[2026-07-19 11:34:00]   head_diameter: 0.20667175948619843
+[2026-07-19 11:34:00]   mask_diameter_percent: 60.0
+[2026-07-19 11:34:00]   mask_diameter: 0.12400305569171904
+[2026-07-19 11:34:00]   mask_radius: 0.06200152784585952
+[2026-07-19 11:34:00]   masked_channels_mean: 4.01
+[2026-07-19 11:34:00]   masked_channels_min: 2
+[2026-07-19 11:34:00]   masked_channels_max: 5
+[2026-07-19 11:34:00]   masked_tokens_mean: 12.03
+[2026-07-19 11:34:00]   masked_tokens_min: 6
+[2026-07-19 11:34:00]   masked_tokens_max: 15
+[2026-07-19 11:34:00]   n_samples: 200
+
+[2026-07-19 11:34:00] Mask stats saved to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke/20260719_1133_213d695a/mask_stats.json
+[2026-07-19 11:34:01] ======================================================================
+[2026-07-19 11:34:01] ONE-BATCH END-TO-END INSPECTION
+[2026-07-19 11:34:01] ======================================================================
+[2026-07-19 11:34:01]   x_single:            (1, 29, 512)
+[2026-07-19 11:34:01]   teacher_full:        (1, 87, 64)
+[2026-07-19 11:34:01]   student_visible:     (1, 75, 64)
+[2026-07-19 11:34:01]   masked_queries:      (1, 12, 64)
+[2026-07-19 11:34:01]   predicted_masked:    (1, 12, 64)
+[2026-07-19 11:34:01]   teacher_masked:      (1, 12, 64)
+[2026-07-19 11:34:01]   center_channel:      0
+[2026-07-19 11:34:01]   masked_channels:     4
+[2026-07-19 11:34:01]   masked_tokens:       12
+[2026-07-19 11:34:01]   inspection_loss:     0.056917
+[2026-07-19 11:34:01] ======================================================================
+[2026-07-19 11:34:02] Epoch metrics saved to:           /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke/20260719_1133_213d695a/metrics.json
+[2026-07-19 11:34:02] Run metadata saved to:            /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke/20260719_1133_213d695a/run_metadata.json
+
+[2026-07-19 11:34:02] ======================================================================
+[2026-07-19 11:34:02] EXPERIMENT SUMMARY
+[2026-07-19 11:34:02] ======================================================================
+[2026-07-19 11:34:02] Run ID:            20260719_1133_213d695a
+[2026-07-19 11:34:02] Artifacts:         /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke/20260719_1133_213d695a
+
+[2026-07-19 11:34:02] Subject split:
+[2026-07-19 11:34:02]   Train:           [2]
+[2026-07-19 11:34:02]   Validation:      [4]
+[2026-07-19 11:34:02]   Excluded:        [1, 3, 7, 9, 10, 11, 14, 15, 17, 29, 31, 32, 37, 41]
+
+[2026-07-19 11:34:02] Data streaming:
+[2026-07-19 11:34:02]   Paradigms:       ['MI']
+[2026-07-19 11:34:02]   Train chunk size:1
+[2026-07-19 11:34:02]   Val chunk size:  1
+[2026-07-19 11:34:02]   Train chunks:    1
+[2026-07-19 11:34:02]   Val chunks:      1
+[2026-07-19 11:34:02]   Preload windows: False
+[2026-07-19 11:34:02]   Window seconds:  4.0
+[2026-07-19 11:34:02]   Interval secs:   1.0
+
+[2026-07-19 11:34:02] Masking:
+[2026-07-19 11:34:02]   Diameter %:      60
+[2026-07-19 11:34:02]   Radius:          0.062002
+
+[2026-07-19 11:34:02] Results:
+[2026-07-19 11:34:02]   Epochs run:      1
+[2026-07-19 11:34:02]   Best epoch:      1
+[2026-07-19 11:34:02]   Best val loss:   0.058635
+[2026-07-19 11:34:02]   Final val loss:  0.058635
+[2026-07-19 11:34:02]   Stop reason:     max_epochs_reached
+
+[2026-07-19 11:34:02] Artifact files:
+[2026-07-19 11:34:02]   config: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke/20260719_1133_213d695a/config.json
+[2026-07-19 11:34:02]   run_log: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke/20260719_1133_213d695a/run.log
+[2026-07-19 11:34:02]   metrics: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke/20260719_1133_213d695a/metrics.json
+[2026-07-19 11:34:02]   epoch_metrics_jsonl: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke/20260719_1133_213d695a/epoch_metrics.jsonl
+[2026-07-19 11:34:02]   checkpoint_latest: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke/20260719_1133_213d695a/checkpoint_latest.pt
+[2026-07-19 11:34:02]   checkpoint_best: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke/20260719_1133_213d695a/checkpoint_best.pt
+[2026-07-19 11:34:02]   student_backbone_latest: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke/20260719_1133_213d695a/student_backbone_latest.pt
+[2026-07-19 11:34:02]   student_backbone_best: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke/20260719_1133_213d695a/student_backbone_best.pt
+[2026-07-19 11:34:02]   mask_stats: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke/20260719_1133_213d695a/mask_stats.json
+[2026-07-19 11:34:02] ======================================================================

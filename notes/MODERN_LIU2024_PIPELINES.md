@@ -2,7 +2,7 @@
 
 ## Status
 
-Five canonical notebooks define the modern neural comparisons. The six-run compact target-only benchmark, prespecified two-target LOSO pilot, and focused lightweight sweep are complete; the lightweight sweep completed FBLightConvNet and EEGITNet but SincShallowNet failed before producing an artifact. Exploratory cropped and longer-training ShallowFBCSP runs are also complete. The pilot does not support expansion to a 50-subject LOSO run as currently configured; foundation-model work remains validation-only until pinned official repositories and checkpoints are supplied. No large checkpoints were downloaded.
+Five canonical notebooks define the modern neural comparisons. The six-run compact target-only benchmark, prespecified two-target LOSO pilot, full-source Shallow smoke test, focused lightweight sweep, S-JEPA LP-FT comparison, and bounded Shallow augmentation smoke test are complete. Exploratory cropped and longer-training ShallowFBCSP runs are also complete. Neither supervised source transfer, strict LP-FT, nor the tested light augmentations improve accuracy. Foundation-model work remains validation-only until pinned official repositories and checkpoints are supplied. No large checkpoints were downloaded.
 
 The current confirmed honest classical best is **55.375% mean subject balanced accuracy** (95% subject-bootstrap CI 52.313-58.588%) from the frozen full-50 motor13 short-scale repeated 60/40 protocol: `artifacts/liu2024-multiscale-riemann-fusion/20260712_145032_844360_89d4f1fc/`. The best comparable S-JEPA PreLocal result is **57.00%**, but 42% of folds collapse and useful accuracy is concentrated in non-collapsed folds; it is weak-to-moderate transfer, not a strong clinical decoder.
 
@@ -72,7 +72,103 @@ All successful runs below use the same 50 subjects, 250 five-fold OOF partitions
 - **The two completed lightweight models are near chance and substantially below locked Shallow.** FBLightConvNet favors class 1 (67.45% of predictions; class-0/class-1 sensitivities 32.9%/67.8%); 38/40 collapsed folds favor class 1. EEGITNet favors class 0 (72.55% of predictions; sensitivities 73.0%/27.9%); 105/126 collapsed folds favor class 0. Their non-collapsed fold BAs are only 50.42% and 50.91%, respectively, so removing collapsed folds does not reveal a strong decoder.
 - **SincShallowNet has no performance result.** Run `experiment_results/20260712_1758_sweep_lightweight_mi_models_locked_0e36dabf/` failed on the first training backward pass with PyTorch `RuntimeError: view size is not compatible with input tensor's size and stride ... Use .reshape(...) instead.` This is an implementation/runtime incompatibility, not evidence about SincShallowNet accuracy, and no artifact directory was created.
 
-The current next recommendation is leakage-safe full 49-source-subject pretraining for ShallowFBCSPNet and FBLightConvNet, with each target subject excluded before target-fold adaptation, or a frozen/probed EEGPT experiment only after official code, checkpoint, channel mapping, and digest validation. These results provide no evidence that either route will reach 75%.
+The current next recommendation is a frozen/probed EEGPT experiment after official code, checkpoint, channel mapping, and digest validation. MIRepNet is the next external-model route after EEGPT. The completed same-fold fusion and source-alignment experiments are null and should not be tuned against their outer results. These results provide no evidence that any route will reach 75%.
+
+### July 19 interrupted Liu2024 SSL pretraining
+
+Training-only montage-aware sensor rotation and 2 microvolt Gaussian noise passed a one-epoch
+structural smoke test at
+`artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke/20260719_1133_213d695a/`. This is not an
+accuracy result and has no matched unaugmented control.
+
+The frozen full run at
+`artifacts/liu2024-s-jepa-pretraining-gacl-aug-full/20260719_1226_dd305e35/` completed 58 epoch
+records before failing while overwriting `checkpoint_latest.pt`. The best observed validation loss
+was 0.0017907 at epoch 56. The epoch-56 `checkpoint_best.pt` and `student_backbone_best.pt` are
+loadable, but the run did not complete, did not write final summary metrics, and has not undergone a
+matched downstream evaluation. It is therefore an interrupted checkpoint source, not evidence that
+augmentation improves MI decoding. Any downstream use must identify it as an interrupted-run
+checkpoint and remain restricted to the held-out Lv14 cohort for patient-independent evaluation.
+
+The notebook now writes checkpoints through an atomic temporary-file replacement, includes the
+epoch in student-only exports, keeps the first-batch diagnostic update-free, reports sanity-check
+amplitudes in volts, and appends an epoch record only after its checkpoints are persisted.
+
+### July 15 gated follow-ups
+
+The full-source Shallow smoke test used prespecified targets 01/03/07. Each transfer checkpoint used
+the other 49 patients (1,960 source trials, balanced 980/980), excluded the complete target patient,
+and was reused across the target's five folds. Checkpoint signatures now include preprocessing,
+model, optimizer, epoch, batch-size, seed, and software-version settings; source normalization hashes
+and source inventories are persisted.
+
+| Shallow mode | BA | Collapsed folds | Artifact |
+|---|---:|---:|---|
+| Matched target-only | 55.00% | 2/15 | `artifacts/liu2024-compact-mi-loso-transfer/20260715_203008_458234_b2061b8a/` |
+| 49-source, classifier-only adaptation | 41.67% | 1/15 | `artifacts/liu2024-compact-mi-loso-transfer/20260715_203139_633256_9823c097/` |
+| 49-source, low-rate full fine-tuning | 48.33% | 0/15 | `artifacts/liu2024-compact-mi-loso-transfer/20260715_204345_474412_5eec5fac/` |
+
+Both transfer modes lost to target-only on all three subjects, so the exact configuration is stopped
+without a 50-target expansion.
+
+The S-JEPA follow-up pins revision `213876ea30f0764fd25c055efcb55d1d1652a371` and matches the
+historical 57% preprocessing/configuration. Strict LP trains only `final_layer.*` (2,050 parameters),
+asserts every frozen tensor is unchanged, then unfreezes all 16,010 parameters after reinitializing
+the optimizer. The first phase necessarily uses the checkpoint encoder behind a frozen random
+`spatial_conv`, so it is reported as strict LP-FT rather than as a natural PreLocal adapter warm-up.
+
+| S-JEPA strategy | Full50 BA | Collapsed folds | Predicted class 1 | Artifact |
+|---|---:|---:|---:|---|
+| Adapter/head only (`new`) | 57.00% | 105/250 | 74.00% | `artifacts/liu2024-sjepa-prelocal/20260715_2103_8f79f840/` |
+| Adapter/head warm-up then full FT | 55.65% | 60/250 | 69.85% | `artifacts/liu2024-sjepa-prelocal/20260715_2117_e374556f/` |
+| Strict classifier LP then full FT | 55.55% | 61/250 | 69.65% | `artifacts/liu2024-sjepa-prelocal/20260715_2125_6cf8105e/` |
+
+Strict LP-FT minus adapter-only is -1.45 points (95% subject-bootstrap CI -3.70 to +0.65;
+Wilcoxon `p=0.3195`; 19/9/22 W/T/L). Strict LP-FT and adapter-warmup full FT are effectively tied
+(-0.10 points; CI -0.85 to +0.60; `p=0.4805`; 14/24/12). Reduced collapse and class bias do not
+translate into improved balanced accuracy.
+
+Finally, modest online training-only Shallow augmentation was smoke-tested on subjects 01/03/07.
+Per-trial/channel SD-scaled Gaussian noise (`p=0.5`, fraction 0.1) reached 52.50% BA, and whole-trial
+amplitude scaling (`p=0.5`, interval 0.9-1.1) reached 54.17%, versus 55.00% matched control. All
+three had 2/15 collapsed folds. Artifacts are respectively
+`artifacts/liu2024-compact-mi-models/20260715_214108_991747_c575e8eb/`,
+`artifacts/liu2024-compact-mi-models/20260715_214208_676643_46ef90c8/`, and
+`artifacts/liu2024-compact-mi-models/20260715_214010_146912_f58cef10/`. These fixed settings are
+stopped without full50 expansion.
+
+The same-fold fusion experiment reuses immutable locked Shallow probabilities and recomputes every
+motor13 covariance, tangent reference, scaler, LDA, and training-margin scale on the exact locked
+five-fold partitions. It does not consume any repeated-60/40 prediction or transform. Fixed view
+scores are averaged before a fixed sigmoid probability map; primary fusion is a prespecified 50/50
+probability average.
+
+| Same-fold method | Full50 BA (95% subject-bootstrap CI) | Delta vs locked Shallow | Artifact |
+|---|---:|---:|---|
+| Locked Shallow | 57.45% (54.25-60.65) | reference | `artifacts/liu2024-compact-mi-models/20260712_165746_790145_fd8ab986/` |
+| Riemann 1 s | 55.40% (51.75-59.05) | -2.05 points | `artifacts/liu2024-shallow-riemann-same-fold-fusion/20260715_2158_59cfff7f/` |
+| Riemann 2 s | 55.45% (51.60-59.40) | -2.00 points | same |
+| Equal short-scale Riemann | 55.95% (52.15-59.70) | -1.50 points | same |
+| **Fixed 50/50 fusion** | **57.90% (54.75-61.15)** | **+0.45 points** | same |
+
+Fusion's paired CI is -0.95 to +1.90 points, Wilcoxon `p=0.6635`, and W/T/L is 21/9/20. It is a
+small exploratory descriptive change, not evidence of improvement and not a replacement headline.
+
+The corrected source-aligned pilot uses the same views and locked folds. Each target is excluded
+from 49 labeled source subjects. Per-view source centers use only each source subject's 40 trials;
+target centers use only the target fold's 32 training trials. The prespecified 01/03/07 smoke was
+descriptively positive, but the frozen full50 expansion did not confirm it.
+
+| Source-transfer method | Full50 BA (95% CI) | Delta vs target-only (95% paired CI) | p | W/T/L |
+|---|---:|---:|---:|---:|
+| Target-only | 55.95% (52.15-59.70) | reference | - | - |
+| Unaligned source pooling | 54.85% (52.75-57.00) | -1.10 (-5.05 to +2.90) | 0.7548 | 23/3/24 |
+| Riemannian source recentering | 56.10% (53.55-58.75) | +0.15 (-3.15 to +3.35) | 0.7188 | 25/3/22 |
+
+Full artifact: `artifacts/liu2024-source-aligned-short-scale-riemann-pilot/20260716_071629_196536_aaebd199/`.
+The superseded smoke artifact was removed during the July 20 cleanup; its prespecified summary is
+retained here because the smoke-to-full reversal is a warning against promoting favorable
+three-patient pilots.
 
 ### LOSO pilot
 
@@ -136,7 +232,7 @@ Entries are row minus column in BA points, with raw two-sided paired Wilcoxon p-
 | EEGNeX | Chen et al. (2024), Braindecode `EEGNeX` | Optional secondary only | 56,162 parameters; no primary status |
 | Tensor-CSPNet / TSMNet | Ju and Guan (2022), DOI `10.1109/TNNLS.2022.3151790`; official code should be pinned before use | Literature context only | No neural SPD package is installed in the project environment; not implemented or claimed |
 | EEGPT | Wang et al. (2024), official repository `https://github.com/BINE022/EEGPT` | Fail-closed frozen-probe framework | Expected official input documented as 58 channels, 256 Hz, 4 s; no direct stroke evidence |
-| CBraMod | Wang et al. (2025), official repository `https://github.com/wangbxj1234/CBraMod` | Fail-closed frozen-probe framework | 200 Hz patch input; no direct stroke evidence |
+| CBraMod | Wang et al. (2025), official repository `https://github.com/wjq-learning/CBraMod` | Fail-closed frozen-probe framework | 200 Hz patch input; no direct stroke evidence |
 
 Repository URLs identify upstream projects but are not dependency pins. An experiment is valid only when its config records a local repository path, immutable revision, checkpoint path, full SHA256 digest, import module, factory, and feature method.
 

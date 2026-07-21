@@ -1,0 +1,453 @@
+[2026-07-16 07:16:29] Run ID:     20260716_071629_196536_aaebd199
+[2026-07-16 07:16:29] Artifacts:  /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-aligned-short-scale-riemann-pilot/20260716_071629_196536_aaebd199
+[2026-07-16 07:16:29] Config:     /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-aligned-short-scale-riemann-pilot/20260716_071629_196536_aaebd199/config.json
+[2026-07-16 07:16:29] Seed initialized: 2026
+[2026-07-16 07:16:29] ========================================================================
+[2026-07-16 07:16:29] {
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-aligned-short-scale-riemann-pilot",
+  "average_reference": true,
+  "bands_hz": [
+    [
+      8.0,
+      12.0
+    ],
+    [
+      13.0,
+      20.0
+    ],
+    [
+      20.0,
+      30.0
+    ],
+    [
+      8.0,
+      30.0
+    ]
+  ],
+  "bootstrap_iterations": 10000,
+  "bootstrap_seed": 202607,
+  "cache_policy": "reuse_or_create",
+  "collapse_threshold": 0.9,
+  "config_note": "Frozen exploratory full50 expansion after the prespecified 01/03/07 smoke; no method or hyperparameter changes.",
+  "covariance_cache_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/covariance_cache/source_aligned_short_scale_riemann",
+  "covariance_estimator": "oas",
+  "cv_folds": 5,
+  "evaluation_mode": "reuse_locked_stratified_5fold",
+  "expected_global_split_hash": "801ec1d2c981335f",
+  "expected_shallow_run_id": "20260712_165746_790145_fd8ab986",
+  "expected_source_subject_count": 49,
+  "expected_subject_count": 50,
+  "expected_trials_per_subject": 40,
+  "experiment_name": "source_aligned_short_scale_riemann_full50_frozen",
+  "filter_context": "full_trial_then_crop",
+  "filter_order": 4,
+  "lda_shrinkage": "auto",
+  "lda_solver": "lsqr",
+  "locked_shallow_artifact": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260712_165746_790145_fd8ab986",
+  "margin_scale_eps": 1e-08,
+  "marker_channel_index": 32,
+  "methods": [
+    "target_only",
+    "pooled_unaligned",
+    "riemannian_recentered"
+  ],
+  "mi_window_s": [
+    0.0,
+    4.0
+  ],
+  "native_sfreq": 500,
+  "onset_fallback_sample": 1003,
+  "onset_marker_value": 2,
+  "onset_plausible_range": [
+    800,
+    1300
+  ],
+  "run_synthetic_checks": false,
+  "seed": 2026,
+  "set_seed": true,
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+  "spatial_mode": "motor13",
+  "tangent_metric": "riemann",
+  "target_subjects": [
+    "sub-01",
+    "sub-02",
+    "sub-03",
+    "sub-04",
+    "sub-05",
+    "sub-06",
+    "sub-07",
+    "sub-08",
+    "sub-09",
+    "sub-10",
+    "sub-11",
+    "sub-12",
+    "sub-13",
+    "sub-14",
+    "sub-15",
+    "sub-16",
+    "sub-17",
+    "sub-18",
+    "sub-19",
+    "sub-20",
+    "sub-21",
+    "sub-22",
+    "sub-23",
+    "sub-24",
+    "sub-25",
+    "sub-26",
+    "sub-27",
+    "sub-28",
+    "sub-29",
+    "sub-30",
+    "sub-31",
+    "sub-32",
+    "sub-33",
+    "sub-34",
+    "sub-35",
+    "sub-36",
+    "sub-37",
+    "sub-38",
+    "sub-39",
+    "sub-40",
+    "sub-41",
+    "sub-42",
+    "sub-43",
+    "sub-44",
+    "sub-45",
+    "sub-46",
+    "sub-47",
+    "sub-48",
+    "sub-49",
+    "sub-50"
+  ],
+  "temporal_scales": {
+    "1s": {
+      "length_s": 1.0,
+      "starts_s": [
+        0.0,
+        1.0,
+        2.0,
+        3.0
+      ]
+    },
+    "2s": {
+      "length_s": 2.0,
+      "starts_s": [
+        0.0,
+        1.0,
+        2.0
+      ]
+    }
+  },
+  "trace_normalize": true
+}
+[2026-07-16 07:16:29] ========================================================================
+[2026-07-16 07:17:52] sub-01: completed all 5 locked folds with 49 source subjects
+[2026-07-16 07:19:02] sub-02: completed all 5 locked folds with 49 source subjects
+[2026-07-16 07:20:17] sub-03: completed all 5 locked folds with 49 source subjects
+[2026-07-16 07:21:28] sub-04: completed all 5 locked folds with 49 source subjects
+[2026-07-16 07:22:38] sub-05: completed all 5 locked folds with 49 source subjects
+[2026-07-16 07:23:48] sub-06: completed all 5 locked folds with 49 source subjects
+[2026-07-16 07:25:00] sub-07: completed all 5 locked folds with 49 source subjects
+[2026-07-16 07:26:10] sub-08: completed all 5 locked folds with 49 source subjects
+[2026-07-16 07:27:20] sub-09: completed all 5 locked folds with 49 source subjects
+[2026-07-16 07:28:29] sub-10: completed all 5 locked folds with 49 source subjects
+[2026-07-16 07:29:38] sub-11: completed all 5 locked folds with 49 source subjects
+[2026-07-16 07:30:47] sub-12: completed all 5 locked folds with 49 source subjects
+[2026-07-16 07:41:25] sub-13: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:12:51] sub-14: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:14:00] sub-15: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:15:09] sub-16: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:16:17] sub-17: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:17:28] sub-18: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:18:39] sub-19: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:19:49] sub-20: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:21:01] sub-21: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:22:12] sub-22: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:23:23] sub-23: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:24:34] sub-24: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:25:44] sub-25: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:26:54] sub-26: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:28:03] sub-27: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:29:12] sub-28: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:30:22] sub-29: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:31:31] sub-30: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:32:42] sub-31: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:33:54] sub-32: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:35:04] sub-33: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:36:17] sub-34: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:37:27] sub-35: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:38:37] sub-36: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:39:48] sub-37: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:40:59] sub-38: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:42:17] sub-39: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:43:46] sub-40: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:45:02] sub-41: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:46:22] sub-42: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:47:51] sub-43: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:49:16] sub-44: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:50:41] sub-45: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:51:51] sub-46: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:53:01] sub-47: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:54:15] sub-48: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:55:25] sub-49: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:56:35] sub-50: completed all 5 locked folds with 49 source subjects
+[2026-07-16 08:56:36] {
+  "primary_estimand": "mean_target_subject_pooled_exactly_once_oof_balanced_accuracy",
+  "n_target_subjects": 50,
+  "target_subjects": [
+    "sub-01",
+    "sub-02",
+    "sub-03",
+    "sub-04",
+    "sub-05",
+    "sub-06",
+    "sub-07",
+    "sub-08",
+    "sub-09",
+    "sub-10",
+    "sub-11",
+    "sub-12",
+    "sub-13",
+    "sub-14",
+    "sub-15",
+    "sub-16",
+    "sub-17",
+    "sub-18",
+    "sub-19",
+    "sub-20",
+    "sub-21",
+    "sub-22",
+    "sub-23",
+    "sub-24",
+    "sub-25",
+    "sub-26",
+    "sub-27",
+    "sub-28",
+    "sub-29",
+    "sub-30",
+    "sub-31",
+    "sub-32",
+    "sub-33",
+    "sub-34",
+    "sub-35",
+    "sub-36",
+    "sub-37",
+    "sub-38",
+    "sub-39",
+    "sub-40",
+    "sub-41",
+    "sub-42",
+    "sub-43",
+    "sub-44",
+    "sub-45",
+    "sub-46",
+    "sub-47",
+    "sub-48",
+    "sub-49",
+    "sub-50"
+  ],
+  "source_subjects_per_target": 49,
+  "global_split_hash": "801ec1d2c981335f",
+  "methods": {
+    "target_only": {
+      "mean_subject_balanced_accuracy": 0.5595,
+      "subject_bootstrap_95_ci": [
+        0.5215,
+        0.5970124999999998
+      ],
+      "n_subjects": 50
+    },
+    "pooled_unaligned": {
+      "mean_subject_balanced_accuracy": 0.5485,
+      "subject_bootstrap_95_ci": [
+        0.5275,
+        0.5700000000000001
+      ],
+      "n_subjects": 50
+    },
+    "riemannian_recentered": {
+      "mean_subject_balanced_accuracy": 0.561,
+      "subject_bootstrap_95_ci": [
+        0.5355000000000001,
+        0.5875
+      ],
+      "n_subjects": 50
+    }
+  },
+  "paired_vs_target_only": {
+    "pooled_unaligned": {
+      "reference": "target_only",
+      "subject_deltas": {
+        "sub-01": 0.22500000000000003,
+        "sub-02": -0.17500000000000004,
+        "sub-03": 0.09999999999999998,
+        "sub-04": 0.07499999999999996,
+        "sub-05": 0.04999999999999993,
+        "sub-06": 0.025000000000000022,
+        "sub-07": -0.19999999999999996,
+        "sub-08": 0.050000000000000044,
+        "sub-09": 0.22500000000000003,
+        "sub-10": 0.09999999999999998,
+        "sub-11": -0.325,
+        "sub-12": 0.050000000000000044,
+        "sub-13": -0.09999999999999998,
+        "sub-14": 0.2,
+        "sub-15": 0.0,
+        "sub-16": -0.050000000000000044,
+        "sub-17": -0.17500000000000004,
+        "sub-18": -0.050000000000000044,
+        "sub-19": 0.04999999999999993,
+        "sub-20": -0.2749999999999999,
+        "sub-21": 0.22500000000000003,
+        "sub-22": -0.1250000000000001,
+        "sub-23": -0.09999999999999998,
+        "sub-24": -0.09999999999999998,
+        "sub-25": -0.025000000000000133,
+        "sub-26": 0.0,
+        "sub-27": -0.04999999999999999,
+        "sub-28": -0.32499999999999996,
+        "sub-29": 0.0,
+        "sub-30": 0.04999999999999999,
+        "sub-31": 0.35000000000000003,
+        "sub-32": 0.04999999999999999,
+        "sub-33": 0.025000000000000022,
+        "sub-34": -0.025000000000000022,
+        "sub-35": 0.125,
+        "sub-36": 0.050000000000000044,
+        "sub-37": -0.02499999999999991,
+        "sub-38": -0.09999999999999987,
+        "sub-39": 0.07500000000000007,
+        "sub-40": -0.17500000000000004,
+        "sub-41": 0.07499999999999996,
+        "sub-42": 0.125,
+        "sub-43": 0.050000000000000044,
+        "sub-44": -0.02499999999999991,
+        "sub-45": -0.27499999999999997,
+        "sub-46": 0.10000000000000009,
+        "sub-47": -0.04999999999999999,
+        "sub-48": -0.025000000000000022,
+        "sub-49": -0.1499999999999999,
+        "sub-50": -0.07500000000000007
+      },
+      "mean_delta": -0.010999999999999992,
+      "mean_delta_points": -1.0999999999999992,
+      "paired_subject_bootstrap_95_ci": [
+        -0.05049999999999997,
+        0.02899999999999999
+      ],
+      "wins": 23,
+      "ties": 3,
+      "losses": 24,
+      "n_subjects": 50,
+      "wilcoxon_statistic": 534.5,
+      "wilcoxon_p_value": 0.7547622894452487,
+      "reason": "frozen exploratory full50 expansion"
+    },
+    "riemannian_recentered": {
+      "reference": "target_only",
+      "subject_deltas": {
+        "sub-01": 0.10000000000000003,
+        "sub-02": -0.20000000000000007,
+        "sub-03": 0.09999999999999998,
+        "sub-04": 0.04999999999999993,
+        "sub-05": 0.09999999999999998,
+        "sub-06": 0.10000000000000003,
+        "sub-07": -0.07499999999999996,
+        "sub-08": 0.050000000000000044,
+        "sub-09": 0.175,
+        "sub-10": 0.09999999999999998,
+        "sub-11": -0.275,
+        "sub-12": 0.025000000000000022,
+        "sub-13": -0.125,
+        "sub-14": 0.04999999999999999,
+        "sub-15": -0.025000000000000022,
+        "sub-16": -0.024999999999999967,
+        "sub-17": -0.050000000000000044,
+        "sub-18": -0.07500000000000007,
+        "sub-19": 0.025000000000000022,
+        "sub-20": -0.125,
+        "sub-21": 0.10000000000000003,
+        "sub-22": -0.050000000000000044,
+        "sub-23": -0.09999999999999998,
+        "sub-24": -0.09999999999999992,
+        "sub-25": -0.025000000000000133,
+        "sub-26": 0.0,
+        "sub-27": 0.04999999999999999,
+        "sub-28": -0.275,
+        "sub-29": 0.0,
+        "sub-30": 0.07500000000000001,
+        "sub-31": 0.325,
+        "sub-32": 0.0,
+        "sub-33": 0.09999999999999998,
+        "sub-34": -0.050000000000000044,
+        "sub-35": 0.04999999999999993,
+        "sub-36": -0.025000000000000022,
+        "sub-37": 0.07500000000000007,
+        "sub-38": 0.17500000000000004,
+        "sub-39": 0.15000000000000002,
+        "sub-40": -0.125,
+        "sub-41": 0.07499999999999996,
+        "sub-42": 0.125,
+        "sub-43": -0.024999999999999967,
+        "sub-44": 0.050000000000000044,
+        "sub-45": -0.24999999999999994,
+        "sub-46": 0.07500000000000007,
+        "sub-47": 0.025000000000000022,
+        "sub-48": -0.07500000000000001,
+        "sub-49": -0.07499999999999996,
+        "sub-50": -0.10000000000000009
+      },
+      "mean_delta": 0.001499999999999998,
+      "mean_delta_points": 0.1499999999999998,
+      "paired_subject_bootstrap_95_ci": [
+        -0.031500000000000014,
+        0.033499999999999995
+      ],
+      "wins": 25,
+      "ties": 3,
+      "losses": 22,
+      "n_subjects": 50,
+      "wilcoxon_statistic": 530.0,
+      "wilcoxon_p_value": 0.7188376546452704,
+      "reason": "frozen exploratory full50 expansion"
+    }
+  },
+  "protocol": {
+    "view_selection": false,
+    "hyperparameter_selection": false,
+    "source_labels_used": true,
+    "target_excluded_from_source": true,
+    "source_centers": "each source subject's 40 covariances, separately per view",
+    "target_centers": "32 target outer-training covariances, separately per view",
+    "target_test_used_for_centers_or_fit": false,
+    "score_normalization": "method-training-margin-only",
+    "view_fusion": "equal within scale, then equal across fixed 1s/2s scales"
+  }
+}
+[2026-07-16 08:56:36] target_only: 55.95% mean target BA
+[2026-07-16 08:56:36] pooled_unaligned: 54.85% mean target BA
+[2026-07-16 08:56:36] riemannian_recentered: 56.10% mean target BA
+[2026-07-16 08:56:36] pooled_unaligned vs target_only: -1.10 points
+[2026-07-16 08:56:36] riemannian_recentered vs target_only: +0.15 points
+[2026-07-16 08:56:37] {
+  "configured_targets_exact": true,
+  "methods_exact": true,
+  "split_hash_exact": true,
+  "exactly_once_oof": true,
+  "all_targets_excluded_from_sources": true,
+  "all_target_centers_use_32_training_trials": true,
+  "all_source_centers_source_subject_only": true,
+  "all_source_centers_map_to_target_center": true,
+  "all_target_test_indices_excluded_from_centers": true,
+  "outer_test_used_for_center": false,
+  "outer_test_used_for_fit": false,
+  "outer_test_used_for_selection": false,
+  "hyperparameter_selection_present": false
+}
+[2026-07-16 08:56:40] CV results saved to:      /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-aligned-short-scale-riemann-pilot/20260716_071629_196536_aaebd199/cv_results.json
+[2026-07-16 08:56:40] Subject metrics saved to: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-aligned-short-scale-riemann-pilot/20260716_071629_196536_aaebd199/subject_metrics.json
+[2026-07-16 08:56:40] Global metrics saved to:  /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-aligned-short-scale-riemann-pilot/20260716_071629_196536_aaebd199/global_metrics.json
+[2026-07-16 08:56:40] Run metadata saved to:    /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-aligned-short-scale-riemann-pilot/20260716_071629_196536_aaebd199/run_metadata.json
+[2026-07-16 08:56:40] 
+All artifacts in: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-source-aligned-short-scale-riemann-pilot/20260716_071629_196536_aaebd199
