@@ -1,0 +1,557 @@
+[2026-07-20 17:58:17] Using device: cpu
+[2026-07-20 17:58:17] Seed set to: 42
+[2026-07-20 17:58:17] Run ID:     20260720_175817_057727_b93c9cb9
+[2026-07-20 17:58:17] Artifacts:  /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-s-jepa-pretraining-gacl-aug-full/20260720_175817_057727_b93c9cb9
+[2026-07-20 17:58:17] [setup] config saved: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-s-jepa-pretraining-gacl-aug-full/20260720_175817_057727_b93c9cb9/config.json  seed=42  device=cpu  log_verbosity=compact
+[2026-07-20 17:58:17] Liu2024 S-JEPA pretraining split (Lv14 held out as downstream-only):
+[2026-07-20 17:58:17]   Train subjects (30):             [2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50]
+[2026-07-20 17:58:17]   Validation subjects (6):        [12, 19, 22, 30, 42, 47]
+[2026-07-20 17:58:17]   Downstream-only Lv14 (14):    [1, 3, 7, 9, 10, 11, 14, 15, 17, 29, 31, 32, 37, 41]
+[2026-07-20 17:58:17]   Train chunk size:               30
+[2026-07-20 17:58:17]   Validation chunk size:          6
+[2026-07-20 17:58:17]   Chunk shuffle (train):          False
+[2026-07-20 17:58:17]   Window preload:                 True
+
+[2026-07-20 17:58:22] Reference chunk prepared for geometry/model sanity setup.
+[2026-07-20 17:58:22]   Reference subjects:             [2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50]
+[2026-07-20 17:58:22]   Reference recordings (trials):  1200
+[2026-07-20 17:58:22] Pretraining window parameters:
+[2026-07-20 17:58:22]   sfreq:                      128 Hz
+[2026-07-20 17:58:22]   pretrain_duration_s:        4.0 s
+[2026-07-20 17:58:22]   sampling_interval_s:        1.0 s
+[2026-07-20 17:58:22]   window_size_samples:        512
+[2026-07-20 17:58:22]   sampling_interval_samples:  128
+[2026-07-20 17:58:22] Preprocessors ready for chunked train/validation streaming.
+
+[2026-07-20 17:58:43] Reference chunk windows ready:
+[2026-07-20 17:58:43]   Subjects:                    [2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50]
+[2026-07-20 17:58:43]   Recordings by paradigm:      {'MI': 1200}
+[2026-07-20 17:58:43]   Window count:                6000
+[2026-07-20 17:58:43] Geometry summary:
+[2026-07-20 17:58:43]   Montage present:          True
+[2026-07-20 17:58:43]   Montage kind:             DigMontage
+[2026-07-20 17:58:43]   EEG channels:             29
+[2026-07-20 17:58:43]   Valid EEG positions:      29
+[2026-07-20 17:58:43]   Valid position ratio:     1.000
+[2026-07-20 17:58:43]   Any all-zero channels:    False
+[2026-07-20 17:58:43]   Valid xyz min/max:        x[-0.0868, 0.0836] y[-0.0828, 0.1153] z[0.0251, 0.1402]
+[2026-07-20 17:58:43]   First channel xyz preview:
+[2026-07-20 17:58:43]        Fp1: (-0.0309,  0.1146,  0.0279) valid=True
+[2026-07-20 17:58:43]        Fp2: ( 0.0284,  0.1153,  0.0277) valid=True
+[2026-07-20 17:58:43]         Fz: (-0.0012,  0.0933,  0.1026) valid=True
+[2026-07-20 17:58:43]         F3: (-0.0518,  0.0867,  0.0787) valid=True
+[2026-07-20 17:58:43]         F4: ( 0.0503,  0.0874,  0.0773) valid=True
+[2026-07-20 17:58:43]         F7: (-0.0719,  0.0731,  0.0258) valid=True
+[2026-07-20 17:58:43]         F8: ( 0.0714,  0.0745,  0.0251) valid=True
+[2026-07-20 17:58:43]        FCz: (-0.0013,  0.0635,  0.1266) valid=True
+[2026-07-20 17:58:43] Sanitized SignalJEPA channel metadata:
+[2026-07-20 17:58:43]   EEG channels:             29
+[2026-07-20 17:58:43]   Valid xyz channels:       29
+[2026-07-20 17:58:43]   Sanitized xyz min/max:    x[-0.0868, 0.0836] y[-0.0828, 0.1153] z[0.0251, 0.1402]
+
+[2026-07-20 17:58:43] EEG channel geometry summary:
+[2026-07-20 17:58:43]   N_CHANNELS:               29
+[2026-07-20 17:58:43]   CH_POSITIONS shape:       (29, 3)
+[2026-07-20 17:58:43]   Sanitized CHS_INFO count: 29
+[2026-07-20 17:58:43] Training-only augmentation: gacl_inspired_sensor_rotation_noise (2 transforms); validation remains clean.
+[2026-07-20 17:58:43] Window sanity checks (reference-train-chunk):
+[2026-07-20 17:58:43]   Total windows:          6000
+[2026-07-20 17:58:43]   Window shape (C, T):    (29, 512)
+[2026-07-20 17:58:43]   Mean:                   1.0110e+01
+[2026-07-20 17:58:43]   Std(signal) (microvolts): 1.5919e+01
+[2026-07-20 17:58:43]   Max:                    1.9792e+02
+[2026-07-20 17:58:47] Window sanity checks (validation-preview-chunk):
+[2026-07-20 17:58:47]   Total windows:          1200
+[2026-07-20 17:58:47]   Window shape (C, T):    (29, 512)
+[2026-07-20 17:58:47]   Mean:                   2.1979e+01
+[2026-07-20 17:58:47]   Std(signal) (microvolts): 2.9882e+01
+[2026-07-20 17:58:47]   Max:                    2.1832e+02
+[2026-07-20 17:58:48] Feature encoder token geometry:
+[2026-07-20 17:58:48]   WINDOW_SIZE_SAMPLES:  512
+[2026-07-20 17:58:48]   N_TOK_PER_CHANNEL:    3
+[2026-07-20 17:58:48]   EMB_DIM:              64
+[2026-07-20 17:58:48]   TOTAL_TOKENS:         87
+[2026-07-20 17:58:48] Student / teacher backbone summary:
+[2026-07-20 17:58:48]   Student parameters:           3,455,862
+[2026-07-20 17:58:48]   Feature encoder parameters:   13,840
+[2026-07-20 17:58:48]   Positional encoder params:    870
+[2026-07-20 17:58:48]   Transformer parameters:       3,441,152
+[2026-07-20 17:58:48]   Teacher trainable parameters: 0
+[2026-07-20 17:58:48] Backbone finite probe: OK
+[2026-07-20 17:58:48] Radius-based random spatial block mask sampler:
+[2026-07-20 17:58:48]   n_channels:               29
+[2026-07-20 17:58:48]   n_valid_channels:         29
+[2026-07-20 17:58:48]   head_diameter (valid):    0.206672
+[2026-07-20 17:58:48]   mask_diameter_percent:    60
+[2026-07-20 17:58:48]   mask_diameter:            0.124003
+[2026-07-20 17:58:48]   mask_radius:              0.062002
+[2026-07-20 17:58:48]   n_tok_per_channel:        3
+[2026-07-20 17:58:48] Mask check: Cz
+[2026-07-20 17:58:48]   radius: 0.062002
+[2026-07-20 17:58:48]   masked channels: 2
+[2026-07-20 17:58:48]   masked tokens: 6
+[2026-07-20 17:58:48]   masked names: ['FCz', 'Cz']
+[2026-07-20 17:58:48] 40% mask around Cz:
+[2026-07-20 17:58:48]   radius: 0.041334
+[2026-07-20 17:58:48]   masked channels (2): ['FCz', 'Cz']
+
+[2026-07-20 17:58:48] 60% mask around Cz:
+[2026-07-20 17:58:48]   radius: 0.062002
+[2026-07-20 17:58:48]   masked channels (2): ['FCz', 'Cz']
+
+[2026-07-20 17:58:48] 80% mask around Cz:
+[2026-07-20 17:58:48]   radius: 0.082669
+[2026-07-20 17:58:48]   masked channels (8): ['Fz', 'FCz', 'FC3', 'Cz', 'C3', 'C4', 'CP3', 'Pz']
+
+[2026-07-20 17:58:48] 40% mask around C4:
+[2026-07-20 17:58:48]   radius: 0.041334
+[2026-07-20 17:58:48]   masked channels (3): ['FC4', 'C4', 'CP4']
+
+[2026-07-20 17:58:48] 60% mask around C4:
+[2026-07-20 17:58:48]   radius: 0.062002
+[2026-07-20 17:58:48]   masked channels (3): ['FC4', 'C4', 'CP4']
+
+[2026-07-20 17:58:48] 80% mask around C4:
+[2026-07-20 17:58:48]   radius: 0.082669
+[2026-07-20 17:58:48]   masked channels (10): ['F4', 'FCz', 'FC4', 'FT8', 'Cz', 'C4', 'T4', 'CP4', 'TP8', 'P4']
+
+[2026-07-20 17:58:48] 40% mask around Oz:
+[2026-07-20 17:58:48]   radius: 0.041334
+[2026-07-20 17:58:48]   masked channels (3): ['Oz', 'O1', 'O2']
+
+[2026-07-20 17:58:48] 60% mask around Oz:
+[2026-07-20 17:58:48]   radius: 0.062002
+[2026-07-20 17:58:48]   masked channels (3): ['Oz', 'O1', 'O2']
+
+[2026-07-20 17:58:48] 80% mask around Oz:
+[2026-07-20 17:58:48]   radius: 0.082669
+[2026-07-20 17:58:48]   masked channels (6): ['Pz', 'P3', 'P4', 'Oz', 'O1', 'O2']
+
+[2026-07-20 17:58:48] 40% mask around Cz:
+[2026-07-20 17:58:48]   radius: 0.041334
+[2026-07-20 17:58:48]   masked channels (2): ['FCz', 'Cz']
+
+[2026-07-20 17:58:48] 60% mask around Cz:
+[2026-07-20 17:58:48]   radius: 0.062002
+[2026-07-20 17:58:48]   masked channels (2): ['FCz', 'Cz']
+
+[2026-07-20 17:58:48] 80% mask around Cz:
+[2026-07-20 17:58:48]   radius: 0.082669
+[2026-07-20 17:58:48]   masked channels (8): ['Fz', 'FCz', 'FC3', 'Cz', 'C3', 'C4', 'CP3', 'Pz']
+
+[2026-07-20 17:58:48] Token-routing:
+[2026-07-20 17:58:48]   Full token shape:         (87, 64)
+[2026-07-20 17:58:48]   Visible token shape:      (75, 64)
+[2026-07-20 17:58:48]   Masked token shape:       (12, 64)
+[2026-07-20 17:58:48]   Sample masked channels:   4
+[2026-07-20 17:58:48] Single-sample token routing validated OK.
+[2026-07-20 17:58:48] MaskedTokenPredictor initialized:
+[2026-07-20 17:58:48]   d_model:          64
+[2026-07-20 17:58:48]   nhead:            8
+[2026-07-20 17:58:48]   num_layers:       4
+[2026-07-20 17:58:48]   dim_feedforward:  256
+[2026-07-20 17:58:48]   Total parameters: 267,136
+
+[2026-07-20 17:58:48] Predictor shape test: OK
+[2026-07-20 17:58:48]   student_context: (1, 75, 64)
+[2026-07-20 17:58:48]   masked_pos_enc:  (1, 12, 64)
+[2026-07-20 17:58:48]   prediction:      (1, 12, 64)
+[2026-07-20 17:58:49] Augmentation boundary check: training=augmented, validation=clean
+[2026-07-20 17:58:49] Optimizer: Adam
+[2026-07-20 17:58:49] Learning rate:             0.001
+[2026-07-20 17:58:49] Weight decay:              0.0
+[2026-07-20 17:58:49] Debug train chunk subjects: [2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50]
+[2026-07-20 17:58:49] Debug train windows:        6000
+[2026-07-20 17:58:49] Debug val chunk subjects:   [12, 19, 22, 30, 42, 47]
+[2026-07-20 17:58:49] Debug val windows:          1200
+
+[2026-07-20 17:58:49] Running first-batch verification without an optimizer step...
+[2026-07-20 17:58:49]   [debug] first-sample training path:
+[2026-07-20 17:58:49]     x_single:             (1, 29, 512)
+[2026-07-20 17:58:49]     teacher_full_tokens:  (1, 87, 64)
+[2026-07-20 17:58:49]     student_visible:      (1, 78, 64)
+[2026-07-20 17:58:49]     masked_queries:       (1, 9, 64)
+[2026-07-20 17:58:49]     predicted_masked:     (1, 9, 64)
+[2026-07-20 17:58:49]     teacher_masked:       (1, 9, 64)
+[2026-07-20 17:58:49]     center_channel:       26
+[2026-07-20 17:58:49]     masked_channels:      3
+[2026-07-20 17:58:49]     masked_tokens:        9
+[2026-07-20 17:58:49]     visible_tokens:       78
+[2026-07-20 17:58:49]     sample_loss:          1.063116
+[2026-07-20 17:58:50]   Backward/gradient finite check:           OK
+[2026-07-20 17:58:50]   No-optimizer-step parameter check:        OK
+[2026-07-20 17:58:50]   First training-batch loss:              1.124089
+[2026-07-20 17:58:50]   Mean masked channels:               3.94
+[2026-07-20 17:58:50]   Mean masked tokens:                 11.81
+[2026-07-20 17:58:50]   First validation-batch loss: 1.137493
+[2026-07-20 17:58:50] ======================================================================
+[2026-07-20 17:58:50] [setup] STARTING LIU2024 S-JEPA PRETRAINING
+[2026-07-20 17:58:50] ======================================================================
+[2026-07-20 17:58:50] [setup] run_id:                  20260720_175817_057727_b93c9cb9
+[2026-07-20 17:58:50] [setup] seed:                    42
+[2026-07-20 17:58:50] [setup] device:                  cpu
+[2026-07-20 17:58:50] [setup] paradigms:               ['MI']
+[2026-07-20 17:58:50] [setup] train_subjects:          30  [2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50]
+[2026-07-20 17:58:50] [setup] val_subjects:            6  [12, 19, 22, 30, 42, 47]
+[2026-07-20 17:58:50] [setup] excluded_subjects:       [1, 3, 7, 9, 10, 11, 14, 15, 17, 29, 31, 32, 37, 41]
+[2026-07-20 17:58:50] [setup] train_chunk_size:        30
+[2026-07-20 17:58:50] [setup] val_chunk_size:          6
+[2026-07-20 17:58:50] [setup] train_chunks_per_epoch:  1
+[2026-07-20 17:58:50] [setup] val_chunks_per_epoch:    1
+[2026-07-20 17:58:50] [setup] batch_size:              32
+[2026-07-20 17:58:50] [setup] early_stopping_patience: 15
+[2026-07-20 17:58:50] [setup] window_preload:          True
+[2026-07-20 17:58:50] [setup] pretrain_duration:       4.0 s
+[2026-07-20 17:58:50] [setup] sampling_interval:       1.0 s
+[2026-07-20 17:58:50] [setup] mask_diameter:           60%
+[2026-07-20 17:58:50] [setup] ema_decay:               0.996
+[2026-07-20 17:58:50] [setup] epoch_limit:             300
+[2026-07-20 17:58:50] [setup] log_verbosity:           compact
+[2026-07-20 17:58:50] ======================================================================
+[2026-07-20 18:01:50] [train] epoch 1 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.052676 running=0.052676 time=179.2s
+[2026-07-20 18:01:58] [val] epoch 1 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.010063 running=0.010063 time=7.6s
+[2026-07-20 18:01:58] [epoch]   1/300  train_loss=0.052676  val_loss=0.010063  best_val=0.010063  patience=0/15  train_chunks=1  val_chunks=1  train_time=179.6s  val_time=8.1s
+[2026-07-20 18:04:59] [train] epoch 2 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.006365 running=0.006365 time=181.1s
+[2026-07-20 18:05:07] [val] epoch 2 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.006533 running=0.006533 time=7.7s
+[2026-07-20 18:05:08] [epoch]   2/300  train_loss=0.006365  val_loss=0.006533  best_val=0.006533  patience=0/15  train_chunks=1  val_chunks=1  train_time=181.5s  val_time=8.1s
+[2026-07-20 18:08:11] [train] epoch 3 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.005055 running=0.005055 time=182.8s
+[2026-07-20 18:08:19] [val] epoch 3 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.005428 running=0.005428 time=7.8s
+[2026-07-20 18:08:20] [epoch]   3/300  train_loss=0.005055  val_loss=0.005428  best_val=0.005428  patience=0/15  train_chunks=1  val_chunks=1  train_time=183.2s  val_time=8.2s
+[2026-07-20 18:11:20] [train] epoch 4 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.004757 running=0.004757 time=180.7s
+[2026-07-20 18:11:29] [val] epoch 4 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.004461 running=0.004461 time=8.3s
+[2026-07-20 18:11:30] [epoch]   4/300  train_loss=0.004757  val_loss=0.004461  best_val=0.004461  patience=0/15  train_chunks=1  val_chunks=1  train_time=181.1s  val_time=8.7s
+[2026-07-20 18:14:32] [train] epoch 5 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.004473 running=0.004473 time=182.4s
+[2026-07-20 18:14:40] [val] epoch 5 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.004107 running=0.004107 time=7.9s
+[2026-07-20 18:14:41] [epoch]   5/300  train_loss=0.004473  val_loss=0.004107  best_val=0.004107  patience=0/15  train_chunks=1  val_chunks=1  train_time=182.8s  val_time=8.3s
+[2026-07-20 18:17:43] [train] epoch 6 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.004295 running=0.004295 time=182.0s
+[2026-07-20 18:17:51] [val] epoch 6 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.005516 running=0.005516 time=7.7s
+[2026-07-20 18:17:51] [epoch]   6/300  train_loss=0.004295  val_loss=0.005516  best_val=0.004107  patience=1/15  train_chunks=1  val_chunks=1  train_time=182.4s  val_time=8.1s
+[2026-07-20 18:20:55] [train] epoch 7 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.003900 running=0.003900 time=183.5s
+[2026-07-20 18:21:03] [val] epoch 7 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.003727 running=0.003727 time=7.7s
+[2026-07-20 18:21:04] [epoch]   7/300  train_loss=0.003900  val_loss=0.003727  best_val=0.003727  patience=0/15  train_chunks=1  val_chunks=1  train_time=183.9s  val_time=8.1s
+[2026-07-20 18:24:06] [train] epoch 8 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.004063 running=0.004063 time=182.4s
+[2026-07-20 18:24:14] [val] epoch 8 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.003969 running=0.003969 time=7.8s
+[2026-07-20 18:24:15] [epoch]   8/300  train_loss=0.004063  val_loss=0.003969  best_val=0.003727  patience=1/15  train_chunks=1  val_chunks=1  train_time=182.8s  val_time=8.3s
+[2026-07-20 18:27:18] [train] epoch 9 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.003659 running=0.003659 time=183.4s
+[2026-07-20 18:27:26] [val] epoch 9 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.004499 running=0.004499 time=7.8s
+[2026-07-20 18:27:27] [epoch]   9/300  train_loss=0.003659  val_loss=0.004499  best_val=0.003727  patience=2/15  train_chunks=1  val_chunks=1  train_time=183.8s  val_time=8.2s
+[2026-07-20 18:30:29] [train] epoch 10 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.003662 running=0.003662 time=182.4s
+[2026-07-20 18:30:38] [val] epoch 10 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.004543 running=0.004543 time=7.9s
+[2026-07-20 18:30:38] [epoch]  10/300  train_loss=0.003662  val_loss=0.004543  best_val=0.003727  patience=3/15  train_chunks=1  val_chunks=1  train_time=182.8s  val_time=8.4s
+[2026-07-20 18:33:38] [train] epoch 11 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.003593 running=0.003593 time=180.3s
+[2026-07-20 18:33:47] [val] epoch 11 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.003441 running=0.003441 time=7.7s
+[2026-07-20 18:33:47] [epoch]  11/300  train_loss=0.003593  val_loss=0.003441  best_val=0.003441  patience=0/15  train_chunks=1  val_chunks=1  train_time=180.7s  val_time=8.1s
+[2026-07-20 18:36:47] [train] epoch 12 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.003402 running=0.003402 time=180.2s
+[2026-07-20 18:36:55] [val] epoch 12 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.004530 running=0.004530 time=7.8s
+[2026-07-20 18:36:56] [epoch]  12/300  train_loss=0.003402  val_loss=0.004530  best_val=0.003441  patience=1/15  train_chunks=1  val_chunks=1  train_time=180.6s  val_time=8.2s
+[2026-07-20 18:39:58] [train] epoch 13 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.003384 running=0.003384 time=182.1s
+[2026-07-20 18:40:06] [val] epoch 13 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.003661 running=0.003661 time=7.8s
+[2026-07-20 18:40:07] [epoch]  13/300  train_loss=0.003384  val_loss=0.003661  best_val=0.003441  patience=2/15  train_chunks=1  val_chunks=1  train_time=182.5s  val_time=8.2s
+[2026-07-20 18:43:09] [train] epoch 14 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.003362 running=0.003362 time=182.4s
+[2026-07-20 18:43:17] [val] epoch 14 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.003840 running=0.003840 time=7.8s
+[2026-07-20 18:43:18] [epoch]  14/300  train_loss=0.003362  val_loss=0.003840  best_val=0.003441  patience=3/15  train_chunks=1  val_chunks=1  train_time=182.8s  val_time=8.2s
+[2026-07-20 18:46:19] [train] epoch 15 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.003211 running=0.003211 time=181.6s
+[2026-07-20 18:46:27] [val] epoch 15 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.003536 running=0.003536 time=7.5s
+[2026-07-20 18:46:28] [epoch]  15/300  train_loss=0.003211  val_loss=0.003536  best_val=0.003441  patience=4/15  train_chunks=1  val_chunks=1  train_time=182.0s  val_time=7.9s
+[2026-07-20 18:49:28] [train] epoch 16 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.003257 running=0.003257 time=179.7s
+[2026-07-20 18:49:36] [val] epoch 16 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.003371 running=0.003371 time=7.9s
+[2026-07-20 18:49:36] [epoch]  16/300  train_loss=0.003257  val_loss=0.003371  best_val=0.003371  patience=0/15  train_chunks=1  val_chunks=1  train_time=180.1s  val_time=8.3s
+[2026-07-20 18:52:39] [train] epoch 17 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.003163 running=0.003163 time=182.3s
+[2026-07-20 18:52:47] [val] epoch 17 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.003174 running=0.003174 time=8.3s
+[2026-07-20 18:52:48] [epoch]  17/300  train_loss=0.003163  val_loss=0.003174  best_val=0.003174  patience=0/15  train_chunks=1  val_chunks=1  train_time=182.8s  val_time=8.7s
+[2026-07-20 18:55:51] [train] epoch 18 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.003192 running=0.003192 time=182.7s
+[2026-07-20 18:55:58] [val] epoch 18 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.003713 running=0.003713 time=7.3s
+[2026-07-20 18:55:59] [epoch]  18/300  train_loss=0.003192  val_loss=0.003713  best_val=0.003174  patience=1/15  train_chunks=1  val_chunks=1  train_time=183.1s  val_time=7.8s
+[2026-07-20 18:59:01] [train] epoch 19 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.003079 running=0.003079 time=182.6s
+[2026-07-20 18:59:10] [val] epoch 19 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.003265 running=0.003265 time=7.8s
+[2026-07-20 18:59:10] [epoch]  19/300  train_loss=0.003079  val_loss=0.003265  best_val=0.003174  patience=2/15  train_chunks=1  val_chunks=1  train_time=183.0s  val_time=8.3s
+[2026-07-20 19:02:12] [train] epoch 20 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.003063 running=0.003063 time=181.9s
+[2026-07-20 19:02:20] [val] epoch 20 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.003562 running=0.003562 time=7.4s
+[2026-07-20 19:02:21] [epoch]  20/300  train_loss=0.003063  val_loss=0.003562  best_val=0.003174  patience=3/15  train_chunks=1  val_chunks=1  train_time=182.3s  val_time=7.9s
+[2026-07-20 19:05:21] [train] epoch 21 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.003039 running=0.003039 time=180.4s
+[2026-07-20 19:05:29] [val] epoch 21 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.003310 running=0.003310 time=7.7s
+[2026-07-20 19:05:30] [epoch]  21/300  train_loss=0.003039  val_loss=0.003310  best_val=0.003174  patience=4/15  train_chunks=1  val_chunks=1  train_time=180.8s  val_time=8.1s
+[2026-07-20 19:08:34] [train] epoch 22 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002985 running=0.002985 time=184.4s
+[2026-07-20 19:08:42] [val] epoch 22 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.003236 running=0.003236 time=7.8s
+[2026-07-20 19:08:43] [epoch]  22/300  train_loss=0.002985  val_loss=0.003236  best_val=0.003174  patience=5/15  train_chunks=1  val_chunks=1  train_time=184.8s  val_time=8.2s
+[2026-07-20 19:11:44] [train] epoch 23 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002785 running=0.002785 time=181.8s
+[2026-07-20 19:11:52] [val] epoch 23 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.003119 running=0.003119 time=7.6s
+[2026-07-20 19:11:53] [epoch]  23/300  train_loss=0.002785  val_loss=0.003119  best_val=0.003119  patience=0/15  train_chunks=1  val_chunks=1  train_time=182.2s  val_time=8.0s
+[2026-07-20 19:14:55] [train] epoch 24 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002888 running=0.002888 time=181.5s
+[2026-07-20 19:15:03] [val] epoch 24 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.003052 running=0.003052 time=7.8s
+[2026-07-20 19:15:03] [epoch]  24/300  train_loss=0.002888  val_loss=0.003052  best_val=0.003052  patience=0/15  train_chunks=1  val_chunks=1  train_time=182.0s  val_time=8.2s
+[2026-07-20 19:18:04] [train] epoch 25 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002940 running=0.002940 time=180.8s
+[2026-07-20 19:18:12] [val] epoch 25 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.002784 running=0.002784 time=7.8s
+[2026-07-20 19:18:13] [epoch]  25/300  train_loss=0.002940  val_loss=0.002784  best_val=0.002784  patience=0/15  train_chunks=1  val_chunks=1  train_time=181.2s  val_time=8.2s
+[2026-07-20 19:21:16] [train] epoch 26 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002732 running=0.002732 time=183.1s
+[2026-07-20 19:21:24] [val] epoch 26 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.002307 running=0.002307 time=7.5s
+[2026-07-20 19:21:24] [epoch]  26/300  train_loss=0.002732  val_loss=0.002307  best_val=0.002307  patience=0/15  train_chunks=1  val_chunks=1  train_time=183.5s  val_time=7.9s
+[2026-07-20 19:24:26] [train] epoch 27 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002650 running=0.002650 time=182.0s
+[2026-07-20 19:24:35] [val] epoch 27 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.002604 running=0.002604 time=7.8s
+[2026-07-20 19:24:35] [epoch]  27/300  train_loss=0.002650  val_loss=0.002604  best_val=0.002307  patience=1/15  train_chunks=1  val_chunks=1  train_time=182.4s  val_time=8.2s
+[2026-07-20 19:27:36] [train] epoch 28 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002757 running=0.002757 time=181.3s
+[2026-07-20 19:27:44] [val] epoch 28 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.002599 running=0.002599 time=7.4s
+[2026-07-20 19:27:45] [epoch]  28/300  train_loss=0.002757  val_loss=0.002599  best_val=0.002307  patience=2/15  train_chunks=1  val_chunks=1  train_time=181.7s  val_time=7.8s
+[2026-07-20 19:30:44] [train] epoch 29 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002582 running=0.002582 time=179.7s
+[2026-07-20 19:30:52] [val] epoch 29 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.003185 running=0.003185 time=7.6s
+[2026-07-20 19:30:53] [epoch]  29/300  train_loss=0.002582  val_loss=0.003185  best_val=0.002307  patience=3/15  train_chunks=1  val_chunks=1  train_time=180.1s  val_time=8.1s
+[2026-07-20 19:33:53] [train] epoch 30 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002575 running=0.002575 time=180.3s
+[2026-07-20 19:34:01] [val] epoch 30 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.002466 running=0.002466 time=7.7s
+[2026-07-20 19:34:02] [epoch]  30/300  train_loss=0.002575  val_loss=0.002466  best_val=0.002307  patience=4/15  train_chunks=1  val_chunks=1  train_time=180.7s  val_time=8.1s
+[2026-07-20 19:37:05] [train] epoch 31 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002499 running=0.002499 time=182.9s
+[2026-07-20 19:37:13] [val] epoch 31 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.002628 running=0.002628 time=8.0s
+[2026-07-20 19:37:14] [epoch]  31/300  train_loss=0.002499  val_loss=0.002628  best_val=0.002307  patience=5/15  train_chunks=1  val_chunks=1  train_time=183.4s  val_time=8.4s
+[2026-07-20 19:40:16] [train] epoch 32 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002689 running=0.002689 time=182.3s
+[2026-07-20 19:40:24] [val] epoch 32 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.003282 running=0.003282 time=7.8s
+[2026-07-20 19:40:25] [epoch]  32/300  train_loss=0.002689  val_loss=0.003282  best_val=0.002307  patience=6/15  train_chunks=1  val_chunks=1  train_time=182.7s  val_time=8.2s
+[2026-07-20 19:43:27] [train] epoch 33 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002502 running=0.002502 time=182.0s
+[2026-07-20 19:43:35] [val] epoch 33 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.002375 running=0.002375 time=7.9s
+[2026-07-20 19:43:35] [epoch]  33/300  train_loss=0.002502  val_loss=0.002375  best_val=0.002307  patience=7/15  train_chunks=1  val_chunks=1  train_time=182.4s  val_time=8.3s
+[2026-07-20 19:46:37] [train] epoch 34 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002456 running=0.002456 time=182.0s
+[2026-07-20 19:46:46] [val] epoch 34 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.002839 running=0.002839 time=8.0s
+[2026-07-20 19:46:46] [epoch]  34/300  train_loss=0.002456  val_loss=0.002839  best_val=0.002307  patience=8/15  train_chunks=1  val_chunks=1  train_time=182.4s  val_time=8.4s
+[2026-07-20 19:49:47] [train] epoch 35 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002574 running=0.002574 time=180.4s
+[2026-07-20 19:49:55] [val] epoch 35 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.002561 running=0.002561 time=7.6s
+[2026-07-20 19:49:55] [epoch]  35/300  train_loss=0.002574  val_loss=0.002561  best_val=0.002307  patience=9/15  train_chunks=1  val_chunks=1  train_time=180.8s  val_time=8.0s
+[2026-07-20 19:52:57] [train] epoch 36 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002359 running=0.002359 time=181.9s
+[2026-07-20 19:53:05] [val] epoch 36 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.002348 running=0.002348 time=7.9s
+[2026-07-20 19:53:06] [epoch]  36/300  train_loss=0.002359  val_loss=0.002348  best_val=0.002307  patience=10/15  train_chunks=1  val_chunks=1  train_time=182.3s  val_time=8.3s
+[2026-07-20 19:56:06] [train] epoch 37 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002267 running=0.002267 time=180.5s
+[2026-07-20 19:56:15] [val] epoch 37 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.003047 running=0.003047 time=7.8s
+[2026-07-20 19:56:15] [epoch]  37/300  train_loss=0.002267  val_loss=0.003047  best_val=0.002307  patience=11/15  train_chunks=1  val_chunks=1  train_time=180.9s  val_time=8.2s
+[2026-07-20 19:59:16] [train] epoch 38 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002280 running=0.002280 time=180.6s
+[2026-07-20 19:59:24] [val] epoch 38 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.002455 running=0.002455 time=7.7s
+[2026-07-20 19:59:24] [epoch]  38/300  train_loss=0.002280  val_loss=0.002455  best_val=0.002307  patience=12/15  train_chunks=1  val_chunks=1  train_time=181.0s  val_time=8.1s
+[2026-07-20 20:02:25] [train] epoch 39 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002236 running=0.002236 time=180.2s
+[2026-07-20 20:02:33] [val] epoch 39 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.002541 running=0.002541 time=7.8s
+[2026-07-20 20:02:33] [epoch]  39/300  train_loss=0.002236  val_loss=0.002541  best_val=0.002307  patience=13/15  train_chunks=1  val_chunks=1  train_time=180.6s  val_time=8.2s
+[2026-07-20 20:05:35] [train] epoch 40 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002350 running=0.002350 time=182.1s
+[2026-07-20 20:05:44] [val] epoch 40 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.002573 running=0.002573 time=7.8s
+[2026-07-20 20:05:44] [epoch]  40/300  train_loss=0.002350  val_loss=0.002573  best_val=0.002307  patience=14/15  train_chunks=1  val_chunks=1  train_time=182.5s  val_time=8.2s
+[2026-07-20 20:08:47] [train] epoch 41 chunk 1/1 subjects=[2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50] windows=6000 batches=188 loss=0.002114 running=0.002114 time=182.4s
+[2026-07-20 20:08:55] [val] epoch 41 chunk 1/1 subjects=[12, 19, 22, 30, 42, 47] windows=1200 batches=38 loss=0.002356 running=0.002356 time=8.2s
+[2026-07-20 20:08:56] [epoch]  41/300  train_loss=0.002114  val_loss=0.002356  best_val=0.002307  patience=15/15  train_chunks=1  val_chunks=1  train_time=182.8s  val_time=8.6s
+[2026-07-20 20:08:56] [epoch] early stopping triggered after epoch 41: no validation improvement for 15 epochs.
+[2026-07-20 20:08:56] ======================================================================
+[2026-07-20 20:08:56] [epoch] training complete. Best val loss: 0.002307 at epoch 26.
+[2026-07-20 20:08:56] [epoch] stop reason: early_stopping
+[2026-07-20 20:08:56] ======================================================================
+[2026-07-20 20:08:56] ======================================================================
+[2026-07-20 20:08:56] LOSS HISTORY SUMMARY
+[2026-07-20 20:08:56] ======================================================================
+[2026-07-20 20:08:56]   Epochs completed:     41
+[2026-07-20 20:08:56]   First train loss:     0.052676
+[2026-07-20 20:08:56]   Last train loss:      0.002114
+[2026-07-20 20:08:56]   First val loss:       0.010063
+[2026-07-20 20:08:56]   Last val loss:        0.002356
+[2026-07-20 20:08:56]   Best val loss:        0.002307 (epoch 26)
+[2026-07-20 20:08:56]   Total train time:     7465.2 s
+[2026-07-20 20:08:56]   Total validation time:335.9 s
+[2026-07-20 20:08:56]   Stop reason:          early_stopping
+[2026-07-20 20:08:56] Mask coverage statistics:
+[2026-07-20 20:08:56]   n_channels: 29
+[2026-07-20 20:08:56]   n_tok_per_channel: 3
+[2026-07-20 20:08:56]   head_diameter: 0.20667175948619843
+[2026-07-20 20:08:56]   mask_diameter_percent: 60.0
+[2026-07-20 20:08:56]   mask_diameter: 0.12400305569171904
+[2026-07-20 20:08:56]   mask_radius: 0.06200152784585952
+[2026-07-20 20:08:56]   masked_channels_mean: 4.01
+[2026-07-20 20:08:56]   masked_channels_min: 2
+[2026-07-20 20:08:56]   masked_channels_max: 5
+[2026-07-20 20:08:56]   masked_tokens_mean: 12.03
+[2026-07-20 20:08:56]   masked_tokens_min: 6
+[2026-07-20 20:08:56]   masked_tokens_max: 15
+[2026-07-20 20:08:56]   n_samples: 200
+
+[2026-07-20 20:08:56] Mask stats saved to: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-s-jepa-pretraining-gacl-aug-full/20260720_175817_057727_b93c9cb9/mask_stats.json
+[2026-07-20 20:08:56] ======================================================================
+[2026-07-20 20:08:56] ONE-BATCH END-TO-END INSPECTION
+[2026-07-20 20:08:56] ======================================================================
+[2026-07-20 20:08:56]   x_single:            (1, 29, 512)
+[2026-07-20 20:08:56]   teacher_full:        (1, 87, 64)
+[2026-07-20 20:08:56]   student_visible:     (1, 78, 64)
+[2026-07-20 20:08:56]   masked_queries:      (1, 9, 64)
+[2026-07-20 20:08:56]   predicted_masked:    (1, 9, 64)
+[2026-07-20 20:08:56]   teacher_masked:      (1, 9, 64)
+[2026-07-20 20:08:56]   center_channel:      21
+[2026-07-20 20:08:56]   masked_channels:     3
+[2026-07-20 20:08:56]   masked_tokens:       9
+[2026-07-20 20:08:56]   inspection_loss:     0.002335
+[2026-07-20 20:08:56] ======================================================================
+[2026-07-20 20:08:56] Epoch metrics saved to:           /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-s-jepa-pretraining-gacl-aug-full/20260720_175817_057727_b93c9cb9/metrics.json
+[2026-07-20 20:08:56] Run metadata saved to:            /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-s-jepa-pretraining-gacl-aug-full/20260720_175817_057727_b93c9cb9/run_metadata.json
+
+[2026-07-20 20:08:56] ======================================================================
+[2026-07-20 20:08:56] EXPERIMENT SUMMARY
+[2026-07-20 20:08:56] ======================================================================
+[2026-07-20 20:08:56] Run ID:            20260720_175817_057727_b93c9cb9
+[2026-07-20 20:08:56] Artifacts:         /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-s-jepa-pretraining-gacl-aug-full/20260720_175817_057727_b93c9cb9
+
+[2026-07-20 20:08:56] Subject split:
+[2026-07-20 20:08:56]   Train:           [2, 4, 5, 6, 8, 13, 16, 18, 20, 21, 23, 24, 25, 26, 27, 28, 33, 34, 35, 36, 38, 39, 40, 43, 44, 45, 46, 48, 49, 50]
+[2026-07-20 20:08:56]   Validation:      [12, 19, 22, 30, 42, 47]
+[2026-07-20 20:08:56]   Excluded:        [1, 3, 7, 9, 10, 11, 14, 15, 17, 29, 31, 32, 37, 41]
+
+[2026-07-20 20:08:56] Data streaming:
+[2026-07-20 20:08:56]   Paradigms:       ['MI']
+[2026-07-20 20:08:56]   Train chunk size:30
+[2026-07-20 20:08:56]   Val chunk size:  6
+[2026-07-20 20:08:56]   Train chunks:    1
+[2026-07-20 20:08:56]   Val chunks:      1
+[2026-07-20 20:08:56]   Preload windows: True
+[2026-07-20 20:08:56]   Window seconds:  4.0
+[2026-07-20 20:08:56]   Interval secs:   1.0
+
+[2026-07-20 20:08:56] Masking:
+[2026-07-20 20:08:56]   Diameter %:      60
+[2026-07-20 20:08:56]   Radius:          0.062002
+
+[2026-07-20 20:08:56] Results:
+[2026-07-20 20:08:56]   Epochs run:      41
+[2026-07-20 20:08:56]   Best epoch:      26
+[2026-07-20 20:08:56]   Best val loss:   0.002307
+[2026-07-20 20:08:56]   Final val loss:  0.002356
+[2026-07-20 20:08:56]   Stop reason:     early_stopping
+
+[2026-07-20 20:08:56] Artifact files:
+[2026-07-20 20:08:56]   config: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-s-jepa-pretraining-gacl-aug-full/20260720_175817_057727_b93c9cb9/config.json
+[2026-07-20 20:08:56]   run_log: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-s-jepa-pretraining-gacl-aug-full/20260720_175817_057727_b93c9cb9/run.log
+[2026-07-20 20:08:56]   metrics: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-s-jepa-pretraining-gacl-aug-full/20260720_175817_057727_b93c9cb9/metrics.json
+[2026-07-20 20:08:56]   mask_stats: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-s-jepa-pretraining-gacl-aug-full/20260720_175817_057727_b93c9cb9/mask_stats.json
+[2026-07-20 20:08:56]   epoch_metrics_jsonl: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-s-jepa-pretraining-gacl-aug-full/20260720_175817_057727_b93c9cb9/epoch_metrics.jsonl
+Notebook:       /home/vegorov/Repos/eeg_jepa_research/src/pretraining/s_jepa_pretraining_liu2024.ipynb
+Configurations: /home/vegorov/Repos/eeg_jepa_research/src/utils/experiments/configs/sweep_sjepa_pretraining_liu2024_gacl_aug_full_frozen.json
+Total configs:  1
+
+[1/1] Running config override:
+{
+  "artifact_dir": "artifacts/liu2024-s-jepa-pretraining-gacl-aug-full",
+  "all_subject_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50
+  ],
+  "downstream_only_subject_ids": [
+    1,
+    3,
+    7,
+    9,
+    10,
+    11,
+    14,
+    15,
+    17,
+    29,
+    31,
+    32,
+    37,
+    41
+  ],
+  "n_pretraining_val_subjects": 6,
+  "train_subject_chunk_size": 30,
+  "val_subject_chunk_size": 6,
+  "chunk_shuffle": false,
+  "window_preload": true,
+  "cache_preprocessed_chunks": true,
+  "sfreq": 128,
+  "bandpass_low": 0.5,
+  "bandpass_high": 40.0,
+  "use_iir_filter": false,
+  "model_input_unit": "microvolts",
+  "pretrain_duration_s": 4.0,
+  "sampling_interval_s": 1.0,
+  "augmentation": {
+    "enabled": true,
+    "name": "gacl_inspired_sensor_rotation_noise",
+    "random_state": 2026,
+    "transforms": [
+      {
+        "name": "sensors_rotation",
+        "probability": 0.5,
+        "axis": "z",
+        "max_degrees": 10.0,
+        "spherical_splines": true
+      },
+      {
+        "name": "gaussian_noise",
+        "probability": 1.0,
+        "std_microvolts": 2.0
+      }
+    ]
+  },
+  "masking_strategy": "random_spatial_block_radius",
+  "mask_diameter_percent": 60,
+  "predictor_n_layers": 4,
+  "predictor_nhead": 8,
+  "predictor_dim_feedforward": 256,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0,
+  "n_epochs": 300,
+  "ema_decay": 0.996,
+  "early_stopping_patience": 15,
+  "drop_last_training_batch": false,
+  "fixed_validation_masks": true,
+  "validation_mask_seed": 424242,
+  "min_free_disk_gb": 10.0,
+  "verification_only": false,
+  "verification_backprop": true,
+  "device": "auto",
+  "log_verbosity": "compact"
+}
+  status:       completed
+  elapsed_sec:  7845.453
+  run_id:       20260720_175817_057727_b93c9cb9
+  artifact_dir: /home/vegorov/Repos/eeg_jepa_research/artifacts/liu2024-s-jepa-pretraining-gacl-aug-full/20260720_175817_057727_b93c9cb9
+
+Finished.
+Results dir:    experiment_results/20260720_1758_sweep_sjepa_pretraining_liu2024_gacl_aug_full_frozen_d99ad80f
+Summary JSON:   experiment_results/20260720_1758_sweep_sjepa_pretraining_liu2024_gacl_aug_full_frozen_d99ad80f/results.json
+Artifact list:  experiment_results/20260720_1758_sweep_sjepa_pretraining_liu2024_gacl_aug_full_frozen_d99ad80f/artifact_ids.json
