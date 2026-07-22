@@ -1,0 +1,25 @@
+{
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-eegpt-frozen-probe",
+  "resume_run_dir": null,
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+  "split_manifest_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260712_165746_790145_fd8ab986/splits.json",
+  "experiment_name": "eegpt_frozen_probe",
+  "candidate_family": "frozen_eegpt_probe",
+  "config_note": "Frozen full50 Braindecode EEGPT encoder-only probe versus fixed spectral LDA; no target encoder fitting.",
+  "eegpt_backend": "braindecode_encoder_only",
+  "hub_repo_id": "braindecode/eegpt-pretrained",
+  "hub_revision": "e41cb3ae2ce4fd9eb736862292c91f8128d15618",
+  "checkpoint_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/checkpoint_cache/eegpt_braindecode_e41cb3ae",
+  "checkpoint_config_sha256": "9af22c210ca9ac00970f749c00153465ab8cecefce0336111986ec9d13af9260",
+  "checkpoint_sha256": "fb34c20609983324679b9534f9d17a2289a232d0276dd2b8b7d5b088f876f621",
+  "subjects_to_use": null,
+  "target_sfreq": 250,
+  "mi_window_seconds": 4.0,
+  "average_reference": true,
+  "bandpass_hz": [
+    0.5,
+    40.0
+  ],
+  "feature_batch_size": 8,
+  "seed": 2026
+}

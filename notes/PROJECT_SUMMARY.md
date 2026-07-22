@@ -1,5 +1,9 @@
 # Project Summary — Learning Intentional State Representations from EEG Using Predictive World Models
 
+> **Historical summary:** this document predates several completed July 2026 experiments. Its “next
+> steps” are not current run instructions. Check the workspace-root `AGENTS.md` §2e closed-experiment
+> registry before proposing or launching work.
+
 *Working summary of everything done so far. Self-contained handover: context, methods, the central
 leakage finding, all key numbers, deliverables, and next steps.*
 
@@ -148,19 +152,14 @@ All notebooks follow the `liu2024_source_mat_sjepa_prelocal_augmented` logging/a
 
 ---
 
-## 8. Open items / next steps
+## 8. Historical open items
 
-1. **Confirm the honest ceiling with the paper-faithful notebook.** Run `PF_honest_lda_ltsa_19band` (and the
-   `PF_honest_fgmdm_19band` reading). Expectation: honest ~50–55%, leaky ~72–80%. If so, the finding is locked
-   across two implementations, two grids (7×8 and 7×19), two classifiers, and with/without LTSA.
-2. **Match protocols for the head-to-head.** Honest TWFB used 24-train/16-test (60/40); the S-JEPA probe used
-   5-fold (32-train). Run `PF_5fold_lda_ltsa` (or the probe under 60/40) so the comparison is exact.
-3. **Notebook B fusion + decorrelation.** Run `B_fusion_weighted`/`B_fusion_stacking`. Expect little global gain
-   (both branches near chance, likely correlated); the value is the **decorrelation** quantification for the write-up.
-4. **Statistics for the thesis:** report per-subject Wilcoxon (not fold-level std — folds are correlated within
-   subject and overstate spread); include the leaky-vs-honest paired test and the published-number context.
-5. **Optional:** contact the corresponding author (Junwei Hao) for the original Table-3 implementation to verify
-   the selection protocol; an EEGNet baseline for completeness.
+The paper-faithful confirmation is complete, and the old Notebook-B batch completed four branches
+before a kernel failure; do not rerun those branches. Later fusion experiments were null, so weighted
+fusion is not a current priority without a new prespecified hypothesis. Remaining genuinely open work
+is limited to the exact protocol-matched S-JEPA/TWFB comparison, any missing per-subject thesis
+statistics, and author clarification of the Table-3 selection boundary. See workspace-root `AGENTS.md`
+§2e and §3 for authoritative status.
 
 ---
 

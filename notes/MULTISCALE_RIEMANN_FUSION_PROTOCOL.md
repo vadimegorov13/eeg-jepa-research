@@ -1,5 +1,8 @@
 # Multiscale Riemannian Fusion Protocol
 
+> **Completion status:** the frozen confirmation is complete. Deleted development and locked-grid
+> configs must not be reconstructed or rerun; see workspace-root `AGENTS.md` §2e.
+
 ## Locked Hypotheses
 
 The primary population is all 50 Liu2024 subjects. The Lv-14 mapping is a secondary restricted-population analysis and must be reported separately. The primary endpoint is each subject's pooled outer out-of-fold balanced accuracy, averaged across subjects.
@@ -60,24 +63,11 @@ Fold-local classifiers are tangent shrinkage-LDA, affine-invariant MDM, log-Eucl
 
 This sweep is exploratory internal model diagnosis. Any later configuration choice based on it is exploratory/internal reuse of the same 50 subjects and splits, **not independent confirmation**. Outer-test data must not select methods or hyperparameters.
 
-Run the eight sequential development diagnostics with:
+The eight sequential development diagnostics are complete and their deleted sweep must not be
+reconstructed. Their negative controls are summarized in `AGENTS.md` §2e.
 
-```bash
-python src/utils/experiments/experiments.py \
-  --notebook src/liu2024/liu2024_multiscale_riemann_fusion.ipynb \
-  --configs src/utils/experiments/configs/sweep_multiscale_riemann_fusion_development.json \
-  --kernel-name eeg-jepa --daemon
-```
+## Run Status
 
-## Run Commands
-
-Run the four locked configurations with:
-
-```bash
-python src/utils/experiments/experiments.py \
-  --notebook src/liu2024/liu2024_multiscale_riemann_fusion.ipynb \
-  --configs src/utils/experiments/configs/sweep_multiscale_riemann_fusion_locked.json \
-  --kernel-name eeg-jepa --daemon
-```
-
-For classical-only execution without weights or downloads, run either of the first three sweep entries or leave `enable_sjepa` false. The optional S-JEPA entry intentionally uses `sjepa_cache_policy: refuse`; it fails before any download or cache write unless every subject has a provenance-matching cache. Recalculation must be an explicit separate configuration with `sjepa_cache_policy: recompute` and either a pinned non-null model revision or a local checkpoint.
+The former locked-grid commands referenced deleted configs and are intentionally not retained as
+runnable instructions. The retained repeated-60/40 confirmation config exists for provenance, not as
+an invitation to repeat the completed experiment.

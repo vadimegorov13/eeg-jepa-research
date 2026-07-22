@@ -1,0 +1,35 @@
+{
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-reflection-equivariant-shallow",
+  "resume_run_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-reflection-equivariant-shallow/20260720_full50_v1",
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+  "split_manifest_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260712_165746_790145_fd8ab986/splits.json",
+  "experiment_name": "reflection_equivariant_shallow",
+  "candidate_family": "reflection_equivariant_shallow",
+  "config_note": "Frozen full50 expansion after sub-01/03/07 gate passed; three fixed seeds probability-averaged.",
+  "subjects_to_use": null,
+  "target_sfreq": 128,
+  "mi_window_seconds": 4.0,
+  "average_reference": false,
+  "bandpass_hz": [
+    4.0,
+    40.0
+  ],
+  "normalization_eps": 1e-06,
+  "arms": [
+    "control",
+    "reflection_train",
+    "reflection_train_tta"
+  ],
+  "model_kwargs": {},
+  "n_epochs": 20,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.01,
+  "gradient_clip_norm": 1.0,
+  "model_seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "seed": 2026
+}

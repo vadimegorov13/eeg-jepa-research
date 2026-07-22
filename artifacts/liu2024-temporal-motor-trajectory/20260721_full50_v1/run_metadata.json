@@ -1,0 +1,63 @@
+{
+  "candidate_family": "temporal_motor_trajectory",
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-temporal-motor-trajectory/20260721_full50_v1",
+  "config": {
+    "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-temporal-motor-trajectory",
+    "resume_run_dir": null,
+    "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+    "split_manifest_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260712_165746_790145_fd8ab986/splits.json",
+    "experiment_name": "temporal_motor_trajectory",
+    "candidate_family": "temporal_motor_trajectory",
+    "config_note": "Frozen full50 fixed 1-second mu/beta motor asymmetry trajectory versus absolute motor-power control; no feature selection.",
+    "subjects_to_use": null,
+    "target_sfreq": 128,
+    "mi_window_seconds": 4.0,
+    "average_reference": true,
+    "bandpass_hz": [
+      4.0,
+      40.0
+    ],
+    "seed": 2026
+  },
+  "implementation_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_candidate_runner.py",
+  "implementation_sha256": {
+    "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_candidate_runner.py": "f093e71e07e6c9451cd680c66b67dd5b5d2e6afdb481e7db27ceff27920375db",
+    "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_honest_candidates.py": "5e17b1ab9dee9a44983cb251e68721c3a5036a21e6a5ec22c1e2f3b8acb02279",
+    "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_prelocal_clean.py": "c2ff8b90aa25b6f7c31420846a16b99fa76b01f79d6f88cf6c8c94a77e49fdd5",
+    "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/modern_mi_common.py": "af558f1ee58ad76fc7016970c070083b49cfcfdbe5708cd313ed00d8d5c0cb8d"
+  },
+  "python": "3.11.15 (main, Apr  9 2026, 01:18:52) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "device": "mps",
+  "split_hash": "be1d45222ceb7386e34d07ec86931b060ee246dc74bbd48f3cfa4874ecb52185",
+  "resume_key": "b706b04f2b3b9ef97b715b13e1a139ea",
+  "global_metrics": {
+    "methods": {
+      "absolute_motor_power_lda": {
+        "mean_subject_balanced_accuracy": 0.525,
+        "subject_bootstrap_95_ci": [
+          0.49150000000000005,
+          0.557
+        ],
+        "trial_weighted_accuracy": 0.525,
+        "trial_weighted_balanced_accuracy": 0.525,
+        "trial_weighted_f1": 0.5259481037924152,
+        "predicted_class_1_fraction": 0.502
+      },
+      "temporal_trajectory_lda": {
+        "mean_subject_balanced_accuracy": 0.529,
+        "subject_bootstrap_95_ci": [
+          0.49949999999999994,
+          0.5595
+        ],
+        "trial_weighted_accuracy": 0.529,
+        "trial_weighted_balanced_accuracy": 0.529,
+        "trial_weighted_f1": 0.5299401197604791,
+        "predicted_class_1_fraction": 0.502
+      }
+    },
+    "n_subjects": 50,
+    "n_trials": 2000
+  },
+  "checkpoint_audit": null
+}

@@ -1,0 +1,91 @@
+{
+  "candidate_family": "reflection_equivariant_shallow",
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-reflection-equivariant-shallow/20260720_full50_v1",
+  "config": {
+    "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-reflection-equivariant-shallow",
+    "resume_run_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-reflection-equivariant-shallow/20260720_full50_v1",
+    "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+    "split_manifest_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260712_165746_790145_fd8ab986/splits.json",
+    "experiment_name": "reflection_equivariant_shallow",
+    "candidate_family": "reflection_equivariant_shallow",
+    "config_note": "Frozen full50 expansion after sub-01/03/07 gate passed; three fixed seeds probability-averaged.",
+    "subjects_to_use": null,
+    "target_sfreq": 128,
+    "mi_window_seconds": 4.0,
+    "average_reference": false,
+    "bandpass_hz": [
+      4.0,
+      40.0
+    ],
+    "normalization_eps": 1e-06,
+    "arms": [
+      "control",
+      "reflection_train",
+      "reflection_train_tta"
+    ],
+    "model_kwargs": {},
+    "n_epochs": 20,
+    "batch_size": 8,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "gradient_clip_norm": 1.0,
+    "model_seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "seed": 2026
+  },
+  "implementation_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_candidate_runner.py",
+  "implementation_sha256": {
+    "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_candidate_runner.py": "e6c3370e3b3a5a616fa5278e8d999471517c751769ab6bcbde9520f77de35c57",
+    "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_honest_candidates.py": "7cca108a98f337362b8197106dd57519247e067dea968f2db6eeef7745bb90fe",
+    "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_prelocal_clean.py": "c2ff8b90aa25b6f7c31420846a16b99fa76b01f79d6f88cf6c8c94a77e49fdd5",
+    "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/modern_mi_common.py": "af558f1ee58ad76fc7016970c070083b49cfcfdbe5708cd313ed00d8d5c0cb8d"
+  },
+  "python": "3.11.15 (main, Apr  9 2026, 01:18:52) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "device": "mps",
+  "split_hash": "be1d45222ceb7386e34d07ec86931b060ee246dc74bbd48f3cfa4874ecb52185",
+  "resume_key": "72823591f28ef46907821f7a9ba11fce",
+  "global_metrics": {
+    "methods": {
+      "control": {
+        "mean_subject_balanced_accuracy": 0.59,
+        "subject_bootstrap_95_ci": [
+          0.557,
+          0.6244999999999999
+        ],
+        "trial_weighted_accuracy": 0.59,
+        "trial_weighted_balanced_accuracy": 0.59,
+        "trial_weighted_f1": 0.5807770961145194,
+        "predicted_class_1_fraction": 0.478
+      },
+      "reflection_train": {
+        "mean_subject_balanced_accuracy": 0.5755,
+        "subject_bootstrap_95_ci": [
+          0.5429999999999999,
+          0.6075
+        ],
+        "trial_weighted_accuracy": 0.5755,
+        "trial_weighted_balanced_accuracy": 0.5755,
+        "trial_weighted_f1": 0.568816658202133,
+        "predicted_class_1_fraction": 0.4845
+      },
+      "reflection_train_tta": {
+        "mean_subject_balanced_accuracy": 0.5615,
+        "subject_bootstrap_95_ci": [
+          0.528,
+          0.595
+        ],
+        "trial_weighted_accuracy": 0.5615,
+        "trial_weighted_balanced_accuracy": 0.5615,
+        "trial_weighted_f1": 0.566056407718951,
+        "predicted_class_1_fraction": 0.5105
+      }
+    },
+    "n_subjects": 50,
+    "n_trials": 2000
+  },
+  "checkpoint_audit": null
+}

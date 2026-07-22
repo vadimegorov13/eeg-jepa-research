@@ -1,0 +1,39 @@
+{
+  "methods": {
+    "control": {
+      "mean_subject_balanced_accuracy": 0.59,
+      "subject_bootstrap_95_ci": [
+        0.557,
+        0.6244999999999999
+      ],
+      "trial_weighted_accuracy": 0.59,
+      "trial_weighted_balanced_accuracy": 0.59,
+      "trial_weighted_f1": 0.5807770961145194,
+      "predicted_class_1_fraction": 0.478
+    },
+    "reflection_train": {
+      "mean_subject_balanced_accuracy": 0.5755,
+      "subject_bootstrap_95_ci": [
+        0.5429999999999999,
+        0.6075
+      ],
+      "trial_weighted_accuracy": 0.5755,
+      "trial_weighted_balanced_accuracy": 0.5755,
+      "trial_weighted_f1": 0.568816658202133,
+      "predicted_class_1_fraction": 0.4845
+    },
+    "reflection_train_tta": {
+      "mean_subject_balanced_accuracy": 0.5615,
+      "subject_bootstrap_95_ci": [
+        0.528,
+        0.595
+      ],
+      "trial_weighted_accuracy": 0.5615,
+      "trial_weighted_balanced_accuracy": 0.5615,
+      "trial_weighted_f1": 0.566056407718951,
+      "predicted_class_1_fraction": 0.5105
+    }
+  },
+  "n_subjects": 50,
+  "n_trials": 2000
+}

@@ -1,0 +1,66 @@
+{
+  "candidate_family": "augmented_covariance_riemann",
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-augmented-covariance-riemann/20260720_213421_cab0ac6f",
+  "config": {
+    "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-augmented-covariance-riemann",
+    "resume_run_dir": null,
+    "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+    "split_manifest_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260712_165746_790145_fd8ab986/splits.json",
+    "experiment_name": "augmented_covariance_riemann",
+    "candidate_family": "augmented_covariance_riemann",
+    "config_note": "Frozen full50 p=2, 62.5 ms delay versus matched zero-lag covariance.",
+    "subjects_to_use": null,
+    "target_sfreq": 128,
+    "mi_window_seconds": 4.0,
+    "average_reference": true,
+    "bandpass_hz": [
+      8.0,
+      30.0
+    ],
+    "embedding_order": 2,
+    "lag_samples": 8,
+    "trace_normalize": true,
+    "seed": 2026
+  },
+  "implementation_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_candidate_runner.py",
+  "implementation_sha256": {
+    "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_candidate_runner.py": "ffa3b932efa83c30020a11e257a5e88b8d3177715b800df06c25a37f5ef3063c",
+    "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_honest_candidates.py": "bbf226cf0987abb37b9fbf8428e298a1434f4ca2d08fcd3b6ef2388adac5c787",
+    "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_prelocal_clean.py": "c2ff8b90aa25b6f7c31420846a16b99fa76b01f79d6f88cf6c8c94a77e49fdd5",
+    "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/modern_mi_common.py": "af558f1ee58ad76fc7016970c070083b49cfcfdbe5708cd313ed00d8d5c0cb8d"
+  },
+  "python": "3.11.15 (main, Apr  9 2026, 01:18:52) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "device": "mps",
+  "split_hash": "be1d45222ceb7386e34d07ec86931b060ee246dc74bbd48f3cfa4874ecb52185",
+  "resume_key": "81d28bded549b3015528445e3d4653ac",
+  "global_metrics": {
+    "methods": {
+      "augmented_covariance": {
+        "mean_subject_balanced_accuracy": 0.5175,
+        "subject_bootstrap_95_ci": [
+          0.478,
+          0.5595
+        ],
+        "trial_weighted_accuracy": 0.5175,
+        "trial_weighted_balanced_accuracy": 0.5175000000000001,
+        "trial_weighted_f1": 0.5138539042821159,
+        "predicted_class_1_fraction": 0.4925
+      },
+      "standard_covariance": {
+        "mean_subject_balanced_accuracy": 0.5245000000000001,
+        "subject_bootstrap_95_ci": [
+          0.489,
+          0.5614999999999999
+        ],
+        "trial_weighted_accuracy": 0.5245,
+        "trial_weighted_balanced_accuracy": 0.5245,
+        "trial_weighted_f1": 0.5237856785177767,
+        "predicted_class_1_fraction": 0.4985
+      }
+    },
+    "n_subjects": 50,
+    "n_trials": 2000
+  },
+  "checkpoint_audit": null
+}

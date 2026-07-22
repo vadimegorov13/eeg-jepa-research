@@ -222,6 +222,98 @@ def apply_normalizer(x: np.ndarray, state: dict) -> np.ndarray:
     return ((x - state["mean"]) / state["scale"]).astype(np.float32)
 
 
+def validate_pretraining_export(config: dict, n_times: int) -> tuple[dict, dict]:
+    """Validate a completed local SSL export before any downstream fitting."""
+    checkpoint_path = config.get("pretrained_checkpoint_path")
+    if not checkpoint_path:
+        raise RuntimeError("A local pretrained_checkpoint_path is required")
+    checkpoint_path = Path(checkpoint_path).resolve()
+    if not checkpoint_path.is_file():
+        raise FileNotFoundError(checkpoint_path)
+    if config.get("require_best_checkpoint_filename", True) and checkpoint_path.name != "student_backbone_best.pt":
+        raise RuntimeError(f"Expected student_backbone_best.pt, got {checkpoint_path.name}")
+
+    expected_sha256 = config.get("pretrained_checkpoint_sha256")
+    if config.get("require_checkpoint_sha256", True) and not expected_sha256:
+        raise RuntimeError("pretrained_checkpoint_sha256 is required for the locked evaluation")
+    checkpoint_sha256 = sha256_file(checkpoint_path)
+    if expected_sha256 and checkpoint_sha256 != str(expected_sha256).lower():
+        raise RuntimeError(f"Checkpoint SHA256 mismatch: expected {expected_sha256}, got {checkpoint_sha256}")
+
+    payload = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
+    if not isinstance(payload, dict) or "student_backbone_state_dict" not in payload:
+        raise RuntimeError("Local checkpoint must contain student_backbone_state_dict")
+    epoch = int(payload.get("epoch", -1))
+    if epoch <= 0 and not config.get("allow_untrained_checkpoint_for_smoke", False):
+        raise RuntimeError(f"Refusing untrained/verification export with epoch={epoch}")
+
+    split = payload.get("subject_split")
+    if not isinstance(split, dict):
+        raise RuntimeError("Checkpoint is missing subject_split provenance")
+    observed_split = {
+        "train_subject_ids": sorted(int(x) for x in split.get("train_subject_ids", [])),
+        "val_subject_ids": sorted(int(x) for x in split.get("val_subject_ids", [])),
+        "excluded_subject_ids": sorted(int(x) for x in split.get("excluded_subject_ids", [])),
+    }
+    expected_split = {
+        "train_subject_ids": sorted(int(x) for x in config["expected_ssl_train_subject_ids"]),
+        "val_subject_ids": sorted(int(x) for x in config["expected_ssl_val_subject_ids"]),
+        "excluded_subject_ids": sorted(int(x) for x in config["expected_ssl_excluded_subject_ids"]),
+    }
+    if observed_split != expected_split:
+        raise RuntimeError(f"Checkpoint SSL split mismatch: observed={observed_split}, expected={expected_split}")
+    split_sets = [set(observed_split[key]) for key in observed_split]
+    if any(split_sets[i] & split_sets[j] for i in range(3) for j in range(i + 1, 3)):
+        raise RuntimeError("Checkpoint SSL subject sets are not pairwise disjoint")
+    if set().union(*split_sets) != set(range(1, 51)) and not config.get("allow_incomplete_split_for_smoke", False):
+        raise RuntimeError("Checkpoint SSL subject sets do not cover exactly Liu2024 subjects 1-50")
+
+    expected_input_seconds = n_times / float(config["target_sfreq"])
+    if int(payload.get("sfreq", -1)) != int(config["target_sfreq"]):
+        raise RuntimeError(f"Checkpoint sampling rate mismatch: {payload.get('sfreq')}")
+    if not np.isclose(float(payload.get("input_window_seconds", -1)), expected_input_seconds):
+        raise RuntimeError(f"Checkpoint input duration mismatch: {payload.get('input_window_seconds')}")
+    if list(payload.get("ch_names", [])) != LIU_EEG_NAMES:
+        raise RuntimeError("Checkpoint channel names/order do not match canonical Liu29")
+
+    preprocessing = payload.get("preprocessing_config")
+    if not isinstance(preprocessing, dict):
+        raise RuntimeError("Checkpoint is missing preprocessing_config provenance")
+    expected_preprocessing = {
+        "sfreq": int(config["target_sfreq"]),
+        "bandpass_low": float(config["bandpass_hz"][0]),
+        "bandpass_high": float(config["bandpass_hz"][1]),
+        "pretrain_duration_s": float(config["mi_window_seconds"]),
+        "window_size_samples": int(n_times),
+        "filter_method": "fir",
+        "model_input_unit": "microvolts",
+    }
+    mismatches = {
+        key: {"observed": preprocessing.get(key), "expected": expected}
+        for key, expected in expected_preprocessing.items()
+        if preprocessing.get(key) != expected
+    }
+    if mismatches:
+        raise RuntimeError(f"Checkpoint preprocessing mismatch: {mismatches}")
+
+    source_state = payload["student_backbone_state_dict"]
+    if not isinstance(source_state, dict) or not source_state:
+        raise RuntimeError("student_backbone_state_dict is empty or invalid")
+    nonfinite = [name for name, value in source_state.items() if not torch.is_tensor(value) or not torch.isfinite(value).all()]
+    if nonfinite:
+        raise RuntimeError(f"Checkpoint has invalid/non-finite tensors: {nonfinite[:10]}")
+    audit = {
+        "checkpoint_path": str(checkpoint_path),
+        "checkpoint_sha256": checkpoint_sha256,
+        "checkpoint_epoch": epoch,
+        "subject_split": observed_split,
+        "preprocessing_config": preprocessing,
+        "ch_names": list(payload["ch_names"]),
+        "all_state_keys": sorted(source_state),
+    }
+    return payload, audit
+
+
 def build_model(config: dict, n_times: int) -> tuple[torch.nn.Module, dict]:
     kwargs = {
         "n_chans": len(LIU_EEG_NAMES),
@@ -232,14 +324,19 @@ def build_model(config: dict, n_times: int) -> tuple[torch.nn.Module, dict]:
     checkpoint_path = config.get("pretrained_checkpoint_path")
     if checkpoint_path:
         checkpoint_path = Path(checkpoint_path).resolve()
-        checkpoint_sha256 = sha256_file(checkpoint_path)
-        expected_sha256 = config.get("pretrained_checkpoint_sha256")
-        if expected_sha256 and checkpoint_sha256 != expected_sha256:
-            raise RuntimeError(
-                f"Checkpoint SHA256 mismatch: expected {expected_sha256}, got {checkpoint_sha256}"
-            )
+        export_audit = None
+        if config.get("require_validated_pretraining_export", False):
+            payload, export_audit = validate_pretraining_export(config, n_times)
+            checkpoint_sha256 = export_audit["checkpoint_sha256"]
+        else:
+            checkpoint_sha256 = sha256_file(checkpoint_path)
+            expected_sha256 = config.get("pretrained_checkpoint_sha256")
+            if expected_sha256 and checkpoint_sha256 != expected_sha256:
+                raise RuntimeError(
+                    f"Checkpoint SHA256 mismatch: expected {expected_sha256}, got {checkpoint_sha256}"
+                )
+            payload = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
         model = SignalJEPA_PreLocal(**kwargs)
-        payload = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
         if not isinstance(payload, dict) or "student_backbone_state_dict" not in payload:
             raise RuntimeError("Local checkpoint must contain student_backbone_state_dict")
         source_state = payload["student_backbone_state_dict"]
@@ -265,6 +362,9 @@ def build_model(config: dict, n_times: int) -> tuple[torch.nn.Module, dict]:
             "checkpoint_path": str(checkpoint_path),
             "checkpoint_sha256": checkpoint_sha256,
             "loaded_keys": sorted(loaded_state),
+            "ignored_checkpoint_keys": sorted(set(source_state) - set(loaded_state)),
+            "checkpoint_epoch": int(payload.get("epoch", -1)),
+            "export_provenance": export_audit,
         }
     else:
         model = SignalJEPA_PreLocal.from_pretrained(
@@ -399,7 +499,7 @@ def run_fold(subject_id: int, x: np.ndarray, y: np.ndarray, split: dict, config:
         "collapse_diagnostics": {
             "single_class_prediction": bool(len(np.unique(predictions)) == 1),
             "majority_prediction_fraction": majority,
-            "near_collapse_7_of_8": bool(majority >= 0.875),
+            "near_collapse_7_of_8": bool(majority >= float(config.get("collapse_threshold", 0.875))),
         },
         "normalization_mode": normalizer["mode"],
         "normalizer_hash": normalizer["hash"],

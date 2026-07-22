@@ -1,5 +1,9 @@
 # Modern Liu2024 Pipelines
 
+> Artifact-retention note (2026-07-21): maximum cleanup removed the noncanonical development,
+> smoke, transfer, and failed-run artifacts referenced historically below. Their paths are retained
+> only as run identifiers; current canonical artifacts are listed in `AGENTS.md`.
+
 ## Status
 
 Five canonical notebooks define the modern neural comparisons. The six-run compact target-only benchmark, prespecified two-target LOSO pilot, full-source Shallow smoke test, focused lightweight sweep, S-JEPA LP-FT comparison, and bounded Shallow augmentation smoke test are complete. Exploratory cropped and longer-training ShallowFBCSP runs are also complete. Neither supervised source transfer, strict LP-FT, nor the tested light augmentations improve accuracy. Foundation-model work remains validation-only until pinned official repositories and checkpoints are supplied. No large checkpoints were downloaded.
@@ -72,23 +76,21 @@ All successful runs below use the same 50 subjects, 250 five-fold OOF partitions
 - **The two completed lightweight models are near chance and substantially below locked Shallow.** FBLightConvNet favors class 1 (67.45% of predictions; class-0/class-1 sensitivities 32.9%/67.8%); 38/40 collapsed folds favor class 1. EEGITNet favors class 0 (72.55% of predictions; sensitivities 73.0%/27.9%); 105/126 collapsed folds favor class 0. Their non-collapsed fold BAs are only 50.42% and 50.91%, respectively, so removing collapsed folds does not reveal a strong decoder.
 - **SincShallowNet has no performance result.** Run `experiment_results/20260712_1758_sweep_lightweight_mi_models_locked_0e36dabf/` failed on the first training backward pass with PyTorch `RuntimeError: view size is not compatible with input tensor's size and stride ... Use .reshape(...) instead.` This is an implementation/runtime incompatibility, not evidence about SincShallowNet accuracy, and no artifact directory was created.
 
-The current next recommendation is a frozen/probed EEGPT experiment after official code, checkpoint, channel mapping, and digest validation. MIRepNet is the next external-model route after EEGPT. The completed same-fold fusion and source-alignment experiments are null and should not be tuned against their outer results. These results provide no evidence that any route will reach 75%.
+The pinned maintained Braindecode EEGPT probe is complete and negative at 50.85% BA. The exact official
+`BINE022/EEGPT` route remains blocked by checkpoint availability and must not be conflated with that
+result. MIRepNet remains conditional on audited interpolation and strict checkpoint loading. Completed
+fusion, source-alignment, lightweight, crop, and transfer configurations are closed in the workspace-root
+`AGENTS.md` §2e and must not be rerun merely because their raw artifacts were removed.
 
 ### July 19 interrupted Liu2024 SSL pretraining
 
 Training-only montage-aware sensor rotation and 2 microvolt Gaussian noise passed a one-epoch
-structural smoke test at
-`artifacts/liu2024-s-jepa-pretraining-gacl-aug-smoke/20260719_1133_213d695a/`. This is not an
-accuracy result and has no matched unaugmented control.
-
-The frozen full run at
-`artifacts/liu2024-s-jepa-pretraining-gacl-aug-full/20260719_1226_dd305e35/` completed 58 epoch
-records before failing while overwriting `checkpoint_latest.pt`. The best observed validation loss
-was 0.0017907 at epoch 56. The epoch-56 `checkpoint_best.pt` and `student_backbone_best.pt` are
-loadable, but the run did not complete, did not write final summary metrics, and has not undergone a
-matched downstream evaluation. It is therefore an interrupted checkpoint source, not evidence that
-augmentation improves MI decoding. Any downstream use must identify it as an interrupted-run
-checkpoint and remain restricted to the held-out Lv14 cohort for patient-independent evaluation.
+structural smoke test. The frozen full run completed 58 epoch records before failing while overwriting
+`checkpoint_latest.pt`; its best observed validation loss was 0.0017907 at epoch 56. The epoch-56
+checkpoints were loadable before maximum cleanup, but the run did not complete, did not write final
+summary metrics, and never underwent a matched downstream evaluation. The interrupted checkpoint and
+smoke artifacts are now deleted. They are historical diagnostics, not reusable sources or evidence
+that augmentation improves MI decoding.
 
 The notebook now writes checkpoints through an atomic temporary-file replacement, includes the
 epoch in student-only exports, keeps the first-batch diagnostic update-free, reports sanity-check
@@ -271,33 +273,9 @@ In particular, neither the locked 57.45% Shallow result nor the exploratory 57.9
 - Report subject-level balanced accuracy and subject-bootstrap intervals; use paired subject tests, not folds as independent samples.
 - Apply Holm correction across the six primary compact-model comparisons after all six subject tables exist.
 
-## Commands
+## Historical commands
 
-```bash
-./.venv/bin/python src/utils/experiments/experiments.py \
-  --notebook src/liu2024/liu2024_compact_mi_models.ipynb \
-  --configs src/utils/experiments/configs/sweep_compact_mi_models_locked.json \
-  --kernel-name eeg_jepa --daemon
-
-./.venv/bin/python src/utils/experiments/experiments.py \
-  --notebook src/liu2024/liu2024_compact_mi_loso_transfer.ipynb \
-  --configs src/utils/experiments/configs/sweep_compact_mi_loso_transfer_pilot.json \
-  --kernel-name eeg_jepa --daemon
-
-./.venv/bin/python src/utils/experiments/experiments.py \
-  --notebook src/liu2024/liu2024_foundation_model_probes.ipynb \
-  --configs src/utils/experiments/configs/sweep_foundation_model_probes_validate.json \
-  --kernel-name eeg_jepa
-
-./.venv/bin/python src/utils/experiments/experiments.py \
-  --notebook src/liu2024/liu2024_lightweight_mi_models.ipynb \
-  --configs src/utils/experiments/configs/sweep_lightweight_mi_models_locked.json \
-  --kernel-name eeg_jepa --daemon
-
-./.venv/bin/python src/utils/experiments/experiments.py \
-  --notebook src/liu2024/liu2024_cropped_shallow_fusion.ipynb \
-  --configs src/utils/experiments/configs/sweep_cropped_shallow_development.json \
-  --kernel-name eeg_jepa --daemon
-```
-
-The foundation validation sweep is expected to fail until each entry is overridden with real pinned assets and explicit mapping. That refusal is the intended current result, not a failed model experiment.
+The former commands referenced deleted configs and completed experiments, so they are intentionally
+not retained as runnable instructions. Before constructing any new config, check `AGENTS.md` §2e. A
+new run requires a materially new hypothesis, a prespecified protocol, and a new config name; do not
+reconstruct deleted sweeps from notebook defaults.
