@@ -1,0 +1,124 @@
+Notebook:       /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_sjepa_prelocal_lv14_ssl_holdout.ipynb
+Configurations: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/utils/experiments/configs/sweep_sjepa_prelocal_lv14_ssl_holdout_template.json
+Total configs:  1
+
+[1/1] Running config override:
+{
+  "enabled": true,
+  "experiment_name": "sjepa_prelocal_lv14_ssl_holdout",
+  "config_note": "Frozen held-out-Lv14 downstream evaluation of the corrected Liu2024 SSL epoch-26 best local encoder.",
+  "subjects_to_use": [
+    1,
+    3,
+    7,
+    9,
+    10,
+    11,
+    14,
+    15,
+    17,
+    29,
+    31,
+    32,
+    37,
+    41
+  ],
+  "allow_subset_for_smoke": false,
+  "target_sfreq": 128,
+  "mi_window_seconds": 4.0,
+  "average_reference": true,
+  "bandpass_hz": [
+    0.5,
+    40.0
+  ],
+  "normalization_mode": "none",
+  "normalization_eps": 1e-06,
+  "pretrained_checkpoint_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-s-jepa-pretraining-gacl-aug-full/20260720_175817_057727_b93c9cb9/student_backbone_best.pt",
+  "pretrained_checkpoint_sha256": "8e37226c397ba052e37fc98f106d3fff108961c65e4662b82832d1f56adc4e59",
+  "require_validated_pretraining_export": true,
+  "require_checkpoint_sha256": true,
+  "require_best_checkpoint_filename": true,
+  "allow_untrained_checkpoint_for_smoke": false,
+  "allow_incomplete_split_for_smoke": false,
+  "expected_ssl_train_subject_ids": [
+    2,
+    4,
+    5,
+    6,
+    8,
+    13,
+    16,
+    18,
+    20,
+    21,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    33,
+    34,
+    35,
+    36,
+    38,
+    39,
+    40,
+    43,
+    44,
+    45,
+    46,
+    48,
+    49,
+    50
+  ],
+  "expected_ssl_val_subject_ids": [
+    12,
+    19,
+    22,
+    30,
+    42,
+    47
+  ],
+  "expected_ssl_excluded_subject_ids": [
+    1,
+    3,
+    7,
+    9,
+    10,
+    11,
+    14,
+    15,
+    17,
+    29,
+    31,
+    32,
+    37,
+    41
+  ],
+  "strategy": "new",
+  "validation_only": false,
+  "cv_folds": 5,
+  "cv_seed": 2026,
+  "val_fraction": 0.2,
+  "val_seed": 2026,
+  "batch_size": 16,
+  "n_epochs": 5000,
+  "early_stopping_patience": 50,
+  "early_stopping_threshold": 0.0,
+  "learning_rate": 0.0005,
+  "weight_decay": 0.0,
+  "seed": 2026,
+  "set_seed": true,
+  "collapse_threshold": 0.875,
+  "bootstrap_iterations": 10000
+}
+  status:       completed
+  elapsed_sec:  346.757
+  run_id:       20260721_190955_604952_a85d2d18
+  artifact_dir: /Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-lv14-ssl-holdout/20260721_190955_604952_a85d2d18
+
+Finished.
+Results dir:    experiment_results/20260721_1909_sweep_sjepa_prelocal_lv14_ssl_holdout_template_4d35358f
+Summary JSON:   experiment_results/20260721_1909_sweep_sjepa_prelocal_lv14_ssl_holdout_template_4d35358f/results.json
+Artifact list:  experiment_results/20260721_1909_sweep_sjepa_prelocal_lv14_ssl_holdout_template_4d35358f/artifact_ids.json

@@ -37,6 +37,7 @@ def candidate_method_contract(family: str, reflection_arms: list[str] | None = N
     contracts = {
         "augmented_covariance_riemann": (["augmented_covariance", "standard_covariance"], "standard_covariance"),
         "frozen_eegpt_probe": (["fixed_spectral_lda", "frozen_eegpt_lda"], "fixed_spectral_lda"),
+        "hemiparetic_side_shallow": (["full_montage_control", "nonlesioned_hemisphere"], "full_montage_control"),
         "temporal_motor_trajectory": (["absolute_motor_power_lda", "temporal_trajectory_lda"], "absolute_motor_power_lda"),
     }
     if family == "reflection_equivariant_shallow":
@@ -104,6 +105,23 @@ def reflect_trials(x: np.ndarray, permutation: np.ndarray) -> np.ndarray:
     if result.shape != x.shape or not np.isfinite(result).all():
         raise AssertionError("Invalid reflected trial tensor")
     return result
+
+
+def nonlesioned_hemisphere_indices(paralysis_side: str) -> np.ndarray:
+    """Select the clinically non-lesioned lateral channels plus fixed midline channels."""
+    side = str(paralysis_side).lower()
+    if side not in {"left", "right"}:
+        raise ValueError(f"Unknown paralysis side {paralysis_side!r}")
+    # Hemiparesis is contralateral to the nominal lesion: left paresis -> left channels retained.
+    lateral_parity = 1 if side == "left" else 0
+    midline = {"Fz", "FCz", "Cz", "Pz", "Oz"}
+    indices = np.asarray([
+        index for index, name in enumerate(LIU_EEG_NAMES)
+        if name in midline or (name[-1].isdigit() and int(name[-1]) % 2 == lateral_parity)
+    ], dtype=int)
+    if len(indices) != 17:
+        raise AssertionError(f"Expected 17 hemisphere-plus-midline channels, got {len(indices)}")
+    return indices
 
 
 def _oas_covariance(trial: np.ndarray, trace_normalize: bool = True) -> np.ndarray:
@@ -175,25 +193,35 @@ def train_shallow_fold(
     seed: int,
     mode: str,
     device: torch.device,
+    channel_indices: np.ndarray | None = None,
 ) -> tuple[np.ndarray, np.ndarray, dict]:
     """Train a matched Shallow arm; reflected descendants never leave training."""
     if mode not in {"control", "reflection_train", "reflection_train_tta"}:
         raise ValueError(f"Unknown reflection mode {mode}")
+    selected_indices = np.arange(len(LIU_EEG_NAMES)) if channel_indices is None else np.asarray(channel_indices, dtype=int)
+    if len(selected_indices) == 0 or len(set(selected_indices.tolist())) != len(selected_indices):
+        raise ValueError("Selected channels must be nonempty and unique")
+    if selected_indices.min() < 0 or selected_indices.max() >= len(LIU_EEG_NAMES):
+        raise ValueError("Selected channel index is outside Liu29")
+    if mode != "control" and not np.array_equal(selected_indices, np.arange(len(LIU_EEG_NAMES))):
+        raise ValueError("Reflection modes require the complete Liu29 montage")
+    selected_names = [LIU_EEG_NAMES[index] for index in selected_indices]
+    selected_x = x[:, selected_indices]
     permutation = reflection_permutation(LIU_EEG_NAMES)
-    mean, scale = fit_normalizer(x[train_indices], "channel_standardize", config["normalization_eps"])
+    mean, scale = fit_normalizer(selected_x[train_indices], "channel_standardize", config["normalization_eps"])
     normalize = lambda values: ((values - mean) / scale).astype(np.float32)
-    train_x = normalize(x[train_indices])
+    train_x = normalize(selected_x[train_indices])
     train_y = labels[train_indices].astype(np.int64)
     if mode != "control":
         reflected_x = normalize(reflect_trials(x[train_indices], permutation))
         train_x = np.concatenate([train_x, reflected_x])
         train_y = np.concatenate([train_y, 1 - train_y])
-    test_x = normalize(x[test_indices])
+    test_x = normalize(selected_x[test_indices])
 
     torch.manual_seed(seed)
     np.random.seed(seed)
     model = build_model(
-        "ShallowFBCSPNet", len(LIU_EEG_NAMES), x.shape[-1], config["target_sfreq"],
+        "ShallowFBCSPNet", len(selected_names), x.shape[-1], config["target_sfreq"],
         device=device, model_kwargs=config.get("model_kwargs", {}),
     )
     loader = DataLoader(
@@ -227,6 +255,8 @@ def train_shallow_fold(
         "apply_trial_ids": test_indices.astype(int).tolist(),
         "outer_test_used_for_fit": False,
         "normalizer_hash": array_hash(mean, scale),
+        "selected_channel_indices": selected_indices.tolist(),
+        "selected_channel_names": selected_names,
         "reflection_permutation": permutation.tolist(),
         "reflected_descendants": 0 if mode == "control" else len(train_indices),
         "elapsed_seconds": elapsed,

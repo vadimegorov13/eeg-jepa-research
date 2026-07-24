@@ -1,0 +1,54 @@
+{
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-clean-gacl-full50",
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+  "experiment_name": "sjepa_prelocal_clean_gacl_training_smoke",
+  "config_note": "Structural training smoke only: one subject, five folds, two epochs, both arms; accuracy is not evidence.",
+  "subjects_to_use": [
+    1
+  ],
+  "exclude_subjects": [],
+  "allow_subset_for_smoke": true,
+  "validation_only": false,
+  "target_sfreq": 128,
+  "mi_window_seconds": 4.0,
+  "average_reference": true,
+  "bandpass_hz": [
+    0.5,
+    40.0
+  ],
+  "normalization_mode": "none",
+  "normalization_eps": 1e-06,
+  "model_name": "SignalJEPA_PreLocal",
+  "pretrained_repo_id": "braindecode/signal-jepa_without-chans",
+  "pretrained_revision": "213876ea30f0764fd25c055efcb55d1d1652a371",
+  "strategy": "new",
+  "conditions": [
+    "control",
+    "gacl_rotation_noise"
+  ],
+  "augmentation": {
+    "noise_probability": 1.0,
+    "noise_std_microvolts": 2.0,
+    "rotation_axis": "z",
+    "rotation_max_degrees": 10.0,
+    "rotation_probability": 0.5,
+    "rotation_spherical_splines": true
+  },
+  "fixed_materialized_descendants": 0,
+  "cv_folds": 5,
+  "cv_seed": 2026,
+  "val_fraction": 0.2,
+  "val_seed": 2026,
+  "batch_size": 16,
+  "num_workers": 0,
+  "n_epochs": 2,
+  "early_stopping_patience": 50,
+  "early_stopping_threshold": 0.0,
+  "learning_rate": 0.0005,
+  "weight_decay": 0.0,
+  "seed": 2026,
+  "set_seed": true,
+  "collapse_threshold": 0.875,
+  "bootstrap_iterations": 1000,
+  "enabled": true
+}

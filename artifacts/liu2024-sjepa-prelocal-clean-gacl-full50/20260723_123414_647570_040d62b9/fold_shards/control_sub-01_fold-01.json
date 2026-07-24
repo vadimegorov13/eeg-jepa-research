@@ -1,0 +1,207 @@
+{
+  "condition": "control",
+  "subject_id": "1",
+  "fold_id": 1,
+  "train_indices": [
+    0,
+    1,
+    2,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    12,
+    14,
+    15,
+    17,
+    18,
+    19,
+    21,
+    22,
+    23,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    39
+  ],
+  "inner_train_indices": [
+    0,
+    18,
+    34,
+    26,
+    4,
+    15,
+    39,
+    23,
+    27,
+    35,
+    12,
+    1,
+    22,
+    33,
+    10,
+    29,
+    30,
+    5,
+    36,
+    8,
+    17,
+    19,
+    14,
+    2,
+    21
+  ],
+  "validation_indices": [
+    31,
+    6,
+    9,
+    25,
+    32,
+    37,
+    28
+  ],
+  "test_indices": [
+    3,
+    7,
+    11,
+    13,
+    16,
+    20,
+    24,
+    38
+  ],
+  "true_labels": [
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+  ],
+  "predictions": [
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0
+  ],
+  "probabilities": [
+    [
+      0.5041104555130005,
+      0.4958895444869995
+    ],
+    [
+      0.5036296248435974,
+      0.4963703453540802
+    ],
+    [
+      0.4996856451034546,
+      0.5003143548965454
+    ],
+    [
+      0.4994868338108063,
+      0.5005131363868713
+    ],
+    [
+      0.49910157918930054,
+      0.5008984208106995
+    ],
+    [
+      0.5062260031700134,
+      0.4937739968299866
+    ],
+    [
+      0.49982908368110657,
+      0.5001709461212158
+    ],
+    [
+      0.5026066303253174,
+      0.49739333987236023
+    ]
+  ],
+  "accuracy": 0.5,
+  "balanced_accuracy": 0.5,
+  "confusion_matrix": [
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      2
+    ]
+  ],
+  "prediction_histogram": [
+    4,
+    4
+  ],
+  "collapse_diagnostics": {
+    "single_class_prediction": false,
+    "majority_prediction_fraction": 0.5,
+    "near_collapse_7_of_8": false
+  },
+  "normalization_mode": "none",
+  "normalizer_hash": null,
+  "model_audit": {
+    "loading_path": "huggingface",
+    "repo_id": "braindecode/signal-jepa_without-chans",
+    "revision": "213876ea30f0764fd25c055efcb55d1d1652a371",
+    "trainable": {
+      "spatial_conv.1.weight": 116,
+      "spatial_conv.1.bias": 4,
+      "final_layer.1.weight": 1536,
+      "final_layer.1.bias": 2
+    },
+    "n_trainable": 1658
+  },
+  "augmentation_audit": {
+    "enabled": false,
+    "specification": null,
+    "training_loader_class": "DataLoader",
+    "validation_loader_class": "DataLoader",
+    "test_loader_class": "DataLoader",
+    "validation_augmented": false,
+    "test_augmented": false,
+    "fixed_materialized_descendants": 0
+  },
+  "initial_state_hash": "585e21078e86d7328f4bfa21c9cc9596c3fed4e6ef06f911257e965f92928935",
+  "initial_frozen_hash": "e396d8d322411109b288bf0b3b2ca03b8f4d9675fc851ca9a28282e6c43ae74c",
+  "initial_trainable_hash": "d059fe93e719708b101a4158049d9672a8d80872c79df3079f7553d0007f75c7",
+  "final_frozen_hash": "e396d8d322411109b288bf0b3b2ca03b8f4d9675fc851ca9a28282e6c43ae74c",
+  "best_epoch": 1,
+  "best_valid_loss": 0.6937522888183594,
+  "epochs_ran": 2,
+  "tested_state_hash": "a9931294ee56c4ab8e493344f04e539251c1cc34f6f7b4b5c5f0bada0fe5dbd0",
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.6930574870109558,
+      "valid_loss": 0.6937522888183594
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.6916845703125,
+      "valid_loss": 0.693755967276437
+    }
+  ],
+  "fold_seed": 2127,
+  "outer_test_used_for_fit": false,
+  "outer_test_used_for_selection": false
+}

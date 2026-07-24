@@ -1,0 +1,60 @@
+{
+  "run_id": "20260723_123351_442039_e7ce20d9",
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-clean-gacl-full50/20260723_123351_442039_e7ce20d9",
+  "experiment_name": "sjepa_prelocal_clean_gacl_validation_smoke",
+  "config_note": "Structural validation only: one subject, no folds trained, no accuracy result.",
+  "subjects": [
+    "1"
+  ],
+  "model_name": "SignalJEPA_PreLocal",
+  "pretrained_repo_id": "braindecode/signal-jepa_without-chans",
+  "pretrained_revision": "213876ea30f0764fd25c055efcb55d1d1652a371",
+  "conditions": [
+    "control",
+    "gacl_rotation_noise"
+  ],
+  "augmentation": {
+    "noise_probability": 1.0,
+    "noise_std_microvolts": 2.0,
+    "rotation_axis": "z",
+    "rotation_max_degrees": 10.0,
+    "rotation_probability": 0.5,
+    "rotation_spherical_splines": true
+  },
+  "fixed_materialized_descendants": 0,
+  "preprocessing_contract": "independent complete-trial average reference/FIR 0.5-40 Hz/resample, exact marker-2 [0,4)s, microvolts",
+  "implementation_files": {
+    "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_prelocal_clean.py": "843d900495403ebab2424a45433abeb6e9dbbafb469ae87802e16087948ce4c5",
+    "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_prelocal_augmentation.py": "36b43f27e3aaad2514abdc11ec35f7f7a1ef4993233dda23e615efae7abc8b90"
+  },
+  "model_load_audit": {
+    "loading_path": "huggingface",
+    "repo_id": "braindecode/signal-jepa_without-chans",
+    "revision": "213876ea30f0764fd25c055efcb55d1d1652a371",
+    "trainable": {
+      "spatial_conv.1.weight": 116,
+      "spatial_conv.1.bias": 4,
+      "final_layer.1.weight": 1536,
+      "final_layer.1.bias": 2
+    },
+    "n_trainable": 1658
+  },
+  "global_metrics": {
+    "validation_only": true
+  },
+  "leakage_assertions": {
+    "augmentation_inner_training_only": true,
+    "validation_augmented": false,
+    "test_augmented": false,
+    "outer_test_used_for_fit": false,
+    "outer_test_used_for_selection": false,
+    "exact_once_oof": false
+  },
+  "artifacts": {
+    "config": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-clean-gacl-full50/20260723_123351_442039_e7ce20d9/config.json",
+    "run_log": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-clean-gacl-full50/20260723_123351_442039_e7ce20d9/run.log",
+    "subject_inventory": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-clean-gacl-full50/20260723_123351_442039_e7ce20d9/subject_inventory.csv",
+    "marker_inventory": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-clean-gacl-full50/20260723_123351_442039_e7ce20d9/trial_marker_inventory.csv",
+    "global_metrics": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-sjepa-prelocal-clean-gacl-full50/20260723_123351_442039_e7ce20d9/global_metrics.json"
+  }
+}

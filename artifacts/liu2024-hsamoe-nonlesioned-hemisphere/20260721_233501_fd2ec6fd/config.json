@@ -1,0 +1,42 @@
+{
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-hsamoe-nonlesioned-hemisphere",
+  "resume_run_dir": null,
+  "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+  "split_manifest_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260712_165746_790145_fd8ab986/splits.json",
+  "experiment_name": "hsamoe_nonlesioned_hemisphere_smoke_010307",
+  "candidate_family": "hemiparetic_side_shallow",
+  "config_note": "Prespecified HSAMoE mechanism gate: all Liu29 channels versus clinically fixed non-lesioned hemisphere plus midline, changing channels only; sub-01/03/07, one fixed seed, exact locked folds.",
+  "subjects_to_use": [
+    1,
+    3,
+    7
+  ],
+  "paralysis_side_by_subject": {
+    "sub-01": "right",
+    "sub-03": "left",
+    "sub-07": "right"
+  },
+  "target_sfreq": 128,
+  "mi_window_seconds": 4.0,
+  "average_reference": false,
+  "bandpass_hz": [
+    4.0,
+    40.0
+  ],
+  "normalization_eps": 1e-06,
+  "model_kwargs": {},
+  "n_epochs": 20,
+  "batch_size": 8,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.01,
+  "gradient_clip_norm": 1.0,
+  "model_seeds": [
+    2026
+  ],
+  "seed": 2026,
+  "paired_inference_enabled": false,
+  "gate_mean_delta_points": 1.0,
+  "gate_max_collapse_increase_points": 5.0,
+  "gate_max_class1_fraction_shift": 0.15,
+  "enabled": true
+}

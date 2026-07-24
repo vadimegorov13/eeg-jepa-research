@@ -1,0 +1,26 @@
+{
+  "decision": "STOP_CONFIGURATION",
+  "checks": {
+    "mean_delta_at_least_one_point": false,
+    "not_worse_for_all_targets": false,
+    "collapse_increase_within_limit": true,
+    "class_bias_shift_within_limit": true
+  },
+  "subject_deltas_points": {
+    "sub-01": -4.999999999999999,
+    "sub-03": -2.4999999999999964,
+    "sub-07": -4.999999999999993
+  },
+  "mean_delta_points": -4.1666666666666625,
+  "control_ba": 0.49166666666666664,
+  "candidate_ba": 0.45,
+  "collapse_rate": {
+    "full_montage_control": 0.13333333333333333,
+    "nonlesioned_hemisphere": 0.06666666666666667
+  },
+  "predicted_class_1_fraction": {
+    "full_montage_control": 0.5916666666666667,
+    "nonlesioned_hemisphere": 0.6333333333333333
+  },
+  "inference_prohibited_for_three_patient_spike": true
+}

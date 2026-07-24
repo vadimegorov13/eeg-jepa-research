@@ -41,11 +41,13 @@ From the `EEG_JEPA/` repository root:
 python src/utils/experiments/experiments.py \
   --notebook src/liu2024/liu2024_sjepa_prelocal_lv14_ssl_holdout.ipynb \
   --configs src/utils/experiments/configs/sweep_sjepa_prelocal_lv14_ssl_holdout_template.json \
-  --kernel-name eeg-jepa \
+  --kernel-name eeg-jepa-1 \
   --daemon
 ```
 
-Use the kernel that imports this repository's `mne`, `torch`, and `braindecode` environment. The
+On this Mac, `eeg-jepa-1` is the kernelspec backed by `EEG_JEPA/.venv`; the similarly named
+`eeg-jepa` kernelspec belongs to `covariance_testing/.venv` and lacks Braindecode. On another host,
+use the kernel that imports this repository's `mne`, `torch`, and `braindecode` environment. The
 notebook fails before loading EEG outcomes if the checkpoint digest, epoch, SSL subject split,
 channel order, sampling rate, window length, FIR preprocessing, units, or tensor finiteness differs
 from the locked contract.

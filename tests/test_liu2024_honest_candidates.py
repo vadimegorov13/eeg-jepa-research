@@ -14,6 +14,7 @@ from liu2024_honest_candidates import (  # noqa: E402
     eegpt_channel_names,
     embed_liu_channels,
     fixed_spectral_features,
+    nonlesioned_hemisphere_indices,
     reflect_trials,
     reflection_permutation,
     resume_key,
@@ -21,6 +22,19 @@ from liu2024_honest_candidates import (  # noqa: E402
     validate_split_manifest,
 )
 from liu2024_prelocal_clean import LIU_EEG_NAMES  # noqa: E402
+from liu2024_candidate_runner import run_candidate_experiment  # noqa: E402
+
+
+class ClosedExperimentTests(unittest.TestCase):
+    def test_completed_candidate_families_fail_before_artifact_creation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            artifact_dir = Path(tmp) / "closed-run"
+            with self.assertRaisesRegex(RuntimeError, "CLOSED candidate family"):
+                run_candidate_experiment(
+                    {"candidate_family": "temporal_motor_trajectory"},
+                    artifact_dir,
+                )
+            self.assertFalse(artifact_dir.exists())
 
 
 class ReflectionTests(unittest.TestCase):
@@ -42,6 +56,19 @@ class ReflectionTests(unittest.TestCase):
         self.assertEqual(len(set(names)), 29)
         self.assertIn("T7", names)
         self.assertNotIn("T3", names)
+
+    def test_nonlesioned_hemisphere_selection_is_fixed_and_symmetric(self):
+        left = nonlesioned_hemisphere_indices("left")
+        right = nonlesioned_hemisphere_indices("right")
+        self.assertEqual(len(left), 17)
+        self.assertEqual(len(right), 17)
+        left_names = {LIU_EEG_NAMES[index] for index in left}
+        right_names = {LIU_EEG_NAMES[index] for index in right}
+        self.assertIn("C3", left_names)
+        self.assertNotIn("C4", left_names)
+        self.assertIn("C4", right_names)
+        self.assertNotIn("C3", right_names)
+        self.assertEqual(left_names & right_names, {"Fz", "FCz", "Cz", "Pz", "Oz"})
 
     def test_liu_to_eegpt_mapping_preserves_named_channels(self):
         source = np.arange(2 * 29 * 4, dtype=np.float32).reshape(2, 29, 4)
@@ -124,6 +151,11 @@ class ProvenanceTests(unittest.TestCase):
         methods, reference = candidate_method_contract("frozen_eegpt_probe")
         self.assertEqual(methods, ["fixed_spectral_lda", "frozen_eegpt_lda"])
         self.assertEqual(reference, "fixed_spectral_lda")
+
+    def test_hemiparetic_side_contract_requires_full_montage_control(self):
+        methods, reference = candidate_method_contract("hemiparetic_side_shallow")
+        self.assertEqual(methods, ["full_montage_control", "nonlesioned_hemisphere"])
+        self.assertEqual(reference, "full_montage_control")
 
 
 if __name__ == "__main__":

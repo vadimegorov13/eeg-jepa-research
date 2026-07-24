@@ -1,0 +1,53 @@
+{
+  "methods": {
+    "control": {
+      "mean_subject_balanced_accuracy": 0.5665,
+      "std_subject_balanced_accuracy": 0.12345140744438679,
+      "n_subjects": 50,
+      "n_original_trial_predictions": 2000,
+      "exact_once_oof_all_subjects": true,
+      "split_hash": "c53f9dd359cdadf310773f6aec197f9f0681863e100b28dd71b9fc969b0b6fca",
+      "single_class_folds": 60,
+      "near_collapse_folds": 85,
+      "predicted_class_1_fraction": 0.5025
+    },
+    "gacl_rotation_noise": {
+      "mean_subject_balanced_accuracy": 0.5705,
+      "std_subject_balanced_accuracy": 0.11265988638375239,
+      "n_subjects": 50,
+      "n_original_trial_predictions": 2000,
+      "exact_once_oof_all_subjects": true,
+      "split_hash": "c53f9dd359cdadf310773f6aec197f9f0681863e100b28dd71b9fc969b0b6fca",
+      "single_class_folds": 62,
+      "near_collapse_folds": 90,
+      "predicted_class_1_fraction": 0.4985
+    }
+  },
+  "paired_augmented_minus_control": {
+    "control_mean_subject_balanced_accuracy": 0.5665,
+    "control_subject_bootstrap_95_ci": [
+      0.5339875,
+      0.6015
+    ],
+    "augmented_mean_subject_balanced_accuracy": 0.5705,
+    "augmented_subject_bootstrap_95_ci": [
+      0.5409999999999999,
+      0.6025
+    ],
+    "mean_paired_delta": 0.004000000000000011,
+    "median_paired_delta": 0.0,
+    "paired_subject_bootstrap_95_ci": [
+      -0.012499999999999973,
+      0.020000000000000007
+    ],
+    "wilcoxon_p": 0.5907484201118801,
+    "wins_ties_losses": {
+      "wins": 22,
+      "ties": 12,
+      "losses": 16
+    }
+  },
+  "n_subjects": 50,
+  "n_predictions_per_condition": 2000,
+  "exact_once_oof": true
+}

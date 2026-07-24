@@ -27,6 +27,7 @@ from liu2024_honest_candidates import (
     fold_result,
     load_eegpt_encoder,
     load_braindecode_eegpt,
+    nonlesioned_hemisphere_indices,
     paired_statistics,
     resume_key,
     train_shallow_fold,
@@ -167,6 +168,50 @@ def _run_reflection(config: dict, data: dict, labels: dict, splits: dict, direct
     return rows
 
 
+def _run_hemiparetic_side(config: dict, data: dict, labels: dict, splits: dict, directory: Path, key: str) -> list[dict]:
+    device = _device()
+    side_map = {str(subject): str(side).lower() for subject, side in config["paralysis_side_by_subject"].items()}
+    rows = []
+    for subject_id, x in data.items():
+        paralysis_side = side_map.get(subject_id)
+        if paralysis_side not in {"left", "right"}:
+            raise ValueError(f"{subject_id}: missing valid paralysis side")
+        hemisphere_indices = nonlesioned_hemisphere_indices(paralysis_side)
+        methods = {
+            "full_montage_control": np.arange(len(LIU_EEG_NAMES), dtype=int),
+            "nonlesioned_hemisphere": hemisphere_indices,
+        }
+        for method, channel_indices in methods.items():
+            for split in splits[subject_id]:
+                train = np.asarray(split["train_indices"], dtype=int)
+                test = np.asarray(split["test_indices"], dtype=int)
+                path = _fold_shard_path(directory, "hemiparetic_side", method, subject_id, split["fold_id"])
+                def execute(method=method, channel_indices=channel_indices, split=split, train=train, test=test):
+                    probabilities = []
+                    audits = []
+                    for seed in config["model_seeds"]:
+                        _, seed_probabilities, audit = train_shallow_fold(
+                            x, labels[subject_id], train, test, config, int(seed), "control", device,
+                            channel_indices=channel_indices,
+                        )
+                        probabilities.append(seed_probabilities)
+                        audits.append(audit)
+                    probability = np.mean(probabilities, axis=0)
+                    prediction = probability.argmax(axis=1)
+                    audit = {
+                        "seed_audits": audits,
+                        "seed_aggregation": "mean_probability",
+                        "paralysis_side": paralysis_side,
+                        "nonlesioned_hemisphere": paralysis_side,
+                        "fit_trial_ids": train.tolist(),
+                        "apply_trial_ids": test.tolist(),
+                        "outer_test_used_for_fit": False,
+                    }
+                    return fold_result(method, subject_id, split["fold_id"], labels[subject_id], test, prediction, probability, audit)
+                rows.append(_load_or_run_shard(path, key, execute))
+    return rows
+
+
 def _run_eegpt(config: dict, data: dict, labels: dict, splits: dict, directory: Path, key: str) -> tuple[list[dict], dict]:
     device = _device()
     backend = config.get("eegpt_backend", "official_repository")
@@ -235,8 +280,40 @@ def _run_temporal_motor(config: dict, data: dict, labels: dict, splits: dict, di
     return rows
 
 
+def _descriptive_comparisons(subject_metrics: pd.DataFrame, reference: str) -> pd.DataFrame:
+    reference_rows = subject_metrics[subject_metrics.method == reference].set_index("subject_id")
+    output = []
+    for method in sorted(set(subject_metrics.method) - {reference}):
+        candidate = subject_metrics[subject_metrics.method == method].set_index("subject_id").reindex(reference_rows.index)
+        delta = candidate.balanced_accuracy.to_numpy() - reference_rows.balanced_accuracy.to_numpy()
+        output.append({
+            "method": method,
+            "reference": reference,
+            "mean_delta": float(delta.mean()),
+            "median_delta": float(np.median(delta)),
+            "wins": int((delta > 0).sum()),
+            "ties": int((delta == 0).sum()),
+            "losses": int((delta < 0).sum()),
+            "inference_disabled": True,
+        })
+    return pd.DataFrame(output)
+
+
 def run_candidate_experiment(config: dict, artifact_dir: Path) -> dict:
     """Run one candidate family and write a complete immutable artifact package."""
+    family = config.get("candidate_family")
+    closed_families = {
+        "augmented_covariance_riemann",
+        "reflection_equivariant_shallow",
+        "frozen_eegpt_probe",
+        "temporal_motor_trajectory",
+    }
+    if family in closed_families and not config.get("allow_closed_rerun", False):
+        raise RuntimeError(
+            f"CLOSED candidate family {family!r}: Full50 evaluation is complete. "
+            "A rerun requires an explicit new prespecification and allow_closed_rerun=true; "
+            "see workspace-root AGENTS.md section 2e."
+        )
     artifact_dir.mkdir(parents=True, exist_ok=True)
     implementation_path = Path(__file__).resolve()
     implementation_paths = [
@@ -251,7 +328,6 @@ def run_candidate_experiment(config: dict, artifact_dir: Path) -> dict:
     split_path = Path(config["split_manifest_path"]).resolve()
     splits, split_hash = validate_split_manifest(split_path, labels)
     key = resume_key(config, split_hash, implementation_paths)
-    family = config["candidate_family"]
     expected_methods, expected_reference = candidate_method_contract(family, config.get("arms"))
     checkpoint_audit = None
     if family == "augmented_covariance_riemann":
@@ -260,6 +336,9 @@ def run_candidate_experiment(config: dict, artifact_dir: Path) -> dict:
     elif family == "reflection_equivariant_shallow":
         fold_results = _run_reflection(config, data, labels, splits, artifact_dir, key)
         reference = "control"
+    elif family == "hemiparetic_side_shallow":
+        fold_results = _run_hemiparetic_side(config, data, labels, splits, artifact_dir, key)
+        reference = "full_montage_control"
     elif family == "frozen_eegpt_probe":
         fold_results, checkpoint_audit = _run_eegpt(config, data, labels, splits, artifact_dir, key)
         reference = "fixed_spectral_lda"
@@ -272,7 +351,12 @@ def run_candidate_experiment(config: dict, artifact_dir: Path) -> dict:
         raise AssertionError("Executed methods do not match the declared candidate/control contract")
 
     predictions, subject_metrics, global_metrics = aggregate_oof(fold_results, labels)
-    comparisons = paired_statistics(subject_metrics, reference) if subject_metrics.method.nunique() > 1 else pd.DataFrame()
+    if subject_metrics.method.nunique() <= 1:
+        comparisons = pd.DataFrame()
+    elif config.get("paired_inference_enabled", True):
+        comparisons = paired_statistics(subject_metrics, reference)
+    else:
+        comparisons = _descriptive_comparisons(subject_metrics, reference)
     pd.DataFrame([{key: value for key, value in row.items() if key != "marker_records"} for row in inventory]).to_csv(
         artifact_dir / "subject_inventory.csv", index=False,
     )

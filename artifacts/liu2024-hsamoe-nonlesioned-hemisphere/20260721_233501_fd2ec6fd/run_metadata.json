@@ -1,0 +1,87 @@
+{
+  "candidate_family": "hemiparetic_side_shallow",
+  "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-hsamoe-nonlesioned-hemisphere/20260721_233501_fd2ec6fd",
+  "config": {
+    "artifact_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-hsamoe-nonlesioned-hemisphere",
+    "resume_run_dir": null,
+    "source_extract_dir": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/liu2024_data/liu2024_figshare/sourcedata",
+    "split_manifest_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/artifacts/liu2024-compact-mi-models/20260712_165746_790145_fd8ab986/splits.json",
+    "experiment_name": "hsamoe_nonlesioned_hemisphere_smoke_010307",
+    "candidate_family": "hemiparetic_side_shallow",
+    "config_note": "Prespecified HSAMoE mechanism gate: all Liu29 channels versus clinically fixed non-lesioned hemisphere plus midline, changing channels only; sub-01/03/07, one fixed seed, exact locked folds.",
+    "subjects_to_use": [
+      1,
+      3,
+      7
+    ],
+    "paralysis_side_by_subject": {
+      "sub-01": "right",
+      "sub-03": "left",
+      "sub-07": "right"
+    },
+    "target_sfreq": 128,
+    "mi_window_seconds": 4.0,
+    "average_reference": false,
+    "bandpass_hz": [
+      4.0,
+      40.0
+    ],
+    "normalization_eps": 1e-06,
+    "model_kwargs": {},
+    "n_epochs": 20,
+    "batch_size": 8,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "gradient_clip_norm": 1.0,
+    "model_seeds": [
+      2026
+    ],
+    "seed": 2026,
+    "paired_inference_enabled": false,
+    "gate_mean_delta_points": 1.0,
+    "gate_max_collapse_increase_points": 5.0,
+    "gate_max_class1_fraction_shift": 0.15,
+    "enabled": true
+  },
+  "implementation_path": "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_candidate_runner.py",
+  "implementation_sha256": {
+    "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_candidate_runner.py": "b8b9981364da820d4c3e77a1c1419151871bb04046334428a3e0c2a67732cd86",
+    "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_honest_candidates.py": "da0f7fae8f9d311ba7fe81013aafe0f3004d8703d06ea4b98731be38eb58c59b",
+    "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/liu2024_prelocal_clean.py": "843d900495403ebab2424a45433abeb6e9dbbafb469ae87802e16087948ce4c5",
+    "/Users/vadim/Documents/School/Spring 2026/CSCE A698 Individual Research/EEG_JEPA/src/liu2024/modern_mi_common.py": "af558f1ee58ad76fc7016970c070083b49cfcfdbe5708cd313ed00d8d5c0cb8d"
+  },
+  "python": "3.11.15 (main, Apr  9 2026, 01:18:52) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "device": "mps",
+  "split_hash": "9cf16147041af7cd0ea7d86141f74657c1a23c0922a1b239aa5d3e05fc50b59b",
+  "resume_key": "406d0f24afd596499e807633717a5aea",
+  "global_metrics": {
+    "methods": {
+      "full_montage_control": {
+        "mean_subject_balanced_accuracy": 0.49166666666666664,
+        "subject_bootstrap_95_ci": [
+          0.425,
+          0.575
+        ],
+        "trial_weighted_accuracy": 0.49166666666666664,
+        "trial_weighted_balanced_accuracy": 0.4916666666666667,
+        "trial_weighted_f1": 0.5343511450381679,
+        "predicted_class_1_fraction": 0.5916666666666667
+      },
+      "nonlesioned_hemisphere": {
+        "mean_subject_balanced_accuracy": 0.45,
+        "subject_bootstrap_95_ci": [
+          0.375,
+          0.525
+        ],
+        "trial_weighted_accuracy": 0.45,
+        "trial_weighted_balanced_accuracy": 0.45,
+        "trial_weighted_f1": 0.5147058823529411,
+        "predicted_class_1_fraction": 0.6333333333333333
+      }
+    },
+    "n_subjects": 3,
+    "n_trials": 120
+  },
+  "checkpoint_audit": null
+}

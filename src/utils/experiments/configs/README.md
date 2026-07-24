@@ -1,7 +1,8 @@
 # Retained Experiment Configs
 
-These JSON files are disabled provenance records for completed canonical experiments. The batch
-runner rejects them because every entry has `"enabled": false`.
+Completed canonical JSON files are disabled provenance records with `"enabled": false`. A newly
+prespecified active experiment may temporarily have an enabled config; its name and hypothesis must
+not duplicate a CLOSED/STOP row in `AGENTS.md` section 2e.
 
 Do not re-enable an entry merely because its artifact is absent or because reproduction is
 convenient. First check the workspace-root `AGENTS.md` section 2e closed-experiment registry. A new

@@ -1,5 +1,9 @@
 # Covariance Cache — format and how to use it
 
+> **Archived format note.** The covariance caches were removed during maximum cleanup and the TWFB
+> protocols that consumed them are CLOSED. Do not rebuild caches or rerun those grids; see
+> workspace-root `AGENTS.md` section 2e. Examples below document the historical file format only.
+
 The notebook `liu2024_twfb_dgfmdm_faithful_v2.ipynb` caches the **per-trial covariance matrices** (the expensive
 part of the pipeline) so every protocol — and any other notebook or collaborator — can reuse them instantly
 instead of re-filtering the raw EEG. This document explains the layout, how to load it, and how to control it.
@@ -9,10 +13,9 @@ instead of re-filtering the raw EEG. This document explains the layout, how to l
 ## Why cache covariances
 
 Filtering each trial into 8 bands × (1 full window + 7 sub-windows) and forming scatter covariances is the slow
-step. The classification protocols (leaky, honest, fixed) only consume these covariances. Caching them once means:
-- re-running all four protocols is near-instant,
-- sweeps that only change the *evaluation* (CV scheme, repeats, metric) don't recompute covariances,
-- you (or a collaborator) can load the exact covariances used for a result and build on them.
+step. The classification protocols (leaky, honest, fixed) only consume these covariances. Historically,
+caching avoided repeated filtering while auditing those protocols. It must not now be used to
+reconstruct completed grids merely because the cache was deleted.
 
 ---
 
@@ -56,7 +59,7 @@ cache, the band/window lists, and the key scheme — so the folder is self-descr
 
 ---
 
-## Controlling it — `covariance_cache_mode`
+## Historical control — `covariance_cache_mode`
 
 Set in the CONFIG cell:
 
@@ -67,12 +70,12 @@ Set in the CONFIG cell:
 | `rebuild` | always recompute and **overwrite** the cache (use after changing a covariance setting, or to refresh) |
 | `off` | always compute, never read or write |
 
-Typical workflow: run once with `auto` (or `rebuild`) to populate the cache, then switch sweeps to `readonly`
-for fast, guaranteed-reuse evaluation runs.
+These modes describe the retained implementation. There is no current cache-building workflow; the
+completed TWFB experiments and deleted caches must not be regenerated without a new prespecification.
 
 ---
 
-## Loading the cache yourself (any Python)
+## Historical loading example
 
 ```python
 import numpy as np
